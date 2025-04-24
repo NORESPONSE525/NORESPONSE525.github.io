@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://example.com</id>
-    <title></title>
+    <title> • Posts by &#34;词法分析和语法分析&#34; tag</title>
     <link href="http://example.com" />
     <updated>2024-03-20T16:00:00.000Z</updated>
     <category term="编译原理" />
@@ -14,15 +14,6 @@
         <content type="html"></content>
         <category term="编译原理" />
         <category term="词法分析和语法分析" />
-        <updated>2024-03-20T16:00:00.000Z</updated>
-    </entry>
-    <entry>
-        <id>http://example.com/2024/03/21/compiler-principles/note/ch1/</id>
-        <title>Ch1</title>
-        <link rel="alternate" href="http://example.com/2024/03/21/compiler-principles/note/ch1/"/>
-        <content type="html"></content>
-        <category term="编译原理" />
-        <category term="概述" />
         <updated>2024-03-20T16:00:00.000Z</updated>
     </entry>
 </feed>
