@@ -22,11 +22,13 @@
 &lt;ul&gt;
 &lt;li&gt;Two Important Concepts
 &lt;ul&gt;
-&lt;li&gt;Phases&lt;/li&gt;
-&lt;li&gt;Interfaces&lt;/li&gt;
+&lt;li&gt;Phases（阶段）&lt;/li&gt;
+&lt;li&gt;Interfaces（接口）&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
+&lt;p&gt;方框里的是 phase，中间的是 interface&lt;br&gt;
+&lt;img data-src=&#34;image.png&#34; alt&gt;&lt;/p&gt;
  ]]></description>
         </item>
         <item>
