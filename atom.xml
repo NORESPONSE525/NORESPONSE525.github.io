@@ -5,6 +5,7 @@
     <link href="http://example.com" />
     <updated>2024-03-20T16:00:00.000Z</updated>
     <category term="编译原理" />
+    <category term="词法分析" />
     <entry>
         <id>http://example.com/2024/03/21/computer-science/compile-principles/ch1/</id>
         <title>Ch1</title>
@@ -13,7 +14,7 @@
 &lt;p&gt;ZJU 2025 春夏编译原理 学习笔记&lt;/p&gt;
 &lt;p&gt;主要基于虎书（&lt;em&gt;Modern Compiler Implementation in C&lt;/em&gt;, Andrew W. Appel）&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h3 id=&#34;ch1-introduction&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#ch1-introduction&#34;&gt;#&lt;/a&gt; CH1 Introduction&lt;/h3&gt;
+&lt;h1 id=&#34;ch1-introduction&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#ch1-introduction&#34;&gt;#&lt;/a&gt; CH1 Introduction&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;Two Important Concepts
 &lt;ul&gt;
@@ -23,7 +24,9 @@
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;方框里的是 phase，中间的是 interface&lt;br&gt;
-&lt;img data-src=&#34;image.png&#34; alt&gt;&lt;/p&gt;
+&lt;img data-src=&#34;image.png&#34; alt&gt;&lt;br&gt;
+ 各个阶段的描述&lt;br&gt;
+&lt;img data-src=&#34;image-1.png&#34; alt&gt;&lt;img data-src=&#34;image-2.png&#34; alt&gt;&lt;/p&gt;
 </content>
         <category term="编译原理" />
         <updated>2024-03-20T16:00:00.000Z</updated>
@@ -32,8 +35,26 @@
         <id>http://example.com/2024/03/21/computer-science/compile-principles/ch2/</id>
         <title>Ch2</title>
         <link rel="alternate" href="http://example.com/2024/03/21/computer-science/compile-principles/ch2/"/>
-        <content type="html"></content>
-        <category term="编译原理" />
+        <content type="html">&lt;h1 id=&#34;ch2-词法分析&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#ch2-词法分析&#34;&gt;#&lt;/a&gt; Ch2 词法分析&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;把 input 分解成一个个 token&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;regular-expression&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#regular-expression&#34;&gt;#&lt;/a&gt; Regular Expression&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Language: a set of strings&lt;/li&gt;
+&lt;li&gt;String: a finite sequence of characters&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Regular Experssion Notations:&lt;br&gt;
+&lt;img data-src=&#34;image-1.png&#34; alt&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&#34;note info&#34;&gt;
+&lt;p&gt;DFA, NFA 相关 见计算理论&lt;/p&gt;
+&lt;/div&gt;
+&lt;h2 id=&#34;re转nfa&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#re转nfa&#34;&gt;#&lt;/a&gt; RE 转 NFA&lt;/h2&gt;
+&lt;p&gt;&lt;img data-src=&#34;image-2.jpg&#34; alt&gt;&lt;/p&gt;
+</content>
+        <category term="词法分析" />
         <updated>2024-03-20T16:00:00.000Z</updated>
     </entry>
 </feed>
