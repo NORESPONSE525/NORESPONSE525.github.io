@@ -1,0 +1,112 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+    <channel>
+        <title> • Posts by &#34;计算机组成&#34; category</title>
+        <link>http://example.com</link>
+        <description></description>
+        <language>en</language>
+        <pubDate>Mon, 13 May 2024 00:00:00 +0800</pubDate>
+        <lastBuildDate>Mon, 13 May 2024 00:00:00 +0800</lastBuildDate>
+        <category>编译原理</category>
+        <category>语义分析</category>
+        <category>语法分析</category>
+        <category>词法分析</category>
+        <category>抽象语法</category>
+        <category>计算机组成</category>
+        <category>计算机网络</category>
+        <item>
+            <guid isPermalink="true">http://example.com/2024/05/13/computer-science/computer-organization/ch1/</guid>
+            <title>Ch1</title>
+            <link>http://example.com/2024/05/13/computer-science/computer-organization/ch1/</link>
+            <category>计算机组成</category>
+            <pubDate>Mon, 13 May 2024 00:00:00 +0800</pubDate>
+            <description><![CDATA[ &lt;blockquote&gt;
+&lt;p&gt;王道计组考研复习笔记&lt;br&gt;
+怕学完忘了写个笔记保留一下顺便加深印象 x&lt;br&gt;
+ 王道书写得好烂、、&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&#34;ch1-计算机系统概述&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#ch1-计算机系统概述&#34;&gt;#&lt;/a&gt; Ch1 计算机系统概述&lt;/h1&gt;
+&lt;h2 id=&#34;11-计算机发展历程&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#11-计算机发展历程&#34;&gt;#&lt;/a&gt; 1.1 计算机发展历程&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;四代计算机：电子管 -&amp;gt; 晶体管 -&amp;gt; 集成电路 -&amp;gt; 超大规模集成电路&lt;/li&gt;
+&lt;li&gt;摩尔定律：集成电路上可以容纳的晶体管数目在大约每经过 18 个月到 24 个月便会增加一倍&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;12-计算机系统层次结构&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#12-计算机系统层次结构&#34;&gt;#&lt;/a&gt; 1.2 计算机系统层次结构&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;计算机系统：硬件 + 软件&lt;/li&gt;
+&lt;li&gt;对于某一功能，既能用软件实现又能用硬件实现，称为软、硬件在逻辑功能上是等价的&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;122-硬件&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#122-硬件&#34;&gt;#&lt;/a&gt; 1.2.2 硬件&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;冯・诺依曼机的特点：
+&lt;ul&gt;
+&lt;li&gt;采用 “存储程序” 的工作方式&lt;/li&gt;
+&lt;li&gt;冯・诺依曼计算机由五大部件组成：运算器、控制器、存储器、输入设备和输出设备&lt;/li&gt;
+&lt;li&gt;指令和数据以同等地位存储在存储器中&lt;/li&gt;
+&lt;li&gt;指令和数据均用二进制代码表示&lt;/li&gt;
+&lt;li&gt;指令由操作码和地址码组成&lt;/li&gt;
+&lt;li&gt;&lt;img data-src=&#34;img1.png&#34; alt&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;计算机的功能部件：
+&lt;ul&gt;
+&lt;li&gt;输入设备&lt;/li&gt;
+&lt;li&gt;输出设备&lt;/li&gt;
+&lt;li&gt;存储器：主存 + 外存
+&lt;ul&gt;
+&lt;li&gt;CPU 能直接访问的是主存&lt;/li&gt;
+&lt;li&gt;&lt;img data-src=&#34;img2.jpg&#34; alt&gt;&lt;/li&gt;
+&lt;li&gt;MAR 位 10 位则最多有 $$2^{10}$$ 个存储单元&lt;/li&gt;
+&lt;li&gt;在现代计算机中 MAR 和 MDR 存在 CPU 中&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;运算器：进行算术运算和逻辑运算
+&lt;ul&gt;
+&lt;li&gt;核心是 ALU：通用寄存器有&lt;mark&gt;累加器 (ACC)，乘商寄存器 (MQ)，操作数寄存器 (X)&lt;/mark&gt;，变址寄存器 (IX)，基址寄存器 (BR) 等，前三个必备&lt;/li&gt;
+&lt;li&gt;程序状态寄存器 (PSW)&lt;/li&gt;
+&lt;li&gt;&lt;img data-src=&#34;img3.jpg&#34; alt&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;控制器：由 PC, IR 和 control unit 组成
+&lt;ul&gt;
+&lt;li&gt;: RISCV 控制器&lt;/li&gt;
+&lt;li&gt;&lt;img data-src=&#34;img4.png&#34; alt&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;CPU 由运算器、控制器和 cache 组成&lt;/li&gt;
+&lt;li&gt;总线有地址总线、数据总线、控制总线&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;123-软件&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#123-软件&#34;&gt;#&lt;/a&gt; 1.2.3 软件&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;组成：系统软件 (OS, DBMS, 编译器，…)+ 应用软件&lt;/li&gt;
+&lt;li&gt;语言：汇编语言、机器语言、高级语言
+&lt;ul&gt;
+&lt;li&gt;汇编器：把汇编语言翻译成机器语言&lt;/li&gt;
+&lt;li&gt;编译器：把高级语言翻译成汇编语言或机器语言&lt;/li&gt;
+&lt;li&gt;解释器：把高级语言翻译成&lt;mark&gt;机器语言&lt;/mark&gt; (比如 python)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;124-计算机系统的层次结构&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#124-计算机系统的层次结构&#34;&gt;#&lt;/a&gt; 1.2.4 计算机系统的层次结构&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;看看就好&lt;/li&gt;
+&lt;li&gt;&lt;img data-src=&#34;img5.png&#34; alt&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;125-计算机系统的工作原理&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#125-计算机系统的工作原理&#34;&gt;#&lt;/a&gt; 1.2.5 计算机系统的工作原理&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;程序执行前，需要把所含的指令和数据一起放入主存中&lt;/li&gt;
+&lt;li&gt;五个阶段：IF-ID-EX-MEM-WB&lt;/li&gt;
+&lt;li&gt;c 程序怎么变成可执行文件的：直接看图
+&lt;ul&gt;
+&lt;li&gt;&lt;img data-src=&#34;img6.png&#34; alt&gt;&lt;/li&gt;
+&lt;li&gt;汇编器把指令打包成可重定位目标代码文件：使用相对地址和符号引用来表示各个代码段之间的关系（代码段、数据段、符号表、重定位表…）使得代码或数据能在内存中任意位置加载或运行&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;指令执行过程：后面几章会具体讲&lt;/li&gt;
+&lt;/ul&gt;
+ ]]></description>
+        </item>
+    </channel>
+</rss>

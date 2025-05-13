@@ -1,0 +1,18 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": " • All posts by \"抽象语法\" tag",
+    "description": "",
+    "home_page_url": "http://example.com",
+    "items": [
+        {
+            "id": "http://example.com/2024/03/21/computer-science/compile-principles/ch4/",
+            "url": "http://example.com/2024/03/21/computer-science/compile-principles/ch4/",
+            "title": "Ch2",
+            "date_published": "2024-03-20T16:00:00.000Z",
+            "content_html": "",
+            "tags": [
+                "抽象语法"
+            ]
+        }
+    ]
+}

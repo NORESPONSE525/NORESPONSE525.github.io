@@ -1,0 +1,18 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": " • All posts by \"语法分析\" tag",
+    "description": "",
+    "home_page_url": "http://example.com",
+    "items": [
+        {
+            "id": "http://example.com/2024/03/21/computer-science/compile-principles/ch3/",
+            "url": "http://example.com/2024/03/21/computer-science/compile-principles/ch3/",
+            "title": "Ch2",
+            "date_published": "2024-03-20T16:00:00.000Z",
+            "content_html": "<h1 id=\"语法分析\"><a class=\"markdownIt-Anchor\" href=\"#语法分析\">#</a> 语法分析</h1>\n<h2 id=\"cfg\"><a class=\"markdownIt-Anchor\" href=\"#cfg\">#</a> CFG</h2>\n<p>见计算理论<br>\n Parse tree</p>\n<h3 id=\"ambiguous-grammars\"><a class=\"markdownIt-Anchor\" href=\"#ambiguous-grammars\">#</a> Ambiguous grammars</h3>\n<h2 id><a class=\"markdownIt-Anchor\" href=\"#\">#</a> </h2>\n",
+            "tags": [
+                "语法分析"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,18 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": " • All posts by \"计算机网络\" category",
+    "description": "",
+    "home_page_url": "http://example.com",
+    "items": [
+        {
+            "id": "http://example.com/2024/05/13/computer-science/computer-network/ch1/",
+            "url": "http://example.com/2024/05/13/computer-science/computer-network/ch1/",
+            "title": "Ch1",
+            "date_published": "2024-05-12T16:00:00.000Z",
+            "content_html": "",
+            "tags": [
+                "计算机网络"
+            ]
+        }
+    ]
+}
