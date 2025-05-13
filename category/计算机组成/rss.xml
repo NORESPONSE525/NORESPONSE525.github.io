@@ -8,12 +8,12 @@
         <pubDate>Mon, 13 May 2024 00:00:00 +0800</pubDate>
         <lastBuildDate>Mon, 13 May 2024 00:00:00 +0800</lastBuildDate>
         <category>编译原理</category>
-        <category>语义分析</category>
-        <category>语法分析</category>
         <category>词法分析</category>
+        <category>语法分析</category>
+        <category>语义分析</category>
+        <category>计算机网络</category>
         <category>抽象语法</category>
         <category>计算机组成</category>
-        <category>计算机网络</category>
         <item>
             <guid isPermalink="true">http://example.com/2024/05/13/computer-science/computer-organization/ch1/</guid>
             <title>Ch1</title>
@@ -85,7 +85,19 @@
 &lt;ul&gt;
 &lt;li&gt;汇编器：把汇编语言翻译成机器语言&lt;/li&gt;
 &lt;li&gt;编译器：把高级语言翻译成汇编语言或机器语言&lt;/li&gt;
-&lt;li&gt;解释器：把高级语言翻译成&lt;mark&gt;机器语言&lt;/mark&gt; (比如 python)&lt;/li&gt;
+&lt;li&gt;解释器：把高级语言翻译成&lt;mark&gt;机器语言&lt;/mark&gt; (比如 python)
+&lt;ul&gt;
+&lt;li class=&#34;quiz&#34;&gt;解释程序速度比编译程序慢，原因是解释器是一边翻译一边执行，所以&lt;mark&gt;解释器不生成目标代码&lt;/mark&gt;&lt;br&gt;
+将高级语言源程序转换为机器级目标代码文件的程序是 {.gap}[]。
+&lt;ul class=&#34;options&#34;&gt;
+&lt;li&gt;汇编程序&lt;/li&gt;
+&lt;li&gt;链接程序&lt;/li&gt;
+&lt;li class=&#34;correct&#34;&gt;编译程序&lt;/li&gt;
+&lt;li&gt;解释程序&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;

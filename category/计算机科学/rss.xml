@@ -8,12 +8,20 @@
         <pubDate>Mon, 13 May 2024 00:00:00 +0800</pubDate>
         <lastBuildDate>Mon, 13 May 2024 00:00:00 +0800</lastBuildDate>
         <category>编译原理</category>
-        <category>语义分析</category>
-        <category>语法分析</category>
         <category>词法分析</category>
+        <category>语法分析</category>
+        <category>语义分析</category>
+        <category>计算机网络</category>
         <category>抽象语法</category>
         <category>计算机组成</category>
-        <category>计算机网络</category>
+        <item>
+            <guid isPermalink="true">http://example.com/2024/05/13/computer-science/computer-network/ch1/</guid>
+            <title>Ch1</title>
+            <link>http://example.com/2024/05/13/computer-science/computer-network/ch1/</link>
+            <category>计算机网络</category>
+            <pubDate>Mon, 13 May 2024 00:00:00 +0800</pubDate>
+            <description><![CDATA[  ]]></description>
+        </item>
         <item>
             <guid isPermalink="true">http://example.com/2024/05/13/computer-science/computer-organization/ch1/</guid>
             <title>Ch1</title>
@@ -85,7 +93,19 @@
 &lt;ul&gt;
 &lt;li&gt;汇编器：把汇编语言翻译成机器语言&lt;/li&gt;
 &lt;li&gt;编译器：把高级语言翻译成汇编语言或机器语言&lt;/li&gt;
-&lt;li&gt;解释器：把高级语言翻译成&lt;mark&gt;机器语言&lt;/mark&gt; (比如 python)&lt;/li&gt;
+&lt;li&gt;解释器：把高级语言翻译成&lt;mark&gt;机器语言&lt;/mark&gt; (比如 python)
+&lt;ul&gt;
+&lt;li class=&#34;quiz&#34;&gt;解释程序速度比编译程序慢，原因是解释器是一边翻译一边执行，所以&lt;mark&gt;解释器不生成目标代码&lt;/mark&gt;&lt;br&gt;
+将高级语言源程序转换为机器级目标代码文件的程序是 {.gap}[]。
+&lt;ul class=&#34;options&#34;&gt;
+&lt;li&gt;汇编程序&lt;/li&gt;
+&lt;li&gt;链接程序&lt;/li&gt;
+&lt;li class=&#34;correct&#34;&gt;编译程序&lt;/li&gt;
+&lt;li&gt;解释程序&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
@@ -107,14 +127,6 @@
 &lt;li&gt;指令执行过程：后面几章会具体讲&lt;/li&gt;
 &lt;/ul&gt;
  ]]></description>
-        </item>
-        <item>
-            <guid isPermalink="true">http://example.com/2024/05/13/computer-science/computer-network/ch1/</guid>
-            <title>Ch1</title>
-            <link>http://example.com/2024/05/13/computer-science/computer-network/ch1/</link>
-            <category>计算机网络</category>
-            <pubDate>Mon, 13 May 2024 00:00:00 +0800</pubDate>
-            <description><![CDATA[  ]]></description>
         </item>
         <item>
             <guid isPermalink="true">http://example.com/2024/03/21/computer-science/compile-principles/ch1/</guid>
@@ -139,50 +151,6 @@
 &lt;img data-src=&#34;image.png&#34; alt&gt;&lt;br&gt;
  各个阶段的描述&lt;br&gt;
 &lt;img data-src=&#34;image-1.png&#34; alt&gt;&lt;img data-src=&#34;image-2.png&#34; alt&gt;&lt;/p&gt;
- ]]></description>
-        </item>
-        <item>
-            <guid isPermalink="true">http://example.com/2024/03/21/computer-science/compile-principles/ch5/</guid>
-            <title>Ch2</title>
-            <link>http://example.com/2024/03/21/computer-science/compile-principles/ch5/</link>
-            <category>语义分析</category>
-            <pubDate>Thu, 21 Mar 2024 00:00:00 +0800</pubDate>
-            <description><![CDATA[ &lt;h1 id=&#34;语义分析&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#语义分析&#34;&gt;#&lt;/a&gt; 语义分析&lt;/h1&gt;
-&lt;blockquote&gt;
-&lt;p&gt;绑定，类型检查&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&#34;symbol-table&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#symbol-table&#34;&gt;#&lt;/a&gt; symbol table&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Functional style: 函数式风格
-&lt;ul&gt;
-&lt;li&gt;To keep $$\sigma_1$$ in pristine condition while creating create $$\sigma_2$$ and $$\sigma_3$$&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;Imperative style: 命令式风格
-&lt;ul&gt;
-&lt;li&gt;Modify $$\sigma_1$$ until it becomes $$\sigma_2$$.&lt;/li&gt;
-&lt;li&gt;While $$\sigma_2$$ exists, we cannot look things up in $$\sigma_1$$.&lt;/li&gt;
-&lt;li&gt;When done with $$\sigma_2$$, can undo the modification to get $$\sigma_1$$ back again.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&#34;note info 方法：&#34;&gt;
-&lt;p&gt;Hashing&lt;/p&gt;
-&lt;/div&gt;
- ]]></description>
-        </item>
-        <item>
-            <guid isPermalink="true">http://example.com/2024/03/21/computer-science/compile-principles/ch3/</guid>
-            <title>Ch2</title>
-            <link>http://example.com/2024/03/21/computer-science/compile-principles/ch3/</link>
-            <category>语法分析</category>
-            <pubDate>Thu, 21 Mar 2024 00:00:00 +0800</pubDate>
-            <description><![CDATA[ &lt;h1 id=&#34;语法分析&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#语法分析&#34;&gt;#&lt;/a&gt; 语法分析&lt;/h1&gt;
-&lt;h2 id=&#34;cfg&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#cfg&#34;&gt;#&lt;/a&gt; CFG&lt;/h2&gt;
-&lt;p&gt;见计算理论&lt;br&gt;
- Parse tree&lt;/p&gt;
-&lt;h3 id=&#34;ambiguous-grammars&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#ambiguous-grammars&#34;&gt;#&lt;/a&gt; Ambiguous grammars&lt;/h3&gt;
-&lt;h2 id&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#&#34;&gt;#&lt;/a&gt; &lt;/h2&gt;
  ]]></description>
         </item>
         <item>
@@ -252,6 +220,50 @@
 &lt;li&gt;🌰 例子&lt;/li&gt;
 &lt;li&gt;&lt;img data-src=&#34;image-6.png&#34; alt&gt;&lt;/li&gt;
 &lt;/ul&gt;
+&lt;/div&gt;
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">http://example.com/2024/03/21/computer-science/compile-principles/ch3/</guid>
+            <title>Ch2</title>
+            <link>http://example.com/2024/03/21/computer-science/compile-principles/ch3/</link>
+            <category>语法分析</category>
+            <pubDate>Thu, 21 Mar 2024 00:00:00 +0800</pubDate>
+            <description><![CDATA[ &lt;h1 id=&#34;语法分析&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#语法分析&#34;&gt;#&lt;/a&gt; 语法分析&lt;/h1&gt;
+&lt;h2 id=&#34;cfg&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#cfg&#34;&gt;#&lt;/a&gt; CFG&lt;/h2&gt;
+&lt;p&gt;见计算理论&lt;br&gt;
+ Parse tree&lt;/p&gt;
+&lt;h3 id=&#34;ambiguous-grammars&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#ambiguous-grammars&#34;&gt;#&lt;/a&gt; Ambiguous grammars&lt;/h3&gt;
+&lt;h2 id&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#&#34;&gt;#&lt;/a&gt; &lt;/h2&gt;
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">http://example.com/2024/03/21/computer-science/compile-principles/ch5/</guid>
+            <title>Ch2</title>
+            <link>http://example.com/2024/03/21/computer-science/compile-principles/ch5/</link>
+            <category>语义分析</category>
+            <pubDate>Thu, 21 Mar 2024 00:00:00 +0800</pubDate>
+            <description><![CDATA[ &lt;h1 id=&#34;语义分析&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#语义分析&#34;&gt;#&lt;/a&gt; 语义分析&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;绑定，类型检查&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;symbol-table&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#symbol-table&#34;&gt;#&lt;/a&gt; symbol table&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Functional style: 函数式风格
+&lt;ul&gt;
+&lt;li&gt;To keep $$\sigma_1$$ in pristine condition while creating create $$\sigma_2$$ and $$\sigma_3$$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Imperative style: 命令式风格
+&lt;ul&gt;
+&lt;li&gt;Modify $$\sigma_1$$ until it becomes $$\sigma_2$$.&lt;/li&gt;
+&lt;li&gt;While $$\sigma_2$$ exists, we cannot look things up in $$\sigma_1$$.&lt;/li&gt;
+&lt;li&gt;When done with $$\sigma_2$$, can undo the modification to get $$\sigma_1$$ back again.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;note info 方法：&#34;&gt;
+&lt;p&gt;Hashing&lt;/p&gt;
 &lt;/div&gt;
  ]]></description>
         </item>
