@@ -8,17 +8,18 @@
         <pubDate>Tue, 14 May 2024 00:00:00 +0800</pubDate>
         <lastBuildDate>Tue, 14 May 2024 00:00:00 +0800</lastBuildDate>
         <category>编译原理</category>
-        <category>语法分析</category>
         <category>词法分析</category>
-        <category>语义分析</category>
         <category>计算机网络</category>
-        <category>抽象语法</category>
+        <category>语法分析</category>
         <category>计算机组成</category>
+        <category>数据的表示与运算</category>
+        <category>语义分析</category>
+        <category>抽象语法</category>
         <item>
             <guid isPermalink="true">http://example.com/2024/05/14/computer-science/computer-organization/ch2/</guid>
             <title>Ch2</title>
             <link>http://example.com/2024/05/14/computer-science/computer-organization/ch2/</link>
-            <category>计算机组成</category>
+            <category>数据的表示与运算</category>
             <pubDate>Tue, 14 May 2024 00:00:00 +0800</pubDate>
             <description><![CDATA[  ]]></description>
         </item>
@@ -33,18 +34,18 @@
 怕学完忘了写个笔记保留一下顺便加深印象 x&lt;br&gt;
  王道书写得好烂、、&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h1 id=&#34;ch1-计算机系统概述&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#ch1-计算机系统概述&#34;&gt;#&lt;/a&gt; Ch1 计算机系统概述&lt;/h1&gt;
-&lt;h2 id=&#34;11-计算机发展历程&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#11-计算机发展历程&#34;&gt;#&lt;/a&gt; 1.1 计算机发展历程&lt;/h2&gt;
+&lt;h1 id=&#34;ch1-计算机系统概述&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#ch1-计算机系统概述&#34;&gt;#&lt;/a&gt; Ch1 计算机系统概述&lt;/h1&gt;
+&lt;h2 id=&#34;11-计算机发展历程&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#11-计算机发展历程&#34;&gt;#&lt;/a&gt; 1.1 计算机发展历程&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;四代计算机：电子管 -&amp;gt; 晶体管 -&amp;gt; 集成电路 -&amp;gt; 超大规模集成电路&lt;/li&gt;
 &lt;li&gt;摩尔定律：集成电路上可以容纳的晶体管数目在大约每经过 18 个月到 24 个月便会增加一倍&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;12-计算机系统层次结构&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#12-计算机系统层次结构&#34;&gt;#&lt;/a&gt; 1.2 计算机系统层次结构&lt;/h2&gt;
+&lt;h2 id=&#34;12-计算机系统层次结构&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#12-计算机系统层次结构&#34;&gt;#&lt;/a&gt; 1.2 计算机系统层次结构&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;计算机系统：硬件 + 软件&lt;/li&gt;
 &lt;li&gt;对于某一功能，既能用软件实现又能用硬件实现，称为软、硬件在逻辑功能上是等价的&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;122-硬件&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#122-硬件&#34;&gt;#&lt;/a&gt; 1.2.2 硬件&lt;/h3&gt;
+&lt;h3 id=&#34;122-硬件&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#122-硬件&#34;&gt;#&lt;/a&gt; 1.2.2 硬件&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;冯・诺依曼机的特点：
 &lt;ul&gt;
@@ -86,9 +87,9 @@
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;123-软件&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#123-软件&#34;&gt;#&lt;/a&gt; 1.2.3 软件&lt;/h3&gt;
+&lt;h3 id=&#34;123-软件&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#123-软件&#34;&gt;#&lt;/a&gt; 1.2.3 软件&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;组成：系统软件 (OS, DBMS, 编译器，...)+ 应用软件&lt;/li&gt;
+&lt;li&gt;组成：系统软件 (OS, DBMS, 编译器，…)+ 应用软件&lt;/li&gt;
 &lt;li&gt;语言：汇编语言、机器语言、高级语言
 &lt;ul&gt;
 &lt;li&gt;汇编器：把汇编语言翻译成机器语言&lt;/li&gt;
@@ -111,25 +112,25 @@ A. 汇编程序&lt;br&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;124-计算机系统的层次结构&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#124-计算机系统的层次结构&#34;&gt;#&lt;/a&gt; 1.2.4 计算机系统的层次结构&lt;/h3&gt;
+&lt;h3 id=&#34;124-计算机系统的层次结构&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#124-计算机系统的层次结构&#34;&gt;#&lt;/a&gt; 1.2.4 计算机系统的层次结构&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;看看就好&lt;/li&gt;
 &lt;li&gt;&lt;img data-src=&#34;img5.png&#34; alt&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;125-计算机系统的工作原理&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#125-计算机系统的工作原理&#34;&gt;#&lt;/a&gt; 1.2.5 计算机系统的工作原理&lt;/h3&gt;
+&lt;h3 id=&#34;125-计算机系统的工作原理&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#125-计算机系统的工作原理&#34;&gt;#&lt;/a&gt; 1.2.5 计算机系统的工作原理&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;程序执行前，需要把所含的指令和数据一起放入主存中&lt;/li&gt;
 &lt;li&gt;五个阶段：IF-ID-EX-MEM-WB&lt;/li&gt;
 &lt;li&gt;c 程序怎么变成可执行文件的：直接看图
 &lt;ul&gt;
 &lt;li&gt;&lt;img data-src=&#34;img6.png&#34; alt&gt;&lt;/li&gt;
-&lt;li&gt;汇编器把指令打包成可重定位目标代码文件：使用相对地址和符号引用来表示各个代码段之间的关系（代码段、数据段、符号表、重定位表...）使得代码或数据能在内存中任意位置加载或运行&lt;/li&gt;
+&lt;li&gt;汇编器把指令打包成可重定位目标代码文件：使用相对地址和符号引用来表示各个代码段之间的关系（代码段、数据段、符号表、重定位表…）使得代码或数据能在内存中任意位置加载或运行&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;指令执行过程：后面几章会具体讲&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;13-计算机的性能指标&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#13-计算机的性能指标&#34;&gt;#&lt;/a&gt; 1.3 计算机的性能指标&lt;/h2&gt;
-&lt;h3 id=&#34;131-主要性能指标&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#131-主要性能指标&#34;&gt;#&lt;/a&gt; 1.3.1 主要性能指标&lt;/h3&gt;
+&lt;h2 id=&#34;13-计算机的性能指标&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#13-计算机的性能指标&#34;&gt;#&lt;/a&gt; 1.3 计算机的性能指标&lt;/h2&gt;
+&lt;h3 id=&#34;131-主要性能指标&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#131-主要性能指标&#34;&gt;#&lt;/a&gt; 1.3.1 主要性能指标&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;字长：一次整数运算所能处理的二进制数据的位数&lt;div class=&#34;note info&#34;&gt;
 &lt;p&gt;机器字长、指令字长和存储字长&lt;/p&gt;

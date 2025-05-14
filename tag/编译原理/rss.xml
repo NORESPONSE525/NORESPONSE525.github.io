@@ -8,12 +8,13 @@
         <pubDate>Thu, 21 Mar 2024 00:00:00 +0800</pubDate>
         <lastBuildDate>Thu, 21 Mar 2024 00:00:00 +0800</lastBuildDate>
         <category>编译原理</category>
-        <category>语法分析</category>
         <category>词法分析</category>
-        <category>语义分析</category>
         <category>计算机网络</category>
-        <category>抽象语法</category>
+        <category>语法分析</category>
         <category>计算机组成</category>
+        <category>数据的表示与运算</category>
+        <category>语义分析</category>
+        <category>抽象语法</category>
         <item>
             <guid isPermalink="true">http://example.com/2024/03/21/computer-science/compile-principles/ch1/</guid>
             <title>Ch1</title>
@@ -24,7 +25,7 @@
 &lt;p&gt;ZJU 2025 春夏编译原理 学习笔记&lt;/p&gt;
 &lt;p&gt;主要基于虎书（&lt;em&gt;Modern Compiler Implementation in C&lt;/em&gt;, Andrew W. Appel）&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h1 id=&#34;ch1-introduction&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#ch1-introduction&#34;&gt;#&lt;/a&gt; CH1 Introduction&lt;/h1&gt;
+&lt;h1 id=&#34;ch1-introduction&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#ch1-introduction&#34;&gt;#&lt;/a&gt; CH1 Introduction&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;Two Important Concepts
 &lt;ul&gt;
