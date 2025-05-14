@@ -7,13 +7,13 @@
         <language>en</language>
         <pubDate>Tue, 14 May 2024 00:00:00 +0800</pubDate>
         <lastBuildDate>Tue, 14 May 2024 00:00:00 +0800</lastBuildDate>
-        <category>抽象语法</category>
+        <category>编译原理</category>
         <category>语法分析</category>
+        <category>词法分析</category>
         <category>语义分析</category>
         <category>计算机网络</category>
-        <category>编译原理</category>
+        <category>抽象语法</category>
         <category>计算机组成</category>
-        <category>词法分析</category>
         <item>
             <guid isPermalink="true">http://example.com/2024/05/14/computer-science/computer-organization/ch2/</guid>
             <title>Ch2</title>
@@ -178,17 +178,17 @@ A. 汇编程序&lt;br&gt;
 &lt;li&gt;其他公式，，，用到再说吧&lt;/li&gt;
 &lt;li&gt;兼容：软件或硬件的通用性&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class=&#34;note info 考过的一个&#34;&gt;
+&lt;blockquote&gt;
 &lt;p&gt;在用于科学计算的计算机中，标志系统性能最有用的参数是浮点数运算相关的&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;MFLOPS &lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;msup&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;mn&gt;6&lt;/mn&gt;&lt;/msup&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;10^6&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.8141079999999999em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;msupsub&#34;&gt;&lt;span class=&#34;vlist-t&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.8141079999999999em;&#34;&gt;&lt;span style=&#34;top:-3.063em;margin-right:0.05em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.7em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mtight&#34;&gt;6&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/li&gt;
-&lt;li&gt;GFLOPS &lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;msup&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;mn&gt;9&lt;/mn&gt;&lt;/msup&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;10^9&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.8141079999999999em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;msupsub&#34;&gt;&lt;span class=&#34;vlist-t&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.8141079999999999em;&#34;&gt;&lt;span style=&#34;top:-3.063em;margin-right:0.05em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.7em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mtight&#34;&gt;9&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/li&gt;
-&lt;li 12&gt;TFLOPS 10^&lt;/li&gt;
-&lt;li 15&gt;PFLOPS 10^&lt;/li&gt;
-&lt;li 18&gt;EFLOPS 10^&lt;/li&gt;
-&lt;li&gt;ZFLOPS 10^&lt;/li&gt;
+&lt;li&gt;MFLOPS 10^6&lt;/li&gt;
+&lt;li&gt;GFLOPS 10^9&lt;/li&gt;
+&lt;li&gt;TFLOPS 10^12&lt;/li&gt;
+&lt;li&gt;PFLOPS 10^15&lt;/li&gt;
+&lt;li&gt;EFLOPS 10^18&lt;/li&gt;
+&lt;li&gt;ZFLOPS 10^21&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;
+&lt;/blockquote&gt;
  ]]></description>
         </item>
     </channel>

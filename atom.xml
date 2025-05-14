@@ -4,13 +4,13 @@
     <title></title>
     <link href="http://example.com" />
     <updated>2024-05-13T16:00:00.000Z</updated>
-    <category term="抽象语法" />
+    <category term="编译原理" />
     <category term="语法分析" />
+    <category term="词法分析" />
     <category term="语义分析" />
     <category term="计算机网络" />
-    <category term="编译原理" />
+    <category term="抽象语法" />
     <category term="计算机组成" />
-    <category term="词法分析" />
     <entry>
         <id>http://example.com/2024/05/14/computer-science/computer-organization/ch2/</id>
         <title>Ch2</title>
@@ -181,72 +181,20 @@ A. 汇编程序&lt;br&gt;
 &lt;li&gt;其他公式，，，用到再说吧&lt;/li&gt;
 &lt;li&gt;兼容：软件或硬件的通用性&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class=&#34;note info 考过的一个&#34;&gt;
+&lt;blockquote&gt;
 &lt;p&gt;在用于科学计算的计算机中，标志系统性能最有用的参数是浮点数运算相关的&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;MFLOPS &lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;msup&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;mn&gt;6&lt;/mn&gt;&lt;/msup&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;10^6&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.8141079999999999em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;msupsub&#34;&gt;&lt;span class=&#34;vlist-t&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.8141079999999999em;&#34;&gt;&lt;span style=&#34;top:-3.063em;margin-right:0.05em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.7em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mtight&#34;&gt;6&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/li&gt;
-&lt;li&gt;GFLOPS &lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;msup&gt;&lt;mn&gt;0&lt;/mn&gt;&lt;mn&gt;9&lt;/mn&gt;&lt;/msup&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;10^9&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.8141079999999999em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;msupsub&#34;&gt;&lt;span class=&#34;vlist-t&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.8141079999999999em;&#34;&gt;&lt;span style=&#34;top:-3.063em;margin-right:0.05em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.7em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mtight&#34;&gt;9&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/li&gt;
-&lt;li 12&gt;TFLOPS 10^&lt;/li&gt;
-&lt;li 15&gt;PFLOPS 10^&lt;/li&gt;
-&lt;li 18&gt;EFLOPS 10^&lt;/li&gt;
-&lt;li&gt;ZFLOPS 10^&lt;/li&gt;
+&lt;li&gt;MFLOPS 10^6&lt;/li&gt;
+&lt;li&gt;GFLOPS 10^9&lt;/li&gt;
+&lt;li&gt;TFLOPS 10^12&lt;/li&gt;
+&lt;li&gt;PFLOPS 10^15&lt;/li&gt;
+&lt;li&gt;EFLOPS 10^18&lt;/li&gt;
+&lt;li&gt;ZFLOPS 10^21&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;
+&lt;/blockquote&gt;
 </content>
         <category term="计算机组成" />
         <updated>2024-05-12T16:00:00.000Z</updated>
-    </entry>
-    <entry>
-        <id>http://example.com/2024/03/21/computer-science/compile-principles/ch4/</id>
-        <title>Ch2</title>
-        <link rel="alternate" href="http://example.com/2024/03/21/computer-science/compile-principles/ch4/"/>
-        <content type="html"></content>
-        <category term="抽象语法" />
-        <updated>2024-03-20T16:00:00.000Z</updated>
-    </entry>
-    <entry>
-        <id>http://example.com/2024/03/21/computer-science/compile-principles/ch3/</id>
-        <title>Ch2</title>
-        <link rel="alternate" href="http://example.com/2024/03/21/computer-science/compile-principles/ch3/"/>
-        <content type="html">&lt;h1 id=&#34;语法分析&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#语法分析&#34;&gt;#&lt;/a&gt; 语法分析&lt;/h1&gt;
-&lt;h2 id=&#34;cfg&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#cfg&#34;&gt;#&lt;/a&gt; CFG&lt;/h2&gt;
-&lt;p&gt;见计算理论&lt;br&gt;
- Parse tree&lt;/p&gt;
-&lt;h3 id=&#34;ambiguous-grammars&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#ambiguous-grammars&#34;&gt;#&lt;/a&gt; Ambiguous grammars&lt;/h3&gt;
-&lt;h2 id&gt;&lt;a class=&#34;anchor&#34; href=&#34;#&#34;&gt;#&lt;/a&gt; &lt;/h2&gt;
-</content>
-        <category term="语法分析" />
-        <updated>2024-03-20T16:00:00.000Z</updated>
-    </entry>
-    <entry>
-        <id>http://example.com/2024/03/21/computer-science/compile-principles/ch5/</id>
-        <title>Ch2</title>
-        <link rel="alternate" href="http://example.com/2024/03/21/computer-science/compile-principles/ch5/"/>
-        <content type="html">&lt;h1 id=&#34;语义分析&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#语义分析&#34;&gt;#&lt;/a&gt; 语义分析&lt;/h1&gt;
-&lt;blockquote&gt;
-&lt;p&gt;绑定，类型检查&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&#34;symbol-table&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#symbol-table&#34;&gt;#&lt;/a&gt; symbol table&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Functional style: 函数式风格
-&lt;ul&gt;
-&lt;li&gt;To keep $$\sigma_1$$ in pristine condition while creating create $$\sigma_2$$ and $$\sigma_3$$&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;Imperative style: 命令式风格
-&lt;ul&gt;
-&lt;li&gt;Modify $$\sigma_1$$ until it becomes $$\sigma_2$$.&lt;/li&gt;
-&lt;li&gt;While $$\sigma_2$$ exists, we cannot look things up in $$\sigma_1$$.&lt;/li&gt;
-&lt;li&gt;When done with $$\sigma_2$$, can undo the modification to get $$\sigma_1$$ back again.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&#34;note info 方法：&#34;&gt;
-&lt;p&gt;Hashing&lt;/p&gt;
-&lt;/div&gt;
-</content>
-        <category term="语义分析" />
-        <updated>2024-03-20T16:00:00.000Z</updated>
     </entry>
     <entry>
         <id>http://example.com/2024/03/21/computer-science/compile-principles/ch1/</id>
@@ -271,6 +219,20 @@ A. 汇编程序&lt;br&gt;
 &lt;img data-src=&#34;image-1.png&#34; alt&gt;&lt;img data-src=&#34;image-2.png&#34; alt&gt;&lt;/p&gt;
 </content>
         <category term="编译原理" />
+        <updated>2024-03-20T16:00:00.000Z</updated>
+    </entry>
+    <entry>
+        <id>http://example.com/2024/03/21/computer-science/compile-principles/ch3/</id>
+        <title>Ch2</title>
+        <link rel="alternate" href="http://example.com/2024/03/21/computer-science/compile-principles/ch3/"/>
+        <content type="html">&lt;h1 id=&#34;语法分析&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#语法分析&#34;&gt;#&lt;/a&gt; 语法分析&lt;/h1&gt;
+&lt;h2 id=&#34;cfg&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#cfg&#34;&gt;#&lt;/a&gt; CFG&lt;/h2&gt;
+&lt;p&gt;见计算理论&lt;br&gt;
+ Parse tree&lt;/p&gt;
+&lt;h3 id=&#34;ambiguous-grammars&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#ambiguous-grammars&#34;&gt;#&lt;/a&gt; Ambiguous grammars&lt;/h3&gt;
+&lt;h2 id&gt;&lt;a class=&#34;anchor&#34; href=&#34;#&#34;&gt;#&lt;/a&gt; &lt;/h2&gt;
+</content>
+        <category term="语法分析" />
         <updated>2024-03-20T16:00:00.000Z</updated>
     </entry>
     <entry>
@@ -341,6 +303,44 @@ A. 汇编程序&lt;br&gt;
 &lt;/div&gt;
 </content>
         <category term="词法分析" />
+        <updated>2024-03-20T16:00:00.000Z</updated>
+    </entry>
+    <entry>
+        <id>http://example.com/2024/03/21/computer-science/compile-principles/ch5/</id>
+        <title>Ch2</title>
+        <link rel="alternate" href="http://example.com/2024/03/21/computer-science/compile-principles/ch5/"/>
+        <content type="html">&lt;h1 id=&#34;语义分析&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#语义分析&#34;&gt;#&lt;/a&gt; 语义分析&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;绑定，类型检查&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;symbol-table&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#symbol-table&#34;&gt;#&lt;/a&gt; symbol table&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Functional style: 函数式风格
+&lt;ul&gt;
+&lt;li&gt;To keep $$\sigma_1$$ in pristine condition while creating create $$\sigma_2$$ and $$\sigma_3$$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Imperative style: 命令式风格
+&lt;ul&gt;
+&lt;li&gt;Modify $$\sigma_1$$ until it becomes $$\sigma_2$$.&lt;/li&gt;
+&lt;li&gt;While $$\sigma_2$$ exists, we cannot look things up in $$\sigma_1$$.&lt;/li&gt;
+&lt;li&gt;When done with $$\sigma_2$$, can undo the modification to get $$\sigma_1$$ back again.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;note info 方法：&#34;&gt;
+&lt;p&gt;Hashing&lt;/p&gt;
+&lt;/div&gt;
+</content>
+        <category term="语义分析" />
+        <updated>2024-03-20T16:00:00.000Z</updated>
+    </entry>
+    <entry>
+        <id>http://example.com/2024/03/21/computer-science/compile-principles/ch4/</id>
+        <title>Ch2</title>
+        <link rel="alternate" href="http://example.com/2024/03/21/computer-science/compile-principles/ch4/"/>
+        <content type="html"></content>
+        <category term="抽象语法" />
         <updated>2024-03-20T16:00:00.000Z</updated>
     </entry>
 </feed>

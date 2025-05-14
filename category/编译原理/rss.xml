@@ -7,65 +7,13 @@
         <language>en</language>
         <pubDate>Thu, 21 Mar 2024 00:00:00 +0800</pubDate>
         <lastBuildDate>Thu, 21 Mar 2024 00:00:00 +0800</lastBuildDate>
-        <category>抽象语法</category>
+        <category>编译原理</category>
         <category>语法分析</category>
+        <category>词法分析</category>
         <category>语义分析</category>
         <category>计算机网络</category>
-        <category>编译原理</category>
+        <category>抽象语法</category>
         <category>计算机组成</category>
-        <category>词法分析</category>
-        <item>
-            <guid isPermalink="true">http://example.com/2024/03/21/computer-science/compile-principles/ch4/</guid>
-            <title>Ch2</title>
-            <link>http://example.com/2024/03/21/computer-science/compile-principles/ch4/</link>
-            <category>抽象语法</category>
-            <pubDate>Thu, 21 Mar 2024 00:00:00 +0800</pubDate>
-            <description><![CDATA[  ]]></description>
-        </item>
-        <item>
-            <guid isPermalink="true">http://example.com/2024/03/21/computer-science/compile-principles/ch3/</guid>
-            <title>Ch2</title>
-            <link>http://example.com/2024/03/21/computer-science/compile-principles/ch3/</link>
-            <category>语法分析</category>
-            <pubDate>Thu, 21 Mar 2024 00:00:00 +0800</pubDate>
-            <description><![CDATA[ &lt;h1 id=&#34;语法分析&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#语法分析&#34;&gt;#&lt;/a&gt; 语法分析&lt;/h1&gt;
-&lt;h2 id=&#34;cfg&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#cfg&#34;&gt;#&lt;/a&gt; CFG&lt;/h2&gt;
-&lt;p&gt;见计算理论&lt;br&gt;
- Parse tree&lt;/p&gt;
-&lt;h3 id=&#34;ambiguous-grammars&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#ambiguous-grammars&#34;&gt;#&lt;/a&gt; Ambiguous grammars&lt;/h3&gt;
-&lt;h2 id&gt;&lt;a class=&#34;anchor&#34; href=&#34;#&#34;&gt;#&lt;/a&gt; &lt;/h2&gt;
- ]]></description>
-        </item>
-        <item>
-            <guid isPermalink="true">http://example.com/2024/03/21/computer-science/compile-principles/ch5/</guid>
-            <title>Ch2</title>
-            <link>http://example.com/2024/03/21/computer-science/compile-principles/ch5/</link>
-            <category>语义分析</category>
-            <pubDate>Thu, 21 Mar 2024 00:00:00 +0800</pubDate>
-            <description><![CDATA[ &lt;h1 id=&#34;语义分析&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#语义分析&#34;&gt;#&lt;/a&gt; 语义分析&lt;/h1&gt;
-&lt;blockquote&gt;
-&lt;p&gt;绑定，类型检查&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&#34;symbol-table&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#symbol-table&#34;&gt;#&lt;/a&gt; symbol table&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Functional style: 函数式风格
-&lt;ul&gt;
-&lt;li&gt;To keep $$\sigma_1$$ in pristine condition while creating create $$\sigma_2$$ and $$\sigma_3$$&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;Imperative style: 命令式风格
-&lt;ul&gt;
-&lt;li&gt;Modify $$\sigma_1$$ until it becomes $$\sigma_2$$.&lt;/li&gt;
-&lt;li&gt;While $$\sigma_2$$ exists, we cannot look things up in $$\sigma_1$$.&lt;/li&gt;
-&lt;li&gt;When done with $$\sigma_2$$, can undo the modification to get $$\sigma_1$$ back again.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&#34;note info 方法：&#34;&gt;
-&lt;p&gt;Hashing&lt;/p&gt;
-&lt;/div&gt;
- ]]></description>
-        </item>
         <item>
             <guid isPermalink="true">http://example.com/2024/03/21/computer-science/compile-principles/ch1/</guid>
             <title>Ch1</title>
@@ -89,6 +37,20 @@
 &lt;img data-src=&#34;image.png&#34; alt&gt;&lt;br&gt;
  各个阶段的描述&lt;br&gt;
 &lt;img data-src=&#34;image-1.png&#34; alt&gt;&lt;img data-src=&#34;image-2.png&#34; alt&gt;&lt;/p&gt;
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">http://example.com/2024/03/21/computer-science/compile-principles/ch3/</guid>
+            <title>Ch2</title>
+            <link>http://example.com/2024/03/21/computer-science/compile-principles/ch3/</link>
+            <category>语法分析</category>
+            <pubDate>Thu, 21 Mar 2024 00:00:00 +0800</pubDate>
+            <description><![CDATA[ &lt;h1 id=&#34;语法分析&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#语法分析&#34;&gt;#&lt;/a&gt; 语法分析&lt;/h1&gt;
+&lt;h2 id=&#34;cfg&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#cfg&#34;&gt;#&lt;/a&gt; CFG&lt;/h2&gt;
+&lt;p&gt;见计算理论&lt;br&gt;
+ Parse tree&lt;/p&gt;
+&lt;h3 id=&#34;ambiguous-grammars&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#ambiguous-grammars&#34;&gt;#&lt;/a&gt; Ambiguous grammars&lt;/h3&gt;
+&lt;h2 id&gt;&lt;a class=&#34;anchor&#34; href=&#34;#&#34;&gt;#&lt;/a&gt; &lt;/h2&gt;
  ]]></description>
         </item>
         <item>
@@ -160,6 +122,44 @@
 &lt;/ul&gt;
 &lt;/div&gt;
  ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">http://example.com/2024/03/21/computer-science/compile-principles/ch5/</guid>
+            <title>Ch2</title>
+            <link>http://example.com/2024/03/21/computer-science/compile-principles/ch5/</link>
+            <category>语义分析</category>
+            <pubDate>Thu, 21 Mar 2024 00:00:00 +0800</pubDate>
+            <description><![CDATA[ &lt;h1 id=&#34;语义分析&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#语义分析&#34;&gt;#&lt;/a&gt; 语义分析&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;绑定，类型检查&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;symbol-table&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#symbol-table&#34;&gt;#&lt;/a&gt; symbol table&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Functional style: 函数式风格
+&lt;ul&gt;
+&lt;li&gt;To keep $$\sigma_1$$ in pristine condition while creating create $$\sigma_2$$ and $$\sigma_3$$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Imperative style: 命令式风格
+&lt;ul&gt;
+&lt;li&gt;Modify $$\sigma_1$$ until it becomes $$\sigma_2$$.&lt;/li&gt;
+&lt;li&gt;While $$\sigma_2$$ exists, we cannot look things up in $$\sigma_1$$.&lt;/li&gt;
+&lt;li&gt;When done with $$\sigma_2$$, can undo the modification to get $$\sigma_1$$ back again.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;note info 方法：&#34;&gt;
+&lt;p&gt;Hashing&lt;/p&gt;
+&lt;/div&gt;
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">http://example.com/2024/03/21/computer-science/compile-principles/ch4/</guid>
+            <title>Ch2</title>
+            <link>http://example.com/2024/03/21/computer-science/compile-principles/ch4/</link>
+            <category>抽象语法</category>
+            <pubDate>Thu, 21 Mar 2024 00:00:00 +0800</pubDate>
+            <description><![CDATA[  ]]></description>
         </item>
     </channel>
 </rss>
