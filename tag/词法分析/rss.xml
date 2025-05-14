@@ -7,24 +7,24 @@
         <language>en</language>
         <pubDate>Thu, 21 Mar 2024 00:00:00 +0800</pubDate>
         <lastBuildDate>Thu, 21 Mar 2024 00:00:00 +0800</lastBuildDate>
-        <category>编译原理</category>
-        <category>词法分析</category>
+        <category>抽象语法</category>
         <category>语法分析</category>
         <category>语义分析</category>
         <category>计算机网络</category>
-        <category>抽象语法</category>
+        <category>编译原理</category>
         <category>计算机组成</category>
+        <category>词法分析</category>
         <item>
             <guid isPermalink="true">http://example.com/2024/03/21/computer-science/compile-principles/ch2/</guid>
             <title>Ch2</title>
             <link>http://example.com/2024/03/21/computer-science/compile-principles/ch2/</link>
             <category>词法分析</category>
             <pubDate>Thu, 21 Mar 2024 00:00:00 +0800</pubDate>
-            <description><![CDATA[ &lt;h1 id=&#34;ch2-词法分析&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#ch2-词法分析&#34;&gt;#&lt;/a&gt; Ch2 词法分析&lt;/h1&gt;
+            <description><![CDATA[ &lt;h1 id=&#34;ch2-词法分析&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#ch2-词法分析&#34;&gt;#&lt;/a&gt; Ch2 词法分析&lt;/h1&gt;
 &lt;blockquote&gt;
 &lt;p&gt;把 input 分解成一个个 token&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h2 id=&#34;regular-expression&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#regular-expression&#34;&gt;#&lt;/a&gt; Regular Expression&lt;/h2&gt;
+&lt;h2 id=&#34;regular-expression&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#regular-expression&#34;&gt;#&lt;/a&gt; Regular Expression&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Language: a set of strings&lt;/li&gt;
 &lt;li&gt;String: a finite sequence of characters&lt;/li&gt;
@@ -36,7 +36,7 @@
 &lt;div class=&#34;note info&#34;&gt;
 &lt;p&gt;DFA, NFA 相关 见计算理论&lt;/p&gt;
 &lt;/div&gt;
-&lt;h2 id=&#34;re转nfa&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#re转nfa&#34;&gt;#&lt;/a&gt; RE 转 NFA&lt;/h2&gt;
+&lt;h2 id=&#34;re转nfa&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#re转nfa&#34;&gt;#&lt;/a&gt; RE 转 NFA&lt;/h2&gt;
 &lt;div class=&#34;note info 方法：&#34;&gt;
 &lt;ol&gt;
 &lt;li&gt;画出初始态和终态&lt;/li&gt;
@@ -44,7 +44,7 @@
 &lt;img data-src=&#34;image-2.jpg&#34; alt&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/div&gt;
-&lt;h2 id=&#34;nfa转dfa&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#nfa转dfa&#34;&gt;#&lt;/a&gt; NFA 转 DFA&lt;/h2&gt;
+&lt;h2 id=&#34;nfa转dfa&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#nfa转dfa&#34;&gt;#&lt;/a&gt; NFA 转 DFA&lt;/h2&gt;
 &lt;p&gt;从初始状态的闭包开始，每次根据 \epsilon 和当前状态的闭包，得到下一个状态的闭包，直到得到终态的闭包。&lt;/p&gt;
 &lt;details class=&#34;info&#34;&gt;&lt;summary&gt;example&lt;/summary&gt;&lt;div&gt;
 &lt;div class=&#34;tab&#34; data-id=&#34;id3&#34; data-title=&#34;题目&#34;&gt;
@@ -57,7 +57,7 @@
 &lt;img data-src=&#34;image-4.png&#34; alt&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;/details&gt;
-&lt;h2 id=&#34;最小化dfa&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#最小化dfa&#34;&gt;#&lt;/a&gt; 最小化 DFA&lt;/h2&gt;
+&lt;h2 id=&#34;最小化dfa&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#最小化dfa&#34;&gt;#&lt;/a&gt; 最小化 DFA&lt;/h2&gt;
 &lt;p&gt;含义：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;没有多余状态：&lt;/li&gt;

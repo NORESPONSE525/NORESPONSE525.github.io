@@ -9,7 +9,7 @@
             "url": "http://example.com/2024/03/21/computer-science/compile-principles/ch5/",
             "title": "Ch2",
             "date_published": "2024-03-20T16:00:00.000Z",
-            "content_html": "<h1 id=\"语义分析\"><a class=\"markdownIt-Anchor\" href=\"#语义分析\">#</a> 语义分析</h1>\n<blockquote>\n<p>绑定，类型检查</p>\n</blockquote>\n<h2 id=\"symbol-table\"><a class=\"markdownIt-Anchor\" href=\"#symbol-table\">#</a> symbol table</h2>\n<ul>\n<li>Functional style: 函数式风格\n<ul>\n<li>To keep $$\\sigma_1$$ in pristine condition while creating create $$\\sigma_2$$ and $$\\sigma_3$$</li>\n</ul>\n</li>\n<li>Imperative style: 命令式风格\n<ul>\n<li>Modify $$\\sigma_1$$ until it becomes $$\\sigma_2$$.</li>\n<li>While $$\\sigma_2$$ exists, we cannot look things up in $$\\sigma_1$$.</li>\n<li>When done with $$\\sigma_2$$, can undo the modification to get $$\\sigma_1$$ back again.</li>\n</ul>\n</li>\n</ul>\n<div class=\"note info 方法：\">\n<p>Hashing</p>\n</div>\n",
+            "content_html": "<h1 id=\"语义分析\"><a class=\"anchor\" href=\"#语义分析\">#</a> 语义分析</h1>\n<blockquote>\n<p>绑定，类型检查</p>\n</blockquote>\n<h2 id=\"symbol-table\"><a class=\"anchor\" href=\"#symbol-table\">#</a> symbol table</h2>\n<ul>\n<li>Functional style: 函数式风格\n<ul>\n<li>To keep $$\\sigma_1$$ in pristine condition while creating create $$\\sigma_2$$ and $$\\sigma_3$$</li>\n</ul>\n</li>\n<li>Imperative style: 命令式风格\n<ul>\n<li>Modify $$\\sigma_1$$ until it becomes $$\\sigma_2$$.</li>\n<li>While $$\\sigma_2$$ exists, we cannot look things up in $$\\sigma_1$$.</li>\n<li>When done with $$\\sigma_2$$, can undo the modification to get $$\\sigma_1$$ back again.</li>\n</ul>\n</li>\n</ul>\n<div class=\"note info 方法：\">\n<p>Hashing</p>\n</div>\n",
             "tags": [
                 "语义分析"
             ]
