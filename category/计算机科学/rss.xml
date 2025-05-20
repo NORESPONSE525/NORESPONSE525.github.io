@@ -9,13 +9,13 @@
         <lastBuildDate>Tue, 14 May 2024 00:00:00 +0800</lastBuildDate>
         <category>人工智能</category>
         <category>编译原理</category>
-        <category>词法分析</category>
         <category>语法分析</category>
         <category>抽象语法</category>
+        <category>词法分析</category>
         <category>语义分析</category>
-        <category>计算机网络</category>
         <category>计算机组成</category>
         <category>数据的表示与运算</category>
+        <category>计算机网络</category>
         <item>
             <guid isPermalink="true">http://example.com/2024/05/14/computer-science/computer-organization/ch2/</guid>
             <title>Ch2</title>
@@ -62,14 +62,6 @@ int 变成 short 直接截断&lt;br&gt;
 小字长转大字长不会改变值，如果是 unsigned 就会在前面补 0，如果是有符号数就在前面补符号位&lt;br&gt;
  short 转 unsigned int，先对 short 进行符号扩展到 int，再把它当做 unsigned int，如果是 unsigned short 转 int，就进行零扩展再看成 int……&lt;/p&gt;
  ]]></description>
-        </item>
-        <item>
-            <guid isPermalink="true">http://example.com/2024/05/13/computer-science/computer-network/ch1/</guid>
-            <title>Ch1</title>
-            <link>http://example.com/2024/05/13/computer-science/computer-network/ch1/</link>
-            <category>计算机网络</category>
-            <pubDate>Mon, 13 May 2024 00:00:00 +0800</pubDate>
-            <description><![CDATA[  ]]></description>
         </item>
         <item>
             <guid isPermalink="true">http://example.com/2024/05/13/computer-science/computer-organization/ch1/</guid>
@@ -239,6 +231,14 @@ A. 汇编程序&lt;br&gt;
 &lt;/ul&gt;
 &lt;/blockquote&gt;
  ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">http://example.com/2024/05/13/computer-science/computer-network/ch1/</guid>
+            <title>Ch1</title>
+            <link>http://example.com/2024/05/13/computer-science/computer-network/ch1/</link>
+            <category>计算机网络</category>
+            <pubDate>Mon, 13 May 2024 00:00:00 +0800</pubDate>
+            <description><![CDATA[  ]]></description>
         </item>
         <item>
             <guid isPermalink="true">http://example.com/2024/03/29/computer-science/compile-principles/ch4/</guid>
