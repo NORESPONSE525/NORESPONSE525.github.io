@@ -8,14 +8,14 @@
         <pubDate>Fri, 29 Mar 2024 00:00:00 +0800</pubDate>
         <lastBuildDate>Fri, 29 Mar 2024 00:00:00 +0800</lastBuildDate>
         <category>人工智能</category>
+        <category>编译原理</category>
+        <category>词法分析</category>
         <category>语法分析</category>
         <category>抽象语法</category>
         <category>语义分析</category>
-        <category>词法分析</category>
-        <category>计算机网络</category>
-        <category>编译原理</category>
-        <category>数据的表示与运算</category>
         <category>计算机组成</category>
+        <category>数据的表示与运算</category>
+        <category>计算机网络</category>
         <item>
             <guid isPermalink="true">http://example.com/2024/03/29/computer-science/compile-principles/ch4/</guid>
             <title>Ch4</title>
@@ -109,6 +109,31 @@
  ]]></description>
         </item>
         <item>
+            <guid isPermalink="true">http://example.com/2024/03/21/computer-science/compile-principles/ch1/</guid>
+            <title>Ch1</title>
+            <link>http://example.com/2024/03/21/computer-science/compile-principles/ch1/</link>
+            <category>编译原理</category>
+            <pubDate>Thu, 21 Mar 2024 00:00:00 +0800</pubDate>
+            <description><![CDATA[ &lt;blockquote&gt;
+&lt;p&gt;ZJU 2025 春夏编译原理 学习笔记&lt;/p&gt;
+&lt;p&gt;主要基于虎书（&lt;em&gt;Modern Compiler Implementation in C&lt;/em&gt;, Andrew W. Appel）&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&#34;ch1-introduction&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#ch1-introduction&#34;&gt;#&lt;/a&gt; CH1 Introduction&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;Two Important Concepts
+&lt;ul&gt;
+&lt;li&gt;Phases（阶段）&lt;/li&gt;
+&lt;li&gt;Interfaces（接口）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;方框里的是 phase，中间的是 interface&lt;br&gt;
+&lt;img data-src=&#34;image.png&#34; alt&gt;&lt;br&gt;
+ 各个阶段的描述&lt;br&gt;
+&lt;img data-src=&#34;image-1.png&#34; alt&gt;&lt;img data-src=&#34;image-2.png&#34; alt&gt;&lt;/p&gt;
+ ]]></description>
+        </item>
+        <item>
             <guid isPermalink="true">http://example.com/2024/03/21/computer-science/compile-principles/ch5/</guid>
             <title>Ch5</title>
             <link>http://example.com/2024/03/21/computer-science/compile-principles/ch5/</link>
@@ -136,31 +161,6 @@
 &lt;div class=&#34;note info 方法：&#34;&gt;
 &lt;p&gt;Hashing&lt;/p&gt;
 &lt;/div&gt;
- ]]></description>
-        </item>
-        <item>
-            <guid isPermalink="true">http://example.com/2024/03/21/computer-science/compile-principles/ch1/</guid>
-            <title>Ch1</title>
-            <link>http://example.com/2024/03/21/computer-science/compile-principles/ch1/</link>
-            <category>编译原理</category>
-            <pubDate>Thu, 21 Mar 2024 00:00:00 +0800</pubDate>
-            <description><![CDATA[ &lt;blockquote&gt;
-&lt;p&gt;ZJU 2025 春夏编译原理 学习笔记&lt;/p&gt;
-&lt;p&gt;主要基于虎书（&lt;em&gt;Modern Compiler Implementation in C&lt;/em&gt;, Andrew W. Appel）&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h1 id=&#34;ch1-introduction&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#ch1-introduction&#34;&gt;#&lt;/a&gt; CH1 Introduction&lt;/h1&gt;
-&lt;ul&gt;
-&lt;li&gt;Two Important Concepts
-&lt;ul&gt;
-&lt;li&gt;Phases（阶段）&lt;/li&gt;
-&lt;li&gt;Interfaces（接口）&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;方框里的是 phase，中间的是 interface&lt;br&gt;
-&lt;img data-src=&#34;image.png&#34; alt&gt;&lt;br&gt;
- 各个阶段的描述&lt;br&gt;
-&lt;img data-src=&#34;image-1.png&#34; alt&gt;&lt;img data-src=&#34;image-2.png&#34; alt&gt;&lt;/p&gt;
  ]]></description>
         </item>
     </channel>
