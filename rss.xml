@@ -8,37 +8,14 @@
         <pubDate>Mon, 20 May 2024 00:00:00 +0800</pubDate>
         <lastBuildDate>Mon, 20 May 2024 00:00:00 +0800</lastBuildDate>
         <category>人工智能</category>
-        <category>数据的表示与运算</category>
-        <category>计算机网络</category>
         <category>词法分析</category>
-        <category>计算机组成</category>
         <category>编译原理</category>
+        <category>语义分析</category>
         <category>语法分析</category>
         <category>抽象语法</category>
-        <category>语义分析</category>
-        <item>
-            <guid isPermalink="true">http://example.com/2024/05/20/AI/week1/</guid>
-            <title>Week1</title>
-            <link>http://example.com/2024/05/20/AI/week1/</link>
-            <category>人工智能</category>
-            <pubDate>Mon, 20 May 2024 00:00:00 +0800</pubDate>
-            <description><![CDATA[ &lt;blockquote&gt;
-&lt;p&gt;2025-2026 春夏人工智能课程笔记&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h1 id=&#34;ch1-绪论&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#ch1-绪论&#34;&gt;#&lt;/a&gt; Ch1 绪论&lt;/h1&gt;
-&lt;ul&gt;
-&lt;li&gt;人工智能求解：
-&lt;ul&gt;
-&lt;li&gt;以符号主义为核心的逻辑推理：将概念（如命题等）符号化，从若干判断（前提）出发得到新判断（结论）&lt;/li&gt;
-&lt;li&gt;以问题求解为核心的探寻搜索：探寻搜索依据已有信息来寻找满足约束条件的待求解问题的答案&lt;/li&gt;
-&lt;li&gt;以数据驱动为核心的机器学习：从数据中发现数据所承载语义（如概念）的内在模式&lt;/li&gt;
-&lt;li&gt;以行为主义为核心的强化学习：根据环境所提供的奖罚反馈来学习所处状态可施加的最佳行动，在 “探索（未知空间）- 利用（已有经验）（exploration vs. exploitation）” 之间寻找平衡，完成某个序列化任务，具备自我学习能力&lt;/li&gt;
-&lt;li&gt;以博弈对抗为核心的群体智能：从 “数据拟合” 优化解的求取向 “均衡解” 的求取迈进&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
- ]]></description>
-        </item>
+        <category>计算机组成</category>
+        <category>计算机网络</category>
+        <category>数据的表示与运算</category>
         <item>
             <guid isPermalink="true">http://example.com/2024/05/20/AI/week2/</guid>
             <title>Week2</title>
@@ -116,6 +93,29 @@
  ]]></description>
         </item>
         <item>
+            <guid isPermalink="true">http://example.com/2024/05/20/AI/week1/</guid>
+            <title>Week1</title>
+            <link>http://example.com/2024/05/20/AI/week1/</link>
+            <category>人工智能</category>
+            <pubDate>Mon, 20 May 2024 00:00:00 +0800</pubDate>
+            <description><![CDATA[ &lt;blockquote&gt;
+&lt;p&gt;2025-2026 春夏人工智能课程笔记&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&#34;ch1-绪论&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#ch1-绪论&#34;&gt;#&lt;/a&gt; Ch1 绪论&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;人工智能求解：
+&lt;ul&gt;
+&lt;li&gt;以符号主义为核心的逻辑推理：将概念（如命题等）符号化，从若干判断（前提）出发得到新判断（结论）&lt;/li&gt;
+&lt;li&gt;以问题求解为核心的探寻搜索：探寻搜索依据已有信息来寻找满足约束条件的待求解问题的答案&lt;/li&gt;
+&lt;li&gt;以数据驱动为核心的机器学习：从数据中发现数据所承载语义（如概念）的内在模式&lt;/li&gt;
+&lt;li&gt;以行为主义为核心的强化学习：根据环境所提供的奖罚反馈来学习所处状态可施加的最佳行动，在 “探索（未知空间）- 利用（已有经验）（exploration vs. exploitation）” 之间寻找平衡，完成某个序列化任务，具备自我学习能力&lt;/li&gt;
+&lt;li&gt;以博弈对抗为核心的群体智能：从 “数据拟合” 优化解的求取向 “均衡解” 的求取迈进&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+ ]]></description>
+        </item>
+        <item>
             <guid isPermalink="true">http://example.com/2024/05/14/computer-science/computer-organization/ch2/</guid>
             <title>Ch2</title>
             <link>http://example.com/2024/05/14/computer-science/computer-organization/ch2/</link>
@@ -188,9 +188,9 @@ C. &lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&l
 &lt;p&gt;一个 8 位的二进制整数由 2 个 “0” 和 6 个 “1” 组成，采用补码或者移码表示，则&lt;br&gt;
 若采用移码表示，偏置值为 127，则此整数最小为 - 64（偏置为 127 需要在补码加上 1111111，&lt;mark&gt;要让数值最小，应该把 1 放低位&lt;/mark&gt;，所以移码是 00111111，补码是 10111111 是 - 64）&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;：前面说过，移码大真值大，移码小真值小，所以要让数值最小把 1 放低位就行了&lt;br&gt;
-若采用补码表示，则此整数最小为 - 97（10011111=-97）&lt;/p&gt;
+&lt;p&gt;：前面说过，移码大真值大，移码小真值小，所以要让数值最小把 1 放低位就行了&lt;/p&gt;
 &lt;/blockquote&gt;
+&lt;p&gt;若采用补码表示，则此整数最小为 - 97（10011111=-97）&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;tab&#34; data-id=&#34;id3&#34; data-title=&#34;比较大小的方法&#34;&gt;
 &lt;p&gt;对于无符号数，数值大的数就大&lt;br&gt;
@@ -199,14 +199,6 @@ C. &lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&l
 &lt;/div&gt;
 &lt;/div&gt;&lt;/details&gt;
  ]]></description>
-        </item>
-        <item>
-            <guid isPermalink="true">http://example.com/2024/05/13/computer-science/computer-network/ch1/</guid>
-            <title>Ch1</title>
-            <link>http://example.com/2024/05/13/computer-science/computer-network/ch1/</link>
-            <category>计算机网络</category>
-            <pubDate>Mon, 13 May 2024 00:00:00 +0800</pubDate>
-            <description><![CDATA[  ]]></description>
         </item>
         <item>
             <guid isPermalink="true">http://example.com/2024/05/13/computer-science/computer-organization/ch1/</guid>
@@ -376,6 +368,14 @@ A. 汇编程序&lt;br&gt;
 &lt;/ul&gt;
 &lt;/blockquote&gt;
  ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">http://example.com/2024/05/13/computer-science/computer-network/ch1/</guid>
+            <title>Ch1</title>
+            <link>http://example.com/2024/05/13/computer-science/computer-network/ch1/</link>
+            <category>计算机网络</category>
+            <pubDate>Mon, 13 May 2024 00:00:00 +0800</pubDate>
+            <description><![CDATA[  ]]></description>
         </item>
         <item>
             <guid isPermalink="true">http://example.com/2024/03/29/computer-science/compile-principles/ch4/</guid>

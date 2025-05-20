@@ -5,14 +5,14 @@
     <link href="http://example.com" />
     <updated>2024-05-13T16:00:00.000Z</updated>
     <category term="人工智能" />
-    <category term="数据的表示与运算" />
-    <category term="计算机网络" />
     <category term="词法分析" />
-    <category term="计算机组成" />
     <category term="编译原理" />
+    <category term="语义分析" />
     <category term="语法分析" />
     <category term="抽象语法" />
-    <category term="语义分析" />
+    <category term="计算机组成" />
+    <category term="计算机网络" />
+    <category term="数据的表示与运算" />
     <entry>
         <id>http://example.com/2024/05/14/computer-science/computer-organization/ch2/</id>
         <title>Ch2</title>
@@ -84,9 +84,9 @@ C. &lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&l
 &lt;p&gt;一个 8 位的二进制整数由 2 个 “0” 和 6 个 “1” 组成，采用补码或者移码表示，则&lt;br&gt;
 若采用移码表示，偏置值为 127，则此整数最小为 - 64（偏置为 127 需要在补码加上 1111111，&lt;mark&gt;要让数值最小，应该把 1 放低位&lt;/mark&gt;，所以移码是 00111111，补码是 10111111 是 - 64）&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;：前面说过，移码大真值大，移码小真值小，所以要让数值最小把 1 放低位就行了&lt;br&gt;
-若采用补码表示，则此整数最小为 - 97（10011111=-97）&lt;/p&gt;
+&lt;p&gt;：前面说过，移码大真值大，移码小真值小，所以要让数值最小把 1 放低位就行了&lt;/p&gt;
 &lt;/blockquote&gt;
+&lt;p&gt;若采用补码表示，则此整数最小为 - 97（10011111=-97）&lt;/p&gt;
 &lt;/div&gt;
 &lt;div class=&#34;tab&#34; data-id=&#34;id3&#34; data-title=&#34;比较大小的方法&#34;&gt;
 &lt;p&gt;对于无符号数，数值大的数就大&lt;br&gt;
