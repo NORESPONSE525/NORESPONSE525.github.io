@@ -9,10 +9,10 @@
     <category term="词法分析" />
     <category term="语法分析" />
     <category term="抽象语法" />
+    <category term="计算机网络" />
     <category term="语义分析" />
     <category term="计算机组成" />
     <category term="数据的表示与运算" />
-    <category term="计算机网络" />
     <entry>
         <id>http://example.com/2024/05/14/computer-science/computer-organization/ch2/</id>
         <title>Ch2</title>
@@ -57,6 +57,14 @@ int 变成 short 直接截断&lt;br&gt;
 </content>
         <category term="数据的表示与运算" />
         <updated>2024-05-13T16:00:00.000Z</updated>
+    </entry>
+    <entry>
+        <id>http://example.com/2024/05/13/computer-science/computer-network/ch1/</id>
+        <title>Ch1</title>
+        <link rel="alternate" href="http://example.com/2024/05/13/computer-science/computer-network/ch1/"/>
+        <content type="html"></content>
+        <category term="计算机网络" />
+        <updated>2024-05-12T16:00:00.000Z</updated>
     </entry>
     <entry>
         <id>http://example.com/2024/05/13/computer-science/computer-organization/ch1/</id>
@@ -225,14 +233,6 @@ A. 汇编程序&lt;br&gt;
 &lt;/blockquote&gt;
 </content>
         <category term="计算机组成" />
-        <updated>2024-05-12T16:00:00.000Z</updated>
-    </entry>
-    <entry>
-        <id>http://example.com/2024/05/13/computer-science/computer-network/ch1/</id>
-        <title>Ch1</title>
-        <link rel="alternate" href="http://example.com/2024/05/13/computer-science/computer-network/ch1/"/>
-        <content type="html"></content>
-        <category term="计算机网络" />
         <updated>2024-05-12T16:00:00.000Z</updated>
     </entry>
     <entry>
