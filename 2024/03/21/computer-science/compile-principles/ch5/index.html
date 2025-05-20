@@ -101,7 +101,7 @@ NoResponse's Blog = </title>
 
       </div>
       <div id="imgs" class="pjax">
-          <img src="/images/bg1.png">
+          <img src="/images/bg2.png">
       </div>
     </header>
     <div id="waves">
@@ -149,21 +149,28 @@ NoResponse's Blog = </title>
   <div class="body md" itemprop="articleBody">
     
 
-    <h1 id="语义分析"><a href="#语义分析" class="headerlink" title="语义分析"></a>语义分析</h1><blockquote>
+    <h1 id="语义分析"><a class="markdownIt-Anchor" href="#语义分析">#</a> 语义分析</h1>
+<blockquote>
 <p>绑定，类型检查</p>
 </blockquote>
-<h2 id="symbol-table"><a href="#symbol-table" class="headerlink" title="symbol table"></a>symbol table</h2><ul>
-<li>Functional style: 函数式风格<ul>
-<li>To keep $\sigma_1$ in pristine condition while creating create $\sigma_2$ and $\sigma_3$</li>
+<h2 id="symbol-table"><a class="markdownIt-Anchor" href="#symbol-table">#</a> symbol table</h2>
+<ul>
+<li>Functional style: 函数式风格
+<ul>
+<li>To keep <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>σ</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">\sigma_1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">σ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> in pristine condition while creating create <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>σ</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">\sigma_2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">σ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> and <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>σ</mi><mn>3</mn></msub></mrow><annotation encoding="application/x-tex">\sigma_3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">σ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">3</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></li>
 </ul>
 </li>
-<li>Imperative style: 命令式风格<ul>
-<li>Modify $\sigma_1$ until it becomes $\sigma_2$. </li>
-<li>While $\sigma_2$ exists, we cannot look things up in $\sigma_1$. </li>
-<li>When done with $\sigma_2$, can undo the modification to get $\sigma_1$ back again.<br>:::info 方法：<br>Hashing<br>:::</li>
+<li>Imperative style: 命令式风格
+<ul>
+<li>Modify <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>σ</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">\sigma_1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">σ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> until it becomes <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>σ</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">\sigma_2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">σ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>.</li>
+<li>While <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>σ</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">\sigma_2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">σ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> exists, we cannot look things up in <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>σ</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">\sigma_1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">σ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>.</li>
+<li>When done with <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>σ</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">\sigma_2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">σ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>, can undo the modification to get <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>σ</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">\sigma_1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">σ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> back again.</li>
 </ul>
 </li>
 </ul>
+<div class="note info 方法：">
+<p>Hashing</p>
+</div>
 
       <div class="tags">
           <a href="/tags/%E8%AF%AD%E4%B9%89%E5%88%86%E6%9E%90/" rel="tag"><i class="ic i-tag"></i> 语义分析</a>
@@ -231,14 +238,22 @@ NoResponse's Blog = </title>
 
 <div class="post-nav">
     <div class="item left">
+      
+
+  <a href="/2024/03/21/computer-science/compile-principles/ch1/" itemprop="url" rel="prev" data-background-image="&#x2F;images&#x2F;bg1.png" title="Ch1">
+  <span class="type">Previous Post</span>
+  <span class="category"><i class="ic i-flag"></i> 编译原理</span>
+  <h3>Ch1</h3>
+  </a>
+
     </div>
     <div class="item right">
       
 
-  <a href="/2024/03/21/computer-science/compile-principles/ch1/" itemprop="url" rel="next" data-background-image="&#x2F;images&#x2F;bg1.png" title="Ch1">
+  <a href="/2024/03/22/computer-science/compile-principles/ch2/" itemprop="url" rel="next" data-background-image="&#x2F;images&#x2F;bg3.png" title="Ch2">
   <span class="type">Next Post</span>
   <span class="category"><i class="ic i-flag"></i> 编译原理</span>
-  <h3>Ch1</h3>
+  <h3>Ch2</h3>
   </a>
 
     </div>
@@ -257,11 +272,11 @@ NoResponse's Blog = </title>
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="Contents">
-          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%AF%AD%E4%B9%89%E5%88%86%E6%9E%90"><span class="toc-number">1.</span> <span class="toc-text">语义分析</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#symbol-table"><span class="toc-number">1.1.</span> <span class="toc-text">symbol table</span></a></li></ol></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%AF%AD%E4%B9%89%E5%88%86%E6%9E%90"><span class="toc-number">1.</span> <span class="toc-text"> 语义分析</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#symbol-table"><span class="toc-number">1.1.</span> <span class="toc-text"> symbol table</span></a></li></ol></li></ol>
       </div>
       <div class="related panel pjax" data-title="Related">
         <ul>
-          <li><a href="/2024/03/21/computer-science/compile-principles/ch1/" rel="bookmark" title="Ch1">Ch1</a></li><li class="active"><a href="/2024/03/21/computer-science/compile-principles/ch5/" rel="bookmark" title="Ch5">Ch5</a></li><li><a href="/2024/03/22/computer-science/compile-principles/ch2/" rel="bookmark" title="Ch2">Ch2</a></li><li><a href="/2024/03/23/computer-science/compile-principles/ch3/" rel="bookmark" title="Ch3">Ch3</a></li><li><a href="/2024/03/29/computer-science/compile-principles/ch4/" rel="bookmark" title="Ch4">Ch4</a></li>
+          <li class="active"><a href="/2024/03/21/computer-science/compile-principles/ch5/" rel="bookmark" title="Ch5">Ch5</a></li><li><a href="/2024/03/21/computer-science/compile-principles/ch1/" rel="bookmark" title="Ch1">Ch1</a></li><li><a href="/2024/03/22/computer-science/compile-principles/ch2/" rel="bookmark" title="Ch2">Ch2</a></li><li><a href="/2024/03/23/computer-science/compile-principles/ch3/" rel="bookmark" title="Ch3">Ch3</a></li><li><a href="/2024/03/29/computer-science/compile-principles/ch4/" rel="bookmark" title="Ch4">Ch4</a></li>
         </ul>
       </div>
       <div class="overview panel" data-title="Overview">
@@ -314,10 +329,12 @@ NoResponse's Blog = </title>
 
   <ul id="quick">
     <li class="prev pjax">
+        <a href="/2024/03/21/computer-science/compile-principles/ch1/" rel="prev" title="Previous Post"><i class="ic i-chevron-left"></i></a>
     </li>
     <li class="up"><i class="ic i-arrow-up"></i></li>
     <li class="down"><i class="ic i-arrow-down"></i></li>
     <li class="next pjax">
+        <a href="/2024/03/22/computer-science/compile-principles/ch2/" rel="next" title="Next Post"><i class="ic i-chevron-right"></i></a>
     </li>
     <li class="percent"></li>
   </ul>
@@ -345,6 +362,30 @@ NoResponse's Blog = </title>
 </div>
 
     <span><a href="/2024/05/13/computer-science/computer-network/ch1/" title="Ch1">Ch1</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
+</div>
+
+    <span><a href="/2024/03/23/computer-science/compile-principles/ch3/" title="Ch3">Ch3</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
+</div>
+
+    <span><a href="/2024/03/21/computer-science/compile-principles/ch1/" title="Ch1">Ch1</a></span>
   </li>
 
       
@@ -387,22 +428,20 @@ NoResponse's Blog = </title>
 <div class="breadcrumb">
 <a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
+<a href="/categories/computer-science/computer-organization/" title="In 计算机组成">计算机组成</a>
 </div>
 
-    <span><a href="/2024/03/22/computer-science/compile-principles/ch2/" title="Ch2">Ch2</a></span>
+    <span><a href="/2024/05/13/computer-science/computer-organization/ch1/" title="Ch1">Ch1</a></span>
   </li>
 
       
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
+<a href="/categories/AI/" title="In 人工智能">人工智能</a>
 </div>
 
-    <span><a href="/2024/03/23/computer-science/compile-principles/ch3/" title="Ch3">Ch3</a></span>
+    <span><a href="/2024/05/20/AI/week1/" title="Week1">Week1</a></span>
   </li>
 
       
@@ -426,29 +465,7 @@ NoResponse's Blog = </title>
 <a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
 </div>
 
-    <span><a href="/2024/03/21/computer-science/compile-principles/ch1/" title="Ch1">Ch1</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/computer-organization/" title="In 计算机组成">计算机组成</a>
-</div>
-
-    <span><a href="/2024/05/13/computer-science/computer-organization/ch1/" title="Ch1">Ch1</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/AI/" title="In 人工智能">人工智能</a>
-</div>
-
-    <span><a href="/2024/05/20/AI/week1/" title="Week1">Week1</a></span>
+    <span><a href="/2024/03/22/computer-science/compile-principles/ch2/" title="Ch2">Ch2</a></span>
   </li>
 
   </ul>

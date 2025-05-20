@@ -87,7 +87,7 @@
 
       </div>
       <div id="imgs" class="pjax">
-          <img src="/images/bg1.png">
+          <img src="/images/bg2.png">
       </div>
     </header>
     <div id="waves">
@@ -212,7 +212,7 @@
         
 <article class="item">
   <div class="cover">
-    <a href="/2024/05/20/AI/week1/" itemprop="url" title="Week1"><img data-src="/images/bg1.png"></a>
+    <a href="/2024/05/20/AI/week1/" itemprop="url" title="Week1"><img data-src="/images/bg2.png"></a>
   </div>
   <div class="info">
     
@@ -227,14 +227,16 @@
 
     <h3><a href="/2024/05/20/AI/week1/" itemprop="url" title="Week1">Week1</a></h3>
     <div class="excerpt">
-        2025-2026春夏人工智能课程笔记
+        2025-2026 春夏人工智能课程笔记
 
-Ch1 绪论
+# Ch1 绪论
+
 人工智能求解：
+
 以符号主义为核心的逻辑推理：将概念（如命题等）符号化，从若干判断（前提）出发得到新判断（结论）
-以问题求解为核心的探寻搜索:探寻搜索依据已有信息来寻找满足约束条件的待求解问题的答案
-以数据驱动为核心的机器学习:从数据中发现数据所承载语义（如概念）的内在模式
-以行为主义为核心的强化学习:根据环境所提供的奖罚反馈来学习所处状态可施加的最佳行动，在“探索（未知空间）-利用（已有经验）（exploration vs....
+以问题求解为核心的探寻搜索：探寻搜索依据已有信息来寻找满足约束条件的待求解问题的答案
+以数据驱动为核心的机器学习：从数据中发现数据所承载语义（如概念）的内在模式
+以行为主义为核心的强化学习：根据环境所提供的奖罚反馈来学习所处状态可施加的最佳行动，在 “探索（未知空间）- 利用（已有经验）（exploration vs. exploitation）”...
     </div>
     <div class="meta footer">
       <span>
@@ -263,11 +265,22 @@ Ch1 绪论
 
     <h3><a href="/2024/05/20/AI/week2/" itemprop="url" title="Week2">Week2</a></h3>
     <div class="excerpt">
-        Ch2 知识表达与推理命题逻辑真值表：
+        # Ch2 知识表达与推理
+# 命题逻辑
 
-“条件”命题联结词中前提为假时命题结论永远为真，bi-conditional只有两个都是true或者都是false才是true逻辑等价：给定命题p和命题q，如果&amp;#x3D;&amp;#x3D;p和q在所有情况下都具有同样真假结果&amp;#x3D;&amp;#x3D;，那么p和q在逻辑上等价，一般用 $&#92;equiv$ 来表示，即p $&#92;equiv$ q。判断逻辑等价：画真值表逻辑等价式：
+真值表：
 
-normal...
+“条件” 命题联结词中前提为假时命题结论永远为真，bi-conditional 只有两个都是 true 或者都是 false 才是 true
+逻辑等价：给定命题 p 和命题 q，如果 p 和 q 在所有情况下都具有同样真假结果，那么 p 和 q 在逻辑上等价，一般用 ≡&#92;equiv≡ 来表示，即 p ≡&#92;equiv≡ q。
+判断逻辑等价：画真值表
+逻辑等价式：
+
+normal form
+
+有限个简单合取式构成的析取式称为析取 (or) 范式
+由有限个简单析取式构成的合取式称为合取 (and) 范式
+
+#...
     </div>
     <div class="meta footer">
       <span>
@@ -281,7 +294,7 @@ normal...
         
 <article class="item">
   <div class="cover">
-    <a href="/2024/05/14/computer-science/computer-organization/ch2/" itemprop="url" title="Ch2"><img data-src="/images/bg1.png"></a>
+    <a href="/2024/05/14/computer-science/computer-organization/ch2/" itemprop="url" title="Ch2"><img data-src="/images/bg2.png"></a>
   </div>
   <div class="info">
     
@@ -296,22 +309,30 @@ normal...
 
     <h3><a href="/2024/05/14/computer-science/computer-organization/ch2/" itemprop="url" title="Ch2">Ch2</a></h3>
     <div class="excerpt">
-        Ch2 数据的表示和运算2.1 进位计数制及其相互转换2.1.1
+        # Ch2 数据的表示和运算
+# 2.1 进位计数制及其相互转换
+# 2.1.1
+
 十进制二进制八进制十六进制转换
+
 略
 
-2.1.2 定点数的编码表示
-定点百世一般表示定点小数和定点整数，小数是符号位.xxx，整数是符号位xxxx.0
+# 2.1.2 定点数的编码表示
+
+定点百世一般表示定点小数和定点整数，小数是符号位.xxx，整数是符号位 xxxx.0
 
 感觉不是什么重要的东西，浮点数表示比较重要
 
 原码，反码，补码
+
 正数的原码反码补码相同
-负数的原码是1+绝对值，反码是1+绝对值取反，补码是反码+1
+负数的原码是 1 + 绝对值，反码是 1 + 绝对值取反，补码是反码 + 1
 
-移码：用来表示浮点数的阶码，只能表示整数$$ [x]_移 &amp;#x3D; 2^n + x $$正数前面补0负数前面补1到offset位，前面加上补码的符号位取反
+移码：用来表示浮点数的阶码，只能表示整数
 
-2.1.3 整数表示
+[x]移=2n+x[x]_移 = 2^n + x
+[x]移​=2n+x
+正数前面补 0 负数前面补 1 到 offset...
     </div>
     <div class="meta footer">
       <span>
@@ -325,7 +346,7 @@ normal...
         
 <article class="item">
   <div class="cover">
-    <a href="/2024/05/13/computer-science/computer-network/ch1/" itemprop="url" title="Ch1"><img data-src="/images/bg1.png"></a>
+    <a href="/2024/05/13/computer-science/computer-network/ch1/" itemprop="url" title="Ch1"><img data-src="/images/bg2.png"></a>
   </div>
   <div class="info">
     
@@ -369,17 +390,26 @@ normal...
 
     <h3><a href="/2024/05/13/computer-science/computer-organization/ch1/" itemprop="url" title="Ch1">Ch1</a></h3>
     <div class="excerpt">
-        王道计组考研复习笔记怕学完忘了写个笔记保留一下顺便加深印象x王道书写得好烂、、
+        王道计组考研复习笔记
+怕学完忘了写个笔记保留一下顺便加深印象 x
+王道书写得好烂、、
 
-Ch1 计算机系统概述1.1 计算机发展历程
-四代计算机：电子管-&amp;gt;晶体管-&amp;gt;集成电路-&amp;gt;超大规模集成电路
-摩尔定律：集成电路上可以容纳的晶体管数目在大约每经过18个月到24个月便会增加一倍
+# Ch1 计算机系统概述
+# 1.1 计算机发展历程
 
-1.2 计算机系统层次结构
-计算机系统：硬件+软件
+四代计算机：电子管 -&amp;gt; 晶体管 -&amp;gt; 集成电路 -&amp;gt; 超大规模集成电路
+摩尔定律：集成电路上可以容纳的晶体管数目在大约每经过 18 个月到 24 个月便会增加一倍
+
+# 1.2 计算机系统层次结构
+
+计算机系统：硬件 + 软件
 对于某一功能，既能用软件实现又能用硬件实现，称为软、硬件在逻辑功能上是等价的
 
-1.2.2...
+# 1.2.2 硬件
+
+冯・诺依曼机的特点：
+
+采用 “存储程序”...
     </div>
     <div class="meta footer">
       <span>
@@ -393,7 +423,7 @@ Ch1 计算机系统概述1.1 计算机发展历程
         
 <article class="item">
   <div class="cover">
-    <a href="/2024/03/29/computer-science/compile-principles/ch4/" itemprop="url" title="Ch4"><img data-src="/images/bg1.png"></a>
+    <a href="/2024/03/29/computer-science/compile-principles/ch4/" itemprop="url" title="Ch4"><img data-src="/images/bg2.png"></a>
   </div>
   <div class="info">
     
@@ -422,7 +452,7 @@ Ch1 计算机系统概述1.1 计算机发展历程
         
 <article class="item">
   <div class="cover">
-    <a href="/2024/03/23/computer-science/compile-principles/ch3/" itemprop="url" title="Ch3"><img data-src="/images/bg1.png"></a>
+    <a href="/2024/03/23/computer-science/compile-principles/ch3/" itemprop="url" title="Ch3"><img data-src="/images/bg3.png"></a>
   </div>
   <div class="info">
     
@@ -437,8 +467,12 @@ Ch1 计算机系统概述1.1 计算机发展历程
 
     <h3><a href="/2024/03/23/computer-science/compile-principles/ch3/" itemprop="url" title="Ch3">Ch3</a></h3>
     <div class="excerpt">
-        语法分析CFG见计算理论Parse tree
-Ambiguous grammars
+        # 语法分析
+# CFG
+见计算理论
+Parse tree
+# Ambiguous grammars
+#
     </div>
     <div class="meta footer">
       <span>
@@ -452,7 +486,7 @@ Ambiguous grammars
         
 <article class="item">
   <div class="cover">
-    <a href="/2024/03/22/computer-science/compile-principles/ch2/" itemprop="url" title="Ch2"><img data-src="/images/bg1.png"></a>
+    <a href="/2024/03/22/computer-science/compile-principles/ch2/" itemprop="url" title="Ch2"><img data-src="/images/bg3.png"></a>
   </div>
   <div class="info">
     
@@ -467,22 +501,30 @@ Ambiguous grammars
 
     <h3><a href="/2024/03/22/computer-science/compile-principles/ch2/" itemprop="url" title="Ch2">Ch2</a></h3>
     <div class="excerpt">
-        Ch2 词法分析
-把input分解成一个个token
+        # Ch2 词法分析
 
-Regular Expression
+把 input 分解成一个个 token
+
+# Regular Expression
+
 Language: a set of strings
 String: a finite sequence of characters
+
 Regular Experssion Notations:
 
-:::infoDFA, NFA相关 见计算理论:::
-RE转NFA:::info 方法：
+DFA, NFA 相关 见计算理论
+
+# RE 转 NFA
 
 画出初始态和终态
-分裂规则：:::
+分裂规则：
 
-NFA转DFA从初始状态的闭包开始，每次根据&#92;epsilon和当前状态的闭包，得到下一个状态的闭包，直到得到终态的闭包。
-+++info example;;;id3...
+# NFA 转 DFA
+从初始状态的闭包开始，每次根据 &#92;epsilon 和当前状态的闭包，得到下一个状态的闭包，直到得到终态的闭包。
+example
+
+🌰
+把这个 NFA 转成等价的...
     </div>
     <div class="meta footer">
       <span>
@@ -490,43 +532,6 @@ NFA转DFA从初始状态的闭包开始，每次根据&#92;epsilon和当前状�
       </span>
     </div>
     <a href="/2024/03/22/computer-science/compile-principles/ch2/" itemprop="url" title="Ch2" class="btn">more...</a>
-  </div>
-</article>
-
-        
-<article class="item">
-  <div class="cover">
-    <a href="/2024/03/21/computer-science/compile-principles/ch1/" itemprop="url" title="Ch1"><img data-src="/images/bg1.png"></a>
-  </div>
-  <div class="info">
-    
-<div class="meta">
-  <span class="item" title="Created: 2024-03-21 00:00:00">
-    <span class="icon">
-      <i class="ic i-calendar"></i>
-    </span>
-    <time itemprop="dateCreated datePublished" datetime="2024-03-21T00:00:00+08:00">2024-03-21</time>
-  </span>
-</div>
-
-    <h3><a href="/2024/03/21/computer-science/compile-principles/ch1/" itemprop="url" title="Ch1">Ch1</a></h3>
-    <div class="excerpt">
-        ZJU 2025春夏编译原理 学习笔记
-主要基于虎书（Modern Compiler Implementation in C, Andrew W. Appel）
-
-CH1 Introduction
-Two Important Concepts
-Phases（阶段）
-Interfaces（接口）
-
-方框里的是phase，中间的是interface各个阶段的描述
-    </div>
-    <div class="meta footer">
-      <span>
-        <a href="/categories/computer-science/compiler-principles/" itemprop="url" title="编译原理"><i class="ic i-flag"></i>编译原理</a>
-      </span>
-    </div>
-    <a href="/2024/03/21/computer-science/compile-principles/ch1/" itemprop="url" title="Ch1" class="btn">more...</a>
   </div>
 </article>
 
@@ -548,16 +553,20 @@ Interfaces（接口）
 
     <h3><a href="/2024/03/21/computer-science/compile-principles/ch5/" itemprop="url" title="Ch5">Ch5</a></h3>
     <div class="excerpt">
-        语义分析
+        # 语义分析
+
 绑定，类型检查
 
-symbol table
+# symbol table
+
 Functional style: 函数式风格
-To keep $&#92;sigma_1$ in pristine condition while creating create $&#92;sigma_2$ and $&#92;sigma_3$
+
+To keep σ1&#92;sigma_1σ1​ in pristine condition while creating create σ2&#92;sigma_2σ2​ and σ3&#92;sigma_3σ3​
 
 Imperative style: 命令式风格
-Modify $&#92;sigma_1$ until it becomes $&#92;sigma_2$.
-While $&#92;sigma_2$ exists, we cannot look things up in...
+
+Modify σ1&#92;sigma_1σ1​ until it becomes σ2&#92;sigma_2σ2​.
+While σ2&#92;sigma_2σ2​ exists, we cannot...
     </div>
     <div class="meta footer">
       <span>
@@ -565,6 +574,47 @@ While $&#92;sigma_2$ exists, we cannot look things up in...
       </span>
     </div>
     <a href="/2024/03/21/computer-science/compile-principles/ch5/" itemprop="url" title="Ch5" class="btn">more...</a>
+  </div>
+</article>
+
+        
+<article class="item">
+  <div class="cover">
+    <a href="/2024/03/21/computer-science/compile-principles/ch1/" itemprop="url" title="Ch1"><img data-src="/images/bg1.png"></a>
+  </div>
+  <div class="info">
+    
+<div class="meta">
+  <span class="item" title="Created: 2024-03-21 00:00:00">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <time itemprop="dateCreated datePublished" datetime="2024-03-21T00:00:00+08:00">2024-03-21</time>
+  </span>
+</div>
+
+    <h3><a href="/2024/03/21/computer-science/compile-principles/ch1/" itemprop="url" title="Ch1">Ch1</a></h3>
+    <div class="excerpt">
+        ZJU 2025 春夏编译原理 学习笔记
+主要基于虎书（Modern Compiler Implementation in C, Andrew W. Appel）
+
+# CH1 Introduction
+
+Two Important Concepts
+
+Phases（阶段）
+Interfaces（接口）
+
+方框里的是 phase，中间的是 interface
+
+各个阶段的描述
+    </div>
+    <div class="meta footer">
+      <span>
+        <a href="/categories/computer-science/compiler-principles/" itemprop="url" title="编译原理"><i class="ic i-flag"></i>编译原理</a>
+      </span>
+    </div>
+    <a href="/2024/03/21/computer-science/compile-principles/ch1/" itemprop="url" title="Ch1" class="btn">more...</a>
   </div>
 </article>
 
@@ -685,36 +735,10 @@ While $&#92;sigma_2$ exists, we cannot look things up in...
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
+<a href="/categories/AI/" title="In 人工智能">人工智能</a>
 </div>
 
-    <span><a href="/2024/03/22/computer-science/compile-principles/ch2/" title="Ch2">Ch2</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
-</div>
-
-    <span><a href="/2024/03/23/computer-science/compile-principles/ch3/" title="Ch3">Ch3</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/computer-network/" title="In 计算机网络">计算机网络</a>
-</div>
-
-    <span><a href="/2024/05/13/computer-science/computer-network/ch1/" title="Ch1">Ch1</a></span>
+    <span><a href="/2024/05/20/AI/week2/" title="Week2">Week2</a></span>
   </li>
 
       
@@ -738,17 +762,7 @@ While $&#92;sigma_2$ exists, we cannot look things up in...
 <a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
 </div>
 
-    <span><a href="/2024/03/21/computer-science/compile-principles/ch1/" title="Ch1">Ch1</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/AI/" title="In 人工智能">人工智能</a>
-</div>
-
-    <span><a href="/2024/05/20/AI/week2/" title="Week2">Week2</a></span>
+    <span><a href="/2024/03/23/computer-science/compile-principles/ch3/" title="Ch3">Ch3</a></span>
   </li>
 
       
@@ -771,6 +785,42 @@ While $&#92;sigma_2$ exists, we cannot look things up in...
 </div>
 
     <span><a href="/2024/03/29/computer-science/compile-principles/ch4/" title="Ch4">Ch4</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
+</div>
+
+    <span><a href="/2024/03/21/computer-science/compile-principles/ch1/" title="Ch1">Ch1</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
+</div>
+
+    <span><a href="/2024/03/22/computer-science/compile-principles/ch2/" title="Ch2">Ch2</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/computer-network/" title="In 计算机网络">计算机网络</a>
+</div>
+
+    <span><a href="/2024/05/13/computer-science/computer-network/ch1/" title="Ch1">Ch1</a></span>
   </li>
 
   </ul>
