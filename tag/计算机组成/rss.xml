@@ -7,13 +7,14 @@
         <language>en</language>
         <pubDate>Mon, 13 May 2024 00:00:00 +0800</pubDate>
         <lastBuildDate>Mon, 13 May 2024 00:00:00 +0800</lastBuildDate>
+        <category>人工智能</category>
         <category>编译原理</category>
-        <category>词法分析</category>
-        <category>计算机网络</category>
-        <category>语法分析</category>
-        <category>计算机组成</category>
         <category>数据的表示与运算</category>
+        <category>计算机组成</category>
         <category>语义分析</category>
+        <category>词法分析</category>
+        <category>语法分析</category>
+        <category>计算机网络</category>
         <category>抽象语法</category>
         <item>
             <guid isPermalink="true">http://example.com/2024/05/13/computer-science/computer-organization/ch1/</guid>
