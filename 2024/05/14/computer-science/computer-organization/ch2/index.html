@@ -101,7 +101,7 @@ NoResponse's Blog = </title>
 
       </div>
       <div id="imgs" class="pjax">
-          <img src="/images/bg20.jpg">
+          <img src="/images/bg3.png">
       </div>
     </header>
     <div id="waves">
@@ -170,6 +170,8 @@ NoResponse's Blog = </title>
 <li>原码，反码，补码
 <ul>
 <li>正数的原码反码补码相同</li>
+<li>原码表示的范围为 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>−</mo><msup><mn>2</mn><mi>n</mi></msup><mo>+</mo><mn>1</mn><mtext> </mtext><msup><mn>2</mn><mi>n</mi></msup><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">-2^n+1 ~ 2^n-1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.747722em;vertical-align:-0.08333em;"></span><span class="mord">−</span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.664392em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">n</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.747722em;vertical-align:-0.08333em;"></span><span class="mord">1</span><span class="mspace nobreak"> </span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.664392em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">n</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span></li>
+<li>补码表示的范围为 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>−</mo><msup><mn>2</mn><mi>n</mi></msup><mtext> </mtext><msup><mn>2</mn><mi>n</mi></msup><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">-2^n ~ 2^n-1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.747722em;vertical-align:-0.08333em;"></span><span class="mord">−</span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.664392em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">n</span></span></span></span></span></span></span></span><span class="mspace nobreak"> </span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.664392em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">n</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span></li>
 <li>负数的原码是 1 + 绝对值，反码是 1 + 绝对值取反，补码是反码 + 1</li>
 </ul>
 </li>
@@ -188,6 +190,17 @@ NoResponse's Blog = </title>
 int 变成 short 直接截断<br>
 小字长转大字长不会改变值，如果是 unsigned 就会在前面补 0，如果是有符号数就在前面补符号位<br>
  short 转 unsigned int，先对 short 进行符号扩展到 int，再把它当做 unsigned int，如果是 unsigned short 转 int，就进行零扩展再看成 int……</p>
+<p>一些题目</p>
+<details class="info"><summary>example</summary><div>
+<div class="tab" data-id="id3" data-title="t1">
+<p>若<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">[</mo><mi>x</mi><msub><mo stretchy="false">]</mo><mtext>补</mtext></msub><mo>=</mo><mn>1</mn><mo separator="true">,</mo><msub><mi>x</mi><mn>1</mn></msub><msub><mi>x</mi><mn>2</mn></msub><msub><mi>x</mi><mn>3</mn></msub><msub><mi>x</mi><mn>4</mn></msub><msub><mi>x</mi><mn>5</mn></msub><msub><mi>x</mi><mn>6</mn></msub></mrow><annotation encoding="application/x-tex">[x]_补 = 1,x_1x_2x_3x_4x_5x_6</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord mathnormal">x</span><span class="mclose"><span class="mclose">]</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord cjk_fallback mtight">补</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">3</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">4</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">5</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">6</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>, 其中<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">x_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> 取 0 或 1，若要 x&gt;-32，应当满足：<br>
+C. <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">x_1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> 为 1，<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mn>2</mn></msub><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><msub><mi>x</mi><mn>6</mn></msub></mrow><annotation encoding="application/x-tex">x_2...x_6</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord">.</span><span class="mord">.</span><span class="mord">.</span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">6</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> 中至少有一位为 1</p>
+</div>
+<div class="tab" data-id="id3" data-title="t2">
+<p>设 x 为正数，<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">[</mo><mi>x</mi><msub><mo stretchy="false">]</mo><mtext>补</mtext></msub><mo>=</mo><mn>1</mn><mo separator="true">,</mo><msub><mi>x</mi><mn>1</mn></msub><msub><mi>x</mi><mn>2</mn></msub><msub><mi>x</mi><mn>3</mn></msub><msub><mi>x</mi><mn>4</mn></msub><msub><mi>x</mi><mn>5</mn></msub></mrow><annotation encoding="application/x-tex">[x]_补 = 1,x_1x_2x_3x_4x_5</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord mathnormal">x</span><span class="mclose"><span class="mclose">]</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord cjk_fallback mtight">补</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">3</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">4</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">5</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>, 若要 x&lt;-16，应当满足：<br>
+C. <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">x_1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> 必须为 0，其它任意</p>
+</div>
+</div></details>
 
       <div class="tags">
           <a href="/tags/%E6%95%B0%E6%8D%AE%E7%9A%84%E8%A1%A8%E7%A4%BA%E4%B8%8E%E8%BF%90%E7%AE%97/" rel="tag"><i class="ic i-tag"></i> 数据的表示与运算</a>
@@ -202,7 +215,7 @@ int 变成 short 直接截断<br>
       <i class="ic i-calendar-check"></i>
     </span>
     <span class="text">Edited on</span>
-    <time title="Modified: 2025-05-20 19:57:28" itemprop="dateModified" datetime="2025-05-20T19:57:28+08:00">2025-05-20</time>
+    <time title="Modified: 2025-05-20 20:27:10" itemprop="dateModified" datetime="2025-05-20T20:27:10+08:00">2025-05-20</time>
   </span>
 </div>
 
@@ -257,9 +270,9 @@ int 变成 short 直接截断<br>
     <div class="item left">
       
 
-  <a href="/2024/05/13/computer-science/computer-organization/ch1/" itemprop="url" rel="prev" data-background-image="&#x2F;images&#x2F;bg17.jpg" title="Ch1">
+  <a href="/2024/05/13/computer-science/computer-network/ch1/" itemprop="url" rel="prev" data-background-image="&#x2F;images&#x2F;bg22.png" title="Ch1">
   <span class="type">Previous Post</span>
-  <span class="category"><i class="ic i-flag"></i> 计算机组成</span>
+  <span class="category"><i class="ic i-flag"></i> 计算机网络</span>
   <h3>Ch1</h3>
   </a>
 
@@ -267,7 +280,7 @@ int 变成 short 直接截断<br>
     <div class="item right">
       
 
-  <a href="/2024/05/20/AI/week2/" itemprop="url" rel="next" data-background-image="&#x2F;images&#x2F;bg1.jpg" title="Week2">
+  <a href="/2024/05/20/AI/week2/" itemprop="url" rel="next" data-background-image="&#x2F;images&#x2F;bg21.jpg" title="Week2">
   <span class="type">Next Post</span>
   <span class="category"><i class="ic i-flag"></i> 人工智能</span>
   <h3>Week2</h3>
@@ -346,7 +359,7 @@ int 变成 short 直接截断<br>
 
   <ul id="quick">
     <li class="prev pjax">
-        <a href="/2024/05/13/computer-science/computer-organization/ch1/" rel="prev" title="Previous Post"><i class="ic i-chevron-left"></i></a>
+        <a href="/2024/05/13/computer-science/computer-network/ch1/" rel="prev" title="Previous Post"><i class="ic i-chevron-left"></i></a>
     </li>
     <li class="up"><i class="ic i-arrow-up"></i></li>
     <li class="down"><i class="ic i-arrow-down"></i></li>
@@ -373,36 +386,10 @@ int 变成 short 直接截断<br>
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/computer-organization/" title="In 计算机组成">计算机组成</a>
+<a href="/categories/AI/" title="In 人工智能">人工智能</a>
 </div>
 
-    <span><a href="/2024/05/14/computer-science/computer-organization/ch2/" title="Ch2">Ch2</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/computer-organization/" title="In 计算机组成">计算机组成</a>
-</div>
-
-    <span><a href="/2024/05/13/computer-science/computer-organization/ch1/" title="Ch1">Ch1</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
-</div>
-
-    <span><a href="/2024/03/21/computer-science/compile-principles/ch1/" title="Ch1">Ch1</a></span>
+    <span><a href="/2024/05/20/AI/week1/" title="Week1">Week1</a></span>
   </li>
 
       
@@ -413,42 +400,6 @@ int 变成 short 直接截断<br>
 </div>
 
     <span><a href="/2024/05/20/AI/week2/" title="Week2">Week2</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
-</div>
-
-    <span><a href="/2024/03/23/computer-science/compile-principles/ch3/" title="Ch3">Ch3</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
-</div>
-
-    <span><a href="/2024/03/22/computer-science/compile-principles/ch2/" title="Ch2">Ch2</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/computer-network/" title="In 计算机网络">计算机网络</a>
-</div>
-
-    <span><a href="/2024/05/13/computer-science/computer-network/ch1/" title="Ch1">Ch1</a></span>
   </li>
 
       
@@ -472,6 +423,66 @@ int 变成 short 直接截断<br>
 <a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
 </div>
 
+    <span><a href="/2024/03/23/computer-science/compile-principles/ch3/" title="Ch3">Ch3</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/computer-network/" title="In 计算机网络">计算机网络</a>
+</div>
+
+    <span><a href="/2024/05/13/computer-science/computer-network/ch1/" title="Ch1">Ch1</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/computer-organization/" title="In 计算机组成">计算机组成</a>
+</div>
+
+    <span><a href="/2024/05/14/computer-science/computer-organization/ch2/" title="Ch2">Ch2</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
+</div>
+
+    <span><a href="/2024/03/22/computer-science/compile-principles/ch2/" title="Ch2">Ch2</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
+</div>
+
+    <span><a href="/2024/03/21/computer-science/compile-principles/ch1/" title="Ch1">Ch1</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
+</div>
+
     <span><a href="/2024/03/21/computer-science/compile-principles/ch5/" title="Ch5">Ch5</a></span>
   </li>
 
@@ -479,10 +490,12 @@ int 变成 short 直接截断<br>
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/AI/" title="In 人工智能">人工智能</a>
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/computer-organization/" title="In 计算机组成">计算机组成</a>
 </div>
 
-    <span><a href="/2024/05/20/AI/week1/" title="Week1">Week1</a></span>
+    <span><a href="/2024/05/13/computer-science/computer-organization/ch1/" title="Ch1">Ch1</a></span>
   </li>
 
   </ul>
@@ -523,7 +536,8 @@ int 变成 short 直接截断<br>
       empty: "We didn't find any results for the search: ${query}",
       stats: "${hits} results found in ${time} ms"
     },
-    valine: true,fancybox: true,
+    valine: true,copy_tex: true,
+    katex: true,fancybox: true,
     copyright: 'Copied to clipboard successfully! <br> All articles in this blog are licensed under <i class="ic i-creative-commons"></i>BY-NC-SA.',
     ignores : [
       function(uri) {
