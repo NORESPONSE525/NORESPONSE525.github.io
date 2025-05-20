@@ -5,202 +5,146 @@
     <link href="http://example.com" />
     <updated>2024-05-13T16:00:00.000Z</updated>
     <category term="人工智能" />
-    <category term="编译原理" />
-    <category term="抽象语法" />
-    <category term="词法分析" />
     <category term="语法分析" />
+    <category term="编译原理" />
+    <category term="词法分析" />
     <category term="语义分析" />
+    <category term="计算机网络" />
+    <category term="抽象语法" />
     <category term="计算机组成" />
     <category term="数据的表示与运算" />
-    <category term="计算机网络" />
     <entry>
         <id>http://example.com/2024/05/14/computer-science/computer-organization/ch2/</id>
         <title>Ch2</title>
         <link rel="alternate" href="http://example.com/2024/05/14/computer-science/computer-organization/ch2/"/>
-        <content type="html">&lt;h1 id=&#34;ch2-数据的表示和运算&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#ch2-数据的表示和运算&#34;&gt;#&lt;/a&gt; Ch2 数据的表示和运算&lt;/h1&gt;
-&lt;h2 id=&#34;21-进位计数制及其相互转换&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#21-进位计数制及其相互转换&#34;&gt;#&lt;/a&gt; 2.1 进位计数制及其相互转换&lt;/h2&gt;
-&lt;h3 id=&#34;211&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#211&#34;&gt;#&lt;/a&gt; 2.1.1&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;十进制二进制八进制十六进制转换
-&lt;ul&gt;
+        <content type="html">&lt;h1 id=&#34;Ch2-数据的表示和运算&#34;&gt;&lt;a href=&#34;#Ch2-数据的表示和运算&#34; class=&#34;headerlink&#34; title=&#34;Ch2 数据的表示和运算&#34;&gt;&lt;/a&gt;Ch2 数据的表示和运算&lt;/h1&gt;&lt;h2 id=&#34;2-1-进位计数制及其相互转换&#34;&gt;&lt;a href=&#34;#2-1-进位计数制及其相互转换&#34; class=&#34;headerlink&#34; title=&#34;2.1 进位计数制及其相互转换&#34;&gt;&lt;/a&gt;2.1 进位计数制及其相互转换&lt;/h2&gt;&lt;h3 id=&#34;2-1-1&#34;&gt;&lt;a href=&#34;#2-1-1&#34; class=&#34;headerlink&#34; title=&#34;2.1.1&#34;&gt;&lt;/a&gt;2.1.1&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;十进制二进制八进制十六进制转换&lt;ul&gt;
 &lt;li&gt;略&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;212-定点数的编码表示&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#212-定点数的编码表示&#34;&gt;#&lt;/a&gt; 2.1.2 定点数的编码表示&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;定点百世一般表示定点小数和定点整数，&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL3huLS1ucXE5Nml1cmlvNWprMWFjNDNnLnh4eA==&#34;&gt;小数是符号位.xxx&lt;/span&gt;，整数是符号位 xxxx.0&lt;/li&gt;
-&lt;li&gt;
-&lt;blockquote&gt;
+&lt;h3 id=&#34;2-1-2-定点数的编码表示&#34;&gt;&lt;a href=&#34;#2-1-2-定点数的编码表示&#34; class=&#34;headerlink&#34; title=&#34;2.1.2 定点数的编码表示&#34;&gt;&lt;/a&gt;2.1.2 定点数的编码表示&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;定点百世一般表示定点小数和定点整数，小数是符号位.xxx，整数是符号位xxxx.0&lt;/li&gt;
+&lt;li&gt;&lt;blockquote&gt;
 &lt;p&gt;感觉不是什么重要的东西，浮点数表示比较重要&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;/li&gt;
-&lt;li&gt;原码，反码，补码
-&lt;ul&gt;
+&lt;li&gt;原码，反码，补码&lt;ul&gt;
 &lt;li&gt;正数的原码反码补码相同&lt;/li&gt;
-&lt;li&gt;负数的原码是 1 + 绝对值，反码是 1 + 绝对值取反，补码是反码 + 1&lt;/li&gt;
+&lt;li&gt;负数的原码是1+绝对值，反码是1+绝对值取反，补码是反码+1&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;移码：用来表示浮点数的阶码，只能表示整数&lt;/li&gt;
+&lt;li&gt;移码：用来表示浮点数的阶码，只能表示整数&lt;br&gt;$$ [x]_移 &amp;#x3D; 2^n + x $$&lt;br&gt;正数前面补0负数前面补1到offset位，前面加上补码的符号位取反&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;span class=&#34;katex-display&#34;&gt;&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34; display=&#34;block&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mo stretchy=&#34;false&#34;&gt;[&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;msub&gt;&lt;mo stretchy=&#34;false&#34;&gt;]&lt;/mo&gt;&lt;mtext&gt;移&lt;/mtext&gt;&lt;/msub&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;msup&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;/msup&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;[x]_移 = 2^n + x 
-&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:1em;vertical-align:-0.25em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mopen&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;x&lt;/span&gt;&lt;span class=&#34;mclose&#34;&gt;&lt;span class=&#34;mclose&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;msupsub&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.32833099999999993em;&#34;&gt;&lt;span style=&#34;top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.7em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord cjk_fallback mtight&#34;&gt;移&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.15em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mrel&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.7977219999999999em;vertical-align:-0.08333em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;msupsub&#34;&gt;&lt;span class=&#34;vlist-t&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.7143919999999999em;&#34;&gt;&lt;span style=&#34;top:-3.113em;margin-right:0.05em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.7em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mathnormal mtight&#34;&gt;n&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mbin&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.43056em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;x&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;正数前面补 0 负数前面补 1 到 offset 位，前面加上补码的符号位取反&lt;/p&gt;
-&lt;h3 id=&#34;213-整数表示&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#213-整数表示&#34;&gt;#&lt;/a&gt; 2.1.3 整数表示&lt;/h3&gt;
-</content>
+&lt;h3 id=&#34;2-1-3-整数表示&#34;&gt;&lt;a href=&#34;#2-1-3-整数表示&#34; class=&#34;headerlink&#34; title=&#34;2.1.3 整数表示&#34;&gt;&lt;/a&gt;2.1.3 整数表示&lt;/h3&gt;</content>
         <category term="数据的表示与运算" />
         <updated>2024-05-13T16:00:00.000Z</updated>
+    </entry>
+    <entry>
+        <id>http://example.com/2024/05/13/computer-science/computer-network/ch1/</id>
+        <title>Ch1</title>
+        <link rel="alternate" href="http://example.com/2024/05/13/computer-science/computer-network/ch1/"/>
+        <content type="html"></content>
+        <category term="计算机网络" />
+        <updated>2024-05-12T16:00:00.000Z</updated>
     </entry>
     <entry>
         <id>http://example.com/2024/05/13/computer-science/computer-organization/ch1/</id>
         <title>Ch1</title>
         <link rel="alternate" href="http://example.com/2024/05/13/computer-science/computer-organization/ch1/"/>
         <content type="html">&lt;blockquote&gt;
-&lt;p&gt;王道计组考研复习笔记&lt;br&gt;
-怕学完忘了写个笔记保留一下顺便加深印象 x&lt;br&gt;
- 王道书写得好烂、、&lt;/p&gt;
+&lt;p&gt;王道计组考研复习笔记&lt;br&gt;怕学完忘了写个笔记保留一下顺便加深印象x&lt;br&gt;王道书写得好烂、、&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h1 id=&#34;ch1-计算机系统概述&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#ch1-计算机系统概述&#34;&gt;#&lt;/a&gt; Ch1 计算机系统概述&lt;/h1&gt;
-&lt;h2 id=&#34;11-计算机发展历程&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#11-计算机发展历程&#34;&gt;#&lt;/a&gt; 1.1 计算机发展历程&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;四代计算机：电子管 -&amp;gt; 晶体管 -&amp;gt; 集成电路 -&amp;gt; 超大规模集成电路&lt;/li&gt;
-&lt;li&gt;摩尔定律：集成电路上可以容纳的晶体管数目在大约每经过 18 个月到 24 个月便会增加一倍&lt;/li&gt;
+&lt;h1 id=&#34;Ch1-计算机系统概述&#34;&gt;&lt;a href=&#34;#Ch1-计算机系统概述&#34; class=&#34;headerlink&#34; title=&#34;Ch1 计算机系统概述&#34;&gt;&lt;/a&gt;Ch1 计算机系统概述&lt;/h1&gt;&lt;h2 id=&#34;1-1-计算机发展历程&#34;&gt;&lt;a href=&#34;#1-1-计算机发展历程&#34; class=&#34;headerlink&#34; title=&#34;1.1 计算机发展历程&#34;&gt;&lt;/a&gt;1.1 计算机发展历程&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;四代计算机：电子管-&amp;gt;晶体管-&amp;gt;集成电路-&amp;gt;超大规模集成电路&lt;/li&gt;
+&lt;li&gt;摩尔定律：集成电路上可以容纳的晶体管数目在大约每经过18个月到24个月便会增加一倍&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;12-计算机系统层次结构&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#12-计算机系统层次结构&#34;&gt;#&lt;/a&gt; 1.2 计算机系统层次结构&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;计算机系统：硬件 + 软件&lt;/li&gt;
+&lt;h2 id=&#34;1-2-计算机系统层次结构&#34;&gt;&lt;a href=&#34;#1-2-计算机系统层次结构&#34; class=&#34;headerlink&#34; title=&#34;1.2 计算机系统层次结构&#34;&gt;&lt;/a&gt;1.2 计算机系统层次结构&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;计算机系统：硬件+软件&lt;/li&gt;
 &lt;li&gt;对于某一功能，既能用软件实现又能用硬件实现，称为软、硬件在逻辑功能上是等价的&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;122-硬件&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#122-硬件&#34;&gt;#&lt;/a&gt; 1.2.2 硬件&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;冯・诺依曼机的特点：
-&lt;ul&gt;
-&lt;li&gt;采用 “存储程序” 的工作方式&lt;/li&gt;
-&lt;li&gt;冯・诺依曼计算机由五大部件组成：运算器、控制器、存储器、输入设备和输出设备&lt;/li&gt;
+&lt;h3 id=&#34;1-2-2-硬件&#34;&gt;&lt;a href=&#34;#1-2-2-硬件&#34; class=&#34;headerlink&#34; title=&#34;1.2.2 硬件&#34;&gt;&lt;/a&gt;1.2.2 硬件&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;冯·诺依曼机的特点：&lt;ul&gt;
+&lt;li&gt;采用“存储程序”的工作方式&lt;/li&gt;
+&lt;li&gt;冯·诺依曼计算机由五大部件组成：运算器、控制器、存储器、输入设备和输出设备&lt;/li&gt;
 &lt;li&gt;指令和数据以同等地位存储在存储器中&lt;/li&gt;
 &lt;li&gt;指令和数据均用二进制代码表示&lt;/li&gt;
 &lt;li&gt;指令由操作码和地址码组成&lt;/li&gt;
-&lt;li&gt;&lt;img data-src=&#34;img1.png&#34; alt&gt;&lt;/li&gt;
+&lt;li&gt;&lt;img data-src=&#34;/img1.png&#34;&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;计算机的功能部件：
-&lt;ul&gt;
+&lt;li&gt;计算机的功能部件：&lt;ul&gt;
 &lt;li&gt;输入设备&lt;/li&gt;
 &lt;li&gt;输出设备&lt;/li&gt;
-&lt;li&gt;存储器：主存 + 外存
-&lt;ul&gt;
-&lt;li&gt;CPU 能直接访问的是主存&lt;/li&gt;
-&lt;li&gt;&lt;img data-src=&#34;img2.jpg&#34; alt&gt;&lt;/li&gt;
-&lt;li&gt;MAR 位 10 位则最多有&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;msup&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mn&gt;10&lt;/mn&gt;&lt;/msup&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;2^{10}&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.8141079999999999em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;msupsub&#34;&gt;&lt;span class=&#34;vlist-t&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.8141079999999999em;&#34;&gt;&lt;span style=&#34;top:-3.063em;margin-right:0.05em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.7em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mtight&#34;&gt;&lt;span class=&#34;mord mtight&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;mord mtight&#34;&gt;0&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; 个存储单元&lt;/li&gt;
-&lt;li&gt;在现代计算机中 MAR 和 MDR 存在 CPU 中&lt;/li&gt;
+&lt;li&gt;存储器：主存+外存&lt;ul&gt;
+&lt;li&gt;CPU能直接访问的是主存&lt;/li&gt;
+&lt;li&gt;&lt;img data-src=&#34;/img2.jpg&#34;&gt;&lt;/li&gt;
+&lt;li&gt;MAR位10位则最多有$2^{10}$个存储单元&lt;/li&gt;
+&lt;li&gt;在现代计算机中MAR和MDR存在CPU中&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;运算器：进行算术运算和逻辑运算
-&lt;ul&gt;
-&lt;li&gt;核心是 ALU：通用寄存器有&lt;mark&gt;累加器 (ACC)，乘商寄存器 (MQ)，操作数寄存器 (X)&lt;/mark&gt;，变址寄存器 (IX)，基址寄存器 (BR) 等，前三个必备&lt;/li&gt;
-&lt;li&gt;程序状态寄存器 (PSW)&lt;/li&gt;
-&lt;li&gt;&lt;img data-src=&#34;img3.jpg&#34; alt&gt;&lt;/li&gt;
+&lt;li&gt;运算器：进行算术运算和逻辑运算&lt;ul&gt;
+&lt;li&gt;核心是ALU：通用寄存器有&amp;#x3D;&amp;#x3D;累加器(ACC)，乘商寄存器(MQ)，操作数寄存器(X)&amp;#x3D;&amp;#x3D;，变址寄存器(IX)，基址寄存器(BR)等，前三个必备&lt;/li&gt;
+&lt;li&gt;程序状态寄存器(PSW)&lt;/li&gt;
+&lt;li&gt;&lt;img data-src=&#34;/img3.jpg&#34;&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;控制器：由 PC, IR 和 control unit 组成
-&lt;ul&gt;
-&lt;li&gt;: RISCV 控制器&lt;/li&gt;
-&lt;li&gt;&lt;img data-src=&#34;img4.png&#34; alt&gt;&lt;/li&gt;
+&lt;li&gt;控制器：由PC, IR和control unit组成&lt;ul&gt;
+&lt;li&gt;: RISCV控制器&lt;/li&gt;
+&lt;li&gt;&lt;img data-src=&#34;/img4.png&#34;&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;CPU 由运算器、控制器和 cache 组成&lt;/li&gt;
+&lt;li&gt;CPU由运算器、控制器和cache组成&lt;/li&gt;
 &lt;li&gt;总线有地址总线、数据总线、控制总线&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;123-软件&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#123-软件&#34;&gt;#&lt;/a&gt; 1.2.3 软件&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;组成：系统软件 (OS, DBMS, 编译器，…)+ 应用软件&lt;/li&gt;
-&lt;li&gt;语言：汇编语言、机器语言、高级语言
-&lt;ul&gt;
+&lt;h3 id=&#34;1-2-3-软件&#34;&gt;&lt;a href=&#34;#1-2-3-软件&#34; class=&#34;headerlink&#34; title=&#34;1.2.3 软件&#34;&gt;&lt;/a&gt;1.2.3 软件&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;组成：系统软件(OS, DBMS, 编译器, …)+应用软件&lt;/li&gt;
+&lt;li&gt;语言：汇编语言、机器语言、高级语言&lt;ul&gt;
 &lt;li&gt;汇编器：把汇编语言翻译成机器语言&lt;/li&gt;
 &lt;li&gt;编译器：把高级语言翻译成汇编语言或机器语言&lt;/li&gt;
-&lt;li&gt;解释器：把高级语言翻译成&lt;mark&gt;机器语言&lt;/mark&gt; (比如 python)&lt;details class=&#34;info&#34;&gt;&lt;summary&gt;example&lt;/summary&gt;&lt;div&gt;
-&lt;div class=&#34;tab&#34; data-id=&#34;id3&#34; data-title=&#34;题目&#34;&gt;
-&lt;p&gt;🌰&lt;br&gt;
-将高级语言源程序转换为机器级目标代码文件的程序是 []。&lt;br&gt;
-A. 汇编程序&lt;br&gt;
- B. 链接程序&lt;br&gt;
- C. 编译程序&lt;br&gt;
- D. 解释程序&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;tab&#34; data-id=&#34;id3&#34; data-title=&#34;答案&#34;&gt;
-&lt;p&gt;C. 编译程序&lt;br&gt;
-因为解释程序不生成目标代码，编译器可以把高级语言翻译成汇编语言或者直接翻译成机器语言&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;/details&gt;
-&lt;/li&gt;
+&lt;li&gt;解释器：把高级语言翻译成&amp;#x3D;&amp;#x3D;机器语言&amp;#x3D;&amp;#x3D;(比如python)&lt;br&gt;  +++info example&lt;br&gt;  ;;;id3 题目&lt;br&gt;  :chestnut:&lt;br&gt;  将高级语言源程序转换为机器级目标代码文件的程序是 []。&lt;br&gt;  A. 汇编程序&lt;br&gt;  B. 链接程序&lt;br&gt;  C. 编译程序&lt;br&gt;  D. 解释程序&lt;br&gt;  ;;;&lt;br&gt;  ;;;id3 答案&lt;br&gt;  C. 编译程序&lt;br&gt;  因为解释程序不生成目标代码，编译器可以把高级语言翻译成汇编语言或者直接翻译成机器语言&lt;br&gt;  ;;;&lt;br&gt;  +++&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;124-计算机系统的层次结构&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#124-计算机系统的层次结构&#34;&gt;#&lt;/a&gt; 1.2.4 计算机系统的层次结构&lt;/h3&gt;
-&lt;ul&gt;
+&lt;h3 id=&#34;1-2-4-计算机系统的层次结构&#34;&gt;&lt;a href=&#34;#1-2-4-计算机系统的层次结构&#34; class=&#34;headerlink&#34; title=&#34;1.2.4 计算机系统的层次结构&#34;&gt;&lt;/a&gt;1.2.4 计算机系统的层次结构&lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;看看就好&lt;/li&gt;
-&lt;li&gt;&lt;img data-src=&#34;img5.png&#34; alt&gt;&lt;/li&gt;
+&lt;li&gt;&lt;img data-src=&#34;/img5.png&#34;&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;125-计算机系统的工作原理&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#125-计算机系统的工作原理&#34;&gt;#&lt;/a&gt; 1.2.5 计算机系统的工作原理&lt;/h3&gt;
-&lt;ul&gt;
+&lt;h3 id=&#34;1-2-5-计算机系统的工作原理&#34;&gt;&lt;a href=&#34;#1-2-5-计算机系统的工作原理&#34; class=&#34;headerlink&#34; title=&#34;1.2.5 计算机系统的工作原理&#34;&gt;&lt;/a&gt;1.2.5 计算机系统的工作原理&lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;程序执行前，需要把所含的指令和数据一起放入主存中&lt;/li&gt;
 &lt;li&gt;五个阶段：IF-ID-EX-MEM-WB&lt;/li&gt;
-&lt;li&gt;c 程序怎么变成可执行文件的：直接看图
-&lt;ul&gt;
-&lt;li&gt;&lt;img data-src=&#34;img6.png&#34; alt&gt;&lt;/li&gt;
+&lt;li&gt;c程序怎么变成可执行文件的：直接看图&lt;ul&gt;
+&lt;li&gt;&lt;img data-src=&#34;/img6.png&#34;&gt;&lt;/li&gt;
 &lt;li&gt;汇编器把指令打包成可重定位目标代码文件：使用相对地址和符号引用来表示各个代码段之间的关系（代码段、数据段、符号表、重定位表…）使得代码或数据能在内存中任意位置加载或运行&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;指令执行过程：后面几章会具体讲&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;13-计算机的性能指标&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#13-计算机的性能指标&#34;&gt;#&lt;/a&gt; 1.3 计算机的性能指标&lt;/h2&gt;
-&lt;h3 id=&#34;131-主要性能指标&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#131-主要性能指标&#34;&gt;#&lt;/a&gt; 1.3.1 主要性能指标&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;字长：一次整数运算所能处理的二进制数据的位数&lt;div class=&#34;note info&#34;&gt;
-&lt;p&gt;机器字长、指令字长和存储字长&lt;/p&gt;
-&lt;/div&gt;
-&lt;/li&gt;
-&lt;li&gt;带宽 &lt;code&gt;bandwidth&lt;/code&gt; ：总线一次能并行传送信息的位数&lt;/li&gt;
+&lt;h2 id=&#34;1-3-计算机的性能指标&#34;&gt;&lt;a href=&#34;#1-3-计算机的性能指标&#34; class=&#34;headerlink&#34; title=&#34;1.3 计算机的性能指标&#34;&gt;&lt;/a&gt;1.3 计算机的性能指标&lt;/h2&gt;&lt;h3 id=&#34;1-3-1-主要性能指标&#34;&gt;&lt;a href=&#34;#1-3-1-主要性能指标&#34; class=&#34;headerlink&#34; title=&#34;1.3.1 主要性能指标&#34;&gt;&lt;/a&gt;1.3.1 主要性能指标&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;字长：一次整数运算所能处理的二进制数据的位数&lt;br&gt; :::info&lt;br&gt; 机器字长、指令字长和存储字长&lt;br&gt; :::&lt;/li&gt;
+&lt;li&gt;带宽&lt;code&gt;bandwidth&lt;/code&gt;：总线一次能并行传送信息的位数&lt;/li&gt;
 &lt;li&gt;主存容量&lt;/li&gt;
-&lt;li&gt;运算速度
-&lt;ul&gt;
-&lt;li&gt;吞吐量 &lt;code&gt;throughput&lt;/code&gt; ：一次输入数据所对应的输出数据个数&lt;/li&gt;
-&lt;li&gt;响应时间 &lt;code&gt;Response (Execution) time&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;运算速度&lt;ul&gt;
+&lt;li&gt;吞吐量&lt;code&gt;throughput&lt;/code&gt;：一次输入数据所对应的输出数据个数&lt;/li&gt;
+&lt;li&gt;响应时间&lt;code&gt;Response (Execution) time&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;主频&lt;/li&gt;
-&lt;li&gt;clock cycle time( = 1/CPU frequency)&lt;/li&gt;
+&lt;li&gt;clock cycle time( &amp;#x3D; 1&amp;#x2F;CPU frequency)&lt;/li&gt;
 &lt;li&gt;MIPS: million instructions per second&lt;/li&gt;
-&lt;li&gt;FLOPS: floating-point operations per second&lt;/li&gt;
-&lt;/ul&gt;
-&lt;blockquote&gt;
-&lt;p&gt;CPI: clock cycles per instruction (IPC: CPI 的倒数)&lt;/p&gt;
+&lt;li&gt;FLOPS: floating-point operations per second&lt;blockquote&gt;
+&lt;p&gt;CPI: clock cycles per instruction(IPC: CPI的倒数)&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;span class=&#34;katex-display&#34;&gt;&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34; display=&#34;block&#34;&gt;&lt;semantics&gt;&lt;mtable rowspacing=&#34;0.24999999999999992em&#34; columnalign=&#34;right left&#34; columnspacing=&#34;0em&#34;&gt;&lt;mtr&gt;&lt;mtd&gt;&lt;mstyle scriptlevel=&#34;0&#34; displaystyle=&#34;true&#34;&gt;&lt;mtext&gt;CPU execution time&lt;/mtext&gt;&lt;/mstyle&gt;&lt;/mtd&gt;&lt;mtd&gt;&lt;mstyle scriptlevel=&#34;0&#34; displaystyle=&#34;true&#34;&gt;&lt;mrow&gt;&lt;mrow&gt;&lt;/mrow&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mtext&gt;CPU clock cycles&lt;/mtext&gt;&lt;mo&gt;×&lt;/mo&gt;&lt;mtext&gt;Clock cycle time&lt;/mtext&gt;&lt;/mrow&gt;&lt;/mstyle&gt;&lt;/mtd&gt;&lt;/mtr&gt;&lt;mtr&gt;&lt;mtd&gt;&lt;mstyle scriptlevel=&#34;0&#34; displaystyle=&#34;true&#34;&gt;&lt;mrow&gt;&lt;/mrow&gt;&lt;/mstyle&gt;&lt;/mtd&gt;&lt;mtd&gt;&lt;mstyle scriptlevel=&#34;0&#34; displaystyle=&#34;true&#34;&gt;&lt;mrow&gt;&lt;mrow&gt;&lt;/mrow&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mfrac&gt;&lt;mtext&gt;CPU clock cycles&lt;/mtext&gt;&lt;mtext&gt;Clock rate&lt;/mtext&gt;&lt;/mfrac&gt;&lt;/mrow&gt;&lt;/mstyle&gt;&lt;/mtd&gt;&lt;/mtr&gt;&lt;/mtable&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt; \begin{aligned}
-    \text{CPU execution time} &amp;amp;= \text{CPU clock cycles} \times \text{Clock cycle time} \\
-    &amp;amp;= \frac{\text{CPU clock cycles}}{\text{Clock rate}}
-\end{aligned}&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:3.8574399999999995em;vertical-align:-1.6787199999999993em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mtable&#34;&gt;&lt;span class=&#34;col-align-r&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:2.17872em;&#34;&gt;&lt;span style=&#34;top:-4.71016em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:3.3714399999999998em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord text&#34;&gt;&lt;span class=&#34;mord&#34;&gt;CPU execution time&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;top:-2.6787200000000007em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:3.3714399999999998em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:1.6787199999999993em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;col-align-l&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:2.17872em;&#34;&gt;&lt;span style=&#34;top:-4.71016em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:3.3714399999999998em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mrel&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord text&#34;&gt;&lt;span class=&#34;mord&#34;&gt;CPU clock cycles&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mbin&#34;&gt;×&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord text&#34;&gt;&lt;span class=&#34;mord&#34;&gt;Clock cycle time&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;top:-2.6787200000000007em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:3.3714399999999998em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mrel&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mopen nulldelimiter&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mfrac&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:1.3714399999999998em;&#34;&gt;&lt;span style=&#34;top:-2.314em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:3em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord text&#34;&gt;&lt;span class=&#34;mord&#34;&gt;Clock rate&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;top:-3.23em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:3em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;frac-line&#34; style=&#34;border-bottom-width:0.04em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;top:-3.677em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:3em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord text&#34;&gt;&lt;span class=&#34;mord&#34;&gt;CPU clock cycles&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.686em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;mclose nulldelimiter&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:1.6787199999999993em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;katex-display&#34;&gt;&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34; display=&#34;block&#34;&gt;&lt;semantics&gt;&lt;mtable rowspacing=&#34;0.24999999999999992em&#34; columnalign=&#34;right left&#34; columnspacing=&#34;0em&#34;&gt;&lt;mtr&gt;&lt;mtd&gt;&lt;mstyle scriptlevel=&#34;0&#34; displaystyle=&#34;true&#34;&gt;&lt;mtext&gt;CPU clock cycles&lt;/mtext&gt;&lt;/mstyle&gt;&lt;/mtd&gt;&lt;mtd&gt;&lt;mstyle scriptlevel=&#34;0&#34; displaystyle=&#34;true&#34;&gt;&lt;mrow&gt;&lt;mrow&gt;&lt;/mrow&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mtext&gt;Instructions count&lt;/mtext&gt;&lt;mo&gt;×&lt;/mo&gt;&lt;mtext&gt;Average cycles per instruction&lt;/mtext&gt;&lt;/mrow&gt;&lt;/mstyle&gt;&lt;/mtd&gt;&lt;/mtr&gt;&lt;/mtable&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;\begin{aligned}
-    \text{CPU clock cycles} &amp;amp;= \text{Instructions count} \times \text{Average cycles per instruction}
-\end{aligned}&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:1.5000000000000002em;vertical-align:-0.5000000000000002em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mtable&#34;&gt;&lt;span class=&#34;col-align-r&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:1em;&#34;&gt;&lt;span style=&#34;top:-3.16em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:3em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord text&#34;&gt;&lt;span class=&#34;mord&#34;&gt;CPU clock cycles&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.5000000000000002em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;col-align-l&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:1em;&#34;&gt;&lt;span style=&#34;top:-3.16em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:3em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mrel&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord text&#34;&gt;&lt;span class=&#34;mord&#34;&gt;Instructions count&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mbin&#34;&gt;×&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord text&#34;&gt;&lt;span class=&#34;mord&#34;&gt;Average cycles per instruction&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.5000000000000002em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;katex-display&#34;&gt;&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34; display=&#34;block&#34;&gt;&lt;semantics&gt;&lt;mtable rowspacing=&#34;0.24999999999999992em&#34; columnalign=&#34;right left&#34; columnspacing=&#34;0em&#34;&gt;&lt;mtr&gt;&lt;mtd&gt;&lt;mstyle scriptlevel=&#34;0&#34; displaystyle=&#34;true&#34;&gt;&lt;mtext&gt;CPU execution time&lt;/mtext&gt;&lt;/mstyle&gt;&lt;/mtd&gt;&lt;mtd&gt;&lt;mstyle scriptlevel=&#34;0&#34; displaystyle=&#34;true&#34;&gt;&lt;mrow&gt;&lt;mrow&gt;&lt;/mrow&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mtext&gt;CPU clock cycles&lt;/mtext&gt;&lt;mo&gt;×&lt;/mo&gt;&lt;mtext&gt;Clock cycle time&lt;/mtext&gt;&lt;/mrow&gt;&lt;/mstyle&gt;&lt;/mtd&gt;&lt;/mtr&gt;&lt;mtr&gt;&lt;mtd&gt;&lt;mstyle scriptlevel=&#34;0&#34; displaystyle=&#34;true&#34;&gt;&lt;mrow&gt;&lt;/mrow&gt;&lt;/mstyle&gt;&lt;/mtd&gt;&lt;mtd&gt;&lt;mstyle scriptlevel=&#34;0&#34; displaystyle=&#34;true&#34;&gt;&lt;mrow&gt;&lt;mrow&gt;&lt;/mrow&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mfrac&gt;&lt;mtext&gt;CPU clock cycles&lt;/mtext&gt;&lt;mtext&gt;Clock rate&lt;/mtext&gt;&lt;/mfrac&gt;&lt;/mrow&gt;&lt;/mstyle&gt;&lt;/mtd&gt;&lt;/mtr&gt;&lt;/mtable&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;\begin{aligned}
-    \text{CPU execution time} &amp;amp;= \text{CPU clock cycles} \times \text{Clock cycle time} \\
-    &amp;amp;= \frac{\text{CPU clock cycles}}{\text{Clock rate}}
-\end{aligned} &lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:3.8574399999999995em;vertical-align:-1.6787199999999993em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mtable&#34;&gt;&lt;span class=&#34;col-align-r&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:2.17872em;&#34;&gt;&lt;span style=&#34;top:-4.71016em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:3.3714399999999998em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord text&#34;&gt;&lt;span class=&#34;mord&#34;&gt;CPU execution time&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;top:-2.6787200000000007em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:3.3714399999999998em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:1.6787199999999993em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;col-align-l&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:2.17872em;&#34;&gt;&lt;span style=&#34;top:-4.71016em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:3.3714399999999998em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mrel&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord text&#34;&gt;&lt;span class=&#34;mord&#34;&gt;CPU clock cycles&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mbin&#34;&gt;×&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord text&#34;&gt;&lt;span class=&#34;mord&#34;&gt;Clock cycle time&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;top:-2.6787200000000007em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:3.3714399999999998em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mrel&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mopen nulldelimiter&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mfrac&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:1.3714399999999998em;&#34;&gt;&lt;span style=&#34;top:-2.314em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:3em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord text&#34;&gt;&lt;span class=&#34;mord&#34;&gt;Clock rate&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;top:-3.23em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:3em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;frac-line&#34; style=&#34;border-bottom-width:0.04em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;top:-3.677em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:3em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord text&#34;&gt;&lt;span class=&#34;mord&#34;&gt;CPU clock cycles&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.686em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;mclose nulldelimiter&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:1.6787199999999993em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;katex-display&#34;&gt;&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34; display=&#34;block&#34;&gt;&lt;semantics&gt;&lt;mtable rowspacing=&#34;0.24999999999999992em&#34; columnalign=&#34;right left&#34; columnspacing=&#34;0em&#34;&gt;&lt;mtr&gt;&lt;mtd&gt;&lt;mstyle scriptlevel=&#34;0&#34; displaystyle=&#34;true&#34;&gt;&lt;mtext&gt;performance&lt;/mtext&gt;&lt;/mstyle&gt;&lt;/mtd&gt;&lt;mtd&gt;&lt;mstyle scriptlevel=&#34;0&#34; displaystyle=&#34;true&#34;&gt;&lt;mrow&gt;&lt;mrow&gt;&lt;/mrow&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mfrac&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mtext&gt;CPU execution time&lt;/mtext&gt;&lt;/mfrac&gt;&lt;/mrow&gt;&lt;/mstyle&gt;&lt;/mtd&gt;&lt;/mtr&gt;&lt;/mtable&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt; \begin{aligned}
-     \text{performance} &amp;amp;= \frac{1}{\text{CPU execution time}}
-\end{aligned}&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:2.30744em;vertical-align:-0.90372em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mtable&#34;&gt;&lt;span class=&#34;col-align-r&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:1.4037200000000003em;&#34;&gt;&lt;span style=&#34;top:-3.4037200000000003em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:3.32144em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord text&#34;&gt;&lt;span class=&#34;mord&#34;&gt;performance&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.90372em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;col-align-l&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:1.4037200000000003em;&#34;&gt;&lt;span style=&#34;top:-3.4037200000000003em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:3.32144em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mrel&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mopen nulldelimiter&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mfrac&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:1.32144em;&#34;&gt;&lt;span style=&#34;top:-2.314em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:3em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord text&#34;&gt;&lt;span class=&#34;mord&#34;&gt;CPU execution time&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;top:-3.23em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:3em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;frac-line&#34; style=&#34;border-bottom-width:0.04em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;top:-3.677em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:3em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord&#34;&gt;1&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.686em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;mclose nulldelimiter&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.90372em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;“Processor X is n times fast than Y” is&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;katex-display&#34;&gt;&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34; display=&#34;block&#34;&gt;&lt;semantics&gt;&lt;mtable rowspacing=&#34;0.24999999999999992em&#34; columnalign=&#34;right left&#34; columnspacing=&#34;0em&#34;&gt;&lt;mtr&gt;&lt;mtd&gt;&lt;mstyle scriptlevel=&#34;0&#34; displaystyle=&#34;true&#34;&gt;&lt;mtext&gt;n&lt;/mtext&gt;&lt;/mstyle&gt;&lt;/mtd&gt;&lt;mtd&gt;&lt;mstyle scriptlevel=&#34;0&#34; displaystyle=&#34;true&#34;&gt;&lt;mrow&gt;&lt;mrow&gt;&lt;/mrow&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mfrac&gt;&lt;mtext&gt;CPU execution time of Y&lt;/mtext&gt;&lt;mtext&gt;CPU execution time of X&lt;/mtext&gt;&lt;/mfrac&gt;&lt;/mrow&gt;&lt;/mstyle&gt;&lt;/mtd&gt;&lt;/mtr&gt;&lt;/mtable&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt; \begin{aligned}
-    \text{n} &amp;amp;= \frac{\text{CPU execution time of Y}}{\text{CPU execution time of X}}
-\end{aligned}&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:2.35744em;vertical-align:-0.9287200000000001em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mtable&#34;&gt;&lt;span class=&#34;col-align-r&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:1.4287199999999998em;&#34;&gt;&lt;span style=&#34;top:-3.4287199999999998em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:3.3714399999999998em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord text&#34;&gt;&lt;span class=&#34;mord&#34;&gt;n&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.9287200000000001em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;col-align-l&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:1.4287199999999998em;&#34;&gt;&lt;span style=&#34;top:-3.4287199999999998em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:3.3714399999999998em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mrel&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mopen nulldelimiter&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mfrac&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:1.37144em;&#34;&gt;&lt;span style=&#34;top:-2.314em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:3em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord text&#34;&gt;&lt;span class=&#34;mord&#34;&gt;CPU execution time of X&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;top:-3.23em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:3em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;frac-line&#34; style=&#34;border-bottom-width:0.04em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;top:-3.677em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:3em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord text&#34;&gt;&lt;span class=&#34;mord&#34;&gt;CPU execution time of Y&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.686em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;mclose nulldelimiter&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.9287200000000001em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;IPS: instructions per second&lt;/p&gt;
-&lt;p&gt;&lt;span class=&#34;katex-display&#34;&gt;&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34; display=&#34;block&#34;&gt;&lt;semantics&gt;&lt;mtable rowspacing=&#34;0.24999999999999992em&#34; columnalign=&#34;right left right&#34; columnspacing=&#34;0em 1em&#34;&gt;&lt;mtr&gt;&lt;mtd&gt;&lt;mstyle scriptlevel=&#34;0&#34; displaystyle=&#34;true&#34;&gt;&lt;mtext&gt;IPS&lt;/mtext&gt;&lt;/mstyle&gt;&lt;/mtd&gt;&lt;mtd&gt;&lt;mstyle scriptlevel=&#34;0&#34; displaystyle=&#34;true&#34;&gt;&lt;mrow&gt;&lt;mrow&gt;&lt;/mrow&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mfrac&gt;&lt;mtext&gt;CPU frequency&lt;/mtext&gt;&lt;mtext&gt;CPI&lt;/mtext&gt;&lt;/mfrac&gt;&lt;/mrow&gt;&lt;/mstyle&gt;&lt;/mtd&gt;&lt;mtd&gt;&lt;mstyle scriptlevel=&#34;0&#34; displaystyle=&#34;true&#34;&gt;&lt;mrow&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mfrac&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mrow&gt;&lt;mtext&gt;CPU clock cycles&lt;/mtext&gt;&lt;mo&gt;×&lt;/mo&gt;&lt;mtext&gt;CPU execution time&lt;/mtext&gt;&lt;/mrow&gt;&lt;/mfrac&gt;&lt;/mrow&gt;&lt;/mstyle&gt;&lt;/mtd&gt;&lt;/mtr&gt;&lt;/mtable&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt; \begin{aligned}
-    \text{IPS} &amp;amp;= \frac{\text{CPU frequency}}{\text{CPI}}
-        &amp;amp;= \frac{1}{\text{CPU clock cycles} \times \text{CPU execution time}}
-\end{aligned}&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:2.5518799999999997em;vertical-align:-1.02594em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mtable&#34;&gt;&lt;span class=&#34;col-align-r&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:1.5259399999999996em;&#34;&gt;&lt;span style=&#34;top:-3.5259399999999994em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:3.3714399999999998em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord text&#34;&gt;&lt;span class=&#34;mord&#34;&gt;IPS&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:1.02594em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;col-align-l&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:1.5259399999999996em;&#34;&gt;&lt;span style=&#34;top:-3.5259399999999994em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:3.3714399999999998em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mrel&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mopen nulldelimiter&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mfrac&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:1.3714399999999998em;&#34;&gt;&lt;span style=&#34;top:-2.314em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:3em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord text&#34;&gt;&lt;span class=&#34;mord&#34;&gt;CPI&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;top:-3.23em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:3em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;frac-line&#34; style=&#34;border-bottom-width:0.04em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;top:-3.677em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:3em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord text&#34;&gt;&lt;span class=&#34;mord&#34;&gt;CPU frequency&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.686em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;mclose nulldelimiter&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:1.02594em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;arraycolsep&#34; style=&#34;width:1em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;col-align-r&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:1.5259399999999996em;&#34;&gt;&lt;span style=&#34;top:-3.5259399999999994em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:3.3714399999999998em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mrel&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mopen nulldelimiter&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mfrac&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:1.32144em;&#34;&gt;&lt;span style=&#34;top:-2.314em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:3em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord text&#34;&gt;&lt;span class=&#34;mord&#34;&gt;CPU clock cycles&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mbin&#34;&gt;×&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord text&#34;&gt;&lt;span class=&#34;mord&#34;&gt;CPU execution time&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;top:-3.23em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:3em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;frac-line&#34; style=&#34;border-bottom-width:0.04em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;top:-3.677em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:3em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord&#34;&gt;1&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.8804400000000001em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;mclose nulldelimiter&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:1.02594em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;$$ \begin{aligned}&lt;br&gt;    \text{CPU execution time} &amp;amp;&amp;#x3D; \text{CPU clock cycles} \times \text{Clock cycle time} \&lt;br&gt;    &amp;amp;&amp;#x3D; \frac{\text{CPU clock cycles}}{\text{Clock rate}}&lt;br&gt;\end{aligned}$$&lt;/p&gt;
+&lt;p&gt;$$\begin{aligned}&lt;br&gt;    \text{CPU clock cycles} &amp;amp;&amp;#x3D; \text{Instructions count} \times \text{Average cycles per instruction}&lt;br&gt;\end{aligned}$$&lt;/p&gt;
+&lt;p&gt;$$\begin{aligned}&lt;br&gt;    \text{CPU execution time} &amp;amp;&amp;#x3D; \text{CPU clock cycles} \times \text{Clock cycle time} \&lt;br&gt;    &amp;amp;&amp;#x3D; \frac{\text{CPU clock cycles}}{\text{Clock rate}}&lt;br&gt;\end{aligned} $$&lt;/p&gt;
+&lt;p&gt;$$ \begin{aligned}&lt;br&gt;     \text{performance} &amp;amp;&amp;#x3D; \frac{1}{\text{CPU execution time}}&lt;br&gt;\end{aligned}$$&lt;/p&gt;
+&lt;p&gt;“Processor X is n times fast than Y” is&lt;br&gt;$$ \begin{aligned}&lt;br&gt;    \text{n} &amp;amp;&amp;#x3D; \frac{\text{CPU execution time of Y}}{\text{CPU execution time of X}}&lt;br&gt;\end{aligned}$$&lt;/p&gt;
+&lt;p&gt;IPS: instructions per second&lt;br&gt;$$ \begin{aligned}&lt;br&gt;    \text{IPS} &amp;amp;&amp;#x3D; \frac{\text{CPU frequency}}{\text{CPI}}&lt;br&gt;        &amp;amp;&amp;#x3D; \frac{1}{\text{CPU clock cycles} \times \text{CPU execution time}}&lt;br&gt;\end{aligned}$$&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;其他公式，，，用到再说吧&lt;/li&gt;
 &lt;li&gt;兼容：软件或硬件的通用性&lt;/li&gt;
@@ -221,14 +165,6 @@ A. 汇编程序&lt;br&gt;
         <updated>2024-05-12T16:00:00.000Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/2024/05/13/computer-science/computer-network/ch1/</id>
-        <title>Ch1</title>
-        <link rel="alternate" href="http://example.com/2024/05/13/computer-science/computer-network/ch1/"/>
-        <content type="html"></content>
-        <category term="计算机网络" />
-        <updated>2024-05-12T16:00:00.000Z</updated>
-    </entry>
-    <entry>
         <id>http://example.com/2024/03/29/computer-science/compile-principles/ch4/</id>
         <title>Ch4</title>
         <link rel="alternate" href="http://example.com/2024/03/29/computer-science/compile-principles/ch4/"/>
@@ -240,13 +176,8 @@ A. 汇编程序&lt;br&gt;
         <id>http://example.com/2024/03/23/computer-science/compile-principles/ch3/</id>
         <title>Ch3</title>
         <link rel="alternate" href="http://example.com/2024/03/23/computer-science/compile-principles/ch3/"/>
-        <content type="html">&lt;h1 id=&#34;语法分析&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#语法分析&#34;&gt;#&lt;/a&gt; 语法分析&lt;/h1&gt;
-&lt;h2 id=&#34;cfg&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#cfg&#34;&gt;#&lt;/a&gt; CFG&lt;/h2&gt;
-&lt;p&gt;见计算理论&lt;br&gt;
- Parse tree&lt;/p&gt;
-&lt;h3 id=&#34;ambiguous-grammars&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#ambiguous-grammars&#34;&gt;#&lt;/a&gt; Ambiguous grammars&lt;/h3&gt;
-&lt;h2 id&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#&#34;&gt;#&lt;/a&gt; &lt;/h2&gt;
-</content>
+        <content type="html">&lt;h1 id=&#34;语法分析&#34;&gt;&lt;a href=&#34;#语法分析&#34; class=&#34;headerlink&#34; title=&#34;语法分析&#34;&gt;&lt;/a&gt;语法分析&lt;/h1&gt;&lt;h2 id=&#34;CFG&#34;&gt;&lt;a href=&#34;#CFG&#34; class=&#34;headerlink&#34; title=&#34;CFG&#34;&gt;&lt;/a&gt;CFG&lt;/h2&gt;&lt;p&gt;见计算理论&lt;br&gt;Parse tree&lt;/p&gt;
+&lt;h3 id=&#34;Ambiguous-grammars&#34;&gt;&lt;a href=&#34;#Ambiguous-grammars&#34; class=&#34;headerlink&#34; title=&#34;Ambiguous grammars&#34;&gt;&lt;/a&gt;Ambiguous grammars&lt;/h3&gt;&lt;h2 id&gt;&lt;a href=&#34;#&#34; class=&#34;headerlink&#34; title&gt;&lt;/a&gt;&lt;/h2&gt;</content>
         <category term="语法分析" />
         <updated>2024-03-22T16:00:00.000Z</updated>
     </entry>
@@ -254,45 +185,25 @@ A. 汇编程序&lt;br&gt;
         <id>http://example.com/2024/03/22/computer-science/compile-principles/ch2/</id>
         <title>Ch2</title>
         <link rel="alternate" href="http://example.com/2024/03/22/computer-science/compile-principles/ch2/"/>
-        <content type="html">&lt;h1 id=&#34;ch2-词法分析&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#ch2-词法分析&#34;&gt;#&lt;/a&gt; Ch2 词法分析&lt;/h1&gt;
-&lt;blockquote&gt;
-&lt;p&gt;把 input 分解成一个个 token&lt;/p&gt;
+        <content type="html">&lt;h1 id=&#34;Ch2-词法分析&#34;&gt;&lt;a href=&#34;#Ch2-词法分析&#34; class=&#34;headerlink&#34; title=&#34;Ch2 词法分析&#34;&gt;&lt;/a&gt;Ch2 词法分析&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;把input分解成一个个token&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h2 id=&#34;regular-expression&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#regular-expression&#34;&gt;#&lt;/a&gt; Regular Expression&lt;/h2&gt;
-&lt;ul&gt;
+&lt;h2 id=&#34;Regular-Expression&#34;&gt;&lt;a href=&#34;#Regular-Expression&#34; class=&#34;headerlink&#34; title=&#34;Regular Expression&#34;&gt;&lt;/a&gt;Regular Expression&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;Language: a set of strings&lt;/li&gt;
-&lt;li&gt;String: a finite sequence of characters&lt;/li&gt;
-&lt;/ul&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Regular Experssion Notations:&lt;br&gt;
-&lt;img data-src=&#34;image-1.png&#34; alt&gt;&lt;/p&gt;
+&lt;li&gt;String: a finite sequence of characters&lt;blockquote&gt;
+&lt;p&gt;Regular Experssion Notations:&lt;br&gt;&lt;img data-src=&#34;/image-1.png&#34;&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;div class=&#34;note info&#34;&gt;
-&lt;p&gt;DFA, NFA 相关 见计算理论&lt;/p&gt;
-&lt;/div&gt;
-&lt;h2 id=&#34;re转nfa&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#re转nfa&#34;&gt;#&lt;/a&gt; RE 转 NFA&lt;/h2&gt;
-&lt;div class=&#34;note info 方法：&#34;&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;:::info&lt;br&gt;DFA, NFA相关 见计算理论&lt;br&gt;:::&lt;/p&gt;
+&lt;h2 id=&#34;RE转NFA&#34;&gt;&lt;a href=&#34;#RE转NFA&#34; class=&#34;headerlink&#34; title=&#34;RE转NFA&#34;&gt;&lt;/a&gt;RE转NFA&lt;/h2&gt;&lt;p&gt;:::info 方法：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;画出初始态和终态&lt;/li&gt;
-&lt;li&gt;分裂规则：&lt;br&gt;
-&lt;img data-src=&#34;image-2.jpg&#34; alt&gt;&lt;/li&gt;
+&lt;li&gt;分裂规则：&lt;br&gt;&lt;img data-src=&#34;/image-2.jpg&#34;&gt;&lt;br&gt;:::&lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;
-&lt;h2 id=&#34;nfa转dfa&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#nfa转dfa&#34;&gt;#&lt;/a&gt; NFA 转 DFA&lt;/h2&gt;
-&lt;p&gt;从初始状态的闭包开始，每次根据 \epsilon 和当前状态的闭包，得到下一个状态的闭包，直到得到终态的闭包。&lt;/p&gt;
-&lt;details class=&#34;info&#34;&gt;&lt;summary&gt;example&lt;/summary&gt;&lt;div&gt;
-&lt;div class=&#34;tab&#34; data-id=&#34;id3&#34; data-title=&#34;题目&#34;&gt;
-&lt;p&gt;🌰&lt;br&gt;
-把这个 NFA 转成等价的 DFA&lt;br&gt;
-&lt;img data-src=&#34;image-3.png&#34; alt&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&#34;tab&#34; data-id=&#34;id3&#34; data-title=&#34;答案&#34;&gt;
-&lt;p&gt;初态的闭包是 1、2、6，1、2、6 经过 a 可以转移到 3、7，因为有 \epsilon 转移，所以 3、7 的闭包是 3、4、7、8，同理 3、4、7、8 经过 b 可以到 5、8，由于 8 是终态，把所有包含 8 的圆圈画成终态的环。&lt;br&gt;
-&lt;img data-src=&#34;image-4.png&#34; alt&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;/details&gt;
-&lt;h2 id=&#34;最小化dfa&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#最小化dfa&#34;&gt;#&lt;/a&gt; 最小化 DFA&lt;/h2&gt;
-&lt;p&gt;含义：&lt;/p&gt;
+&lt;h2 id=&#34;NFA转DFA&#34;&gt;&lt;a href=&#34;#NFA转DFA&#34; class=&#34;headerlink&#34; title=&#34;NFA转DFA&#34;&gt;&lt;/a&gt;NFA转DFA&lt;/h2&gt;&lt;p&gt;从初始状态的闭包开始，每次根据\epsilon和当前状态的闭包，得到下一个状态的闭包，直到得到终态的闭包。&lt;/p&gt;
+&lt;p&gt;+++info example&lt;br&gt;;;;id3 题目&lt;br&gt;:chestnut:&lt;br&gt;把这个NFA转成等价的DFA&lt;br&gt;&lt;img data-src=&#34;/image-3.png&#34;&gt;&lt;br&gt;;;;&lt;br&gt;;;;id3 答案&lt;br&gt;初态的闭包是1、2、6，1、2、6经过a可以转移到3、7，因为有\epsilon转移，所以3、7的闭包是3、4、7、8，同理3、4、7、8经过b可以到5、8，由于8是终态，把所有包含8的圆圈画成终态的环。&lt;br&gt;&lt;img data-src=&#34;/image-4.png&#34;&gt;&lt;br&gt;;;;&lt;br&gt;+++&lt;/p&gt;
+&lt;h2 id=&#34;最小化DFA&#34;&gt;&lt;a href=&#34;#最小化DFA&#34; class=&#34;headerlink&#34; title=&#34;最小化DFA&#34;&gt;&lt;/a&gt;最小化DFA&lt;/h2&gt;&lt;p&gt;含义：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;没有多余状态：&lt;/li&gt;
 &lt;/ol&gt;
@@ -301,21 +212,16 @@ A. 汇编程序&lt;br&gt;
 &lt;li&gt;从开始状态出发，任何输入串也不能到达的那个状态&lt;/li&gt;
 &lt;/ul&gt;
 &lt;ol start=&#34;2&#34;&gt;
-&lt;li&gt;没有两个状态相互等价&lt;/li&gt;
-&lt;/ol&gt;
-&lt;div class=&#34;note info 方法：&#34;&gt;
-&lt;ol&gt;
-&lt;li&gt;多余状态直接删除&lt;br&gt;
-&lt;img data-src=&#34;image-5.png&#34; alt&gt;&lt;/li&gt;
+&lt;li&gt;没有两个状态相互等价&lt;br&gt;:::info 方法：&lt;/li&gt;
+&lt;li&gt;多余状态直接删除&lt;br&gt;&lt;img data-src=&#34;/image-5.png&#34;&gt;&lt;/li&gt;
 &lt;li&gt;合并等价状态&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
 &lt;li&gt;将状态分为终态和非终态两个集合&lt;/li&gt;
 &lt;li&gt;遍历每个集合，如果经过转换到达的状态都在当前集合里，则不用分，否则划分子集，直到划分不了为止&lt;/li&gt;
-&lt;li&gt;🌰 例子&lt;/li&gt;
-&lt;li&gt;&lt;img data-src=&#34;image-6.png&#34; alt&gt;&lt;/li&gt;
+&lt;li&gt;:chestnut: 例子&lt;/li&gt;
+&lt;li&gt;&lt;img data-src=&#34;/image-6.png&#34;&gt;&lt;br&gt;:::&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/div&gt;
 </content>
         <category term="词法分析" />
         <updated>2024-03-21T16:00:00.000Z</updated>
@@ -325,22 +231,17 @@ A. 汇编程序&lt;br&gt;
         <title>Ch1</title>
         <link rel="alternate" href="http://example.com/2024/03/21/computer-science/compile-principles/ch1/"/>
         <content type="html">&lt;blockquote&gt;
-&lt;p&gt;ZJU 2025 春夏编译原理 学习笔记&lt;/p&gt;
+&lt;p&gt;ZJU 2025春夏编译原理 学习笔记&lt;/p&gt;
 &lt;p&gt;主要基于虎书（&lt;em&gt;Modern Compiler Implementation in C&lt;/em&gt;, Andrew W. Appel）&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h1 id=&#34;ch1-introduction&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#ch1-introduction&#34;&gt;#&lt;/a&gt; CH1 Introduction&lt;/h1&gt;
-&lt;ul&gt;
-&lt;li&gt;Two Important Concepts
-&lt;ul&gt;
+&lt;h1 id=&#34;CH1-Introduction&#34;&gt;&lt;a href=&#34;#CH1-Introduction&#34; class=&#34;headerlink&#34; title=&#34;CH1 Introduction&#34;&gt;&lt;/a&gt;CH1 Introduction&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;Two Important Concepts&lt;ul&gt;
 &lt;li&gt;Phases（阶段）&lt;/li&gt;
 &lt;li&gt;Interfaces（接口）&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;方框里的是 phase，中间的是 interface&lt;br&gt;
-&lt;img data-src=&#34;image.png&#34; alt&gt;&lt;br&gt;
- 各个阶段的描述&lt;br&gt;
-&lt;img data-src=&#34;image-1.png&#34; alt&gt;&lt;img data-src=&#34;image-2.png&#34; alt&gt;&lt;/p&gt;
+&lt;p&gt;方框里的是phase，中间的是interface&lt;br&gt;&lt;img data-src=&#34;/image.png&#34;&gt;&lt;br&gt;各个阶段的描述&lt;br&gt;&lt;img data-src=&#34;/image-1.png&#34;&gt;&lt;img data-src=&#34;/image-2.png&#34;&gt;&lt;/p&gt;
 </content>
         <category term="编译原理" />
         <updated>2024-03-20T16:00:00.000Z</updated>
@@ -349,28 +250,21 @@ A. 汇编程序&lt;br&gt;
         <id>http://example.com/2024/03/21/computer-science/compile-principles/ch5/</id>
         <title>Ch5</title>
         <link rel="alternate" href="http://example.com/2024/03/21/computer-science/compile-principles/ch5/"/>
-        <content type="html">&lt;h1 id=&#34;语义分析&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#语义分析&#34;&gt;#&lt;/a&gt; 语义分析&lt;/h1&gt;
-&lt;blockquote&gt;
+        <content type="html">&lt;h1 id=&#34;语义分析&#34;&gt;&lt;a href=&#34;#语义分析&#34; class=&#34;headerlink&#34; title=&#34;语义分析&#34;&gt;&lt;/a&gt;语义分析&lt;/h1&gt;&lt;blockquote&gt;
 &lt;p&gt;绑定，类型检查&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h2 id=&#34;symbol-table&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#symbol-table&#34;&gt;#&lt;/a&gt; symbol table&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Functional style: 函数式风格
-&lt;ul&gt;
-&lt;li&gt;To keep &lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;msub&gt;&lt;mi&gt;σ&lt;/mi&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/msub&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;\sigma_1&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.58056em;vertical-align:-0.15em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.03588em;&#34;&gt;σ&lt;/span&gt;&lt;span class=&#34;msupsub&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.30110799999999993em;&#34;&gt;&lt;span style=&#34;top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.7em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mtight&#34;&gt;1&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.15em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; in pristine condition while creating create &lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;msub&gt;&lt;mi&gt;σ&lt;/mi&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msub&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;\sigma_2&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.58056em;vertical-align:-0.15em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.03588em;&#34;&gt;σ&lt;/span&gt;&lt;span class=&#34;msupsub&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.30110799999999993em;&#34;&gt;&lt;span style=&#34;top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.7em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mtight&#34;&gt;2&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.15em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; and &lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;msub&gt;&lt;mi&gt;σ&lt;/mi&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;/msub&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;\sigma_3&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.58056em;vertical-align:-0.15em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.03588em;&#34;&gt;σ&lt;/span&gt;&lt;span class=&#34;msupsub&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.30110799999999993em;&#34;&gt;&lt;span style=&#34;top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.7em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mtight&#34;&gt;3&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.15em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;h2 id=&#34;symbol-table&#34;&gt;&lt;a href=&#34;#symbol-table&#34; class=&#34;headerlink&#34; title=&#34;symbol table&#34;&gt;&lt;/a&gt;symbol table&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;Functional style: 函数式风格&lt;ul&gt;
+&lt;li&gt;To keep $\sigma_1$ in pristine condition while creating create $\sigma_2$ and $\sigma_3$&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;Imperative style: 命令式风格
-&lt;ul&gt;
-&lt;li&gt;Modify &lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;msub&gt;&lt;mi&gt;σ&lt;/mi&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/msub&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;\sigma_1&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.58056em;vertical-align:-0.15em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.03588em;&#34;&gt;σ&lt;/span&gt;&lt;span class=&#34;msupsub&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.30110799999999993em;&#34;&gt;&lt;span style=&#34;top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.7em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mtight&#34;&gt;1&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.15em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; until it becomes &lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;msub&gt;&lt;mi&gt;σ&lt;/mi&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msub&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;\sigma_2&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.58056em;vertical-align:-0.15em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.03588em;&#34;&gt;σ&lt;/span&gt;&lt;span class=&#34;msupsub&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.30110799999999993em;&#34;&gt;&lt;span style=&#34;top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.7em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mtight&#34;&gt;2&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.15em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;.&lt;/li&gt;
-&lt;li&gt;While &lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;msub&gt;&lt;mi&gt;σ&lt;/mi&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msub&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;\sigma_2&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.58056em;vertical-align:-0.15em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.03588em;&#34;&gt;σ&lt;/span&gt;&lt;span class=&#34;msupsub&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.30110799999999993em;&#34;&gt;&lt;span style=&#34;top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.7em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mtight&#34;&gt;2&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.15em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; exists, we cannot look things up in &lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;msub&gt;&lt;mi&gt;σ&lt;/mi&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/msub&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;\sigma_1&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.58056em;vertical-align:-0.15em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.03588em;&#34;&gt;σ&lt;/span&gt;&lt;span class=&#34;msupsub&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.30110799999999993em;&#34;&gt;&lt;span style=&#34;top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.7em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mtight&#34;&gt;1&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.15em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;.&lt;/li&gt;
-&lt;li&gt;When done with &lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;msub&gt;&lt;mi&gt;σ&lt;/mi&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msub&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;\sigma_2&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.58056em;vertical-align:-0.15em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.03588em;&#34;&gt;σ&lt;/span&gt;&lt;span class=&#34;msupsub&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.30110799999999993em;&#34;&gt;&lt;span style=&#34;top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.7em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mtight&#34;&gt;2&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.15em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;, can undo the modification to get &lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;msub&gt;&lt;mi&gt;σ&lt;/mi&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/msub&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;\sigma_1&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.58056em;vertical-align:-0.15em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.03588em;&#34;&gt;σ&lt;/span&gt;&lt;span class=&#34;msupsub&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.30110799999999993em;&#34;&gt;&lt;span style=&#34;top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.7em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mtight&#34;&gt;1&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.15em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; back again.&lt;/li&gt;
+&lt;li&gt;Imperative style: 命令式风格&lt;ul&gt;
+&lt;li&gt;Modify $\sigma_1$ until it becomes $\sigma_2$. &lt;/li&gt;
+&lt;li&gt;While $\sigma_2$ exists, we cannot look things up in $\sigma_1$. &lt;/li&gt;
+&lt;li&gt;When done with $\sigma_2$, can undo the modification to get $\sigma_1$ back again.&lt;br&gt;:::info 方法：&lt;br&gt;Hashing&lt;br&gt;:::&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class=&#34;note info 方法：&#34;&gt;
-&lt;p&gt;Hashing&lt;/p&gt;
-&lt;/div&gt;
 </content>
         <category term="语义分析" />
         <updated>2024-03-20T16:00:00.000Z</updated>
