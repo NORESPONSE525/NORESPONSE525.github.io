@@ -8,14 +8,14 @@
         <pubDate>Tue, 14 May 2024 00:00:00 +0800</pubDate>
         <lastBuildDate>Tue, 14 May 2024 00:00:00 +0800</lastBuildDate>
         <category>人工智能</category>
+        <category>计算机网络</category>
+        <category>数据的表示与运算</category>
+        <category>计算机组成</category>
         <category>词法分析</category>
         <category>编译原理</category>
         <category>语义分析</category>
-        <category>语法分析</category>
         <category>抽象语法</category>
-        <category>计算机组成</category>
-        <category>计算机网络</category>
-        <category>数据的表示与运算</category>
+        <category>语法分析</category>
         <item>
             <guid isPermalink="true">http://example.com/2024/05/14/computer-science/computer-organization/ch2/</guid>
             <title>Ch2</title>
@@ -100,6 +100,14 @@ C. &lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&l
 &lt;/div&gt;
 &lt;/div&gt;&lt;/details&gt;
  ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">http://example.com/2024/05/13/computer-science/computer-network/ch1/</guid>
+            <title>Ch1</title>
+            <link>http://example.com/2024/05/13/computer-science/computer-network/ch1/</link>
+            <category>计算机网络</category>
+            <pubDate>Mon, 13 May 2024 00:00:00 +0800</pubDate>
+            <description><![CDATA[  ]]></description>
         </item>
         <item>
             <guid isPermalink="true">http://example.com/2024/05/13/computer-science/computer-organization/ch1/</guid>
@@ -269,14 +277,6 @@ A. 汇编程序&lt;br&gt;
 &lt;/ul&gt;
 &lt;/blockquote&gt;
  ]]></description>
-        </item>
-        <item>
-            <guid isPermalink="true">http://example.com/2024/05/13/computer-science/computer-network/ch1/</guid>
-            <title>Ch1</title>
-            <link>http://example.com/2024/05/13/computer-science/computer-network/ch1/</link>
-            <category>计算机网络</category>
-            <pubDate>Mon, 13 May 2024 00:00:00 +0800</pubDate>
-            <description><![CDATA[  ]]></description>
         </item>
         <item>
             <guid isPermalink="true">http://example.com/2024/03/29/computer-science/compile-principles/ch4/</guid>
