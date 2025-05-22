@@ -5,37 +5,14 @@
     <link href="http://example.com" />
     <updated>2024-05-19T16:00:00.000Z</updated>
     <category term="人工智能" />
-    <category term="计算机网络" />
-    <category term="计算机组成" />
-    <category term="编译原理" />
-    <category term="数据的表示与运算" />
     <category term="语法分析" />
     <category term="词法分析" />
+    <category term="编译原理" />
     <category term="语义分析" />
     <category term="抽象语法" />
-    <entry>
-        <id>http://example.com/2024/05/20/AI/week1/</id>
-        <title>Week1</title>
-        <link rel="alternate" href="http://example.com/2024/05/20/AI/week1/"/>
-        <content type="html">&lt;blockquote&gt;
-&lt;p&gt;2025-2026 春夏人工智能课程笔记&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h1 id=&#34;ch1-绪论&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#ch1-绪论&#34;&gt;#&lt;/a&gt; Ch1 绪论&lt;/h1&gt;
-&lt;ul&gt;
-&lt;li&gt;人工智能求解：
-&lt;ul&gt;
-&lt;li&gt;以符号主义为核心的逻辑推理：将概念（如命题等）符号化，从若干判断（前提）出发得到新判断（结论）&lt;/li&gt;
-&lt;li&gt;以问题求解为核心的探寻搜索：探寻搜索依据已有信息来寻找满足约束条件的待求解问题的答案&lt;/li&gt;
-&lt;li&gt;以数据驱动为核心的机器学习：从数据中发现数据所承载语义（如概念）的内在模式&lt;/li&gt;
-&lt;li&gt;以行为主义为核心的强化学习：根据环境所提供的奖罚反馈来学习所处状态可施加的最佳行动，在 “探索（未知空间）- 利用（已有经验）（exploration vs. exploitation）” 之间寻找平衡，完成某个序列化任务，具备自我学习能力&lt;/li&gt;
-&lt;li&gt;以博弈对抗为核心的群体智能：从 “数据拟合” 优化解的求取向 “均衡解” 的求取迈进&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-</content>
-        <category term="人工智能" />
-        <updated>2024-05-19T16:00:00.000Z</updated>
-    </entry>
+    <category term="计算机网络" />
+    <category term="计算机组成" />
+    <category term="数据的表示与运算" />
     <entry>
         <id>http://example.com/2024/05/20/AI/week2/</id>
         <title>Week2</title>
@@ -108,6 +85,29 @@
 &lt;p&gt;&lt;span class=&#34;katex-display&#34;&gt;&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34; display=&#34;block&#34;&gt;&lt;semantics&gt;&lt;mtable rowspacing=&#34;0.24999999999999992em&#34; columnalign=&#34;right&#34; columnspacing&gt;&lt;mtr&gt;&lt;mtd&gt;&lt;mstyle scriptlevel=&#34;0&#34; displaystyle=&#34;true&#34;&gt;&lt;mrow&gt;&lt;mo stretchy=&#34;false&#34;&gt;(&lt;/mo&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;∀&lt;/mi&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mo stretchy=&#34;false&#34;&gt;)&lt;/mo&gt;&lt;mo stretchy=&#34;false&#34;&gt;(&lt;/mo&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;∃&lt;/mi&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo stretchy=&#34;false&#34;&gt;)&lt;/mo&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mo stretchy=&#34;false&#34;&gt;(&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo separator=&#34;true&#34;&gt;,&lt;/mo&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mo stretchy=&#34;false&#34;&gt;)&lt;/mo&gt;&lt;mo&gt;≡&lt;/mo&gt;&lt;mo stretchy=&#34;false&#34;&gt;(&lt;/mo&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;∃&lt;/mi&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo stretchy=&#34;false&#34;&gt;)&lt;/mo&gt;&lt;mo stretchy=&#34;false&#34;&gt;(&lt;/mo&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;∃&lt;/mi&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mo stretchy=&#34;false&#34;&gt;)&lt;/mo&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mo stretchy=&#34;false&#34;&gt;(&lt;/mo&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mo separator=&#34;true&#34;&gt;,&lt;/mo&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mo stretchy=&#34;false&#34;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;/mstyle&gt;&lt;/mtd&gt;&lt;/mtr&gt;&lt;/mtable&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;\begin{aligned}
 (\forall y)(\exists x)A(x, y) \equiv (\exists x)(\exists y)A(x, y)
 \end{aligned}&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:1.5000000000000002em;vertical-align:-0.5000000000000002em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mtable&#34;&gt;&lt;span class=&#34;col-align-r&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:1em;&#34;&gt;&lt;span style=&#34;top:-3.16em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:3em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mopen&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;∀&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.03588em;&#34;&gt;y&lt;/span&gt;&lt;span class=&#34;mclose&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;mopen&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;∃&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;x&lt;/span&gt;&lt;span class=&#34;mclose&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;A&lt;/span&gt;&lt;span class=&#34;mopen&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;x&lt;/span&gt;&lt;span class=&#34;mpunct&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.16666666666666666em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.03588em;&#34;&gt;y&lt;/span&gt;&lt;span class=&#34;mclose&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mrel&#34;&gt;≡&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mopen&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;∃&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;x&lt;/span&gt;&lt;span class=&#34;mclose&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;mopen&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;∃&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.03588em;&#34;&gt;y&lt;/span&gt;&lt;span class=&#34;mclose&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;A&lt;/span&gt;&lt;span class=&#34;mopen&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;x&lt;/span&gt;&lt;span class=&#34;mpunct&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.16666666666666666em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.03588em;&#34;&gt;y&lt;/span&gt;&lt;span class=&#34;mclose&#34;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.5000000000000002em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+</content>
+        <category term="人工智能" />
+        <updated>2024-05-19T16:00:00.000Z</updated>
+    </entry>
+    <entry>
+        <id>http://example.com/2024/05/20/AI/week1/</id>
+        <title>Week1</title>
+        <link rel="alternate" href="http://example.com/2024/05/20/AI/week1/"/>
+        <content type="html">&lt;blockquote&gt;
+&lt;p&gt;2025-2026 春夏人工智能课程笔记&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&#34;ch1-绪论&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#ch1-绪论&#34;&gt;#&lt;/a&gt; Ch1 绪论&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;人工智能求解：
+&lt;ul&gt;
+&lt;li&gt;以符号主义为核心的逻辑推理：将概念（如命题等）符号化，从若干判断（前提）出发得到新判断（结论）&lt;/li&gt;
+&lt;li&gt;以问题求解为核心的探寻搜索：探寻搜索依据已有信息来寻找满足约束条件的待求解问题的答案&lt;/li&gt;
+&lt;li&gt;以数据驱动为核心的机器学习：从数据中发现数据所承载语义（如概念）的内在模式&lt;/li&gt;
+&lt;li&gt;以行为主义为核心的强化学习：根据环境所提供的奖罚反馈来学习所处状态可施加的最佳行动，在 “探索（未知空间）- 利用（已有经验）（exploration vs. exploitation）” 之间寻找平衡，完成某个序列化任务，具备自我学习能力&lt;/li&gt;
+&lt;li&gt;以博弈对抗为核心的群体智能：从 “数据拟合” 优化解的求取向 “均衡解” 的求取迈进&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
 </content>
         <category term="人工智能" />
         <updated>2024-05-19T16:00:00.000Z</updated>
@@ -196,23 +196,85 @@ C. &lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&l
 &lt;h2 id=&#34;22-运算方法和运算电路&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#22-运算方法和运算电路&#34;&gt;#&lt;/a&gt; 2.2 运算方法和运算电路&lt;/h2&gt;
 &lt;h3 id=&#34;221-基本运算部件&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#221-基本运算部件&#34;&gt;#&lt;/a&gt; 2.2.1 基本运算部件&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;一位全加器&lt;/li&gt;
+&lt;li&gt;一位全加器
+&lt;ul&gt;
+&lt;li&gt;用真值表实现的：进位 C，和 S&lt;/li&gt;
 &lt;/ul&gt;
-&lt;blockquote&gt;
-&lt;p&gt;用真值表实现的：进位 C，和 S&lt;br&gt;
-| A|B|Cin|Cout|S|&lt;br&gt;
-|:—😐:—😐:—😐:—😐:—😐&lt;br&gt;
-|0|0|0|0|0|&lt;br&gt;
-|0|0|1|0|1|&lt;br&gt;
-|0|1|0|0|1|&lt;br&gt;
-|0|1|1|1|0|&lt;br&gt;
-|1|0|0|0|1|&lt;br&gt;
-|1|0|1|1|0|&lt;br&gt;
-|1|1|0|1|0|&lt;br&gt;
-|1|1|1|1|1|&lt;br&gt;
- 可以用卡诺图或者直接理解 (王道不写还好我本来就会，差点忘了。。。)&lt;br&gt;
-&lt;img data-src=&#34;img2.jpg&#34; alt&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;A&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;B&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;Cin&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;Cout&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;S&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;0&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;0&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;0&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;0&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;0&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;0&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;0&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;1&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;0&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;0&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;1&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;0&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;0&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;0&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;1&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;1&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;1&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;0&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;1&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;0&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;0&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;0&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;1&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;0&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;1&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;1&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;0&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;1&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;1&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;0&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;1&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;0&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;1&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;1&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;1&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;1&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;ul&gt;
+&lt;li&gt;可以用卡诺图或者直接理解 (王道不写还好我本来就会，差点忘了。。。)&lt;br&gt;
+&lt;img data-src=&#34;img2.jpg&#34; alt&gt;&lt;/li&gt;
+&lt;/ul&gt;
 &lt;p&gt;&lt;span class=&#34;katex-display&#34;&gt;&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34; display=&#34;block&#34;&gt;&lt;semantics&gt;&lt;mtable rowspacing=&#34;0.24999999999999992em&#34; columnalign=&#34;right left&#34; columnspacing=&#34;0em&#34;&gt;&lt;mtr&gt;&lt;mtd&gt;&lt;mstyle scriptlevel=&#34;0&#34; displaystyle=&#34;true&#34;&gt;&lt;mi&gt;S&lt;/mi&gt;&lt;/mstyle&gt;&lt;/mtd&gt;&lt;mtd&gt;&lt;mstyle scriptlevel=&#34;0&#34; displaystyle=&#34;true&#34;&gt;&lt;mrow&gt;&lt;mrow&gt;&lt;/mrow&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mover accent=&#34;true&#34;&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mo stretchy=&#34;true&#34;&gt;‾&lt;/mo&gt;&lt;/mover&gt;&lt;mtext&gt; &lt;/mtext&gt;&lt;mover accent=&#34;true&#34;&gt;&lt;mi&gt;B&lt;/mi&gt;&lt;mo stretchy=&#34;true&#34;&gt;‾&lt;/mo&gt;&lt;/mover&gt;&lt;mtext&gt; &lt;/mtext&gt;&lt;msub&gt;&lt;mi&gt;C&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;/msub&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mover accent=&#34;true&#34;&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mo stretchy=&#34;true&#34;&gt;‾&lt;/mo&gt;&lt;/mover&gt;&lt;mtext&gt; &lt;/mtext&gt;&lt;mi&gt;B&lt;/mi&gt;&lt;mtext&gt; &lt;/mtext&gt;&lt;mover accent=&#34;true&#34;&gt;&lt;msub&gt;&lt;mi&gt;C&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;/msub&gt;&lt;mo stretchy=&#34;true&#34;&gt;‾&lt;/mo&gt;&lt;/mover&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mtext&gt; &lt;/mtext&gt;&lt;mover accent=&#34;true&#34;&gt;&lt;mi&gt;B&lt;/mi&gt;&lt;mo stretchy=&#34;true&#34;&gt;‾&lt;/mo&gt;&lt;/mover&gt;&lt;mtext&gt; &lt;/mtext&gt;&lt;mover accent=&#34;true&#34;&gt;&lt;msub&gt;&lt;mi&gt;C&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;/msub&gt;&lt;mo stretchy=&#34;true&#34;&gt;‾&lt;/mo&gt;&lt;/mover&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mtext&gt; &lt;/mtext&gt;&lt;mi&gt;B&lt;/mi&gt;&lt;mtext&gt; &lt;/mtext&gt;&lt;msub&gt;&lt;mi&gt;C&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;/msub&gt;&lt;/mrow&gt;&lt;/mstyle&gt;&lt;/mtd&gt;&lt;/mtr&gt;&lt;mtr&gt;&lt;mtd&gt;&lt;mstyle scriptlevel=&#34;0&#34; displaystyle=&#34;true&#34;&gt;&lt;mrow&gt;&lt;/mrow&gt;&lt;/mstyle&gt;&lt;/mtd&gt;&lt;mtd&gt;&lt;mstyle scriptlevel=&#34;0&#34; displaystyle=&#34;true&#34;&gt;&lt;mrow&gt;&lt;mrow&gt;&lt;/mrow&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mo&gt;⊕&lt;/mo&gt;&lt;mi&gt;B&lt;/mi&gt;&lt;mo&gt;⊕&lt;/mo&gt;&lt;msub&gt;&lt;mi&gt;C&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;/msub&gt;&lt;/mrow&gt;&lt;/mstyle&gt;&lt;/mtd&gt;&lt;/mtr&gt;&lt;/mtable&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;\begin{aligned}
 S &amp;amp;= \overline{A} \, \overline{B} \, C_i + \overline{A} \, B \, \overline{C_i} + A \, \overline{B} \, \overline{C_i} + A \, B \, C_i \\
   &amp;amp;= A \oplus B \oplus C_i

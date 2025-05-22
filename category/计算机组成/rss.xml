@@ -8,14 +8,14 @@
         <pubDate>Tue, 14 May 2024 00:00:00 +0800</pubDate>
         <lastBuildDate>Tue, 14 May 2024 00:00:00 +0800</lastBuildDate>
         <category>人工智能</category>
-        <category>计算机网络</category>
-        <category>计算机组成</category>
-        <category>编译原理</category>
-        <category>数据的表示与运算</category>
         <category>语法分析</category>
         <category>词法分析</category>
+        <category>编译原理</category>
         <category>语义分析</category>
         <category>抽象语法</category>
+        <category>计算机网络</category>
+        <category>计算机组成</category>
+        <category>数据的表示与运算</category>
         <item>
             <guid isPermalink="true">http://example.com/2024/05/14/computer-science/computer-organization/ch2/</guid>
             <title>Ch2</title>
@@ -102,23 +102,85 @@ C. &lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&l
 &lt;h2 id=&#34;22-运算方法和运算电路&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#22-运算方法和运算电路&#34;&gt;#&lt;/a&gt; 2.2 运算方法和运算电路&lt;/h2&gt;
 &lt;h3 id=&#34;221-基本运算部件&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#221-基本运算部件&#34;&gt;#&lt;/a&gt; 2.2.1 基本运算部件&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;一位全加器&lt;/li&gt;
+&lt;li&gt;一位全加器
+&lt;ul&gt;
+&lt;li&gt;用真值表实现的：进位 C，和 S&lt;/li&gt;
 &lt;/ul&gt;
-&lt;blockquote&gt;
-&lt;p&gt;用真值表实现的：进位 C，和 S&lt;br&gt;
-| A|B|Cin|Cout|S|&lt;br&gt;
-|:—😐:—😐:—😐:—😐:—😐&lt;br&gt;
-|0|0|0|0|0|&lt;br&gt;
-|0|0|1|0|1|&lt;br&gt;
-|0|1|0|0|1|&lt;br&gt;
-|0|1|1|1|0|&lt;br&gt;
-|1|0|0|0|1|&lt;br&gt;
-|1|0|1|1|0|&lt;br&gt;
-|1|1|0|1|0|&lt;br&gt;
-|1|1|1|1|1|&lt;br&gt;
- 可以用卡诺图或者直接理解 (王道不写还好我本来就会，差点忘了。。。)&lt;br&gt;
-&lt;img data-src=&#34;img2.jpg&#34; alt&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;A&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;B&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;Cin&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;Cout&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;S&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;0&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;0&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;0&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;0&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;0&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;0&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;0&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;1&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;0&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;0&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;1&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;0&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;0&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;0&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;1&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;1&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;1&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;0&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;1&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;0&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;0&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;0&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;1&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;0&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;1&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;1&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;0&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;1&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;1&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;0&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;1&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;0&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;1&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;1&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;1&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;1&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;ul&gt;
+&lt;li&gt;可以用卡诺图或者直接理解 (王道不写还好我本来就会，差点忘了。。。)&lt;br&gt;
+&lt;img data-src=&#34;img2.jpg&#34; alt&gt;&lt;/li&gt;
+&lt;/ul&gt;
 &lt;p&gt;&lt;span class=&#34;katex-display&#34;&gt;&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34; display=&#34;block&#34;&gt;&lt;semantics&gt;&lt;mtable rowspacing=&#34;0.24999999999999992em&#34; columnalign=&#34;right left&#34; columnspacing=&#34;0em&#34;&gt;&lt;mtr&gt;&lt;mtd&gt;&lt;mstyle scriptlevel=&#34;0&#34; displaystyle=&#34;true&#34;&gt;&lt;mi&gt;S&lt;/mi&gt;&lt;/mstyle&gt;&lt;/mtd&gt;&lt;mtd&gt;&lt;mstyle scriptlevel=&#34;0&#34; displaystyle=&#34;true&#34;&gt;&lt;mrow&gt;&lt;mrow&gt;&lt;/mrow&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mover accent=&#34;true&#34;&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mo stretchy=&#34;true&#34;&gt;‾&lt;/mo&gt;&lt;/mover&gt;&lt;mtext&gt; &lt;/mtext&gt;&lt;mover accent=&#34;true&#34;&gt;&lt;mi&gt;B&lt;/mi&gt;&lt;mo stretchy=&#34;true&#34;&gt;‾&lt;/mo&gt;&lt;/mover&gt;&lt;mtext&gt; &lt;/mtext&gt;&lt;msub&gt;&lt;mi&gt;C&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;/msub&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mover accent=&#34;true&#34;&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mo stretchy=&#34;true&#34;&gt;‾&lt;/mo&gt;&lt;/mover&gt;&lt;mtext&gt; &lt;/mtext&gt;&lt;mi&gt;B&lt;/mi&gt;&lt;mtext&gt; &lt;/mtext&gt;&lt;mover accent=&#34;true&#34;&gt;&lt;msub&gt;&lt;mi&gt;C&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;/msub&gt;&lt;mo stretchy=&#34;true&#34;&gt;‾&lt;/mo&gt;&lt;/mover&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mtext&gt; &lt;/mtext&gt;&lt;mover accent=&#34;true&#34;&gt;&lt;mi&gt;B&lt;/mi&gt;&lt;mo stretchy=&#34;true&#34;&gt;‾&lt;/mo&gt;&lt;/mover&gt;&lt;mtext&gt; &lt;/mtext&gt;&lt;mover accent=&#34;true&#34;&gt;&lt;msub&gt;&lt;mi&gt;C&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;/msub&gt;&lt;mo stretchy=&#34;true&#34;&gt;‾&lt;/mo&gt;&lt;/mover&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mtext&gt; &lt;/mtext&gt;&lt;mi&gt;B&lt;/mi&gt;&lt;mtext&gt; &lt;/mtext&gt;&lt;msub&gt;&lt;mi&gt;C&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;/msub&gt;&lt;/mrow&gt;&lt;/mstyle&gt;&lt;/mtd&gt;&lt;/mtr&gt;&lt;mtr&gt;&lt;mtd&gt;&lt;mstyle scriptlevel=&#34;0&#34; displaystyle=&#34;true&#34;&gt;&lt;mrow&gt;&lt;/mrow&gt;&lt;/mstyle&gt;&lt;/mtd&gt;&lt;mtd&gt;&lt;mstyle scriptlevel=&#34;0&#34; displaystyle=&#34;true&#34;&gt;&lt;mrow&gt;&lt;mrow&gt;&lt;/mrow&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mo&gt;⊕&lt;/mo&gt;&lt;mi&gt;B&lt;/mi&gt;&lt;mo&gt;⊕&lt;/mo&gt;&lt;msub&gt;&lt;mi&gt;C&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;/msub&gt;&lt;/mrow&gt;&lt;/mstyle&gt;&lt;/mtd&gt;&lt;/mtr&gt;&lt;/mtable&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;\begin{aligned}
 S &amp;amp;= \overline{A} \, \overline{B} \, C_i + \overline{A} \, B \, \overline{C_i} + A \, \overline{B} \, \overline{C_i} + A \, B \, C_i \\
   &amp;amp;= A \oplus B \oplus C_i

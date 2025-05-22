@@ -101,7 +101,7 @@ NoResponse's Blog = </title>
 
       </div>
       <div id="imgs" class="pjax">
-          <img src="/images/bg20.jpg">
+          <img src="/images/bg4.jpg">
       </div>
     </header>
     <div id="waves">
@@ -229,23 +229,85 @@ C. <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org
 <h2 id="22-运算方法和运算电路"><a class="markdownIt-Anchor" href="#22-运算方法和运算电路">#</a> 2.2 运算方法和运算电路</h2>
 <h3 id="221-基本运算部件"><a class="markdownIt-Anchor" href="#221-基本运算部件">#</a> 2.2.1 基本运算部件</h3>
 <ul>
-<li>一位全加器</li>
+<li>一位全加器
+<ul>
+<li>用真值表实现的：进位 C，和 S</li>
 </ul>
-<blockquote>
-<p>用真值表实现的：进位 C，和 S<br>
-| A|B|Cin|Cout|S|<br>
-|:—😐:—😐:—😐:—😐:—😐<br>
-|0|0|0|0|0|<br>
-|0|0|1|0|1|<br>
-|0|1|0|0|1|<br>
-|0|1|1|1|0|<br>
-|1|0|0|0|1|<br>
-|1|0|1|1|0|<br>
-|1|1|0|1|0|<br>
-|1|1|1|1|1|<br>
- 可以用卡诺图或者直接理解 (王道不写还好我本来就会，差点忘了。。。)<br>
-<img data-src="img2.jpg" alt></p>
-</blockquote>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">A</th>
+<th style="text-align:center">B</th>
+<th style="text-align:center">Cin</th>
+<th style="text-align:center">Cout</th>
+<th style="text-align:center">S</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+</tr>
+<tr>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+</tr>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+</tr>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+</tr>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>可以用卡诺图或者直接理解 (王道不写还好我本来就会，差点忘了。。。)<br>
+<img data-src="img2.jpg" alt></li>
+</ul>
 <p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mtable rowspacing="0.24999999999999992em" columnalign="right left" columnspacing="0em"><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mi>S</mi></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><mo>=</mo><mover accent="true"><mi>A</mi><mo stretchy="true">‾</mo></mover><mtext> </mtext><mover accent="true"><mi>B</mi><mo stretchy="true">‾</mo></mover><mtext> </mtext><msub><mi>C</mi><mi>i</mi></msub><mo>+</mo><mover accent="true"><mi>A</mi><mo stretchy="true">‾</mo></mover><mtext> </mtext><mi>B</mi><mtext> </mtext><mover accent="true"><msub><mi>C</mi><mi>i</mi></msub><mo stretchy="true">‾</mo></mover><mo>+</mo><mi>A</mi><mtext> </mtext><mover accent="true"><mi>B</mi><mo stretchy="true">‾</mo></mover><mtext> </mtext><mover accent="true"><msub><mi>C</mi><mi>i</mi></msub><mo stretchy="true">‾</mo></mover><mo>+</mo><mi>A</mi><mtext> </mtext><mi>B</mi><mtext> </mtext><msub><mi>C</mi><mi>i</mi></msub></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><mo>=</mo><mi>A</mi><mo>⊕</mo><mi>B</mi><mo>⊕</mo><msub><mi>C</mi><mi>i</mi></msub></mrow></mstyle></mtd></mtr></mtable><annotation encoding="application/x-tex">\begin{aligned}
 S &amp;= \overline{A} \, \overline{B} \, C_i + \overline{A} \, B \, \overline{C_i} + A \, \overline{B} \, \overline{C_i} + A \, B \, C_i \\
   &amp;= A \oplus B \oplus C_i
@@ -270,7 +332,7 @@ Co &amp;= AB + A \overline{B} C_i + \overline{A} B C_i \\
       <i class="ic i-calendar-check"></i>
     </span>
     <span class="text">Edited on</span>
-    <time title="Modified: 2025-05-22 18:07:24" itemprop="dateModified" datetime="2025-05-22T18:07:24+08:00">2025-05-22</time>
+    <time title="Modified: 2025-05-22 23:24:45" itemprop="dateModified" datetime="2025-05-22T23:24:45+08:00">2025-05-22</time>
   </span>
 </div>
 
@@ -325,7 +387,7 @@ Co &amp;= AB + A \overline{B} C_i + \overline{A} B C_i \\
     <div class="item left">
       
 
-  <a href="/2024/05/13/computer-science/computer-network/ch1/" itemprop="url" rel="prev" data-background-image="&#x2F;images&#x2F;bg11.jpg" title="Ch1">
+  <a href="/2024/05/13/computer-science/computer-network/ch1/" itemprop="url" rel="prev" data-background-image="&#x2F;images&#x2F;bg3.png" title="Ch1">
   <span class="type">Previous Post</span>
   <span class="category"><i class="ic i-flag"></i> 计算机网络</span>
   <h3>Ch1</h3>
@@ -335,10 +397,10 @@ Co &amp;= AB + A \overline{B} C_i + \overline{A} B C_i \\
     <div class="item right">
       
 
-  <a href="/2024/05/20/AI/week2/" itemprop="url" rel="next" data-background-image="&#x2F;images&#x2F;bg18.jpg" title="Week2">
+  <a href="/2024/05/20/AI/week1/" itemprop="url" rel="next" data-background-image="&#x2F;images&#x2F;bg25.jpg" title="Week1">
   <span class="type">Next Post</span>
   <span class="category"><i class="ic i-flag"></i> 人工智能</span>
-  <h3>Week2</h3>
+  <h3>Week1</h3>
   </a>
 
     </div>
@@ -419,7 +481,7 @@ Co &amp;= AB + A \overline{B} C_i + \overline{A} B C_i \\
     <li class="up"><i class="ic i-arrow-up"></i></li>
     <li class="down"><i class="ic i-arrow-down"></i></li>
     <li class="next pjax">
-        <a href="/2024/05/20/AI/week2/" rel="next" title="Next Post"><i class="ic i-chevron-right"></i></a>
+        <a href="/2024/05/20/AI/week1/" rel="next" title="Next Post"><i class="ic i-chevron-right"></i></a>
     </li>
     <li class="percent"></li>
   </ul>
@@ -437,28 +499,6 @@ Co &amp;= AB + A \overline{B} C_i + \overline{A} B C_i \\
 <div class="rpost pjax">
   <h2>Random Posts</h2>
   <ul>
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
-</div>
-
-    <span><a href="/2024/03/23/computer-science/compile-principles/ch3/" title="Ch3">Ch3</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/AI/" title="In 人工智能">人工智能</a>
-</div>
-
-    <span><a href="/2024/05/20/AI/week2/" title="Week2">Week2</a></span>
-  </li>
-
       
   <li class="item">
     
@@ -487,10 +527,10 @@ Co &amp;= AB + A \overline{B} C_i + \overline{A} B C_i \\
 <div class="breadcrumb">
 <a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/computer-organization/" title="In 计算机组成">计算机组成</a>
+<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
 </div>
 
-    <span><a href="/2024/05/13/computer-science/computer-organization/ch1/" title="Ch1">Ch1</a></span>
+    <span><a href="/2024/03/21/computer-science/compile-principles/ch1/" title="Ch1">Ch1</a></span>
   </li>
 
       
@@ -514,19 +554,7 @@ Co &amp;= AB + A \overline{B} C_i + \overline{A} B C_i \\
 <a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
 </div>
 
-    <span><a href="/2024/03/22/computer-science/compile-principles/ch2/" title="Ch2">Ch2</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
-</div>
-
-    <span><a href="/2024/03/21/computer-science/compile-principles/ch1/" title="Ch1">Ch1</a></span>
+    <span><a href="/2024/03/29/computer-science/compile-principles/ch4/" title="Ch4">Ch4</a></span>
   </li>
 
       
@@ -550,7 +578,41 @@ Co &amp;= AB + A \overline{B} C_i + \overline{A} B C_i \\
 <a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
 </div>
 
-    <span><a href="/2024/03/29/computer-science/compile-principles/ch4/" title="Ch4">Ch4</a></span>
+    <span><a href="/2024/03/23/computer-science/compile-principles/ch3/" title="Ch3">Ch3</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/computer-organization/" title="In 计算机组成">计算机组成</a>
+</div>
+
+    <span><a href="/2024/05/13/computer-science/computer-organization/ch1/" title="Ch1">Ch1</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
+</div>
+
+    <span><a href="/2024/03/22/computer-science/compile-principles/ch2/" title="Ch2">Ch2</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/AI/" title="In 人工智能">人工智能</a>
+</div>
+
+    <span><a href="/2024/05/20/AI/week2/" title="Week2">Week2</a></span>
   </li>
 
   </ul>
