@@ -101,7 +101,7 @@ NoResponse's Blog = </title>
 
       </div>
       <div id="imgs" class="pjax">
-          <img src="/images/bg22.png">
+          <img src="/images/bg20.jpg">
       </div>
     </header>
     <div id="waves">
@@ -226,6 +226,36 @@ C. <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org
 对于补码比较大小，正数正常比较，负数数值部分越小，绝对值越大（前面 1 更多的数的绝对值越小，所以 11111111 是 - 1）</p>
 </div>
 </div></details>
+<h2 id="22-运算方法和运算电路"><a class="markdownIt-Anchor" href="#22-运算方法和运算电路">#</a> 2.2 运算方法和运算电路</h2>
+<h3 id="221-基本运算部件"><a class="markdownIt-Anchor" href="#221-基本运算部件">#</a> 2.2.1 基本运算部件</h3>
+<ul>
+<li>一位全加器</li>
+</ul>
+<blockquote>
+<p>用真值表实现的：进位 C，和 S<br>
+| A|B|Cin|Cout|S|<br>
+|:—😐:—😐:—😐:—😐:—😐<br>
+|0|0|0|0|0|<br>
+|0|0|1|0|1|<br>
+|0|1|0|0|1|<br>
+|0|1|1|1|0|<br>
+|1|0|0|0|1|<br>
+|1|0|1|1|0|<br>
+|1|1|0|1|0|<br>
+|1|1|1|1|1|<br>
+ 可以用卡诺图或者直接理解 (王道不写还好我本来就会，差点忘了。。。)<br>
+<img data-src="img2.jpg" alt></p>
+</blockquote>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mtable rowspacing="0.24999999999999992em" columnalign="right left" columnspacing="0em"><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mi>S</mi></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><mo>=</mo><mover accent="true"><mi>A</mi><mo stretchy="true">‾</mo></mover><mtext> </mtext><mover accent="true"><mi>B</mi><mo stretchy="true">‾</mo></mover><mtext> </mtext><msub><mi>C</mi><mi>i</mi></msub><mo>+</mo><mover accent="true"><mi>A</mi><mo stretchy="true">‾</mo></mover><mtext> </mtext><mi>B</mi><mtext> </mtext><mover accent="true"><msub><mi>C</mi><mi>i</mi></msub><mo stretchy="true">‾</mo></mover><mo>+</mo><mi>A</mi><mtext> </mtext><mover accent="true"><mi>B</mi><mo stretchy="true">‾</mo></mover><mtext> </mtext><mover accent="true"><msub><mi>C</mi><mi>i</mi></msub><mo stretchy="true">‾</mo></mover><mo>+</mo><mi>A</mi><mtext> </mtext><mi>B</mi><mtext> </mtext><msub><mi>C</mi><mi>i</mi></msub></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><mo>=</mo><mi>A</mi><mo>⊕</mo><mi>B</mi><mo>⊕</mo><msub><mi>C</mi><mi>i</mi></msub></mrow></mstyle></mtd></mtr></mtable><annotation encoding="application/x-tex">\begin{aligned}
+S &amp;= \overline{A} \, \overline{B} \, C_i + \overline{A} \, B \, \overline{C_i} + A \, \overline{B} \, \overline{C_i} + A \, B \, C_i \\
+  &amp;= A \oplus B \oplus C_i
+\end{aligned}
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:3.04333em;vertical-align:-1.271665em;"></span><span class="mord"><span class="mtable"><span class="col-align-r"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.771665em;"><span style="top:-3.888335em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.05764em;">S</span></span></span><span style="top:-2.388335em;"><span class="pstrut" style="height:3em;"></span><span class="mord"></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.271665em;"><span></span></span></span></span></span><span class="col-align-l"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.771665em;"><span style="top:-3.888335em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mord overline"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8833300000000001em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal">A</span></span></span><span style="top:-3.80333em;"><span class="pstrut" style="height:3em;"></span><span class="overline-line" style="border-bottom-width:0.04em;"></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord overline"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8833300000000001em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.05017em;">B</span></span></span><span style="top:-3.80333em;"><span class="pstrut" style="height:3em;"></span><span class="overline-line" style="border-bottom-width:0.04em;"></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07153em;">C</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.07153em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord overline"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8833300000000001em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal">A</span></span></span><span style="top:-3.80333em;"><span class="pstrut" style="height:3em;"></span><span class="overline-line" style="border-bottom-width:0.04em;"></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal" style="margin-right:0.05017em;">B</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord overline"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8833300000000001em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathnormal" style="margin-right:0.07153em;">C</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.07153em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span><span style="top:-3.80333em;"><span class="pstrut" style="height:3em;"></span><span class="overline-line" style="border-bottom-width:0.04em;"></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord mathnormal">A</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord overline"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8833300000000001em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.05017em;">B</span></span></span><span style="top:-3.80333em;"><span class="pstrut" style="height:3em;"></span><span class="overline-line" style="border-bottom-width:0.04em;"></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord overline"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8833300000000001em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathnormal" style="margin-right:0.07153em;">C</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.07153em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span><span style="top:-3.80333em;"><span class="pstrut" style="height:3em;"></span><span class="overline-line" style="border-bottom-width:0.04em;"></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord mathnormal">A</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal" style="margin-right:0.05017em;">B</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07153em;">C</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.07153em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span><span style="top:-2.388335em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mord mathnormal">A</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">⊕</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord mathnormal" style="margin-right:0.05017em;">B</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">⊕</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07153em;">C</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.07153em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.271665em;"><span></span></span></span></span></span></span></span></span></span></span></span></p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mtable rowspacing="0.24999999999999992em" columnalign="right left" columnspacing="0em"><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mi>C</mi><mi>o</mi></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><mo>=</mo><mi>A</mi><mi>B</mi><mo>+</mo><mi>A</mi><mover accent="true"><mi>B</mi><mo stretchy="true">‾</mo></mover><msub><mi>C</mi><mi>i</mi></msub><mo>+</mo><mover accent="true"><mi>A</mi><mo stretchy="true">‾</mo></mover><mi>B</mi><msub><mi>C</mi><mi>i</mi></msub></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow></mrow></mstyle></mtd><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mrow></mrow><mo>=</mo><mi>A</mi><mi>B</mi><mo>+</mo><mo stretchy="false">(</mo><mi>A</mi><mo>⊕</mo><mi>B</mi><mo stretchy="false">)</mo><mo>⋅</mo><msub><mi>C</mi><mi>i</mi></msub></mrow></mstyle></mtd></mtr></mtable><annotation encoding="application/x-tex">\begin{aligned}
+Co &amp;= AB + A \overline{B} C_i + \overline{A} B C_i \\
+   &amp;= AB + (A \oplus B) \cdot C_i
+\end{aligned}
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:3.04333em;vertical-align:-1.271665em;"></span><span class="mord"><span class="mtable"><span class="col-align-r"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.771665em;"><span style="top:-3.888335em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07153em;">C</span><span class="mord mathnormal">o</span></span></span><span style="top:-2.388335em;"><span class="pstrut" style="height:3em;"></span><span class="mord"></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.271665em;"><span></span></span></span></span></span><span class="col-align-l"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.771665em;"><span style="top:-3.888335em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mord mathnormal">A</span><span class="mord mathnormal" style="margin-right:0.05017em;">B</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord mathnormal">A</span><span class="mord overline"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8833300000000001em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.05017em;">B</span></span></span><span style="top:-3.80333em;"><span class="pstrut" style="height:3em;"></span><span class="overline-line" style="border-bottom-width:0.04em;"></span></span></span></span></span></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07153em;">C</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.07153em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord overline"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8833300000000001em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal">A</span></span></span><span style="top:-3.80333em;"><span class="pstrut" style="height:3em;"></span><span class="overline-line" style="border-bottom-width:0.04em;"></span></span></span></span></span></span><span class="mord mathnormal" style="margin-right:0.05017em;">B</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07153em;">C</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.07153em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span><span style="top:-2.388335em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mord mathnormal">A</span><span class="mord mathnormal" style="margin-right:0.05017em;">B</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mopen">(</span><span class="mord mathnormal">A</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">⊕</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord mathnormal" style="margin-right:0.05017em;">B</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07153em;">C</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.07153em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.271665em;"><span></span></span></span></span></span></span></span></span></span></span></span></p>
 
       <div class="tags">
           <a href="/tags/%E6%95%B0%E6%8D%AE%E7%9A%84%E8%A1%A8%E7%A4%BA%E4%B8%8E%E8%BF%90%E7%AE%97/" rel="tag"><i class="ic i-tag"></i> 数据的表示与运算</a>
@@ -240,7 +270,7 @@ C. <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org
       <i class="ic i-calendar-check"></i>
     </span>
     <span class="text">Edited on</span>
-    <time title="Modified: 2025-05-20 21:34:28" itemprop="dateModified" datetime="2025-05-20T21:34:28+08:00">2025-05-20</time>
+    <time title="Modified: 2025-05-22 18:07:24" itemprop="dateModified" datetime="2025-05-22T18:07:24+08:00">2025-05-22</time>
   </span>
 </div>
 
@@ -295,7 +325,7 @@ C. <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org
     <div class="item left">
       
 
-  <a href="/2024/05/13/computer-science/computer-network/ch1/" itemprop="url" rel="prev" data-background-image="&#x2F;images&#x2F;bg15.jpg" title="Ch1">
+  <a href="/2024/05/13/computer-science/computer-network/ch1/" itemprop="url" rel="prev" data-background-image="&#x2F;images&#x2F;bg11.jpg" title="Ch1">
   <span class="type">Previous Post</span>
   <span class="category"><i class="ic i-flag"></i> 计算机网络</span>
   <h3>Ch1</h3>
@@ -305,7 +335,7 @@ C. <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org
     <div class="item right">
       
 
-  <a href="/2024/05/20/AI/week2/" itemprop="url" rel="next" data-background-image="&#x2F;images&#x2F;bg1.jpg" title="Week2">
+  <a href="/2024/05/20/AI/week2/" itemprop="url" rel="next" data-background-image="&#x2F;images&#x2F;bg18.jpg" title="Week2">
   <span class="type">Next Post</span>
   <span class="category"><i class="ic i-flag"></i> 人工智能</span>
   <h3>Week2</h3>
@@ -327,7 +357,7 @@ C. <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="Contents">
-          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#ch2-%E6%95%B0%E6%8D%AE%E7%9A%84%E8%A1%A8%E7%A4%BA%E5%92%8C%E8%BF%90%E7%AE%97"><span class="toc-number">1.</span> <span class="toc-text"> Ch2 数据的表示和运算</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#21-%E8%BF%9B%E4%BD%8D%E8%AE%A1%E6%95%B0%E5%88%B6%E5%8F%8A%E5%85%B6%E7%9B%B8%E4%BA%92%E8%BD%AC%E6%8D%A2"><span class="toc-number">1.1.</span> <span class="toc-text"> 2.1 进位计数制及其相互转换</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#211"><span class="toc-number">1.1.1.</span> <span class="toc-text"> 2.1.1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#212-%E5%AE%9A%E7%82%B9%E6%95%B0%E7%9A%84%E7%BC%96%E7%A0%81%E8%A1%A8%E7%A4%BA"><span class="toc-number">1.1.2.</span> <span class="toc-text"> 2.1.2 定点数的编码表示</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#213-%E6%95%B4%E6%95%B0%E8%A1%A8%E7%A4%BA"><span class="toc-number">1.1.3.</span> <span class="toc-text"> 2.1.3 整数表示</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#214"><span class="toc-number">1.1.4.</span> <span class="toc-text"> 2.1.4</span></a></li></ol></li></ol></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#ch2-%E6%95%B0%E6%8D%AE%E7%9A%84%E8%A1%A8%E7%A4%BA%E5%92%8C%E8%BF%90%E7%AE%97"><span class="toc-number">1.</span> <span class="toc-text"> Ch2 数据的表示和运算</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#21-%E8%BF%9B%E4%BD%8D%E8%AE%A1%E6%95%B0%E5%88%B6%E5%8F%8A%E5%85%B6%E7%9B%B8%E4%BA%92%E8%BD%AC%E6%8D%A2"><span class="toc-number">1.1.</span> <span class="toc-text"> 2.1 进位计数制及其相互转换</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#211"><span class="toc-number">1.1.1.</span> <span class="toc-text"> 2.1.1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#212-%E5%AE%9A%E7%82%B9%E6%95%B0%E7%9A%84%E7%BC%96%E7%A0%81%E8%A1%A8%E7%A4%BA"><span class="toc-number">1.1.2.</span> <span class="toc-text"> 2.1.2 定点数的编码表示</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#213-%E6%95%B4%E6%95%B0%E8%A1%A8%E7%A4%BA"><span class="toc-number">1.1.3.</span> <span class="toc-text"> 2.1.3 整数表示</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#214"><span class="toc-number">1.1.4.</span> <span class="toc-text"> 2.1.4</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#22-%E8%BF%90%E7%AE%97%E6%96%B9%E6%B3%95%E5%92%8C%E8%BF%90%E7%AE%97%E7%94%B5%E8%B7%AF"><span class="toc-number">1.2.</span> <span class="toc-text"> 2.2 运算方法和运算电路</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#221-%E5%9F%BA%E6%9C%AC%E8%BF%90%E7%AE%97%E9%83%A8%E4%BB%B6"><span class="toc-number">1.2.1.</span> <span class="toc-text"> 2.2.1 基本运算部件</span></a></li></ol></li></ol></li></ol>
       </div>
       <div class="related panel pjax" data-title="Related">
         <ul>
@@ -411,10 +441,68 @@ C. <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org
   <li class="item">
     
 <div class="breadcrumb">
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
+</div>
+
+    <span><a href="/2024/03/23/computer-science/compile-principles/ch3/" title="Ch3">Ch3</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/AI/" title="In 人工智能">人工智能</a>
+</div>
+
+    <span><a href="/2024/05/20/AI/week2/" title="Week2">Week2</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
 <a href="/categories/AI/" title="In 人工智能">人工智能</a>
 </div>
 
     <span><a href="/2024/05/20/AI/week1/" title="Week1">Week1</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/computer-organization/" title="In 计算机组成">计算机组成</a>
+</div>
+
+    <span><a href="/2024/05/14/computer-science/computer-organization/ch2/" title="Ch2">Ch2</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/computer-organization/" title="In 计算机组成">计算机组成</a>
+</div>
+
+    <span><a href="/2024/05/13/computer-science/computer-organization/ch1/" title="Ch1">Ch1</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
+</div>
+
+    <span><a href="/2024/03/21/computer-science/compile-principles/ch5/" title="Ch5">Ch5</a></span>
   </li>
 
       
@@ -438,77 +526,7 @@ C. <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org
 <a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
 </div>
 
-    <span><a href="/2024/03/29/computer-science/compile-principles/ch4/" title="Ch4">Ch4</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
-</div>
-
-    <span><a href="/2024/03/23/computer-science/compile-principles/ch3/" title="Ch3">Ch3</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/AI/" title="In 人工智能">人工智能</a>
-</div>
-
-    <span><a href="/2024/05/20/AI/week2/" title="Week2">Week2</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
-</div>
-
-    <span><a href="/2024/03/21/computer-science/compile-principles/ch5/" title="Ch5">Ch5</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/computer-organization/" title="In 计算机组成">计算机组成</a>
-</div>
-
-    <span><a href="/2024/05/14/computer-science/computer-organization/ch2/" title="Ch2">Ch2</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
-</div>
-
     <span><a href="/2024/03/21/computer-science/compile-principles/ch1/" title="Ch1">Ch1</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/computer-organization/" title="In 计算机组成">计算机组成</a>
-</div>
-
-    <span><a href="/2024/05/13/computer-science/computer-organization/ch1/" title="Ch1">Ch1</a></span>
   </li>
 
       
@@ -521,6 +539,18 @@ C. <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org
 </div>
 
     <span><a href="/2024/05/13/computer-science/computer-network/ch1/" title="Ch1">Ch1</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
+</div>
+
+    <span><a href="/2024/03/29/computer-science/compile-principles/ch4/" title="Ch4">Ch4</a></span>
   </li>
 
   </ul>
