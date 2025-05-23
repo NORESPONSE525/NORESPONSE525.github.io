@@ -5,31 +5,31 @@
         <link>http://example.com</link>
         <description></description>
         <language>en</language>
-        <pubDate>Fri, 29 Mar 2024 00:00:00 +0800</pubDate>
-        <lastBuildDate>Fri, 29 Mar 2024 00:00:00 +0800</lastBuildDate>
+        <pubDate>Sat, 29 Mar 2025 00:00:00 +0800</pubDate>
+        <lastBuildDate>Sat, 29 Mar 2025 00:00:00 +0800</lastBuildDate>
         <category>人工智能</category>
         <category>编译原理</category>
-        <category>语法分析</category>
-        <category>词法分析</category>
-        <category>计算机组成</category>
-        <category>语义分析</category>
-        <category>抽象语法</category>
         <category>计算机网络</category>
+        <category>语法分析</category>
+        <category>抽象语法</category>
+        <category>词法分析</category>
+        <category>语义分析</category>
+        <category>计算机组成</category>
         <category>数据的表示与运算</category>
         <item>
-            <guid isPermalink="true">http://example.com/2024/03/29/computer-science/compile-principles/ch4/</guid>
+            <guid isPermalink="true">http://example.com/2025/03/29/computer-science/compile-principles/ch4/</guid>
             <title>Ch4</title>
-            <link>http://example.com/2024/03/29/computer-science/compile-principles/ch4/</link>
+            <link>http://example.com/2025/03/29/computer-science/compile-principles/ch4/</link>
             <category>抽象语法</category>
-            <pubDate>Fri, 29 Mar 2024 00:00:00 +0800</pubDate>
+            <pubDate>Sat, 29 Mar 2025 00:00:00 +0800</pubDate>
             <description><![CDATA[  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">http://example.com/2024/03/23/computer-science/compile-principles/ch3/</guid>
+            <guid isPermalink="true">http://example.com/2025/03/23/computer-science/compile-principles/ch3/</guid>
             <title>Ch3</title>
-            <link>http://example.com/2024/03/23/computer-science/compile-principles/ch3/</link>
+            <link>http://example.com/2025/03/23/computer-science/compile-principles/ch3/</link>
             <category>语法分析</category>
-            <pubDate>Sat, 23 Mar 2024 00:00:00 +0800</pubDate>
+            <pubDate>Sun, 23 Mar 2025 00:00:00 +0800</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;语法分析&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#语法分析&#34;&gt;#&lt;/a&gt; 语法分析&lt;/h1&gt;
 &lt;h2 id=&#34;cfg&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#cfg&#34;&gt;#&lt;/a&gt; CFG&lt;/h2&gt;
 &lt;p&gt;见计算理论&lt;br&gt;
@@ -39,11 +39,11 @@
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">http://example.com/2024/03/22/computer-science/compile-principles/ch2/</guid>
+            <guid isPermalink="true">http://example.com/2025/03/22/computer-science/compile-principles/ch2/</guid>
             <title>Ch2</title>
-            <link>http://example.com/2024/03/22/computer-science/compile-principles/ch2/</link>
+            <link>http://example.com/2025/03/22/computer-science/compile-principles/ch2/</link>
             <category>词法分析</category>
-            <pubDate>Fri, 22 Mar 2024 00:00:00 +0800</pubDate>
+            <pubDate>Sat, 22 Mar 2025 00:00:00 +0800</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;ch2-词法分析&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#ch2-词法分析&#34;&gt;#&lt;/a&gt; Ch2 词法分析&lt;/h1&gt;
 &lt;blockquote&gt;
 &lt;p&gt;把 input 分解成一个个 token&lt;/p&gt;
@@ -109,11 +109,11 @@
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">http://example.com/2024/03/21/computer-science/compile-principles/ch1/</guid>
+            <guid isPermalink="true">http://example.com/2025/03/21/computer-science/compile-principles/ch1/</guid>
             <title>Ch1</title>
-            <link>http://example.com/2024/03/21/computer-science/compile-principles/ch1/</link>
+            <link>http://example.com/2025/03/21/computer-science/compile-principles/ch1/</link>
             <category>编译原理</category>
-            <pubDate>Thu, 21 Mar 2024 00:00:00 +0800</pubDate>
+            <pubDate>Fri, 21 Mar 2025 00:00:00 +0800</pubDate>
             <description><![CDATA[ &lt;blockquote&gt;
 &lt;p&gt;ZJU 2025 春夏编译原理 学习笔记&lt;/p&gt;
 &lt;p&gt;主要基于虎书（&lt;em&gt;Modern Compiler Implementation in C&lt;/em&gt;, Andrew W. Appel）&lt;/p&gt;
@@ -134,11 +134,11 @@
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">http://example.com/2024/03/21/computer-science/compile-principles/ch5/</guid>
+            <guid isPermalink="true">http://example.com/2025/03/21/computer-science/compile-principles/ch5/</guid>
             <title>Ch5</title>
-            <link>http://example.com/2024/03/21/computer-science/compile-principles/ch5/</link>
+            <link>http://example.com/2025/03/21/computer-science/compile-principles/ch5/</link>
             <category>语义分析</category>
-            <pubDate>Thu, 21 Mar 2024 00:00:00 +0800</pubDate>
+            <pubDate>Fri, 21 Mar 2025 00:00:00 +0800</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;语义分析&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#语义分析&#34;&gt;#&lt;/a&gt; 语义分析&lt;/h1&gt;
 &lt;blockquote&gt;
 &lt;p&gt;绑定，类型检查&lt;/p&gt;

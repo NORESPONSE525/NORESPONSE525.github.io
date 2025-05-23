@@ -5,23 +5,23 @@
         <link>http://example.com</link>
         <description></description>
         <language>en</language>
-        <pubDate>Fri, 29 Mar 2024 00:00:00 +0800</pubDate>
-        <lastBuildDate>Fri, 29 Mar 2024 00:00:00 +0800</lastBuildDate>
+        <pubDate>Sat, 29 Mar 2025 00:00:00 +0800</pubDate>
+        <lastBuildDate>Sat, 29 Mar 2025 00:00:00 +0800</lastBuildDate>
         <category>人工智能</category>
         <category>编译原理</category>
-        <category>语法分析</category>
-        <category>词法分析</category>
-        <category>计算机组成</category>
-        <category>语义分析</category>
-        <category>抽象语法</category>
         <category>计算机网络</category>
+        <category>语法分析</category>
+        <category>抽象语法</category>
+        <category>词法分析</category>
+        <category>语义分析</category>
+        <category>计算机组成</category>
         <category>数据的表示与运算</category>
         <item>
-            <guid isPermalink="true">http://example.com/2024/03/29/computer-science/compile-principles/ch4/</guid>
+            <guid isPermalink="true">http://example.com/2025/03/29/computer-science/compile-principles/ch4/</guid>
             <title>Ch4</title>
-            <link>http://example.com/2024/03/29/computer-science/compile-principles/ch4/</link>
+            <link>http://example.com/2025/03/29/computer-science/compile-principles/ch4/</link>
             <category>抽象语法</category>
-            <pubDate>Fri, 29 Mar 2024 00:00:00 +0800</pubDate>
+            <pubDate>Sat, 29 Mar 2025 00:00:00 +0800</pubDate>
             <description><![CDATA[  ]]></description>
         </item>
     </channel>

@@ -3,20 +3,20 @@
     <id>http://example.com</id>
     <title> • Posts by &#34;计算机组成&#34; category</title>
     <link href="http://example.com" />
-    <updated>2024-05-13T16:00:00.000Z</updated>
+    <updated>2025-05-13T16:00:00.000Z</updated>
     <category term="人工智能" />
     <category term="编译原理" />
-    <category term="语法分析" />
-    <category term="词法分析" />
-    <category term="计算机组成" />
-    <category term="语义分析" />
-    <category term="抽象语法" />
     <category term="计算机网络" />
+    <category term="语法分析" />
+    <category term="抽象语法" />
+    <category term="词法分析" />
+    <category term="语义分析" />
+    <category term="计算机组成" />
     <category term="数据的表示与运算" />
     <entry>
-        <id>http://example.com/2024/05/14/computer-science/computer-organization/ch2/</id>
+        <id>http://example.com/2025/05/14/computer-science/computer-organization/ch2/</id>
         <title>Ch2</title>
-        <link rel="alternate" href="http://example.com/2024/05/14/computer-science/computer-organization/ch2/"/>
+        <link rel="alternate" href="http://example.com/2025/05/14/computer-science/computer-organization/ch2/"/>
         <content type="html">&lt;h1 id=&#34;ch2-数据的表示和运算&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#ch2-数据的表示和运算&#34;&gt;#&lt;/a&gt; Ch2 数据的表示和运算&lt;/h1&gt;
 &lt;h2 id=&#34;21-进位计数制及其相互转换&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#21-进位计数制及其相互转换&#34;&gt;#&lt;/a&gt; 2.1 进位计数制及其相互转换&lt;/h2&gt;
 &lt;h3 id=&#34;211&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#211&#34;&gt;#&lt;/a&gt; 2.1.1&lt;/h3&gt;
@@ -349,12 +349,12 @@ S_i &amp;amp;= P_i \oplus C_i
 &lt;p&gt;略，列竖式即可&lt;/p&gt;
 </content>
         <category term="数据的表示与运算" />
-        <updated>2024-05-13T16:00:00.000Z</updated>
+        <updated>2025-05-13T16:00:00.000Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/2024/05/13/computer-science/computer-organization/ch1/</id>
+        <id>http://example.com/2025/05/13/computer-science/computer-organization/ch1/</id>
         <title>Ch1</title>
-        <link rel="alternate" href="http://example.com/2024/05/13/computer-science/computer-organization/ch1/"/>
+        <link rel="alternate" href="http://example.com/2025/05/13/computer-science/computer-organization/ch1/"/>
         <content type="html">&lt;blockquote&gt;
 &lt;p&gt;王道计组考研复习笔记&lt;br&gt;
 怕学完忘了写个笔记保留一下顺便加深印象 x&lt;br&gt;
@@ -518,6 +518,6 @@ A. 汇编程序&lt;br&gt;
 &lt;/blockquote&gt;
 </content>
         <category term="计算机组成" />
-        <updated>2024-05-12T16:00:00.000Z</updated>
+        <updated>2025-05-12T16:00:00.000Z</updated>
     </entry>
 </feed>

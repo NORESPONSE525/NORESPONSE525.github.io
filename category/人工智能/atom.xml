@@ -3,20 +3,20 @@
     <id>http://example.com</id>
     <title> • Posts by &#34;人工智能&#34; category</title>
     <link href="http://example.com" />
-    <updated>2024-05-19T16:00:00.000Z</updated>
+    <updated>2025-05-19T16:00:00.000Z</updated>
     <category term="人工智能" />
     <category term="编译原理" />
-    <category term="语法分析" />
-    <category term="词法分析" />
-    <category term="计算机组成" />
-    <category term="语义分析" />
-    <category term="抽象语法" />
     <category term="计算机网络" />
+    <category term="语法分析" />
+    <category term="抽象语法" />
+    <category term="词法分析" />
+    <category term="语义分析" />
+    <category term="计算机组成" />
     <category term="数据的表示与运算" />
     <entry>
-        <id>http://example.com/2024/05/20/AI/week1/</id>
+        <id>http://example.com/2025/05/20/AI/week1/</id>
         <title>Week1</title>
-        <link rel="alternate" href="http://example.com/2024/05/20/AI/week1/"/>
+        <link rel="alternate" href="http://example.com/2025/05/20/AI/week1/"/>
         <content type="html">&lt;blockquote&gt;
 &lt;p&gt;2025-2026 春夏人工智能课程笔记&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -34,12 +34,12 @@
 &lt;/ul&gt;
 </content>
         <category term="人工智能" />
-        <updated>2024-05-19T16:00:00.000Z</updated>
+        <updated>2025-05-19T16:00:00.000Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/2024/05/20/AI/week2/</id>
+        <id>http://example.com/2025/05/20/AI/week2/</id>
         <title>Week2</title>
-        <link rel="alternate" href="http://example.com/2024/05/20/AI/week2/"/>
+        <link rel="alternate" href="http://example.com/2025/05/20/AI/week2/"/>
         <content type="html">&lt;h1 id=&#34;ch2-知识表达与推理&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#ch2-知识表达与推理&#34;&gt;#&lt;/a&gt; Ch2 知识表达与推理&lt;/h1&gt;
 &lt;h2 id=&#34;命题逻辑&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#命题逻辑&#34;&gt;#&lt;/a&gt; 命题逻辑&lt;/h2&gt;
 &lt;p&gt;&lt;img data-src=&#34;img1.png&#34; alt&gt;&lt;br&gt;
@@ -110,6 +110,6 @@
 \end{aligned}&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:1.5000000000000002em;vertical-align:-0.5000000000000002em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mtable&#34;&gt;&lt;span class=&#34;col-align-r&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:1em;&#34;&gt;&lt;span style=&#34;top:-3.16em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:3em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mopen&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;∀&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.03588em;&#34;&gt;y&lt;/span&gt;&lt;span class=&#34;mclose&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;mopen&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;∃&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;x&lt;/span&gt;&lt;span class=&#34;mclose&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;A&lt;/span&gt;&lt;span class=&#34;mopen&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;x&lt;/span&gt;&lt;span class=&#34;mpunct&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.16666666666666666em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.03588em;&#34;&gt;y&lt;/span&gt;&lt;span class=&#34;mclose&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mrel&#34;&gt;≡&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mopen&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;∃&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;x&lt;/span&gt;&lt;span class=&#34;mclose&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;mopen&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;∃&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.03588em;&#34;&gt;y&lt;/span&gt;&lt;span class=&#34;mclose&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;A&lt;/span&gt;&lt;span class=&#34;mopen&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;x&lt;/span&gt;&lt;span class=&#34;mpunct&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.16666666666666666em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.03588em;&#34;&gt;y&lt;/span&gt;&lt;span class=&#34;mclose&#34;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.5000000000000002em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
 </content>
         <category term="人工智能" />
-        <updated>2024-05-19T16:00:00.000Z</updated>
+        <updated>2025-05-19T16:00:00.000Z</updated>
     </entry>
 </feed>
