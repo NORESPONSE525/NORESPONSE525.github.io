@@ -5,14 +5,14 @@
     <link href="http://example.com" />
     <updated>2024-03-28T16:00:00.000Z</updated>
     <category term="人工智能" />
-    <category term="数据的表示与运算" />
-    <category term="计算机组成" />
-    <category term="计算机网络" />
     <category term="编译原理" />
     <category term="词法分析" />
-    <category term="语法分析" />
     <category term="抽象语法" />
     <category term="语义分析" />
+    <category term="语法分析" />
+    <category term="计算机网络" />
+    <category term="计算机组成" />
+    <category term="数据的表示与运算" />
     <entry>
         <id>http://example.com/2024/03/29/computer-science/compile-principles/ch4/</id>
         <title>Ch4</title>
@@ -25,8 +25,13 @@
         <id>http://example.com/2024/03/23/computer-science/compile-principles/ch3/</id>
         <title>Ch3</title>
         <link rel="alternate" href="http://example.com/2024/03/23/computer-science/compile-principles/ch3/"/>
-        <content type="html">&lt;h1 id=&#34;语法分析&#34;&gt;&lt;a href=&#34;#语法分析&#34; class=&#34;headerlink&#34; title=&#34;语法分析&#34;&gt;&lt;/a&gt;语法分析&lt;/h1&gt;&lt;h2 id=&#34;CFG&#34;&gt;&lt;a href=&#34;#CFG&#34; class=&#34;headerlink&#34; title=&#34;CFG&#34;&gt;&lt;/a&gt;CFG&lt;/h2&gt;&lt;p&gt;见计算理论&lt;br&gt;Parse tree&lt;/p&gt;
-&lt;h3 id=&#34;Ambiguous-grammars&#34;&gt;&lt;a href=&#34;#Ambiguous-grammars&#34; class=&#34;headerlink&#34; title=&#34;Ambiguous grammars&#34;&gt;&lt;/a&gt;Ambiguous grammars&lt;/h3&gt;&lt;h2 id&gt;&lt;a href=&#34;#&#34; class=&#34;headerlink&#34; title&gt;&lt;/a&gt;&lt;/h2&gt;</content>
+        <content type="html">&lt;h1 id=&#34;语法分析&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#语法分析&#34;&gt;#&lt;/a&gt; 语法分析&lt;/h1&gt;
+&lt;h2 id=&#34;cfg&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#cfg&#34;&gt;#&lt;/a&gt; CFG&lt;/h2&gt;
+&lt;p&gt;见计算理论&lt;br&gt;
+ Parse tree&lt;/p&gt;
+&lt;h3 id=&#34;ambiguous-grammars&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#ambiguous-grammars&#34;&gt;#&lt;/a&gt; Ambiguous grammars&lt;/h3&gt;
+&lt;h2 id&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#&#34;&gt;#&lt;/a&gt; &lt;/h2&gt;
+</content>
         <category term="语法分析" />
         <updated>2024-03-22T16:00:00.000Z</updated>
     </entry>
@@ -34,25 +39,45 @@
         <id>http://example.com/2024/03/22/computer-science/compile-principles/ch2/</id>
         <title>Ch2</title>
         <link rel="alternate" href="http://example.com/2024/03/22/computer-science/compile-principles/ch2/"/>
-        <content type="html">&lt;h1 id=&#34;Ch2-词法分析&#34;&gt;&lt;a href=&#34;#Ch2-词法分析&#34; class=&#34;headerlink&#34; title=&#34;Ch2 词法分析&#34;&gt;&lt;/a&gt;Ch2 词法分析&lt;/h1&gt;&lt;blockquote&gt;
-&lt;p&gt;把input分解成一个个token&lt;/p&gt;
+        <content type="html">&lt;h1 id=&#34;ch2-词法分析&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#ch2-词法分析&#34;&gt;#&lt;/a&gt; Ch2 词法分析&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;把 input 分解成一个个 token&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h2 id=&#34;Regular-Expression&#34;&gt;&lt;a href=&#34;#Regular-Expression&#34; class=&#34;headerlink&#34; title=&#34;Regular Expression&#34;&gt;&lt;/a&gt;Regular Expression&lt;/h2&gt;&lt;ul&gt;
+&lt;h2 id=&#34;regular-expression&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#regular-expression&#34;&gt;#&lt;/a&gt; Regular Expression&lt;/h2&gt;
+&lt;ul&gt;
 &lt;li&gt;Language: a set of strings&lt;/li&gt;
-&lt;li&gt;String: a finite sequence of characters&lt;blockquote&gt;
-&lt;p&gt;Regular Experssion Notations:&lt;br&gt;&lt;img data-src=&#34;/image-1.png&#34;&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/li&gt;
+&lt;li&gt;String: a finite sequence of characters&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;:::info&lt;br&gt;DFA, NFA相关 见计算理论&lt;br&gt;:::&lt;/p&gt;
-&lt;h2 id=&#34;RE转NFA&#34;&gt;&lt;a href=&#34;#RE转NFA&#34; class=&#34;headerlink&#34; title=&#34;RE转NFA&#34;&gt;&lt;/a&gt;RE转NFA&lt;/h2&gt;&lt;p&gt;:::info 方法：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Regular Experssion Notations:&lt;br&gt;
+&lt;img data-src=&#34;image-1.png&#34; alt&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&#34;note info&#34;&gt;
+&lt;p&gt;DFA, NFA 相关 见计算理论&lt;/p&gt;
+&lt;/div&gt;
+&lt;h2 id=&#34;re转nfa&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#re转nfa&#34;&gt;#&lt;/a&gt; RE 转 NFA&lt;/h2&gt;
+&lt;div class=&#34;note info 方法：&#34;&gt;
 &lt;ol&gt;
 &lt;li&gt;画出初始态和终态&lt;/li&gt;
-&lt;li&gt;分裂规则：&lt;br&gt;&lt;img data-src=&#34;/image-2.jpg&#34;&gt;&lt;br&gt;:::&lt;/li&gt;
+&lt;li&gt;分裂规则：&lt;br&gt;
+&lt;img data-src=&#34;image-2.jpg&#34; alt&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h2 id=&#34;NFA转DFA&#34;&gt;&lt;a href=&#34;#NFA转DFA&#34; class=&#34;headerlink&#34; title=&#34;NFA转DFA&#34;&gt;&lt;/a&gt;NFA转DFA&lt;/h2&gt;&lt;p&gt;从初始状态的闭包开始，每次根据\epsilon和当前状态的闭包，得到下一个状态的闭包，直到得到终态的闭包。&lt;/p&gt;
-&lt;p&gt;+++info example&lt;br&gt;;;;id3 题目&lt;br&gt;:chestnut:&lt;br&gt;把这个NFA转成等价的DFA&lt;br&gt;&lt;img data-src=&#34;/image-3.png&#34;&gt;&lt;br&gt;;;;&lt;br&gt;;;;id3 答案&lt;br&gt;初态的闭包是1、2、6，1、2、6经过a可以转移到3、7，因为有\epsilon转移，所以3、7的闭包是3、4、7、8，同理3、4、7、8经过b可以到5、8，由于8是终态，把所有包含8的圆圈画成终态的环。&lt;br&gt;&lt;img data-src=&#34;/image-4.png&#34;&gt;&lt;br&gt;;;;&lt;br&gt;+++&lt;/p&gt;
-&lt;h2 id=&#34;最小化DFA&#34;&gt;&lt;a href=&#34;#最小化DFA&#34; class=&#34;headerlink&#34; title=&#34;最小化DFA&#34;&gt;&lt;/a&gt;最小化DFA&lt;/h2&gt;&lt;p&gt;含义：&lt;/p&gt;
+&lt;/div&gt;
+&lt;h2 id=&#34;nfa转dfa&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#nfa转dfa&#34;&gt;#&lt;/a&gt; NFA 转 DFA&lt;/h2&gt;
+&lt;p&gt;从初始状态的闭包开始，每次根据 \epsilon 和当前状态的闭包，得到下一个状态的闭包，直到得到终态的闭包。&lt;/p&gt;
+&lt;details class=&#34;info&#34;&gt;&lt;summary&gt;example&lt;/summary&gt;&lt;div&gt;
+&lt;div class=&#34;tab&#34; data-id=&#34;id3&#34; data-title=&#34;题目&#34;&gt;
+&lt;p&gt;🌰&lt;br&gt;
+把这个 NFA 转成等价的 DFA&lt;br&gt;
+&lt;img data-src=&#34;image-3.png&#34; alt&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;tab&#34; data-id=&#34;id3&#34; data-title=&#34;答案&#34;&gt;
+&lt;p&gt;初态的闭包是 1、2、6，1、2、6 经过 a 可以转移到 3、7，因为有 \epsilon 转移，所以 3、7 的闭包是 3、4、7、8，同理 3、4、7、8 经过 b 可以到 5、8，由于 8 是终态，把所有包含 8 的圆圈画成终态的环。&lt;br&gt;
+&lt;img data-src=&#34;image-4.png&#34; alt&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/details&gt;
+&lt;h2 id=&#34;最小化dfa&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#最小化dfa&#34;&gt;#&lt;/a&gt; 最小化 DFA&lt;/h2&gt;
+&lt;p&gt;含义：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;没有多余状态：&lt;/li&gt;
 &lt;/ol&gt;
@@ -61,16 +86,21 @@
 &lt;li&gt;从开始状态出发，任何输入串也不能到达的那个状态&lt;/li&gt;
 &lt;/ul&gt;
 &lt;ol start=&#34;2&#34;&gt;
-&lt;li&gt;没有两个状态相互等价&lt;br&gt;:::info 方法：&lt;/li&gt;
-&lt;li&gt;多余状态直接删除&lt;br&gt;&lt;img data-src=&#34;/image-5.png&#34;&gt;&lt;/li&gt;
+&lt;li&gt;没有两个状态相互等价&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;note info 方法：&#34;&gt;
+&lt;ol&gt;
+&lt;li&gt;多余状态直接删除&lt;br&gt;
+&lt;img data-src=&#34;image-5.png&#34; alt&gt;&lt;/li&gt;
 &lt;li&gt;合并等价状态&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
 &lt;li&gt;将状态分为终态和非终态两个集合&lt;/li&gt;
 &lt;li&gt;遍历每个集合，如果经过转换到达的状态都在当前集合里，则不用分，否则划分子集，直到划分不了为止&lt;/li&gt;
-&lt;li&gt;:chestnut: 例子&lt;/li&gt;
-&lt;li&gt;&lt;img data-src=&#34;/image-6.png&#34;&gt;&lt;br&gt;:::&lt;/li&gt;
+&lt;li&gt;🌰 例子&lt;/li&gt;
+&lt;li&gt;&lt;img data-src=&#34;image-6.png&#34; alt&gt;&lt;/li&gt;
 &lt;/ul&gt;
+&lt;/div&gt;
 </content>
         <category term="词法分析" />
         <updated>2024-03-21T16:00:00.000Z</updated>
@@ -80,17 +110,22 @@
         <title>Ch1</title>
         <link rel="alternate" href="http://example.com/2024/03/21/computer-science/compile-principles/ch1/"/>
         <content type="html">&lt;blockquote&gt;
-&lt;p&gt;ZJU 2025春夏编译原理 学习笔记&lt;/p&gt;
+&lt;p&gt;ZJU 2025 春夏编译原理 学习笔记&lt;/p&gt;
 &lt;p&gt;主要基于虎书（&lt;em&gt;Modern Compiler Implementation in C&lt;/em&gt;, Andrew W. Appel）&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h1 id=&#34;CH1-Introduction&#34;&gt;&lt;a href=&#34;#CH1-Introduction&#34; class=&#34;headerlink&#34; title=&#34;CH1 Introduction&#34;&gt;&lt;/a&gt;CH1 Introduction&lt;/h1&gt;&lt;ul&gt;
-&lt;li&gt;Two Important Concepts&lt;ul&gt;
+&lt;h1 id=&#34;ch1-introduction&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#ch1-introduction&#34;&gt;#&lt;/a&gt; CH1 Introduction&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;Two Important Concepts
+&lt;ul&gt;
 &lt;li&gt;Phases（阶段）&lt;/li&gt;
 &lt;li&gt;Interfaces（接口）&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;方框里的是phase，中间的是interface&lt;br&gt;&lt;img data-src=&#34;/image.png&#34;&gt;&lt;br&gt;各个阶段的描述&lt;br&gt;&lt;img data-src=&#34;/image-1.png&#34;&gt;&lt;img data-src=&#34;/image-2.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;方框里的是 phase，中间的是 interface&lt;br&gt;
+&lt;img data-src=&#34;image.png&#34; alt&gt;&lt;br&gt;
+ 各个阶段的描述&lt;br&gt;
+&lt;img data-src=&#34;image-1.png&#34; alt&gt;&lt;img data-src=&#34;image-2.png&#34; alt&gt;&lt;/p&gt;
 </content>
         <category term="编译原理" />
         <updated>2024-03-20T16:00:00.000Z</updated>
@@ -99,21 +134,28 @@
         <id>http://example.com/2024/03/21/computer-science/compile-principles/ch5/</id>
         <title>Ch5</title>
         <link rel="alternate" href="http://example.com/2024/03/21/computer-science/compile-principles/ch5/"/>
-        <content type="html">&lt;h1 id=&#34;语义分析&#34;&gt;&lt;a href=&#34;#语义分析&#34; class=&#34;headerlink&#34; title=&#34;语义分析&#34;&gt;&lt;/a&gt;语义分析&lt;/h1&gt;&lt;blockquote&gt;
+        <content type="html">&lt;h1 id=&#34;语义分析&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#语义分析&#34;&gt;#&lt;/a&gt; 语义分析&lt;/h1&gt;
+&lt;blockquote&gt;
 &lt;p&gt;绑定，类型检查&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h2 id=&#34;symbol-table&#34;&gt;&lt;a href=&#34;#symbol-table&#34; class=&#34;headerlink&#34; title=&#34;symbol table&#34;&gt;&lt;/a&gt;symbol table&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;Functional style: 函数式风格&lt;ul&gt;
-&lt;li&gt;To keep $\sigma_1$ in pristine condition while creating create $\sigma_2$ and $\sigma_3$&lt;/li&gt;
+&lt;h2 id=&#34;symbol-table&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#symbol-table&#34;&gt;#&lt;/a&gt; symbol table&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Functional style: 函数式风格
+&lt;ul&gt;
+&lt;li&gt;To keep &lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;msub&gt;&lt;mi&gt;σ&lt;/mi&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/msub&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;\sigma_1&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.58056em;vertical-align:-0.15em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.03588em;&#34;&gt;σ&lt;/span&gt;&lt;span class=&#34;msupsub&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.30110799999999993em;&#34;&gt;&lt;span style=&#34;top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.7em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mtight&#34;&gt;1&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.15em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; in pristine condition while creating create &lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;msub&gt;&lt;mi&gt;σ&lt;/mi&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msub&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;\sigma_2&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.58056em;vertical-align:-0.15em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.03588em;&#34;&gt;σ&lt;/span&gt;&lt;span class=&#34;msupsub&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.30110799999999993em;&#34;&gt;&lt;span style=&#34;top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.7em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mtight&#34;&gt;2&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.15em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; and &lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;msub&gt;&lt;mi&gt;σ&lt;/mi&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;/msub&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;\sigma_3&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.58056em;vertical-align:-0.15em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.03588em;&#34;&gt;σ&lt;/span&gt;&lt;span class=&#34;msupsub&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.30110799999999993em;&#34;&gt;&lt;span style=&#34;top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.7em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mtight&#34;&gt;3&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.15em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;Imperative style: 命令式风格&lt;ul&gt;
-&lt;li&gt;Modify $\sigma_1$ until it becomes $\sigma_2$. &lt;/li&gt;
-&lt;li&gt;While $\sigma_2$ exists, we cannot look things up in $\sigma_1$. &lt;/li&gt;
-&lt;li&gt;When done with $\sigma_2$, can undo the modification to get $\sigma_1$ back again.&lt;br&gt;:::info 方法：&lt;br&gt;Hashing&lt;br&gt;:::&lt;/li&gt;
+&lt;li&gt;Imperative style: 命令式风格
+&lt;ul&gt;
+&lt;li&gt;Modify &lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;msub&gt;&lt;mi&gt;σ&lt;/mi&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/msub&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;\sigma_1&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.58056em;vertical-align:-0.15em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.03588em;&#34;&gt;σ&lt;/span&gt;&lt;span class=&#34;msupsub&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.30110799999999993em;&#34;&gt;&lt;span style=&#34;top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.7em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mtight&#34;&gt;1&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.15em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; until it becomes &lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;msub&gt;&lt;mi&gt;σ&lt;/mi&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msub&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;\sigma_2&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.58056em;vertical-align:-0.15em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.03588em;&#34;&gt;σ&lt;/span&gt;&lt;span class=&#34;msupsub&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.30110799999999993em;&#34;&gt;&lt;span style=&#34;top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.7em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mtight&#34;&gt;2&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.15em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;.&lt;/li&gt;
+&lt;li&gt;While &lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;msub&gt;&lt;mi&gt;σ&lt;/mi&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msub&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;\sigma_2&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.58056em;vertical-align:-0.15em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.03588em;&#34;&gt;σ&lt;/span&gt;&lt;span class=&#34;msupsub&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.30110799999999993em;&#34;&gt;&lt;span style=&#34;top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.7em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mtight&#34;&gt;2&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.15em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; exists, we cannot look things up in &lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;msub&gt;&lt;mi&gt;σ&lt;/mi&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/msub&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;\sigma_1&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.58056em;vertical-align:-0.15em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.03588em;&#34;&gt;σ&lt;/span&gt;&lt;span class=&#34;msupsub&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.30110799999999993em;&#34;&gt;&lt;span style=&#34;top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.7em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mtight&#34;&gt;1&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.15em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;.&lt;/li&gt;
+&lt;li&gt;When done with &lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;msub&gt;&lt;mi&gt;σ&lt;/mi&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msub&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;\sigma_2&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.58056em;vertical-align:-0.15em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.03588em;&#34;&gt;σ&lt;/span&gt;&lt;span class=&#34;msupsub&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.30110799999999993em;&#34;&gt;&lt;span style=&#34;top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.7em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mtight&#34;&gt;2&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.15em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;, can undo the modification to get &lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;msub&gt;&lt;mi&gt;σ&lt;/mi&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/msub&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;\sigma_1&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.58056em;vertical-align:-0.15em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.03588em;&#34;&gt;σ&lt;/span&gt;&lt;span class=&#34;msupsub&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.30110799999999993em;&#34;&gt;&lt;span style=&#34;top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.7em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mtight&#34;&gt;1&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.15em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; back again.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
+&lt;div class=&#34;note info 方法：&#34;&gt;
+&lt;p&gt;Hashing&lt;/p&gt;
+&lt;/div&gt;
 </content>
         <category term="语义分析" />
         <updated>2024-03-20T16:00:00.000Z</updated>
