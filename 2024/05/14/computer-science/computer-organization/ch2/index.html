@@ -101,7 +101,7 @@ NoResponse's Blog = </title>
 
       </div>
       <div id="imgs" class="pjax">
-          <img src="/images/bg19.jpg">
+          <img src="/images/bg5.jpg">
       </div>
     </header>
     <div id="waves">
@@ -349,6 +349,126 @@ S_i &amp;= P_i \oplus C_i
 \end{aligned}
 </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.5000000000000002em;vertical-align:-0.5000000000000002em;"></span><span class="mord"><span class="mtable"><span class="col-align-r"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1em;"><span style="top:-3.16em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathnormal" style="margin-right:0.05764em;">S</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.05764em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.5000000000000002em;"><span></span></span></span></span></span><span class="col-align-l"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1em;"><span style="top:-3.16em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">⊕</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07153em;">C</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.07153em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.5000000000000002em;"><span></span></span></span></span></span></span></span></span></span></span></span></p>
 <p>就能得到超前进位的效果</p>
+<h4 id="带标志加法器"><a class="markdownIt-Anchor" href="#带标志加法器">#</a> 带标志加法器</h4>
+<p><img data-src="img5.jpg" alt></p>
+<ul>
+<li>溢出标志 OF &= C_n  \oplus C_{n-1}，只能判断有符号数是否溢出<br>
+ - 两个正数加起来变成负数或者两个负数加起来变成正数，就会溢出</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">A</th>
+<th style="text-align:center">B</th>
+<th style="text-align:center" n-1>C_</th>
+<th style="text-align:center">F</th>
+<th style="text-align:center"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>C</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">C_n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07153em;">C</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.07153em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></th>
+<th style="text-align:center">OF</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+</tr>
+<tr>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+</tr>
+<tr>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+</tr>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+</tr>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+</tr>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>第二行 A=0, B=0, F=1，正 + 正 = 负<br>
+第七行 A=0, B=1, F=0，负 + 负 = 正<br>
+所以 OF=1，表示有溢出<br>
+观察发现<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mi>F</mi><mo>=</mo><msub><mi>C</mi><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>⊕</mo><msub><mi>C</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">OF = C_{n-1}  \oplus C_n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mord mathnormal" style="margin-right:0.13889em;">F</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.891661em;vertical-align:-0.208331em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07153em;">C</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.301108em;"><span style="top:-2.5500000000000003em;margin-left:-0.07153em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">n</span><span class="mbin mtight">−</span><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.208331em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">⊕</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07153em;">C</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.07153em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></p>
+</blockquote>
+<ul>
+<li>符号标志 $$SF = F_{n-1}$$，输出的最高位决定有符号数的正负</li>
+<li>进位 / 借位标志：用于判断无符号数的加减运算是否溢出
+<ul>
+<li><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>C</mi><mi>F</mi><mo>=</mo><mi>C</mi><mi>i</mi><mi>n</mi><mo>⊕</mo><mi>C</mi><mi>o</mi><mi>u</mi><mi>t</mi></mrow><annotation encoding="application/x-tex">CF = Cin \oplus Cout</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.07153em;">C</span><span class="mord mathnormal" style="margin-right:0.13889em;">F</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.76666em;vertical-align:-0.08333em;"></span><span class="mord mathnormal" style="margin-right:0.07153em;">C</span><span class="mord mathnormal">i</span><span class="mord mathnormal">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">⊕</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.07153em;">C</span><span class="mord mathnormal">o</span><span class="mord mathnormal">u</span><span class="mord mathnormal">t</span></span></span></span></li>
+<li>此处的 Cin 和 Cout 表示最开始的输入和最后的输出，还没理解</li>
+</ul>
+</li>
+<li>零标志 当且仅当所有 F=0 时为 1，否则为 0（把所有 F 作或非）</li>
+</ul>
+<h4 id="alu"><a class="markdownIt-Anchor" href="#alu">#</a> ALU</h4>
+<p>略</p>
+<h3 id="222-定点数的移位运算"><a class="markdownIt-Anchor" href="#222-定点数的移位运算">#</a> 2.2.2 定点数的移位运算</h3>
+<ul>
+<li>左移一位 * 2，右移一位 / 2</li>
+<li>逻辑移位：移完直接补 0</li>
+<li>算数移位：右移时，补符号位，左移如果高位和符号位不同，则发生 overflow</li>
+</ul>
+<h3 id="定点数的加减运算"><a class="markdownIt-Anchor" href="#定点数的加减运算">#</a> 定点数的加减运算</h3>
+<p>补码相加减，略<br>
+主要是溢出判断：符号相同的数相加或者符号相异的数相减会发生溢出</p>
+<ul>
+<li>一位符号位（参考前面 OF）</li>
+<li>两位符号位</li>
+</ul>
+<div class="note info">
+<p>实际情况列个竖式即可</p>
+</div>
+<h3 id="定点数的乘除运算"><a class="markdownIt-Anchor" href="#定点数的乘除运算">#</a> 定点数的乘除运算</h3>
+<p>略，列竖式即可</p>
 
       <div class="tags">
           <a href="/tags/%E6%95%B0%E6%8D%AE%E7%9A%84%E8%A1%A8%E7%A4%BA%E4%B8%8E%E8%BF%90%E7%AE%97/" rel="tag"><i class="ic i-tag"></i> 数据的表示与运算</a>
@@ -363,7 +483,7 @@ S_i &amp;= P_i \oplus C_i
       <i class="ic i-calendar-check"></i>
     </span>
     <span class="text">Edited on</span>
-    <time title="Modified: 2025-05-23 13:57:19" itemprop="dateModified" datetime="2025-05-23T13:57:19+08:00">2025-05-23</time>
+    <time title="Modified: 2025-05-23 15:16:15" itemprop="dateModified" datetime="2025-05-23T15:16:15+08:00">2025-05-23</time>
   </span>
 </div>
 
@@ -418,7 +538,7 @@ S_i &amp;= P_i \oplus C_i
     <div class="item left">
       
 
-  <a href="/2024/05/13/computer-science/computer-network/ch1/" itemprop="url" rel="prev" data-background-image="&#x2F;images&#x2F;bg2.png" title="Ch1">
+  <a href="/2024/05/13/computer-science/computer-network/ch1/" itemprop="url" rel="prev" data-background-image="&#x2F;images&#x2F;bg11.jpg" title="Ch1">
   <span class="type">Previous Post</span>
   <span class="category"><i class="ic i-flag"></i> 计算机网络</span>
   <h3>Ch1</h3>
@@ -428,7 +548,7 @@ S_i &amp;= P_i \oplus C_i
     <div class="item right">
       
 
-  <a href="/2024/05/20/AI/week2/" itemprop="url" rel="next" data-background-image="&#x2F;images&#x2F;bg29.jpg" title="Week2">
+  <a href="/2024/05/20/AI/week2/" itemprop="url" rel="next" data-background-image="&#x2F;images&#x2F;bg35.jpg" title="Week2">
   <span class="type">Next Post</span>
   <span class="category"><i class="ic i-flag"></i> 人工智能</span>
   <h3>Week2</h3>
@@ -450,7 +570,7 @@ S_i &amp;= P_i \oplus C_i
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="Contents">
-          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#ch2-%E6%95%B0%E6%8D%AE%E7%9A%84%E8%A1%A8%E7%A4%BA%E5%92%8C%E8%BF%90%E7%AE%97"><span class="toc-number">1.</span> <span class="toc-text"> Ch2 数据的表示和运算</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#21-%E8%BF%9B%E4%BD%8D%E8%AE%A1%E6%95%B0%E5%88%B6%E5%8F%8A%E5%85%B6%E7%9B%B8%E4%BA%92%E8%BD%AC%E6%8D%A2"><span class="toc-number">1.1.</span> <span class="toc-text"> 2.1 进位计数制及其相互转换</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#211"><span class="toc-number">1.1.1.</span> <span class="toc-text"> 2.1.1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#212-%E5%AE%9A%E7%82%B9%E6%95%B0%E7%9A%84%E7%BC%96%E7%A0%81%E8%A1%A8%E7%A4%BA"><span class="toc-number">1.1.2.</span> <span class="toc-text"> 2.1.2 定点数的编码表示</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#213-%E6%95%B4%E6%95%B0%E8%A1%A8%E7%A4%BA"><span class="toc-number">1.1.3.</span> <span class="toc-text"> 2.1.3 整数表示</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#214"><span class="toc-number">1.1.4.</span> <span class="toc-text"> 2.1.4</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#22-%E8%BF%90%E7%AE%97%E6%96%B9%E6%B3%95%E5%92%8C%E8%BF%90%E7%AE%97%E7%94%B5%E8%B7%AF"><span class="toc-number">1.2.</span> <span class="toc-text"> 2.2 运算方法和运算电路</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#221-%E5%9F%BA%E6%9C%AC%E8%BF%90%E7%AE%97%E9%83%A8%E4%BB%B6"><span class="toc-number">1.2.1.</span> <span class="toc-text"> 2.2.1 基本运算部件</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%80%E4%BD%8D%E5%85%A8%E5%8A%A0%E5%99%A8"><span class="toc-number">1.2.1.1.</span> <span class="toc-text"> 一位全加器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%B2%E8%A1%8C%E8%BF%9B%E4%BD%8D%E5%8A%A0%E6%B3%95%E5%99%A8"><span class="toc-number">1.2.1.2.</span> <span class="toc-text"> 串行进位加法器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B9%B6%E8%A1%8C%E8%BF%9B%E4%BD%8D%E5%8A%A0%E6%B3%95%E5%99%A8"><span class="toc-number">1.2.1.3.</span> <span class="toc-text"> 并行进位加法器</span></a></li></ol></li></ol></li></ol></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#ch2-%E6%95%B0%E6%8D%AE%E7%9A%84%E8%A1%A8%E7%A4%BA%E5%92%8C%E8%BF%90%E7%AE%97"><span class="toc-number">1.</span> <span class="toc-text"> Ch2 数据的表示和运算</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#21-%E8%BF%9B%E4%BD%8D%E8%AE%A1%E6%95%B0%E5%88%B6%E5%8F%8A%E5%85%B6%E7%9B%B8%E4%BA%92%E8%BD%AC%E6%8D%A2"><span class="toc-number">1.1.</span> <span class="toc-text"> 2.1 进位计数制及其相互转换</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#211"><span class="toc-number">1.1.1.</span> <span class="toc-text"> 2.1.1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#212-%E5%AE%9A%E7%82%B9%E6%95%B0%E7%9A%84%E7%BC%96%E7%A0%81%E8%A1%A8%E7%A4%BA"><span class="toc-number">1.1.2.</span> <span class="toc-text"> 2.1.2 定点数的编码表示</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#213-%E6%95%B4%E6%95%B0%E8%A1%A8%E7%A4%BA"><span class="toc-number">1.1.3.</span> <span class="toc-text"> 2.1.3 整数表示</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#214"><span class="toc-number">1.1.4.</span> <span class="toc-text"> 2.1.4</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#22-%E8%BF%90%E7%AE%97%E6%96%B9%E6%B3%95%E5%92%8C%E8%BF%90%E7%AE%97%E7%94%B5%E8%B7%AF"><span class="toc-number">1.2.</span> <span class="toc-text"> 2.2 运算方法和运算电路</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#221-%E5%9F%BA%E6%9C%AC%E8%BF%90%E7%AE%97%E9%83%A8%E4%BB%B6"><span class="toc-number">1.2.1.</span> <span class="toc-text"> 2.2.1 基本运算部件</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%80%E4%BD%8D%E5%85%A8%E5%8A%A0%E5%99%A8"><span class="toc-number">1.2.1.1.</span> <span class="toc-text"> 一位全加器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%B2%E8%A1%8C%E8%BF%9B%E4%BD%8D%E5%8A%A0%E6%B3%95%E5%99%A8"><span class="toc-number">1.2.1.2.</span> <span class="toc-text"> 串行进位加法器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B9%B6%E8%A1%8C%E8%BF%9B%E4%BD%8D%E5%8A%A0%E6%B3%95%E5%99%A8"><span class="toc-number">1.2.1.3.</span> <span class="toc-text"> 并行进位加法器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B8%A6%E6%A0%87%E5%BF%97%E5%8A%A0%E6%B3%95%E5%99%A8"><span class="toc-number">1.2.1.4.</span> <span class="toc-text"> 带标志加法器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#alu"><span class="toc-number">1.2.1.5.</span> <span class="toc-text"> ALU</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#222-%E5%AE%9A%E7%82%B9%E6%95%B0%E7%9A%84%E7%A7%BB%E4%BD%8D%E8%BF%90%E7%AE%97"><span class="toc-number">1.2.2.</span> <span class="toc-text"> 2.2.2 定点数的移位运算</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9A%E7%82%B9%E6%95%B0%E7%9A%84%E5%8A%A0%E5%87%8F%E8%BF%90%E7%AE%97"><span class="toc-number">1.2.3.</span> <span class="toc-text"> 定点数的加减运算</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9A%E7%82%B9%E6%95%B0%E7%9A%84%E4%B9%98%E9%99%A4%E8%BF%90%E7%AE%97"><span class="toc-number">1.2.4.</span> <span class="toc-text"> 定点数的乘除运算</span></a></li></ol></li></ol></li></ol>
       </div>
       <div class="related panel pjax" data-title="Related">
         <ul>
@@ -534,6 +654,28 @@ S_i &amp;= P_i \oplus C_i
   <li class="item">
     
 <div class="breadcrumb">
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
+</div>
+
+    <span><a href="/2024/03/29/computer-science/compile-principles/ch4/" title="Ch4">Ch4</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/AI/" title="In 人工智能">人工智能</a>
+</div>
+
+    <span><a href="/2024/05/20/AI/week2/" title="Week2">Week2</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
 <a href="/categories/AI/" title="In 人工智能">人工智能</a>
 </div>
 
@@ -546,46 +688,10 @@ S_i &amp;= P_i \oplus C_i
 <div class="breadcrumb">
 <a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/computer-organization/" title="In 计算机组成">计算机组成</a>
-</div>
-
-    <span><a href="/2024/05/14/computer-science/computer-organization/ch2/" title="Ch2">Ch2</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
 <a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
 </div>
 
     <span><a href="/2024/03/22/computer-science/compile-principles/ch2/" title="Ch2">Ch2</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
-</div>
-
-    <span><a href="/2024/03/21/computer-science/compile-principles/ch1/" title="Ch1">Ch1</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/computer-organization/" title="In 计算机组成">计算机组成</a>
-</div>
-
-    <span><a href="/2024/05/13/computer-science/computer-organization/ch1/" title="Ch1">Ch1</a></span>
   </li>
 
       
@@ -609,7 +715,19 @@ S_i &amp;= P_i \oplus C_i
 <a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
 </div>
 
-    <span><a href="/2024/03/21/computer-science/compile-principles/ch5/" title="Ch5">Ch5</a></span>
+    <span><a href="/2024/03/21/computer-science/compile-principles/ch1/" title="Ch1">Ch1</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/computer-organization/" title="In 计算机组成">计算机组成</a>
+</div>
+
+    <span><a href="/2024/05/14/computer-science/computer-organization/ch2/" title="Ch2">Ch2</a></span>
   </li>
 
       
@@ -633,17 +751,19 @@ S_i &amp;= P_i \oplus C_i
 <a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
 </div>
 
-    <span><a href="/2024/03/29/computer-science/compile-principles/ch4/" title="Ch4">Ch4</a></span>
+    <span><a href="/2024/03/21/computer-science/compile-principles/ch5/" title="Ch5">Ch5</a></span>
   </li>
 
       
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/AI/" title="In 人工智能">人工智能</a>
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/computer-organization/" title="In 计算机组成">计算机组成</a>
 </div>
 
-    <span><a href="/2024/05/20/AI/week2/" title="Week2">Week2</a></span>
+    <span><a href="/2024/05/13/computer-science/computer-organization/ch1/" title="Ch1">Ch1</a></span>
   </li>
 
   </ul>
