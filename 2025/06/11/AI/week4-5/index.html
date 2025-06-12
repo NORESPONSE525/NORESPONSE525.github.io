@@ -24,15 +24,15 @@
 <link rel="stylesheet" href="/css/app.css?v=0.2.5">
 
   
-  <meta name="keywords" content="语法分析" />
+  <meta name="keywords" content="人工智能" />
 
 
-<link rel="canonical" href="http://example.com/2025/03/23/computer-science/compile-principles/ch3/">
+<link rel="canonical" href="http://example.com/2025/06/11/AI/week4-5/">
 
 
 
   <title>
-Ch3 - 编译原理 - 计算机科学 |
+Week4-5 - 人工智能 |
 NoResponse's Blog = </title>
 <meta name="generator" content="Hexo 7.3.0"></head>
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -60,16 +60,16 @@ NoResponse's Blog = </title>
         <div id="brand">
           <div class="pjax">
           
-  <h1 itemprop="name headline">Ch3
+  <h1 itemprop="name headline">Week4-5
   </h1>
   
 <div class="meta">
-  <span class="item" title="Created: 2025-03-23 00:00:00">
+  <span class="item" title="Created: 2025-06-11 00:00:00">
     <span class="icon">
       <i class="ic i-calendar"></i>
     </span>
     <span class="text">Posted on</span>
-    <time itemprop="dateCreated datePublished" datetime="2025-03-23T00:00:00+08:00">2025-03-23</time>
+    <time itemprop="dateCreated datePublished" datetime="2025-06-11T00:00:00+08:00">2025-06-11</time>
   </span>
 </div>
 
@@ -101,7 +101,7 @@ NoResponse's Blog = </title>
 
       </div>
       <div id="imgs" class="pjax">
-          <img src="/images/bg17.jpg">
+          <img src="/images/bg31.jpg">
       </div>
     </header>
     <div id="waves">
@@ -126,15 +126,12 @@ NoResponse's Blog = </title>
 <div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
 <i class="ic i-home"></i>
 <span><a href="/">Home</a></span><i class="ic i-angle-right"></i>
-<span  itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/computer-science/" itemprop="item" rel="index" title="In 计算机科学"><span itemprop="name">计算机科学</span></a>
+<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/AI/" itemprop="item" rel="index" title="In 人工智能"><span itemprop="name">人工智能</span></a>
 <meta itemprop="position" content="1" /></span>
-<i class="ic i-angle-right"></i>
-<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/computer-science/compiler-principles/" itemprop="item" rel="index" title="In 编译原理"><span itemprop="name">编译原理</span></a>
-<meta itemprop="position" content="2" /></span>
 </div>
 
     <article itemscope itemtype="http://schema.org/Article" class="post block" lang="en">
-  <link itemprop="mainEntityOfPage" href="http://example.com/2025/03/23/computer-science/compile-principles/ch3/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2025/06/11/AI/week4-5/">
 
   <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="image" content="/images/asuka.jpg">
@@ -149,15 +146,81 @@ NoResponse's Blog = </title>
   <div class="body md" itemprop="articleBody">
     
 
-    <h1 id="语法分析"><a class="markdownIt-Anchor" href="#语法分析">#</a> 语法分析</h1>
-<h2 id="cfg"><a class="markdownIt-Anchor" href="#cfg">#</a> CFG</h2>
-<p>见计算理论<br>
- Parse tree</p>
-<h3 id="ambiguous-grammars"><a class="markdownIt-Anchor" href="#ambiguous-grammars">#</a> Ambiguous grammars</h3>
-<h2 id><a class="markdownIt-Anchor" href="#">#</a> </h2>
+    <p>#Ch3 搜索算法</p>
+<h2 id="无信息搜索"><a class="markdownIt-Anchor" href="#无信息搜索">#</a> 无信息搜索</h2>
+<p>BFS DFS 略</p>
+<h2 id="启发式搜索"><a class="markdownIt-Anchor" href="#启发式搜索">#</a> 启发式搜索</h2>
+<ul>
+<li>贪婪优先搜索
+<ul>
+<li>每次取最短的；缺点：不一定是最优的</li>
+<li>时间和空间复杂度均为 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><msub><mi>b</mi><mi>m</mi></msub><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(b_m)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">b</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">m</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span>，b 是搜索树分支因子，m 是最大深度<br>
+<img data-src="figure1.png" alt></li>
+</ul>
+</li>
+</ul>
+<div class="note info">
+<p>每次取当前节点的下一个节点到终点中直线距离最短的</p>
+</div>
+<ul>
+<li>A * 算法
+<ul>
+<li>评价函数：f (n) = g (n) + h (n)</li>
+<li>代价函数 g (n) 表示从起始结点到结点 n 的开销代价值</li>
+<li>启发函数 h (n) 表示从结点 n 到目标结点路径中所估算的最小开销代价值。</li>
+<li>评价函数 f (n) 可视为经过结点 n、具有最小开销代价值的路径。
+<ul>
+<li>在最短路径问题中，g (?) 为当前选择的路径的实际距离，即从上一个节点到下一个节点的实际距离，?(?) 为下一个节点到目标城市的直线距离。每一次搜索，下一个节点选择与此刻城市连接的所有节点中，g (?)+?(?) 最小的城市节点。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="note info">
+<p>取（当前节点到下一节点的距离 + 下一节点到目标城市的距离）最短的</p>
+</div>
+<p>A * 算法的完备性和最优性取决于搜索问题和启发函数的性质<br>
+一个良好的启发函数需要满足：可容性（admissible）; 一致性（consistency）<br>
+如果启发函数是可容的，那么树搜索的 A * 算法满足最优性 (最优性：搜索算法是否能保证找到的第一个解是最优解)<br>
+ 满足一致性条件的启发函数一定满足可容性条件，反之不一定</p>
+<h2 id="对抗搜索"><a class="markdownIt-Anchor" href="#对抗搜索">#</a> 对抗搜索</h2>
+<ul>
+<li>
+<p>最小最大搜索（minimax）</p>
+<ul>
+<li>最小最大搜索是一个在你和对手轮流行动的情况下，为你自己寻找最优策略的算法。</li>
+<li>算法：略</li>
+<li>时间复杂度：<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><msup><mi>b</mi><mi>m</mi></msup><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(b^m)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">b</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.664392em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">m</span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span></li>
+<li>空间复杂度：<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>b</mi><mi>m</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(bm)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal">b</span><span class="mord mathnormal">m</span><span class="mclose">)</span></span></span></span></li>
+</ul>
+</li>
+<li>
+<p>\alpha-\beta 剪枝</p>
+<ul>
+<li>Minimax 会穷举整个博弈树，但我们可以用剪枝技巧跳过一些无用分支，让它跑得更快</li>
+<li>max 层的下界取下一层（上界）里面最大的；min 层的上界取下一层（下界）里面最小的<br>
+懒得写直接看例子：<br>
+<img data-src="figure2.png" alt><br>
+Alpha-Beta 剪枝算法什么时候扩展的结点数量最少？</li>
+<li>每一层最左端结点的所有孩子结点均被访问，其他节点仅有最左端孩子结点被访问、其他孩子结点被剪枝。<br>
+如果一个节点导致了其兄弟节点被剪枝，可知其孩子节点必然被扩展。</li>
+<li>最优效率下时间复杂度：<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><msup><mi>b</mi><mrow><mi>m</mi><mi mathvariant="normal">/</mi><mn>2</mn></mrow></msup><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(b^{m/2})</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.138em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">b</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8879999999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">m</span><span class="mord mtight">/</span><span class="mord mtight">2</span></span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span>  (或者 m+1); 最差的就是完全没剪枝和 minimax 一样</li>
+</ul>
+</li>
+<li>
+<p>蒙特卡洛树搜索</p>
+<ul>
+<li>选择、扩展、模拟、反向传播</li>
+<li>悔值函数</li>
+</ul>
+</li>
+</ul>
+<div class="note info">
+<p>没完全懂，后面再回来研究</p>
+</div>
 
       <div class="tags">
-          <a href="/tags/%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90/" rel="tag"><i class="ic i-tag"></i> 语法分析</a>
+          <a href="/tags/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/" rel="tag"><i class="ic i-tag"></i> 人工智能</a>
       </div>
   </div>
 
@@ -169,7 +232,7 @@ NoResponse's Blog = </title>
       <i class="ic i-calendar-check"></i>
     </span>
     <span class="text">Edited on</span>
-    <time title="Modified: 2025-05-23 17:43:29" itemprop="dateModified" datetime="2025-05-23T17:43:29+08:00">2025-05-23</time>
+    <time title="Modified: 2025-06-12 15:00:35" itemprop="dateModified" datetime="2025-06-12T15:00:35+08:00">2025-06-12</time>
   </span>
 </div>
 
@@ -205,7 +268,7 @@ NoResponse's Blog = </title>
   </li>
   <li class="link">
     <strong>Post link: </strong>
-    <a href="http://example.com/2025/03/23/computer-science/compile-principles/ch3/" title="Ch3">http://example.com/2025/03/23/computer-science/compile-principles/ch3/</a>
+    <a href="http://example.com/2025/06/11/AI/week4-5/" title="Week4-5">http://example.com/2025/06/11/AI/week4-5/</a>
   </li>
   <li class="license">
     <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> unless stating additionally.
@@ -224,20 +287,20 @@ NoResponse's Blog = </title>
     <div class="item left">
       
 
-  <a href="/2025/03/22/computer-science/compile-principles/ch2/" itemprop="url" rel="prev" data-background-image="&#x2F;images&#x2F;bg18.jpg" title="Ch2">
+  <a href="/2025/05/20/AI/week2-3/" itemprop="url" rel="prev" data-background-image="&#x2F;images&#x2F;bg7.jpg" title="Week2-3">
   <span class="type">Previous Post</span>
-  <span class="category"><i class="ic i-flag"></i> 编译原理</span>
-  <h3>Ch2</h3>
+  <span class="category"><i class="ic i-flag"></i> 人工智能</span>
+  <h3>Week2-3</h3>
   </a>
 
     </div>
     <div class="item right">
       
 
-  <a href="/2025/03/29/computer-science/compile-principles/ch4/" itemprop="url" rel="next" data-background-image="&#x2F;images&#x2F;bg29.jpg" title="Ch4">
+  <a href="/2025/06/12/AI/week6-7/" itemprop="url" rel="next" data-background-image="&#x2F;images&#x2F;bg29.jpg" title="Week6-7">
   <span class="type">Next Post</span>
-  <span class="category"><i class="ic i-flag"></i> 编译原理</span>
-  <h3>Ch4</h3>
+  <span class="category"><i class="ic i-flag"></i> 人工智能</span>
+  <h3>Week6-7</h3>
   </a>
 
     </div>
@@ -256,11 +319,11 @@ NoResponse's Blog = </title>
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="Contents">
-          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90"><span class="toc-number">1.</span> <span class="toc-text"> 语法分析</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#cfg"><span class="toc-number">1.1.</span> <span class="toc-text"> CFG</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#ambiguous-grammars"><span class="toc-number">1.1.1.</span> <span class="toc-text"> Ambiguous grammars</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.2.</span> <span class="toc-text"> </span></a></li></ol></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%97%A0%E4%BF%A1%E6%81%AF%E6%90%9C%E7%B4%A2"><span class="toc-number">1.</span> <span class="toc-text"> 无信息搜索</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%AF%E5%8F%91%E5%BC%8F%E6%90%9C%E7%B4%A2"><span class="toc-number">2.</span> <span class="toc-text"> 启发式搜索</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%B9%E6%8A%97%E6%90%9C%E7%B4%A2"><span class="toc-number">3.</span> <span class="toc-text"> 对抗搜索</span></a></li></ol>
       </div>
       <div class="related panel pjax" data-title="Related">
         <ul>
-          <li><a href="/2025/03/21/computer-science/compile-principles/ch1/" rel="bookmark" title="Ch1">Ch1</a></li><li><a href="/2025/03/21/computer-science/compile-principles/ch5/" rel="bookmark" title="Ch5">Ch5</a></li><li><a href="/2025/03/22/computer-science/compile-principles/ch2/" rel="bookmark" title="Ch2">Ch2</a></li><li class="active"><a href="/2025/03/23/computer-science/compile-principles/ch3/" rel="bookmark" title="Ch3">Ch3</a></li><li><a href="/2025/03/29/computer-science/compile-principles/ch4/" rel="bookmark" title="Ch4">Ch4</a></li>
+          <li><a href="/2025/05/20/AI/week2-3/" rel="bookmark" title="Week2-3">Week2-3</a></li><li><a href="/2025/05/20/AI/week1/" rel="bookmark" title="Week1">Week1</a></li><li class="active"><a href="/2025/06/11/AI/week4-5/" rel="bookmark" title="Week4-5">Week4-5</a></li><li><a href="/2025/06/12/AI/week6-7/" rel="bookmark" title="Week6-7">Week6-7</a></li>
         </ul>
       </div>
       <div class="overview panel" data-title="Overview">
@@ -313,12 +376,12 @@ NoResponse's Blog = </title>
 
   <ul id="quick">
     <li class="prev pjax">
-        <a href="/2025/03/22/computer-science/compile-principles/ch2/" rel="prev" title="Previous Post"><i class="ic i-chevron-left"></i></a>
+        <a href="/2025/05/20/AI/week2-3/" rel="prev" title="Previous Post"><i class="ic i-chevron-left"></i></a>
     </li>
     <li class="up"><i class="ic i-arrow-up"></i></li>
     <li class="down"><i class="ic i-arrow-down"></i></li>
     <li class="next pjax">
-        <a href="/2025/03/29/computer-science/compile-principles/ch4/" rel="next" title="Next Post"><i class="ic i-chevron-right"></i></a>
+        <a href="/2025/06/12/AI/week6-7/" rel="next" title="Next Post"><i class="ic i-chevron-right"></i></a>
     </li>
     <li class="percent"></li>
   </ul>
@@ -340,6 +403,18 @@ NoResponse's Blog = </title>
   <li class="item">
     
 <div class="breadcrumb">
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/computer-network/" title="In 计算机网络">计算机网络</a>
+</div>
+
+    <span><a href="/2025/05/13/computer-science/computer-network/ch1/" title="Ch1">Ch1</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
 <a href="/categories/AI/" title="In 人工智能">人工智能</a>
 </div>
 
@@ -352,10 +427,32 @@ NoResponse's Blog = </title>
 <div class="breadcrumb">
 <a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/computer-network/" title="In 计算机网络">计算机网络</a>
+<a href="/categories/computer-science/computer-organization/" title="In 计算机组成">计算机组成</a>
 </div>
 
-    <span><a href="/2025/05/13/computer-science/computer-network/ch1/" title="Ch1">Ch1</a></span>
+    <span><a href="/2025/05/14/computer-science/computer-organization/ch2/" title="Ch2">Ch2</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/AI/" title="In 人工智能">人工智能</a>
+</div>
+
+    <span><a href="/2025/06/11/AI/week4-5/" title="Week4-5">Week4-5</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
+</div>
+
+    <span><a href="/2025/03/29/computer-science/compile-principles/ch4/" title="Ch4">Ch4</a></span>
   </li>
 
       
@@ -386,12 +483,10 @@ NoResponse's Blog = </title>
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/computer-organization/" title="In 计算机组成">计算机组成</a>
+<a href="/categories/AI/" title="In 人工智能">人工智能</a>
 </div>
 
-    <span><a href="/2025/05/14/computer-science/computer-organization/ch2/" title="Ch2">Ch2</a></span>
+    <span><a href="/2025/06/12/AI/week6-7/" title="Week6-7">Week6-7</a></span>
   </li>
 
       
@@ -404,38 +499,6 @@ NoResponse's Blog = </title>
 </div>
 
     <span><a href="/2025/03/22/computer-science/compile-principles/ch2/" title="Ch2">Ch2</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/AI/" title="In 人工智能">人工智能</a>
-</div>
-
-    <span><a href="/2025/06/12/AI/week6-7/" title="Week6-7">Week6-7</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/AI/" title="In 人工智能">人工智能</a>
-</div>
-
-    <span><a href="/2025/05/20/AI/week1/" title="Week1">Week1</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
-</div>
-
-    <span><a href="/2025/03/23/computer-science/compile-principles/ch3/" title="Ch3">Ch3</a></span>
   </li>
 
       
@@ -478,7 +541,7 @@ NoResponse's Blog = </title>
   </div>
 <script data-config type="text/javascript">
   var LOCAL = {
-    path: '2025/03/23/computer-science/compile-principles/ch3/',
+    path: '2025/06/11/AI/week4-5/',
     favicon: {
       show: "（●´3｀●）Goooood",
       hide: "(´Д｀)Booooom"
@@ -488,7 +551,8 @@ NoResponse's Blog = </title>
       empty: "We didn't find any results for the search: ${query}",
       stats: "${hits} results found in ${time} ms"
     },
-    valine: true,fancybox: true,
+    valine: true,copy_tex: true,
+    katex: true,fancybox: true,
     copyright: 'Copied to clipboard successfully! <br> All articles in this blog are licensed under <i class="ic i-creative-commons"></i>BY-NC-SA.',
     ignores : [
       function(uri) {

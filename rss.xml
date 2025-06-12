@@ -5,24 +5,33 @@
         <link>http://example.com</link>
         <description></description>
         <language>en</language>
-        <pubDate>Wed, 11 Jun 2025 00:00:00 +0800</pubDate>
-        <lastBuildDate>Wed, 11 Jun 2025 00:00:00 +0800</lastBuildDate>
+        <pubDate>Thu, 12 Jun 2025 00:00:00 +0800</pubDate>
+        <lastBuildDate>Thu, 12 Jun 2025 00:00:00 +0800</lastBuildDate>
         <category>人工智能</category>
-        <category>词法分析</category>
         <category>编译原理</category>
+        <category>语义分析</category>
+        <category>词法分析</category>
         <category>抽象语法</category>
         <category>语法分析</category>
-        <category>语义分析</category>
         <category>计算机网络</category>
-        <category>数据的表示与运算</category>
         <category>计算机组成</category>
+        <category>数据的表示与运算</category>
         <item>
-            <guid isPermalink="true">http://example.com/2025/06/11/AI/week3/</guid>
-            <title>Week3</title>
-            <link>http://example.com/2025/06/11/AI/week3/</link>
+            <guid isPermalink="true">http://example.com/2025/06/12/AI/week6-7/</guid>
+            <title>Week6-7</title>
+            <link>http://example.com/2025/06/12/AI/week6-7/</link>
+            <category>人工智能</category>
+            <pubDate>Thu, 12 Jun 2025 00:00:00 +0800</pubDate>
+            <description><![CDATA[ &lt;h1 id=&#34;ch4-机器学习&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#ch4-机器学习&#34;&gt;#&lt;/a&gt; Ch4 机器学习&lt;/h1&gt;
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">http://example.com/2025/06/11/AI/week4-5/</guid>
+            <title>Week4-5</title>
+            <link>http://example.com/2025/06/11/AI/week4-5/</link>
             <category>人工智能</category>
             <pubDate>Wed, 11 Jun 2025 00:00:00 +0800</pubDate>
-            <description><![CDATA[ &lt;h1 id=&#34;搜索算法&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#搜索算法&#34;&gt;#&lt;/a&gt; 搜索算法&lt;/h1&gt;
+            <description><![CDATA[ &lt;p&gt;#Ch3 搜索算法&lt;/p&gt;
 &lt;h2 id=&#34;无信息搜索&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#无信息搜索&#34;&gt;#&lt;/a&gt; 无信息搜索&lt;/h2&gt;
 &lt;p&gt;BFS DFS 略&lt;/p&gt;
 &lt;h2 id=&#34;启发式搜索&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#启发式搜索&#34;&gt;#&lt;/a&gt; 启发式搜索&lt;/h2&gt;
@@ -97,9 +106,9 @@ Alpha-Beta 剪枝算法什么时候扩展的结点数量最少？&lt;/li&gt;
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">http://example.com/2025/05/20/AI/week2/</guid>
-            <title>Week2</title>
-            <link>http://example.com/2025/05/20/AI/week2/</link>
+            <guid isPermalink="true">http://example.com/2025/05/20/AI/week2-3/</guid>
+            <title>Week2-3</title>
+            <link>http://example.com/2025/05/20/AI/week2-3/</link>
             <category>人工智能</category>
             <pubDate>Tue, 20 May 2025 00:00:00 +0800</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;ch2-知识表达与推理&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#ch2-知识表达与推理&#34;&gt;#&lt;/a&gt; Ch2 知识表达与推理&lt;/h1&gt;
