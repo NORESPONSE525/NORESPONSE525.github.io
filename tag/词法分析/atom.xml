@@ -8,11 +8,11 @@
     <category term="编译原理" />
     <category term="词法分析" />
     <category term="抽象语法" />
-    <category term="语法分析" />
-    <category term="计算机网络" />
     <category term="语义分析" />
+    <category term="语法分析" />
     <category term="计算机组成" />
     <category term="数据的表示与运算" />
+    <category term="计算机网络" />
     <entry>
         <id>http://example.com/2025/03/22/computer-science/compile-principles/ch2/</id>
         <title>Ch2</title>
