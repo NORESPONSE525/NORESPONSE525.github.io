@@ -1,0 +1,176 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>http://example.com</id>
+    <title> • Posts by &#34;�˹�����&#34; category</title>
+    <link href="http://example.com" />
+    <updated>2025-06-14T16:00:00.000Z</updated>
+    <category term="人工智能" />
+    <category term="�˹�����" />
+    <category term="编译原理" />
+    <category term="词法分析" />
+    <category term="抽象语法" />
+    <category term="语义分析" />
+    <category term="语法分析" />
+    <category term="计算机组成" />
+    <category term="数据的表示与运算" />
+    <category term="计算机网络" />
+    <entry>
+        <id>http://example.com/2025/06/15/AI/week8-9/</id>
+        <title>Week8-9</title>
+        <link rel="alternate" href="http://example.com/2025/06/15/AI/week8-9/"/>
+        <content type="html">&lt;h1 id=&#34;K-Means&#34;&gt;&lt;a href=&#34;#K-Means&#34; class=&#34;headerlink&#34; title=&#34;K-Means&#34;&gt;&lt;/a&gt;K-Means&lt;/h1&gt;&lt;p&gt;������������ν�n���������������ƶȴ�С�����Ƿֱ���ൽk�����ϣ�ʹ��ÿ�����ݽ�����һ�����༯�ϡ�&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;��ʼ�����ģ����ѡ��k�����ݵ���Ϊ��ʼ����$c_1, c_2, …, c_k$��&lt;/li&gt;
+&lt;li&gt;�������ݵ㣺����ÿ�����ݵ�$x_i$�����������������ĵľ��룬��������䵽����������������ڵĴ���&lt;/li&gt;
+&lt;li&gt;�������ģ�����ÿ���أ�����ô����������ݵ��ƽ��ֵ������ƽ��ֵ��Ϊ�µ����ġ�&lt;/li&gt;
+&lt;li&gt;�������̣��ظ�ִ�з���͸��²��裬ֱ�����Ĳ��ٷ����仯��ﵽԤ���������������&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;���ɷַ���-PCA&#34;&gt;&lt;a href=&#34;#���ɷַ���-PCA&#34; class=&#34;headerlink&#34; title=&#34;���ɷַ���(PCA)&#34;&gt;&lt;/a&gt;���ɷַ���(PCA)&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;���룺n��dά�������������ɵľ���$\mathbf{X}$����ά���ά��l&lt;/li&gt;
+&lt;li&gt;�����ӳ�����$\mathbf{W} &amp;#x3D; {\mathbf{w}_1, \mathbf{w}_2, …, \mathbf{w}_l}$&lt;br&gt;�㷨���裺&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;����ÿ����������$\mathbf{x}_i$�������Ļ�������&lt;br&gt;$$&lt;br&gt;\mathbf{x}_i’ &amp;#x3D; \mathbf{x}&lt;em&gt;i - \mu, \quad \mu &amp;#x3D; \frac{1}{n}\sum&lt;/em&gt;{j&amp;#x3D;1}^{n} \mathbf{x}_j&lt;br&gt;$$&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;����ԭʼ�������ݵ�Э�������&lt;br&gt;$$&lt;br&gt;\Sigma &amp;#x3D; \frac{1}{n-1} \mathbf{X}^T \mathbf{X}&lt;br&gt;$$&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;��Э�������$\Sigma$��������ֵ�ֽ⣬����������������ֵ��С����$\lambda_1 \geq \lambda_2 \geq \cdots \geq \lambda_d$&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;ȡǰ$l$���������������Ӧ��������$\mathbf{w}_1, \mathbf{w}_2, …, \mathbf{w}_l$���ӳ�����$\mathbf{W}$&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;��ÿ����������$\mathbf{x}&lt;em&gt;i$�������·�����ά��&lt;br&gt;$$&lt;br&gt;(\mathbf{x}&lt;em&gt;i)&lt;/em&gt;{1 \times d} (\mathbf{W})&lt;/em&gt;{d \times l} &amp;#x3D; 1 \times l&lt;br&gt;$$&lt;br&gt;���֣�&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;ά��&lt;/th&gt;
+&lt;th&gt;PCA&lt;/th&gt;
+&lt;th&gt;LDA&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;����&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;�޼ල&lt;/td&gt;
+&lt;td&gt;�мල&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;Ŀ��&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;��󻯷��������Ҫ�ֲ���Ϣ&lt;/td&gt;
+&lt;td&gt;��������룬��С�����ھ���&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;�Ƿ�ʹ�������Ϣ&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;? ��ʹ��&lt;/td&gt;
+&lt;td&gt;? ʹ��&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;��������&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;����ѹ�������ӻ���ȥ��&lt;/td&gt;
+&lt;td&gt;���������������ȡ&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;��ά��ά������&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;�����⣬��һ��С��ԭά��&lt;/td&gt;
+&lt;td&gt;��ཱུ�� $k-1$ ά��$k$ ���������&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;��ѧ����&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;Э������������ֵ�ֽ�&lt;/td&gt;
+&lt;td&gt;���&amp;#x2F;����ɢ�Ⱦ���Ĺ�������ֵ�ֽ�&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;������ά������&lt;ul&gt;
+&lt;li&gt;�Ǹ�����ֽ� ��non-negative matrix factorization, NMF��&lt;/li&gt;
+&lt;li&gt;��ά�߶ȷ���Metric multidimensional scaling, MDS��&lt;/li&gt;
+&lt;li&gt;�ֲ�����Ƕ�루Locally Linear Embedding��LLE��&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;������������&#34;&gt;&lt;a href=&#34;#������������&#34; class=&#34;headerlink&#34; title=&#34;������������&#34;&gt;&lt;/a&gt;������������&lt;/h1&gt;&lt;p&gt;����ʱ��ÿ������ͼ��ת����������&lt;br&gt;&lt;img data-src=&#34;/f1.jpg&#34;&gt;&lt;br&gt;�㷨����&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;���룺$n$��1024ά�����������������ɵľ���$\mathbf{X}$����ά���ά��$l$&lt;/li&gt;
+&lt;li&gt;�����ӳ�����$\mathbf{W} &amp;#x3D; {\mathbf{w}_1, \mathbf{w}_2, …, \mathbf{w}_l}$������ÿ��$\mathbf{w}_j (1 \leq j \leq l)$��һ������������&lt;br&gt;�㷨����&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;���Ļ�������&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;��ÿ��������������$x_i$�������Ļ�������&lt;br&gt;$$&lt;br&gt;x_i’ &amp;#x3D; x_i - \mu, \quad \mu &amp;#x3D; \frac{1}{n}\sum_{j&amp;#x3D;1}^{n} x_j&lt;br&gt;$$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;����Э�������&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;����ԭʼ�����������ݵ�Э�������&lt;br&gt;$$&lt;br&gt;\Sigma &amp;#x3D; \frac{1}{n-1} \mathbf{X}^T \mathbf{X}&lt;br&gt;$$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;����ֵ�ֽ⣺&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;��Э�������$\Sigma$��������ֵ�ֽ⣬���������������Ӵ�С����&lt;br&gt;$$&lt;br&gt;\lambda_1 \geq \lambda_2 \geq \cdots \geq \lambda_d&lt;br&gt;$$&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;����ӳ�����&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;ȡǰ$l$���������������Ӧ��������$\mathbf{w}_1, \mathbf{w}_2, …, \mathbf{w}_l$���ӳ�����$\mathbf{W}$��&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;���ݽ�ά��&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;��ÿ������ͼ��$x_i$�������·�����ά��&lt;br&gt;$$&lt;br&gt;(\mathbf{x}&lt;em&gt;i)&lt;/em&gt;{1 \times d} (\mathbf{W})_{d \times l} &amp;#x3D; 1 \times l&lt;br&gt;$$&lt;br&gt;����ʵ�õ���pca�����һ�����������ʱ���32*32��ͼ̯����1024*1�����������ѣ�&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;DZ�����������Latent-Semantic-Analysis-LSA��&#34;&gt;&lt;a href=&#34;#DZ�����������Latent-Semantic-Analysis-LSA��&#34; class=&#34;headerlink&#34; title=&#34;Ǳ�����������Latent Semantic Analysis, LSA��&#34;&gt;&lt;/a&gt;Ǳ�����������Latent Semantic Analysis, LSA��&lt;/h1&gt;&lt;p&gt;����&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;��������-�ĵ�����&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;����һ������-�ĵ�����$A$������ÿ��Ԫ��$a_{ij}$��ʾ��$i$�������ڵ�$j$���ĵ��е�Ƶ�ʣ�ͨ��ʹ�ô�Ƶ-���ĵ�Ƶ��TF-IDF���м�Ȩ����&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;����ֵ�ֽ⣨SVD����&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;�Ե���-�ĵ�����$A$��������ֵ�ֽ⣬��$A &amp;#x3D; U \Sigma V^T$������$U$��$V$�ֱ���������������������������ɵľ���$\Sigma$�ǶԽǾ�����Խ����ϵ�Ԫ����$A$������ֵ�����������У���&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;ѡ��ǰ$k$���������ֵ����Ӧ������������&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;ѡȡǰ$k$����������ֵ�����Ӧ�������������γɵ��ȱƽ�����$A_k &amp;#x3D; U_k \Sigma_k V_k^T$������$k$��ѡ��ȡ���ڱ�������ԭʼ��Ϣ����ͨ�������ۻ�����׼�����ȷ����&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;�ؽ������ھ������ϵ��&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;ʹ��$A_k$����ԭʼ����$A$�����Լ������������ĵ�֮������ƶȣ���Ƥ��ѷ���ϵ�������Ӷ������ĵ�-�ĵ�֮��Ĺ�����ϵ��&lt;/li&gt;
+&lt;li&gt;ͬ���أ�Ҳ��������̽������-���ʡ�����-�ĵ����������ϵ��&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;��������㷨��Expectation-Maximization-Algorithm-EM��&#34;&gt;&lt;a href=&#34;#��������㷨��Expectation-Maximization-Algorithm-EM��&#34; class=&#34;headerlink&#34; title=&#34;��������㷨��Expectation-Maximization Algorithm, EM��&#34;&gt;&lt;/a&gt;��������㷨��Expectation-Maximization Algorithm, EM��&lt;/h1&gt;&lt;p&gt;EM�㷨��һ�ֵ�����������Ҫ���ں����������ĸ���ģ�Ͳ����������⡣����Ϊ&amp;#x3D;&amp;#x3D;E������������&amp;#x3D;&amp;#x3D;��&amp;#x3D;&amp;#x3D;M������󻯣�&amp;#x3D;&amp;#x3D;��ͨ��������ʽ�ƽ�ģ�Ͳ����������Ȼ����ֵ��&lt;/p&gt;
+&lt;p&gt;����&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;��ʼ��ģ�Ͳ�����&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;����Ϊģ�Ͳ����趨��ʼֵ�������˹���ģ���еľ�ֵ������ȣ���&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;E����Expectation Step��������������&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;���ڵ�ǰ��ģ�Ͳ����������������ĺ�����ʷֲ�������ÿһ������$x_i$�Ϳ��ܵ�������$z_i$������$p(z_i|x_i, \theta)$������$\theta$��ʾ��ǰ��ģ�Ͳ�����&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;M����Maximization Step���������Ȼ�����͸���ģ�Ͳ���&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;���ݹ۲�����$x_i$��������$z_i$�ĺ�����ʷֲ������¹���ģ�Ͳ���$\theta$��������������ݵĶ�����Ȼ����$\log p(x,z|\theta)$��������&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;�ظ�E����M����&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;�����ظ�ִ��E����M����ֱ��ģ�Ͳ����������ߴﵽԤ���ĵ�������Ϊֹ��&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;�����û���������Ҷ�����˵&lt;/p&gt;
+</content>
+        <category term="�˹�����" />
+        <updated>2025-06-14T16:00:00.000Z</updated>
+    </entry>
+</feed>

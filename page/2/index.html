@@ -87,7 +87,7 @@
 
       </div>
       <div id="imgs" class="pjax">
-          <img src="/images/bg7.jpg">
+          <img src="/images/bg28.jpg">
       </div>
     </header>
     <div id="waves">
@@ -112,7 +112,51 @@
         
 <article class="item">
   <div class="cover">
-    <a href="/2025/03/21/computer-science/compile-principles/ch1/" itemprop="url" title="Ch1"><img data-src="/images/bg18.jpg"></a>
+    <a href="/2025/03/22/computer-science/compile-principles/ch2/" itemprop="url" title="Ch2"><img data-src="/images/bg27.jpg"></a>
+  </div>
+  <div class="info">
+    
+<div class="meta">
+  <span class="item" title="Created: 2025-03-22 00:00:00">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <time itemprop="dateCreated datePublished" datetime="2025-03-22T00:00:00+08:00">2025-03-22</time>
+  </span>
+</div>
+
+    <h3><a href="/2025/03/22/computer-science/compile-principles/ch2/" itemprop="url" title="Ch2">Ch2</a></h3>
+    <div class="excerpt">
+        Ch2 词法分析
+把input分解成一个个token
+
+Regular Expression
+Language: a set of strings
+String: a finite sequence of characters
+Regular Experssion Notations:
+
+:::infoDFA, NFA相关 见计算理论:::
+RE转NFA:::info 方法：
+
+画出初始态和终态
+分裂规则：:::
+
+NFA转DFA从初始状态的闭包开始，每次根据&#92;epsilon和当前状态的闭包，得到下一个状态的闭包，直到得到终态的闭包。
++++info example;;;id3...
+    </div>
+    <div class="meta footer">
+      <span>
+        <a href="/categories/computer-science/compiler-principles/" itemprop="url" title="编译原理"><i class="ic i-flag"></i>编译原理</a>
+      </span>
+    </div>
+    <a href="/2025/03/22/computer-science/compile-principles/ch2/" itemprop="url" title="Ch2" class="btn">more...</a>
+  </div>
+</article>
+
+        
+<article class="item">
+  <div class="cover">
+    <a href="/2025/03/21/computer-science/compile-principles/ch1/" itemprop="url" title="Ch1"><img data-src="/images/bg11.jpg"></a>
   </div>
   <div class="info">
     
@@ -127,19 +171,15 @@
 
     <h3><a href="/2025/03/21/computer-science/compile-principles/ch1/" itemprop="url" title="Ch1">Ch1</a></h3>
     <div class="excerpt">
-        ZJU 2025 春夏编译原理 学习笔记
+        ZJU 2025春夏编译原理 学习笔记
 主要基于虎书（Modern Compiler Implementation in C, Andrew W. Appel）
 
-# CH1 Introduction
-
+CH1 Introduction
 Two Important Concepts
-
 Phases（阶段）
 Interfaces（接口）
 
-方框里的是 phase，中间的是 interface
-
-各个阶段的描述
+方框里的是phase，中间的是interface各个阶段的描述
     </div>
     <div class="meta footer">
       <span>
@@ -153,7 +193,7 @@ Interfaces（接口）
         
 <article class="item">
   <div class="cover">
-    <a href="/2025/03/21/computer-science/compile-principles/ch5/" itemprop="url" title="Ch5"><img data-src="/images/bg4.jpg"></a>
+    <a href="/2025/03/21/computer-science/compile-principles/ch5/" itemprop="url" title="Ch5"><img data-src="/images/bg34.jpg"></a>
   </div>
   <div class="info">
     
@@ -168,22 +208,16 @@ Interfaces（接口）
 
     <h3><a href="/2025/03/21/computer-science/compile-principles/ch5/" itemprop="url" title="Ch5">Ch5</a></h3>
     <div class="excerpt">
-        # 语义分析
-
+        语义分析
 绑定，类型检查
 
-# symbol table
-
+symbol table
 Functional style: 函数式风格
-
-To keep σ1&#92;sigma_1σ1​ in pristine condition while creating create σ2&#92;sigma_2σ2​ and σ3&#92;sigma_3σ3​
-
-persistent BST
+To keep $&#92;sigma_1$ in pristine condition while creating create $&#92;sigma_2$ and $&#92;sigma_3$:::info 方法：persistent BST:::
 
 Imperative style: 命令式风格
-
-Modify σ1&#92;sigma_1σ1​ until it becomes σ2&#92;sigma_2σ2​.
-While σ2&#92;sigma_2σ2​...
+Modify $&#92;sigma_1$ until it becomes $&#92;sigma_2$.
+While $&#92;sigma_2$ exists, we cannot...
     </div>
     <div class="meta footer">
       <span>
@@ -229,19 +263,19 @@ While σ2&#92;sigma_2σ2​...
 <nav class="state">
     <div class="item posts">
       <a href="/archives/">
-        <span class="count">12</span>
+        <span class="count">13</span>
         <span class="name">posts</span>
       </a>
     </div>
     <div class="item categories">
       <a href="/categories/">
-        <span class="count">5</span>
+        <span class="count">6</span>
         <span class="name">categories</span>
       </a>
     </div>
     <div class="item tags">
       <a href="/tags/">
-        <span class="count">9</span>
+        <span class="count">10</span>
         <span class="name">tags</span>
       </a>
     </div>
@@ -294,76 +328,42 @@ While σ2&#92;sigma_2σ2​...
 <div class="breadcrumb">
 <a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/computer-organization/" title="In 计算机组成">计算机组成</a>
-</div>
-
-    <span><a href="/2025/05/14/computer-science/computer-organization/ch2/" title="Ch2">Ch2</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/AI/" title="In 人工智能">人工智能</a>
-</div>
-
-    <span><a href="/2025/05/20/AI/week2-3/" title="Week2-3">Week2-3</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/computer-network/" title="In 计算机网络">计算机网络</a>
-</div>
-
-    <span><a href="/2025/05/13/computer-science/computer-network/ch1/" title="Ch1">Ch1</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
-</div>
-
-    <span><a href="/2025/03/29/computer-science/compile-principles/ch4/" title="Ch4">Ch4</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/AI/" title="In 人工智能">人工智能</a>
-</div>
-
-    <span><a href="/2025/06/11/AI/week4-5/" title="Week4-5">Week4-5</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/AI/" title="In 人工智能">人工智能</a>
-</div>
-
-    <span><a href="/2025/06/12/AI/week6-7/" title="Week6-7">Week6-7</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
 <a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
 </div>
 
     <span><a href="/2025/03/21/computer-science/compile-principles/ch1/" title="Ch1">Ch1</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/AI/" title="In 人工智能">人工智能</a>
+</div>
+
+    <span><a href="/2025/05/20/AI/week1/" title="Week1">Week1</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%EF%BF%BD%CB%B9%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD/" title="In �˹�����">�˹�����</a>
+</div>
+
+    <span><a href="/2025/06/15/AI/week8-9/" title="Week8-9">Week8-9</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/computer-organization/" title="In 计算机组成">计算机组成</a>
+</div>
+
+    <span><a href="/2025/05/13/computer-science/computer-organization/ch1/" title="Ch1">Ch1</a></span>
   </li>
 
       
@@ -396,10 +396,44 @@ While σ2&#92;sigma_2σ2​...
 <div class="breadcrumb">
 <a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
 <i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
+</div>
+
+    <span><a href="/2025/03/29/computer-science/compile-principles/ch4/" title="Ch4">Ch4</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/computer-network/" title="In 计算机网络">计算机网络</a>
+</div>
+
+    <span><a href="/2025/05/13/computer-science/computer-network/ch1/" title="Ch1">Ch1</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
 <a href="/categories/computer-science/computer-organization/" title="In 计算机组成">计算机组成</a>
 </div>
 
-    <span><a href="/2025/05/13/computer-science/computer-organization/ch1/" title="Ch1">Ch1</a></span>
+    <span><a href="/2025/05/14/computer-science/computer-organization/ch2/" title="Ch2">Ch2</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/AI/" title="In 人工智能">人工智能</a>
+</div>
+
+    <span><a href="/2025/06/12/AI/week6-7/" title="Week6-7">Week6-7</a></span>
   </li>
 
   </ul>
