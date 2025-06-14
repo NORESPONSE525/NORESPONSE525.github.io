@@ -8,39 +8,59 @@
         <pubDate>Sat, 22 Mar 2025 00:00:00 +0800</pubDate>
         <lastBuildDate>Sat, 22 Mar 2025 00:00:00 +0800</lastBuildDate>
         <category>人工智能</category>
-        <category>计算机网络</category>
-        <category>计算机组成</category>
-        <category>数据的表示与运算</category>
         <category>编译原理</category>
         <category>词法分析</category>
         <category>语法分析</category>
-        <category>抽象语法</category>
         <category>语义分析</category>
+        <category>抽象语法</category>
+        <category>计算机组成</category>
+        <category>计算机网络</category>
+        <category>数据的表示与运算</category>
         <item>
             <guid isPermalink="true">http://example.com/2025/03/22/computer-science/compile-principles/ch2/</guid>
             <title>Ch2</title>
             <link>http://example.com/2025/03/22/computer-science/compile-principles/ch2/</link>
             <category>词法分析</category>
             <pubDate>Sat, 22 Mar 2025 00:00:00 +0800</pubDate>
-            <description><![CDATA[ &lt;h1 id=&#34;Ch2-词法分析&#34;&gt;&lt;a href=&#34;#Ch2-词法分析&#34; class=&#34;headerlink&#34; title=&#34;Ch2 词法分析&#34;&gt;&lt;/a&gt;Ch2 词法分析&lt;/h1&gt;&lt;blockquote&gt;
-&lt;p&gt;把input分解成一个个token&lt;/p&gt;
+            <description><![CDATA[ &lt;h1 id=&#34;ch2-词法分析&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#ch2-词法分析&#34;&gt;#&lt;/a&gt; Ch2 词法分析&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;把 input 分解成一个个 token&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h2 id=&#34;Regular-Expression&#34;&gt;&lt;a href=&#34;#Regular-Expression&#34; class=&#34;headerlink&#34; title=&#34;Regular Expression&#34;&gt;&lt;/a&gt;Regular Expression&lt;/h2&gt;&lt;ul&gt;
+&lt;h2 id=&#34;regular-expression&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#regular-expression&#34;&gt;#&lt;/a&gt; Regular Expression&lt;/h2&gt;
+&lt;ul&gt;
 &lt;li&gt;Language: a set of strings&lt;/li&gt;
-&lt;li&gt;String: a finite sequence of characters&lt;blockquote&gt;
-&lt;p&gt;Regular Experssion Notations:&lt;br&gt;&lt;img data-src=&#34;/image-1.png&#34;&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/li&gt;
+&lt;li&gt;String: a finite sequence of characters&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;:::info&lt;br&gt;DFA, NFA相关 见计算理论&lt;br&gt;:::&lt;/p&gt;
-&lt;h2 id=&#34;RE转NFA&#34;&gt;&lt;a href=&#34;#RE转NFA&#34; class=&#34;headerlink&#34; title=&#34;RE转NFA&#34;&gt;&lt;/a&gt;RE转NFA&lt;/h2&gt;&lt;p&gt;:::info 方法：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Regular Experssion Notations:&lt;br&gt;
+&lt;img data-src=&#34;image-1.png&#34; alt&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&#34;note info&#34;&gt;
+&lt;p&gt;DFA, NFA 相关 见计算理论&lt;/p&gt;
+&lt;/div&gt;
+&lt;h2 id=&#34;re转nfa&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#re转nfa&#34;&gt;#&lt;/a&gt; RE 转 NFA&lt;/h2&gt;
+&lt;div class=&#34;note info 方法：&#34;&gt;
 &lt;ol&gt;
 &lt;li&gt;画出初始态和终态&lt;/li&gt;
-&lt;li&gt;分裂规则：&lt;br&gt;&lt;img data-src=&#34;/image-2.jpg&#34;&gt;&lt;br&gt;:::&lt;/li&gt;
+&lt;li&gt;分裂规则：&lt;br&gt;
+&lt;img data-src=&#34;image-2.jpg&#34; alt&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h2 id=&#34;NFA转DFA&#34;&gt;&lt;a href=&#34;#NFA转DFA&#34; class=&#34;headerlink&#34; title=&#34;NFA转DFA&#34;&gt;&lt;/a&gt;NFA转DFA&lt;/h2&gt;&lt;p&gt;从初始状态的闭包开始，每次根据\epsilon和当前状态的闭包，得到下一个状态的闭包，直到得到终态的闭包。&lt;/p&gt;
-&lt;p&gt;+++info example&lt;br&gt;;;;id3 题目&lt;br&gt;:chestnut:&lt;br&gt;把这个NFA转成等价的DFA&lt;br&gt;&lt;img data-src=&#34;/image-3.png&#34;&gt;&lt;br&gt;;;;&lt;br&gt;;;;id3 答案&lt;br&gt;初态的闭包是1、2、6，1、2、6经过a可以转移到3、7，因为有\epsilon转移，所以3、7的闭包是3、4、7、8，同理3、4、7、8经过b可以到5、8，由于8是终态，把所有包含8的圆圈画成终态的环。&lt;br&gt;&lt;img data-src=&#34;/image-4.png&#34;&gt;&lt;br&gt;;;;&lt;br&gt;+++&lt;/p&gt;
-&lt;h2 id=&#34;最小化DFA&#34;&gt;&lt;a href=&#34;#最小化DFA&#34; class=&#34;headerlink&#34; title=&#34;最小化DFA&#34;&gt;&lt;/a&gt;最小化DFA&lt;/h2&gt;&lt;p&gt;含义：&lt;/p&gt;
+&lt;/div&gt;
+&lt;h2 id=&#34;nfa转dfa&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#nfa转dfa&#34;&gt;#&lt;/a&gt; NFA 转 DFA&lt;/h2&gt;
+&lt;p&gt;从初始状态的闭包开始，每次根据 \epsilon 和当前状态的闭包，得到下一个状态的闭包，直到得到终态的闭包。&lt;/p&gt;
+&lt;details class=&#34;info&#34;&gt;&lt;summary&gt;example&lt;/summary&gt;&lt;div&gt;
+&lt;div class=&#34;tab&#34; data-id=&#34;id3&#34; data-title=&#34;题目&#34;&gt;
+&lt;p&gt;🌰&lt;br&gt;
+把这个 NFA 转成等价的 DFA&lt;br&gt;
+&lt;img data-src=&#34;image-3.png&#34; alt&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;tab&#34; data-id=&#34;id3&#34; data-title=&#34;答案&#34;&gt;
+&lt;p&gt;初态的闭包是 1、2、6，1、2、6 经过 a 可以转移到 3、7，因为有 \epsilon 转移，所以 3、7 的闭包是 3、4、7、8，同理 3、4、7、8 经过 b 可以到 5、8，由于 8 是终态，把所有包含 8 的圆圈画成终态的环。&lt;br&gt;
+&lt;img data-src=&#34;image-4.png&#34; alt&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/details&gt;
+&lt;h2 id=&#34;最小化dfa&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#最小化dfa&#34;&gt;#&lt;/a&gt; 最小化 DFA&lt;/h2&gt;
+&lt;p&gt;含义：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;没有多余状态：&lt;/li&gt;
 &lt;/ol&gt;
@@ -49,16 +69,21 @@
 &lt;li&gt;从开始状态出发，任何输入串也不能到达的那个状态&lt;/li&gt;
 &lt;/ul&gt;
 &lt;ol start=&#34;2&#34;&gt;
-&lt;li&gt;没有两个状态相互等价&lt;br&gt;:::info 方法：&lt;/li&gt;
-&lt;li&gt;多余状态直接删除&lt;br&gt;&lt;img data-src=&#34;/image-5.png&#34;&gt;&lt;/li&gt;
+&lt;li&gt;没有两个状态相互等价&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;note info 方法：&#34;&gt;
+&lt;ol&gt;
+&lt;li&gt;多余状态直接删除&lt;br&gt;
+&lt;img data-src=&#34;image-5.png&#34; alt&gt;&lt;/li&gt;
 &lt;li&gt;合并等价状态&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
 &lt;li&gt;将状态分为终态和非终态两个集合&lt;/li&gt;
 &lt;li&gt;遍历每个集合，如果经过转换到达的状态都在当前集合里，则不用分，否则划分子集，直到划分不了为止&lt;/li&gt;
-&lt;li&gt;:chestnut: 例子&lt;/li&gt;
-&lt;li&gt;&lt;img data-src=&#34;/image-6.png&#34;&gt;&lt;br&gt;:::&lt;/li&gt;
+&lt;li&gt;🌰 例子&lt;/li&gt;
+&lt;li&gt;&lt;img data-src=&#34;image-6.png&#34; alt&gt;&lt;/li&gt;
 &lt;/ul&gt;
+&lt;/div&gt;
  ]]></description>
         </item>
     </channel>
