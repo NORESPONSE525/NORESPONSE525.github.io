@@ -8,12 +8,12 @@
         <pubDate>Sun, 15 Jun 2025 00:00:00 +0800</pubDate>
         <lastBuildDate>Sun, 15 Jun 2025 00:00:00 +0800</lastBuildDate>
         <category>人工智能</category>
-        <category>词法分析</category>
         <category>编译原理</category>
-        <category>语义分析</category>
-        <category>抽象语法</category>
         <category>语法分析</category>
+        <category>抽象语法</category>
+        <category>词法分析</category>
         <category>中间代码</category>
+        <category>语义分析</category>
         <category>活动记录</category>
         <category>计算机网络</category>
         <category>计算机组成</category>
@@ -230,6 +230,28 @@
             <category>中间代码</category>
             <pubDate>Sun, 15 Jun 2025 00:00:00 +0800</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;ir&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#ir&#34;&gt;#&lt;/a&gt; IR&lt;/h1&gt;
+&lt;p&gt;Intermediate Representation&lt;br&gt;
+ 解决高级语言和目标机器汇编语言之间的转化&lt;br&gt;
+为什么需要 IR:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;更模块化、可迁移&lt;/li&gt;
+&lt;li&gt;分层分析和优化&lt;br&gt;
+ IR 可以有好多层：IR1-&amp;gt;IR2-&amp;gt;…-&amp;gt;IRn&lt;/li&gt;
+&lt;/ul&gt;
+&lt;details class=&#34;info&#34;&gt;&lt;summary&gt;编译流程划分&lt;/summary&gt;&lt;div&gt;
+&lt;p&gt;前端：源代码 -&amp;gt; 词法分析 -&amp;gt; 语法分析 -&amp;gt; 语义分析&lt;br&gt;
+中间表示：IR1-&amp;gt;IR2-&amp;gt;…-&amp;gt;IRn（翻译成 IR 的时候可以做一些机器无关优化比如循环展开等）&lt;br&gt;
+后端：指令选择 -&amp;gt; 寄存器分配 -&amp;gt; 指令调度 -&amp;gt; 机器码&lt;/p&gt;
+&lt;/div&gt;&lt;/details&gt;
+&lt;h2 id=&#34;three-address-code&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#three-address-code&#34;&gt;#&lt;/a&gt; Three-Address Code&lt;/h2&gt;
+&lt;p&gt;x = y op z&lt;br&gt;
+ 据说不考，先不看了&lt;/p&gt;
+&lt;h2 id=&#34;ir-tree&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#ir-tree&#34;&gt;#&lt;/a&gt; IR Tree&lt;/h2&gt;
+&lt;p&gt;两大类节点：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;表达式 Exp&lt;/li&gt;
+&lt;li&gt;语句 Stmt&lt;/li&gt;
+&lt;/ol&gt;
  ]]></description>
         </item>
         <item>
@@ -289,12 +311,12 @@
 &lt;li&gt;若变量 x 不再被使用，可以直接写其寄存器，不需要再保存 x 到栈帧中&lt;br&gt;
 当一个变量在当前作用域内不再被使用时，可以直接将其值写入寄存器，而无需保存到栈帧中&lt;/li&gt;
 &lt;/ol&gt;
-&lt;figure class=&#34;highlight c&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;type&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;title function_&#34;&gt;exampleFunction&lt;/span&gt;&lt;span class=&#34;params&#34;&gt;()&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; x = &lt;span class=&#34;number&#34;&gt;5&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; y = x * &lt;span class=&#34;number&#34;&gt;2&lt;/span&gt;;  &lt;span class=&#34;comment&#34;&gt;// 使用x后，x不再被使用&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;comment&#34;&gt;// 直接将y的值写入寄存器，无需保存x到栈帧中&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;built_in&#34;&gt;printf&lt;/span&gt;(&lt;span class=&#34;string&#34;&gt;&amp;quot;Result: %d\n&amp;quot;&lt;/span&gt;, y);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;figure class=&#34;highlight c&#34;&gt;&lt;figcaption&gt;&lt;span&gt;example&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;type&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;title function_&#34;&gt;exampleFunction&lt;/span&gt;&lt;span class=&#34;params&#34;&gt;()&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; x = &lt;span class=&#34;number&#34;&gt;5&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; y = x * &lt;span class=&#34;number&#34;&gt;2&lt;/span&gt;;  &lt;span class=&#34;comment&#34;&gt;// 使用x后，x不再被使用&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;comment&#34;&gt;// 直接将y的值写入寄存器，无需保存x到栈帧中&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;built_in&#34;&gt;printf&lt;/span&gt;(&lt;span class=&#34;string&#34;&gt;&amp;quot;Result: %d\n&amp;quot;&lt;/span&gt;, y);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;ol start=&#34;4&#34;&gt;
 &lt;li&gt;寄存器窗口技术 (register windows)&lt;br&gt;
  在每次函数调用时，系统会自动切换到一组新的寄存器，称为寄存器窗口。这样，每个函数都可以独立地使用自己的寄存器，而不会影响其他函数的寄存器状态。&lt;/li&gt;
 &lt;/ol&gt;
-&lt;figure class=&#34;highlight c&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;type&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;title function_&#34;&gt;functionA&lt;/span&gt;&lt;span class=&#34;params&#34;&gt;()&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;comment&#34;&gt;// 使用寄存器窗口A&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;type&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;title function_&#34;&gt;functionB&lt;/span&gt;&lt;span class=&#34;params&#34;&gt;()&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;comment&#34;&gt;// 使用寄存器窗口B&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    functionA();  &lt;span class=&#34;comment&#34;&gt;// 调用functionA时，自动切换到寄存器窗口A&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;figure class=&#34;highlight c&#34;&gt;&lt;figcaption&gt;&lt;span&gt;example&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;type&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;title function_&#34;&gt;functionA&lt;/span&gt;&lt;span class=&#34;params&#34;&gt;()&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;comment&#34;&gt;// 使用寄存器窗口A&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;type&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;title function_&#34;&gt;functionB&lt;/span&gt;&lt;span class=&#34;params&#34;&gt;()&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;comment&#34;&gt;// 使用寄存器窗口B&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    functionA();  &lt;span class=&#34;comment&#34;&gt;// 调用functionA时，自动切换到寄存器窗口A&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;h2 id=&#34;frame-resident-variables&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#frame-resident-variables&#34;&gt;#&lt;/a&gt; Frame-Resident Variables&lt;/h2&gt;
 &lt;p&gt;什么情况下要把变量写入栈帧里面？、&lt;/p&gt;
 &lt;ol&gt;

@@ -101,7 +101,7 @@ NoResponse's Blog = </title>
 
       </div>
       <div id="imgs" class="pjax">
-          <img src="/images/bg34.jpg">
+          <img src="/images/bg9.jpg">
       </div>
     </header>
     <div id="waves">
@@ -200,12 +200,12 @@ NoResponse's Blog = </title>
 <li>若变量 x 不再被使用，可以直接写其寄存器，不需要再保存 x 到栈帧中<br>
 当一个变量在当前作用域内不再被使用时，可以直接将其值写入寄存器，而无需保存到栈帧中</li>
 </ol>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">exampleFunction</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="type">int</span> x = <span class="number">5</span>;</span><br><span class="line">    <span class="type">int</span> y = x * <span class="number">2</span>;  <span class="comment">// 使用x后，x不再被使用</span></span><br><span class="line">    <span class="comment">// 直接将y的值写入寄存器，无需保存x到栈帧中</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Result: %d\n&quot;</span>, y);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><figcaption><span>example</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">exampleFunction</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="type">int</span> x = <span class="number">5</span>;</span><br><span class="line">    <span class="type">int</span> y = x * <span class="number">2</span>;  <span class="comment">// 使用x后，x不再被使用</span></span><br><span class="line">    <span class="comment">// 直接将y的值写入寄存器，无需保存x到栈帧中</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Result: %d\n&quot;</span>, y);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ol start="4">
 <li>寄存器窗口技术 (register windows)<br>
  在每次函数调用时，系统会自动切换到一组新的寄存器，称为寄存器窗口。这样，每个函数都可以独立地使用自己的寄存器，而不会影响其他函数的寄存器状态。</li>
 </ol>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">functionA</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="comment">// 使用寄存器窗口A</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">functionB</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="comment">// 使用寄存器窗口B</span></span><br><span class="line">    functionA();  <span class="comment">// 调用functionA时，自动切换到寄存器窗口A</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><figcaption><span>example</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">functionA</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="comment">// 使用寄存器窗口A</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">functionB</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="comment">// 使用寄存器窗口B</span></span><br><span class="line">    functionA();  <span class="comment">// 调用functionA时，自动切换到寄存器窗口A</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="frame-resident-variables"><a class="markdownIt-Anchor" href="#frame-resident-variables">#</a> Frame-Resident Variables</h2>
 <p>什么情况下要把变量写入栈帧里面？、</p>
 <ol>
@@ -255,7 +255,7 @@ g 调用 f 时，g 中每一个实际（或被嵌套在 f 内的任意函数）�
       <i class="ic i-calendar-check"></i>
     </span>
     <span class="text">Edited on</span>
-    <time title="Modified: 2025-06-16 01:24:29" itemprop="dateModified" datetime="2025-06-16T01:24:29+08:00">2025-06-16</time>
+    <time title="Modified: 2025-06-16 01:39:47" itemprop="dateModified" datetime="2025-06-16T01:39:47+08:00">2025-06-16</time>
   </span>
 </div>
 
@@ -310,7 +310,7 @@ g 调用 f 时，g 中每一个实际（或被嵌套在 f 内的任意函数）�
     <div class="item left">
       
 
-  <a href="/2025/06/12/AI/week6-7/" itemprop="url" rel="prev" data-background-image="&#x2F;images&#x2F;bg18.jpg" title="Week6-7">
+  <a href="/2025/06/12/AI/week6-7/" itemprop="url" rel="prev" data-background-image="&#x2F;images&#x2F;bg26.jpg" title="Week6-7">
   <span class="type">Previous Post</span>
   <span class="category"><i class="ic i-flag"></i> 人工智能</span>
   <h3>Week6-7</h3>
@@ -320,7 +320,7 @@ g 调用 f 时，g 中每一个实际（或被嵌套在 f 内的任意函数）�
     <div class="item right">
       
 
-  <a href="/2025/06/15/computer-science/compile-principles/ch7/" itemprop="url" rel="next" data-background-image="&#x2F;images&#x2F;bg13.jpg" title="Ch7">
+  <a href="/2025/06/15/computer-science/compile-principles/ch7/" itemprop="url" rel="next" data-background-image="&#x2F;images&#x2F;bg1.jpg" title="Ch7">
   <span class="type">Next Post</span>
   <span class="category"><i class="ic i-flag"></i> 编译原理</span>
   <h3>Ch7</h3>
@@ -426,12 +426,10 @@ g 调用 f 时，g 中每一个实际（或被嵌套在 f 内的任意函数）�
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/computer-organization/" title="In 计算机组成">计算机组成</a>
+<a href="/categories/AI/" title="In 人工智能">人工智能</a>
 </div>
 
-    <span><a href="/2025/05/13/computer-science/computer-organization/ch1/" title="Ch1">Ch1</a></span>
+    <span><a href="/2025/06/12/AI/week6-7/" title="Week6-7">Week6-7</a></span>
   </li>
 
       
@@ -442,28 +440,6 @@ g 调用 f 时，g 中每一个实际（或被嵌套在 f 内的任意函数）�
 </div>
 
     <span><a href="/2025/06/11/AI/week4-5/" title="Week4-5">Week4-5</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
-</div>
-
-    <span><a href="/2025/03/23/computer-science/compile-principles/ch3/" title="Ch3">Ch3</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/AI/" title="In 人工智能">人工智能</a>
-</div>
-
-    <span><a href="/2025/06/15/AI/week8-9/" title="Week8-9">Week8-9</a></span>
   </li>
 
       
@@ -487,7 +463,19 @@ g 调用 f 时，g 中每一个实际（或被嵌套在 f 内的任意函数）�
 <a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
 </div>
 
-    <span><a href="/2025/03/21/computer-science/compile-principles/ch5/" title="Ch5">Ch5</a></span>
+    <span><a href="/2025/06/15/computer-science/compile-principles/ch7/" title="Ch7">Ch7</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
+</div>
+
+    <span><a href="/2025/03/22/computer-science/compile-principles/ch2/" title="Ch2">Ch2</a></span>
   </li>
 
       
@@ -504,20 +492,24 @@ g 调用 f 时，g 中每一个实际（或被嵌套在 f 内的任意函数）�
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/AI/" title="In 人工智能">人工智能</a>
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
 </div>
 
-    <span><a href="/2025/05/20/AI/week2-3/" title="Week2-3">Week2-3</a></span>
+    <span><a href="/2025/03/21/computer-science/compile-principles/ch1/" title="Ch1">Ch1</a></span>
   </li>
 
       
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/AI/" title="In 人工智能">人工智能</a>
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/computer-organization/" title="In 计算机组成">计算机组成</a>
 </div>
 
-    <span><a href="/2025/06/12/AI/week6-7/" title="Week6-7">Week6-7</a></span>
+    <span><a href="/2025/05/14/computer-science/computer-organization/ch2/" title="Ch2">Ch2</a></span>
   </li>
 
       
@@ -529,7 +521,19 @@ g 调用 f 时，g 中每一个实际（或被嵌套在 f 内的任意函数）�
 <a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
 </div>
 
-    <span><a href="/2025/03/22/computer-science/compile-principles/ch2/" title="Ch2">Ch2</a></span>
+    <span><a href="/2025/03/21/computer-science/compile-principles/ch5/" title="Ch5">Ch5</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/computer-network/" title="In 计算机网络">计算机网络</a>
+</div>
+
+    <span><a href="/2025/05/13/computer-science/computer-network/ch1/" title="Ch1">Ch1</a></span>
   </li>
 
   </ul>

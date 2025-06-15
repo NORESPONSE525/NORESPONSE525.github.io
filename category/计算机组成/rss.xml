@@ -8,12 +8,12 @@
         <pubDate>Wed, 14 May 2025 00:00:00 +0800</pubDate>
         <lastBuildDate>Wed, 14 May 2025 00:00:00 +0800</lastBuildDate>
         <category>人工智能</category>
-        <category>词法分析</category>
         <category>编译原理</category>
-        <category>语义分析</category>
-        <category>抽象语法</category>
         <category>语法分析</category>
+        <category>抽象语法</category>
+        <category>词法分析</category>
         <category>中间代码</category>
+        <category>语义分析</category>
         <category>活动记录</category>
         <category>计算机网络</category>
         <category>计算机组成</category>
