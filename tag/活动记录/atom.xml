@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>http://example.com</id>
+    <title> • Posts by &#34;活动记录&#34; tag</title>
+    <link href="http://example.com" />
+    <updated>2025-06-14T16:00:00.000Z</updated>
+    <category term="人工智能" />
+    <category term="�˹�����" />
+    <category term="编译原理" />
+    <category term="词法分析" />
+    <category term="抽象语法" />
+    <category term="语法分析" />
+    <category term="语义分析" />
+    <category term="计算机网络" />
+    <category term="活动记录" />
+    <category term="计算机组成" />
+    <category term="数据的表示与运算" />
+    <entry>
+        <id>http://example.com/2025/06/15/computer-science/compile-principles/ch6/</id>
+        <title>Ch6</title>
+        <link rel="alternate" href="http://example.com/2025/06/15/computer-science/compile-principles/ch6/"/>
+        <content type="html">&lt;h1 id=&#34;activation-recordstack-frame&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#activation-recordstack-frame&#34;&gt;#&lt;/a&gt; Activation Record/Stack Frame&lt;/h1&gt;
+&lt;p&gt;函数的栈帧是栈上用来放函数的局部变量、参数、返回地址以及其他临时变量的区域&lt;br&gt;
+ stack 一般从高地址像低地址，heap 从低地址向高地址&lt;br&gt;
+ layout:&lt;br&gt;
+&lt;img data-src=&#34;f1.jpg&#34; alt&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;incoming arguments: 存储 caller 传递给 callee 的参数&lt;/li&gt;
+&lt;li&gt;frame pointer: 帧指针，用来访问 incoming arguments，从低向高是 argument 1, argument 2, …&lt;/li&gt;
+&lt;li&gt;local variables: 存储函数的局部变量（还有一些保存在寄存器里）&lt;/li&gt;
+&lt;li&gt;return address: 存储需要返回 caller 的哪里&lt;/li&gt;
+&lt;li&gt;temporaries: 存储临时变量，复杂表达式拆出来的中间变量放的地方&lt;/li&gt;
+&lt;li&gt;saved registers&lt;/li&gt;
+&lt;li&gt;outgoing arguments: 存储当前函数要传递给别的函数的参数&lt;/li&gt;
+&lt;li&gt;stack pointer: 栈指针，从低向高&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;函数调用流程&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#函数调用流程&#34;&gt;#&lt;/a&gt; 函数调用流程：&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;g 调用 f 的时候&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol&gt;
+&lt;li&gt;进入 f 的时候，保存旧的 FP (g 的 FP)&lt;/li&gt;
+&lt;li&gt;把 FP 设置为原来的 SP，把 SP = SP - frame size&lt;br&gt;
+&lt;img data-src=&#34;f2.jpg&#34; alt&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;f 返回的时候&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol&gt;
+&lt;li&gt;让 SP = FP (恢复 g 的 SP)&lt;/li&gt;
+&lt;li&gt;从内存中读出 g 的 FP 恢复回去&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;如果栈帧大小固定就只需要 FP 不需要 SP 了，因为 FP = SP + frame size&lt;/p&gt;
+&lt;h2 id=&#34;saved-register&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#saved-register&#34;&gt;#&lt;/a&gt; saved register&lt;/h2&gt;
+&lt;p&gt;函数 g 调用 f 的时候，用到了寄存器 r，调用 f 的时候要把 r 保存在 saved register 中，等调用结束再恢复回去&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;caller-saved register: 函数调用的时候用到的寄存器，调用结束后可以恢复&lt;/li&gt;
+&lt;li&gt;callee-saved register: 函数调用的时候用不到的寄存器，调用结束后不能恢复&lt;br&gt;
+&lt;mark&gt; FP 是由 callee 保存和恢复的&lt;/mark&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;参数传递&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#参数传递&#34;&gt;#&lt;/a&gt; 参数传递&lt;/h2&gt;
+</content>
+        <category term="活动记录" />
+        <updated>2025-06-14T16:00:00.000Z</updated>
+    </entry>
+</feed>

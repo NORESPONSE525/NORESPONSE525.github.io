@@ -12,19 +12,25 @@
         <category>编译原理</category>
         <category>词法分析</category>
         <category>抽象语法</category>
-        <category>语义分析</category>
         <category>语法分析</category>
+        <category>语义分析</category>
+        <category>计算机网络</category>
+        <category>活动记录</category>
         <category>计算机组成</category>
         <category>数据的表示与运算</category>
-        <category>计算机网络</category>
         <item>
             <guid isPermalink="true">http://example.com/2025/03/23/computer-science/compile-principles/ch3/</guid>
             <title>Ch3</title>
             <link>http://example.com/2025/03/23/computer-science/compile-principles/ch3/</link>
             <category>语法分析</category>
             <pubDate>Sun, 23 Mar 2025 00:00:00 +0800</pubDate>
-            <description><![CDATA[ &lt;h1 id=&#34;语法分析&#34;&gt;&lt;a href=&#34;#语法分析&#34; class=&#34;headerlink&#34; title=&#34;语法分析&#34;&gt;&lt;/a&gt;语法分析&lt;/h1&gt;&lt;h2 id=&#34;CFG&#34;&gt;&lt;a href=&#34;#CFG&#34; class=&#34;headerlink&#34; title=&#34;CFG&#34;&gt;&lt;/a&gt;CFG&lt;/h2&gt;&lt;p&gt;见计算理论&lt;br&gt;Parse tree&lt;/p&gt;
-&lt;h3 id=&#34;Ambiguous-grammars&#34;&gt;&lt;a href=&#34;#Ambiguous-grammars&#34; class=&#34;headerlink&#34; title=&#34;Ambiguous grammars&#34;&gt;&lt;/a&gt;Ambiguous grammars&lt;/h3&gt;&lt;h2 id&gt;&lt;a href=&#34;#&#34; class=&#34;headerlink&#34; title&gt;&lt;/a&gt;&lt;/h2&gt; ]]></description>
+            <description><![CDATA[ &lt;h1 id=&#34;语法分析&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#语法分析&#34;&gt;#&lt;/a&gt; 语法分析&lt;/h1&gt;
+&lt;h2 id=&#34;cfg&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#cfg&#34;&gt;#&lt;/a&gt; CFG&lt;/h2&gt;
+&lt;p&gt;见计算理论&lt;br&gt;
+ Parse tree&lt;/p&gt;
+&lt;h3 id=&#34;ambiguous-grammars&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#ambiguous-grammars&#34;&gt;#&lt;/a&gt; Ambiguous grammars&lt;/h3&gt;
+&lt;h2 id&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#&#34;&gt;#&lt;/a&gt; &lt;/h2&gt;
+ ]]></description>
         </item>
     </channel>
 </rss>
