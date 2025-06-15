@@ -8,15 +8,25 @@
         <pubDate>Sun, 15 Jun 2025 00:00:00 +0800</pubDate>
         <lastBuildDate>Sun, 15 Jun 2025 00:00:00 +0800</lastBuildDate>
         <category>人工智能</category>
-        <category>编译原理</category>
         <category>词法分析</category>
-        <category>语法分析</category>
-        <category>活动记录</category>
-        <category>抽象语法</category>
-        <category>计算机网络</category>
+        <category>编译原理</category>
         <category>语义分析</category>
+        <category>抽象语法</category>
+        <category>语法分析</category>
+        <category>中间代码</category>
+        <category>活动记录</category>
+        <category>计算机网络</category>
         <category>计算机组成</category>
         <category>数据的表示与运算</category>
+        <item>
+            <guid isPermalink="true">http://example.com/2025/06/15/computer-science/compile-principles/ch7/</guid>
+            <title>Ch7</title>
+            <link>http://example.com/2025/06/15/computer-science/compile-principles/ch7/</link>
+            <category>中间代码</category>
+            <pubDate>Sun, 15 Jun 2025 00:00:00 +0800</pubDate>
+            <description><![CDATA[ &lt;h1 id=&#34;ir&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#ir&#34;&gt;#&lt;/a&gt; IR&lt;/h1&gt;
+ ]]></description>
+        </item>
         <item>
             <guid isPermalink="true">http://example.com/2025/06/15/computer-science/compile-principles/ch6/</guid>
             <title>Ch6</title>
@@ -32,7 +42,7 @@
 &lt;li&gt;incoming arguments: 存储 caller 传递给 callee 的参数&lt;/li&gt;
 &lt;li&gt;frame pointer: 帧指针，用来访问 incoming arguments，从低向高是 argument 1, argument 2, …&lt;/li&gt;
 &lt;li&gt;local variables: 存储函数的局部变量（还有一些保存在寄存器里）&lt;/li&gt;
-&lt;li&gt;return address: 存储需要返回 caller 的哪里&lt;/li&gt;
+&lt;li&gt;return address: 存储需要返回 caller 的哪里；non-leaf 过程会把 return address 写入栈帧里面&lt;/li&gt;
 &lt;li&gt;temporaries: 存储临时变量，复杂表达式拆出来的中间变量放的地方&lt;/li&gt;
 &lt;li&gt;saved registers&lt;/li&gt;
 &lt;li&gt;outgoing arguments: 存储当前函数要传递给别的函数的参数&lt;/li&gt;
@@ -81,6 +91,40 @@
 &lt;/ol&gt;
 &lt;figure class=&#34;highlight c&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;type&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;title function_&#34;&gt;functionA&lt;/span&gt;&lt;span class=&#34;params&#34;&gt;()&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;comment&#34;&gt;// 使用寄存器窗口A&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;type&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;title function_&#34;&gt;functionB&lt;/span&gt;&lt;span class=&#34;params&#34;&gt;()&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;comment&#34;&gt;// 使用寄存器窗口B&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    functionA();  &lt;span class=&#34;comment&#34;&gt;// 调用functionA时，自动切换到寄存器窗口A&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;h2 id=&#34;frame-resident-variables&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#frame-resident-variables&#34;&gt;#&lt;/a&gt; Frame-Resident Variables&lt;/h2&gt;
+&lt;p&gt;什么情况下要把变量写入栈帧里面？、&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;the varibles will be passed by reference 变量传地址 / 引用&lt;/li&gt;
+&lt;li&gt;变量被嵌套在函数内部的函数访问（不绝对）&lt;/li&gt;
+&lt;li&gt;变量太大了没法直接放寄存器&lt;/li&gt;
+&lt;li&gt;变量是一个数组&lt;/li&gt;
+&lt;li&gt;传递参数&lt;/li&gt;
+&lt;li&gt;有太多局部变量和临时变量放不下了&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;escape 逃逸：如果一个变量需要传地址 / 取地址 / 被过程内部嵌套的函数访问，那么这个变量就会逃逸。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;static-links&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#static-links&#34;&gt;#&lt;/a&gt; static links&lt;/h2&gt;
+&lt;p&gt;在嵌套的函数声明中，内层函数是有可能用到外层函数的局部变量的。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;static links 是指向上一层嵌套层级的栈帧的指针。内层嵌套函数调用外层定义的变量的时候需要用到 static links，否则无法寻址。&lt;br&gt;
+&lt;img data-src=&#34;f3.jpg&#34; alt&gt;&lt;br&gt;
+&lt;img data-src=&#34;f4.jpg&#34; alt&gt;&lt;br&gt;
+只有调用自身的时候才传递自己的 static link 作为 static link，其他的都是把外层函数的 fp 作为 static link&lt;br&gt;
+ 如果要访问外层变量，就顺着 static 一层一层查上去直到找到了为止。&lt;br&gt;
+其他访问方法：&lt;/li&gt;
+&lt;li&gt;嵌套层次显示表 (display)&lt;br&gt;
+ 建立一个全局数组，位置 i 包含一个指针，指向最近一次进入的，其静态嵌套深度是 i 的过程的栈帧&lt;br&gt;
+&lt;img data-src=&#34;f5.jpg&#34; alt&gt;&lt;br&gt;
+先给它们标上嵌套深度&lt;br&gt;
+直接把链表变成数组了，需要用到一个变量，就查看当前变量的嵌套深度 i 然后直接找那个数组 i 位置的座位 fp 地址来找&lt;/li&gt;
+&lt;li&gt;lambda lifting&lt;br&gt;
+g 调用 f 时，g 中每一个实际（或被嵌套在 f 内的任意函数）访问了的变量，都将作为额外的参数传递给 f&lt;br&gt;
+ 把内部的函数，从内往外进行改写，改写函数的参数实现 lambda lifting&lt;br&gt;
+&lt;img data-src=&#34;f6.jpg&#34; alt&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;tiger编译器的栈帧&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#tiger编译器的栈帧&#34;&gt;#&lt;/a&gt; tiger 编译器的栈帧&lt;/h2&gt;
+&lt;p&gt;tiger 不支持高阶函数&lt;br&gt;
+看不完了。。再说吧&lt;/p&gt;
  ]]></description>
         </item>
         <item>

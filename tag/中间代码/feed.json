@@ -1,0 +1,18 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": " • All posts by \"中间代码\" tag",
+    "description": "",
+    "home_page_url": "http://example.com",
+    "items": [
+        {
+            "id": "http://example.com/2025/06/15/computer-science/compile-principles/ch7/",
+            "url": "http://example.com/2025/06/15/computer-science/compile-principles/ch7/",
+            "title": "Ch7",
+            "date_published": "2025-06-14T16:00:00.000Z",
+            "content_html": "<h1 id=\"ir\"><a class=\"markdownIt-Anchor\" href=\"#ir\">#</a> IR</h1>\n",
+            "tags": [
+                "中间代码"
+            ]
+        }
+    ]
+}

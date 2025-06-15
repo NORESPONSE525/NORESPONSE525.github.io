@@ -101,7 +101,7 @@ NoResponse's Blog = </title>
 
       </div>
       <div id="imgs" class="pjax">
-          <img src="/images/bg32.jpg">
+          <img src="/images/bg34.jpg">
       </div>
     </header>
     <div id="waves">
@@ -158,7 +158,7 @@ NoResponse's Blog = </title>
 <li>incoming arguments: 存储 caller 传递给 callee 的参数</li>
 <li>frame pointer: 帧指针，用来访问 incoming arguments，从低向高是 argument 1, argument 2, …</li>
 <li>local variables: 存储函数的局部变量（还有一些保存在寄存器里）</li>
-<li>return address: 存储需要返回 caller 的哪里</li>
+<li>return address: 存储需要返回 caller 的哪里；non-leaf 过程会把 return address 写入栈帧里面</li>
 <li>temporaries: 存储临时变量，复杂表达式拆出来的中间变量放的地方</li>
 <li>saved registers</li>
 <li>outgoing arguments: 存储当前函数要传递给别的函数的参数</li>
@@ -207,6 +207,40 @@ NoResponse's Blog = </title>
 </ol>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">functionA</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="comment">// 使用寄存器窗口A</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">functionB</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="comment">// 使用寄存器窗口B</span></span><br><span class="line">    functionA();  <span class="comment">// 调用functionA时，自动切换到寄存器窗口A</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="frame-resident-variables"><a class="markdownIt-Anchor" href="#frame-resident-variables">#</a> Frame-Resident Variables</h2>
+<p>什么情况下要把变量写入栈帧里面？、</p>
+<ol>
+<li>the varibles will be passed by reference 变量传地址 / 引用</li>
+<li>变量被嵌套在函数内部的函数访问（不绝对）</li>
+<li>变量太大了没法直接放寄存器</li>
+<li>变量是一个数组</li>
+<li>传递参数</li>
+<li>有太多局部变量和临时变量放不下了</li>
+</ol>
+<ul>
+<li>escape 逃逸：如果一个变量需要传地址 / 取地址 / 被过程内部嵌套的函数访问，那么这个变量就会逃逸。</li>
+</ul>
+<h2 id="static-links"><a class="markdownIt-Anchor" href="#static-links">#</a> static links</h2>
+<p>在嵌套的函数声明中，内层函数是有可能用到外层函数的局部变量的。</p>
+<ul>
+<li>static links 是指向上一层嵌套层级的栈帧的指针。内层嵌套函数调用外层定义的变量的时候需要用到 static links，否则无法寻址。<br>
+<img data-src="f3.jpg" alt><br>
+<img data-src="f4.jpg" alt><br>
+只有调用自身的时候才传递自己的 static link 作为 static link，其他的都是把外层函数的 fp 作为 static link<br>
+ 如果要访问外层变量，就顺着 static 一层一层查上去直到找到了为止。<br>
+其他访问方法：</li>
+<li>嵌套层次显示表 (display)<br>
+ 建立一个全局数组，位置 i 包含一个指针，指向最近一次进入的，其静态嵌套深度是 i 的过程的栈帧<br>
+<img data-src="f5.jpg" alt><br>
+先给它们标上嵌套深度<br>
+直接把链表变成数组了，需要用到一个变量，就查看当前变量的嵌套深度 i 然后直接找那个数组 i 位置的座位 fp 地址来找</li>
+<li>lambda lifting<br>
+g 调用 f 时，g 中每一个实际（或被嵌套在 f 内的任意函数）访问了的变量，都将作为额外的参数传递给 f<br>
+ 把内部的函数，从内往外进行改写，改写函数的参数实现 lambda lifting<br>
+<img data-src="f6.jpg" alt></li>
+</ul>
+<h2 id="tiger编译器的栈帧"><a class="markdownIt-Anchor" href="#tiger编译器的栈帧">#</a> tiger 编译器的栈帧</h2>
+<p>tiger 不支持高阶函数<br>
+看不完了。。再说吧</p>
 
       <div class="tags">
           <a href="/tags/%E6%B4%BB%E5%8A%A8%E8%AE%B0%E5%BD%95/" rel="tag"><i class="ic i-tag"></i> 活动记录</a>
@@ -221,7 +255,7 @@ NoResponse's Blog = </title>
       <i class="ic i-calendar-check"></i>
     </span>
     <span class="text">Edited on</span>
-    <time title="Modified: 2025-06-15 18:52:44" itemprop="dateModified" datetime="2025-06-15T18:52:44+08:00">2025-06-15</time>
+    <time title="Modified: 2025-06-16 01:24:29" itemprop="dateModified" datetime="2025-06-16T01:24:29+08:00">2025-06-16</time>
   </span>
 </div>
 
@@ -276,7 +310,7 @@ NoResponse's Blog = </title>
     <div class="item left">
       
 
-  <a href="/2025/06/12/AI/week6-7/" itemprop="url" rel="prev" data-background-image="&#x2F;images&#x2F;bg1.jpg" title="Week6-7">
+  <a href="/2025/06/12/AI/week6-7/" itemprop="url" rel="prev" data-background-image="&#x2F;images&#x2F;bg18.jpg" title="Week6-7">
   <span class="type">Previous Post</span>
   <span class="category"><i class="ic i-flag"></i> 人工智能</span>
   <h3>Week6-7</h3>
@@ -286,10 +320,10 @@ NoResponse's Blog = </title>
     <div class="item right">
       
 
-  <a href="/2025/06/15/AI/week8-9/" itemprop="url" rel="next" data-background-image="&#x2F;images&#x2F;bg36.jpg" title="Week8-9">
+  <a href="/2025/06/15/computer-science/compile-principles/ch7/" itemprop="url" rel="next" data-background-image="&#x2F;images&#x2F;bg13.jpg" title="Ch7">
   <span class="type">Next Post</span>
-  <span class="category"><i class="ic i-flag"></i> 人工智能</span>
-  <h3>Week8-9</h3>
+  <span class="category"><i class="ic i-flag"></i> 编译原理</span>
+  <h3>Ch7</h3>
   </a>
 
     </div>
@@ -308,11 +342,11 @@ NoResponse's Blog = </title>
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="Contents">
-          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#activation-recordstack-frame"><span class="toc-number">1.</span> <span class="toc-text"> Activation Record&#x2F;Stack Frame</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8%E6%B5%81%E7%A8%8B"><span class="toc-number">1.1.</span> <span class="toc-text"> 函数调用流程：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#saved-register"><span class="toc-number">1.2.</span> <span class="toc-text"> saved register</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E6%95%B0%E4%BC%A0%E9%80%92"><span class="toc-number">1.3.</span> <span class="toc-text"> 参数传递</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#frame-resident-variables"><span class="toc-number">1.4.</span> <span class="toc-text"> Frame-Resident Variables</span></a></li></ol></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#activation-recordstack-frame"><span class="toc-number">1.</span> <span class="toc-text"> Activation Record&#x2F;Stack Frame</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8%E6%B5%81%E7%A8%8B"><span class="toc-number">1.1.</span> <span class="toc-text"> 函数调用流程：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#saved-register"><span class="toc-number">1.2.</span> <span class="toc-text"> saved register</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E6%95%B0%E4%BC%A0%E9%80%92"><span class="toc-number">1.3.</span> <span class="toc-text"> 参数传递</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#frame-resident-variables"><span class="toc-number">1.4.</span> <span class="toc-text"> Frame-Resident Variables</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#static-links"><span class="toc-number">1.5.</span> <span class="toc-text"> static links</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#tiger%E7%BC%96%E8%AF%91%E5%99%A8%E7%9A%84%E6%A0%88%E5%B8%A7"><span class="toc-number">1.6.</span> <span class="toc-text"> tiger 编译器的栈帧</span></a></li></ol></li></ol>
       </div>
       <div class="related panel pjax" data-title="Related">
         <ul>
-          <li><a href="/2025/03/21/computer-science/compile-principles/ch1/" rel="bookmark" title="Ch1">Ch1</a></li><li><a href="/2025/03/21/computer-science/compile-principles/ch5/" rel="bookmark" title="Ch5">Ch5</a></li><li><a href="/2025/03/22/computer-science/compile-principles/ch2/" rel="bookmark" title="Ch2">Ch2</a></li><li><a href="/2025/03/23/computer-science/compile-principles/ch3/" rel="bookmark" title="Ch3">Ch3</a></li><li><a href="/2025/03/29/computer-science/compile-principles/ch4/" rel="bookmark" title="Ch4">Ch4</a></li><li class="active"><a href="/2025/06/15/computer-science/compile-principles/ch6/" rel="bookmark" title="Ch6">Ch6</a></li>
+          <li><a href="/2025/03/21/computer-science/compile-principles/ch1/" rel="bookmark" title="Ch1">Ch1</a></li><li><a href="/2025/03/21/computer-science/compile-principles/ch5/" rel="bookmark" title="Ch5">Ch5</a></li><li><a href="/2025/03/22/computer-science/compile-principles/ch2/" rel="bookmark" title="Ch2">Ch2</a></li><li><a href="/2025/03/23/computer-science/compile-principles/ch3/" rel="bookmark" title="Ch3">Ch3</a></li><li><a href="/2025/03/29/computer-science/compile-principles/ch4/" rel="bookmark" title="Ch4">Ch4</a></li><li><a href="/2025/06/15/computer-science/compile-principles/ch7/" rel="bookmark" title="Ch7">Ch7</a></li><li class="active"><a href="/2025/06/15/computer-science/compile-principles/ch6/" rel="bookmark" title="Ch6">Ch6</a></li>
         </ul>
       </div>
       <div class="overview panel" data-title="Overview">
@@ -326,7 +360,7 @@ NoResponse's Blog = </title>
 <nav class="state">
     <div class="item posts">
       <a href="/archives/">
-        <span class="count">14</span>
+        <span class="count">15</span>
         <span class="name">posts</span>
       </a>
     </div>
@@ -338,7 +372,7 @@ NoResponse's Blog = </title>
     </div>
     <div class="item tags">
       <a href="/tags/">
-        <span class="count">10</span>
+        <span class="count">11</span>
         <span class="name">tags</span>
       </a>
     </div>
@@ -370,7 +404,7 @@ NoResponse's Blog = </title>
     <li class="up"><i class="ic i-arrow-up"></i></li>
     <li class="down"><i class="ic i-arrow-down"></i></li>
     <li class="next pjax">
-        <a href="/2025/06/15/AI/week8-9/" rel="next" title="Next Post"><i class="ic i-chevron-right"></i></a>
+        <a href="/2025/06/15/computer-science/compile-principles/ch7/" rel="next" title="Next Post"><i class="ic i-chevron-right"></i></a>
     </li>
     <li class="percent"></li>
   </ul>
@@ -388,6 +422,84 @@ NoResponse's Blog = </title>
 <div class="rpost pjax">
   <h2>Random Posts</h2>
   <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/computer-organization/" title="In 计算机组成">计算机组成</a>
+</div>
+
+    <span><a href="/2025/05/13/computer-science/computer-organization/ch1/" title="Ch1">Ch1</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/AI/" title="In 人工智能">人工智能</a>
+</div>
+
+    <span><a href="/2025/06/11/AI/week4-5/" title="Week4-5">Week4-5</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
+</div>
+
+    <span><a href="/2025/03/23/computer-science/compile-principles/ch3/" title="Ch3">Ch3</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/AI/" title="In 人工智能">人工智能</a>
+</div>
+
+    <span><a href="/2025/06/15/AI/week8-9/" title="Week8-9">Week8-9</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
+</div>
+
+    <span><a href="/2025/03/29/computer-science/compile-principles/ch4/" title="Ch4">Ch4</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
+</div>
+
+    <span><a href="/2025/03/21/computer-science/compile-principles/ch5/" title="Ch5">Ch5</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/AI/" title="In 人工智能">人工智能</a>
+</div>
+
+    <span><a href="/2025/05/20/AI/week1/" title="Week1">Week1</a></span>
+  </li>
+
       
   <li class="item">
     
@@ -417,87 +529,7 @@ NoResponse's Blog = </title>
 <a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
 </div>
 
-    <span><a href="/2025/03/29/computer-science/compile-principles/ch4/" title="Ch4">Ch4</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/AI/" title="In 人工智能">人工智能</a>
-</div>
-
-    <span><a href="/2025/06/15/AI/week8-9/" title="Week8-9">Week8-9</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/computer-network/" title="In 计算机网络">计算机网络</a>
-</div>
-
-    <span><a href="/2025/05/13/computer-science/computer-network/ch1/" title="Ch1">Ch1</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/computer-organization/" title="In 计算机组成">计算机组成</a>
-</div>
-
-    <span><a href="/2025/05/14/computer-science/computer-organization/ch2/" title="Ch2">Ch2</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/AI/" title="In 人工智能">人工智能</a>
-</div>
-
-    <span><a href="/2025/05/20/AI/week1/" title="Week1">Week1</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
-</div>
-
-    <span><a href="/2025/06/15/computer-science/compile-principles/ch6/" title="Ch6">Ch6</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/computer-organization/" title="In 计算机组成">计算机组成</a>
-</div>
-
-    <span><a href="/2025/05/13/computer-science/computer-organization/ch1/" title="Ch1">Ch1</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
-</div>
-
-    <span><a href="/2025/03/21/computer-science/compile-principles/ch5/" title="Ch5">Ch5</a></span>
+    <span><a href="/2025/03/22/computer-science/compile-principles/ch2/" title="Ch2">Ch2</a></span>
   </li>
 
   </ul>

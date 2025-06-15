@@ -24,12 +24,16 @@
 <link rel="stylesheet" href="/css/app.css?v=0.2.5">
 
   
-
-<link rel="canonical" href="http://example.com/categories/AI/">
-
+  <meta name="keywords" content="中间代码" />
 
 
-  <title>Category: 人工智能 | NoResponse's Blog = </title>
+<link rel="canonical" href="http://example.com/2025/06/15/computer-science/compile-principles/ch7/">
+
+
+
+  <title>
+Ch7 - 编译原理 - 计算机科学 |
+NoResponse's Blog = </title>
 <meta name="generator" content="Hexo 7.3.0"></head>
 <body itemscope itemtype="http://schema.org/WebPage">
   <div id="loading">
@@ -56,9 +60,19 @@
         <div id="brand">
           <div class="pjax">
           
-  <h1 itemprop="name headline">
-    Posted in category "人工智能"
+  <h1 itemprop="name headline">Ch7
   </h1>
+  
+<div class="meta">
+  <span class="item" title="Created: 2025-06-15 00:00:00">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">Posted on</span>
+    <time itemprop="dateCreated datePublished" datetime="2025-06-15T00:00:00+08:00">2025-06-15</time>
+  </span>
+</div>
+
 
           </div>
         </div>
@@ -87,7 +101,7 @@
 
       </div>
       <div id="imgs" class="pjax">
-          <img src="/images/bg32.jpg">
+          <img src="/images/bg8.jpg">
       </div>
     </header>
     <div id="waves">
@@ -107,105 +121,142 @@
       <div class="inner">
         <div id="main" class="pjax">
           
-  <div class="collapse wrap">
-    <h2 class="item header">
-      <a href="/categories">All</a>
-      <small>/</small>
-      人工智能
-      <small>Category</small>
-    </h2>
-        <article class="item normal" itemscope itemtype="http://schema.org/Article">
-          <div class="meta">
-            <time itemprop="dateCreated"
-                  datetime="2025-06-15T00:00:00+08:00"
-                  content="2025-06-15">
-              06-15
-            </time>
-          </div>
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/">Home</a></span><i class="ic i-angle-right"></i>
+<span  itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/computer-science/" itemprop="item" rel="index" title="In 计算机科学"><span itemprop="name">计算机科学</span></a>
+<meta itemprop="position" content="1" /></span>
+<i class="ic i-angle-right"></i>
+<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/computer-science/compiler-principles/" itemprop="item" rel="index" title="In 编译原理"><span itemprop="name">编译原理</span></a>
+<meta itemprop="position" content="2" /></span>
+</div>
 
-          <div class="title">
-              <a href="/2025/06/15/AI/week8-9/" itemprop="url">
-                <span itemprop="name">Week8-9</span>
-              </a>
-          </div>
-        </article>
-        <article class="item normal" itemscope itemtype="http://schema.org/Article">
-          <div class="meta">
-            <time itemprop="dateCreated"
-                  datetime="2025-06-12T00:00:00+08:00"
-                  content="2025-06-12">
-              06-12
-            </time>
-          </div>
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="en">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2025/06/15/computer-science/compile-principles/ch7/">
 
-          <div class="title">
-              <a href="/2025/06/12/AI/week6-7/" itemprop="url">
-                <span itemprop="name">Week6-7</span>
-              </a>
-          </div>
-        </article>
-        <article class="item normal" itemscope itemtype="http://schema.org/Article">
-          <div class="meta">
-            <time itemprop="dateCreated"
-                  datetime="2025-06-11T00:00:00+08:00"
-                  content="2025-06-11">
-              06-11
-            </time>
-          </div>
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="/images/asuka.jpg">
+    <meta itemprop="name" content="NoResponse">
+    <meta itemprop="description" content=", ">
+  </span>
 
-          <div class="title">
-              <a href="/2025/06/11/AI/week4-5/" itemprop="url">
-                <span itemprop="name">Week4-5</span>
-              </a>
-          </div>
-        </article>
-        <article class="item normal" itemscope itemtype="http://schema.org/Article">
-          <div class="meta">
-            <time itemprop="dateCreated"
-                  datetime="2025-05-20T00:00:00+08:00"
-                  content="2025-05-20">
-              05-20
-            </time>
-          </div>
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="">
+  </span>
 
-          <div class="title">
-              <a href="/2025/05/20/AI/week1/" itemprop="url">
-                <span itemprop="name">Week1</span>
-              </a>
-          </div>
-        </article>
-        <article class="item normal" itemscope itemtype="http://schema.org/Article">
-          <div class="meta">
-            <time itemprop="dateCreated"
-                  datetime="2025-05-20T00:00:00+08:00"
-                  content="2025-05-20">
-              05-20
-            </time>
-          </div>
+  <div class="body md" itemprop="articleBody">
+    
 
-          <div class="title">
-              <a href="/2025/05/20/AI/week2-3/" itemprop="url">
-                <span itemprop="name">Week2-3</span>
-              </a>
-          </div>
-        </article>
+    <h1 id="ir"><a class="markdownIt-Anchor" href="#ir">#</a> IR</h1>
 
+      <div class="tags">
+          <a href="/tags/%E4%B8%AD%E9%97%B4%E4%BB%A3%E7%A0%81/" rel="tag"><i class="ic i-tag"></i> 中间代码</a>
+      </div>
   </div>
 
+   <footer>
+
+    <div class="meta">
+  <span class="item">
+    <span class="icon">
+      <i class="ic i-calendar-check"></i>
+    </span>
+    <span class="text">Edited on</span>
+    <time title="Modified: 2025-06-16 01:24:47" itemprop="dateModified" datetime="2025-06-16T01:24:47+08:00">2025-06-16</time>
+  </span>
+</div>
+
+      
+<div class="reward">
+  <button><i class="ic i-heartbeat"></i> Donate</button>
+  <p>Give me a cup of [coffee]~(￣▽￣)~*</p>
+  <div id="qr">
+      
+      <div>
+        <img data-src="/images/wechatpay.jpg" alt="NoResponse WeChat Pay">
+        <p>WeChat Pay</p>
+      </div>
+      
+      <div>
+        <img data-src="/images/alipay.jpg" alt="NoResponse Alipay">
+        <p>Alipay</p>
+      </div>
+      
+      <div>
+        <img data-src="/images/paypal.jpg" alt="NoResponse PayPal">
+        <p>PayPal</p>
+      </div>
+  </div>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>Post author:  </strong>NoResponse <i class="ic i-at"><em>@</em></i>
+  </li>
+  <li class="link">
+    <strong>Post link: </strong>
+    <a href="http://example.com/2025/06/15/computer-science/compile-principles/ch7/" title="Ch7">http://example.com/2025/06/15/computer-science/compile-principles/ch7/</a>
+  </li>
+  <li class="license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
   
 
+<div class="post-nav">
+    <div class="item left">
+      
+
+  <a href="/2025/06/15/computer-science/compile-principles/ch6/" itemprop="url" rel="prev" data-background-image="&#x2F;images&#x2F;bg35.jpg" title="Ch6">
+  <span class="type">Previous Post</span>
+  <span class="category"><i class="ic i-flag"></i> 编译原理</span>
+  <h3>Ch6</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+      
+
+  <a href="/2025/06/15/AI/week8-9/" itemprop="url" rel="next" data-background-image="&#x2F;images&#x2F;bg20.jpg" title="Week8-9">
+  <span class="type">Next Post</span>
+  <span class="category"><i class="ic i-flag"></i> 人工智能</span>
+  <h3>Week8-9</h3>
+  </a>
+
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
 
 
         </div>
         <div id="sidebar">
           
+
 <div class="inner">
 
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="Contents">
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#ir"><span class="toc-number">1.</span> <span class="toc-text"> IR</span></a></li></ol>
       </div>
       <div class="related panel pjax" data-title="Related">
+        <ul>
+          <li><a href="/2025/03/21/computer-science/compile-principles/ch1/" rel="bookmark" title="Ch1">Ch1</a></li><li><a href="/2025/03/21/computer-science/compile-principles/ch5/" rel="bookmark" title="Ch5">Ch5</a></li><li><a href="/2025/03/22/computer-science/compile-principles/ch2/" rel="bookmark" title="Ch2">Ch2</a></li><li><a href="/2025/03/23/computer-science/compile-principles/ch3/" rel="bookmark" title="Ch3">Ch3</a></li><li><a href="/2025/03/29/computer-science/compile-principles/ch4/" rel="bookmark" title="Ch4">Ch4</a></li><li class="active"><a href="/2025/06/15/computer-science/compile-principles/ch7/" rel="bookmark" title="Ch7">Ch7</a></li><li><a href="/2025/06/15/computer-science/compile-principles/ch6/" rel="bookmark" title="Ch6">Ch6</a></li>
+        </ul>
       </div>
       <div class="overview panel" data-title="Overview">
         <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -257,14 +308,17 @@
 
   <ul id="quick">
     <li class="prev pjax">
+        <a href="/2025/06/15/computer-science/compile-principles/ch6/" rel="prev" title="Previous Post"><i class="ic i-chevron-left"></i></a>
     </li>
     <li class="up"><i class="ic i-arrow-up"></i></li>
     <li class="down"><i class="ic i-arrow-down"></i></li>
     <li class="next pjax">
+        <a href="/2025/06/15/AI/week8-9/" rel="next" title="Next Post"><i class="ic i-chevron-right"></i></a>
     </li>
     <li class="percent"></li>
   </ul>
 </div>
+
 
         </div>
         <div class="dimmer"></div>
@@ -281,10 +335,12 @@
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/AI/" title="In 人工智能">人工智能</a>
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
 </div>
 
-    <span><a href="/2025/06/11/AI/week4-5/" title="Week4-5">Week4-5</a></span>
+    <span><a href="/2025/03/22/computer-science/compile-principles/ch2/" title="Ch2">Ch2</a></span>
   </li>
 
       
@@ -296,29 +352,7 @@
 <a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
 </div>
 
-    <span><a href="/2025/03/21/computer-science/compile-principles/ch5/" title="Ch5">Ch5</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
-</div>
-
-    <span><a href="/2025/03/29/computer-science/compile-principles/ch4/" title="Ch4">Ch4</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/AI/" title="In 人工智能">人工智能</a>
-</div>
-
-    <span><a href="/2025/06/12/AI/week6-7/" title="Week6-7">Week6-7</a></span>
+    <span><a href="/2025/06/15/computer-science/compile-principles/ch7/" title="Ch7">Ch7</a></span>
   </li>
 
       
@@ -342,7 +376,31 @@
 <a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
 </div>
 
+    <span><a href="/2025/03/29/computer-science/compile-principles/ch4/" title="Ch4">Ch4</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
+</div>
+
     <span><a href="/2025/03/21/computer-science/compile-principles/ch1/" title="Ch1">Ch1</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
+</div>
+
+    <span><a href="/2025/03/23/computer-science/compile-principles/ch3/" title="Ch3">Ch3</a></span>
   </li>
 
       
@@ -359,12 +417,10 @@
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/computer-organization/" title="In 计算机组成">计算机组成</a>
+<a href="/categories/AI/" title="In 人工智能">人工智能</a>
 </div>
 
-    <span><a href="/2025/05/14/computer-science/computer-organization/ch2/" title="Ch2">Ch2</a></span>
+    <span><a href="/2025/06/15/AI/week8-9/" title="Week8-9">Week8-9</a></span>
   </li>
 
       
@@ -376,19 +432,17 @@
 <a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
 </div>
 
-    <span><a href="/2025/06/15/computer-science/compile-principles/ch7/" title="Ch7">Ch7</a></span>
+    <span><a href="/2025/06/15/computer-science/compile-principles/ch6/" title="Ch6">Ch6</a></span>
   </li>
 
       
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
+<a href="/categories/AI/" title="In 人工智能">人工智能</a>
 </div>
 
-    <span><a href="/2025/03/23/computer-science/compile-principles/ch3/" title="Ch3">Ch3</a></span>
+    <span><a href="/2025/06/11/AI/week4-5/" title="Week4-5">Week4-5</a></span>
   </li>
 
   </ul>
@@ -419,7 +473,7 @@
   </div>
 <script data-config type="text/javascript">
   var LOCAL = {
-    path: 'categories/AI/',
+    path: '2025/06/15/computer-science/compile-principles/ch7/',
     favicon: {
       show: "（●´3｀●）Goooood",
       hide: "(´Д｀)Booooom"
@@ -429,7 +483,8 @@
       empty: "We didn't find any results for the search: ${query}",
       stats: "${hits} results found in ${time} ms"
     },
-    valine: true,fancybox: true,
+    valine: true,copy_tex: true,
+    katex: true,fancybox: true,
     copyright: 'Copied to clipboard successfully! <br> All articles in this blog are licensed under <i class="ic i-creative-commons"></i>BY-NC-SA.',
     ignores : [
       function(uri) {
