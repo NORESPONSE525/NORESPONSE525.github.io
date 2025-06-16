@@ -8,16 +8,16 @@
         <pubDate>Sun, 15 Jun 2025 00:00:00 +0800</pubDate>
         <lastBuildDate>Sun, 15 Jun 2025 00:00:00 +0800</lastBuildDate>
         <category>人工智能</category>
-        <category>计算机网络</category>
         <category>编译原理</category>
+        <category>词法分析</category>
         <category>抽象语法</category>
-        <category>语法分析</category>
         <category>语义分析</category>
+        <category>语法分析</category>
         <category>活动记录</category>
+        <category>数据的表示与运算</category>
         <category>中间代码</category>
         <category>计算机组成</category>
-        <category>词法分析</category>
-        <category>数据的表示与运算</category>
+        <category>计算机网络</category>
         <item>
             <guid isPermalink="true">http://example.com/2025/06/15/computer-science/compile-principles/ch6/</guid>
             <title>Ch6</title>
@@ -690,14 +690,6 @@ S_i &amp;amp;= P_i \oplus C_i
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">http://example.com/2025/05/13/computer-science/computer-network/ch1/</guid>
-            <title>Ch1</title>
-            <link>http://example.com/2025/05/13/computer-science/computer-network/ch1/</link>
-            <category>计算机网络</category>
-            <pubDate>Tue, 13 May 2025 00:00:00 +0800</pubDate>
-            <description><![CDATA[  ]]></description>
-        </item>
-        <item>
             <guid isPermalink="true">http://example.com/2025/05/13/computer-science/computer-organization/ch1/</guid>
             <title>Ch1</title>
             <link>http://example.com/2025/05/13/computer-science/computer-organization/ch1/</link>
@@ -865,6 +857,14 @@ A. 汇编程序&lt;br&gt;
 &lt;/ul&gt;
 &lt;/blockquote&gt;
  ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">http://example.com/2025/05/13/computer-science/computer-network/ch1/</guid>
+            <title>Ch1</title>
+            <link>http://example.com/2025/05/13/computer-science/computer-network/ch1/</link>
+            <category>计算机网络</category>
+            <pubDate>Tue, 13 May 2025 00:00:00 +0800</pubDate>
+            <description><![CDATA[  ]]></description>
         </item>
         <item>
             <guid isPermalink="true">http://example.com/2025/03/29/computer-science/compile-principles/ch4/</guid>
