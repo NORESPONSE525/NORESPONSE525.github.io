@@ -8,14 +8,14 @@
         <pubDate>Mon, 16 Jun 2025 00:00:00 +0800</pubDate>
         <lastBuildDate>Mon, 16 Jun 2025 00:00:00 +0800</lastBuildDate>
         <category>人工智能</category>
-        <category>词法分析</category>
+        <category>计算机网络</category>
         <category>编译原理</category>
-        <category>语法分析</category>
+        <category>词法分析</category>
         <category>抽象语法</category>
+        <category>语法分析</category>
+        <category>语义分析</category>
         <category>活动记录</category>
         <category>中间代码</category>
-        <category>计算机网络</category>
-        <category>语义分析</category>
         <category>计算机组成</category>
         <category>数据的表示与运算</category>
         <item>
@@ -29,10 +29,11 @@
 &lt;ul&gt;
 &lt;li&gt;神经元&lt;/li&gt;
 &lt;li&gt;感知机（多一个激活函数）&lt;/li&gt;
-&lt;li&gt;激活函数: RelU, Sigmoid, Softmax…&lt;/li&gt;
+&lt;li&gt;激活函数: .RelU, Sigmoid, Softmax, tanh…&lt;/li&gt;
 &lt;li&gt;损失函数: MSE, Cross Entropy…s&lt;/li&gt;
 &lt;li&gt;参数优化: BP, 梯度下降&lt;br&gt;
-具体懒得写了&lt;/li&gt;
+具体懒得写了，都说烂了&lt;br&gt;
+记一下这几个激活函数的形状和应用: tanh 和 sigmoid 大多用于二分类，RelU 一般用在隐藏层，Softmax 用在多分类而且概率和为 1&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;cnn&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#cnn&#34;&gt;#&lt;/a&gt; CNN&lt;/h2&gt;
 &lt;ul&gt;
