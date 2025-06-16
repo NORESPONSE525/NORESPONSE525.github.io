@@ -5,16 +5,6 @@
     "home_page_url": "http://example.com",
     "items": [
         {
-            "id": "http://example.com/2025/06/16/AI/week10-11/",
-            "url": "http://example.com/2025/06/16/AI/week10-11/",
-            "title": "Week10-11",
-            "date_published": "2025-06-15T16:00:00.000Z",
-            "content_html": "<h1 id=\"深度学习\"><a class=\"markdownIt-Anchor\" href=\"#深度学习\">#</a> 深度学习</h1>\n<h2 id=\"前馈神经网络\"><a class=\"markdownIt-Anchor\" href=\"#前馈神经网络\">#</a> 前馈神经网络</h2>\n<ul>\n<li>神经元</li>\n<li>感知机（多一个激活函数）</li>\n<li>激活函数: RelU, Sigmoid, Softmax…</li>\n<li>损失函数: MSE, Cross Entropy…s</li>\n<li>参数优化: BP, 梯度下降<br>\n具体懒得写了</li>\n</ul>\n<h2 id=\"cnn\"><a class=\"markdownIt-Anchor\" href=\"#cnn\">#</a> CNN</h2>\n<ul>\n<li>\n<p>了解卷积操作和操作之后的结果</p>\n</li>\n<li>\n<p>池化操作（最大池化、平均池化）<br>\n卷积层负责提取图像中的局部特征；<br>\n池化层用来大幅降低参数量级 (降维)；<br>\n激活函数负责非线性化；<br>\n全连接层类似传统神经网络的部分，用来输出想要的结果</p>\n</li>\n<li>\n<p>神经网络正则化：为了缓解神经网络在训练过程中出现的过拟合问题，需要采取一些正则化技术来提升神经网络的泛化能力 (generalization)</p>\n<ul>\n<li>Dropout：在训练神经网络过程中，每次参数更新时随机丢掉一部分神经元来减少神经网络复杂度，防止过拟合<br>\n<img data-src=\"f1.jpg\" alt></li>\n<li>Batch-Normalization（批归一化）: 通过规范化的手段，把神经网络每层中任意神经元的输入值分布改变到均值为 0、方差为 1 的标准正态分布。防止梯度消失，收敛更快</li>\n<li>L1-Norm &amp; L2-Norm</li>\n</ul>\n</li>\n</ul>\n<h2 id=\"循环神经网络rnn\"><a class=\"markdownIt-Anchor\" href=\"#循环神经网络rnn\">#</a> 循环神经网络（RNN）</h2>\n<p>RNN 对具有序列特性的数据非常有效，它能挖掘数据中的时序信息以及语义信息</p>\n<p>为了解决<mark>梯度消失问题</mark>，长短时记忆模型（Long Short-Term Memory，LSTM）被提出<br>\n LSTM：<br>\n与简单的循环神经网络结构不同，长短时记忆网络（Long Short-Term Memory，LSTM）中引入了<mark>内部记忆单元</mark>（internal memory cell）和<mark>门</mark>（gates）两种结构来对当前时刻输入信息以及前序时刻所生成信息进行整合和传递。</p>\n<ul>\n<li>输入门 (input gate)、遗忘门 (forget gate) 和输出门 (output gate) 三种 gate</li>\n</ul>\n<p>门控循环单元（GRU）是一种对 LSTM 简化的深度学习模型。与长短时记忆网络相比，GRU 不再使用记忆单元来传递信息，仅使用隐藏状态来进行信息的传递。相比于长短时记忆网络来说，GRU 有更高的计算速度。</p>\n<h3 id=\"注意力机制\"><a class=\"markdownIt-Anchor\" href=\"#注意力机制\">#</a> 注意力机制</h3>\n<p>注意力机制对不同信息的关注程度（重要程度）由权值来体现，注意力机制可以视为<mark>查询矩阵 (Query)</mark><mark>、键 (key)<mark> 以及</mark>加权平均值</mark>构成了多层感知机 (Multilayer Perceptron, MLP)</p>\n<h2 id=\"深度生成学习deep-generative-learning-model\"><a class=\"markdownIt-Anchor\" href=\"#深度生成学习deep-generative-learning-model\">#</a> 深度生成学习（deep generative learning model）</h2>\n<p>判别模型 vs 生成模型<br>\n变分自编码器 (variational auto-encoder, VAE) 、 自回归模型 (Autoregressivemodels) 与生成对抗网络（generative adversarial network，GAN）等</p>\n",
-            "tags": [
-                "人工智能"
-            ]
-        },
-        {
             "id": "http://example.com/2025/06/16/AI/week12-13/",
             "url": "http://example.com/2025/06/16/AI/week12-13/",
             "title": "Week12-13",
@@ -30,6 +20,16 @@
             "title": "Week14-15",
             "date_published": "2025-06-15T16:00:00.000Z",
             "content_html": "<h1 id=\"人工智能博弈\"><a class=\"markdownIt-Anchor\" href=\"#人工智能博弈\">#</a> 人工智能博弈</h1>\n<h2 id=\"博弈论\"><a class=\"markdownIt-Anchor\" href=\"#博弈论\">#</a> 博弈论</h2>\n<p>博弈的要素：</p>\n<ul>\n<li>player</li>\n<li>strategy</li>\n<li>payoff</li>\n<li>rule</li>\n</ul>\n<h2 id=\"博弈策略求解\"><a class=\"markdownIt-Anchor\" href=\"#博弈策略求解\">#</a> 博弈策略求解</h2>\n<h3 id=\"遗憾最小化算法regret-minimization\"><a class=\"markdownIt-Anchor\" href=\"#遗憾最小化算法regret-minimization\">#</a> 遗憾最小化算法（Regret Minimization）</h3>\n",
+            "tags": [
+                "人工智能"
+            ]
+        },
+        {
+            "id": "http://example.com/2025/06/16/AI/week10-11/",
+            "url": "http://example.com/2025/06/16/AI/week10-11/",
+            "title": "Week10-11",
+            "date_published": "2025-06-15T16:00:00.000Z",
+            "content_html": "<h1 id=\"深度学习\"><a class=\"markdownIt-Anchor\" href=\"#深度学习\">#</a> 深度学习</h1>\n<h2 id=\"前馈神经网络\"><a class=\"markdownIt-Anchor\" href=\"#前馈神经网络\">#</a> 前馈神经网络</h2>\n<ul>\n<li>神经元</li>\n<li>感知机（多一个激活函数）</li>\n<li>激活函数: RelU, Sigmoid, Softmax…</li>\n<li>损失函数: MSE, Cross Entropy…s</li>\n<li>参数优化: BP, 梯度下降<br>\n具体懒得写了</li>\n</ul>\n<h2 id=\"cnn\"><a class=\"markdownIt-Anchor\" href=\"#cnn\">#</a> CNN</h2>\n<ul>\n<li>\n<p>了解卷积操作和操作之后的结果</p>\n</li>\n<li>\n<p>池化操作（最大池化、平均池化）<br>\n卷积层负责提取图像中的局部特征；<br>\n池化层用来大幅降低参数量级 (降维)；<br>\n激活函数负责非线性化；<br>\n全连接层类似传统神经网络的部分，用来输出想要的结果</p>\n</li>\n<li>\n<p>神经网络正则化：为了缓解神经网络在训练过程中出现的过拟合问题，需要采取一些正则化技术来提升神经网络的泛化能力 (generalization)</p>\n<ul>\n<li>Dropout：在训练神经网络过程中，每次参数更新时随机丢掉一部分神经元来减少神经网络复杂度，防止过拟合<br>\n<img data-src=\"f1.jpg\" alt></li>\n<li>Batch-Normalization（批归一化）: 通过规范化的手段，把神经网络每层中任意神经元的输入值分布改变到均值为 0、方差为 1 的标准正态分布。防止梯度消失，收敛更快</li>\n<li>L1-Norm &amp; L2-Norm</li>\n</ul>\n</li>\n</ul>\n<h2 id=\"循环神经网络rnn\"><a class=\"markdownIt-Anchor\" href=\"#循环神经网络rnn\">#</a> 循环神经网络（RNN）</h2>\n<p>RNN 对具有序列特性的数据非常有效，它能挖掘数据中的时序信息以及语义信息</p>\n<p>为了解决<mark>梯度消失问题</mark>，长短时记忆模型（Long Short-Term Memory，LSTM）被提出<br>\n LSTM：<br>\n与简单的循环神经网络结构不同，长短时记忆网络（Long Short-Term Memory，LSTM）中引入了<mark>内部记忆单元</mark>（internal memory cell）和<mark>门</mark>（gates）两种结构来对当前时刻输入信息以及前序时刻所生成信息进行整合和传递。</p>\n<ul>\n<li>输入门 (input gate)、遗忘门 (forget gate) 和输出门 (output gate) 三种 gate</li>\n</ul>\n<p>门控循环单元（GRU）是一种对 LSTM 简化的深度学习模型。与长短时记忆网络相比，GRU 不再使用记忆单元来传递信息，仅使用隐藏状态来进行信息的传递。相比于长短时记忆网络来说，GRU 有更高的计算速度。</p>\n<h3 id=\"注意力机制\"><a class=\"markdownIt-Anchor\" href=\"#注意力机制\">#</a> 注意力机制</h3>\n<p>注意力机制对不同信息的关注程度（重要程度）由权值来体现，注意力机制可以视为<mark>查询矩阵 (Query)</mark><mark>、键 (key)<mark> 以及</mark>加权平均值</mark>构成了多层感知机 (Multilayer Perceptron, MLP)</p>\n<h2 id=\"深度生成学习deep-generative-learning-model\"><a class=\"markdownIt-Anchor\" href=\"#深度生成学习deep-generative-learning-model\">#</a> 深度生成学习（deep generative learning model）</h2>\n<p>判别模型 vs 生成模型<br>\n变分自编码器 (variational auto-encoder, VAE) 、 自回归模型 (Autoregressivemodels) 与生成对抗网络（generative adversarial network，GAN）等</p>\n",
             "tags": [
                 "人工智能"
             ]
