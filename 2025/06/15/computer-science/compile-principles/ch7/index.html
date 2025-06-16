@@ -101,7 +101,7 @@ NoResponse's Blog = </title>
 
       </div>
       <div id="imgs" class="pjax">
-          <img src="/images/bg13.jpg">
+          <img src="/images/bg30.jpg">
       </div>
     </header>
     <div id="waves">
@@ -366,9 +366,9 @@ ADD 那个地方写成 BINOP 的写法也可以</p>
 <ol start="5">
 <li>循环语句</li>
 </ol>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> a &gt; <span class="number">0</span> <span class="keyword">do</span></span><br><span class="line">a := a - <span class="number">1</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><figcaption><span>tiger</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> a &gt; <span class="number">0</span> <span class="keyword">do</span></span><br><span class="line">a := a - <span class="number">1</span></span><br></pre></td></tr></table></figure>
 <p>翻译成</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">SEQ(LABEL test, </span><br><span class="line">    SEQ(CJUMP(GT, TEMP a, CONST <span class="number">0</span>, body, done), </span><br><span class="line">        SEQ(LABEL body, </span><br><span class="line">            SEQ(MOVE(TEMP a, BINOP(MINUS, TEMP a, CONST <span class="number">1</span>)), </span><br><span class="line">                SEQ(JUMP(NAME(test), [test]), </span><br><span class="line">                    LABEL done)))))</span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><figcaption><span>IR</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">SEQ(LABEL test, </span><br><span class="line">    SEQ(CJUMP(GT, TEMP a, CONST <span class="number">0</span>, body, done), </span><br><span class="line">        SEQ(LABEL body, </span><br><span class="line">            SEQ(MOVE(TEMP a, BINOP(MINUS, TEMP a, CONST <span class="number">1</span>)), </span><br><span class="line">                SEQ(JUMP(NAME(test), [test]), </span><br><span class="line">                    LABEL done)))))</span><br></pre></td></tr></table></figure>
 <p>break 翻译为直接跳转到 done<br>
 for 循环我懒得写了，也是一个道理</p>
 <ol start="6">
@@ -388,7 +388,7 @@ for 循环我懒得写了，也是一个道理</p>
       <i class="ic i-calendar-check"></i>
     </span>
     <span class="text">Edited on</span>
-    <time title="Modified: 2025-06-16 03:20:52" itemprop="dateModified" datetime="2025-06-16T03:20:52+08:00">2025-06-16</time>
+    <time title="Modified: 2025-06-16 14:33:48" itemprop="dateModified" datetime="2025-06-16T14:33:48+08:00">2025-06-16</time>
   </span>
 </div>
 
@@ -443,20 +443,20 @@ for 循环我懒得写了，也是一个道理</p>
     <div class="item left">
       
 
-  <a href="/2025/06/15/computer-science/compile-principles/ch6/" itemprop="url" rel="prev" data-background-image="&#x2F;images&#x2F;bg30.jpg" title="Ch6">
+  <a href="/2025/06/12/AI/week6-7/" itemprop="url" rel="prev" data-background-image="&#x2F;images&#x2F;bg5.jpg" title="Week6-7">
   <span class="type">Previous Post</span>
-  <span class="category"><i class="ic i-flag"></i> 编译原理</span>
-  <h3>Ch6</h3>
+  <span class="category"><i class="ic i-flag"></i> 人工智能</span>
+  <h3>Week6-7</h3>
   </a>
 
     </div>
     <div class="item right">
       
 
-  <a href="/2025/06/15/AI/week8-9/" itemprop="url" rel="next" data-background-image="&#x2F;images&#x2F;bg5.jpg" title="Week8-9">
+  <a href="/2025/06/15/computer-science/compile-principles/ch6/" itemprop="url" rel="next" data-background-image="&#x2F;images&#x2F;bg4.jpg" title="Ch6">
   <span class="type">Next Post</span>
-  <span class="category"><i class="ic i-flag"></i> 人工智能</span>
-  <h3>Week8-9</h3>
+  <span class="category"><i class="ic i-flag"></i> 编译原理</span>
+  <h3>Ch6</h3>
   </a>
 
     </div>
@@ -479,7 +479,7 @@ for 循环我懒得写了，也是一个道理</p>
       </div>
       <div class="related panel pjax" data-title="Related">
         <ul>
-          <li><a href="/2025/03/21/computer-science/compile-principles/ch1/" rel="bookmark" title="Ch1">Ch1</a></li><li><a href="/2025/03/21/computer-science/compile-principles/ch5/" rel="bookmark" title="Ch5">Ch5</a></li><li><a href="/2025/03/22/computer-science/compile-principles/ch2/" rel="bookmark" title="Ch2">Ch2</a></li><li><a href="/2025/03/23/computer-science/compile-principles/ch3/" rel="bookmark" title="Ch3">Ch3</a></li><li><a href="/2025/03/29/computer-science/compile-principles/ch4/" rel="bookmark" title="Ch4">Ch4</a></li><li class="active"><a href="/2025/06/15/computer-science/compile-principles/ch7/" rel="bookmark" title="Ch7">Ch7</a></li><li><a href="/2025/06/15/computer-science/compile-principles/ch6/" rel="bookmark" title="Ch6">Ch6</a></li>
+          <li><a href="/2025/03/21/computer-science/compile-principles/ch1/" rel="bookmark" title="Ch1">Ch1</a></li><li><a href="/2025/03/21/computer-science/compile-principles/ch5/" rel="bookmark" title="Ch5">Ch5</a></li><li><a href="/2025/03/22/computer-science/compile-principles/ch2/" rel="bookmark" title="Ch2">Ch2</a></li><li><a href="/2025/03/23/computer-science/compile-principles/ch3/" rel="bookmark" title="Ch3">Ch3</a></li><li><a href="/2025/03/29/computer-science/compile-principles/ch4/" rel="bookmark" title="Ch4">Ch4</a></li><li><a href="/2025/06/15/computer-science/compile-principles/ch6/" rel="bookmark" title="Ch6">Ch6</a></li><li class="active"><a href="/2025/06/15/computer-science/compile-principles/ch7/" rel="bookmark" title="Ch7">Ch7</a></li>
         </ul>
       </div>
       <div class="overview panel" data-title="Overview">
@@ -493,7 +493,7 @@ for 循环我懒得写了，也是一个道理</p>
 <nav class="state">
     <div class="item posts">
       <a href="/archives/">
-        <span class="count">15</span>
+        <span class="count">17</span>
         <span class="name">posts</span>
       </a>
     </div>
@@ -532,12 +532,12 @@ for 循环我懒得写了，也是一个道理</p>
 
   <ul id="quick">
     <li class="prev pjax">
-        <a href="/2025/06/15/computer-science/compile-principles/ch6/" rel="prev" title="Previous Post"><i class="ic i-chevron-left"></i></a>
+        <a href="/2025/06/12/AI/week6-7/" rel="prev" title="Previous Post"><i class="ic i-chevron-left"></i></a>
     </li>
     <li class="up"><i class="ic i-arrow-up"></i></li>
     <li class="down"><i class="ic i-arrow-down"></i></li>
     <li class="next pjax">
-        <a href="/2025/06/15/AI/week8-9/" rel="next" title="Next Post"><i class="ic i-chevron-right"></i></a>
+        <a href="/2025/06/15/computer-science/compile-principles/ch6/" rel="next" title="Next Post"><i class="ic i-chevron-right"></i></a>
     </li>
     <li class="percent"></li>
   </ul>
@@ -562,7 +562,7 @@ for 循环我懒得写了，也是一个道理</p>
 <a href="/categories/AI/" title="In 人工智能">人工智能</a>
 </div>
 
-    <span><a href="/2025/05/20/AI/week1/" title="Week1">Week1</a></span>
+    <span><a href="/2025/06/12/AI/week6-7/" title="Week6-7">Week6-7</a></span>
   </li>
 
       
@@ -572,19 +572,7 @@ for 循环我懒得写了，也是一个道理</p>
 <a href="/categories/AI/" title="In 人工智能">人工智能</a>
 </div>
 
-    <span><a href="/2025/06/11/AI/week4-5/" title="Week4-5">Week4-5</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
-</div>
-
-    <span><a href="/2025/06/15/computer-science/compile-principles/ch6/" title="Ch6">Ch6</a></span>
+    <span><a href="/2025/05/20/AI/week1/" title="Week1">Week1</a></span>
   </li>
 
       
@@ -608,30 +596,6 @@ for 循环我懒得写了，也是一个道理</p>
 <a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
 </div>
 
-    <span><a href="/2025/06/15/computer-science/compile-principles/ch7/" title="Ch7">Ch7</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/computer-organization/" title="In 计算机组成">计算机组成</a>
-</div>
-
-    <span><a href="/2025/05/13/computer-science/computer-organization/ch1/" title="Ch1">Ch1</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
-</div>
-
     <span><a href="/2025/03/21/computer-science/compile-principles/ch5/" title="Ch5">Ch5</a></span>
   </li>
 
@@ -644,7 +608,7 @@ for 循环我懒得写了，也是一个道理</p>
 <a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
 </div>
 
-    <span><a href="/2025/03/22/computer-science/compile-principles/ch2/" title="Ch2">Ch2</a></span>
+    <span><a href="/2025/06/15/computer-science/compile-principles/ch7/" title="Ch7">Ch7</a></span>
   </li>
 
       
@@ -665,10 +629,42 @@ for 循环我懒得写了，也是一个道理</p>
 <div class="breadcrumb">
 <a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
 <i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/computer-organization/" title="In 计算机组成">计算机组成</a>
+</div>
+
+    <span><a href="/2025/05/13/computer-science/computer-organization/ch1/" title="Ch1">Ch1</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/AI/" title="In 人工智能">人工智能</a>
+</div>
+
+    <span><a href="/2025/06/16/AI/week12-13/" title="Week12-13">Week12-13</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/AI/" title="In 人工智能">人工智能</a>
+</div>
+
+    <span><a href="/2025/06/15/AI/week8-9/" title="Week8-9">Week8-9</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
 <a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
 </div>
 
-    <span><a href="/2025/03/23/computer-science/compile-principles/ch3/" title="Ch3">Ch3</a></span>
+    <span><a href="/2025/03/21/computer-science/compile-principles/ch1/" title="Ch1">Ch1</a></span>
   </li>
 
   </ul>

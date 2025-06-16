@@ -8,16 +8,16 @@
         <pubDate>Sun, 15 Jun 2025 00:00:00 +0800</pubDate>
         <lastBuildDate>Sun, 15 Jun 2025 00:00:00 +0800</lastBuildDate>
         <category>人工智能</category>
-        <category>词法分析</category>
+        <category>计算机网络</category>
+        <category>计算机组成</category>
+        <category>数据的表示与运算</category>
         <category>编译原理</category>
+        <category>词法分析</category>
         <category>抽象语法</category>
         <category>语法分析</category>
         <category>语义分析</category>
-        <category>中间代码</category>
-        <category>计算机网络</category>
         <category>活动记录</category>
-        <category>计算机组成</category>
-        <category>数据的表示与运算</category>
+        <category>中间代码</category>
         <item>
             <guid isPermalink="true">http://example.com/2025/06/15/computer-science/compile-principles/ch7/</guid>
             <title>Ch7</title>
@@ -241,9 +241,9 @@ ADD 那个地方写成 BINOP 的写法也可以&lt;/p&gt;
 &lt;ol start=&#34;5&#34;&gt;
 &lt;li&gt;循环语句&lt;/li&gt;
 &lt;/ol&gt;
-&lt;figure class=&#34;highlight c&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;while&lt;/span&gt; a &amp;gt; &lt;span class=&#34;number&#34;&gt;0&lt;/span&gt; &lt;span class=&#34;keyword&#34;&gt;do&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;a := a - &lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;figure class=&#34;highlight c&#34;&gt;&lt;figcaption&gt;&lt;span&gt;tiger&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;while&lt;/span&gt; a &amp;gt; &lt;span class=&#34;number&#34;&gt;0&lt;/span&gt; &lt;span class=&#34;keyword&#34;&gt;do&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;a := a - &lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;翻译成&lt;/p&gt;
-&lt;figure class=&#34;highlight c&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;SEQ(LABEL test, &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    SEQ(CJUMP(GT, TEMP a, CONST &lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;, body, done), &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        SEQ(LABEL body, &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            SEQ(MOVE(TEMP a, BINOP(MINUS, TEMP a, CONST &lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;)), &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;                SEQ(JUMP(NAME(test), [test]), &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;                    LABEL done)))))&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;figure class=&#34;highlight c&#34;&gt;&lt;figcaption&gt;&lt;span&gt;IR&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;SEQ(LABEL test, &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    SEQ(CJUMP(GT, TEMP a, CONST &lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;, body, done), &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        SEQ(LABEL body, &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            SEQ(MOVE(TEMP a, BINOP(MINUS, TEMP a, CONST &lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;)), &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;                SEQ(JUMP(NAME(test), [test]), &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;                    LABEL done)))))&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;break 翻译为直接跳转到 done&lt;br&gt;
 for 循环我懒得写了，也是一个道理&lt;/p&gt;
 &lt;ol start=&#34;6&#34;&gt;

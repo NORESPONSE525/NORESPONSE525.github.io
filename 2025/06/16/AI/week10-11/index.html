@@ -24,15 +24,15 @@
 <link rel="stylesheet" href="/css/app.css?v=0.2.5">
 
   
-  <meta name="keywords" content="抽象语法" />
+  <meta name="keywords" content="人工智能" />
 
 
-<link rel="canonical" href="http://example.com/2025/03/29/computer-science/compile-principles/ch4/">
+<link rel="canonical" href="http://example.com/2025/06/16/AI/week10-11/">
 
 
 
   <title>
-Ch4 - 编译原理 - 计算机科学 |
+Week10-11 - 人工智能 |
 NoResponse's Blog = </title>
 <meta name="generator" content="Hexo 7.3.0"></head>
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -60,16 +60,16 @@ NoResponse's Blog = </title>
         <div id="brand">
           <div class="pjax">
           
-  <h1 itemprop="name headline">Ch4
+  <h1 itemprop="name headline">Week10-11
   </h1>
   
 <div class="meta">
-  <span class="item" title="Created: 2025-03-29 00:00:00">
+  <span class="item" title="Created: 2025-06-16 00:00:00">
     <span class="icon">
       <i class="ic i-calendar"></i>
     </span>
     <span class="text">Posted on</span>
-    <time itemprop="dateCreated datePublished" datetime="2025-03-29T00:00:00+08:00">2025-03-29</time>
+    <time itemprop="dateCreated datePublished" datetime="2025-06-16T00:00:00+08:00">2025-06-16</time>
   </span>
 </div>
 
@@ -101,7 +101,7 @@ NoResponse's Blog = </title>
 
       </div>
       <div id="imgs" class="pjax">
-          <img src="/images/bg3.png">
+          <img src="/images/bg4.jpg">
       </div>
     </header>
     <div id="waves">
@@ -126,15 +126,12 @@ NoResponse's Blog = </title>
 <div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
 <i class="ic i-home"></i>
 <span><a href="/">Home</a></span><i class="ic i-angle-right"></i>
-<span  itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/computer-science/" itemprop="item" rel="index" title="In 计算机科学"><span itemprop="name">计算机科学</span></a>
+<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/AI/" itemprop="item" rel="index" title="In 人工智能"><span itemprop="name">人工智能</span></a>
 <meta itemprop="position" content="1" /></span>
-<i class="ic i-angle-right"></i>
-<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/computer-science/compiler-principles/" itemprop="item" rel="index" title="In 编译原理"><span itemprop="name">编译原理</span></a>
-<meta itemprop="position" content="2" /></span>
 </div>
 
     <article itemscope itemtype="http://schema.org/Article" class="post block" lang="en">
-  <link itemprop="mainEntityOfPage" href="http://example.com/2025/03/29/computer-science/compile-principles/ch4/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2025/06/16/AI/week10-11/">
 
   <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="image" content="/images/asuka.jpg">
@@ -149,9 +146,55 @@ NoResponse's Blog = </title>
   <div class="body md" itemprop="articleBody">
     
 
-    
+    <h1 id="深度学习"><a class="markdownIt-Anchor" href="#深度学习">#</a> 深度学习</h1>
+<h2 id="前馈神经网络"><a class="markdownIt-Anchor" href="#前馈神经网络">#</a> 前馈神经网络</h2>
+<ul>
+<li>神经元</li>
+<li>感知机（多一个激活函数）</li>
+<li>激活函数: RelU, Sigmoid, Softmax…</li>
+<li>损失函数: MSE, Cross Entropy…s</li>
+<li>参数优化: BP, 梯度下降<br>
+具体懒得写了</li>
+</ul>
+<h2 id="cnn"><a class="markdownIt-Anchor" href="#cnn">#</a> CNN</h2>
+<ul>
+<li>
+<p>了解卷积操作和操作之后的结果</p>
+</li>
+<li>
+<p>池化操作（最大池化、平均池化）<br>
+卷积层负责提取图像中的局部特征；<br>
+池化层用来大幅降低参数量级 (降维)；<br>
+激活函数负责非线性化；<br>
+全连接层类似传统神经网络的部分，用来输出想要的结果</p>
+</li>
+<li>
+<p>神经网络正则化：为了缓解神经网络在训练过程中出现的过拟合问题，需要采取一些正则化技术来提升神经网络的泛化能力 (generalization)</p>
+<ul>
+<li>Dropout：在训练神经网络过程中，每次参数更新时随机丢掉一部分神经元来减少神经网络复杂度，防止过拟合<br>
+<img data-src="f1.jpg" alt></li>
+<li>Batch-Normalization（批归一化）: 通过规范化的手段，把神经网络每层中任意神经元的输入值分布改变到均值为 0、方差为 1 的标准正态分布。防止梯度消失，收敛更快</li>
+<li>L1-Norm &amp; L2-Norm</li>
+</ul>
+</li>
+</ul>
+<h2 id="循环神经网络rnn"><a class="markdownIt-Anchor" href="#循环神经网络rnn">#</a> 循环神经网络（RNN）</h2>
+<p>RNN 对具有序列特性的数据非常有效，它能挖掘数据中的时序信息以及语义信息</p>
+<p>为了解决<mark>梯度消失问题</mark>，长短时记忆模型（Long Short-Term Memory，LSTM）被提出<br>
+ LSTM：<br>
+与简单的循环神经网络结构不同，长短时记忆网络（Long Short-Term Memory，LSTM）中引入了<mark>内部记忆单元</mark>（internal memory cell）和<mark>门</mark>（gates）两种结构来对当前时刻输入信息以及前序时刻所生成信息进行整合和传递。</p>
+<ul>
+<li>输入门 (input gate)、遗忘门 (forget gate) 和输出门 (output gate) 三种 gate</li>
+</ul>
+<p>门控循环单元（GRU）是一种对 LSTM 简化的深度学习模型。与长短时记忆网络相比，GRU 不再使用记忆单元来传递信息，仅使用隐藏状态来进行信息的传递。相比于长短时记忆网络来说，GRU 有更高的计算速度。</p>
+<h3 id="注意力机制"><a class="markdownIt-Anchor" href="#注意力机制">#</a> 注意力机制</h3>
+<p>注意力机制对不同信息的关注程度（重要程度）由权值来体现，注意力机制可以视为<mark>查询矩阵 (Query)</mark><mark>、键 (key)<mark> 以及</mark>加权平均值</mark>构成了多层感知机 (Multilayer Perceptron, MLP)</p>
+<h2 id="深度生成学习deep-generative-learning-model"><a class="markdownIt-Anchor" href="#深度生成学习deep-generative-learning-model">#</a> 深度生成学习（deep generative learning model）</h2>
+<p>判别模型 vs 生成模型<br>
+变分自编码器 (variational auto-encoder, VAE) 、 自回归模型 (Autoregressivemodels) 与生成对抗网络（generative adversarial network，GAN）等</p>
+
       <div class="tags">
-          <a href="/tags/%E6%8A%BD%E8%B1%A1%E8%AF%AD%E6%B3%95/" rel="tag"><i class="ic i-tag"></i> 抽象语法</a>
+          <a href="/tags/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/" rel="tag"><i class="ic i-tag"></i> 人工智能</a>
       </div>
   </div>
 
@@ -163,7 +206,7 @@ NoResponse's Blog = </title>
       <i class="ic i-calendar-check"></i>
     </span>
     <span class="text">Edited on</span>
-    <time title="Modified: 2025-05-23 17:43:33" itemprop="dateModified" datetime="2025-05-23T17:43:33+08:00">2025-05-23</time>
+    <time title="Modified: 2025-06-16 17:02:00" itemprop="dateModified" datetime="2025-06-16T17:02:00+08:00">2025-06-16</time>
   </span>
 </div>
 
@@ -199,7 +242,7 @@ NoResponse's Blog = </title>
   </li>
   <li class="link">
     <strong>Post link: </strong>
-    <a href="http://example.com/2025/03/29/computer-science/compile-principles/ch4/" title="Ch4">http://example.com/2025/03/29/computer-science/compile-principles/ch4/</a>
+    <a href="http://example.com/2025/06/16/AI/week10-11/" title="Week10-11">http://example.com/2025/06/16/AI/week10-11/</a>
   </li>
   <li class="license">
     <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> unless stating additionally.
@@ -218,20 +261,20 @@ NoResponse's Blog = </title>
     <div class="item left">
       
 
-  <a href="/2025/03/23/computer-science/compile-principles/ch3/" itemprop="url" rel="prev" data-background-image="&#x2F;images&#x2F;bg29.jpg" title="Ch3">
+  <a href="/2025/06/15/AI/week8-9/" itemprop="url" rel="prev" data-background-image="&#x2F;images&#x2F;bg22.png" title="Week8-9">
   <span class="type">Previous Post</span>
-  <span class="category"><i class="ic i-flag"></i> 编译原理</span>
-  <h3>Ch3</h3>
+  <span class="category"><i class="ic i-flag"></i> 人工智能</span>
+  <h3>Week8-9</h3>
   </a>
 
     </div>
     <div class="item right">
       
 
-  <a href="/2025/05/13/computer-science/computer-organization/ch1/" itemprop="url" rel="next" data-background-image="&#x2F;images&#x2F;bg25.jpg" title="Ch1">
+  <a href="/2025/06/16/AI/week12-13/" itemprop="url" rel="next" data-background-image="&#x2F;images&#x2F;bg25.jpg" title="Week12-13">
   <span class="type">Next Post</span>
-  <span class="category"><i class="ic i-flag"></i> 计算机组成</span>
-  <h3>Ch1</h3>
+  <span class="category"><i class="ic i-flag"></i> 人工智能</span>
+  <h3>Week12-13</h3>
   </a>
 
     </div>
@@ -250,10 +293,11 @@ NoResponse's Blog = </title>
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="Contents">
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0"><span class="toc-number">1.</span> <span class="toc-text"> 深度学习</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E9%A6%88%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C"><span class="toc-number">1.1.</span> <span class="toc-text"> 前馈神经网络</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#cnn"><span class="toc-number">1.2.</span> <span class="toc-text"> CNN</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9Crnn"><span class="toc-number">1.3.</span> <span class="toc-text"> 循环神经网络（RNN）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%9C%BA%E5%88%B6"><span class="toc-number">1.3.1.</span> <span class="toc-text"> 注意力机制</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B7%B1%E5%BA%A6%E7%94%9F%E6%88%90%E5%AD%A6%E4%B9%A0deep-generative-learning-model"><span class="toc-number">1.4.</span> <span class="toc-text"> 深度生成学习（deep generative learning model）</span></a></li></ol></li></ol>
       </div>
       <div class="related panel pjax" data-title="Related">
         <ul>
-          <li><a href="/2025/03/21/computer-science/compile-principles/ch1/" rel="bookmark" title="Ch1">Ch1</a></li><li><a href="/2025/03/21/computer-science/compile-principles/ch5/" rel="bookmark" title="Ch5">Ch5</a></li><li><a href="/2025/03/22/computer-science/compile-principles/ch2/" rel="bookmark" title="Ch2">Ch2</a></li><li><a href="/2025/03/23/computer-science/compile-principles/ch3/" rel="bookmark" title="Ch3">Ch3</a></li><li class="active"><a href="/2025/03/29/computer-science/compile-principles/ch4/" rel="bookmark" title="Ch4">Ch4</a></li><li><a href="/2025/06/15/computer-science/compile-principles/ch6/" rel="bookmark" title="Ch6">Ch6</a></li><li><a href="/2025/06/15/computer-science/compile-principles/ch7/" rel="bookmark" title="Ch7">Ch7</a></li>
+          <li><a href="/2025/05/20/AI/week1/" rel="bookmark" title="Week1">Week1</a></li><li><a href="/2025/05/20/AI/week2-3/" rel="bookmark" title="Week2-3">Week2-3</a></li><li><a href="/2025/06/11/AI/week4-5/" rel="bookmark" title="Week4-5">Week4-5</a></li><li><a href="/2025/06/12/AI/week6-7/" rel="bookmark" title="Week6-7">Week6-7</a></li><li><a href="/2025/06/15/AI/week8-9/" rel="bookmark" title="Week8-9">Week8-9</a></li><li><a href="/2025/06/16/AI/week12-13/" rel="bookmark" title="Week12-13">Week12-13</a></li><li class="active"><a href="/2025/06/16/AI/week10-11/" rel="bookmark" title="Week10-11">Week10-11</a></li>
         </ul>
       </div>
       <div class="overview panel" data-title="Overview">
@@ -306,12 +350,12 @@ NoResponse's Blog = </title>
 
   <ul id="quick">
     <li class="prev pjax">
-        <a href="/2025/03/23/computer-science/compile-principles/ch3/" rel="prev" title="Previous Post"><i class="ic i-chevron-left"></i></a>
+        <a href="/2025/06/15/AI/week8-9/" rel="prev" title="Previous Post"><i class="ic i-chevron-left"></i></a>
     </li>
     <li class="up"><i class="ic i-arrow-up"></i></li>
     <li class="down"><i class="ic i-arrow-down"></i></li>
     <li class="next pjax">
-        <a href="/2025/05/13/computer-science/computer-organization/ch1/" rel="next" title="Next Post"><i class="ic i-chevron-right"></i></a>
+        <a href="/2025/06/16/AI/week12-13/" rel="next" title="Next Post"><i class="ic i-chevron-right"></i></a>
     </li>
     <li class="percent"></li>
   </ul>
@@ -338,18 +382,6 @@ NoResponse's Blog = </title>
 <a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
 </div>
 
-    <span><a href="/2025/03/21/computer-science/compile-principles/ch1/" title="Ch1">Ch1</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
-</div>
-
     <span><a href="/2025/03/29/computer-science/compile-principles/ch4/" title="Ch4">Ch4</a></span>
   </li>
 
@@ -357,12 +389,22 @@ NoResponse's Blog = </title>
   <li class="item">
     
 <div class="breadcrumb">
+<a href="/categories/AI/" title="In 人工智能">人工智能</a>
+</div>
+
+    <span><a href="/2025/05/20/AI/week1/" title="Week1">Week1</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
 <a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
 <i class="ic i-angle-right"></i>
 <a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
 </div>
 
-    <span><a href="/2025/06/15/computer-science/compile-principles/ch7/" title="Ch7">Ch7</a></span>
+    <span><a href="/2025/03/22/computer-science/compile-principles/ch2/" title="Ch2">Ch2</a></span>
   </li>
 
       
@@ -384,16 +426,6 @@ NoResponse's Blog = </title>
 <a href="/categories/AI/" title="In 人工智能">人工智能</a>
 </div>
 
-    <span><a href="/2025/06/11/AI/week4-5/" title="Week4-5">Week4-5</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/AI/" title="In 人工智能">人工智能</a>
-</div>
-
     <span><a href="/2025/06/16/AI/week12-13/" title="Week12-13">Week12-13</a></span>
   </li>
 
@@ -404,43 +436,49 @@ NoResponse's Blog = </title>
 <a href="/categories/AI/" title="In 人工智能">人工智能</a>
 </div>
 
+    <span><a href="/2025/05/20/AI/week2-3/" title="Week2-3">Week2-3</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
+</div>
+
+    <span><a href="/2025/03/21/computer-science/compile-principles/ch5/" title="Ch5">Ch5</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/AI/" title="In 人工智能">人工智能</a>
+</div>
+
+    <span><a href="/2025/06/11/AI/week4-5/" title="Week4-5">Week4-5</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/AI/" title="In 人工智能">人工智能</a>
+</div>
+
+    <span><a href="/2025/06/16/AI/week10-11/" title="Week10-11">Week10-11</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/AI/" title="In 人工智能">人工智能</a>
+</div>
+
     <span><a href="/2025/06/15/AI/week8-9/" title="Week8-9">Week8-9</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
-</div>
-
-    <span><a href="/2025/03/23/computer-science/compile-principles/ch3/" title="Ch3">Ch3</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/computer-network/" title="In 计算机网络">计算机网络</a>
-</div>
-
-    <span><a href="/2025/05/13/computer-science/computer-network/ch1/" title="Ch1">Ch1</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
-</div>
-
-    <span><a href="/2025/03/22/computer-science/compile-principles/ch2/" title="Ch2">Ch2</a></span>
   </li>
 
   </ul>
@@ -471,7 +509,7 @@ NoResponse's Blog = </title>
   </div>
 <script data-config type="text/javascript">
   var LOCAL = {
-    path: '2025/03/29/computer-science/compile-principles/ch4/',
+    path: '2025/06/16/AI/week10-11/',
     favicon: {
       show: "（●´3｀●）Goooood",
       hide: "(´Д｀)Booooom"
@@ -481,7 +519,8 @@ NoResponse's Blog = </title>
       empty: "We didn't find any results for the search: ${query}",
       stats: "${hits} results found in ${time} ms"
     },
-    valine: true,fancybox: true,
+    valine: true,copy_tex: true,
+    katex: true,fancybox: true,
     copyright: 'Copied to clipboard successfully! <br> All articles in this blog are licensed under <i class="ic i-creative-commons"></i>BY-NC-SA.',
     ignores : [
       function(uri) {
