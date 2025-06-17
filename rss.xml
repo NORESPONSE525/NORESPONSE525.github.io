@@ -8,16 +8,71 @@
         <pubDate>Mon, 16 Jun 2025 00:00:00 +0800</pubDate>
         <lastBuildDate>Mon, 16 Jun 2025 00:00:00 +0800</lastBuildDate>
         <category>人工智能</category>
+        <category>编译原理</category>
+        <category>词法分析</category>
+        <category>语义分析</category>
+        <category>活动记录</category>
+        <category>语法分析</category>
+        <category>抽象语法</category>
+        <category>中间代码</category>
+        <category>数据的表示与运算</category>
         <category>计算机网络</category>
         <category>计算机组成</category>
-        <category>数据的表示与运算</category>
-        <category>词法分析</category>
-        <category>编译原理</category>
-        <category>抽象语法</category>
-        <category>语法分析</category>
-        <category>语义分析</category>
-        <category>中间代码</category>
-        <category>活动记录</category>
+        <item>
+            <guid isPermalink="true">http://example.com/2025/06/16/AI/week10-11/</guid>
+            <title>Week10-11</title>
+            <link>http://example.com/2025/06/16/AI/week10-11/</link>
+            <category>人工智能</category>
+            <pubDate>Mon, 16 Jun 2025 00:00:00 +0800</pubDate>
+            <description><![CDATA[ &lt;h1 id=&#34;深度学习&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#深度学习&#34;&gt;#&lt;/a&gt; 深度学习&lt;/h1&gt;
+&lt;h2 id=&#34;前馈神经网络&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#前馈神经网络&#34;&gt;#&lt;/a&gt; 前馈神经网络&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;神经元&lt;/li&gt;
+&lt;li&gt;感知机（多一个激活函数）&lt;/li&gt;
+&lt;li&gt;激活函数: .RelU, Sigmoid, Softmax, tanh…&lt;/li&gt;
+&lt;li&gt;损失函数: MSE, Cross Entropy…s&lt;/li&gt;
+&lt;li&gt;参数优化: BP, 梯度下降&lt;br&gt;
+具体懒得写了，都说烂了&lt;br&gt;
+记一下这几个激活函数的形状和应用: tanh 和 sigmoid 大多用于二分类，RelU 一般用在隐藏层，Softmax 用在多分类而且概率和为 1&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;cnn&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#cnn&#34;&gt;#&lt;/a&gt; CNN&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;了解卷积操作和操作之后的结果&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;池化操作（最大池化、平均池化）&lt;br&gt;
+卷积层负责提取图像中的局部特征；&lt;br&gt;
+池化层用来大幅降低参数量级 (降维)；&lt;br&gt;
+激活函数负责非线性化；&lt;br&gt;
+全连接层类似传统神经网络的部分，用来输出想要的结果&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;神经网络正则化：为了缓解神经网络在训练过程中出现的过拟合问题，需要采取一些正则化技术来提升神经网络的泛化能力 (generalization)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Dropout：在训练神经网络过程中，每次参数更新时随机丢掉一部分神经元来减少神经网络复杂度，防止过拟合&lt;br&gt;
+&lt;img data-src=&#34;f1.jpg&#34; alt&gt;&lt;/li&gt;
+&lt;li&gt;Batch-Normalization（批归一化）: 通过规范化的手段，把神经网络每层中任意神经元的输入值分布改变到均值为 0、方差为 1 的标准正态分布。防止梯度消失，收敛更快&lt;/li&gt;
+&lt;li&gt;L1-Norm &amp;amp; L2-Norm&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;循环神经网络rnn&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#循环神经网络rnn&#34;&gt;#&lt;/a&gt; 循环神经网络（RNN）&lt;/h2&gt;
+&lt;p&gt;RNN 对具有序列特性的数据非常有效，它能挖掘数据中的时序信息以及语义信息&lt;/p&gt;
+&lt;p&gt;为了解决&lt;mark&gt;梯度消失问题&lt;/mark&gt;，长短时记忆模型（Long Short-Term Memory，LSTM）被提出&lt;br&gt;
+ LSTM：&lt;br&gt;
+与简单的循环神经网络结构不同，长短时记忆网络（Long Short-Term Memory，LSTM）中引入了&lt;mark&gt;内部记忆单元&lt;/mark&gt;（internal memory cell）和&lt;mark&gt;门&lt;/mark&gt;（gates）两种结构来对当前时刻输入信息以及前序时刻所生成信息进行整合和传递。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;输入门 (input gate)、遗忘门 (forget gate) 和输出门 (output gate) 三种 gate&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;门控循环单元（GRU）是一种对 LSTM 简化的深度学习模型。与长短时记忆网络相比，GRU 不再使用记忆单元来传递信息，仅使用隐藏状态来进行信息的传递。相比于长短时记忆网络来说，GRU 有更高的计算速度。&lt;/p&gt;
+&lt;h3 id=&#34;注意力机制&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#注意力机制&#34;&gt;#&lt;/a&gt; 注意力机制&lt;/h3&gt;
+&lt;p&gt;注意力机制对不同信息的关注程度（重要程度）由权值来体现，注意力机制可以视为&lt;mark&gt;查询矩阵 (Query)&lt;/mark&gt;&lt;mark&gt;、键 (key)&lt;mark&gt; 以及&lt;/mark&gt;加权平均值&lt;/mark&gt;构成了多层感知机 (Multilayer Perceptron, MLP)&lt;/p&gt;
+&lt;h2 id=&#34;深度生成学习deep-generative-learning-model&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#深度生成学习deep-generative-learning-model&#34;&gt;#&lt;/a&gt; 深度生成学习（deep generative learning model）&lt;/h2&gt;
+&lt;p&gt;判别模型 vs 生成模型&lt;br&gt;
+变分自编码器 (variational auto-encoder, VAE) 、 自回归模型 (Autoregressivemodels) 与生成对抗网络（generative adversarial network，GAN）等&lt;/p&gt;
+ ]]></description>
+        </item>
         <item>
             <guid isPermalink="true">http://example.com/2025/06/16/AI/week12-13/</guid>
             <title>Week12-13</title>
@@ -166,61 +221,6 @@
 &lt;li&gt;继续&lt;br&gt;
 &lt;img data-src=&#34;f4.jpg&#34; alt&gt;&lt;/li&gt;
 &lt;/ol&gt;
- ]]></description>
-        </item>
-        <item>
-            <guid isPermalink="true">http://example.com/2025/06/16/AI/week10-11/</guid>
-            <title>Week10-11</title>
-            <link>http://example.com/2025/06/16/AI/week10-11/</link>
-            <category>人工智能</category>
-            <pubDate>Mon, 16 Jun 2025 00:00:00 +0800</pubDate>
-            <description><![CDATA[ &lt;h1 id=&#34;深度学习&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#深度学习&#34;&gt;#&lt;/a&gt; 深度学习&lt;/h1&gt;
-&lt;h2 id=&#34;前馈神经网络&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#前馈神经网络&#34;&gt;#&lt;/a&gt; 前馈神经网络&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;神经元&lt;/li&gt;
-&lt;li&gt;感知机（多一个激活函数）&lt;/li&gt;
-&lt;li&gt;激活函数: .RelU, Sigmoid, Softmax, tanh…&lt;/li&gt;
-&lt;li&gt;损失函数: MSE, Cross Entropy…s&lt;/li&gt;
-&lt;li&gt;参数优化: BP, 梯度下降&lt;br&gt;
-具体懒得写了，都说烂了&lt;br&gt;
-记一下这几个激活函数的形状和应用: tanh 和 sigmoid 大多用于二分类，RelU 一般用在隐藏层，Softmax 用在多分类而且概率和为 1&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;cnn&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#cnn&#34;&gt;#&lt;/a&gt; CNN&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;了解卷积操作和操作之后的结果&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;池化操作（最大池化、平均池化）&lt;br&gt;
-卷积层负责提取图像中的局部特征；&lt;br&gt;
-池化层用来大幅降低参数量级 (降维)；&lt;br&gt;
-激活函数负责非线性化；&lt;br&gt;
-全连接层类似传统神经网络的部分，用来输出想要的结果&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;神经网络正则化：为了缓解神经网络在训练过程中出现的过拟合问题，需要采取一些正则化技术来提升神经网络的泛化能力 (generalization)&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Dropout：在训练神经网络过程中，每次参数更新时随机丢掉一部分神经元来减少神经网络复杂度，防止过拟合&lt;br&gt;
-&lt;img data-src=&#34;f1.jpg&#34; alt&gt;&lt;/li&gt;
-&lt;li&gt;Batch-Normalization（批归一化）: 通过规范化的手段，把神经网络每层中任意神经元的输入值分布改变到均值为 0、方差为 1 的标准正态分布。防止梯度消失，收敛更快&lt;/li&gt;
-&lt;li&gt;L1-Norm &amp;amp; L2-Norm&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;循环神经网络rnn&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#循环神经网络rnn&#34;&gt;#&lt;/a&gt; 循环神经网络（RNN）&lt;/h2&gt;
-&lt;p&gt;RNN 对具有序列特性的数据非常有效，它能挖掘数据中的时序信息以及语义信息&lt;/p&gt;
-&lt;p&gt;为了解决&lt;mark&gt;梯度消失问题&lt;/mark&gt;，长短时记忆模型（Long Short-Term Memory，LSTM）被提出&lt;br&gt;
- LSTM：&lt;br&gt;
-与简单的循环神经网络结构不同，长短时记忆网络（Long Short-Term Memory，LSTM）中引入了&lt;mark&gt;内部记忆单元&lt;/mark&gt;（internal memory cell）和&lt;mark&gt;门&lt;/mark&gt;（gates）两种结构来对当前时刻输入信息以及前序时刻所生成信息进行整合和传递。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;输入门 (input gate)、遗忘门 (forget gate) 和输出门 (output gate) 三种 gate&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;门控循环单元（GRU）是一种对 LSTM 简化的深度学习模型。与长短时记忆网络相比，GRU 不再使用记忆单元来传递信息，仅使用隐藏状态来进行信息的传递。相比于长短时记忆网络来说，GRU 有更高的计算速度。&lt;/p&gt;
-&lt;h3 id=&#34;注意力机制&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#注意力机制&#34;&gt;#&lt;/a&gt; 注意力机制&lt;/h3&gt;
-&lt;p&gt;注意力机制对不同信息的关注程度（重要程度）由权值来体现，注意力机制可以视为&lt;mark&gt;查询矩阵 (Query)&lt;/mark&gt;&lt;mark&gt;、键 (key)&lt;mark&gt; 以及&lt;/mark&gt;加权平均值&lt;/mark&gt;构成了多层感知机 (Multilayer Perceptron, MLP)&lt;/p&gt;
-&lt;h2 id=&#34;深度生成学习deep-generative-learning-model&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#深度生成学习deep-generative-learning-model&#34;&gt;#&lt;/a&gt; 深度生成学习（deep generative learning model）&lt;/h2&gt;
-&lt;p&gt;判别模型 vs 生成模型&lt;br&gt;
-变分自编码器 (variational auto-encoder, VAE) 、 自回归模型 (Autoregressivemodels) 与生成对抗网络（generative adversarial network，GAN）等&lt;/p&gt;
  ]]></description>
         </item>
         <item>
@@ -426,6 +426,106 @@
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;具体的没看懂，等我懂了再说&lt;/p&gt;
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">http://example.com/2025/06/15/computer-science/compile-principles/ch6/</guid>
+            <title>Ch6</title>
+            <link>http://example.com/2025/06/15/computer-science/compile-principles/ch6/</link>
+            <category>活动记录</category>
+            <pubDate>Sun, 15 Jun 2025 00:00:00 +0800</pubDate>
+            <description><![CDATA[ &lt;h1 id=&#34;activation-recordstack-frame&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#activation-recordstack-frame&#34;&gt;#&lt;/a&gt; Activation Record/Stack Frame&lt;/h1&gt;
+&lt;p&gt;函数的栈帧是栈上用来放函数的局部变量、参数、返回地址以及其他临时变量的区域&lt;br&gt;
+ stack 一般从高地址向低地址，heap 从低地址向高地址&lt;br&gt;
+ layout:&lt;br&gt;
+&lt;img data-src=&#34;f1.jpg&#34; alt&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;incoming arguments: 存储 caller 传递给 callee 的参数&lt;/li&gt;
+&lt;li&gt;frame pointer: 帧指针，用来访问 incoming arguments，从低向高是 argument 1, argument 2, …&lt;/li&gt;
+&lt;li&gt;local variables: 存储函数的局部变量（还有一些保存在寄存器里）&lt;/li&gt;
+&lt;li&gt;return address: 存储需要返回 caller 的哪里；non-leaf 过程会把 return address 写入栈帧里面&lt;/li&gt;
+&lt;li&gt;temporaries: 存储临时变量，复杂表达式拆出来的中间变量放的地方&lt;/li&gt;
+&lt;li&gt;saved registers&lt;/li&gt;
+&lt;li&gt;outgoing arguments: 存储当前函数要传递给别的函数的参数&lt;/li&gt;
+&lt;li&gt;stack pointer: 栈指针，从低向高&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;函数调用流程&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#函数调用流程&#34;&gt;#&lt;/a&gt; 函数调用流程：&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;g 调用 f 的时候&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol&gt;
+&lt;li&gt;进入 f 的时候，保存旧的 FP (g 的 FP)&lt;/li&gt;
+&lt;li&gt;把 FP 设置为原来的 SP，把 SP = SP - frame size&lt;br&gt;
+&lt;img data-src=&#34;f2.jpg&#34; alt&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;f 返回的时候&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol&gt;
+&lt;li&gt;让 SP = FP (恢复 g 的 SP)&lt;/li&gt;
+&lt;li&gt;从内存中读出 g 的 FP 恢复回去&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;如果栈帧大小固定就只需要 FP 不需要 SP 了，因为 FP = SP + frame size&lt;/p&gt;
+&lt;h2 id=&#34;saved-register&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#saved-register&#34;&gt;#&lt;/a&gt; saved register&lt;/h2&gt;
+&lt;p&gt;函数 g 调用 f 的时候，用到了寄存器 r，调用 f 的时候要把 r 保存在 saved register 中，等调用结束再恢复回去&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;caller-saved register: 函数调用的时候用到的寄存器，调用结束后可以恢复&lt;/li&gt;
+&lt;li&gt;callee-saved register: 函数调用的时候用不到的寄存器，调用结束后不能恢复&lt;br&gt;
+&lt;mark&gt; FP 是由 callee 保存和恢复的&lt;/mark&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;参数传递&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#参数传递&#34;&gt;#&lt;/a&gt; 参数传递&lt;/h2&gt;
+&lt;p&gt;一般约定把前 k (4 or 6) 个参数放在寄存器传递，剩下的参数放在栈中传递&lt;br&gt;
+四种传参方法：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;不给叶过程 (leaf procedure) 分配栈帧&lt;br&gt;
+叶过程是指不调用其他过程的过程。在这种情况下，可以不为叶过程分配栈帧&lt;/li&gt;
+&lt;li&gt;过程间寄存器分配 (interprocedural register allocation)&lt;br&gt;
+ 这种方法需要先分析代码中全部的函数，然后再根据分析结果来分配寄存器。&lt;br&gt;
+假设有一个程序包含多个函数，通过全局分析发现某些变量在多个函数之间频繁使用，可以为其分配固定的寄存器，避免频繁的内存读写&lt;/li&gt;
+&lt;li&gt;若变量 x 不再被使用，可以直接写其寄存器，不需要再保存 x 到栈帧中&lt;br&gt;
+当一个变量在当前作用域内不再被使用时，可以直接将其值写入寄存器，而无需保存到栈帧中&lt;/li&gt;
+&lt;/ol&gt;
+&lt;figure class=&#34;highlight c&#34;&gt;&lt;figcaption&gt;&lt;span&gt;example&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;type&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;title function_&#34;&gt;exampleFunction&lt;/span&gt;&lt;span class=&#34;params&#34;&gt;()&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; x = &lt;span class=&#34;number&#34;&gt;5&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; y = x * &lt;span class=&#34;number&#34;&gt;2&lt;/span&gt;;  &lt;span class=&#34;comment&#34;&gt;// 使用x后，x不再被使用&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;comment&#34;&gt;// 直接将y的值写入寄存器，无需保存x到栈帧中&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;built_in&#34;&gt;printf&lt;/span&gt;(&lt;span class=&#34;string&#34;&gt;&amp;quot;Result: %d\n&amp;quot;&lt;/span&gt;, y);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;寄存器窗口技术 (register windows)&lt;br&gt;
+ 在每次函数调用时，系统会自动切换到一组新的寄存器，称为寄存器窗口。这样，每个函数都可以独立地使用自己的寄存器，而不会影响其他函数的寄存器状态。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;figure class=&#34;highlight c&#34;&gt;&lt;figcaption&gt;&lt;span&gt;example&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;type&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;title function_&#34;&gt;functionA&lt;/span&gt;&lt;span class=&#34;params&#34;&gt;()&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;comment&#34;&gt;// 使用寄存器窗口A&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;type&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;title function_&#34;&gt;functionB&lt;/span&gt;&lt;span class=&#34;params&#34;&gt;()&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;comment&#34;&gt;// 使用寄存器窗口B&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    functionA();  &lt;span class=&#34;comment&#34;&gt;// 调用functionA时，自动切换到寄存器窗口A&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&#34;frame-resident-variables&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#frame-resident-variables&#34;&gt;#&lt;/a&gt; Frame-Resident Variables&lt;/h2&gt;
+&lt;p&gt;什么情况下要把变量写入栈帧里面？、&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;the varibles will be passed by reference 变量传地址 / 引用&lt;/li&gt;
+&lt;li&gt;变量被嵌套在函数内部的函数访问（不绝对）&lt;/li&gt;
+&lt;li&gt;变量太大了没法直接放寄存器&lt;/li&gt;
+&lt;li&gt;变量是一个数组&lt;/li&gt;
+&lt;li&gt;传递参数&lt;/li&gt;
+&lt;li&gt;有太多局部变量和临时变量放不下了&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;escape 逃逸：如果一个变量需要传地址 / 取地址 / 被过程内部嵌套的函数访问，那么这个变量就会逃逸。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;static-links&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#static-links&#34;&gt;#&lt;/a&gt; static links&lt;/h2&gt;
+&lt;p&gt;在嵌套的函数声明中，内层函数是有可能用到外层函数的局部变量的。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;static links 是指向上一层嵌套层级的栈帧的指针。内层嵌套函数调用外层定义的变量的时候需要用到 static links，否则无法寻址。&lt;br&gt;
+&lt;img data-src=&#34;f3.jpg&#34; alt&gt;&lt;br&gt;
+&lt;img data-src=&#34;f4.jpg&#34; alt&gt;&lt;br&gt;
+只有调用自身的时候才传递自己的 static link 作为 static link，其他的都是把外层函数的 fp 作为 static link&lt;br&gt;
+ 如果要访问外层变量，就顺着 static 一层一层查上去直到找到了为止。&lt;br&gt;
+其他访问方法：&lt;/li&gt;
+&lt;li&gt;嵌套层次显示表 (display)&lt;br&gt;
+ 建立一个全局数组，位置 i 包含一个指针，指向最近一次进入的，其静态嵌套深度是 i 的过程的栈帧&lt;br&gt;
+&lt;img data-src=&#34;f5.jpg&#34; alt&gt;&lt;br&gt;
+先给它们标上嵌套深度&lt;br&gt;
+直接把链表变成数组了，需要用到一个变量，就查看当前变量的嵌套深度 i 然后直接找那个数组 i 位置的座位 fp 地址来找&lt;/li&gt;
+&lt;li&gt;lambda lifting&lt;br&gt;
+g 调用 f 时，g 中每一个实际（或被嵌套在 f 内的任意函数）访问了的变量，都将作为额外的参数传递给 f&lt;br&gt;
+ 把内部的函数，从内往外进行改写，改写函数的参数实现 lambda lifting&lt;br&gt;
+&lt;img data-src=&#34;f6.jpg&#34; alt&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;tiger编译器的栈帧&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#tiger编译器的栈帧&#34;&gt;#&lt;/a&gt; tiger 编译器的栈帧&lt;/h2&gt;
+&lt;p&gt;tiger 不支持高阶函数&lt;br&gt;
+看不完了。。再说吧&lt;/p&gt;
  ]]></description>
         </item>
         <item>
@@ -659,106 +759,6 @@ for 循环我懒得写了，也是一个道理&lt;/p&gt;
 &lt;ol start=&#34;6&#34;&gt;
 &lt;li&gt;翻译函数&lt;/li&gt;
 &lt;/ol&gt;
- ]]></description>
-        </item>
-        <item>
-            <guid isPermalink="true">http://example.com/2025/06/15/computer-science/compile-principles/ch6/</guid>
-            <title>Ch6</title>
-            <link>http://example.com/2025/06/15/computer-science/compile-principles/ch6/</link>
-            <category>活动记录</category>
-            <pubDate>Sun, 15 Jun 2025 00:00:00 +0800</pubDate>
-            <description><![CDATA[ &lt;h1 id=&#34;activation-recordstack-frame&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#activation-recordstack-frame&#34;&gt;#&lt;/a&gt; Activation Record/Stack Frame&lt;/h1&gt;
-&lt;p&gt;函数的栈帧是栈上用来放函数的局部变量、参数、返回地址以及其他临时变量的区域&lt;br&gt;
- stack 一般从高地址向低地址，heap 从低地址向高地址&lt;br&gt;
- layout:&lt;br&gt;
-&lt;img data-src=&#34;f1.jpg&#34; alt&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;incoming arguments: 存储 caller 传递给 callee 的参数&lt;/li&gt;
-&lt;li&gt;frame pointer: 帧指针，用来访问 incoming arguments，从低向高是 argument 1, argument 2, …&lt;/li&gt;
-&lt;li&gt;local variables: 存储函数的局部变量（还有一些保存在寄存器里）&lt;/li&gt;
-&lt;li&gt;return address: 存储需要返回 caller 的哪里；non-leaf 过程会把 return address 写入栈帧里面&lt;/li&gt;
-&lt;li&gt;temporaries: 存储临时变量，复杂表达式拆出来的中间变量放的地方&lt;/li&gt;
-&lt;li&gt;saved registers&lt;/li&gt;
-&lt;li&gt;outgoing arguments: 存储当前函数要传递给别的函数的参数&lt;/li&gt;
-&lt;li&gt;stack pointer: 栈指针，从低向高&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;函数调用流程&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#函数调用流程&#34;&gt;#&lt;/a&gt; 函数调用流程：&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;g 调用 f 的时候&lt;/li&gt;
-&lt;/ul&gt;
-&lt;ol&gt;
-&lt;li&gt;进入 f 的时候，保存旧的 FP (g 的 FP)&lt;/li&gt;
-&lt;li&gt;把 FP 设置为原来的 SP，把 SP = SP - frame size&lt;br&gt;
-&lt;img data-src=&#34;f2.jpg&#34; alt&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;ul&gt;
-&lt;li&gt;f 返回的时候&lt;/li&gt;
-&lt;/ul&gt;
-&lt;ol&gt;
-&lt;li&gt;让 SP = FP (恢复 g 的 SP)&lt;/li&gt;
-&lt;li&gt;从内存中读出 g 的 FP 恢复回去&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;如果栈帧大小固定就只需要 FP 不需要 SP 了，因为 FP = SP + frame size&lt;/p&gt;
-&lt;h2 id=&#34;saved-register&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#saved-register&#34;&gt;#&lt;/a&gt; saved register&lt;/h2&gt;
-&lt;p&gt;函数 g 调用 f 的时候，用到了寄存器 r，调用 f 的时候要把 r 保存在 saved register 中，等调用结束再恢复回去&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;caller-saved register: 函数调用的时候用到的寄存器，调用结束后可以恢复&lt;/li&gt;
-&lt;li&gt;callee-saved register: 函数调用的时候用不到的寄存器，调用结束后不能恢复&lt;br&gt;
-&lt;mark&gt; FP 是由 callee 保存和恢复的&lt;/mark&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;参数传递&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#参数传递&#34;&gt;#&lt;/a&gt; 参数传递&lt;/h2&gt;
-&lt;p&gt;一般约定把前 k (4 or 6) 个参数放在寄存器传递，剩下的参数放在栈中传递&lt;br&gt;
-四种传参方法：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;不给叶过程 (leaf procedure) 分配栈帧&lt;br&gt;
-叶过程是指不调用其他过程的过程。在这种情况下，可以不为叶过程分配栈帧&lt;/li&gt;
-&lt;li&gt;过程间寄存器分配 (interprocedural register allocation)&lt;br&gt;
- 这种方法需要先分析代码中全部的函数，然后再根据分析结果来分配寄存器。&lt;br&gt;
-假设有一个程序包含多个函数，通过全局分析发现某些变量在多个函数之间频繁使用，可以为其分配固定的寄存器，避免频繁的内存读写&lt;/li&gt;
-&lt;li&gt;若变量 x 不再被使用，可以直接写其寄存器，不需要再保存 x 到栈帧中&lt;br&gt;
-当一个变量在当前作用域内不再被使用时，可以直接将其值写入寄存器，而无需保存到栈帧中&lt;/li&gt;
-&lt;/ol&gt;
-&lt;figure class=&#34;highlight c&#34;&gt;&lt;figcaption&gt;&lt;span&gt;example&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;type&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;title function_&#34;&gt;exampleFunction&lt;/span&gt;&lt;span class=&#34;params&#34;&gt;()&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; x = &lt;span class=&#34;number&#34;&gt;5&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; y = x * &lt;span class=&#34;number&#34;&gt;2&lt;/span&gt;;  &lt;span class=&#34;comment&#34;&gt;// 使用x后，x不再被使用&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;comment&#34;&gt;// 直接将y的值写入寄存器，无需保存x到栈帧中&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;built_in&#34;&gt;printf&lt;/span&gt;(&lt;span class=&#34;string&#34;&gt;&amp;quot;Result: %d\n&amp;quot;&lt;/span&gt;, y);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;ol start=&#34;4&#34;&gt;
-&lt;li&gt;寄存器窗口技术 (register windows)&lt;br&gt;
- 在每次函数调用时，系统会自动切换到一组新的寄存器，称为寄存器窗口。这样，每个函数都可以独立地使用自己的寄存器，而不会影响其他函数的寄存器状态。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;figure class=&#34;highlight c&#34;&gt;&lt;figcaption&gt;&lt;span&gt;example&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;type&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;title function_&#34;&gt;functionA&lt;/span&gt;&lt;span class=&#34;params&#34;&gt;()&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;comment&#34;&gt;// 使用寄存器窗口A&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;type&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;title function_&#34;&gt;functionB&lt;/span&gt;&lt;span class=&#34;params&#34;&gt;()&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;comment&#34;&gt;// 使用寄存器窗口B&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    functionA();  &lt;span class=&#34;comment&#34;&gt;// 调用functionA时，自动切换到寄存器窗口A&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h2 id=&#34;frame-resident-variables&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#frame-resident-variables&#34;&gt;#&lt;/a&gt; Frame-Resident Variables&lt;/h2&gt;
-&lt;p&gt;什么情况下要把变量写入栈帧里面？、&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;the varibles will be passed by reference 变量传地址 / 引用&lt;/li&gt;
-&lt;li&gt;变量被嵌套在函数内部的函数访问（不绝对）&lt;/li&gt;
-&lt;li&gt;变量太大了没法直接放寄存器&lt;/li&gt;
-&lt;li&gt;变量是一个数组&lt;/li&gt;
-&lt;li&gt;传递参数&lt;/li&gt;
-&lt;li&gt;有太多局部变量和临时变量放不下了&lt;/li&gt;
-&lt;/ol&gt;
-&lt;ul&gt;
-&lt;li&gt;escape 逃逸：如果一个变量需要传地址 / 取地址 / 被过程内部嵌套的函数访问，那么这个变量就会逃逸。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;static-links&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#static-links&#34;&gt;#&lt;/a&gt; static links&lt;/h2&gt;
-&lt;p&gt;在嵌套的函数声明中，内层函数是有可能用到外层函数的局部变量的。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;static links 是指向上一层嵌套层级的栈帧的指针。内层嵌套函数调用外层定义的变量的时候需要用到 static links，否则无法寻址。&lt;br&gt;
-&lt;img data-src=&#34;f3.jpg&#34; alt&gt;&lt;br&gt;
-&lt;img data-src=&#34;f4.jpg&#34; alt&gt;&lt;br&gt;
-只有调用自身的时候才传递自己的 static link 作为 static link，其他的都是把外层函数的 fp 作为 static link&lt;br&gt;
- 如果要访问外层变量，就顺着 static 一层一层查上去直到找到了为止。&lt;br&gt;
-其他访问方法：&lt;/li&gt;
-&lt;li&gt;嵌套层次显示表 (display)&lt;br&gt;
- 建立一个全局数组，位置 i 包含一个指针，指向最近一次进入的，其静态嵌套深度是 i 的过程的栈帧&lt;br&gt;
-&lt;img data-src=&#34;f5.jpg&#34; alt&gt;&lt;br&gt;
-先给它们标上嵌套深度&lt;br&gt;
-直接把链表变成数组了，需要用到一个变量，就查看当前变量的嵌套深度 i 然后直接找那个数组 i 位置的座位 fp 地址来找&lt;/li&gt;
-&lt;li&gt;lambda lifting&lt;br&gt;
-g 调用 f 时，g 中每一个实际（或被嵌套在 f 内的任意函数）访问了的变量，都将作为额外的参数传递给 f&lt;br&gt;
- 把内部的函数，从内往外进行改写，改写函数的参数实现 lambda lifting&lt;br&gt;
-&lt;img data-src=&#34;f6.jpg&#34; alt&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;tiger编译器的栈帧&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#tiger编译器的栈帧&#34;&gt;#&lt;/a&gt; tiger 编译器的栈帧&lt;/h2&gt;
-&lt;p&gt;tiger 不支持高阶函数&lt;br&gt;
-看不完了。。再说吧&lt;/p&gt;
  ]]></description>
         </item>
         <item>
@@ -1072,6 +1072,29 @@ Alpha-Beta 剪枝算法什么时候扩展的结点数量最少？&lt;/li&gt;
  ]]></description>
         </item>
         <item>
+            <guid isPermalink="true">http://example.com/2025/05/20/AI/week1/</guid>
+            <title>Week1</title>
+            <link>http://example.com/2025/05/20/AI/week1/</link>
+            <category>人工智能</category>
+            <pubDate>Tue, 20 May 2025 00:00:00 +0800</pubDate>
+            <description><![CDATA[ &lt;blockquote&gt;
+&lt;p&gt;2025-2026 春夏人工智能课程笔记&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&#34;ch1-绪论&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#ch1-绪论&#34;&gt;#&lt;/a&gt; Ch1 绪论&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;人工智能求解：
+&lt;ul&gt;
+&lt;li&gt;以符号主义为核心的逻辑推理：将概念（如命题等）符号化，从若干判断（前提）出发得到新判断（结论）&lt;/li&gt;
+&lt;li&gt;以问题求解为核心的探寻搜索：探寻搜索依据已有信息来寻找满足约束条件的待求解问题的答案&lt;/li&gt;
+&lt;li&gt;以数据驱动为核心的机器学习：从数据中发现数据所承载语义（如概念）的内在模式&lt;/li&gt;
+&lt;li&gt;以行为主义为核心的强化学习：根据环境所提供的奖罚反馈来学习所处状态可施加的最佳行动，在 “探索（未知空间）- 利用（已有经验）（exploration vs. exploitation）” 之间寻找平衡，完成某个序列化任务，具备自我学习能力&lt;/li&gt;
+&lt;li&gt;以博弈对抗为核心的群体智能：从 “数据拟合” 优化解的求取向 “均衡解” 的求取迈进&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+ ]]></description>
+        </item>
+        <item>
             <guid isPermalink="true">http://example.com/2025/05/20/AI/week2-3/</guid>
             <title>Week2-3</title>
             <link>http://example.com/2025/05/20/AI/week2-3/</link>
@@ -1310,29 +1333,6 @@ Alpha-Beta 剪枝算法什么时候扩展的结点数量最少？&lt;/li&gt;
 &lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:1em;vertical-align:-0.25em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.13889em;&#34;&gt;P&lt;/span&gt;&lt;span class=&#34;mopen&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.22222em;&#34;&gt;Y&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mrel&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:1em;vertical-align:-0.25em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.03588em;&#34;&gt;y&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mrel&#34;&gt;∣&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:1em;vertical-align:-0.25em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;d&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;o&lt;/span&gt;&lt;span class=&#34;mopen&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.07847em;&#34;&gt;X&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mrel&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:1em;vertical-align:-0.25em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;x&lt;/span&gt;&lt;span class=&#34;mclose&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;mclose&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mrel&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:2.3000100000000003em;vertical-align:-1.250005em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mop op-limits&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:1.050005em;&#34;&gt;&lt;span style=&#34;top:-1.8999949999999999em;margin-left:0em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:3.05em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mathnormal mtight&#34; style=&#34;margin-right:0.04398em;&#34;&gt;z&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;top:-3.0500049999999996em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:3.05em;&#34;&gt;&lt;/span&gt;&lt;span&gt;&lt;span class=&#34;mop op-symbol large-op&#34;&gt;∑&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:1.250005em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.16666666666666666em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.13889em;&#34;&gt;P&lt;/span&gt;&lt;span class=&#34;mopen&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.22222em;&#34;&gt;Y&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mrel&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:1em;vertical-align:-0.25em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.03588em;&#34;&gt;y&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mrel&#34;&gt;∣&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.68333em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.07847em;&#34;&gt;X&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mrel&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.8777699999999999em;vertical-align:-0.19444em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;x&lt;/span&gt;&lt;span class=&#34;mpunct&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.16666666666666666em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.13889em;&#34;&gt;P&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;A&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mrel&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:1em;vertical-align:-0.25em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.04398em;&#34;&gt;z&lt;/span&gt;&lt;span class=&#34;mclose&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mbin&#34;&gt;⋅&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:1em;vertical-align:-0.25em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.13889em;&#34;&gt;P&lt;/span&gt;&lt;span class=&#34;mopen&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.13889em;&#34;&gt;P&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;A&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mrel&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:1em;vertical-align:-0.25em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.04398em;&#34;&gt;z&lt;/span&gt;&lt;span class=&#34;mclose&#34;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;后门调整：&lt;br&gt;
 不写了&lt;/p&gt;
- ]]></description>
-        </item>
-        <item>
-            <guid isPermalink="true">http://example.com/2025/05/20/AI/week1/</guid>
-            <title>Week1</title>
-            <link>http://example.com/2025/05/20/AI/week1/</link>
-            <category>人工智能</category>
-            <pubDate>Tue, 20 May 2025 00:00:00 +0800</pubDate>
-            <description><![CDATA[ &lt;blockquote&gt;
-&lt;p&gt;2025-2026 春夏人工智能课程笔记&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h1 id=&#34;ch1-绪论&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#ch1-绪论&#34;&gt;#&lt;/a&gt; Ch1 绪论&lt;/h1&gt;
-&lt;ul&gt;
-&lt;li&gt;人工智能求解：
-&lt;ul&gt;
-&lt;li&gt;以符号主义为核心的逻辑推理：将概念（如命题等）符号化，从若干判断（前提）出发得到新判断（结论）&lt;/li&gt;
-&lt;li&gt;以问题求解为核心的探寻搜索：探寻搜索依据已有信息来寻找满足约束条件的待求解问题的答案&lt;/li&gt;
-&lt;li&gt;以数据驱动为核心的机器学习：从数据中发现数据所承载语义（如概念）的内在模式&lt;/li&gt;
-&lt;li&gt;以行为主义为核心的强化学习：根据环境所提供的奖罚反馈来学习所处状态可施加的最佳行动，在 “探索（未知空间）- 利用（已有经验）（exploration vs. exploitation）” 之间寻找平衡，完成某个序列化任务，具备自我学习能力&lt;/li&gt;
-&lt;li&gt;以博弈对抗为核心的群体智能：从 “数据拟合” 优化解的求取向 “均衡解” 的求取迈进&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
  ]]></description>
         </item>
         <item>
