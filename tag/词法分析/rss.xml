@@ -9,15 +9,15 @@
         <lastBuildDate>Sat, 22 Mar 2025 00:00:00 +0800</lastBuildDate>
         <category>人工智能</category>
         <category>计算机网络</category>
-        <category>编译原理</category>
+        <category>计算机组成</category>
+        <category>数据的表示与运算</category>
         <category>词法分析</category>
+        <category>编译原理</category>
         <category>抽象语法</category>
         <category>语法分析</category>
         <category>语义分析</category>
-        <category>活动记录</category>
         <category>中间代码</category>
-        <category>计算机组成</category>
-        <category>数据的表示与运算</category>
+        <category>活动记录</category>
         <item>
             <guid isPermalink="true">http://example.com/2025/03/22/computer-science/compile-principles/ch2/</guid>
             <title>Ch2</title>
