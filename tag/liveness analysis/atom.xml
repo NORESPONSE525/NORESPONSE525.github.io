@@ -5,18 +5,18 @@
     <link href="http://example.com" />
     <updated>2025-06-17T16:00:00.000Z</updated>
     <category term="人工智能" />
+    <category term="编译原理" />
     <category term="Liveness Analysis" />
     <category term="词法分析" />
-    <category term="语法分析" />
     <category term="抽象语法" />
-    <category term="编译原理" />
-    <category term="语义分析" />
     <category term="活动记录" />
+    <category term="语义分析" />
     <category term="中间代码" />
-    <category term="Basic Blocks and Traces" />
-    <category term="计算机组成" />
     <category term="指令选择" />
+    <category term="语法分析" />
     <category term="计算机网络" />
+    <category term="计算机组成" />
+    <category term="Basic Blocks and Traces" />
     <category term="数据的表示与运算" />
     <entry>
         <id>http://example.com/2025/06/18/computer-science/compile-principles/ch10/</id>
@@ -24,6 +24,45 @@
         <link rel="alternate" href="http://example.com/2025/06/18/computer-science/compile-principles/ch10/"/>
         <content type="html">&lt;h1 id=&#34;liveness-analysis-活跃变量分析&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#liveness-analysis-活跃变量分析&#34;&gt;#&lt;/a&gt; Liveness Analysis 活跃变量分析&lt;/h1&gt;
 &lt;p&gt;判断在程序执行的某个点上，一个变量的值是否可能在未来被使用，是寄存器分配、死代码消除的基础&lt;/p&gt;
+&lt;h2 id=&#34;compiler-optimizations&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#compiler-optimizations&#34;&gt;#&lt;/a&gt; Compiler Optimizations&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Local: 基于 basic blocks&lt;/li&gt;
+&lt;li&gt;Intraprocedural (or “global’): 基本块的控制流转移&lt;/li&gt;
+&lt;li&gt;Interprocedural (or “whole-program”): Operate on &amp;gt; 1 procedure, up to whole program; Sometimes, at link time (LTO, link time optimization)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;两步：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Analyze program to gather “facts”&lt;/li&gt;
+&lt;li&gt;Apply transformation (e.g., optimizations)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;dataflow-analysis&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#dataflow-analysis&#34;&gt;#&lt;/a&gt; Dataflow Analysis&lt;/h2&gt;
+&lt;p&gt;Control Flow Graph: A directed graph 数据流图&lt;br&gt;
+– Nodes represent statements&lt;br&gt;
+– Edges represent control flow&lt;/p&gt;
+&lt;p&gt;CFG 的简化：基本块&lt;br&gt;
+&lt;img data-src=&#34;f1.jpg&#34; alt&gt;&lt;/p&gt;
+&lt;h3 id=&#34;变量的活跃性&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#变量的活跃性&#34;&gt;#&lt;/a&gt; 变量的活跃性：&lt;/h3&gt;
+&lt;p&gt;变量 x 在语句 s 处（执行 s 之前）处于活动状态，当且仅当满足以下三个条件：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;存在一个使用 x 的语句 s’；&lt;/li&gt;
+&lt;li&gt;存在从 s 到 s’的路径；&lt;/li&gt;
+&lt;li&gt;这条路径上没有对 x 进行任何赋值操作&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;通过分析 liveness，我们可以实现：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Register Allocation&lt;/li&gt;
+&lt;li&gt;Code Optimizations：Remove unused assignments&lt;/li&gt;
+&lt;li&gt;IR Construction： Optimize the construction of SSA&lt;/li&gt;
+&lt;li&gt;Security/Reliability: Detect the use of uninitialized variables&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;dataflow-equations-for-liveness-构建数据流方程&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#dataflow-equations-for-liveness-构建数据流方程&#34;&gt;#&lt;/a&gt; Dataflow Equations for Liveness 构建数据流方程&lt;/h2&gt;
+&lt;p&gt;A CFG node has&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;out-edges: lead to successor nodes&lt;/li&gt;
+&lt;li&gt;in-edges: come from predecessor nodes&lt;/li&gt;
+&lt;li&gt;pred [n]: the predecessors of node n       前驱&lt;/li&gt;
+&lt;li&gt;succ [n]: the successors of node n     后继&lt;/li&gt;
+&lt;/ul&gt;
 </content>
         <category term="Liveness Analysis" />
         <updated>2025-06-17T16:00:00.000Z</updated>
