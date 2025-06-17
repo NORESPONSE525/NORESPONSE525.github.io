@@ -5,19 +5,19 @@
     <link href="http://example.com" />
     <updated>2025-03-20T16:00:00.000Z</updated>
     <category term="人工智能" />
-    <category term="计算机网络" />
-    <category term="计算机组成" />
     <category term="Liveness Analysis" />
     <category term="词法分析" />
-    <category term="编译原理" />
-    <category term="数据的表示与运算" />
     <category term="语法分析" />
-    <category term="语义分析" />
     <category term="抽象语法" />
-    <category term="Basic Blocks and Traces" />
+    <category term="编译原理" />
+    <category term="语义分析" />
     <category term="活动记录" />
     <category term="中间代码" />
+    <category term="Basic Blocks and Traces" />
+    <category term="计算机组成" />
     <category term="指令选择" />
+    <category term="计算机网络" />
+    <category term="数据的表示与运算" />
     <entry>
         <id>http://example.com/2025/03/21/computer-science/compile-principles/ch5/</id>
         <title>Ch5</title>
