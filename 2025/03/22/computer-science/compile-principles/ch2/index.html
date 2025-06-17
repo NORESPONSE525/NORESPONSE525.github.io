@@ -76,7 +76,7 @@ NoResponse's Blog = NoResponse's Blog</title>
       <i class="ic i-pen"></i>
     </span>
     <span class="text">Symbols count in article</span>
-    <span>567</span>
+    <span>488</span>
     <span class="text">words</span>
   </span>
   <span class="item" title="Reading time">
@@ -116,7 +116,7 @@ NoResponse's Blog = NoResponse's Blog</title>
 
       </div>
       <div id="imgs" class="pjax">
-          <img src="/images/bg22.png">
+          <img src="/images/bg9.jpg">
       </div>
     </header>
     <div id="waves">
@@ -164,25 +164,45 @@ NoResponse's Blog = NoResponse's Blog</title>
   <div class="body md" itemprop="articleBody">
     
 
-    <h1 id="Ch2-词法分析"><a href="#Ch2-词法分析" class="headerlink" title="Ch2 词法分析"></a>Ch2 词法分析</h1><blockquote>
-<p>把input分解成一个个token</p>
+    <h1 id="ch2-词法分析"><a class="markdownIt-Anchor" href="#ch2-词法分析">#</a> Ch2 词法分析</h1>
+<blockquote>
+<p>把 input 分解成一个个 token</p>
 </blockquote>
-<h2 id="Regular-Expression"><a href="#Regular-Expression" class="headerlink" title="Regular Expression"></a>Regular Expression</h2><ul>
+<h2 id="regular-expression"><a class="markdownIt-Anchor" href="#regular-expression">#</a> Regular Expression</h2>
+<ul>
 <li>Language: a set of strings</li>
-<li>String: a finite sequence of characters<blockquote>
-<p>Regular Experssion Notations:<br><img data-src="/image-1.png"></p>
-</blockquote>
-</li>
+<li>String: a finite sequence of characters</li>
 </ul>
-<p>:::info<br>DFA, NFA相关 见计算理论<br>:::</p>
-<h2 id="RE转NFA"><a href="#RE转NFA" class="headerlink" title="RE转NFA"></a>RE转NFA</h2><p>:::info 方法：</p>
+<blockquote>
+<p>Regular Experssion Notations:<br>
+<img data-src="image-1.png" alt></p>
+</blockquote>
+<div class="note info">
+<p>DFA, NFA 相关 见计算理论</p>
+</div>
+<h2 id="re转nfa"><a class="markdownIt-Anchor" href="#re转nfa">#</a> RE 转 NFA</h2>
+<div class="note info 方法：">
 <ol>
 <li>画出初始态和终态</li>
-<li>分裂规则：<br><img data-src="/image-2.jpg"><br>:::</li>
+<li>分裂规则：<br>
+<img data-src="image-2.jpg" alt></li>
 </ol>
-<h2 id="NFA转DFA"><a href="#NFA转DFA" class="headerlink" title="NFA转DFA"></a>NFA转DFA</h2><p>从初始状态的闭包开始，每次根据\epsilon和当前状态的闭包，得到下一个状态的闭包，直到得到终态的闭包。</p>
-<p>+++info example<br>;;;id3 题目<br>:chestnut:<br>把这个NFA转成等价的DFA<br><img data-src="/image-3.png"><br>;;;<br>;;;id3 答案<br>初态的闭包是1、2、6，1、2、6经过a可以转移到3、7，因为有\epsilon转移，所以3、7的闭包是3、4、7、8，同理3、4、7、8经过b可以到5、8，由于8是终态，把所有包含8的圆圈画成终态的环。<br><img data-src="/image-4.png"><br>;;;<br>+++</p>
-<h2 id="最小化DFA"><a href="#最小化DFA" class="headerlink" title="最小化DFA"></a>最小化DFA</h2><p>含义：</p>
+</div>
+<h2 id="nfa转dfa"><a class="markdownIt-Anchor" href="#nfa转dfa">#</a> NFA 转 DFA</h2>
+<p>从初始状态的闭包开始，每次根据 \epsilon 和当前状态的闭包，得到下一个状态的闭包，直到得到终态的闭包。</p>
+<details class="info"><summary>example</summary><div>
+<div class="tab" data-id="id3" data-title="题目">
+<p>🌰<br>
+把这个 NFA 转成等价的 DFA<br>
+<img data-src="image-3.png" alt></p>
+</div>
+<div class="tab" data-id="id3" data-title="答案">
+<p>初态的闭包是 1、2、6，1、2、6 经过 a 可以转移到 3、7，因为有 \epsilon 转移，所以 3、7 的闭包是 3、4、7、8，同理 3、4、7、8 经过 b 可以到 5、8，由于 8 是终态，把所有包含 8 的圆圈画成终态的环。<br>
+<img data-src="image-4.png" alt></p>
+</div>
+</div></details>
+<h2 id="最小化dfa"><a class="markdownIt-Anchor" href="#最小化dfa">#</a> 最小化 DFA</h2>
+<p>含义：</p>
 <ol>
 <li>没有多余状态：</li>
 </ol>
@@ -191,16 +211,21 @@ NoResponse's Blog = NoResponse's Blog</title>
 <li>从开始状态出发，任何输入串也不能到达的那个状态</li>
 </ul>
 <ol start="2">
-<li>没有两个状态相互等价<br>:::info 方法：</li>
-<li>多余状态直接删除<br><img data-src="/image-5.png"></li>
+<li>没有两个状态相互等价</li>
+</ol>
+<div class="note info 方法：">
+<ol>
+<li>多余状态直接删除<br>
+<img data-src="image-5.png" alt></li>
 <li>合并等价状态</li>
 </ol>
 <ul>
 <li>将状态分为终态和非终态两个集合</li>
 <li>遍历每个集合，如果经过转换到达的状态都在当前集合里，则不用分，否则划分子集，直到划分不了为止</li>
-<li>:chestnut: 例子</li>
-<li><img data-src="/image-6.png"><br>:::</li>
+<li>🌰 例子</li>
+<li><img data-src="image-6.png" alt></li>
 </ul>
+</div>
 
       <div class="tags">
           <a href="/tags/%E8%AF%8D%E6%B3%95%E5%88%86%E6%9E%90/" rel="tag"><i class="ic i-tag"></i> 词法分析</a>
@@ -270,7 +295,7 @@ NoResponse's Blog = NoResponse's Blog</title>
     <div class="item left">
       
 
-  <a href="/2025/03/21/computer-science/compile-principles/ch1/" itemprop="url" rel="prev" data-background-image="&#x2F;images&#x2F;bg32.jpg" title="Ch1">
+  <a href="/2025/03/21/computer-science/compile-principles/ch1/" itemprop="url" rel="prev" data-background-image="&#x2F;images&#x2F;bg14.jpg" title="Ch1">
   <span class="type">Previous Post</span>
   <span class="category"><i class="ic i-flag"></i> 编译原理</span>
   <h3>Ch1</h3>
@@ -280,7 +305,7 @@ NoResponse's Blog = NoResponse's Blog</title>
     <div class="item right">
       
 
-  <a href="/2025/03/23/computer-science/compile-principles/ch3/" itemprop="url" rel="next" data-background-image="&#x2F;images&#x2F;bg1.jpg" title="Ch3">
+  <a href="/2025/03/23/computer-science/compile-principles/ch3/" itemprop="url" rel="next" data-background-image="&#x2F;images&#x2F;bg18.jpg" title="Ch3">
   <span class="type">Next Post</span>
   <span class="category"><i class="ic i-flag"></i> 编译原理</span>
   <h3>Ch3</h3>
@@ -302,11 +327,11 @@ NoResponse's Blog = NoResponse's Blog</title>
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="Contents">
-          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Ch2-%E8%AF%8D%E6%B3%95%E5%88%86%E6%9E%90"><span class="toc-number">1.</span> <span class="toc-text">Ch2 词法分析</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Regular-Expression"><span class="toc-number">1.1.</span> <span class="toc-text">Regular Expression</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#RE%E8%BD%ACNFA"><span class="toc-number">1.2.</span> <span class="toc-text">RE转NFA</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#NFA%E8%BD%ACDFA"><span class="toc-number">1.3.</span> <span class="toc-text">NFA转DFA</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%80%E5%B0%8F%E5%8C%96DFA"><span class="toc-number">1.4.</span> <span class="toc-text">最小化DFA</span></a></li></ol></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#ch2-%E8%AF%8D%E6%B3%95%E5%88%86%E6%9E%90"><span class="toc-number">1.</span> <span class="toc-text"> Ch2 词法分析</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#regular-expression"><span class="toc-number">1.1.</span> <span class="toc-text"> Regular Expression</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#re%E8%BD%ACnfa"><span class="toc-number">1.2.</span> <span class="toc-text"> RE 转 NFA</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#nfa%E8%BD%ACdfa"><span class="toc-number">1.3.</span> <span class="toc-text"> NFA 转 DFA</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%80%E5%B0%8F%E5%8C%96dfa"><span class="toc-number">1.4.</span> <span class="toc-text"> 最小化 DFA</span></a></li></ol></li></ol>
       </div>
       <div class="related panel pjax" data-title="Related">
         <ul>
-          <li><a href="/2025/03/21/computer-science/compile-principles/ch1/" rel="bookmark" title="Ch1">Ch1</a></li><li><a href="/2025/03/21/computer-science/compile-principles/ch5/" rel="bookmark" title="Ch5">Ch5</a></li><li class="active"><a href="/2025/03/22/computer-science/compile-principles/ch2/" rel="bookmark" title="Ch2">Ch2</a></li><li><a href="/2025/03/23/computer-science/compile-principles/ch3/" rel="bookmark" title="Ch3">Ch3</a></li><li><a href="/2025/03/29/computer-science/compile-principles/ch4/" rel="bookmark" title="Ch4">Ch4</a></li><li><a href="/2025/06/15/computer-science/compile-principles/ch6/" rel="bookmark" title="Ch6">Ch6</a></li><li><a href="/2025/06/15/computer-science/compile-principles/ch7/" rel="bookmark" title="Ch7">Ch7</a></li><li><a href="/2025/06/17/computer-science/compile-principles/ch9/" rel="bookmark" title="Ch9">Ch9</a></li><li><a href="/2025/06/17/computer-science/compile-principles/ch8/" rel="bookmark" title="Ch8">Ch8</a></li>
+          <li><a href="/2025/03/21/computer-science/compile-principles/ch1/" rel="bookmark" title="Ch1">Ch1</a></li><li><a href="/2025/03/21/computer-science/compile-principles/ch5/" rel="bookmark" title="Ch5">Ch5</a></li><li class="active"><a href="/2025/03/22/computer-science/compile-principles/ch2/" rel="bookmark" title="Ch2">Ch2</a></li><li><a href="/2025/03/23/computer-science/compile-principles/ch3/" rel="bookmark" title="Ch3">Ch3</a></li><li><a href="/2025/03/29/computer-science/compile-principles/ch4/" rel="bookmark" title="Ch4">Ch4</a></li><li><a href="/2025/06/15/computer-science/compile-principles/ch6/" rel="bookmark" title="Ch6">Ch6</a></li><li><a href="/2025/06/15/computer-science/compile-principles/ch7/" rel="bookmark" title="Ch7">Ch7</a></li><li><a href="/2025/06/17/computer-science/compile-principles/ch8/" rel="bookmark" title="Ch8">Ch8</a></li><li><a href="/2025/06/17/computer-science/compile-principles/ch9/" rel="bookmark" title="Ch9">Ch9</a></li><li><a href="/2025/06/18/computer-science/compile-principles/ch10/" rel="bookmark" title="Ch9">Ch9</a></li>
         </ul>
       </div>
       <div class="overview panel" data-title="Overview">
@@ -320,7 +345,7 @@ NoResponse's Blog = NoResponse's Blog</title>
 <nav class="state">
     <div class="item posts">
       <a href="/archives/">
-        <span class="count">20</span>
+        <span class="count">21</span>
         <span class="name">posts</span>
       </a>
     </div>
@@ -332,7 +357,7 @@ NoResponse's Blog = NoResponse's Blog</title>
     </div>
     <div class="item tags">
       <a href="/tags/">
-        <span class="count">13</span>
+        <span class="count">14</span>
         <span class="name">tags</span>
       </a>
     </div>
@@ -386,20 +411,12 @@ NoResponse's Blog = NoResponse's Blog</title>
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/AI/" title="In 人工智能">人工智能</a>
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/computer-organization/" title="In 计算机组成">计算机组成</a>
 </div>
 
-    <span><a href="/2025/06/16/AI/week10-11/" title="Week10-11">Week10-11</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/AI/" title="In 人工智能">人工智能</a>
-</div>
-
-    <span><a href="/2025/06/11/AI/week4-5/" title="Week4-5">Week4-5</a></span>
+    <span><a href="/2025/05/14/computer-science/computer-organization/ch2/" title="Ch2">Ch2</a></span>
   </li>
 
       
@@ -423,7 +440,7 @@ NoResponse's Blog = NoResponse's Blog</title>
 <a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
 </div>
 
-    <span><a href="/2025/03/29/computer-science/compile-principles/ch4/" title="Ch4">Ch4</a></span>
+    <span><a href="/2025/06/15/computer-science/compile-principles/ch7/" title="Ch7">Ch7</a></span>
   </li>
 
       
@@ -435,7 +452,7 @@ NoResponse's Blog = NoResponse's Blog</title>
 <a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
 </div>
 
-    <span><a href="/2025/03/21/computer-science/compile-principles/ch1/" title="Ch1">Ch1</a></span>
+    <span><a href="/2025/03/23/computer-science/compile-principles/ch3/" title="Ch3">Ch3</a></span>
   </li>
 
       
@@ -454,22 +471,10 @@ NoResponse's Blog = NoResponse's Blog</title>
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/computer-organization/" title="In 计算机组成">计算机组成</a>
-</div>
-
-    <span><a href="/2025/05/14/computer-science/computer-organization/ch2/" title="Ch2">Ch2</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
 <a href="/categories/AI/" title="In 人工智能">人工智能</a>
 </div>
 
-    <span><a href="/2025/06/16/AI/week12-13/" title="Week12-13">Week12-13</a></span>
+    <span><a href="/2025/06/15/AI/week8-9/" title="Week8-9">Week8-9</a></span>
   </li>
 
       
@@ -488,12 +493,32 @@ NoResponse's Blog = NoResponse's Blog</title>
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/computer-network/" title="In 计算机网络">计算机网络</a>
+<a href="/categories/AI/" title="In 人工智能">人工智能</a>
 </div>
 
-    <span><a href="/2025/05/13/computer-science/computer-network/ch1/" title="Ch1">Ch1</a></span>
+    <span><a href="/2025/06/16/AI/week10-11/" title="Week10-11">Week10-11</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
+</div>
+
+    <span><a href="/2025/06/17/computer-science/compile-principles/ch8/" title="Ch8">Ch8</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/AI/" title="In 人工智能">人工智能</a>
+</div>
+
+    <span><a href="/2025/06/16/AI/week12-13/" title="Week12-13">Week12-13</a></span>
   </li>
 
   </ul>
@@ -518,13 +543,13 @@ NoResponse's Blog = NoResponse's Blog</title>
     <span class="post-meta-item-icon">
       <i class="ic i-chart-area"></i>
     </span>
-    <span title="Symbols count total">36k words</span>
+    <span title="Symbols count total">42k words</span>
 
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="ic i-coffee"></i>
     </span>
-    <span title="Reading time total">32 mins.</span>
+    <span title="Reading time total">39 mins.</span>
   </div>
   <div class="powered-by">
     Powered by <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
