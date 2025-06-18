@@ -76,7 +76,7 @@ NoResponse's Blog = NoResponse's Blog</title>
       <i class="ic i-pen"></i>
     </span>
     <span class="text">Symbols count in article</span>
-    <span>194</span>
+    <span>1.5k</span>
     <span class="text">words</span>
   </span>
   <span class="item" title="Reading time">
@@ -116,7 +116,7 @@ NoResponse's Blog = NoResponse's Blog</title>
 
       </div>
       <div id="imgs" class="pjax">
-          <img src="/images/bg11.jpg">
+          <img src="/images/bg3.png">
       </div>
     </header>
     <div id="waves">
@@ -172,10 +172,62 @@ NoResponse's Blog = NoResponse's Blog</title>
 <li>Optimize performance</li>
 </ul>
 <h2 id="图着色算法"><a class="markdownIt-Anchor" href="#图着色算法">#</a> 图着色算法</h2>
-<p>冲突图是一个无向图，每个节点表示一个临时变量，如果两个节点同时 live，则在它们之间连接一条无向边<br>
-如果两个变量之间没有边连接，则这两个变量可以共享同一个寄存器<br>
+<p>冲突图是一个无向图，冲突图中，每个节点是一个变量（寄存器分配的候选对象）。<br>
+如果两个变量在同一时刻是活跃的（live），它们就有冲突边（interference edge），表示它们不能被分配到同一个寄存器<br>
 冲突信息可以用矩阵或者图来表示</p>
-<h3 id="冲突图"><a class="markdownIt-Anchor" href="#冲突图">#</a> 冲突图</h3>
+<h3 id="冲突图构建"><a class="markdownIt-Anchor" href="#冲突图构建">#</a> 冲突图构建</h3>
+<p>我们从一个中间代码的指令出发，根据 live-out（就是 out 集合）添加冲突边：</p>
+<ol>
+<li>非 move 指令（不是 a := b 这种）<br>
+比如 a := b1 + b2<br>
+ 对于每个 bn 和 a 之间都添加冲突边<br>
+比如下面这个例子：<br>
+<img data-src="f1.jpg" alt><br>
+可以看到有 ab ac 同时 live 了，所以为 a 和 b，a 和 c 添加冲突边</li>
+<li>move 指令<br>
+对于 move 指令，不添加冲突边：<br>
+比如对于第 2 条指令 d ← a，out [2] = {a, e}，那么只对 d 和 e 添加冲突边，对 d 和 a 不添加<br>
+但如果 move 之后又对 d 重新赋值了，那么还是要添加上 d 和 a 之间的冲突边</li>
+</ol>
+<h3 id="冲突图着色"><a class="markdownIt-Anchor" href="#冲突图着色">#</a> 冲突图着色</h3>
+<p>Vertex Coloring: 给图中的顶点着色，使得图中没有边连接相同颜色的顶点<br>
+ K-Coloring: 颜色数小于 K</p>
+<h4 id="kempe-简化"><a class="markdownIt-Anchor" href="#kempe-简化">#</a> Kempe 简化</h4>
+<p>如果图中有一个节点 n 的度数 &lt;K（也就是它的冲突数少于寄存器数），那我们可以 “临时删掉” 这个节点，并递归给剩下的图上色。之后再把这个节点加回来，它一定可以找到一个合法颜色。</p>
+<p>如果图中所有节点的度数都 ≥ K，那就可能要进入溢出（spill）处理<br>
+算法步骤：</p>
+<ol>
+<li>build: 画冲突图</li>
+<li>simplify the nodes with insignificant degree: 选取 degree &lt; k 的节点，压栈</li>
+<li>select (or color) while rebuilding the graph: 出栈，分配颜色<br>
+ A vertex such that its degree &lt; k is always k-colorable<br>
+Remove such vertices and push them to a stack until the graph becomes empty<br>
+ 移除顶点的同时移除相关边</li>
+</ol>
+<h4 id="coalescing"><a class="markdownIt-Anchor" href="#coalescing">#</a> Coalescing</h4>
+<p>遵循两种策略：</p>
+<ul>
+<li><strong>Briggs Criteria</strong>: 如果将节点  <code>a</code>  和  <code>b</code>  合并后得到的新节点  <code>ab</code> ，其相邻节点中 degree &gt;= K 的节点（significant-degree neighbors）的数量 小于 K，则可以合并</li>
+<li><strong>George Criteria</strong>: 如果对节点  <code>a</code>  和  <code>b</code> ，对于  <code>a</code>  的每一个邻居  <code>t</code> ， 满足二者其中之一，就能合并：
+<ul>
+<li><code>t</code>  本来就和  <code>b</code>  有冲突</li>
+<li><code>t</code>  的 degree &lt; K</li>
+</ul>
+</li>
+</ul>
+<p>整体流程：<br>
+<img data-src="f2.jpg" alt></p>
+<ul>
+<li>为什么要 simplify non-move-related node: 保留 move-related 的后续可以合并</li>
+<li>freeze: 当我们遇到两个变量 a ← b 有 move 指令，但现在还不能安全合并，我们又不想立刻 spill，于是我们 “冻结” 这条 move 指令：不再试图合并 a 和 b，而是让其中一个变成非 move 相关（non-move-related），进入 Simplify 阶段继续处理</li>
+<li>spill 规则：优先移除不被经常使用、degree 大的节点
+<ul>
+<li>实际溢出的 priority 计算，对于节点 a：</li>
+</ul>
+</li>
+</ul>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>p</mi><mi>r</mi><mi>i</mi><mi>o</mi><mi>r</mi><mi>i</mi><mi>t</mi><mi>y</mi><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo><mo>=</mo><mfrac><mrow><mo stretchy="false">(</mo><mi>u</mi><mi>s</mi><mi>e</mi><mo>+</mo><mi>d</mi><mi>e</mi><mi>f</mi><mi>o</mi><mi>u</mi><mi>t</mi><mi>s</mi><mi>i</mi><mi>d</mi><mi>e</mi><mi>l</mi><mi>o</mi><mi>o</mi><mi>p</mi><mo stretchy="false">)</mo><mo>+</mo><mi>l</mi><mi>o</mi><mi>o</mi><msub><mi>p</mi><mi>n</mi></msub><mi>u</mi><mi>m</mi><mo>∗</mo><mo stretchy="false">(</mo><mi>u</mi><mi>s</mi><mi>e</mi><mo>+</mo><mi>d</mi><mi>e</mi><mi>f</mi><mi>i</mi><mi>n</mi><mi>s</mi><mi>i</mi><mi>d</mi><mi>e</mi><mi>l</mi><mi>o</mi><mi>o</mi><mi>p</mi><mo stretchy="false">)</mo></mrow><mi>D</mi></mfrac></mrow><annotation encoding="application/x-tex">priority(t) = \frac{(use + def outside loop) + loop_num * (use + def inside loop)}{D}
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">p</span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mord mathnormal">i</span><span class="mord mathnormal">o</span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mord mathnormal">i</span><span class="mord mathnormal">t</span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="mopen">(</span><span class="mord mathnormal">t</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.113em;vertical-align:-0.686em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.427em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02778em;">D</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mopen">(</span><span class="mord mathnormal">u</span><span class="mord mathnormal">s</span><span class="mord mathnormal">e</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord mathnormal">d</span><span class="mord mathnormal">e</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mord mathnormal">o</span><span class="mord mathnormal">u</span><span class="mord mathnormal">t</span><span class="mord mathnormal">s</span><span class="mord mathnormal">i</span><span class="mord mathnormal">d</span><span class="mord mathnormal">e</span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mord mathnormal">o</span><span class="mord mathnormal">o</span><span class="mord mathnormal">p</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mord mathnormal">o</span><span class="mord mathnormal">o</span><span class="mord"><span class="mord mathnormal">p</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord mathnormal">u</span><span class="mord mathnormal">m</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mopen">(</span><span class="mord mathnormal">u</span><span class="mord mathnormal">s</span><span class="mord mathnormal">e</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord mathnormal">d</span><span class="mord mathnormal">e</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mord mathnormal">i</span><span class="mord mathnormal">n</span><span class="mord mathnormal">s</span><span class="mord mathnormal">i</span><span class="mord mathnormal">d</span><span class="mord mathnormal">e</span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mord mathnormal">o</span><span class="mord mathnormal">o</span><span class="mord mathnormal">p</span><span class="mclose">)</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span></p>
 
       <div class="tags">
           <a href="/tags/Register-Allocation/" rel="tag"><i class="ic i-tag"></i> Register Allocation</a>
@@ -190,7 +242,7 @@ NoResponse's Blog = NoResponse's Blog</title>
       <i class="ic i-calendar-check"></i>
     </span>
     <span class="text">Edited on</span>
-    <time title="Modified: 2025-06-18 14:23:33" itemprop="dateModified" datetime="2025-06-18T14:23:33+08:00">2025-06-18</time>
+    <time title="Modified: 2025-06-18 16:17:58" itemprop="dateModified" datetime="2025-06-18T16:17:58+08:00">2025-06-18</time>
   </span>
 </div>
 
@@ -245,14 +297,22 @@ NoResponse's Blog = NoResponse's Blog</title>
     <div class="item left">
       
 
-  <a href="/2025/06/18/computer-science/compile-principles/ch10/" itemprop="url" rel="prev" data-background-image="&#x2F;images&#x2F;bg31.jpg" title="Ch10">
+  <a href="/2025/06/17/computer-science/compile-principles/ch9/" itemprop="url" rel="prev" data-background-image="&#x2F;images&#x2F;bg23.png" title="Ch9">
   <span class="type">Previous Post</span>
   <span class="category"><i class="ic i-flag"></i> 编译原理</span>
-  <h3>Ch10</h3>
+  <h3>Ch9</h3>
   </a>
 
     </div>
     <div class="item right">
+      
+
+  <a href="/2025/06/18/computer-science/compile-principles/ch10/" itemprop="url" rel="next" data-background-image="&#x2F;images&#x2F;bg13.jpg" title="Ch10">
+  <span class="type">Next Post</span>
+  <span class="category"><i class="ic i-flag"></i> 编译原理</span>
+  <h3>Ch10</h3>
+  </a>
+
     </div>
 </div>
 
@@ -269,11 +329,11 @@ NoResponse's Blog = NoResponse's Blog</title>
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="Contents">
-          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#register-allocation"><span class="toc-number">1.</span> <span class="toc-text"> Register Allocation</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%BE%E7%9D%80%E8%89%B2%E7%AE%97%E6%B3%95"><span class="toc-number">1.1.</span> <span class="toc-text"> 图着色算法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%B2%E7%AA%81%E5%9B%BE"><span class="toc-number">1.1.1.</span> <span class="toc-text"> 冲突图</span></a></li></ol></li></ol></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#register-allocation"><span class="toc-number">1.</span> <span class="toc-text"> Register Allocation</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%BE%E7%9D%80%E8%89%B2%E7%AE%97%E6%B3%95"><span class="toc-number">1.1.</span> <span class="toc-text"> 图着色算法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%B2%E7%AA%81%E5%9B%BE%E6%9E%84%E5%BB%BA"><span class="toc-number">1.1.1.</span> <span class="toc-text"> 冲突图构建</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%B2%E7%AA%81%E5%9B%BE%E7%9D%80%E8%89%B2"><span class="toc-number">1.1.2.</span> <span class="toc-text"> 冲突图着色</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#kempe-%E7%AE%80%E5%8C%96"><span class="toc-number">1.1.2.1.</span> <span class="toc-text"> Kempe 简化</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#coalescing"><span class="toc-number">1.1.2.2.</span> <span class="toc-text"> Coalescing</span></a></li></ol></li></ol></li></ol></li></ol>
       </div>
       <div class="related panel pjax" data-title="Related">
         <ul>
-          <li><a href="/2025/03/21/computer-science/compile-principles/ch1/" rel="bookmark" title="Ch1">Ch1</a></li><li><a href="/2025/03/21/computer-science/compile-principles/ch5/" rel="bookmark" title="Ch5">Ch5</a></li><li><a href="/2025/03/22/computer-science/compile-principles/ch2/" rel="bookmark" title="Ch2">Ch2</a></li><li><a href="/2025/03/23/computer-science/compile-principles/ch3/" rel="bookmark" title="Ch3">Ch3</a></li><li><a href="/2025/03/29/computer-science/compile-principles/ch4/" rel="bookmark" title="Ch4">Ch4</a></li><li><a href="/2025/06/15/computer-science/compile-principles/ch6/" rel="bookmark" title="Ch6">Ch6</a></li><li><a href="/2025/06/15/computer-science/compile-principles/ch7/" rel="bookmark" title="Ch7">Ch7</a></li><li><a href="/2025/06/17/computer-science/compile-principles/ch8/" rel="bookmark" title="Ch8">Ch8</a></li><li><a href="/2025/06/17/computer-science/compile-principles/ch9/" rel="bookmark" title="Ch9">Ch9</a></li><li class="active"><a href="/2025/06/18/computer-science/compile-principles/ch11/" rel="bookmark" title="Ch11">Ch11</a></li><li><a href="/2025/06/18/computer-science/compile-principles/ch10/" rel="bookmark" title="Ch10">Ch10</a></li>
+          <li><a href="/2025/03/21/computer-science/compile-principles/ch1/" rel="bookmark" title="Ch1">Ch1</a></li><li><a href="/2025/03/21/computer-science/compile-principles/ch5/" rel="bookmark" title="Ch5">Ch5</a></li><li><a href="/2025/03/22/computer-science/compile-principles/ch2/" rel="bookmark" title="Ch2">Ch2</a></li><li><a href="/2025/03/23/computer-science/compile-principles/ch3/" rel="bookmark" title="Ch3">Ch3</a></li><li><a href="/2025/03/29/computer-science/compile-principles/ch4/" rel="bookmark" title="Ch4">Ch4</a></li><li><a href="/2025/06/15/computer-science/compile-principles/ch6/" rel="bookmark" title="Ch6">Ch6</a></li><li><a href="/2025/06/15/computer-science/compile-principles/ch7/" rel="bookmark" title="Ch7">Ch7</a></li><li><a href="/2025/06/17/computer-science/compile-principles/ch9/" rel="bookmark" title="Ch9">Ch9</a></li><li><a href="/2025/06/17/computer-science/compile-principles/ch8/" rel="bookmark" title="Ch8">Ch8</a></li><li><a href="/2025/06/18/computer-science/compile-principles/ch10/" rel="bookmark" title="Ch10">Ch10</a></li><li class="active"><a href="/2025/06/18/computer-science/compile-principles/ch11/" rel="bookmark" title="Ch11">Ch11</a></li>
         </ul>
       </div>
       <div class="overview panel" data-title="Overview">
@@ -326,10 +386,12 @@ NoResponse's Blog = NoResponse's Blog</title>
 
   <ul id="quick">
     <li class="prev pjax">
+        <a href="/2025/06/17/computer-science/compile-principles/ch9/" rel="prev" title="Previous Post"><i class="ic i-chevron-left"></i></a>
     </li>
     <li class="up"><i class="ic i-arrow-up"></i></li>
     <li class="down"><i class="ic i-arrow-down"></i></li>
     <li class="next pjax">
+        <a href="/2025/06/18/computer-science/compile-principles/ch10/" rel="next" title="Next Post"><i class="ic i-chevron-right"></i></a>
     </li>
     <li class="percent"></li>
   </ul>
@@ -356,75 +418,29 @@ NoResponse's Blog = NoResponse's Blog</title>
 <a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
 </div>
 
-    <span><a href="/2025/03/21/computer-science/compile-principles/ch1/" title="Ch1">Ch1</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
-</div>
-
-    <span><a href="/2025/03/29/computer-science/compile-principles/ch4/" title="Ch4">Ch4</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/computer-network/" title="In 计算机网络">计算机网络</a>
-</div>
-
-    <span><a href="/2025/05/13/computer-science/computer-network/ch1/" title="Ch1">Ch1</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/AI/" title="In 人工智能">人工智能</a>
-</div>
-
-    <span><a href="/2025/06/12/AI/week6-7/" title="Week6-7">Week6-7</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/AI/" title="In 人工智能">人工智能</a>
-</div>
-
-    <span><a href="/2025/05/20/AI/week1/" title="Week1">Week1</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/computer-organization/" title="In 计算机组成">计算机组成</a>
-</div>
-
-    <span><a href="/2025/05/14/computer-science/computer-organization/ch2/" title="Ch2">Ch2</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
-</div>
-
     <span><a href="/2025/06/15/computer-science/compile-principles/ch6/" title="Ch6">Ch6</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
+</div>
+
+    <span><a href="/2025/06/17/computer-science/compile-principles/ch8/" title="Ch8">Ch8</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/AI/" title="In 人工智能">人工智能</a>
+</div>
+
+    <span><a href="/2025/06/16/AI/week12-13/" title="Week12-13">Week12-13</a></span>
   </li>
 
       
@@ -453,12 +469,58 @@ NoResponse's Blog = NoResponse's Blog</title>
   <li class="item">
     
 <div class="breadcrumb">
+<a href="/categories/AI/" title="In 人工智能">人工智能</a>
+</div>
+
+    <span><a href="/2025/06/16/AI/week14-15/" title="Week14-15">Week14-15</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
 <a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
 <i class="ic i-angle-right"></i>
 <a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
 </div>
 
-    <span><a href="/2025/06/18/computer-science/compile-principles/ch10/" title="Ch10">Ch10</a></span>
+    <span><a href="/2025/03/29/computer-science/compile-principles/ch4/" title="Ch4">Ch4</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
+</div>
+
+    <span><a href="/2025/03/21/computer-science/compile-principles/ch5/" title="Ch5">Ch5</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
+</div>
+
+    <span><a href="/2025/03/23/computer-science/compile-principles/ch3/" title="Ch3">Ch3</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
+</div>
+
+    <span><a href="/2025/03/22/computer-science/compile-principles/ch2/" title="Ch2">Ch2</a></span>
   </li>
 
   </ul>
@@ -483,13 +545,13 @@ NoResponse's Blog = NoResponse's Blog</title>
     <span class="post-meta-item-icon">
       <i class="ic i-chart-area"></i>
     </span>
-    <span title="Symbols count total">44k words</span>
+    <span title="Symbols count total">46k words</span>
 
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="ic i-coffee"></i>
     </span>
-    <span title="Reading time total">40 mins.</span>
+    <span title="Reading time total">42 mins.</span>
   </div>
   <div class="powered-by">
     Powered by <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
