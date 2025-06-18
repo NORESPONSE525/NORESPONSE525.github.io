@@ -76,7 +76,7 @@ NoResponse's Blog = NoResponse's Blog</title>
       <i class="ic i-pen"></i>
     </span>
     <span class="text">Symbols count in article</span>
-    <span>191</span>
+    <span>194</span>
     <span class="text">words</span>
   </span>
   <span class="item" title="Reading time">
@@ -116,7 +116,7 @@ NoResponse's Blog = NoResponse's Blog</title>
 
       </div>
       <div id="imgs" class="pjax">
-          <img src="/images/bg27.jpg">
+          <img src="/images/bg11.jpg">
       </div>
     </header>
     <div id="waves">
@@ -164,14 +164,19 @@ NoResponse's Blog = NoResponse's Blog</title>
   <div class="body md" itemprop="articleBody">
     
 
-    <h1 id="Register-Allocation"><a href="#Register-Allocation" class="headerlink" title="Register Allocation"></a>Register Allocation</h1><p>目标：</p>
+    <h1 id="register-allocation"><a class="markdownIt-Anchor" href="#register-allocation">#</a> Register Allocation</h1>
+<p>目标：</p>
 <ul>
 <li>Map temporaries to registers</li>
 <li>Preserve program semantics</li>
 <li>Optimize performance</li>
 </ul>
-<h2 id="图着色算法"><a href="#图着色算法" class="headerlink" title="图着色算法"></a>图着色算法</h2><p>冲突图是一个无向图，每个节点表示一个临时变量，如果两个节点同时live，则在它们之间连接一条无向边<br>如果两个变量之间没有边连接，则这两个变量可以共享同一个寄存器<br>冲突信息可以用矩阵或者图来表示</p>
-<h3 id="冲突图"><a href="#冲突图" class="headerlink" title="冲突图"></a>冲突图</h3>
+<h2 id="图着色算法"><a class="markdownIt-Anchor" href="#图着色算法">#</a> 图着色算法</h2>
+<p>冲突图是一个无向图，每个节点表示一个临时变量，如果两个节点同时 live，则在它们之间连接一条无向边<br>
+如果两个变量之间没有边连接，则这两个变量可以共享同一个寄存器<br>
+冲突信息可以用矩阵或者图来表示</p>
+<h3 id="冲突图"><a class="markdownIt-Anchor" href="#冲突图">#</a> 冲突图</h3>
+
       <div class="tags">
           <a href="/tags/Register-Allocation/" rel="tag"><i class="ic i-tag"></i> Register Allocation</a>
       </div>
@@ -240,22 +245,14 @@ NoResponse's Blog = NoResponse's Blog</title>
     <div class="item left">
       
 
-  <a href="/2025/06/17/computer-science/compile-principles/ch9/" itemprop="url" rel="prev" data-background-image="&#x2F;images&#x2F;bg30.jpg" title="Ch9">
+  <a href="/2025/06/18/computer-science/compile-principles/ch10/" itemprop="url" rel="prev" data-background-image="&#x2F;images&#x2F;bg31.jpg" title="Ch10">
   <span class="type">Previous Post</span>
-  <span class="category"><i class="ic i-flag"></i> 编译原理</span>
-  <h3>Ch9</h3>
-  </a>
-
-    </div>
-    <div class="item right">
-      
-
-  <a href="/2025/06/18/computer-science/compile-principles/ch10/" itemprop="url" rel="next" data-background-image="&#x2F;images&#x2F;bg27.jpg" title="Ch10">
-  <span class="type">Next Post</span>
   <span class="category"><i class="ic i-flag"></i> 编译原理</span>
   <h3>Ch10</h3>
   </a>
 
+    </div>
+    <div class="item right">
     </div>
 </div>
 
@@ -272,11 +269,11 @@ NoResponse's Blog = NoResponse's Blog</title>
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="Contents">
-          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Register-Allocation"><span class="toc-number">1.</span> <span class="toc-text">Register Allocation</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%BE%E7%9D%80%E8%89%B2%E7%AE%97%E6%B3%95"><span class="toc-number">1.1.</span> <span class="toc-text">图着色算法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%B2%E7%AA%81%E5%9B%BE"><span class="toc-number">1.1.1.</span> <span class="toc-text">冲突图</span></a></li></ol></li></ol></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#register-allocation"><span class="toc-number">1.</span> <span class="toc-text"> Register Allocation</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%BE%E7%9D%80%E8%89%B2%E7%AE%97%E6%B3%95"><span class="toc-number">1.1.</span> <span class="toc-text"> 图着色算法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%B2%E7%AA%81%E5%9B%BE"><span class="toc-number">1.1.1.</span> <span class="toc-text"> 冲突图</span></a></li></ol></li></ol></li></ol>
       </div>
       <div class="related panel pjax" data-title="Related">
         <ul>
-          <li><a href="/2025/03/21/computer-science/compile-principles/ch1/" rel="bookmark" title="Ch1">Ch1</a></li><li><a href="/2025/03/21/computer-science/compile-principles/ch5/" rel="bookmark" title="Ch5">Ch5</a></li><li><a href="/2025/03/22/computer-science/compile-principles/ch2/" rel="bookmark" title="Ch2">Ch2</a></li><li><a href="/2025/03/23/computer-science/compile-principles/ch3/" rel="bookmark" title="Ch3">Ch3</a></li><li><a href="/2025/03/29/computer-science/compile-principles/ch4/" rel="bookmark" title="Ch4">Ch4</a></li><li><a href="/2025/06/15/computer-science/compile-principles/ch7/" rel="bookmark" title="Ch7">Ch7</a></li><li><a href="/2025/06/15/computer-science/compile-principles/ch6/" rel="bookmark" title="Ch6">Ch6</a></li><li><a href="/2025/06/17/computer-science/compile-principles/ch9/" rel="bookmark" title="Ch9">Ch9</a></li><li><a href="/2025/06/17/computer-science/compile-principles/ch8/" rel="bookmark" title="Ch8">Ch8</a></li><li><a href="/2025/06/18/computer-science/compile-principles/ch10/" rel="bookmark" title="Ch10">Ch10</a></li><li class="active"><a href="/2025/06/18/computer-science/compile-principles/ch11/" rel="bookmark" title="Ch11">Ch11</a></li>
+          <li><a href="/2025/03/21/computer-science/compile-principles/ch1/" rel="bookmark" title="Ch1">Ch1</a></li><li><a href="/2025/03/21/computer-science/compile-principles/ch5/" rel="bookmark" title="Ch5">Ch5</a></li><li><a href="/2025/03/22/computer-science/compile-principles/ch2/" rel="bookmark" title="Ch2">Ch2</a></li><li><a href="/2025/03/23/computer-science/compile-principles/ch3/" rel="bookmark" title="Ch3">Ch3</a></li><li><a href="/2025/03/29/computer-science/compile-principles/ch4/" rel="bookmark" title="Ch4">Ch4</a></li><li><a href="/2025/06/15/computer-science/compile-principles/ch6/" rel="bookmark" title="Ch6">Ch6</a></li><li><a href="/2025/06/15/computer-science/compile-principles/ch7/" rel="bookmark" title="Ch7">Ch7</a></li><li><a href="/2025/06/17/computer-science/compile-principles/ch8/" rel="bookmark" title="Ch8">Ch8</a></li><li><a href="/2025/06/17/computer-science/compile-principles/ch9/" rel="bookmark" title="Ch9">Ch9</a></li><li class="active"><a href="/2025/06/18/computer-science/compile-principles/ch11/" rel="bookmark" title="Ch11">Ch11</a></li><li><a href="/2025/06/18/computer-science/compile-principles/ch10/" rel="bookmark" title="Ch10">Ch10</a></li>
         </ul>
       </div>
       <div class="overview panel" data-title="Overview">
@@ -329,12 +326,10 @@ NoResponse's Blog = NoResponse's Blog</title>
 
   <ul id="quick">
     <li class="prev pjax">
-        <a href="/2025/06/17/computer-science/compile-principles/ch9/" rel="prev" title="Previous Post"><i class="ic i-chevron-left"></i></a>
     </li>
     <li class="up"><i class="ic i-arrow-up"></i></li>
     <li class="down"><i class="ic i-arrow-down"></i></li>
     <li class="next pjax">
-        <a href="/2025/06/18/computer-science/compile-principles/ch10/" rel="next" title="Next Post"><i class="ic i-chevron-right"></i></a>
     </li>
     <li class="percent"></li>
   </ul>
@@ -352,72 +347,6 @@ NoResponse's Blog = NoResponse's Blog</title>
 <div class="rpost pjax">
   <h2>Random Posts</h2>
   <ul>
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
-</div>
-
-    <span><a href="/2025/06/17/computer-science/compile-principles/ch8/" title="Ch8">Ch8</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/AI/" title="In 人工智能">人工智能</a>
-</div>
-
-    <span><a href="/2025/06/16/AI/week12-13/" title="Week12-13">Week12-13</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/AI/" title="In 人工智能">人工智能</a>
-</div>
-
-    <span><a href="/2025/06/11/AI/week4-5/" title="Week4-5">Week4-5</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/AI/" title="In 人工智能">人工智能</a>
-</div>
-
-    <span><a href="/2025/05/20/AI/week2-3/" title="Week2-3">Week2-3</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
-</div>
-
-    <span><a href="/2025/03/21/computer-science/compile-principles/ch5/" title="Ch5">Ch5</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
-</div>
-
-    <span><a href="/2025/06/17/computer-science/compile-principles/ch9/" title="Ch9">Ch9</a></span>
-  </li>
-
       
   <li class="item">
     
@@ -446,6 +375,28 @@ NoResponse's Blog = NoResponse's Blog</title>
   <li class="item">
     
 <div class="breadcrumb">
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/computer-network/" title="In 计算机网络">计算机网络</a>
+</div>
+
+    <span><a href="/2025/05/13/computer-science/computer-network/ch1/" title="Ch1">Ch1</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/AI/" title="In 人工智能">人工智能</a>
+</div>
+
+    <span><a href="/2025/06/12/AI/week6-7/" title="Week6-7">Week6-7</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
 <a href="/categories/AI/" title="In 人工智能">人工智能</a>
 </div>
 
@@ -462,6 +413,52 @@ NoResponse's Blog = NoResponse's Blog</title>
 </div>
 
     <span><a href="/2025/05/14/computer-science/computer-organization/ch2/" title="Ch2">Ch2</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
+</div>
+
+    <span><a href="/2025/06/15/computer-science/compile-principles/ch6/" title="Ch6">Ch6</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/computer-organization/" title="In 计算机组成">计算机组成</a>
+</div>
+
+    <span><a href="/2025/05/13/computer-science/computer-organization/ch1/" title="Ch1">Ch1</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/AI/" title="In 人工智能">人工智能</a>
+</div>
+
+    <span><a href="/2025/06/15/AI/week8-9/" title="Week8-9">Week8-9</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
+</div>
+
+    <span><a href="/2025/06/18/computer-science/compile-principles/ch10/" title="Ch10">Ch10</a></span>
   </li>
 
   </ul>
@@ -486,13 +483,13 @@ NoResponse's Blog = NoResponse's Blog</title>
     <span class="post-meta-item-icon">
       <i class="ic i-chart-area"></i>
     </span>
-    <span title="Symbols count total">39k words</span>
+    <span title="Symbols count total">44k words</span>
 
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="ic i-coffee"></i>
     </span>
-    <span title="Reading time total">35 mins.</span>
+    <span title="Reading time total">40 mins.</span>
   </div>
   <div class="powered-by">
     Powered by <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>

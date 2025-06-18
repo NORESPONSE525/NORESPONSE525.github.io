@@ -5,32 +5,37 @@
     <link href="http://example.com" />
     <updated>2025-06-17T16:00:00.000Z</updated>
     <category term="人工智能" />
-    <category term="编译原理" />
-    <category term="Liveness Analysis" />
-    <category term="抽象语法" />
-    <category term="Register Allocation" />
-    <category term="词法分析" />
-    <category term="语法分析" />
-    <category term="中间代码" />
-    <category term="活动记录" />
-    <category term="指令选择" />
-    <category term="语义分析" />
-    <category term="Basic Blocks and Traces" />
     <category term="计算机网络" />
-    <category term="数据的表示与运算" />
+    <category term="编译原理" />
+    <category term="词法分析" />
+    <category term="Register Allocation" />
+    <category term="语法分析" />
+    <category term="抽象语法" />
+    <category term="语义分析" />
+    <category term="活动记录" />
+    <category term="Liveness Analysis" />
+    <category term="中间代码" />
+    <category term="Basic Blocks and Traces" />
+    <category term="指令选择" />
     <category term="计算机组成" />
+    <category term="数据的表示与运算" />
     <entry>
         <id>http://example.com/2025/06/18/computer-science/compile-principles/ch11/</id>
         <title>Ch11</title>
         <link rel="alternate" href="http://example.com/2025/06/18/computer-science/compile-principles/ch11/"/>
-        <content type="html">&lt;h1 id=&#34;Register-Allocation&#34;&gt;&lt;a href=&#34;#Register-Allocation&#34; class=&#34;headerlink&#34; title=&#34;Register Allocation&#34;&gt;&lt;/a&gt;Register Allocation&lt;/h1&gt;&lt;p&gt;目标：&lt;/p&gt;
+        <content type="html">&lt;h1 id=&#34;register-allocation&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#register-allocation&#34;&gt;#&lt;/a&gt; Register Allocation&lt;/h1&gt;
+&lt;p&gt;目标：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Map temporaries to registers&lt;/li&gt;
 &lt;li&gt;Preserve program semantics&lt;/li&gt;
 &lt;li&gt;Optimize performance&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;图着色算法&#34;&gt;&lt;a href=&#34;#图着色算法&#34; class=&#34;headerlink&#34; title=&#34;图着色算法&#34;&gt;&lt;/a&gt;图着色算法&lt;/h2&gt;&lt;p&gt;冲突图是一个无向图，每个节点表示一个临时变量，如果两个节点同时live，则在它们之间连接一条无向边&lt;br&gt;如果两个变量之间没有边连接，则这两个变量可以共享同一个寄存器&lt;br&gt;冲突信息可以用矩阵或者图来表示&lt;/p&gt;
-&lt;h3 id=&#34;冲突图&#34;&gt;&lt;a href=&#34;#冲突图&#34; class=&#34;headerlink&#34; title=&#34;冲突图&#34;&gt;&lt;/a&gt;冲突图&lt;/h3&gt;</content>
+&lt;h2 id=&#34;图着色算法&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#图着色算法&#34;&gt;#&lt;/a&gt; 图着色算法&lt;/h2&gt;
+&lt;p&gt;冲突图是一个无向图，每个节点表示一个临时变量，如果两个节点同时 live，则在它们之间连接一条无向边&lt;br&gt;
+如果两个变量之间没有边连接，则这两个变量可以共享同一个寄存器&lt;br&gt;
+冲突信息可以用矩阵或者图来表示&lt;/p&gt;
+&lt;h3 id=&#34;冲突图&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#冲突图&#34;&gt;#&lt;/a&gt; 冲突图&lt;/h3&gt;
+</content>
         <category term="Register Allocation" />
         <updated>2025-06-17T16:00:00.000Z</updated>
     </entry>

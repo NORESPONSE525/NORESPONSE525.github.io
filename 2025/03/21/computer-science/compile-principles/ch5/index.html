@@ -76,7 +76,7 @@ NoResponse's Blog = NoResponse's Blog</title>
       <i class="ic i-pen"></i>
     </span>
     <span class="text">Symbols count in article</span>
-    <span>2.1k</span>
+    <span>2k</span>
     <span class="text">words</span>
   </span>
   <span class="item" title="Reading time">
@@ -116,7 +116,7 @@ NoResponse's Blog = NoResponse's Blog</title>
 
       </div>
       <div id="imgs" class="pjax">
-          <img src="/images/bg17.jpg">
+          <img src="/images/bg21.jpg">
       </div>
     </header>
     <div id="waves">
@@ -164,92 +164,126 @@ NoResponse's Blog = NoResponse's Blog</title>
   <div class="body md" itemprop="articleBody">
     
 
-    <h1 id="语义分析"><a href="#语义分析" class="headerlink" title="语义分析"></a>语义分析</h1><blockquote>
+    <h1 id="语义分析"><a class="markdownIt-Anchor" href="#语义分析">#</a> 语义分析</h1>
+<blockquote>
 <p>绑定，类型检查</p>
 </blockquote>
-<h2 id="symbol-table"><a href="#symbol-table" class="headerlink" title="symbol table"></a>symbol table</h2><ul>
-<li><p>Imperative style: 命令式风格</p>
+<h2 id="symbol-table"><a class="markdownIt-Anchor" href="#symbol-table">#</a> symbol table</h2>
 <ul>
-<li>Modify $\sigma_1$ until it becomes $\sigma_2$. </li>
-<li>While $\sigma_2$ exists, we cannot look things up in $\sigma_1$. </li>
-<li>When done with $\sigma_2$, can undo the modification to get $\sigma_1$ back again.<br>+++info 方法：<br>Hashing<br>插入：找到哈希值然后插入链表的表头<br>查找：找到哈希值然后遍历链表<br>pop: 找到哈希值然后把链表表头删掉  table[hash(key)] &#x3D; table[hash(key)].next<br>+++</li>
-</ul>
-</li>
-<li><p>Functional style: 函数式风格</p>
+<li>Imperative style: 命令式风格
 <ul>
-<li>To keep $\sigma_1$ in pristine condition while creating create $\sigma_2$ and $\sigma_3$<br>+++info 方法：<br>如果依旧用哈希，每次要复制一遍哈希表，开销太大了，不现实<br><img data-src="/f2.jpg"><br>所以用persistent BST<br><img data-src="/f1.jpg"><br>先遍历二叉搜索树找到要插入的位置，然后对于插入节点把它从根节点到它全都复制一遍然后插入<br>+++</li>
+<li>Modify <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>σ</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">\sigma_1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">σ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> until it becomes <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>σ</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">\sigma_2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">σ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>.</li>
+<li>While <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>σ</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">\sigma_2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">σ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> exists, we cannot look things up in <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>σ</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">\sigma_1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">σ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>.</li>
+<li>When done with <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>σ</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">\sigma_2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">σ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>, can undo the modification to get <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>σ</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">\sigma_1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">σ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> back again.</li>
 </ul>
 </li>
 </ul>
-<h2 id="Tiger编译器中的符号"><a href="#Tiger编译器中的符号" class="headerlink" title="Tiger编译器中的符号"></a>Tiger编译器中的符号</h2><p>对链表进行lookup的时候每一次都要进行string compare，开销是很大的。所以使用新的数据结构将符号对象关联到一个整数上，因此对于任意给定字符串的所有不同出现，都会被转换成同一个符号对象。<br>Symbol的实现：通过hash函数将字符串映射到一个symbol对象上<br>SymbolTable的实现：beginScope()和endScope()的实现</p>
+<details class="info"><summary>方法：</summary><div>
+<p>Hashing<br>
+ 插入：找到哈希值然后插入链表的表头<br>
+查找：找到哈希值然后遍历链表<br>
+ pop: 找到哈希值然后把链表表头删掉  table [hash (key)] = table [hash (key)].next</p>
+</div></details>
 <ul>
-<li>beginScope()：添加一个marksym</li>
-<li>endScope()：从符号表中不断pop直到marksym</li>
-<li>引入一个 辅助栈(Auxiliary stack) 来维护<ul>
-<li>符号入栈时，会将binding联动地插入对应bucket的链表头</li>
-<li>弹出栈顶符号时，对应bucket的链表头也会联动地被移除</li>
+<li>Functional style: 函数式风格
+<ul>
+<li>To keep <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>σ</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">\sigma_1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">σ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> in pristine condition while creating create <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>σ</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">\sigma_2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">σ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> and <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>σ</mi><mn>3</mn></msub></mrow><annotation encoding="application/x-tex">\sigma_3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">σ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">3</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></li>
+</ul>
+</li>
+</ul>
+<details class="info"><summary>方法：</summary><div>
+<p>如果依旧用哈希，每次要复制一遍哈希表，开销太大了，不现实<br>
+<img data-src="f2.jpg" alt><br>
+所以用 persistent BST<br>
+<img data-src="f1.jpg" alt><br>
+ 先遍历二叉搜索树找到要插入的位置，然后对于插入节点把它从根节点到它全都复制一遍然后插入</p>
+</div></details>
+<h2 id="tiger编译器中的符号"><a class="markdownIt-Anchor" href="#tiger编译器中的符号">#</a> Tiger 编译器中的符号</h2>
+<p>对链表进行 lookup 的时候每一次都要进行 string compare，开销是很大的。所以使用新的数据结构将符号对象关联到一个整数上，因此对于任意给定字符串的所有不同出现，都会被转换成同一个符号对象。<br>
+Symbol 的实现：通过 hash 函数将字符串映射到一个 symbol 对象上<br>
+ SymbolTable 的实现：beginScope () 和 endScope () 的实现</p>
+<ul>
+<li>beginScope ()：添加一个 marksym</li>
+<li>endScope ()：从符号表中不断 pop 直到 marksym</li>
+<li>引入一个 辅助栈 (Auxiliary stack) 来维护
+<ul>
+<li>符号入栈时，会将 binding 联动地插入对应 bucket 的链表头</li>
+<li>弹出栈顶符号时，对应 bucket 的链表头也会联动地被移除</li>
 <li>beginScope: 压入一个特殊标记到辅助栈中</li>
 <li>endScope: 一直弹出符号直到弹出了一个特殊标记</li>
 </ul>
 </li>
 </ul>
-<h2 id="类型检查"><a href="#类型检查" class="headerlink" title="类型检查"></a>类型检查</h2><h3 id="哪些类型表达式是合法-非法的"><a href="#哪些类型表达式是合法-非法的" class="headerlink" title="哪些类型表达式是合法&#x2F;非法的"></a>哪些类型表达式是合法&#x2F;非法的</h3><p>Tiger的类型系统：</p>
+<h2 id="类型检查"><a class="markdownIt-Anchor" href="#类型检查">#</a> 类型检查</h2>
+<h3 id="哪些类型表达式是合法非法的"><a class="markdownIt-Anchor" href="#哪些类型表达式是合法非法的">#</a> 哪些类型表达式是合法 / 非法的</h3>
+<p>Tiger 的类型系统：</p>
 <ul>
-<li>两种primitive type: int, string</li>
-<li>两种constructed type: records, arrays</li>
+<li>两种 primitive type: int, string</li>
+<li>两种 constructed type: records, arrays</li>
 </ul>
 <p>文法</p>
 <ol>
-<li>typec → type type-id &#x3D; ty<ul>
-<li>这表示定义一个类型。<code>typec</code> 是一个类型定义的开始，它由关键字 <code>type</code>、一个类型标识符 <code>type-id</code> 和一个等号 <code>=</code> 后跟类型定义 <code>ty</code> 组成。</li>
+<li>typec → type type-id = ty
+<ul>
+<li>这表示定义一个类型。 <code>typec</code>  是一个类型定义的开始，它由关键字  <code>type</code> 、一个类型标识符  <code>type-id</code>  和一个等号  <code>=</code>  后跟类型定义  <code>ty</code>  组成。</li>
 </ul>
 </li>
-<li>ty → type-id<ul>
-<li>这表示类型 <code>ty</code> 可以直接是一个已定义的类型标识符 <code>type-id</code>。</li>
+<li>ty → type-id
+<ul>
+<li>这表示类型  <code>ty</code>  可以直接是一个已定义的类型标识符  <code>type-id</code> 。</li>
 </ul>
 </li>
-<li>ty → ‘{’ tyfields ‘}’<ul>
-<li>这表示类型 <code>ty</code> 可以是一个记录（record），由花括号 <code>&#123;&#125;</code> 包围的一系列字段 <code>tyfields</code> 定义。</li>
+<li>ty → ‘{’ tyfields ‘}’
+<ul>
+<li>这表示类型  <code>ty</code>  可以是一个记录（record），由花括号  <code>&#123;&#125;</code>  包围的一系列字段  <code>tyfields</code>  定义。</li>
 </ul>
 </li>
-<li>ty → array of type-id<ul>
-<li>这表示类型 <code>ty</code> 可以是一个数组，由关键字 <code>array of</code> 后跟一个类型标识符 <code>type-id</code> 定义。</li>
+<li>ty → array of type-id
+<ul>
+<li>这表示类型  <code>ty</code>  可以是一个数组，由关键字  <code>array of</code>  后跟一个类型标识符  <code>type-id</code>  定义。</li>
 </ul>
 </li>
-<li>tyfields → ε<ul>
-<li>这表示字段列表 <code>tyfields</code> 可以为空（ε 表示空串）。</li>
+<li>tyfields → ε
+<ul>
+<li>这表示字段列表  <code>tyfields</code>  可以为空（ε 表示空串）。</li>
 </ul>
 </li>
-<li>tyfields → id: type-id {, id:type-id}<ul>
-<li>这表示字段列表 <code>tyfields</code> 由一个或多个字段组成，每个字段由一个标识符 <code>id</code> 和冒号 <code>:</code> 后跟一个类型标识符 <code>type-id</code> 定义，多个字段之间用逗号 <code>,</code> 分隔。</li>
+<li , id:type-id>tyfields → id: type-id
+<ul>
+<li>这表示字段列表  <code>tyfields</code>  由一个或多个字段组成，每个字段由一个标识符  <code>id</code>  和冒号  <code>:</code>  后跟一个类型标识符  <code>type-id</code>  定义，多个字段之间用逗号  <code>,</code>  分隔。</li>
 </ul>
 </li>
 </ol>
 <p>示例</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">let type a = &#123;x: int; y: int&#125;</span><br><span class="line">    type b = a</span><br><span class="line">    var i : a := ...</span><br><span class="line">    var j : b := ...</span><br><span class="line">in i := j</span><br><span class="line">end</span><br></pre></td></tr></table></figure>
-
-
-<h3 id="类型等价"><a href="#类型等价" class="headerlink" title="类型等价"></a>类型等价</h3><ul>
+<h3 id="类型等价"><a class="markdownIt-Anchor" href="#类型等价">#</a> 类型等价</h3>
+<ul>
 <li>Name equivalence (NE): 必须声明是同一个类型才是同一类型</li>
 <li>Structure equivalence (SE): 如果两个类型的结构完全相同（即它们由相同的构造器以相同的顺序组成），那么它们就被认为是等价的，即使它们的名字不同</li>
 </ul>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">type A = &#123;x: int; y: int&#125;</span><br><span class="line">type B = &#123;x: int; y: int&#125; </span><br></pre></td></tr></table></figure>
-<p>Tiger用的是NE<br>在Tiger编程语言中，存在两个独立的命名空间：一个用于类型（Types），另一个用于函数和变量（Functions and Variables）。所以类型和函数&#x2F;变量可以存在相同的名字，但是函数和变量不能存在相同的名字。<br>所以需要两个env</p>
+<p>Tiger 用的是 NE<br>
+ 在 Tiger 编程语言中，存在两个独立的命名空间：一个用于类型（Types），另一个用于函数和变量（Functions and Variables）。所以类型和函数 / 变量可以存在相同的名字，但是函数和变量不能存在相同的名字。<br>
+所以需要两个 env</p>
 <ul>
-<li>Type env<ul>
+<li>Type env
+<ul>
 <li>symbol -&gt; Ty_ty</li>
 </ul>
 </li>
-<li>Value env<ul>
+<li>Value env
+<ul>
 <li>对于变量，symbol -&gt; Ty_ty</li>
-<li>对于函数，symbol -&gt; struct{Ty_tyList formals, Ty_ty results}</li>
+<li ty_tylist formals, ty_ty results>对于函数，symbol -&gt; struct</li>
 </ul>
 </li>
 </ul>
-<h3 id="类型检查的rule"><a href="#类型检查的rule" class="headerlink" title="类型检查的rule"></a>类型检查的rule</h3><p>类型检查分为两部分:</p>
+<h3 id="类型检查的rule"><a class="markdownIt-Anchor" href="#类型检查的rule">#</a> 类型检查的 rule</h3>
+<p>类型检查分为两部分:</p>
 <ul>
-<li>Type-checking expressions: 对于每个表达式，根据当前的Type和Value环境来确定其类型，并检查是否符合语言的类型规则</li>
-<li>Type-checking declarations: 在Tiger语言中声明只可能在let语句中出现<br>好像就是讲了transExp, transDec, transVar，AST递归检查每个节点的类型然后一层一层往上传再检查</li>
+<li>Type-checking expressions: 对于每个表达式，根据当前的 Type 和 Value 环境来确定其类型，并检查是否符合语言的类型规则</li>
+<li>Type-checking declarations: 在 Tiger 语言中声明只可能在 let 语句中出现<br>
+好像就是讲了 transExp, transDec, transVar，AST 递归检查每个节点的类型然后一层一层往上传再检查</li>
 </ul>
 
       <div class="tags">
@@ -322,7 +356,7 @@ NoResponse's Blog = NoResponse's Blog</title>
     <div class="item right">
       
 
-  <a href="/2025/03/21/computer-science/compile-principles/ch1/" itemprop="url" rel="next" data-background-image="&#x2F;images&#x2F;bg36.jpg" title="Ch1">
+  <a href="/2025/03/21/computer-science/compile-principles/ch1/" itemprop="url" rel="next" data-background-image="&#x2F;images&#x2F;bg19.jpg" title="Ch1">
   <span class="type">Next Post</span>
   <span class="category"><i class="ic i-flag"></i> 编译原理</span>
   <h3>Ch1</h3>
@@ -344,11 +378,11 @@ NoResponse's Blog = NoResponse's Blog</title>
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="Contents">
-          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%AF%AD%E4%B9%89%E5%88%86%E6%9E%90"><span class="toc-number">1.</span> <span class="toc-text">语义分析</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#symbol-table"><span class="toc-number">1.1.</span> <span class="toc-text">symbol table</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Tiger%E7%BC%96%E8%AF%91%E5%99%A8%E4%B8%AD%E7%9A%84%E7%AC%A6%E5%8F%B7"><span class="toc-number">1.2.</span> <span class="toc-text">Tiger编译器中的符号</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%B1%BB%E5%9E%8B%E6%A3%80%E6%9F%A5"><span class="toc-number">1.3.</span> <span class="toc-text">类型检查</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%93%AA%E4%BA%9B%E7%B1%BB%E5%9E%8B%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%98%AF%E5%90%88%E6%B3%95-%E9%9D%9E%E6%B3%95%E7%9A%84"><span class="toc-number">1.3.1.</span> <span class="toc-text">哪些类型表达式是合法&#x2F;非法的</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B1%BB%E5%9E%8B%E7%AD%89%E4%BB%B7"><span class="toc-number">1.3.2.</span> <span class="toc-text">类型等价</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B1%BB%E5%9E%8B%E6%A3%80%E6%9F%A5%E7%9A%84rule"><span class="toc-number">1.3.3.</span> <span class="toc-text">类型检查的rule</span></a></li></ol></li></ol></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%AF%AD%E4%B9%89%E5%88%86%E6%9E%90"><span class="toc-number">1.</span> <span class="toc-text"> 语义分析</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#symbol-table"><span class="toc-number">1.1.</span> <span class="toc-text"> symbol table</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#tiger%E7%BC%96%E8%AF%91%E5%99%A8%E4%B8%AD%E7%9A%84%E7%AC%A6%E5%8F%B7"><span class="toc-number">1.2.</span> <span class="toc-text"> Tiger 编译器中的符号</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%B1%BB%E5%9E%8B%E6%A3%80%E6%9F%A5"><span class="toc-number">1.3.</span> <span class="toc-text"> 类型检查</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%93%AA%E4%BA%9B%E7%B1%BB%E5%9E%8B%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%98%AF%E5%90%88%E6%B3%95%E9%9D%9E%E6%B3%95%E7%9A%84"><span class="toc-number">1.3.1.</span> <span class="toc-text"> 哪些类型表达式是合法 &#x2F; 非法的</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B1%BB%E5%9E%8B%E7%AD%89%E4%BB%B7"><span class="toc-number">1.3.2.</span> <span class="toc-text"> 类型等价</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B1%BB%E5%9E%8B%E6%A3%80%E6%9F%A5%E7%9A%84rule"><span class="toc-number">1.3.3.</span> <span class="toc-text"> 类型检查的 rule</span></a></li></ol></li></ol></li></ol>
       </div>
       <div class="related panel pjax" data-title="Related">
         <ul>
-          <li><a href="/2025/03/21/computer-science/compile-principles/ch1/" rel="bookmark" title="Ch1">Ch1</a></li><li class="active"><a href="/2025/03/21/computer-science/compile-principles/ch5/" rel="bookmark" title="Ch5">Ch5</a></li><li><a href="/2025/03/22/computer-science/compile-principles/ch2/" rel="bookmark" title="Ch2">Ch2</a></li><li><a href="/2025/03/23/computer-science/compile-principles/ch3/" rel="bookmark" title="Ch3">Ch3</a></li><li><a href="/2025/03/29/computer-science/compile-principles/ch4/" rel="bookmark" title="Ch4">Ch4</a></li><li><a href="/2025/06/15/computer-science/compile-principles/ch7/" rel="bookmark" title="Ch7">Ch7</a></li><li><a href="/2025/06/15/computer-science/compile-principles/ch6/" rel="bookmark" title="Ch6">Ch6</a></li><li><a href="/2025/06/17/computer-science/compile-principles/ch9/" rel="bookmark" title="Ch9">Ch9</a></li><li><a href="/2025/06/17/computer-science/compile-principles/ch8/" rel="bookmark" title="Ch8">Ch8</a></li><li><a href="/2025/06/18/computer-science/compile-principles/ch10/" rel="bookmark" title="Ch10">Ch10</a></li><li><a href="/2025/06/18/computer-science/compile-principles/ch11/" rel="bookmark" title="Ch11">Ch11</a></li>
+          <li><a href="/2025/03/21/computer-science/compile-principles/ch1/" rel="bookmark" title="Ch1">Ch1</a></li><li class="active"><a href="/2025/03/21/computer-science/compile-principles/ch5/" rel="bookmark" title="Ch5">Ch5</a></li><li><a href="/2025/03/22/computer-science/compile-principles/ch2/" rel="bookmark" title="Ch2">Ch2</a></li><li><a href="/2025/03/23/computer-science/compile-principles/ch3/" rel="bookmark" title="Ch3">Ch3</a></li><li><a href="/2025/03/29/computer-science/compile-principles/ch4/" rel="bookmark" title="Ch4">Ch4</a></li><li><a href="/2025/06/15/computer-science/compile-principles/ch6/" rel="bookmark" title="Ch6">Ch6</a></li><li><a href="/2025/06/15/computer-science/compile-principles/ch7/" rel="bookmark" title="Ch7">Ch7</a></li><li><a href="/2025/06/17/computer-science/compile-principles/ch8/" rel="bookmark" title="Ch8">Ch8</a></li><li><a href="/2025/06/17/computer-science/compile-principles/ch9/" rel="bookmark" title="Ch9">Ch9</a></li><li><a href="/2025/06/18/computer-science/compile-principles/ch11/" rel="bookmark" title="Ch11">Ch11</a></li><li><a href="/2025/06/18/computer-science/compile-principles/ch10/" rel="bookmark" title="Ch10">Ch10</a></li>
         </ul>
       </div>
       <div class="overview panel" data-title="Overview">
@@ -429,51 +463,7 @@ NoResponse's Blog = NoResponse's Blog</title>
 <a href="/categories/AI/" title="In 人工智能">人工智能</a>
 </div>
 
-    <span><a href="/2025/05/20/AI/week1/" title="Week1">Week1</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/computer-organization/" title="In 计算机组成">计算机组成</a>
-</div>
-
-    <span><a href="/2025/05/13/computer-science/computer-organization/ch1/" title="Ch1">Ch1</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/AI/" title="In 人工智能">人工智能</a>
-</div>
-
-    <span><a href="/2025/06/16/AI/week14-15/" title="Week14-15">Week14-15</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/AI/" title="In 人工智能">人工智能</a>
-</div>
-
-    <span><a href="/2025/06/16/AI/week10-11/" title="Week10-11">Week10-11</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
-</div>
-
-    <span><a href="/2025/06/15/computer-science/compile-principles/ch7/" title="Ch7">Ch7</a></span>
+    <span><a href="/2025/06/15/AI/week8-9/" title="Week8-9">Week8-9</a></span>
   </li>
 
       
@@ -486,6 +476,18 @@ NoResponse's Blog = NoResponse's Blog</title>
 </div>
 
     <span><a href="/2025/03/21/computer-science/compile-principles/ch5/" title="Ch5">Ch5</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/computer-organization/" title="In 计算机组成">计算机组成</a>
+</div>
+
+    <span><a href="/2025/05/14/computer-science/computer-organization/ch2/" title="Ch2">Ch2</a></span>
   </li>
 
       
@@ -509,7 +511,29 @@ NoResponse's Blog = NoResponse's Blog</title>
 <a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
 </div>
 
-    <span><a href="/2025/03/21/computer-science/compile-principles/ch1/" title="Ch1">Ch1</a></span>
+    <span><a href="/2025/06/18/computer-science/compile-principles/ch10/" title="Ch10">Ch10</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/AI/" title="In 人工智能">人工智能</a>
+</div>
+
+    <span><a href="/2025/06/16/AI/week10-11/" title="Week10-11">Week10-11</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
+</div>
+
+    <span><a href="/2025/06/17/computer-science/compile-principles/ch8/" title="Ch8">Ch8</a></span>
   </li>
 
       
@@ -528,10 +552,22 @@ NoResponse's Blog = NoResponse's Blog</title>
 <div class="breadcrumb">
 <a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/computer-organization/" title="In 计算机组成">计算机组成</a>
+<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
 </div>
 
-    <span><a href="/2025/05/14/computer-science/computer-organization/ch2/" title="Ch2">Ch2</a></span>
+    <span><a href="/2025/03/23/computer-science/compile-principles/ch3/" title="Ch3">Ch3</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
+</div>
+
+    <span><a href="/2025/06/17/computer-science/compile-principles/ch9/" title="Ch9">Ch9</a></span>
   </li>
 
   </ul>
@@ -556,13 +592,13 @@ NoResponse's Blog = NoResponse's Blog</title>
     <span class="post-meta-item-icon">
       <i class="ic i-chart-area"></i>
     </span>
-    <span title="Symbols count total">39k words</span>
+    <span title="Symbols count total">44k words</span>
 
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="ic i-coffee"></i>
     </span>
-    <span title="Reading time total">35 mins.</span>
+    <span title="Reading time total">40 mins.</span>
   </div>
   <div class="powered-by">
     Powered by <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
