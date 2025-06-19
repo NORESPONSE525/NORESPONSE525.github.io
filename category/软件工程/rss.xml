@@ -1,0 +1,197 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+    <channel>
+        <title>NoResponse&#39;s Blog • Posts by &#34;软件工程&#34; category</title>
+        <link>http://example.com</link>
+        <description>成分复杂的CSer from ZJU</description>
+        <language>en</language>
+        <pubDate>Thu, 19 Jun 2025 00:00:00 +0800</pubDate>
+        <lastBuildDate>Thu, 19 Jun 2025 00:00:00 +0800</lastBuildDate>
+        <category>软件工程</category>
+        <category>人工智能</category>
+        <category>Register Allocation</category>
+        <category>编译原理</category>
+        <category>词法分析</category>
+        <category>Liveness Analysis</category>
+        <category>抽象语法</category>
+        <category>语法分析</category>
+        <category>语义分析</category>
+        <category>活动记录</category>
+        <category>中间代码</category>
+        <category>Basic Blocks and Traces</category>
+        <category>指令选择</category>
+        <category>计算机组成</category>
+        <category>数据的表示与运算</category>
+        <category>计算机网络</category>
+        <item>
+            <guid isPermalink="true">http://example.com/2025/06/19/SE/Software%20Engineering/</guid>
+            <title>SE note</title>
+            <link>http://example.com/2025/06/19/SE/Software%20Engineering/</link>
+            <category>软件工程</category>
+            <pubDate>Thu, 19 Jun 2025 00:00:00 +0800</pubDate>
+            <description><![CDATA[ &lt;h1 id=&#34;ch2-software-engineering&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#ch2-software-engineering&#34;&gt;#&lt;/a&gt; Ch2 Software Engineering&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;Definition: The application of a &lt;mark&gt;systematic&lt;/mark&gt;, &lt;mark&gt;disciplined&lt;/mark&gt;, &lt;mark&gt;quantifiable（可量化）&lt;/mark&gt; approach to the &lt;mark&gt;development&lt;/mark&gt;, &lt;mark&gt;operation&lt;/mark&gt;, and &lt;mark&gt;maintenance&lt;/mark&gt; of software&lt;/li&gt;
+&lt;li&gt;软件工程是一个多层次的技术体系 (a layered technology)
+&lt;ul&gt;
+&lt;li&gt;从下往上是 a “quality” focus, process model, methods, tools, 反映了构建高质量软件产品的逻辑流程&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;软件过程（The Software Process）中的两个重要概念：通用过程框架（Common Process Framework）和 伞形活动（Umbrella Activities）
+&lt;ul&gt;
+&lt;li&gt;通用过程框架（Common Process Framework）： 软件开发过程中的一些基本要素
+&lt;ul&gt;
+&lt;li&gt;工作任务（work tasks）：指在软件开发的不同阶段中需要完成的具体任务。&lt;/li&gt;
+&lt;li&gt;工作产品（work products）：指在执行工作任务过程中产生的各种文档、代码等成果物。&lt;/li&gt;
+&lt;li&gt;里程碑与交付物（milestones &amp;amp; deliverables）：里程碑是项目进展的重要节点，而交付物是在这些节点上需要提交的成果。&lt;/li&gt;
+&lt;li&gt;质量保证检查点（QA checkpoints）：在整个开发过程中设置的检查点，用于评估和确保软件产品的质量。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;伞形活动（Umbrella Activities）：软件开发过程中需要执行的活动
+&lt;ul&gt;
+&lt;li&gt;项目管理（Project management）：负责项目的规划、组织、协调和控制，确保项目按计划进行。&lt;/li&gt;
+&lt;li&gt;质量保证（Quality assurance）：通过一系列措施确保软件产品的质量符合预定标准。&lt;/li&gt;
+&lt;li&gt;工作产品生产（Work product production）：涉及创建和维护软件开发过程中产生的各种工作产品。&lt;/li&gt;
+&lt;li&gt;测量（Measurement）：收集和分析数据以评估项目的状态和进度。&lt;/li&gt;
+&lt;li&gt;正式技术评审（Formal technical reviews）：对软件的技术设计和实现进行系统性的审查。&lt;/li&gt;
+&lt;li&gt;配置管理（Configuration management）：管理软件开发过程中各种配置项的变化，确保版本的一致性和可追溯性。&lt;/li&gt;
+&lt;li&gt;重用管理（Reusability management）：促进软件组件和模块的重用，提高开发效率和软件质量。&lt;/li&gt;
+&lt;li&gt;风险管理（Risk management）：识别、评估和应对可能影响项目成功的各种风险。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Generic Process Framework&lt;/strong&gt; 通用的软件开发过程框架
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Communication&lt;/strong&gt;: 与客户协作并收集需求&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Planning&lt;/strong&gt;: establishes engineering work plan, describes technical risks, lists resource requirements, work products produced, and defines work schedule&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Modeling&lt;/strong&gt;: 创建模型以帮助开发者和客户理解需求和设计&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Construction&lt;/strong&gt;: code &amp;amp; test&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Deployment&lt;/strong&gt;: 交付软件供客户评估和反馈&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Process Adaptation&lt;/strong&gt; 过程适配：根据项目的具体需求、限制条件和特点，对软件开发过程进行定制和调整
+&lt;ul&gt;
+&lt;li&gt;overall &lt;mark&gt;flow&lt;/mark&gt; of activities, actions, and tasks and the interdependencies among them&lt;/li&gt;
+&lt;li&gt;degree to which &lt;mark&gt;actions and tasks&lt;/mark&gt; are defined within each framework activity&lt;/li&gt;
+&lt;li&gt;degree to which &lt;mark&gt;work products&lt;/mark&gt; are identified and required&lt;/li&gt;
+&lt;li&gt;manner which &lt;mark&gt;quality assurance&lt;/mark&gt; activities are applied&lt;/li&gt;
+&lt;li&gt;manner in which &lt;mark&gt;project tracking and control&lt;/mark&gt; activities are applied&lt;/li&gt;
+&lt;li&gt;overall degree of &lt;mark&gt;detail and rigor&lt;/mark&gt; with which the process is described&lt;/li&gt;
+&lt;li&gt;degree to which the &lt;mark&gt;customer and other stakeholders&lt;/mark&gt; are involved with the project&lt;/li&gt;
+&lt;li&gt;level of autonomy given to the &lt;mark&gt;software team&lt;/mark&gt;&lt;/li&gt;
+&lt;li&gt;degree to which &lt;mark&gt;team organization and roles&lt;/mark&gt; are prescribed&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;The Essence of Practice
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Understand the problem&lt;/strong&gt; (communication and analysis).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Plan a solution&lt;/strong&gt; (modeling and software design).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Carry out the plan&lt;/strong&gt; (code generation).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Examine the result for accuracy&lt;/strong&gt; (testing and quality assurance).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;General Principles 通用原则：软件开发过程中应遵循的一些核心指导思想或基本原则
+&lt;ul&gt;
+&lt;li&gt;The reason it all exists — Provide Value to users&lt;/li&gt;
+&lt;li&gt;KISS — Keep It Simple, Stupid!&lt;/li&gt;
+&lt;li&gt;Maintain the Vision&lt;/li&gt;
+&lt;li&gt;What you produce, others will consume&lt;/li&gt;
+&lt;li&gt;Be open to the future&lt;/li&gt;
+&lt;li&gt;Plan ahead for reuse&lt;/li&gt;
+&lt;li&gt;Think!&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Software Development Myths 软件开发管理中常见的误解（Myth）及其背后的现实情况（Reality）
+&lt;ul&gt;
+&lt;li&gt;Management myths
+&lt;ul&gt;
+&lt;li&gt;标准和流程的有效性依赖于团队的理解和接受程度。&lt;/li&gt;
+&lt;li&gt;软件开发是一个高度协作和复杂的创造性过程，简单地增加人力并不能解决进度问题。&lt;/li&gt;
+&lt;li&gt;外包项目同样需要良好的管理和沟通能力，不能因为外包就忽视了对项目的控制和监督&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Customer myths
+&lt;ul&gt;
+&lt;li&gt;详细的需求分析和规划&lt;/li&gt;
+&lt;li&gt;充分的沟通与确认&lt;/li&gt;
+&lt;li&gt;合理的进度评估&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Practitioner’s myths
+&lt;ul&gt;
+&lt;li&gt;错误：一旦我们编写好程序并使其正常运行，我们的工作就完成了&lt;/li&gt;
+&lt;li&gt;过早进入编码阶段可能会导致更多的返工和调整，从而延长项目周期&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;ch3-software-process-structure&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#ch3-software-process-structure&#34;&gt;#&lt;/a&gt; Ch3 Software Process Structure&lt;/h1&gt;
+&lt;p&gt;Umbrella Activities 是贯穿整个软件开发过程的活动，Framework Activity 是软件开发的核心阶段，如沟通、计划、建模、构建和部署，每个框架活动下都有具体的 task set，每个 task set 中又包含多个具体的 action&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Process flow&lt;/strong&gt; 过程流（对于之前提到的 Generic Process Framework 的五步）&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;线性过程流（Linear process flow）&lt;/li&gt;
+&lt;li&gt;迭代过程流（Iterative process flow）&lt;/li&gt;
+&lt;li&gt;演化过程流（Evolutionary process flow）&lt;/li&gt;
+&lt;li&gt;并行过程流（Parallel process flow）&lt;br&gt;
+&lt;img data-src=&#34;f1.jpg&#34; alt&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Process Patterns&lt;/strong&gt; 过程模式&lt;br&gt;
+ Process patterns define a set of activities, actions, work tasks, work products and/or related behaviors&lt;br&gt;
+ 提供了一种 &lt;code&gt;template&lt;/code&gt;  用于定义模式&lt;br&gt;
+&lt;strong&gt; Generic software pattern elements&lt;/strong&gt;:&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;pattern name&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Intent (objective of pattern)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Type (Task pattern, Stage pattern, Phase pattern)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Initial context&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Solution&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Resulting context&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Related patterns&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Known uses/examples&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Process Assessment&lt;/strong&gt;&lt;br&gt;
+ 几种评估软件过程的方法：&lt;br&gt;
+SCAMPI (Standard CMMI Appraisal Method for Process Improvement)&lt;br&gt;
+SPICE (ISO/IEC 15504)&lt;br&gt;
+CBA IPI (Capability Benchmarking Appraisal using the Integrated Process Improvement method)&lt;br&gt;
+ISO 9001:2000 for Software&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The Capability Maturity Model Integration 能力成熟度模型集成（CMMI）&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Level 0: Incomplete&lt;/li&gt;
+&lt;li&gt;Level 1: Performed&lt;/li&gt;
+&lt;li&gt;Level 2: Managed&lt;/li&gt;
+&lt;li&gt;Level 3: Defined&lt;/li&gt;
+&lt;li&gt;Level 4: Quantitatively Managed 定量管理&lt;/li&gt;
+&lt;li&gt;Level 5: Optimizing&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;ch4-process-models&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#ch4-process-models&#34;&gt;#&lt;/a&gt; Ch4 Process Models&lt;/h1&gt;
+ ]]></description>
+        </item>
+    </channel>
+</rss>

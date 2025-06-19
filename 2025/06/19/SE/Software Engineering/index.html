@@ -1,0 +1,685 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="/images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="NoResponse's Blog" href="http://example.com/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="NoResponse's Blog" href="http://example.com/atom.xml" />
+<link rel="alternate" type="application/json" title="NoResponse's Blog" href="http://example.com/feed.json" />
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="/css/app.css?v=0.2.5">
+
+  
+  <meta name="keywords" content="软件工程" />
+
+
+<link rel="canonical" href="http://example.com/2025/06/19/SE/Software%20Engineering/">
+
+
+
+  <title>
+SE note - 软件工程 |
+NoResponse's Blog = NoResponse's Blog</title>
+<meta name="generator" content="Hexo 7.3.0"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">SE note
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="Created: 2025-06-19 00:00:00">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">Posted on</span>
+    <time itemprop="dateCreated datePublished" datetime="2025-06-19T00:00:00+08:00">2025-06-19</time>
+  </span>
+  <span class="item" title="Symbols count in article">
+    <span class="icon">
+      <i class="ic i-pen"></i>
+    </span>
+    <span class="text">Symbols count in article</span>
+    <span>3.5k</span>
+    <span class="text">words</span>
+  </span>
+  <span class="item" title="Reading time">
+    <span class="icon">
+      <i class="ic i-clock"></i>
+    </span>
+    <span class="text">Reading time</span>
+    <span>3 mins.</span>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="Toggle navigation bar">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/" rel="start">NoResponse's Blog</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+          <img src="/images/bg12.jpg">
+      </div>
+    </header>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/">Home</a></span><i class="ic i-angle-right"></i>
+<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/SE/" itemprop="item" rel="index" title="In 软件工程"><span itemprop="name">软件工程</span></a>
+<meta itemprop="position" content="1" /></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="en">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2025/06/19/SE/Software%20Engineering/">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="/images/asuka.jpg">
+    <meta itemprop="name" content="NoResponse">
+    <meta itemprop="description" content=", 成分复杂的CSer from ZJU">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="NoResponse's Blog">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <h1 id="ch2-software-engineering"><a class="markdownIt-Anchor" href="#ch2-software-engineering">#</a> Ch2 Software Engineering</h1>
+<ul>
+<li>Definition: The application of a <mark>systematic</mark>, <mark>disciplined</mark>, <mark>quantifiable（可量化）</mark> approach to the <mark>development</mark>, <mark>operation</mark>, and <mark>maintenance</mark> of software</li>
+<li>软件工程是一个多层次的技术体系 (a layered technology)
+<ul>
+<li>从下往上是 a “quality” focus, process model, methods, tools, 反映了构建高质量软件产品的逻辑流程</li>
+</ul>
+</li>
+<li>软件过程（The Software Process）中的两个重要概念：通用过程框架（Common Process Framework）和 伞形活动（Umbrella Activities）
+<ul>
+<li>通用过程框架（Common Process Framework）： 软件开发过程中的一些基本要素
+<ul>
+<li>工作任务（work tasks）：指在软件开发的不同阶段中需要完成的具体任务。</li>
+<li>工作产品（work products）：指在执行工作任务过程中产生的各种文档、代码等成果物。</li>
+<li>里程碑与交付物（milestones &amp; deliverables）：里程碑是项目进展的重要节点，而交付物是在这些节点上需要提交的成果。</li>
+<li>质量保证检查点（QA checkpoints）：在整个开发过程中设置的检查点，用于评估和确保软件产品的质量。</li>
+</ul>
+</li>
+<li>伞形活动（Umbrella Activities）：软件开发过程中需要执行的活动
+<ul>
+<li>项目管理（Project management）：负责项目的规划、组织、协调和控制，确保项目按计划进行。</li>
+<li>质量保证（Quality assurance）：通过一系列措施确保软件产品的质量符合预定标准。</li>
+<li>工作产品生产（Work product production）：涉及创建和维护软件开发过程中产生的各种工作产品。</li>
+<li>测量（Measurement）：收集和分析数据以评估项目的状态和进度。</li>
+<li>正式技术评审（Formal technical reviews）：对软件的技术设计和实现进行系统性的审查。</li>
+<li>配置管理（Configuration management）：管理软件开发过程中各种配置项的变化，确保版本的一致性和可追溯性。</li>
+<li>重用管理（Reusability management）：促进软件组件和模块的重用，提高开发效率和软件质量。</li>
+<li>风险管理（Risk management）：识别、评估和应对可能影响项目成功的各种风险。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Generic Process Framework</strong> 通用的软件开发过程框架
+<ul>
+<li><strong>Communication</strong>: 与客户协作并收集需求</li>
+<li><strong>Planning</strong>: establishes engineering work plan, describes technical risks, lists resource requirements, work products produced, and defines work schedule</li>
+<li><strong>Modeling</strong>: 创建模型以帮助开发者和客户理解需求和设计</li>
+<li><strong>Construction</strong>: code &amp; test</li>
+<li><strong>Deployment</strong>: 交付软件供客户评估和反馈</li>
+</ul>
+</li>
+<li><strong>Process Adaptation</strong> 过程适配：根据项目的具体需求、限制条件和特点，对软件开发过程进行定制和调整
+<ul>
+<li>overall <mark>flow</mark> of activities, actions, and tasks and the interdependencies among them</li>
+<li>degree to which <mark>actions and tasks</mark> are defined within each framework activity</li>
+<li>degree to which <mark>work products</mark> are identified and required</li>
+<li>manner which <mark>quality assurance</mark> activities are applied</li>
+<li>manner in which <mark>project tracking and control</mark> activities are applied</li>
+<li>overall degree of <mark>detail and rigor</mark> with which the process is described</li>
+<li>degree to which the <mark>customer and other stakeholders</mark> are involved with the project</li>
+<li>level of autonomy given to the <mark>software team</mark></li>
+<li>degree to which <mark>team organization and roles</mark> are prescribed</li>
+</ul>
+</li>
+<li>The Essence of Practice
+<ul>
+<li><strong>Understand the problem</strong> (communication and analysis).</li>
+<li><strong>Plan a solution</strong> (modeling and software design).</li>
+<li><strong>Carry out the plan</strong> (code generation).</li>
+<li><strong>Examine the result for accuracy</strong> (testing and quality assurance).</li>
+</ul>
+</li>
+<li>General Principles 通用原则：软件开发过程中应遵循的一些核心指导思想或基本原则
+<ul>
+<li>The reason it all exists — Provide Value to users</li>
+<li>KISS — Keep It Simple, Stupid!</li>
+<li>Maintain the Vision</li>
+<li>What you produce, others will consume</li>
+<li>Be open to the future</li>
+<li>Plan ahead for reuse</li>
+<li>Think!</li>
+</ul>
+</li>
+<li>Software Development Myths 软件开发管理中常见的误解（Myth）及其背后的现实情况（Reality）
+<ul>
+<li>Management myths
+<ul>
+<li>标准和流程的有效性依赖于团队的理解和接受程度。</li>
+<li>软件开发是一个高度协作和复杂的创造性过程，简单地增加人力并不能解决进度问题。</li>
+<li>外包项目同样需要良好的管理和沟通能力，不能因为外包就忽视了对项目的控制和监督</li>
+</ul>
+</li>
+<li>Customer myths
+<ul>
+<li>详细的需求分析和规划</li>
+<li>充分的沟通与确认</li>
+<li>合理的进度评估</li>
+</ul>
+</li>
+<li>Practitioner’s myths
+<ul>
+<li>错误：一旦我们编写好程序并使其正常运行，我们的工作就完成了</li>
+<li>过早进入编码阶段可能会导致更多的返工和调整，从而延长项目周期</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="ch3-software-process-structure"><a class="markdownIt-Anchor" href="#ch3-software-process-structure">#</a> Ch3 Software Process Structure</h1>
+<p>Umbrella Activities 是贯穿整个软件开发过程的活动，Framework Activity 是软件开发的核心阶段，如沟通、计划、建模、构建和部署，每个框架活动下都有具体的 task set，每个 task set 中又包含多个具体的 action</p>
+<ul>
+<li>
+<p><strong>Process flow</strong> 过程流（对于之前提到的 Generic Process Framework 的五步）</p>
+<ol>
+<li>线性过程流（Linear process flow）</li>
+<li>迭代过程流（Iterative process flow）</li>
+<li>演化过程流（Evolutionary process flow）</li>
+<li>并行过程流（Parallel process flow）<br>
+<img data-src="f1.jpg" alt></li>
+</ol>
+</li>
+<li>
+<p><strong>Process Patterns</strong> 过程模式<br>
+ Process patterns define a set of activities, actions, work tasks, work products and/or related behaviors<br>
+ 提供了一种 <code>template</code>  用于定义模式<br>
+<strong> Generic software pattern elements</strong>:</p>
+</li>
+<li>
+<p>pattern name</p>
+</li>
+<li>
+<p>Intent (objective of pattern)</p>
+</li>
+<li>
+<p>Type (Task pattern, Stage pattern, Phase pattern)</p>
+</li>
+<li>
+<p>Initial context</p>
+</li>
+<li>
+<p>Solution</p>
+</li>
+<li>
+<p>Resulting context</p>
+</li>
+<li>
+<p>Related patterns</p>
+</li>
+<li>
+<p>Known uses/examples</p>
+</li>
+<li>
+<p><strong>Process Assessment</strong><br>
+ 几种评估软件过程的方法：<br>
+SCAMPI (Standard CMMI Appraisal Method for Process Improvement)<br>
+SPICE (ISO/IEC 15504)<br>
+CBA IPI (Capability Benchmarking Appraisal using the Integrated Process Improvement method)<br>
+ISO 9001:2000 for Software</p>
+</li>
+<li>
+<p>The Capability Maturity Model Integration 能力成熟度模型集成（CMMI）</p>
+<ul>
+<li>Level 0: Incomplete</li>
+<li>Level 1: Performed</li>
+<li>Level 2: Managed</li>
+<li>Level 3: Defined</li>
+<li>Level 4: Quantitatively Managed 定量管理</li>
+<li>Level 5: Optimizing</li>
+</ul>
+</li>
+</ul>
+<h1 id="ch4-process-models"><a class="markdownIt-Anchor" href="#ch4-process-models">#</a> Ch4 Process Models</h1>
+
+      <div class="tags">
+          <a href="/tags/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/" rel="tag"><i class="ic i-tag"></i> 软件工程</a>
+      </div>
+  </div>
+
+   <footer>
+
+    <div class="meta">
+  <span class="item">
+    <span class="icon">
+      <i class="ic i-calendar-check"></i>
+    </span>
+    <span class="text">Edited on</span>
+    <time title="Modified: 2025-06-19 17:28:05" itemprop="dateModified" datetime="2025-06-19T17:28:05+08:00">2025-06-19</time>
+  </span>
+</div>
+
+      
+<div class="reward">
+  <button><i class="ic i-heartbeat"></i> Donate</button>
+  <p>Give me a cup of [coffee]~(￣▽￣)~*</p>
+  <div id="qr">
+      
+      <div>
+        <img data-src="/images/wechatpay.jpg" alt="NoResponse WeChat Pay">
+        <p>WeChat Pay</p>
+      </div>
+      
+      <div>
+        <img data-src="/images/alipay.jpg" alt="NoResponse Alipay">
+        <p>Alipay</p>
+      </div>
+      
+      <div>
+        <img data-src="/images/paypal.jpg" alt="NoResponse PayPal">
+        <p>PayPal</p>
+      </div>
+  </div>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>Post author:  </strong>NoResponse <i class="ic i-at"><em>@</em></i>NoResponse's Blog
+  </li>
+  <li class="link">
+    <strong>Post link: </strong>
+    <a href="http://example.com/2025/06/19/SE/Software%20Engineering/" title="SE note">http://example.com/2025/06/19/SE/Software Engineering/</a>
+  </li>
+  <li class="license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+      
+
+  <a href="/2025/06/18/computer-science/compile-principles/ch11/" itemprop="url" rel="prev" data-background-image="&#x2F;images&#x2F;bg9.jpg" title="Ch11">
+  <span class="type">Previous Post</span>
+  <span class="category"><i class="ic i-flag"></i> 编译原理</span>
+  <h3>Ch11</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="Contents">
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#ch2-software-engineering"><span class="toc-number">1.</span> <span class="toc-text"> Ch2 Software Engineering</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#ch3-software-process-structure"><span class="toc-number">2.</span> <span class="toc-text"> Ch3 Software Process Structure</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#ch4-process-models"><span class="toc-number">3.</span> <span class="toc-text"> Ch4 Process Models</span></a></li></ol>
+      </div>
+      <div class="related panel pjax" data-title="Related">
+        <ul>
+          <li class="active"><a href="/2025/06/19/SE/Software%20Engineering/" rel="bookmark" title="SE note">SE note</a></li>
+        </ul>
+      </div>
+      <div class="overview panel" data-title="Overview">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="NoResponse"
+      data-src="/images/asuka.jpg">
+  <p class="name" itemprop="name">NoResponse</p>
+  <div class="description" itemprop="description">成分复杂的CSer from ZJU</div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="/archives/">
+        <span class="count">23</span>
+        <span class="name">posts</span>
+      </a>
+    </div>
+    <div class="item categories">
+      <a href="/categories/">
+        <span class="count">6</span>
+        <span class="name">categories</span>
+      </a>
+    </div>
+    <div class="item tags">
+      <a href="/tags/">
+        <span class="count">16</span>
+        <span class="name">tags</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+      <span class="exturl item github" data-url="aHR0cHM6Ly9naXRodWIuY29tL25vcmVzcG9uc2U1MjU=" title="https:&#x2F;&#x2F;github.com&#x2F;noresponse525"><i class="ic i-github"></i></span>
+      <span class="exturl item cloudmusic" data-url="aHR0cHM6Ly9tdXNpYy4xNjMuY29tLyMvdXNlci9ob21lP2lkPTE5OTc3MTA2MzY=" title="https:&#x2F;&#x2F;music.163.com&#x2F;#&#x2F;user&#x2F;home?id&#x3D;1997710636"><i class="ic i-cloud-music"></i></span>
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="/" rel="section"><i class="ic i-home"></i>Home</a>
+  </li>
+
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>Random Posts</h2>
+  <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
+</div>
+
+    <span><a href="/2025/03/21/computer-science/compile-principles/ch5/" title="Ch5">Ch5</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
+</div>
+
+    <span><a href="/2025/03/22/computer-science/compile-principles/ch2/" title="Ch2">Ch2</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/computer-organization/" title="In 计算机组成">计算机组成</a>
+</div>
+
+    <span><a href="/2025/05/14/computer-science/computer-organization/ch2/" title="Ch2">Ch2</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/AI/" title="In 人工智能">人工智能</a>
+</div>
+
+    <span><a href="/2025/05/20/AI/week2-3/" title="Week2-3">Week2-3</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
+</div>
+
+    <span><a href="/2025/06/17/computer-science/compile-principles/ch9/" title="Ch9">Ch9</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/AI/" title="In 人工智能">人工智能</a>
+</div>
+
+    <span><a href="/2025/06/16/AI/week14-15/" title="Week14-15">Week14-15</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
+</div>
+
+    <span><a href="/2025/06/15/computer-science/compile-principles/ch7/" title="Ch7">Ch7</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
+</div>
+
+    <span><a href="/2025/03/23/computer-science/compile-principles/ch3/" title="Ch3">Ch3</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/AI/" title="In 人工智能">人工智能</a>
+</div>
+
+    <span><a href="/2025/06/16/AI/week10-11/" title="Week10-11">Week10-11</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
+</div>
+
+    <span><a href="/2025/03/21/computer-science/compile-principles/ch1/" title="Ch1">Ch1</a></span>
+  </li>
+
+  </ul>
+</div>
+<div>
+  <h2>Recent Comments</h2>
+  <ul class="leancloud-recent-comment"></ul>
+</div>
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 2024 – 
+    <span itemprop="copyrightYear">2025</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">NoResponse @ NoResponse's Blog</span>
+  </div>
+  <div class="count">
+    <span class="post-meta-item-icon">
+      <i class="ic i-chart-area"></i>
+    </span>
+    <span title="Symbols count total">49k words</span>
+
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="ic i-coffee"></i>
+    </span>
+    <span title="Reading time total">45 mins.</span>
+  </div>
+  <div class="powered-by">
+    Powered by <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: '2025/06/19/SE/Software Engineering/',
+    favicon: {
+      show: "（●´3｀●）Goooood",
+      hide: "(´Д｀)Booooom"
+    },
+    search : {
+      placeholder: "Search for Posts",
+      empty: "We didn't find any results for the search: ${query}",
+      stats: "${hits} results found in ${time} ms"
+    },
+    valine: true,copy_tex: true,
+    katex: true,fancybox: true,
+    copyright: 'Copied to clipboard successfully! <br> All articles in this blog are licensed under <i class="ic i-creative-commons"></i>BY-NC-SA.',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
+
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+
+<script src="/js/app.js?v=0.2.5"></script>
+
+
+
+
+</body>
+</html>
