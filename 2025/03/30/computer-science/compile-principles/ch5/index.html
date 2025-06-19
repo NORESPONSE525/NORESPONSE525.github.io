@@ -24,15 +24,15 @@
 <link rel="stylesheet" href="/css/app.css?v=0.2.5">
 
   
-  <meta name="keywords" content="Liveness Analysis" />
+  <meta name="keywords" content="语义分析" />
 
 
-<link rel="canonical" href="http://example.com/2025/06/18/computer-science/compile-principles/ch10/">
+<link rel="canonical" href="http://example.com/2025/03/30/computer-science/compile-principles/ch5/">
 
 
 
   <title>
-Liveness Analysis - 编译原理 - 计算机科学 |
+语义分析 - 编译原理 - 计算机科学 |
 NoResponse's Blog = NoResponse's Blog</title>
 <meta name="generator" content="Hexo 7.3.0"></head>
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -60,23 +60,23 @@ NoResponse's Blog = NoResponse's Blog</title>
         <div id="brand">
           <div class="pjax">
           
-  <h1 itemprop="name headline">Liveness Analysis
+  <h1 itemprop="name headline">语义分析
   </h1>
   
 <div class="meta">
-  <span class="item" title="Created: 2025-06-18 00:00:00">
+  <span class="item" title="Created: 2025-03-30 00:00:00">
     <span class="icon">
       <i class="ic i-calendar"></i>
     </span>
     <span class="text">Posted on</span>
-    <time itemprop="dateCreated datePublished" datetime="2025-06-18T00:00:00+08:00">2025-06-18</time>
+    <time itemprop="dateCreated datePublished" datetime="2025-03-30T00:00:00+08:00">2025-03-30</time>
   </span>
   <span class="item" title="Symbols count in article">
     <span class="icon">
       <i class="ic i-pen"></i>
     </span>
     <span class="text">Symbols count in article</span>
-    <span>1.8k</span>
+    <span>2.1k</span>
     <span class="text">words</span>
   </span>
   <span class="item" title="Reading time">
@@ -116,7 +116,7 @@ NoResponse's Blog = NoResponse's Blog</title>
 
       </div>
       <div id="imgs" class="pjax">
-          <img src="/images/bg10.jpg">
+          <img src="/images/bg5.jpg">
       </div>
     </header>
     <div id="waves">
@@ -149,7 +149,7 @@ NoResponse's Blog = NoResponse's Blog</title>
 </div>
 
     <article itemscope itemtype="http://schema.org/Article" class="post block" lang="en">
-  <link itemprop="mainEntityOfPage" href="http://example.com/2025/06/18/computer-science/compile-principles/ch10/">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2025/03/30/computer-science/compile-principles/ch5/">
 
   <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="image" content="/images/asuka.jpg">
@@ -164,67 +164,96 @@ NoResponse's Blog = NoResponse's Blog</title>
   <div class="body md" itemprop="articleBody">
     
 
-    <h1 id="Liveness-Analysis-活跃变量分析"><a href="#Liveness-Analysis-活跃变量分析" class="headerlink" title="Liveness Analysis 活跃变量分析"></a>Liveness Analysis 活跃变量分析</h1><p>判断在程序执行的某个点上，一个变量的值是否可能在未来被使用，是寄存器分配、死代码消除的基础</p>
-<h2 id="Compiler-Optimizations"><a href="#Compiler-Optimizations" class="headerlink" title="Compiler Optimizations"></a>Compiler Optimizations</h2><ul>
-<li>Local: 基于basic blocks</li>
-<li>Intraprocedural (or “global’): 基本块的控制流转移</li>
-<li>Interprocedural (or “whole-program”): Operate on &gt; 1 procedure, up to whole program; Sometimes, at link time (LTO, link time optimization)</li>
-</ul>
-<p>两步：</p>
+    <h1 id="语义分析"><a href="#语义分析" class="headerlink" title="语义分析"></a>语义分析</h1><blockquote>
+<p>绑定，类型检查</p>
+</blockquote>
+<h2 id="symbol-table"><a href="#symbol-table" class="headerlink" title="symbol table"></a>symbol table</h2><ul>
+<li><p>Imperative style: 命令式风格</p>
 <ul>
-<li>Analyze program to gather “facts”</li>
-<li>Apply transformation (e.g., optimizations)</li>
+<li>Modify $\sigma_1$ until it becomes $\sigma_2$. </li>
+<li>While $\sigma_2$ exists, we cannot look things up in $\sigma_1$. </li>
+<li>When done with $\sigma_2$, can undo the modification to get $\sigma_1$ back again.<br>+++info 方法：<br>Hashing<br>插入：找到哈希值然后插入链表的表头<br>查找：找到哈希值然后遍历链表<br>pop: 找到哈希值然后把链表表头删掉  table[hash(key)] &#x3D; table[hash(key)].next<br>+++</li>
 </ul>
-<h2 id="Dataflow-Analysis"><a href="#Dataflow-Analysis" class="headerlink" title="Dataflow Analysis"></a>Dataflow Analysis</h2><p>Control Flow Graph: A directed graph 数据流图<br>– Nodes represent statements<br>– Edges represent control flow</p>
-<p>CFG的简化：基本块<br><img data-src="/f1.jpg"></p>
-<h3 id="变量的活跃性："><a href="#变量的活跃性：" class="headerlink" title="变量的活跃性："></a>变量的活跃性：</h3><p>变量x在语句s处（执行s之前）处于活动状态，当且仅当满足以下三个条件：</p>
-<ol>
-<li>存在一个使用x的语句s’；</li>
-<li>存在从s到s’的路径；</li>
-<li>这条路径上没有对x进行任何赋值操作</li>
-</ol>
-<p>通过分析liveness，我们可以实现：</p>
-<ol>
-<li>Register Allocation</li>
-<li>Code Optimizations：Remove unused assignments</li>
-<li>IR Construction： Optimize the construction of SSA</li>
-<li>Security&#x2F;Reliability: Detect the use of uninitialized variables</li>
-</ol>
-<h2 id="Dataflow-Equations-for-Liveness-构建数据流方程"><a href="#Dataflow-Equations-for-Liveness-构建数据流方程" class="headerlink" title="Dataflow Equations for Liveness 构建数据流方程"></a>Dataflow Equations for Liveness 构建数据流方程</h2><p>A CFG node has</p>
+</li>
+<li><p>Functional style: 函数式风格</p>
 <ul>
-<li>out-edges: lead to successor nodes</li>
-<li>in-edges: come from predecessor nodes</li>
-<li>pred[n]: the predecessors of node n       前驱</li>
-<li>succ[n]: the successors of node n     后继</li>
+<li>To keep $\sigma_1$ in pristine condition while creating create $\sigma_2$ and $\sigma_3$<br>+++info 方法：<br>如果依旧用哈希，每次要复制一遍哈希表，开销太大了，不现实<br><img data-src="/f2.jpg"><br>所以用persistent BST<br><img data-src="/f1.jpg"><br>先遍历二叉搜索树找到要插入的位置，然后对于插入节点把它从根节点到它全都复制一遍然后插入<br>+++</li>
 </ul>
-<p>几个定义：</p>
+</li>
+</ul>
+<h2 id="Tiger编译器中的符号"><a href="#Tiger编译器中的符号" class="headerlink" title="Tiger编译器中的符号"></a>Tiger编译器中的符号</h2><p>对链表进行lookup的时候每一次都要进行string compare，开销是很大的。所以使用新的数据结构将符号对象关联到一个整数上，因此对于任意给定字符串的所有不同出现，都会被转换成同一个符号对象。<br>Symbol的实现：通过hash函数将字符串映射到一个symbol对象上<br>SymbolTable的实现：beginScope()和endScope()的实现</p>
 <ul>
-<li>use[n]: 在节点n被读取或使用(x &#x3D; a + b的a和b, if(a &lt; b)的a和b, return c的c)</li>
-<li>def[n]: 在节点n被定义(x &#x3D; a + b的x)</li>
-<li>in[n]: 在节点n之前，所有活跃变量的集合</li>
-<li>out[n]: 在节点n之后，所有活跃变量的集合<br>三条活跃性规则：</li>
+<li>beginScope()：添加一个marksym</li>
+<li>endScope()：从符号表中不断pop直到marksym</li>
+<li>引入一个 辅助栈(Auxiliary stack) 来维护<ul>
+<li>符号入栈时，会将binding联动地插入对应bucket的链表头</li>
+<li>弹出栈顶符号时，对应bucket的链表头也会联动地被移除</li>
+<li>beginScope: 压入一个特殊标记到辅助栈中</li>
+<li>endScope: 一直弹出符号直到弹出了一个特殊标记</li>
 </ul>
+</li>
+</ul>
+<h2 id="类型检查"><a href="#类型检查" class="headerlink" title="类型检查"></a>类型检查</h2><h3 id="哪些类型表达式是合法-非法的"><a href="#哪些类型表达式是合法-非法的" class="headerlink" title="哪些类型表达式是合法&#x2F;非法的"></a>哪些类型表达式是合法&#x2F;非法的</h3><p>Tiger的类型系统：</p>
+<ul>
+<li>两种primitive type: int, string</li>
+<li>两种constructed type: records, arrays</li>
+</ul>
+<p>文法</p>
 <ol>
-<li>if $a \in in[n]$ then for $\all m \in pred[n]$ we have $a \in out[m]$</li>
-<li>if $a \in use[n]$ then $a \in in[n]$</li>
-<li>if $a \in out[n]$ and $a \notin def[n]$ then $a \in in[n]$</li>
+<li>typec → type type-id &#x3D; ty<ul>
+<li>这表示定义一个类型。<code>typec</code> 是一个类型定义的开始，它由关键字 <code>type</code>、一个类型标识符 <code>type-id</code> 和一个等号 <code>=</code> 后跟类型定义 <code>ty</code> 组成。</li>
+</ul>
+</li>
+<li>ty → type-id<ul>
+<li>这表示类型 <code>ty</code> 可以直接是一个已定义的类型标识符 <code>type-id</code>。</li>
+</ul>
+</li>
+<li>ty → ‘{’ tyfields ‘}’<ul>
+<li>这表示类型 <code>ty</code> 可以是一个记录（record），由花括号 <code>&#123;&#125;</code> 包围的一系列字段 <code>tyfields</code> 定义。</li>
+</ul>
+</li>
+<li>ty → array of type-id<ul>
+<li>这表示类型 <code>ty</code> 可以是一个数组，由关键字 <code>array of</code> 后跟一个类型标识符 <code>type-id</code> 定义。</li>
+</ul>
+</li>
+<li>tyfields → ε<ul>
+<li>这表示字段列表 <code>tyfields</code> 可以为空（ε 表示空串）。</li>
+</ul>
+</li>
+<li>tyfields → id: type-id {, id:type-id}<ul>
+<li>这表示字段列表 <code>tyfields</code> 由一个或多个字段组成，每个字段由一个标识符 <code>id</code> 和冒号 <code>:</code> 后跟一个类型标识符 <code>type-id</code> 定义，多个字段之间用逗号 <code>,</code> 分隔。</li>
+</ul>
+</li>
 </ol>
-<p>得到以下两个数据流方程：<br>$$<br>out[n] &#x3D; \cup_{s \in succ[n]} in[s]<br>$$<br> 一个节点在n的出口处活跃当且仅当在它后继的入口处是活跃的（活跃性的反向传播）<br>$$<br>in[n] &#x3D; use[n] \cup (out[n] - def[n])<br>$$</p>
-<h2 id="求解数据流方程"><a href="#求解数据流方程" class="headerlink" title="求解数据流方程"></a>求解数据流方程</h2><p>有了上面的两个数据流方程，就可以求解数据流方程了<br>算法：</p>
-<figure class="highlight plaintext"><figcaption><span>pseudo</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">for each n</span><br><span class="line">    in[n] ←&#123;&#125;; out[n] ←&#123;&#125;</span><br><span class="line">repeat</span><br><span class="line">    for each n</span><br><span class="line">        in′[n] ← in[n]; out′[n] ← out[n]</span><br><span class="line">        in[n] ← use[n] ∪ (out[n] − def[n])</span><br><span class="line">        out[n] ← ⋃( ∈()**[+] in[s]</span><br><span class="line">until in′[n] = in[n] and out′[n] = out[n] for all n</span><br></pre></td></tr></table></figure>
-<ol>
-<li>将所有节点的 <code>in</code> 和 <code>out</code> 集合初始化为空集。</li>
-<li>写出<code>use[n]</code>和<code>def[n]</code></li>
-<li>用数据流方程更新<code>in</code>和<code>out</code>集合</li>
-<li>直到<code>in</code>和<code>out</code>集合不再改变为止<br>例：<br><img data-src="/f2.jpg"><br>对于这个CFG<br>每一次迭代如图：<br><img data-src="/f3.jpg"></li>
-</ol>
-<h2 id="Improvements"><a href="#Improvements" class="headerlink" title="Improvements"></a>Improvements</h2><h3 id="Use-Basic-Block"><a href="#Use-Basic-Block" class="headerlink" title="Use Basic Block"></a>Use Basic Block</h3><p>后面有点懒得看，先放着</p>
-<h2 id="集合的表示方法"><a href="#集合的表示方法" class="headerlink" title="集合的表示方法"></a>集合的表示方法</h2><p>对于in, out, use, def集合的表示和操作对性能有很大影响</p>
-<h3 id="Bit-Arrays"><a href="#Bit-Arrays" class="headerlink" title="Bit Arrays"></a>Bit Arrays</h3><p>有点像bit map，适用于稠密集合（1比较多的，如果0太多就浪费了）</p>
-<h3 id="Sorted-Lists"><a href="#Sorted-Lists" class="headerlink" title="Sorted Lists"></a>Sorted Lists</h3><p>适合稀疏集合（用一个链表存集合中的变量, Sorted by variable name&#x2F;ID）</p>
+<p>示例</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">let type a = &#123;x: int; y: int&#125;</span><br><span class="line">    type b = a</span><br><span class="line">    var i : a := ...</span><br><span class="line">    var j : b := ...</span><br><span class="line">in i := j</span><br><span class="line">end</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="类型等价"><a href="#类型等价" class="headerlink" title="类型等价"></a>类型等价</h3><ul>
+<li>Name equivalence (NE): 必须声明是同一个类型才是同一类型</li>
+<li>Structure equivalence (SE): 如果两个类型的结构完全相同（即它们由相同的构造器以相同的顺序组成），那么它们就被认为是等价的，即使它们的名字不同</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">type A = &#123;x: int; y: int&#125;</span><br><span class="line">type B = &#123;x: int; y: int&#125; </span><br></pre></td></tr></table></figure>
+<p>Tiger用的是NE<br>在Tiger编程语言中，存在两个独立的命名空间：一个用于类型（Types），另一个用于函数和变量（Functions and Variables）。所以类型和函数&#x2F;变量可以存在相同的名字，但是函数和变量不能存在相同的名字。<br>所以需要两个env</p>
+<ul>
+<li>Type env<ul>
+<li>symbol -&gt; Ty_ty</li>
+</ul>
+</li>
+<li>Value env<ul>
+<li>对于变量，symbol -&gt; Ty_ty</li>
+<li>对于函数，symbol -&gt; struct{Ty_tyList formals, Ty_ty results}</li>
+</ul>
+</li>
+</ul>
+<h3 id="类型检查的rule"><a href="#类型检查的rule" class="headerlink" title="类型检查的rule"></a>类型检查的rule</h3><p>类型检查分为两部分:</p>
+<ul>
+<li>Type-checking expressions: 对于每个表达式，根据当前的Type和Value环境来确定其类型，并检查是否符合语言的类型规则</li>
+<li>Type-checking declarations: 在Tiger语言中声明只可能在let语句中出现<br>好像就是讲了transExp, transDec, transVar，AST递归检查每个节点的类型然后一层一层往上传再检查</li>
+</ul>
 
       <div class="tags">
-          <a href="/tags/Liveness-Analysis/" rel="tag"><i class="ic i-tag"></i> Liveness Analysis</a>
+          <a href="/tags/%E8%AF%AD%E4%B9%89%E5%88%86%E6%9E%90/" rel="tag"><i class="ic i-tag"></i> 语义分析</a>
       </div>
   </div>
 
@@ -236,7 +265,7 @@ NoResponse's Blog = NoResponse's Blog</title>
       <i class="ic i-calendar-check"></i>
     </span>
     <span class="text">Edited on</span>
-    <time title="Modified: 2025-06-20 00:10:47" itemprop="dateModified" datetime="2025-06-20T00:10:47+08:00">2025-06-20</time>
+    <time title="Modified: 2025-06-20 00:11:02" itemprop="dateModified" datetime="2025-06-20T00:11:02+08:00">2025-06-20</time>
   </span>
 </div>
 
@@ -272,7 +301,7 @@ NoResponse's Blog = NoResponse's Blog</title>
   </li>
   <li class="link">
     <strong>Post link: </strong>
-    <a href="http://example.com/2025/06/18/computer-science/compile-principles/ch10/" title="Liveness Analysis">http://example.com/2025/06/18/computer-science/compile-principles/ch10/</a>
+    <a href="http://example.com/2025/03/30/computer-science/compile-principles/ch5/" title="语义分析">http://example.com/2025/03/30/computer-science/compile-principles/ch5/</a>
   </li>
   <li class="license">
     <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> unless stating additionally.
@@ -291,20 +320,20 @@ NoResponse's Blog = NoResponse's Blog</title>
     <div class="item left">
       
 
-  <a href="/2025/06/17/computer-science/compile-principles/ch8/" itemprop="url" rel="prev" data-background-image="&#x2F;images&#x2F;bg34.jpg" title="Basic Blocks &amp; Traces">
+  <a href="/2025/03/29/computer-science/compile-principles/ch4/" itemprop="url" rel="prev" data-background-image="&#x2F;images&#x2F;bg18.jpg" title="抽象语法">
   <span class="type">Previous Post</span>
   <span class="category"><i class="ic i-flag"></i> 编译原理</span>
-  <h3>Basic Blocks & Traces</h3>
+  <h3>抽象语法</h3>
   </a>
 
     </div>
     <div class="item right">
       
 
-  <a href="/2025/06/18/computer-science/compile-principles/ch11/" itemprop="url" rel="next" data-background-image="&#x2F;images&#x2F;bg18.jpg" title="Register Allocation">
+  <a href="/2025/05/13/computer-science/computer-organization/ch1/" itemprop="url" rel="next" data-background-image="&#x2F;images&#x2F;bg36.jpg" title="Ch1">
   <span class="type">Next Post</span>
-  <span class="category"><i class="ic i-flag"></i> 编译原理</span>
-  <h3>Register Allocation</h3>
+  <span class="category"><i class="ic i-flag"></i> 计算机组成</span>
+  <h3>Ch1</h3>
   </a>
 
     </div>
@@ -323,11 +352,11 @@ NoResponse's Blog = NoResponse's Blog</title>
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="Contents">
-          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Liveness-Analysis-%E6%B4%BB%E8%B7%83%E5%8F%98%E9%87%8F%E5%88%86%E6%9E%90"><span class="toc-number">1.</span> <span class="toc-text">Liveness Analysis 活跃变量分析</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Compiler-Optimizations"><span class="toc-number">1.1.</span> <span class="toc-text">Compiler Optimizations</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Dataflow-Analysis"><span class="toc-number">1.2.</span> <span class="toc-text">Dataflow Analysis</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%98%E9%87%8F%E7%9A%84%E6%B4%BB%E8%B7%83%E6%80%A7%EF%BC%9A"><span class="toc-number">1.2.1.</span> <span class="toc-text">变量的活跃性：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Dataflow-Equations-for-Liveness-%E6%9E%84%E5%BB%BA%E6%95%B0%E6%8D%AE%E6%B5%81%E6%96%B9%E7%A8%8B"><span class="toc-number">1.3.</span> <span class="toc-text">Dataflow Equations for Liveness 构建数据流方程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B1%82%E8%A7%A3%E6%95%B0%E6%8D%AE%E6%B5%81%E6%96%B9%E7%A8%8B"><span class="toc-number">1.4.</span> <span class="toc-text">求解数据流方程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Improvements"><span class="toc-number">1.5.</span> <span class="toc-text">Improvements</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Use-Basic-Block"><span class="toc-number">1.5.1.</span> <span class="toc-text">Use Basic Block</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9B%86%E5%90%88%E7%9A%84%E8%A1%A8%E7%A4%BA%E6%96%B9%E6%B3%95"><span class="toc-number">1.6.</span> <span class="toc-text">集合的表示方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Bit-Arrays"><span class="toc-number">1.6.1.</span> <span class="toc-text">Bit Arrays</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Sorted-Lists"><span class="toc-number">1.6.2.</span> <span class="toc-text">Sorted Lists</span></a></li></ol></li></ol></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%AF%AD%E4%B9%89%E5%88%86%E6%9E%90"><span class="toc-number">1.</span> <span class="toc-text">语义分析</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#symbol-table"><span class="toc-number">1.1.</span> <span class="toc-text">symbol table</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Tiger%E7%BC%96%E8%AF%91%E5%99%A8%E4%B8%AD%E7%9A%84%E7%AC%A6%E5%8F%B7"><span class="toc-number">1.2.</span> <span class="toc-text">Tiger编译器中的符号</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%B1%BB%E5%9E%8B%E6%A3%80%E6%9F%A5"><span class="toc-number">1.3.</span> <span class="toc-text">类型检查</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%93%AA%E4%BA%9B%E7%B1%BB%E5%9E%8B%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%98%AF%E5%90%88%E6%B3%95-%E9%9D%9E%E6%B3%95%E7%9A%84"><span class="toc-number">1.3.1.</span> <span class="toc-text">哪些类型表达式是合法&#x2F;非法的</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B1%BB%E5%9E%8B%E7%AD%89%E4%BB%B7"><span class="toc-number">1.3.2.</span> <span class="toc-text">类型等价</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B1%BB%E5%9E%8B%E6%A3%80%E6%9F%A5%E7%9A%84rule"><span class="toc-number">1.3.3.</span> <span class="toc-text">类型检查的rule</span></a></li></ol></li></ol></li></ol>
       </div>
       <div class="related panel pjax" data-title="Related">
         <ul>
-          <li><a href="/2025/03/21/computer-science/compile-principles/ch1/" rel="bookmark" title="Introduction">Introduction</a></li><li><a href="/2025/03/22/computer-science/compile-principles/ch2/" rel="bookmark" title="词法分析">词法分析</a></li><li><a href="/2025/03/23/computer-science/compile-principles/ch3/" rel="bookmark" title="语法分析">语法分析</a></li><li><a href="/2025/03/29/computer-science/compile-principles/ch4/" rel="bookmark" title="抽象语法">抽象语法</a></li><li><a href="/2025/03/30/computer-science/compile-principles/ch5/" rel="bookmark" title="语义分析">语义分析</a></li><li><a href="/2025/06/15/computer-science/compile-principles/ch6/" rel="bookmark" title="活动记录">活动记录</a></li><li><a href="/2025/06/16/computer-science/compile-principles/ch7/" rel="bookmark" title="IR">IR</a></li><li><a href="/2025/06/17/computer-science/compile-principles/ch8/" rel="bookmark" title="Basic Blocks & Traces">Basic Blocks & Traces</a></li><li><a href="/2025/06/17/computer-science/compile-principles/ch9/" rel="bookmark" title="指令选择">指令选择</a></li><li><a href="/2025/06/18/computer-science/compile-principles/ch11/" rel="bookmark" title="Register Allocation">Register Allocation</a></li><li class="active"><a href="/2025/06/18/computer-science/compile-principles/ch10/" rel="bookmark" title="Liveness Analysis">Liveness Analysis</a></li>
+          <li><a href="/2025/03/21/computer-science/compile-principles/ch1/" rel="bookmark" title="Introduction">Introduction</a></li><li><a href="/2025/03/22/computer-science/compile-principles/ch2/" rel="bookmark" title="词法分析">词法分析</a></li><li><a href="/2025/03/23/computer-science/compile-principles/ch3/" rel="bookmark" title="语法分析">语法分析</a></li><li><a href="/2025/03/29/computer-science/compile-principles/ch4/" rel="bookmark" title="抽象语法">抽象语法</a></li><li class="active"><a href="/2025/03/30/computer-science/compile-principles/ch5/" rel="bookmark" title="语义分析">语义分析</a></li><li><a href="/2025/06/15/computer-science/compile-principles/ch6/" rel="bookmark" title="活动记录">活动记录</a></li><li><a href="/2025/06/16/computer-science/compile-principles/ch7/" rel="bookmark" title="IR">IR</a></li><li><a href="/2025/06/17/computer-science/compile-principles/ch8/" rel="bookmark" title="Basic Blocks & Traces">Basic Blocks & Traces</a></li><li><a href="/2025/06/17/computer-science/compile-principles/ch9/" rel="bookmark" title="指令选择">指令选择</a></li><li><a href="/2025/06/18/computer-science/compile-principles/ch11/" rel="bookmark" title="Register Allocation">Register Allocation</a></li><li><a href="/2025/06/18/computer-science/compile-principles/ch10/" rel="bookmark" title="Liveness Analysis">Liveness Analysis</a></li>
         </ul>
       </div>
       <div class="overview panel" data-title="Overview">
@@ -416,12 +445,12 @@ NoResponse's Blog = NoResponse's Blog</title>
 
   <ul id="quick">
     <li class="prev pjax">
-        <a href="/2025/06/17/computer-science/compile-principles/ch8/" rel="prev" title="Previous Post"><i class="ic i-chevron-left"></i></a>
+        <a href="/2025/03/29/computer-science/compile-principles/ch4/" rel="prev" title="Previous Post"><i class="ic i-chevron-left"></i></a>
     </li>
     <li class="up"><i class="ic i-arrow-up"></i></li>
     <li class="down"><i class="ic i-arrow-down"></i></li>
     <li class="next pjax">
-        <a href="/2025/06/18/computer-science/compile-principles/ch11/" rel="next" title="Next Post"><i class="ic i-chevron-right"></i></a>
+        <a href="/2025/05/13/computer-science/computer-organization/ch1/" rel="next" title="Next Post"><i class="ic i-chevron-right"></i></a>
     </li>
     <li class="percent"></li>
   </ul>
@@ -443,12 +472,10 @@ NoResponse's Blog = NoResponse's Blog</title>
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
+<a href="/categories/SE/" title="In 软件工程">软件工程</a>
 </div>
 
-    <span><a href="/2025/03/30/computer-science/compile-principles/ch5/" title="语义分析">语义分析</a></span>
+    <span><a href="/2025/06/19/SE/diagram/" title="画图题">画图题</a></span>
   </li>
 
       
@@ -457,10 +484,22 @@ NoResponse's Blog = NoResponse's Blog</title>
 <div class="breadcrumb">
 <a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/computer-network/" title="In 计算机网络">计算机网络</a>
+<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
 </div>
 
-    <span><a href="/2025/05/13/computer-science/computer-network/ch1/" title="Ch1">Ch1</a></span>
+    <span><a href="/2025/03/23/computer-science/compile-principles/ch3/" title="语法分析">语法分析</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/computer-organization/" title="In 计算机组成">计算机组成</a>
+</div>
+
+    <span><a href="/2025/05/13/computer-science/computer-organization/ch1/" title="Ch1">Ch1</a></span>
   </li>
 
       
@@ -470,7 +509,7 @@ NoResponse's Blog = NoResponse's Blog</title>
 <a href="/categories/AI/" title="In 人工智能">人工智能</a>
 </div>
 
-    <span><a href="/2025/06/16/AI/week12-13/" title="Week12-13">Week12-13</a></span>
+    <span><a href="/2025/05/20/AI/week1/" title="Week1">Week1</a></span>
   </li>
 
       
@@ -482,7 +521,7 @@ NoResponse's Blog = NoResponse's Blog</title>
 <a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
 </div>
 
-    <span><a href="/2025/06/15/computer-science/compile-principles/ch6/" title="活动记录">活动记录</a></span>
+    <span><a href="/2025/03/30/computer-science/compile-principles/ch5/" title="语义分析">语义分析</a></span>
   </li>
 
       
@@ -504,7 +543,7 @@ NoResponse's Blog = NoResponse's Blog</title>
 <a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
 </div>
 
-    <span><a href="/2025/06/17/computer-science/compile-principles/ch9/" title="指令选择">指令选择</a></span>
+    <span><a href="/2025/06/18/computer-science/compile-principles/ch10/" title="Liveness Analysis">Liveness Analysis</a></span>
   </li>
 
       
@@ -521,12 +560,10 @@ NoResponse's Blog = NoResponse's Blog</title>
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/computer-organization/" title="In 计算机组成">计算机组成</a>
+<a href="/categories/AI/" title="In 人工智能">人工智能</a>
 </div>
 
-    <span><a href="/2025/05/14/computer-science/computer-organization/ch2/" title="Ch2">Ch2</a></span>
+    <span><a href="/2025/06/16/AI/week10-11/" title="Week10-11">Week10-11</a></span>
   </li>
 
       
@@ -538,19 +575,7 @@ NoResponse's Blog = NoResponse's Blog</title>
 <a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
 </div>
 
-    <span><a href="/2025/06/17/computer-science/compile-principles/ch8/" title="Basic Blocks &amp; Traces">Basic Blocks & Traces</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
-</div>
-
-    <span><a href="/2025/03/23/computer-science/compile-principles/ch3/" title="语法分析">语法分析</a></span>
+    <span><a href="/2025/06/18/computer-science/compile-principles/ch11/" title="Register Allocation">Register Allocation</a></span>
   </li>
 
   </ul>
@@ -593,7 +618,7 @@ NoResponse's Blog = NoResponse's Blog</title>
   </div>
 <script data-config type="text/javascript">
   var LOCAL = {
-    path: '2025/06/18/computer-science/compile-principles/ch10/',
+    path: '2025/03/30/computer-science/compile-principles/ch5/',
     favicon: {
       show: "（●´3｀●）Goooood",
       hide: "(´Д｀)Booooom"
