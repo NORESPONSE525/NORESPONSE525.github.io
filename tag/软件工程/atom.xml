@@ -4,20 +4,20 @@
     <title>NoResponse&#39;s Blog • Posts by &#34;软件工程&#34; tag</title>
     <link href="http://example.com" />
     <updated>2025-06-18T16:00:00.000Z</updated>
-    <category term="人工智能" />
     <category term="软件工程" />
+    <category term="人工智能" />
     <category term="编译原理" />
     <category term="Register Allocation" />
-    <category term="词法分析" />
-    <category term="抽象语法" />
-    <category term="语法分析" />
     <category term="语义分析" />
+    <category term="词法分析" />
     <category term="Liveness Analysis" />
-    <category term="活动记录" />
+    <category term="语法分析" />
+    <category term="抽象语法" />
     <category term="中间代码" />
     <category term="Basic Blocks and Traces" />
-    <category term="计算机网络" />
     <category term="指令选择" />
+    <category term="活动记录" />
+    <category term="计算机网络" />
     <category term="计算机组成" />
     <category term="数据的表示与运算" />
     <entry>
@@ -25,7 +25,9 @@
         <title>画图题</title>
         <link rel="alternate" href="http://example.com/2025/06/19/SE/diagram/"/>
         <content type="html">&lt;ol&gt;
-&lt;li&gt;用例图 Use Case Diagram&lt;br&gt;Use-Cases: A collection of user scenarios that describe the thread of usage of a system&lt;br&gt;主要包含涉及的角色，角色对应的行为，第三方参与部分&lt;/li&gt;
+&lt;li&gt;用例图 Use Case Diagram&lt;br&gt;
+Use-Cases: A collection of user scenarios that describe the thread of usage of a system&lt;br&gt;
+ 主要包含涉及的角色，角色对应的行为，第三方参与部分&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
 &lt;li&gt;参与者：与系统交互的用户或其他软硬件系统，用小人形表示&lt;/li&gt;
@@ -33,22 +35,79 @@
 &lt;li&gt;关系参与者与用例、参与者之间、用例之间的联系。连线&lt;/li&gt;
 &lt;li&gt;边界：一组用例描述的系统或子系统，用矩形框表示。&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;+++primary example: SafeHome&lt;br&gt;;;;id3 题目&lt;br&gt;Our research indicates that the market for home security systems is growing at a rate of 40% per year. We would like to enter this market by building a &amp;#x3D;&amp;#x3D;microprocessor-based&amp;#x3D;&amp;#x3D; home security system that would protect against and&amp;#x2F;or recognize a variety of &amp;#x3D;&amp;#x3D;undesirable situations&amp;#x3D;&amp;#x3D; such as illegal entry, fire, flooding, and others. The product will use appropriate &amp;#x3D;&amp;#x3D;sensors&amp;#x3D;&amp;#x3D; to detect each situation, can be programmed by the &amp;#x3D;&amp;#x3D;homeowner&amp;#x3D;&amp;#x3D;, and will automatically telephone a monitoring agency when a situation is detected.&lt;br&gt;;;;&lt;/p&gt;
-&lt;p&gt;;;;id3 答案&lt;br&gt;&lt;img data-src=&#34;/useCase.jpg&#34;&gt;&lt;br&gt;我的理解是找到里面的人(onwer, monitoring agency, 然后可以加个administrator)，物件(sensor)，中间的框是个系统，然后里面的椭圆写上对应的交互行为，连上线，感觉比较主观&lt;br&gt;;;;&lt;br&gt;+++&lt;/p&gt;
+&lt;details class=&#34;primary&#34;&gt;&lt;summary&gt;example: SafeHome&lt;/summary&gt;&lt;div&gt;
+&lt;div class=&#34;tab&#34; data-id=&#34;id3&#34; data-title=&#34;题目&#34;&gt;
+&lt;p&gt;Our research indicates that the market for home security systems is growing at a rate of 40% per year. We would like to enter this market by building a &lt;mark&gt;microprocessor-based&lt;/mark&gt; home security system that would protect against and/or recognize a variety of &lt;mark&gt;undesirable situations&lt;/mark&gt; such as illegal entry, fire, flooding, and others. The product will use appropriate &lt;mark&gt;sensors&lt;/mark&gt; to detect each situation, can be programmed by the &lt;mark&gt;homeowner&lt;/mark&gt;, and will automatically telephone a monitoring agency when a situation is detected.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;tab&#34; data-id=&#34;id3&#34; data-title=&#34;答案&#34;&gt;
+&lt;p&gt;&lt;img data-src=&#34;useCase.jpg&#34; alt&gt;&lt;br&gt;
+我的理解是找到里面的人 (onwer, monitoring agency, 然后可以加个 administrator)，物件 (sensor)，中间的框是个系统，然后里面的椭圆写上对应的交互行为，连上线，感觉比较主观&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/details&gt;
 &lt;ol start=&#34;2&#34;&gt;
-&lt;li&gt;&lt;p&gt;CRC Card&lt;br&gt;每个卡片应该包含：类名，类的描述信息，职责，合作类&lt;br&gt;+++primary example&lt;br&gt;&lt;img data-src=&#34;/CRC.jpg&#34;&gt;&lt;br&gt;+++&lt;/p&gt;
+&lt;li&gt;CRC Card&lt;br&gt;
+ 每个卡片应该包含：类名，类的描述信息，职责，合作类&lt;/li&gt;
+&lt;/ol&gt;
+&lt;details class=&#34;primary&#34;&gt;&lt;summary&gt;example&lt;/summary&gt;&lt;div&gt;
+&lt;p&gt;&lt;img data-src=&#34;CRC.jpg&#34; alt&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;/details&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;类图 class diagram&lt;br&gt;
+ 主要的信息：类名，属性 (name: type)，方法 (name (parameter): return type)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;details class=&#34;primary&#34;&gt;&lt;summary&gt;example&lt;/summary&gt;&lt;div&gt;
+&lt;div class=&#34;tab&#34; data-id=&#34;id4&#34; data-title=&#34;例子1&#34;&gt;
+&lt;p&gt;&lt;img data-src=&#34;class.jpg&#34; alt&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class=&#34;tab&#34; data-id=&#34;id4&#34; data-title=&#34;例子2&#34;&gt;
+&lt;p&gt;&lt;img data-src=&#34;class2.jpg&#34; alt&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/details&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;状态图 state diagram&lt;br&gt;
+&lt;strong&gt; 节点&lt;/strong&gt;：开始状态，结束状态，状态&lt;br&gt;
+&lt;strong&gt;边&lt;/strong&gt;：行为&lt;br&gt;
+状态：圆角矩形&lt;br&gt;
+转移：带有标记的箭头&lt;br&gt;
+初始状态：实心圆&lt;br&gt;
+终止状态：实心环&lt;br&gt;
+分支：菱形&lt;/li&gt;
+&lt;/ol&gt;
+&lt;details class=&#34;primary&#34;&gt;&lt;summary&gt;example&lt;/summary&gt;&lt;div&gt;
+&lt;p&gt;&lt;img data-src=&#34;state.jpg&#34; alt&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;/details&gt;
+&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;时序图 sequence diagram&lt;br&gt;
+ 对象（参与者上面要画个人）、生命线（对象下面的虚线）、控制焦点、消息&lt;br&gt;
+&lt;img data-src=&#34;seq.jpg&#34; alt&gt;&lt;br&gt;
+实心箭头表示同步消息：一个对象向另一个对象发出同步消息后，将处于阻塞状态，一直等到另一个对象的回应（图里面的请求是同步的）&lt;br&gt;
+简单箭头表示异步&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;note warning&#34;&gt;
+&lt;p&gt;箭头的画法存疑&lt;/p&gt;
+&lt;/div&gt;
+&lt;ol start=&#34;6&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;数据流图 data flow diagram&lt;br&gt;
+ 外部实体（数据的原点和终点）：软件系统外部环境中的实体（包括人、组织或其他软件系统），用&lt;mark&gt;方框&lt;/mark&gt;&lt;br&gt;
+加工 Process：对数据进行处理的单元，比如内部的 xx 系统，用&lt;mark&gt;圆角矩形&lt;/mark&gt;或椭圆&lt;br&gt;
+数据存储：数据库，用&lt;mark&gt;右侧开口的矩形或者左右开口的矩形&lt;/mark&gt;&lt;br&gt;
+数据流：箭头方向即数据流动方向，数据流名标在数据流线上面&lt;br&gt;
+看例子：&lt;br&gt;
+&lt;img data-src=&#34;dataflow.jpg&#34; alt&gt;&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p&gt;类图 class diagram&lt;br&gt;主要的信息：类名，属性(name: type)，方法(name(parameter): return type)&lt;br&gt;+++primary example&lt;br&gt;;;;id4 例子1&lt;br&gt;&lt;img data-src=&#34;/class.jpg&#34;&gt;&lt;br&gt;;;;&lt;br&gt;;;;id4 例子2&lt;br&gt;&lt;img data-src=&#34;/class2.jpg&#34;&gt;&lt;br&gt;;;;&lt;br&gt;+++&lt;/p&gt;
+&lt;li&gt;
+&lt;p&gt;软件架构图 architecture&lt;br&gt;
+ 以前后端分离的系统为例（前端，后端，数据库）&lt;br&gt;
+&lt;img data-src=&#34;arch.jpg&#34; alt&gt;&lt;br&gt;
+三个大框分别是客户端、服务器、数据库层&lt;br&gt;
+里面小框，前端就是 Web app 和移动 app，后端就是各种系统，数据库就是各种数据库（表？）&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p&gt;状态图 state diagram&lt;br&gt;&lt;strong&gt;节点&lt;/strong&gt;：开始状态，结束状态，状态&lt;br&gt;&lt;strong&gt;边&lt;/strong&gt;：行为&lt;br&gt;状态：圆角矩形&lt;br&gt;转移：带有标记的箭头&lt;br&gt;初始状态：实心圆&lt;br&gt;终止状态：实心环&lt;br&gt;分支：菱形&lt;br&gt;+++primary example&lt;br&gt;&lt;img data-src=&#34;/state.jpg&#34;&gt;&lt;br&gt;+++&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;时序图 sequence diagram&lt;br&gt;对象（参与者上面要画个人）、生命线（对象下面的虚线）、控制焦点、消息&lt;br&gt;&lt;img data-src=&#34;/seq.jpg&#34;&gt;&lt;br&gt;实心箭头表示同步消息：一个对象向另一个对象发出同步消息后，将处于阻塞状态，一直等到另一个对象的回应（图里面的请求是同步的）&lt;br&gt;简单箭头表示异步&lt;br&gt;:::warning&lt;br&gt;箭头的画法存疑&lt;br&gt;:::&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;数据流图 data flow diagram&lt;br&gt;外部实体（数据的原点和终点）：软件系统外部环境中的实体（包括人、组织或其他软件系统），用&amp;#x3D;&amp;#x3D;方框&amp;#x3D;&amp;#x3D;&lt;br&gt;加工Process：对数据进行处理的单元，比如内部的xx系统，用&amp;#x3D;&amp;#x3D;圆角矩形&amp;#x3D;&amp;#x3D;或椭圆&lt;br&gt;数据存储：数据库，用&amp;#x3D;&amp;#x3D;右侧开口的矩形或者左右开口的矩形&amp;#x3D;&amp;#x3D;&lt;br&gt;数据流：箭头方向即数据流动方向，数据流名标在数据流线上面&lt;br&gt;看例子：&lt;br&gt;&lt;img data-src=&#34;/dataflow.jpg&#34;&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;软件架构图 architecture&lt;br&gt;以前后端分离的系统为例（前端，后端，数据库）&lt;br&gt;&lt;img data-src=&#34;/arch.jpg&#34;&gt;&lt;br&gt;三个大框分别是客户端、服务器、数据库层&lt;br&gt;里面小框，前端就是Web app和移动app，后端就是各种系统，数据库就是各种数据库（表？）&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;泳道图 Swimlane Diagram&lt;br&gt;跨职能流程图。旨在展示工作流中每个步骤涉及的流程和职能部门。在表示use-case的同时，描述对活动负责的actor&amp;#x2F;analysis class&lt;br&gt;最上面放实体，然后分成一列一列，其他的和流程图一样&lt;br&gt;&lt;img data-src=&#34;/swim.jpg&#34;&gt;&lt;/p&gt;
+&lt;li&gt;
+&lt;p&gt;泳道图 Swimlane Diagram&lt;br&gt;
+ 跨职能流程图。旨在展示工作流中每个步骤涉及的流程和职能部门。在表示 use-case 的同时，描述对活动负责的 actor/analysis class&lt;br&gt;
+ 最上面放实体，然后分成一列一列，其他的和流程图一样&lt;br&gt;
+&lt;img data-src=&#34;swim.jpg&#34; alt&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 </content>
@@ -59,21 +118,26 @@
         <id>http://example.com/2025/06/19/SE/note/</id>
         <title>SE note</title>
         <link rel="alternate" href="http://example.com/2025/06/19/SE/note/"/>
-        <content type="html">&lt;h1 id=&#34;Ch2-Software-Engineering&#34;&gt;&lt;a href=&#34;#Ch2-Software-Engineering&#34; class=&#34;headerlink&#34; title=&#34;Ch2 Software Engineering&#34;&gt;&lt;/a&gt;Ch2 Software Engineering&lt;/h1&gt;&lt;ul&gt;
-&lt;li&gt;Definition: The application of a &amp;#x3D;&amp;#x3D;systematic&amp;#x3D;&amp;#x3D;, &amp;#x3D;&amp;#x3D;disciplined&amp;#x3D;&amp;#x3D;, &amp;#x3D;&amp;#x3D;quantifiable（可量化）&amp;#x3D;&amp;#x3D; approach to the &amp;#x3D;&amp;#x3D;development&amp;#x3D;&amp;#x3D;, &amp;#x3D;&amp;#x3D;operation&amp;#x3D;&amp;#x3D;, and &amp;#x3D;&amp;#x3D;maintenance&amp;#x3D;&amp;#x3D; of software&lt;/li&gt;
-&lt;li&gt;软件工程是一个多层次的技术体系(a layered technology)&lt;ul&gt;
-&lt;li&gt;从下往上是a “quality” focus, process model, methods, tools, 反映了构建高质量软件产品的逻辑流程&lt;/li&gt;
+        <content type="html">&lt;h1 id=&#34;ch2-software-engineering&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#ch2-software-engineering&#34;&gt;#&lt;/a&gt; Ch2 Software Engineering&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;Definition: The application of a &lt;mark&gt;systematic&lt;/mark&gt;, &lt;mark&gt;disciplined&lt;/mark&gt;, &lt;mark&gt;quantifiable（可量化）&lt;/mark&gt; approach to the &lt;mark&gt;development&lt;/mark&gt;, &lt;mark&gt;operation&lt;/mark&gt;, and &lt;mark&gt;maintenance&lt;/mark&gt; of software&lt;/li&gt;
+&lt;li&gt;软件工程是一个多层次的技术体系 (a layered technology)
+&lt;ul&gt;
+&lt;li&gt;从下往上是 a “quality” focus, process model, methods, tools, 反映了构建高质量软件产品的逻辑流程&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;软件过程（The Software Process）中的两个重要概念：通用过程框架（Common Process Framework）和 伞形活动（Umbrella Activities）&lt;ul&gt;
-&lt;li&gt;通用过程框架（Common Process Framework）： 软件开发过程中的一些基本要素&lt;ul&gt;
+&lt;li&gt;软件过程（The Software Process）中的两个重要概念：通用过程框架（Common Process Framework）和 伞形活动（Umbrella Activities）
+&lt;ul&gt;
+&lt;li&gt;通用过程框架（Common Process Framework）： 软件开发过程中的一些基本要素
+&lt;ul&gt;
 &lt;li&gt;工作任务（work tasks）：指在软件开发的不同阶段中需要完成的具体任务。&lt;/li&gt;
 &lt;li&gt;工作产品（work products）：指在执行工作任务过程中产生的各种文档、代码等成果物。&lt;/li&gt;
 &lt;li&gt;里程碑与交付物（milestones &amp;amp; deliverables）：里程碑是项目进展的重要节点，而交付物是在这些节点上需要提交的成果。&lt;/li&gt;
 &lt;li&gt;质量保证检查点（QA checkpoints）：在整个开发过程中设置的检查点，用于评估和确保软件产品的质量。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;伞形活动（Umbrella Activities）：软件开发过程中需要执行的活动&lt;ul&gt;
+&lt;li&gt;伞形活动（Umbrella Activities）：软件开发过程中需要执行的活动
+&lt;ul&gt;
 &lt;li&gt;项目管理（Project management）：负责项目的规划、组织、协调和控制，确保项目按计划进行。&lt;/li&gt;
 &lt;li&gt;质量保证（Quality assurance）：通过一系列措施确保软件产品的质量符合预定标准。&lt;/li&gt;
 &lt;li&gt;工作产品生产（Work product production）：涉及创建和维护软件开发过程中产生的各种工作产品。&lt;/li&gt;
@@ -86,7 +150,8 @@
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Generic Process Framework&lt;/strong&gt; 通用的软件开发过程框架&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Generic Process Framework&lt;/strong&gt; 通用的软件开发过程框架
+&lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Communication&lt;/strong&gt;: 与客户协作并收集需求&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Planning&lt;/strong&gt;: establishes engineering work plan, describes technical risks, lists resource requirements, work products produced, and defines work schedule&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Modeling&lt;/strong&gt;: 创建模型以帮助开发者和客户理解需求和设计&lt;/li&gt;
@@ -94,26 +159,29 @@
 &lt;li&gt;&lt;strong&gt;Deployment&lt;/strong&gt;: 交付软件供客户评估和反馈&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Process Adaptation&lt;/strong&gt; 过程适配: 根据项目的具体需求、限制条件和特点，对软件开发过程进行定制和调整&lt;ul&gt;
-&lt;li&gt;overall &amp;#x3D;&amp;#x3D;flow&amp;#x3D;&amp;#x3D; of activities, actions, and tasks and the interdependencies among them&lt;/li&gt;
-&lt;li&gt;degree to which &amp;#x3D;&amp;#x3D;actions and tasks&amp;#x3D;&amp;#x3D; are defined within each framework activity&lt;/li&gt;
-&lt;li&gt;degree to which &amp;#x3D;&amp;#x3D;work products&amp;#x3D;&amp;#x3D; are identified and required&lt;/li&gt;
-&lt;li&gt;manner which &amp;#x3D;&amp;#x3D;quality assurance&amp;#x3D;&amp;#x3D; activities are applied&lt;/li&gt;
-&lt;li&gt;manner in which &amp;#x3D;&amp;#x3D;project tracking and control&amp;#x3D;&amp;#x3D; activities are applied&lt;/li&gt;
-&lt;li&gt;overall degree of &amp;#x3D;&amp;#x3D;detail and rigor&amp;#x3D;&amp;#x3D; with which the process is described&lt;/li&gt;
-&lt;li&gt;degree to which the &amp;#x3D;&amp;#x3D;customer and other stakeholders&amp;#x3D;&amp;#x3D; are involved with the project&lt;/li&gt;
-&lt;li&gt;level of autonomy given to the &amp;#x3D;&amp;#x3D;software team&amp;#x3D;&amp;#x3D;&lt;/li&gt;
-&lt;li&gt;degree to which &amp;#x3D;&amp;#x3D;team organization and roles&amp;#x3D;&amp;#x3D; are prescribed&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Process Adaptation&lt;/strong&gt; 过程适配：根据项目的具体需求、限制条件和特点，对软件开发过程进行定制和调整
+&lt;ul&gt;
+&lt;li&gt;overall &lt;mark&gt;flow&lt;/mark&gt; of activities, actions, and tasks and the interdependencies among them&lt;/li&gt;
+&lt;li&gt;degree to which &lt;mark&gt;actions and tasks&lt;/mark&gt; are defined within each framework activity&lt;/li&gt;
+&lt;li&gt;degree to which &lt;mark&gt;work products&lt;/mark&gt; are identified and required&lt;/li&gt;
+&lt;li&gt;manner which &lt;mark&gt;quality assurance&lt;/mark&gt; activities are applied&lt;/li&gt;
+&lt;li&gt;manner in which &lt;mark&gt;project tracking and control&lt;/mark&gt; activities are applied&lt;/li&gt;
+&lt;li&gt;overall degree of &lt;mark&gt;detail and rigor&lt;/mark&gt; with which the process is described&lt;/li&gt;
+&lt;li&gt;degree to which the &lt;mark&gt;customer and other stakeholders&lt;/mark&gt; are involved with the project&lt;/li&gt;
+&lt;li&gt;level of autonomy given to the &lt;mark&gt;software team&lt;/mark&gt;&lt;/li&gt;
+&lt;li&gt;degree to which &lt;mark&gt;team organization and roles&lt;/mark&gt; are prescribed&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;The Essence of Practice&lt;ul&gt;
+&lt;li&gt;The Essence of Practice
+&lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Understand the problem&lt;/strong&gt; (communication and analysis).&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Plan a solution&lt;/strong&gt; (modeling and software design).&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Carry out the plan&lt;/strong&gt; (code generation).&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Examine the result for accuracy&lt;/strong&gt; (testing and quality assurance).&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;General Principles 通用原则：软件开发过程中应遵循的一些核心指导思想或基本原则&lt;ul&gt;
+&lt;li&gt;General Principles 通用原则：软件开发过程中应遵循的一些核心指导思想或基本原则
+&lt;ul&gt;
 &lt;li&gt;The reason it all exists — Provide Value to users&lt;/li&gt;
 &lt;li&gt;KISS — Keep It Simple, Stupid!&lt;/li&gt;
 &lt;li&gt;Maintain the Vision&lt;/li&gt;
@@ -123,20 +191,24 @@
 &lt;li&gt;Think!&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;Software Development Myths 软件开发管理中常见的误解（Myth）及其背后的现实情况（Reality）&lt;ul&gt;
-&lt;li&gt;Management myths&lt;ul&gt;
+&lt;li&gt;Software Development Myths 软件开发管理中常见的误解（Myth）及其背后的现实情况（Reality）
+&lt;ul&gt;
+&lt;li&gt;Management myths
+&lt;ul&gt;
 &lt;li&gt;标准和流程的有效性依赖于团队的理解和接受程度。&lt;/li&gt;
 &lt;li&gt;软件开发是一个高度协作和复杂的创造性过程，简单地增加人力并不能解决进度问题。&lt;/li&gt;
 &lt;li&gt;外包项目同样需要良好的管理和沟通能力，不能因为外包就忽视了对项目的控制和监督&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;Customer myths&lt;ul&gt;
+&lt;li&gt;Customer myths
+&lt;ul&gt;
 &lt;li&gt;详细的需求分析和规划&lt;/li&gt;
 &lt;li&gt;充分的沟通与确认&lt;/li&gt;
 &lt;li&gt;合理的进度评估&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;Practitioner’s myths&lt;ul&gt;
+&lt;li&gt;Practitioner’s myths
+&lt;ul&gt;
 &lt;li&gt;错误：一旦我们编写好程序并使其正常运行，我们的工作就完成了&lt;/li&gt;
 &lt;li&gt;过早进入编码阶段可能会导致更多的返工和调整，从而延长项目周期&lt;/li&gt;
 &lt;/ul&gt;
@@ -144,40 +216,62 @@
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1 id=&#34;Ch3-Software-Process-Structure&#34;&gt;&lt;a href=&#34;#Ch3-Software-Process-Structure&#34; class=&#34;headerlink&#34; title=&#34;Ch3 Software Process Structure&#34;&gt;&lt;/a&gt;Ch3 Software Process Structure&lt;/h1&gt;&lt;p&gt;Umbrella Activities是贯穿整个软件开发过程的活动，Framework Activity是软件开发的核心阶段，如沟通、计划、建模、构建和部署，每个框架活动下都有具体的task set，每个task set中又包含多个具体的action&lt;/p&gt;
+&lt;h1 id=&#34;ch3-software-process-structure&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#ch3-software-process-structure&#34;&gt;#&lt;/a&gt; Ch3 Software Process Structure&lt;/h1&gt;
+&lt;p&gt;Umbrella Activities 是贯穿整个软件开发过程的活动，Framework Activity 是软件开发的核心阶段，如沟通、计划、建模、构建和部署，每个框架活动下都有具体的 task set，每个 task set 中又包含多个具体的 action&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;Process flow&lt;/strong&gt; 过程流（对于之前提到的Generic Process Framework的五步）&lt;/p&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Process flow&lt;/strong&gt; 过程流（对于之前提到的 Generic Process Framework 的五步）&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;线性过程流（Linear process flow）&lt;/li&gt;
 &lt;li&gt;迭代过程流（Iterative process flow）&lt;/li&gt;
 &lt;li&gt;演化过程流（Evolutionary process flow）&lt;/li&gt;
-&lt;li&gt;并行过程流（Parallel process flow）&lt;br&gt;&lt;img data-src=&#34;/f1.jpg&#34;&gt;&lt;/li&gt;
+&lt;li&gt;并行过程流（Parallel process flow）&lt;br&gt;
+&lt;img data-src=&#34;f1.jpg&#34; alt&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;Process Patterns&lt;/strong&gt; 过程模式&lt;br&gt;Process patterns define a set of activities, actions, work tasks, work products and&amp;#x2F;or related behaviors&lt;br&gt;提供了一种&lt;code&gt;template&lt;/code&gt;用于定义模式&lt;br&gt;&lt;strong&gt;Generic software pattern elements&lt;/strong&gt;:&lt;/p&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Process Patterns&lt;/strong&gt; 过程模式&lt;br&gt;
+ Process patterns define a set of activities, actions, work tasks, work products and/or related behaviors&lt;br&gt;
+ 提供了一种 &lt;code&gt;template&lt;/code&gt;  用于定义模式&lt;br&gt;
+&lt;strong&gt; Generic software pattern elements&lt;/strong&gt;:&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p&gt;pattern name &lt;/p&gt;
+&lt;li&gt;
+&lt;p&gt;pattern name&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Intent (objective of pattern) &lt;/p&gt;
+&lt;li&gt;
+&lt;p&gt;Intent (objective of pattern)&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Type (Task pattern, Stage pattern, Phase pattern)&lt;/p&gt;
+&lt;li&gt;
+&lt;p&gt;Type (Task pattern, Stage pattern, Phase pattern)&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Initial context&lt;/p&gt;
+&lt;li&gt;
+&lt;p&gt;Initial context&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Solution&lt;/p&gt;
+&lt;li&gt;
+&lt;p&gt;Solution&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Resulting context&lt;/p&gt;
+&lt;li&gt;
+&lt;p&gt;Resulting context&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Related patterns&lt;/p&gt;
+&lt;li&gt;
+&lt;p&gt;Related patterns&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Known uses&amp;#x2F;examples&lt;/p&gt;
+&lt;li&gt;
+&lt;p&gt;Known uses/examples&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;Process Assessment&lt;/strong&gt;&lt;br&gt;几种评估软件过程的方法：&lt;br&gt;SCAMPI (Standard CMMI Appraisal Method for Process Improvement)&lt;br&gt;SPICE (ISO&amp;#x2F;IEC 15504)&lt;br&gt;CBA IPI (Capability Benchmarking Appraisal using the Integrated Process Improvement method)&lt;br&gt;ISO 9001:2000 for Software&lt;/p&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Process Assessment&lt;/strong&gt;&lt;br&gt;
+ 几种评估软件过程的方法：&lt;br&gt;
+SCAMPI (Standard CMMI Appraisal Method for Process Improvement)&lt;br&gt;
+SPICE (ISO/IEC 15504)&lt;br&gt;
+CBA IPI (Capability Benchmarking Appraisal using the Integrated Process Improvement method)&lt;br&gt;
+ISO 9001:2000 for Software&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p&gt;The Capability Maturity Model Integration 能力成熟度模型集成（CMMI）&lt;/p&gt;
+&lt;li&gt;
+&lt;p&gt;The Capability Maturity Model Integration 能力成熟度模型集成（CMMI）&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Level 0: Incomplete &lt;/li&gt;
-&lt;li&gt;Level 1: Performed &lt;/li&gt;
+&lt;li&gt;Level 0: Incomplete&lt;/li&gt;
+&lt;li&gt;Level 1: Performed&lt;/li&gt;
 &lt;li&gt;Level 2: Managed&lt;/li&gt;
 &lt;li&gt;Level 3: Defined&lt;/li&gt;
 &lt;li&gt;Level 4: Quantitatively Managed 定量管理&lt;/li&gt;
@@ -185,7 +279,104 @@
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1 id=&#34;Ch4-Process-Models&#34;&gt;&lt;a href=&#34;#Ch4-Process-Models&#34; class=&#34;headerlink&#34; title=&#34;Ch4 Process Models&#34;&gt;&lt;/a&gt;Ch4 Process Models&lt;/h1&gt;</content>
+&lt;h1 id=&#34;ch4-process-models&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#ch4-process-models&#34;&gt;#&lt;/a&gt; Ch4 Process Models&lt;/h1&gt;
+&lt;h2 id=&#34;prescriptive-models&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#prescriptive-models&#34;&gt;#&lt;/a&gt; Prescriptive Models&lt;/h2&gt;
+&lt;p&gt;Prescriptive (规范的) process models advocate an orderly approach to software engineering&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The Waterfall Model&lt;br&gt;
+&lt;img data-src=&#34;4-1.jpg&#34; alt&gt;&lt;/li&gt;
+&lt;li&gt;The V Model&lt;br&gt;
+&lt;img data-src=&#34;4-2.jpg&#34; alt&gt;&lt;/li&gt;
+&lt;li&gt;Incremental Process Models 增量过程模型
+&lt;ul&gt;
+&lt;li&gt;The Incremental Model 增量模型：将整个系统划分为多个可交付的 “增量” 部分，每个增量都作为一个独立的小项目进行五步流程&lt;br&gt;
+&lt;img data-src=&#34;4-3.jpg&#34; alt&gt;&lt;/li&gt;
+&lt;li&gt;The Rapid Application Development (RAD) Model 快速应用开发模型：短时间内交付功能完善的系统，communication 和 planning 之后分成好几个 team 进行 modeling 和 construction，最后合并 deployment&lt;br&gt;
+&lt;img data-src=&#34;4-4.jpg&#34; alt&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Evolutionary Process Models 进化式过程模型
+&lt;ul&gt;
+&lt;li&gt;Prototyping 原型化方法：当客户有明确的需求但不清楚具体细节时，通过原型，客户可以直观地看到系统的雏形并提出修改意见；原型通常是 “抛弃型” 的，即在验证概念后会被丢弃，而不是直接作为最终产品的一部分
+&lt;ul&gt;
+&lt;li&gt;Prototype Model: Communication, Quick Plan, Modeling &amp;amp; Quick Design, Construction of prototype, Deployment Delivery &amp;amp; Feedback&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;The Spiral Model 螺旋模型：螺旋模型将整个开发过程视为一个逐渐扩大的螺旋线，每个环代表一个开发阶段或迭代周期&lt;br&gt;
+&lt;img data-src=&#34;4-5.jpg&#34; alt&gt;&lt;/li&gt;
+&lt;li&gt;The Concurrent Development Model 并行开发模型
+&lt;ul&gt;
+&lt;li&gt;并行开发模型定义了一系列事件，这些事件将触发每个活动、动作或任务从一个状态到另一个状态的转换&lt;/li&gt;
+&lt;li&gt;Especially good for client/server applications&lt;/li&gt;
+&lt;li&gt;并行开发模型定义了一个活动网络，而不是简单的线性事件序列&lt;/li&gt;
+&lt;li&gt;需要在 Flexibility, Extensibility, Speed of development 和 high quality 中权衡&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;specialized-process-models-专业化的软件过程模型&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#specialized-process-models-专业化的软件过程模型&#34;&gt;#&lt;/a&gt; Specialized Process Models 专业化的软件过程模型&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Component-Based Development （强调 reuse）&lt;/li&gt;
+&lt;li&gt;Formal methods （形式化方法强调使用数学手段来精确地描述需求）&lt;/li&gt;
+&lt;li&gt;Aspect-Oriented Software Development （面向切面，切面指那些横跨多个模块或功能的通用关注点）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;the-unified-process-统一过程&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#the-unified-process-统一过程&#34;&gt;#&lt;/a&gt; The Unified Process 统一过程&lt;/h2&gt;
+&lt;p&gt;统一过程是一种 “用例驱动、以架构为中心、迭代和增量” 的软件开发过程&lt;br&gt;
+ A &lt;mark&gt;“use-case driven, architecture-centric, iterative and incremental”&lt;/mark&gt; software process closely aligned with the Unified Modeling Language (UML)&lt;br&gt;
+&lt;img data-src=&#34;4-6.jpg&#34; alt&gt;&lt;/p&gt;
+&lt;h3 id=&#34;统一过程unified-process-up在各个阶段产生的工作产品work-products&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#统一过程unified-process-up在各个阶段产生的工作产品work-products&#34;&gt;#&lt;/a&gt; 统一过程（Unified Process, UP）在各个阶段产生的工作产品（ &lt;code&gt;Work Products&lt;/code&gt; ）&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Inception Phase（启动阶段）&lt;br&gt;
+Vision Document（愿景文档）：概述项目的总体目标、范围和预期结果。&lt;br&gt;
+Initial Use-case Model（初始用例模型）：描述系统的主要功能和用户交互场景。&lt;br&gt;
+Initial Project Glossary（初始项目术语表）：定义项目中使用的专业术语和缩写。&lt;br&gt;
+Initial Business Case（初始商业案例）：分析项目的商业价值和可行性。&lt;br&gt;
+Initial Risk Assessment（初始风险评估）：识别和评估项目可能面临的风险。&lt;br&gt;
+Project Plan Phases and Iterations（项目计划阶段和迭代）：制定项目的整体计划，包括阶段划分和迭代安排。&lt;br&gt;
+Business Model（业务模型）：描述项目的业务流程和商业模式。&lt;br&gt;
+Prototypes（原型）：创建系统的初步原型，用于验证需求和设计。&lt;/li&gt;
+&lt;li&gt;Elaboration Phase（细化阶段）&lt;br&gt;
+Use-case Model（用例模型）：进一步完善和细化用例模型，明确系统功能。&lt;br&gt;
+Functional and Non-functional Requirements（功能性与非功能性需求）：详细描述系统需要满足的功能性和非功能性要求。&lt;br&gt;
+Analysis Model（分析模型）：基于需求分析建立的系统逻辑模型。&lt;br&gt;
+Software Architecture Description（软件架构描述）：定义系统的整体架构和关键组件。&lt;br&gt;
+Executable Architectural Prototype（可执行架构原型）：实现一个可运行的架构原型，验证架构的可行性和性能。&lt;br&gt;
+Preliminary Design Model（初步设计模型）：基于架构描述进行初步的设计。&lt;br&gt;
+Revise Risk List（修订风险列表）：根据新的信息和发现更新风险评估。&lt;br&gt;
+Project Plan Iteration Plan, Workflow, Milestones（项目计划迭代计划、工作流、里程碑）：细化项目计划，包括具体的迭代安排、工作流程和关键里程碑。&lt;br&gt;
+Preliminary User Manual（初步用户手册）：编写系统的初步使用说明。&lt;/li&gt;
+&lt;li&gt;Construction Phase（构建阶段）&lt;br&gt;
+Design Model（设计模型）：完成详细的系统设计，包括模块设计和接口设计。&lt;br&gt;
+Software Components（软件组件）：开发和实现各个软件组件。&lt;br&gt;
+Integrated Software Increment（集成软件增量）：将各个组件集成在一起，形成可运行的软件增量。&lt;br&gt;
+Test Plan（测试计划）：制定详细的测试计划，包括测试策略和资源安排。&lt;br&gt;
+Test Cases（测试用例）：编写具体的测试用例，用于验证系统功能和质量。&lt;br&gt;
+Support Documentation User Installation Increment（支持文档用户安装增量）：编写用户安装和操作指南，帮助用户正确安装和使用系统。&lt;/li&gt;
+&lt;li&gt;Transition Phase（过渡阶段）&lt;br&gt;
+Delivered Software Increment（交付的软件增量）：向用户交付经过测试和验证的软件增量。&lt;br&gt;
+Beta Test Reports（Beta 测试报告）：收集和整理 Beta 测试期间的反馈和问题报告。&lt;br&gt;
+User Feedback（用户反馈）：收集用户的实际使用反馈，为后续改进提供依据。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;个人软件过程personal-software-process-psp&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#个人软件过程personal-software-process-psp&#34;&gt;#&lt;/a&gt; 个人软件过程（Personal Software Process, PSP）&lt;/h3&gt;
+&lt;p&gt;Five Framework Activities:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Planning&lt;/li&gt;
+&lt;li&gt;High-Level Design&lt;/li&gt;
+&lt;li&gt;High-Level Design Review&lt;/li&gt;
+&lt;li&gt;Development&lt;/li&gt;
+&lt;li&gt;Postmortem（事后分析）&lt;br&gt;
+Stresses the Need for Error Identification and Understanding&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;团队软件过程team-software-process-tsp&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#团队软件过程team-software-process-tsp&#34;&gt;#&lt;/a&gt; 团队软件过程（Team Software Process, TSP）&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Each project is “launched” using a “script” that defines the tasks to be accomplished&lt;/li&gt;
+&lt;li&gt;Teams are self-directed&lt;/li&gt;
+&lt;li&gt;Measurement is encouraged&lt;/li&gt;
+&lt;li&gt;Measures are analyzed with the intent of improving the team process&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;ch5-agile-development-敏捷开发&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#ch5-agile-development-敏捷开发&#34;&gt;#&lt;/a&gt; Ch5 Agile Development 敏捷开发&lt;/h1&gt;
+</content>
         <category term="软件工程" />
         <updated>2025-06-18T16:00:00.000Z</updated>
     </entry>

@@ -7,20 +7,20 @@
         <language>en</language>
         <pubDate>Fri, 21 Mar 2025 00:00:00 +0800</pubDate>
         <lastBuildDate>Fri, 21 Mar 2025 00:00:00 +0800</lastBuildDate>
-        <category>人工智能</category>
         <category>软件工程</category>
+        <category>人工智能</category>
         <category>编译原理</category>
         <category>Register Allocation</category>
-        <category>词法分析</category>
-        <category>抽象语法</category>
-        <category>语法分析</category>
         <category>语义分析</category>
+        <category>词法分析</category>
         <category>Liveness Analysis</category>
-        <category>活动记录</category>
+        <category>语法分析</category>
+        <category>抽象语法</category>
         <category>中间代码</category>
         <category>Basic Blocks and Traces</category>
-        <category>计算机网络</category>
         <category>指令选择</category>
+        <category>活动记录</category>
+        <category>计算机网络</category>
         <category>计算机组成</category>
         <category>数据的表示与运算</category>
         <item>
@@ -30,17 +30,22 @@
             <category>编译原理</category>
             <pubDate>Fri, 21 Mar 2025 00:00:00 +0800</pubDate>
             <description><![CDATA[ &lt;blockquote&gt;
-&lt;p&gt;ZJU 2025春夏编译原理 学习笔记&lt;/p&gt;
-&lt;p&gt;主要基于虎书（&lt;em&gt;Modern Compiler Implementation in C&lt;/em&gt;, Andrew W. Appel）和好多老师的ppt（ldm, yps），还有lzx的智云&lt;/p&gt;
+&lt;p&gt;ZJU 2025 春夏编译原理 学习笔记&lt;/p&gt;
+&lt;p&gt;主要基于虎书（&lt;em&gt;Modern Compiler Implementation in C&lt;/em&gt;, Andrew W. Appel）和好多老师的 ppt（ldm, yps），还有 lzx 的智云&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h1 id=&#34;CH1-Introduction&#34;&gt;&lt;a href=&#34;#CH1-Introduction&#34; class=&#34;headerlink&#34; title=&#34;CH1 Introduction&#34;&gt;&lt;/a&gt;CH1 Introduction&lt;/h1&gt;&lt;ul&gt;
-&lt;li&gt;Two Important Concepts&lt;ul&gt;
+&lt;h1 id=&#34;ch1-introduction&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#ch1-introduction&#34;&gt;#&lt;/a&gt; CH1 Introduction&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;Two Important Concepts
+&lt;ul&gt;
 &lt;li&gt;Phases（阶段）&lt;/li&gt;
 &lt;li&gt;Interfaces（接口）&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;方框里的是phase，中间的是interface&lt;br&gt;&lt;img data-src=&#34;/image.png&#34;&gt;&lt;br&gt;各个阶段的描述&lt;br&gt;&lt;img data-src=&#34;/image-1.png&#34;&gt;&lt;img data-src=&#34;/image-2.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;方框里的是 phase，中间的是 interface&lt;br&gt;
+&lt;img data-src=&#34;image.png&#34; alt&gt;&lt;br&gt;
+ 各个阶段的描述&lt;br&gt;
+&lt;img data-src=&#34;image-1.png&#34; alt&gt;&lt;img data-src=&#34;image-2.png&#34; alt&gt;&lt;/p&gt;
  ]]></description>
         </item>
     </channel>

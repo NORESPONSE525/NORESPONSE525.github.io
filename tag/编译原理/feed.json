@@ -9,7 +9,7 @@
             "url": "http://example.com/2025/03/21/computer-science/compile-principles/ch1/",
             "title": "Introduction",
             "date_published": "2025-03-20T16:00:00.000Z",
-            "content_html": "<blockquote>\n<p>ZJU 2025春夏编译原理 学习笔记</p>\n<p>主要基于虎书（<em>Modern Compiler Implementation in C</em>, Andrew W. Appel）和好多老师的ppt（ldm, yps），还有lzx的智云</p>\n</blockquote>\n<h1 id=\"CH1-Introduction\"><a href=\"#CH1-Introduction\" class=\"headerlink\" title=\"CH1 Introduction\"></a>CH1 Introduction</h1><ul>\n<li>Two Important Concepts<ul>\n<li>Phases（阶段）</li>\n<li>Interfaces（接口）</li>\n</ul>\n</li>\n</ul>\n<p>方框里的是phase，中间的是interface<br><img data-src=\"/image.png\"><br>各个阶段的描述<br><img data-src=\"/image-1.png\"><img data-src=\"/image-2.png\"></p>\n",
+            "content_html": "<blockquote>\n<p>ZJU 2025 春夏编译原理 学习笔记</p>\n<p>主要基于虎书（<em>Modern Compiler Implementation in C</em>, Andrew W. Appel）和好多老师的 ppt（ldm, yps），还有 lzx 的智云</p>\n</blockquote>\n<h1 id=\"ch1-introduction\"><a class=\"markdownIt-Anchor\" href=\"#ch1-introduction\">#</a> CH1 Introduction</h1>\n<ul>\n<li>Two Important Concepts\n<ul>\n<li>Phases（阶段）</li>\n<li>Interfaces（接口）</li>\n</ul>\n</li>\n</ul>\n<p>方框里的是 phase，中间的是 interface<br>\n<img data-src=\"image.png\" alt><br>\n 各个阶段的描述<br>\n<img data-src=\"image-1.png\" alt><img data-src=\"image-2.png\" alt></p>\n",
             "tags": [
                 "编译原理"
             ]
