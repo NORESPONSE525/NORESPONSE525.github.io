@@ -87,7 +87,7 @@
 
       </div>
       <div id="imgs" class="pjax">
-          <img src="/images/bg24.jpg">
+          <img src="/images/bg32.jpg">
       </div>
     </header>
     <div id="waves">
@@ -145,11 +145,12 @@
     <div class="ribbon"><a href="/categories/SE/" itemprop="url" title="软件工程">软件工程</a></div>
     <div class="inner">
         <ul class="posts">
-            <li><a title="SE note" href="/2025/06/19/SE/Software%20Engineering/">SE note</a></li>
+            <li><a title="SE note" href="/2025/06/19/SE/note/">SE note</a></li>
+            <li><a title="画图题" href="/2025/06/19/SE/diagram/">画图题</a></li>
         </ul>
         <div class="meta footer">
           <span>
-            <i class="ic i-file"></i>1 posts in total
+            <i class="ic i-file"></i>2 posts in total
           </span>
         </div>
         <a href="/categories/SE/" itemprop="url" title="软件工程" class="btn">more...</a>
@@ -186,7 +187,7 @@
         
 <article class="item">
   <div class="cover">
-    <a href="/2025/06/19/SE/Software%20Engineering/" itemprop="url" title="SE note"><img data-src="/images/bg34.jpg"></a>
+    <a href="/2025/06/19/SE/note/" itemprop="url" title="SE note"><img data-src="/images/bg9.jpg"></a>
   </div>
   <div class="info">
     
@@ -201,50 +202,56 @@
     <span class="icon">
       <i class="ic i-pen"></i>
     </span>
-    <span>3.9k</span>
+    <span>3.5k</span>
     <span class="text">words</span>
   </span>
   <span class="item" title="Reading time">
     <span class="icon">
       <i class="ic i-clock"></i>
     </span>
-    <span>4 mins.</span>
+    <span>3 mins.</span>
   </span>
 </div>
 
-    <h3><a href="/2025/06/19/SE/Software%20Engineering/" itemprop="url" title="SE note">SE note</a></h3>
+    <h3><a href="/2025/06/19/SE/note/" itemprop="url" title="SE note">SE note</a></h3>
     <div class="excerpt">
-        Ch2 Software Engineering
-Definition: The application of a &amp;#x3D;&amp;#x3D;systematic&amp;#x3D;&amp;#x3D;, &amp;#x3D;&amp;#x3D;disciplined&amp;#x3D;&amp;#x3D;, &amp;#x3D;&amp;#x3D;quantifiable（可量化）&amp;#x3D;&amp;#x3D; approach to the &amp;#x3D;&amp;#x3D;development&amp;#x3D;&amp;#x3D;,...
+        # Ch2 Software Engineering
+
+Definition: The application of a systematic, disciplined, quantifiable（可量化） approach to the development, operation, and maintenance of software
+软件工程是一个多层次的技术体系 (a layered technology)
+
+从下往上是 a “quality” focus, process model, methods, tools, 反映了构建高质量软件产品的逻辑流程
+
+软件过程（The...
     </div>
     <div class="meta footer">
       <span>
         <a href="/categories/SE/" itemprop="url" title="软件工程"><i class="ic i-flag"></i>软件工程</a>
       </span>
     </div>
-    <a href="/2025/06/19/SE/Software%20Engineering/" itemprop="url" title="SE note" class="btn">more...</a>
+    <a href="/2025/06/19/SE/note/" itemprop="url" title="SE note" class="btn">more...</a>
   </div>
 </article>
 
         
 <article class="item">
   <div class="cover">
-    <a href="/2025/06/18/computer-science/compile-principles/ch11/" itemprop="url" title="Ch11"><img data-src="/images/bg26.jpg"></a>
+    <a href="/2025/06/19/SE/diagram/" itemprop="url" title="画图题"><img data-src="/images/bg34.jpg"></a>
   </div>
   <div class="info">
     
 <div class="meta">
-  <span class="item" title="Created: 2025-06-18 00:00:00">
+  <span class="item" title="Created: 2025-06-19 00:00:00">
     <span class="icon">
       <i class="ic i-calendar"></i>
     </span>
-    <time itemprop="dateCreated datePublished" datetime="2025-06-18T00:00:00+08:00">2025-06-18</time>
+    <time itemprop="dateCreated datePublished" datetime="2025-06-19T00:00:00+08:00">2025-06-19</time>
   </span>
   <span class="item" title="Symbols count in article">
     <span class="icon">
       <i class="ic i-pen"></i>
     </span>
-    <span>1.4k</span>
+    <span>1.5k</span>
     <span class="text">words</span>
   </span>
   <span class="item" title="Reading time">
@@ -255,32 +262,34 @@ Definition: The application of a &amp;#x3D;&amp;#x3D;systematic&amp;#x3D;&amp;#x
   </span>
 </div>
 
-    <h3><a href="/2025/06/18/computer-science/compile-principles/ch11/" itemprop="url" title="Ch11">Ch11</a></h3>
+    <h3><a href="/2025/06/19/SE/diagram/" itemprop="url" title="画图题">画图题</a></h3>
     <div class="excerpt">
-        Register Allocation目标：
+        用例图 Use Case Diagram
+Use-Cases: A collection of user scenarios that describe the thread of usage of a system
+主要包含涉及的角色，角色对应的行为，第三方参与部分
 
-Map temporaries to registers
-Preserve program semantics
-Optimize performance
+参与者：与系统交互的用户或其他软硬件系统，用小人形表示
+用例：系统中执行的一系列动作，用椭圆表示。
+关系参与者与用例、参与者之间、用例之间的联系。连线
+边界：一组用例描述的系统或子系统，用矩形框表示。
 
-图着色算法冲突图是一个无向图，冲突图中，每个节点是一个变量（寄存器分配的候选对象）。如果两个变量在同一时刻是活跃的（live），它们就有冲突边（interference edge），表示它们不能被分配到同一个寄存器冲突信息可以用矩阵或者图来表示
-冲突图构建我们从一个中间代码的指令出发，根据live-out（就是out集合）添加冲突边：
+example: SafeHome
 
-非 move 指令（不是a :&amp;#x3D;...
+Our research indicates that the market for...
     </div>
     <div class="meta footer">
       <span>
-        <a href="/categories/computer-science/compiler-principles/" itemprop="url" title="编译原理"><i class="ic i-flag"></i>编译原理</a>
+        <a href="/categories/SE/" itemprop="url" title="软件工程"><i class="ic i-flag"></i>软件工程</a>
       </span>
     </div>
-    <a href="/2025/06/18/computer-science/compile-principles/ch11/" itemprop="url" title="Ch11" class="btn">more...</a>
+    <a href="/2025/06/19/SE/diagram/" itemprop="url" title="画图题" class="btn">more...</a>
   </div>
 </article>
 
         
 <article class="item">
   <div class="cover">
-    <a href="/2025/06/18/computer-science/compile-principles/ch10/" itemprop="url" title="Ch10"><img data-src="/images/bg17.jpg"></a>
+    <a href="/2025/06/18/computer-science/compile-principles/ch10/" itemprop="url" title="Ch10"><img data-src="/images/bg14.jpg"></a>
   </div>
   <div class="info">
     
@@ -295,7 +304,7 @@ Optimize performance
     <span class="icon">
       <i class="ic i-pen"></i>
     </span>
-    <span>1.8k</span>
+    <span>1.9k</span>
     <span class="text">words</span>
   </span>
   <span class="item" title="Reading time">
@@ -308,9 +317,11 @@ Optimize performance
 
     <h3><a href="/2025/06/18/computer-science/compile-principles/ch10/" itemprop="url" title="Ch10">Ch10</a></h3>
     <div class="excerpt">
-        Liveness Analysis 活跃变量分析判断在程序执行的某个点上，一个变量的值是否可能在未来被使用，是寄存器分配、死代码消除的基础
-Compiler Optimizations
-Local: 基于basic blocks
+        # Liveness Analysis 活跃变量分析
+判断在程序执行的某个点上，一个变量的值是否可能在未来被使用，是寄存器分配、死代码消除的基础
+# Compiler Optimizations
+
+Local: 基于 basic blocks
 Intraprocedural (or “global’): 基本块的控制流转移
 Interprocedural (or “whole-program”): Operate on &amp;gt; 1 procedure, up to whole program; Sometimes, at link time (LTO, link time...
     </div>
@@ -326,7 +337,116 @@ Interprocedural (or “whole-program”): Operate on &amp;gt; 1 procedure, up to
         
 <article class="item">
   <div class="cover">
-    <a href="/2025/06/17/computer-science/compile-principles/ch9/" itemprop="url" title="Ch9"><img data-src="/images/bg31.jpg"></a>
+    <a href="/2025/06/18/computer-science/compile-principles/ch11/" itemprop="url" title="Ch11"><img data-src="/images/bg29.jpg"></a>
+  </div>
+  <div class="info">
+    
+<div class="meta">
+  <span class="item" title="Created: 2025-06-18 00:00:00">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <time itemprop="dateCreated datePublished" datetime="2025-06-18T00:00:00+08:00">2025-06-18</time>
+  </span>
+  <span class="item" title="Symbols count in article">
+    <span class="icon">
+      <i class="ic i-pen"></i>
+    </span>
+    <span>1.5k</span>
+    <span class="text">words</span>
+  </span>
+  <span class="item" title="Reading time">
+    <span class="icon">
+      <i class="ic i-clock"></i>
+    </span>
+    <span>1 mins.</span>
+  </span>
+</div>
+
+    <h3><a href="/2025/06/18/computer-science/compile-principles/ch11/" itemprop="url" title="Ch11">Ch11</a></h3>
+    <div class="excerpt">
+        # Register Allocation
+目标：
+
+Map temporaries to registers
+Preserve program semantics
+Optimize performance
+
+# 图着色算法
+冲突图是一个无向图，冲突图中，每个节点是一个变量（寄存器分配的候选对象）。
+如果两个变量在同一时刻是活跃的（live），它们就有冲突边（interference edge），表示它们不能被分配到同一个寄存器
+冲突信息可以用矩阵或者图来表示
+# 冲突图构建
+我们从一个中间代码的指令出发，根据 live-out（就是 out 集合）添加冲突边：
+
+非 move 指令（不是 a...
+    </div>
+    <div class="meta footer">
+      <span>
+        <a href="/categories/computer-science/compiler-principles/" itemprop="url" title="编译原理"><i class="ic i-flag"></i>编译原理</a>
+      </span>
+    </div>
+    <a href="/2025/06/18/computer-science/compile-principles/ch11/" itemprop="url" title="Ch11" class="btn">more...</a>
+  </div>
+</article>
+
+        
+<article class="item">
+  <div class="cover">
+    <a href="/2025/06/17/computer-science/compile-principles/ch8/" itemprop="url" title="Ch8"><img data-src="/images/bg22.png"></a>
+  </div>
+  <div class="info">
+    
+<div class="meta">
+  <span class="item" title="Created: 2025-06-17 00:00:00">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <time itemprop="dateCreated datePublished" datetime="2025-06-17T00:00:00+08:00">2025-06-17</time>
+  </span>
+  <span class="item" title="Symbols count in article">
+    <span class="icon">
+      <i class="ic i-pen"></i>
+    </span>
+    <span>3.4k</span>
+    <span class="text">words</span>
+  </span>
+  <span class="item" title="Reading time">
+    <span class="icon">
+      <i class="ic i-clock"></i>
+    </span>
+    <span>3 mins.</span>
+  </span>
+</div>
+
+    <h3><a href="/2025/06/17/computer-science/compile-principles/ch8/" itemprop="url" title="Ch8">Ch8</a></h3>
+    <div class="excerpt">
+        # Basic Blocks and Traces
+# Canonical Form
+IR 存在一些与机器语言不能完全对应的情况，和与编译优化分析相冲突的情况。
+
+CJUMP 能够转移到 t 或者 f，但是真正的机器语言在条件为假的时候直接下降至下一条指令（条件为真才跳转）
+在表达式中使用 ESEQ 不太方便，会使子树不同的计算顺序产生不同的计算结果
+CALL 调用 CALL 作为参数的时候会有寄存器冲突、语句副作用（修改全局变量、改变堆内存，etc.）等问题
+
+三种方法：
+
+Linearize: Transform trees into a list of canonical
+trees...
+    </div>
+    <div class="meta footer">
+      <span>
+        <a href="/categories/computer-science/compiler-principles/" itemprop="url" title="编译原理"><i class="ic i-flag"></i>编译原理</a>
+      </span>
+    </div>
+    <a href="/2025/06/17/computer-science/compile-principles/ch8/" itemprop="url" title="Ch8" class="btn">more...</a>
+  </div>
+</article>
+
+        
+<article class="item">
+  <div class="cover">
+    <a href="/2025/06/17/computer-science/compile-principles/ch9/" itemprop="url" title="Ch9"><img data-src="/images/bg28.jpg"></a>
   </div>
   <div class="info">
     
@@ -354,11 +474,17 @@ Interprocedural (or “whole-program”): Operate on &amp;gt; 1 procedure, up to
 
     <h3><a href="/2025/06/17/computer-science/compile-principles/ch9/" itemprop="url" title="Ch9">Ch9</a></h3>
     <div class="excerpt">
-        指令选择找出实现一个给定的IR Tree的恰当机器指令序列。Mapping IR into abstract assembly code
+        # 指令选择
+找出实现一个给定的 IR Tree 的恰当机器指令序列。Mapping IR into abstract assembly code
 
-Abstract assembly &amp;#x3D; assembly with infinite registers
+Abstract assembly = assembly with infinite registers
+
 Invent new temporaries for intermediate results
-Map to actual registers laterTree pattern, 也叫tile本质上是pattern matching, 我们使用tree covering...
+Map to actual registers later
+Tree pattern, 也叫 tile
+本质上是 pattern matching, 我们使用 tree covering 来实现
+
+我们 Jouette...
     </div>
     <div class="meta footer">
       <span>
@@ -372,57 +498,7 @@ Map to actual registers laterTree pattern, 也叫tile本质上是pattern matchin
         
 <article class="item">
   <div class="cover">
-    <a href="/2025/06/17/computer-science/compile-principles/ch8/" itemprop="url" title="Ch8"><img data-src="/images/bg9.jpg"></a>
-  </div>
-  <div class="info">
-    
-<div class="meta">
-  <span class="item" title="Created: 2025-06-17 00:00:00">
-    <span class="icon">
-      <i class="ic i-calendar"></i>
-    </span>
-    <time itemprop="dateCreated datePublished" datetime="2025-06-17T00:00:00+08:00">2025-06-17</time>
-  </span>
-  <span class="item" title="Symbols count in article">
-    <span class="icon">
-      <i class="ic i-pen"></i>
-    </span>
-    <span>2.7k</span>
-    <span class="text">words</span>
-  </span>
-  <span class="item" title="Reading time">
-    <span class="icon">
-      <i class="ic i-clock"></i>
-    </span>
-    <span>2 mins.</span>
-  </span>
-</div>
-
-    <h3><a href="/2025/06/17/computer-science/compile-principles/ch8/" itemprop="url" title="Ch8">Ch8</a></h3>
-    <div class="excerpt">
-        Basic Blocks and TracesCanonical FormIR存在一些与机器语言不能完全对应的情况，和与编译优化分析相冲突的情况。
-
-CJUMP能够转移到t或者f，但是真正的机器语言在条件为假的时候直接下降至下一条指令（条件为真才跳转）
-在表达式中使用ESEQ不太方便，会使子树不同的计算顺序产生不同的计算结果
-CALL调用CALL作为参数的时候会有寄存器冲突、语句副作用（修改全局变量、改变堆内存, etc.）等问题
-
-三种方法：
-
-Linearize: Transform trees into a list of canonicaltrees without SEQ or...
-    </div>
-    <div class="meta footer">
-      <span>
-        <a href="/categories/computer-science/compiler-principles/" itemprop="url" title="编译原理"><i class="ic i-flag"></i>编译原理</a>
-      </span>
-    </div>
-    <a href="/2025/06/17/computer-science/compile-principles/ch8/" itemprop="url" title="Ch8" class="btn">more...</a>
-  </div>
-</article>
-
-        
-<article class="item">
-  <div class="cover">
-    <a href="/2025/06/16/AI/week10-11/" itemprop="url" title="Week10-11"><img data-src="/images/bg11.jpg"></a>
+    <a href="/2025/06/16/AI/week12-13/" itemprop="url" title="Week12-13"><img data-src="/images/bg17.jpg"></a>
   </div>
   <div class="info">
     
@@ -437,54 +513,7 @@ Linearize: Transform trees into a list of canonicaltrees without SEQ or...
     <span class="icon">
       <i class="ic i-pen"></i>
     </span>
-    <span>1.3k</span>
-    <span class="text">words</span>
-  </span>
-  <span class="item" title="Reading time">
-    <span class="icon">
-      <i class="ic i-clock"></i>
-    </span>
-    <span>1 mins.</span>
-  </span>
-</div>
-
-    <h3><a href="/2025/06/16/AI/week10-11/" itemprop="url" title="Week10-11">Week10-11</a></h3>
-    <div class="excerpt">
-        深度学习前馈神经网络
-神经元
-感知机（多一个激活函数）
-激活函数: .RelU, Sigmoid, Softmax, tanh..
-损失函数: MSE, Cross Entropy…s
-参数优化: BP, 梯度下降具体懒得写了，都说烂了记一下这几个激活函数的形状和应用:...
-    </div>
-    <div class="meta footer">
-      <span>
-        <a href="/categories/AI/" itemprop="url" title="人工智能"><i class="ic i-flag"></i>人工智能</a>
-      </span>
-    </div>
-    <a href="/2025/06/16/AI/week10-11/" itemprop="url" title="Week10-11" class="btn">more...</a>
-  </div>
-</article>
-
-        
-<article class="item">
-  <div class="cover">
-    <a href="/2025/06/16/AI/week12-13/" itemprop="url" title="Week12-13"><img data-src="/images/bg5.jpg"></a>
-  </div>
-  <div class="info">
-    
-<div class="meta">
-  <span class="item" title="Created: 2025-06-16 00:00:00">
-    <span class="icon">
-      <i class="ic i-calendar"></i>
-    </span>
-    <time itemprop="dateCreated datePublished" datetime="2025-06-16T00:00:00+08:00">2025-06-16</time>
-  </span>
-  <span class="item" title="Symbols count in article">
-    <span class="icon">
-      <i class="ic i-pen"></i>
-    </span>
-    <span>2.8k</span>
+    <span>3.4k</span>
     <span class="text">words</span>
   </span>
   <span class="item" title="Reading time">
@@ -497,7 +526,8 @@ Linearize: Transform trees into a list of canonicaltrees without SEQ or...
 
     <h3><a href="/2025/06/16/AI/week12-13/" itemprop="url" title="Week12-13">Week12-13</a></h3>
     <div class="excerpt">
-        强化学习根据环境所提供的奖罚反馈来学习所处状态可施加的最佳行动，在“探索（未知空间）-利用（已有经验）（exploration vs....
+        # 强化学习
+根据环境所提供的奖罚反馈来学习所处状态可施加的最佳行动，在 “探索（未知空间）- 利用（已有经验）（exploration vs. exploitation）”...
     </div>
     <div class="meta footer">
       <span>
@@ -511,7 +541,7 @@ Linearize: Transform trees into a list of canonicaltrees without SEQ or...
         
 <article class="item">
   <div class="cover">
-    <a href="/2025/06/16/AI/week14-15/" itemprop="url" title="Week14-15"><img data-src="/images/bg10.jpg"></a>
+    <a href="/2025/06/16/AI/week14-15/" itemprop="url" title="Week14-15"><img data-src="/images/bg4.jpg"></a>
   </div>
   <div class="info">
     
@@ -526,7 +556,7 @@ Linearize: Transform trees into a list of canonicaltrees without SEQ or...
     <span class="icon">
       <i class="ic i-pen"></i>
     </span>
-    <span>1.2k</span>
+    <span>1.6k</span>
     <span class="text">words</span>
   </span>
   <span class="item" title="Reading time">
@@ -539,14 +569,19 @@ Linearize: Transform trees into a list of canonicaltrees without SEQ or...
 
     <h3><a href="/2025/06/16/AI/week14-15/" itemprop="url" title="Week14-15">Week14-15</a></h3>
     <div class="excerpt">
-        人工智能博弈博弈论博弈的要素：
+        # 人工智能博弈
+# 博弈论
+博弈的要素：
 
 player
 strategy
 payoff
 rule
 
-博弈策略求解遗憾最小化算法（Regret Minimization）下一步选择策略$&#92;Sigma_i$的概率P:$$P(&#92;sigma_i^{T+1}) &amp;#x3D; &#92;begin{cases}&#92;frac{&#92;text{Regret}i^{T,+}(&#92;sigma_i)}{&#92;sum{&#92;sigma_i’ &#92;in &#92;Sigma_i} &#92;text{Regret}i^{T,+}(&#92;sigma_i’)}...
+# 博弈策略求解
+# 遗憾最小化算法（Regret Minimization）
+下一步选择策略Σi&#92;Sigma_iΣi​ 的概率 P:
+P(σiT+1)={RegretiT,+(σi)∑σi′∈ΣiRegretiT,+(σi′)if ∑σi′∈ΣiRegretiT,+(σi′)&amp;gt;01∣Σi∣otherwiseP(&#92;sigma_i^{T+1}) =...
     </div>
     <div class="meta footer">
       <span>
@@ -560,7 +595,66 @@ rule
         
 <article class="item">
   <div class="cover">
-    <a href="/2025/06/15/AI/week8-9/" itemprop="url" title="Week8-9"><img data-src="/images/bg15.jpg"></a>
+    <a href="/2025/06/16/AI/week10-11/" itemprop="url" title="Week10-11"><img data-src="/images/bg8.jpg"></a>
+  </div>
+  <div class="info">
+    
+<div class="meta">
+  <span class="item" title="Created: 2025-06-16 00:00:00">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <time itemprop="dateCreated datePublished" datetime="2025-06-16T00:00:00+08:00">2025-06-16</time>
+  </span>
+  <span class="item" title="Symbols count in article">
+    <span class="icon">
+      <i class="ic i-pen"></i>
+    </span>
+    <span>1.1k</span>
+    <span class="text">words</span>
+  </span>
+  <span class="item" title="Reading time">
+    <span class="icon">
+      <i class="ic i-clock"></i>
+    </span>
+    <span>1 mins.</span>
+  </span>
+</div>
+
+    <h3><a href="/2025/06/16/AI/week10-11/" itemprop="url" title="Week10-11">Week10-11</a></h3>
+    <div class="excerpt">
+        # 深度学习
+# 前馈神经网络
+
+神经元
+感知机（多一个激活函数）
+激活函数: .RelU, Sigmoid, Softmax, tanh…
+损失函数: MSE, Cross Entropy…s
+参数优化: BP, 梯度下降
+具体懒得写了，都说烂了
+记一下这几个激活函数的形状和应用: tanh 和 sigmoid 大多用于二分类，RelU 一般用在隐藏层，Softmax 用在多分类而且概率和为 1
+
+# CNN
+
+了解卷积操作和操作之后的结果
+
+池化操作（最大池化、平均池化）
+卷积层负责提取图像中的局部特征；
+池化层用来大幅降低参数量级...
+    </div>
+    <div class="meta footer">
+      <span>
+        <a href="/categories/AI/" itemprop="url" title="人工智能"><i class="ic i-flag"></i>人工智能</a>
+      </span>
+    </div>
+    <a href="/2025/06/16/AI/week10-11/" itemprop="url" title="Week10-11" class="btn">more...</a>
+  </div>
+</article>
+
+        
+<article class="item">
+  <div class="cover">
+    <a href="/2025/06/15/AI/week8-9/" itemprop="url" title="Week8-9"><img data-src="/images/bg11.jpg"></a>
   </div>
   <div class="info">
     
@@ -575,22 +669,30 @@ rule
     <span class="icon">
       <i class="ic i-pen"></i>
     </span>
-    <span>2.7k</span>
+    <span>3.1k</span>
     <span class="text">words</span>
   </span>
   <span class="item" title="Reading time">
     <span class="icon">
       <i class="ic i-clock"></i>
     </span>
-    <span>2 mins.</span>
+    <span>3 mins.</span>
   </span>
 </div>
 
     <h3><a href="/2025/06/15/AI/week8-9/" itemprop="url" title="Week8-9">Week8-9</a></h3>
     <div class="excerpt">
-        K-Means问题描述：如何将n个数据依据其相似度大小将它们分别聚类到k个集合，使得每个数据仅属于一个聚类集合。
+        # K-Means
+问题描述：如何将 n 个数据依据其相似度大小将它们分别聚类到 k 个集合，使得每个数据仅属于一个聚类集合。
 
-初始化质心：随机选择k个数据点作为初始质心$c_1, c_2, …,...
+初始化质心：随机选择 k 个数据点作为初始质心c1,c2,...,ckc_1, c_2, ..., c_kc1​,c2​,...,ck​。
+分配数据点：对于每个数据点xix_ixi​，计算它与所有质心的距离，并将其分配到距离最近的质心所在的簇中
+更新质心：对于每个簇，计算该簇内所有数据点的平均值，将该平均值作为新的质心。
+迭代过程：重复执行分配和更新步骤，直到质心不再发生变化或达到预设的最大迭代次数。
+
+# 主成分分析 (PCA)
+
+输入：n 个 d...
     </div>
     <div class="meta footer">
       <span>
@@ -598,53 +700,6 @@ rule
       </span>
     </div>
     <a href="/2025/06/15/AI/week8-9/" itemprop="url" title="Week8-9" class="btn">more...</a>
-  </div>
-</article>
-
-        
-<article class="item">
-  <div class="cover">
-    <a href="/2025/06/15/computer-science/compile-principles/ch6/" itemprop="url" title="Ch6"><img data-src="/images/bg28.jpg"></a>
-  </div>
-  <div class="info">
-    
-<div class="meta">
-  <span class="item" title="Created: 2025-06-15 00:00:00">
-    <span class="icon">
-      <i class="ic i-calendar"></i>
-    </span>
-    <time itemprop="dateCreated datePublished" datetime="2025-06-15T00:00:00+08:00">2025-06-15</time>
-  </span>
-  <span class="item" title="Symbols count in article">
-    <span class="icon">
-      <i class="ic i-pen"></i>
-    </span>
-    <span>2.1k</span>
-    <span class="text">words</span>
-  </span>
-  <span class="item" title="Reading time">
-    <span class="icon">
-      <i class="ic i-clock"></i>
-    </span>
-    <span>2 mins.</span>
-  </span>
-</div>
-
-    <h3><a href="/2025/06/15/computer-science/compile-principles/ch6/" itemprop="url" title="Ch6">Ch6</a></h3>
-    <div class="excerpt">
-        Activation Record&amp;#x2F;Stack Frame函数的栈帧是栈上用来放函数的局部变量、参数、返回地址以及其他临时变量的区域stack一般从高地址向低地址，heap从低地址向高地址layout:
-
-incoming arguments: 存储caller传递给callee的参数
-frame pointer: 帧指针，用来访问incoming arguments，从低向高是argument 1, argument 2, …
-local variables: 存储函数的局部变量（还有一些保存在寄存器里）
-return address:...
-    </div>
-    <div class="meta footer">
-      <span>
-        <a href="/categories/computer-science/compiler-principles/" itemprop="url" title="编译原理"><i class="ic i-flag"></i>编译原理</a>
-      </span>
-    </div>
-    <a href="/2025/06/15/computer-science/compile-principles/ch6/" itemprop="url" title="Ch6" class="btn">more...</a>
   </div>
 </article>
 
@@ -683,7 +738,7 @@ return address:...
 <nav class="state">
     <div class="item posts">
       <a href="/archives/">
-        <span class="count">23</span>
+        <span class="count">24</span>
         <span class="name">posts</span>
       </a>
     </div>
@@ -785,10 +840,76 @@ return address:...
 <div class="breadcrumb">
 <a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
 <i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/computer-organization/" title="In 计算机组成">计算机组成</a>
+</div>
+
+    <span><a href="/2025/05/13/computer-science/computer-organization/ch1/" title="Ch1">Ch1</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/AI/" title="In 人工智能">人工智能</a>
+</div>
+
+    <span><a href="/2025/06/15/AI/week8-9/" title="Week8-9">Week8-9</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/SE/" title="In 软件工程">软件工程</a>
+</div>
+
+    <span><a href="/2025/06/19/SE/diagram/" title="画图题">画图题</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
 <a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
 </div>
 
-    <span><a href="/2025/06/17/computer-science/compile-principles/ch9/" title="Ch9">Ch9</a></span>
+    <span><a href="/2025/03/22/computer-science/compile-principles/ch2/" title="Ch2">Ch2</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
+</div>
+
+    <span><a href="/2025/06/17/computer-science/compile-principles/ch8/" title="Ch8">Ch8</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/SE/" title="In 软件工程">软件工程</a>
+</div>
+
+    <span><a href="/2025/06/19/SE/note/" title="SE note">SE note</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
+</div>
+
+    <span><a href="/2025/03/29/computer-science/compile-principles/ch4/" title="Ch4">Ch4</a></span>
   </li>
 
       
@@ -812,72 +933,6 @@ return address:...
 <a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
 </div>
 
-    <span><a href="/2025/03/22/computer-science/compile-principles/ch2/" title="Ch2">Ch2</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/AI/" title="In 人工智能">人工智能</a>
-</div>
-
-    <span><a href="/2025/06/11/AI/week4-5/" title="Week4-5">Week4-5</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/SE/" title="In 软件工程">软件工程</a>
-</div>
-
-    <span><a href="/2025/06/19/SE/Software%20Engineering/" title="SE note">SE note</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
-</div>
-
-    <span><a href="/2025/06/17/computer-science/compile-principles/ch8/" title="Ch8">Ch8</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/AI/" title="In 人工智能">人工智能</a>
-</div>
-
-    <span><a href="/2025/06/16/AI/week10-11/" title="Week10-11">Week10-11</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
-</div>
-
-    <span><a href="/2025/06/18/computer-science/compile-principles/ch11/" title="Ch11">Ch11</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
-</div>
-
     <span><a href="/2025/03/21/computer-science/compile-principles/ch1/" title="Ch1">Ch1</a></span>
   </li>
 
@@ -888,7 +943,7 @@ return address:...
 <a href="/categories/AI/" title="In 人工智能">人工智能</a>
 </div>
 
-    <span><a href="/2025/05/20/AI/week2-3/" title="Week2-3">Week2-3</a></span>
+    <span><a href="/2025/06/11/AI/week4-5/" title="Week4-5">Week4-5</a></span>
   </li>
 
   </ul>
@@ -913,13 +968,13 @@ return address:...
     <span class="post-meta-item-icon">
       <i class="ic i-chart-area"></i>
     </span>
-    <span title="Symbols count total">44k words</span>
+    <span title="Symbols count total">51k words</span>
 
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="ic i-coffee"></i>
     </span>
-    <span title="Reading time total">40 mins.</span>
+    <span title="Reading time total">46 mins.</span>
   </div>
   <div class="powered-by">
     Powered by <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
