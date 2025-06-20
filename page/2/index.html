@@ -87,7 +87,7 @@
 
       </div>
       <div id="imgs" class="pjax">
-          <img src="/images/bg5.jpg">
+          <img src="/images/bg29.jpg">
       </div>
     </header>
     <div id="waves">
@@ -112,7 +112,7 @@
         
 <article class="item">
   <div class="cover">
-    <a href="/2025/06/15/AI/week8-9/" itemprop="url" title="Week8-9"><img data-src="/images/bg11.jpg"></a>
+    <a href="/2025/06/15/AI/week8-9/" itemprop="url" title="Week8-9"><img data-src="/images/bg32.jpg"></a>
   </div>
   <div class="info">
     
@@ -127,22 +127,30 @@
     <span class="icon">
       <i class="ic i-pen"></i>
     </span>
-    <span>2.7k</span>
+    <span>3.1k</span>
     <span class="text">words</span>
   </span>
   <span class="item" title="Reading time">
     <span class="icon">
       <i class="ic i-clock"></i>
     </span>
-    <span>2 mins.</span>
+    <span>3 mins.</span>
   </span>
 </div>
 
     <h3><a href="/2025/06/15/AI/week8-9/" itemprop="url" title="Week8-9">Week8-9</a></h3>
     <div class="excerpt">
-        K-Means问题描述：如何将n个数据依据其相似度大小将它们分别聚类到k个集合，使得每个数据仅属于一个聚类集合。
+        # K-Means
+问题描述：如何将 n 个数据依据其相似度大小将它们分别聚类到 k 个集合，使得每个数据仅属于一个聚类集合。
 
-初始化质心：随机选择k个数据点作为初始质心$c_1, c_2, …,...
+初始化质心：随机选择 k 个数据点作为初始质心c1,c2,...,ckc_1, c_2, ..., c_kc1​,c2​,...,ck​。
+分配数据点：对于每个数据点xix_ixi​，计算它与所有质心的距离，并将其分配到距离最近的质心所在的簇中
+更新质心：对于每个簇，计算该簇内所有数据点的平均值，将该平均值作为新的质心。
+迭代过程：重复执行分配和更新步骤，直到质心不再发生变化或达到预设的最大迭代次数。
+
+# 主成分分析 (PCA)
+
+输入：n 个 d...
     </div>
     <div class="meta footer">
       <span>
@@ -156,7 +164,7 @@
         
 <article class="item">
   <div class="cover">
-    <a href="/2025/06/15/computer-science/compile-principles/ch6/" itemprop="url" title="活动记录"><img data-src="/images/bg21.jpg"></a>
+    <a href="/2025/06/15/computer-science/compile-principles/ch6/" itemprop="url" title="活动记录"><img data-src="/images/bg17.jpg"></a>
   </div>
   <div class="info">
     
@@ -171,7 +179,7 @@
     <span class="icon">
       <i class="ic i-pen"></i>
     </span>
-    <span>2.1k</span>
+    <span>2k</span>
     <span class="text">words</span>
   </span>
   <span class="item" title="Reading time">
@@ -184,12 +192,15 @@
 
     <h3><a href="/2025/06/15/computer-science/compile-principles/ch6/" itemprop="url" title="活动记录">活动记录</a></h3>
     <div class="excerpt">
-        Activation Record&amp;#x2F;Stack Frame函数的栈帧是栈上用来放函数的局部变量、参数、返回地址以及其他临时变量的区域stack一般从高地址向低地址，heap从低地址向高地址layout:
+        # Activation Record/Stack Frame
+函数的栈帧是栈上用来放函数的局部变量、参数、返回地址以及其他临时变量的区域
+stack 一般从高地址向低地址，heap 从低地址向高地址
+layout:
 
-incoming arguments: 存储caller传递给callee的参数
-frame pointer: 帧指针，用来访问incoming arguments，从低向高是argument 1, argument 2, …
+incoming arguments: 存储 caller 传递给 callee 的参数
+frame pointer: 帧指针，用来访问 incoming arguments，从低向高是 argument 1, argument 2, …
 local variables: 存储函数的局部变量（还有一些保存在寄存器里）
-return address:...
+return address: 存储需要返回 caller...
     </div>
     <div class="meta footer">
       <span>
@@ -203,7 +214,7 @@ return address:...
         
 <article class="item">
   <div class="cover">
-    <a href="/2025/06/12/AI/week6-7/" itemprop="url" title="Week6-7"><img data-src="/images/bg36.jpg"></a>
+    <a href="/2025/06/12/AI/week6-7/" itemprop="url" title="Week6-7"><img data-src="/images/bg12.jpg"></a>
   </div>
   <div class="info">
     
@@ -218,38 +229,39 @@ return address:...
     <span class="icon">
       <i class="ic i-pen"></i>
     </span>
-    <span>4.8k</span>
+    <span>6.4k</span>
     <span class="text">words</span>
   </span>
   <span class="item" title="Reading time">
     <span class="icon">
       <i class="ic i-clock"></i>
     </span>
-    <span>4 mins.</span>
+    <span>6 mins.</span>
   </span>
 </div>
 
     <h3><a href="/2025/06/12/AI/week6-7/" itemprop="url" title="Week6-7">Week6-7</a></h3>
     <div class="excerpt">
-        Ch4 机器学习监督学习
+        # Ch4 机器学习
+# 监督学习
+
 标注数据
 学习模型
-损失函数典型的损失函数
+损失函数
+典型的损失函数
 
-经验风险(empirical risk )
+经验风险 (empirical risk)
 
 训练集中数据产生的损失。
 经验风险越小说明学习模型对训练数据拟合程度越好。
 
-期望风险(expected risk):
+期望风险 (expected risk):
 
 当测试集中存在无穷多数据时产生的损失。
 期望风险越小，学习所得模型越好。
 
 经验风险最小化
-$$&#92;min_{f &#92;in &#92;Phi} &#92;frac{1}{n} &#92;sum_{i&amp;#x3D;1}^{n} Loss(y_i, f(x_i))$$
-期望风险最小化
-$$&#92;min_{f &#92;in...
+min⁡f∈Φ1n∑i=1nLoss(yi,f(xi))&#92;min_{f &#92;in &#92;Phi} &#92;frac{1}{n} &#92;sum_{i=1}^{n} Loss(y_i,...
     </div>
     <div class="meta footer">
       <span>
@@ -263,7 +275,7 @@ $$&#92;min_{f &#92;in...
         
 <article class="item">
   <div class="cover">
-    <a href="/2025/06/11/AI/week4-5/" itemprop="url" title="Week4-5"><img data-src="/images/bg18.jpg"></a>
+    <a href="/2025/06/11/AI/week4-5/" itemprop="url" title="Week4-5"><img data-src="/images/bg14.jpg"></a>
   </div>
   <div class="info">
     
@@ -292,17 +304,25 @@ $$&#92;min_{f &#92;in...
     <h3><a href="/2025/06/11/AI/week4-5/" itemprop="url" title="Week4-5">Week4-5</a></h3>
     <div class="excerpt">
         #Ch3 搜索算法
-无信息搜索BFS DFS 略
-启发式搜索
-贪婪优先搜索
-每次取最短的；缺点：不一定是最优的
-时间和空间复杂度均为 $O(b_m)$，b是搜索树分支因子，m是最大深度:::info每次取当前节点的下一个节点到终点中直线距离最短的:::
+# 无信息搜索
+BFS DFS 略
+# 启发式搜索
 
-A*算法
-评价函数：f(n) &amp;#x3D; g(n) + h(n)
-代价函数 g(n) 表示从起始结点到结点n的开销代价值
-启发函数 h(n) 表示从结点n到目标结点路径中所估算的最小开销代价值。
-评价函数 f(n)...
+贪婪优先搜索
+
+每次取最短的；缺点：不一定是最优的
+时间和空间复杂度均为 O(bm)O(b_m)O(bm​)，b 是搜索树分支因子，m 是最大深度
+
+每次取当前节点的下一个节点到终点中直线距离最短的
+
+A * 算法
+
+评价函数：f (n) = g (n) + h (n)
+代价函数 g (n) 表示从起始结点到结点 n 的开销代价值
+启发函数 h (n) 表示从结点 n 到目标结点路径中所估算的最小开销代价值。
+评价函数 f (n) 可视为经过结点 n、具有最小开销代价值的路径。
+
+在最短路径问题中，g (?)...
     </div>
     <div class="meta footer">
       <span>
@@ -316,7 +336,7 @@ A*算法
         
 <article class="item">
   <div class="cover">
-    <a href="/2025/05/20/AI/week1/" itemprop="url" title="Week1"><img data-src="/images/bg27.jpg"></a>
+    <a href="/2025/05/20/AI/week1/" itemprop="url" title="Week1"><img data-src="/images/bg30.jpg"></a>
   </div>
   <div class="info">
     
@@ -331,7 +351,7 @@ A*算法
     <span class="icon">
       <i class="ic i-pen"></i>
     </span>
-    <span>310</span>
+    <span>311</span>
     <span class="text">words</span>
   </span>
   <span class="item" title="Reading time">
@@ -344,14 +364,16 @@ A*算法
 
     <h3><a href="/2025/05/20/AI/week1/" itemprop="url" title="Week1">Week1</a></h3>
     <div class="excerpt">
-        2025-2026春夏人工智能课程笔记
+        2025-2026 春夏人工智能课程笔记
 
-Ch1 绪论
+# Ch1 绪论
+
 人工智能求解：
+
 以符号主义为核心的逻辑推理：将概念（如命题等）符号化，从若干判断（前提）出发得到新判断（结论）
-以问题求解为核心的探寻搜索:探寻搜索依据已有信息来寻找满足约束条件的待求解问题的答案
-以数据驱动为核心的机器学习:从数据中发现数据所承载语义（如概念）的内在模式
-以行为主义为核心的强化学习:根据环境所提供的奖罚反馈来学习所处状态可施加的最佳行动，在“探索（未知空间）-利用（已有经验）（exploration vs....
+以问题求解为核心的探寻搜索：探寻搜索依据已有信息来寻找满足约束条件的待求解问题的答案
+以数据驱动为核心的机器学习：从数据中发现数据所承载语义（如概念）的内在模式
+以行为主义为核心的强化学习：根据环境所提供的奖罚反馈来学习所处状态可施加的最佳行动，在 “探索（未知空间）- 利用（已有经验）（exploration vs. exploitation）”...
     </div>
     <div class="meta footer">
       <span>
@@ -365,7 +387,7 @@ Ch1 绪论
         
 <article class="item">
   <div class="cover">
-    <a href="/2025/05/20/AI/week2-3/" itemprop="url" title="Week2-3"><img data-src="/images/bg26.jpg"></a>
+    <a href="/2025/05/20/AI/week2-3/" itemprop="url" title="Week2-3"><img data-src="/images/bg11.jpg"></a>
   </div>
   <div class="info">
     
@@ -380,24 +402,35 @@ Ch1 绪论
     <span class="icon">
       <i class="ic i-pen"></i>
     </span>
-    <span>4.4k</span>
+    <span>5.5k</span>
     <span class="text">words</span>
   </span>
   <span class="item" title="Reading time">
     <span class="icon">
       <i class="ic i-clock"></i>
     </span>
-    <span>4 mins.</span>
+    <span>5 mins.</span>
   </span>
 </div>
 
     <h3><a href="/2025/05/20/AI/week2-3/" itemprop="url" title="Week2-3">Week2-3</a></h3>
     <div class="excerpt">
-        Ch2 知识表达与推理命题逻辑真值表：
+        # Ch2 知识表达与推理
+# 命题逻辑
 
-“条件”命题联结词中前提为假时命题结论永远为真，bi-conditional只有两个都是true或者都是false才是true逻辑等价：给定命题p和命题q，如果&amp;#x3D;&amp;#x3D;p和q在所有情况下都具有同样真假结果&amp;#x3D;&amp;#x3D;，那么p和q在逻辑上等价，一般用 $&#92;equiv$ 来表示，即p $&#92;equiv$ q。判断逻辑等价：画真值表逻辑等价式：
+真值表：
 
-normal...
+“条件” 命题联结词中前提为假时命题结论永远为真，bi-conditional 只有两个都是 true 或者都是 false 才是 true
+逻辑等价：给定命题 p 和命题 q，如果 p 和 q 在所有情况下都具有同样真假结果，那么 p 和 q 在逻辑上等价，一般用 ≡&#92;equiv≡ 来表示，即 p ≡&#92;equiv≡ q。
+判断逻辑等价：画真值表
+逻辑等价式：
+
+normal form
+
+有限个简单合取式构成的析取式称为析取 (or) 范式
+由有限个简单析取式构成的合取式称为合取 (and) 范式
+
+#...
     </div>
     <div class="meta footer">
       <span>
@@ -411,7 +444,7 @@ normal...
         
 <article class="item">
   <div class="cover">
-    <a href="/2025/05/14/computer-science/computer-organization/ch2/" itemprop="url" title="Ch2"><img data-src="/images/bg36.jpg"></a>
+    <a href="/2025/05/14/computer-science/computer-organization/ch2/" itemprop="url" title="Ch2"><img data-src="/images/bg23.png"></a>
   </div>
   <div class="info">
     
@@ -426,7 +459,7 @@ normal...
     <span class="icon">
       <i class="ic i-pen"></i>
     </span>
-    <span>3.1k</span>
+    <span>3.4k</span>
     <span class="text">words</span>
   </span>
   <span class="item" title="Reading time">
@@ -439,23 +472,26 @@ normal...
 
     <h3><a href="/2025/05/14/computer-science/computer-organization/ch2/" itemprop="url" title="Ch2">Ch2</a></h3>
     <div class="excerpt">
-        Ch2 数据的表示和运算2.1 进位计数制及其相互转换2.1.1
+        # Ch2 数据的表示和运算
+# 2.1 进位计数制及其相互转换
+# 2.1.1
+
 十进制二进制八进制十六进制转换
+
 略
 
-2.1.2 定点数的编码表示
-定点百世一般表示定点小数和定点整数，小数是符号位.xxx，整数是符号位xxxx.0
+# 2.1.2 定点数的编码表示
+
+定点百世一般表示定点小数和定点整数，小数是符号位.xxx，整数是符号位 xxxx.0
 
 感觉不是什么重要的东西，浮点数表示比较重要
 
 原码，反码，补码
-正数的原码反码补码相同
-原码表示的范围为 $-2^n+1 ~ 2^n-1$
-补码表示的范围为 $-2^n ~ 2^n-1$
-负数的原码是1+绝对值，反码是1+绝对值取反，补码是反码+1
 
-移码：用来表示浮点数的阶码，只能表示整数
-一般用移码表示浮点数的阶码，用补码表示定点整数$$ [x]_移 &amp;#x3D;...
+正数的原码反码补码相同
+原码表示的范围为 −2n+1 2n−1-2^n+1 ~ 2^n-1−2n+1 2n−1
+补码表示的范围为 −2n 2n−1-2^n ~ 2^n-1−2n 2n−1
+负数的原码是 1 + 绝对值，反码是 1 + 绝对值取反，补码是反码 +...
     </div>
     <div class="meta footer">
       <span>
@@ -469,7 +505,7 @@ normal...
         
 <article class="item">
   <div class="cover">
-    <a href="/2025/05/13/computer-science/computer-network/ch1/" itemprop="url" title="Ch1"><img data-src="/images/bg7.jpg"></a>
+    <a href="/2025/05/13/computer-science/computer-network/ch1/" itemprop="url" title="Ch1"><img data-src="/images/bg4.jpg"></a>
   </div>
   <div class="info">
     
@@ -511,7 +547,7 @@ normal...
         
 <article class="item">
   <div class="cover">
-    <a href="/2025/05/13/computer-science/computer-organization/ch1/" itemprop="url" title="Ch1"><img data-src="/images/bg33.jpg"></a>
+    <a href="/2025/05/13/computer-science/computer-organization/ch1/" itemprop="url" title="Ch1"><img data-src="/images/bg15.jpg"></a>
   </div>
   <div class="info">
     
@@ -526,30 +562,39 @@ normal...
     <span class="icon">
       <i class="ic i-pen"></i>
     </span>
-    <span>2.4k</span>
+    <span>2.9k</span>
     <span class="text">words</span>
   </span>
   <span class="item" title="Reading time">
     <span class="icon">
       <i class="ic i-clock"></i>
     </span>
-    <span>2 mins.</span>
+    <span>3 mins.</span>
   </span>
 </div>
 
     <h3><a href="/2025/05/13/computer-science/computer-organization/ch1/" itemprop="url" title="Ch1">Ch1</a></h3>
     <div class="excerpt">
-        王道计组考研复习笔记怕学完忘了写个笔记保留一下顺便加深印象x王道书写得好烂、、
+        王道计组考研复习笔记
+怕学完忘了写个笔记保留一下顺便加深印象 x
+王道书写得好烂、、
 
-Ch1 计算机系统概述1.1 计算机发展历程
-四代计算机：电子管-&amp;gt;晶体管-&amp;gt;集成电路-&amp;gt;超大规模集成电路
-摩尔定律：集成电路上可以容纳的晶体管数目在大约每经过18个月到24个月便会增加一倍
+# Ch1 计算机系统概述
+# 1.1 计算机发展历程
 
-1.2 计算机系统层次结构
-计算机系统：硬件+软件
+四代计算机：电子管 -&amp;gt; 晶体管 -&amp;gt; 集成电路 -&amp;gt; 超大规模集成电路
+摩尔定律：集成电路上可以容纳的晶体管数目在大约每经过 18 个月到 24 个月便会增加一倍
+
+# 1.2 计算机系统层次结构
+
+计算机系统：硬件 + 软件
 对于某一功能，既能用软件实现又能用硬件实现，称为软、硬件在逻辑功能上是等价的
 
-1.2.2...
+# 1.2.2 硬件
+
+冯・诺依曼机的特点：
+
+采用 “存储程序”...
     </div>
     <div class="meta footer">
       <span>
@@ -563,7 +608,7 @@ Ch1 计算机系统概述1.1 计算机发展历程
         
 <article class="item">
   <div class="cover">
-    <a href="/2025/03/30/computer-science/compile-principles/ch5/" itemprop="url" title="语义分析"><img data-src="/images/bg10.jpg"></a>
+    <a href="/2025/03/30/computer-science/compile-principles/ch5/" itemprop="url" title="语义分析"><img data-src="/images/bg5.jpg"></a>
   </div>
   <div class="info">
     
@@ -578,7 +623,7 @@ Ch1 计算机系统概述1.1 计算机发展历程
     <span class="icon">
       <i class="ic i-pen"></i>
     </span>
-    <span>2.1k</span>
+    <span>2k</span>
     <span class="text">words</span>
   </span>
   <span class="item" title="Reading time">
@@ -591,15 +636,17 @@ Ch1 计算机系统概述1.1 计算机发展历程
 
     <h3><a href="/2025/03/30/computer-science/compile-principles/ch5/" itemprop="url" title="语义分析">语义分析</a></h3>
     <div class="excerpt">
-        语义分析
+        # 语义分析
+
 绑定，类型检查
 
-symbol table
+# symbol table
+
 Imperative style: 命令式风格
 
-Modify $&#92;sigma_1$ until it becomes $&#92;sigma_2$.
-While $&#92;sigma_2$ exists, we cannot look things up in $&#92;sigma_1$.
-When done with $&#92;sigma_2$, can undo the modification to get $&#92;sigma_1$ back again.+++info...
+Modify σ1&#92;sigma_1σ1​ until it becomes σ2&#92;sigma_2σ2​.
+While σ2&#92;sigma_2σ2​ exists, we cannot look things up in σ1&#92;sigma_1σ1​.
+When done with σ2&#92;sigma_2σ2​, can undo the modification to get σ1&#92;sigma_1σ1​ back...
     </div>
     <div class="meta footer">
       <span>
@@ -745,10 +792,12 @@ When done with $&#92;sigma_2$, can undo the modification to get $&#92;sigma_1$ b
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/AI/" title="In 人工智能">人工智能</a>
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
 </div>
 
-    <span><a href="/2025/05/20/AI/week2-3/" title="Week2-3">Week2-3</a></span>
+    <span><a href="/2025/06/15/computer-science/compile-principles/ch6/" title="活动记录">活动记录</a></span>
   </li>
 
       
@@ -760,7 +809,7 @@ When done with $&#92;sigma_2$, can undo the modification to get $&#92;sigma_1$ b
 <a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
 </div>
 
-    <span><a href="/2025/06/16/computer-science/compile-principles/ch7/" title="IR">IR</a></span>
+    <span><a href="/2025/03/21/computer-science/compile-principles/ch1/" title="Introduction">Introduction</a></span>
   </li>
 
       
@@ -770,7 +819,7 @@ When done with $&#92;sigma_2$, can undo the modification to get $&#92;sigma_1$ b
 <a href="/categories/AI/" title="In 人工智能">人工智能</a>
 </div>
 
-    <span><a href="/2025/06/16/AI/week10-11/" title="Week10-11">Week10-11</a></span>
+    <span><a href="/2025/06/12/AI/week6-7/" title="Week6-7">Week6-7</a></span>
   </li>
 
       
@@ -780,19 +829,7 @@ When done with $&#92;sigma_2$, can undo the modification to get $&#92;sigma_1$ b
 <a href="/categories/AI/" title="In 人工智能">人工智能</a>
 </div>
 
-    <span><a href="/2025/06/16/AI/week14-15/" title="Week14-15">Week14-15</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/computer-organization/" title="In 计算机组成">计算机组成</a>
-</div>
-
-    <span><a href="/2025/05/13/computer-science/computer-organization/ch1/" title="Ch1">Ch1</a></span>
+    <span><a href="/2025/06/16/AI/week12-13/" title="Week12-13">Week12-13</a></span>
   </li>
 
       
@@ -804,7 +841,31 @@ When done with $&#92;sigma_2$, can undo the modification to get $&#92;sigma_1$ b
 <a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
 </div>
 
-    <span><a href="/2025/03/23/computer-science/compile-principles/ch3/" title="语法分析">语法分析</a></span>
+    <span><a href="/2025/06/18/computer-science/compile-principles/ch10/" title="Liveness Analysis">Liveness Analysis</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/computer-network/" title="In 计算机网络">计算机网络</a>
+</div>
+
+    <span><a href="/2025/05/13/computer-science/computer-network/ch1/" title="Ch1">Ch1</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
+</div>
+
+    <span><a href="/2025/06/18/computer-science/compile-principles/ch11/" title="Register Allocation">Register Allocation</a></span>
   </li>
 
       
@@ -821,32 +882,22 @@ When done with $&#92;sigma_2$, can undo the modification to get $&#92;sigma_1$ b
   <li class="item">
     
 <div class="breadcrumb">
+<a href="/categories/AI/" title="In 人工智能">人工智能</a>
+</div>
+
+    <span><a href="/2025/06/16/AI/week10-11/" title="Week10-11">Week10-11</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
 <a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
 <i class="ic i-angle-right"></i>
 <a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
 </div>
 
-    <span><a href="/2025/06/17/computer-science/compile-principles/ch9/" title="指令选择">指令选择</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/SE/" title="In 软件工程">软件工程</a>
-</div>
-
-    <span><a href="/2025/06/19/SE/diagram/" title="画图题">画图题</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/AI/" title="In 人工智能">人工智能</a>
-</div>
-
-    <span><a href="/2025/06/11/AI/week4-5/" title="Week4-5">Week4-5</a></span>
+    <span><a href="/2025/06/17/computer-science/compile-principles/ch8/" title="Basic Blocks &amp; Traces">Basic Blocks & Traces</a></span>
   </li>
 
   </ul>
@@ -871,13 +922,13 @@ When done with $&#92;sigma_2$, can undo the modification to get $&#92;sigma_1$ b
     <span class="post-meta-item-icon">
       <i class="ic i-chart-area"></i>
     </span>
-    <span title="Symbols count total">58k words</span>
+    <span title="Symbols count total">65k words</span>
 
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="ic i-coffee"></i>
     </span>
-    <span title="Reading time total">53 mins.</span>
+    <span title="Reading time total">59 mins.</span>
   </div>
   <div class="powered-by">
     Powered by <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
