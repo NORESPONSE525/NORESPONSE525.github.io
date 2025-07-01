@@ -5,24 +5,33 @@
         <link>http://example.com</link>
         <description>成分复杂的CSer from ZJU</description>
         <language>en</language>
-        <pubDate>Wed, 18 Jun 2025 00:00:00 +0800</pubDate>
-        <lastBuildDate>Wed, 18 Jun 2025 00:00:00 +0800</lastBuildDate>
-        <category>人工智能</category>
+        <pubDate>Tue, 01 Jul 2025 00:00:00 +0800</pubDate>
+        <lastBuildDate>Tue, 01 Jul 2025 00:00:00 +0800</lastBuildDate>
         <category>软件工程</category>
+        <category>人工智能</category>
+        <category>计算机网络</category>
+        <category>存储系统</category>
+        <category>数据的表示与运算</category>
+        <category>计算机组成</category>
         <category>编译原理</category>
         <category>Register Allocation</category>
-        <category>词法分析</category>
-        <category>Liveness Analysis</category>
         <category>语法分析</category>
-        <category>语义分析</category>
+        <category>Liveness Analysis</category>
         <category>抽象语法</category>
-        <category>中间代码</category>
-        <category>指令选择</category>
-        <category>Basic Blocks and Traces</category>
+        <category>词法分析</category>
         <category>活动记录</category>
-        <category>计算机组成</category>
-        <category>数据的表示与运算</category>
-        <category>计算机网络</category>
+        <category>语义分析</category>
+        <category>中间代码</category>
+        <category>Basic Blocks and Traces</category>
+        <category>指令选择</category>
+        <item>
+            <guid isPermalink="true">http://example.com/2025/07/01/computer-science/computer-organization/ch3/</guid>
+            <title>Ch3</title>
+            <link>http://example.com/2025/07/01/computer-science/computer-organization/ch3/</link>
+            <category>存储系统</category>
+            <pubDate>Tue, 01 Jul 2025 00:00:00 +0800</pubDate>
+            <description><![CDATA[  ]]></description>
+        </item>
         <item>
             <guid isPermalink="true">http://example.com/2025/06/18/computer-science/compile-principles/ch11/</guid>
             <title>Register Allocation</title>
@@ -188,91 +197,6 @@ Remove such vertices and push them to a stack until the graph becomes empty&lt;b
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">http://example.com/2025/06/17/computer-science/compile-principles/ch9/</guid>
-            <title>指令选择</title>
-            <link>http://example.com/2025/06/17/computer-science/compile-principles/ch9/</link>
-            <category>指令选择</category>
-            <pubDate>Tue, 17 Jun 2025 00:00:00 +0800</pubDate>
-            <description><![CDATA[ &lt;h1 id=&#34;指令选择&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#指令选择&#34;&gt;#&lt;/a&gt; 指令选择&lt;/h1&gt;
-&lt;p&gt;找出实现一个给定的 IR Tree 的恰当机器指令序列。Mapping IR into abstract assembly code&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Abstract assembly = assembly with infinite registers
-&lt;ul&gt;
-&lt;li&gt;Invent new temporaries for intermediate results&lt;/li&gt;
-&lt;li&gt;Map to actual registers later&lt;br&gt;
-Tree pattern, 也叫 tile&lt;br&gt;
- 本质上是 pattern matching, 我们使用 tree covering 来实现&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;我们 &lt;code&gt;Jouette&lt;/code&gt;  体系将树模式映射为指令:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;寄存器中可以存储数据或地址，每条指令可以访问任意寄存器&lt;/li&gt;
-&lt;li&gt;寄存器 r0 的值永远是 0&lt;/li&gt;
-&lt;li&gt;每条指令的 latency 都是一周期（除了 MOVEM 的周期是 m）&lt;/li&gt;
-&lt;li&gt;每个周期执行一条指令&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;img data-src=&#34;f2.jpg&#34; alt&gt;&lt;br&gt;
-&lt;img data-src=&#34;f1.jpg&#34; alt&gt;&lt;br&gt;
-将 IR 与后端的机器指令都转换为树结构。这样就把指令选择问题转换为机器指令树覆盖全 IR Tree 的问题。&lt;br&gt;
-一棵树可以有多种 tiling 方式&lt;/p&gt;
-&lt;h2 id=&#34;optimal-tiling-optimum-tiling&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#optimal-tiling-optimum-tiling&#34;&gt;#&lt;/a&gt; Optimal Tiling &amp;amp; Optimum Tiling&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Optimum Tiling：使得 tiling 数最少，是&lt;mark&gt;全局最优&lt;/mark&gt;&lt;/li&gt;
-&lt;li&gt;Optimal Tiling：No two adjacent tiles can be combined into a single tile of lower cost，是&lt;mark&gt;局部最优&lt;/mark&gt;&lt;br&gt;
-一个 optimum tiling 必定是 optimal tiling&lt;br&gt;
-&lt;img data-src=&#34;f3.jpg&#34; alt&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;algorithms-for-instruction-selection&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#algorithms-for-instruction-selection&#34;&gt;#&lt;/a&gt; Algorithms for Instruction Selection&lt;/h2&gt;
-&lt;h3 id=&#34;maximal-munch-find-an-optimal-tiling&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#maximal-munch-find-an-optimal-tiling&#34;&gt;#&lt;/a&gt; Maximal Munch: Find an optimal tiling&lt;/h3&gt;
-&lt;p&gt;最大匹配：贪心算法、自顶向下&lt;br&gt;
-方法：从 IR 树的根节点开始，用&lt;mark&gt;最大的&lt;/mark&gt; tile 覆盖当前节点（包含最多节点的），然后在子树中重复此过程&lt;/p&gt;
-&lt;h3 id=&#34;dp&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#dp&#34;&gt;#&lt;/a&gt; DP&lt;/h3&gt;
-&lt;p&gt;动态规划：自底向上&lt;br&gt;
-方法：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;递归计算每个子树的最优平铺成本&lt;/li&gt;
-&lt;li&gt;对于每个节点，考虑所有可能的匹配平铺&lt;/li&gt;
-&lt;li&gt;对于每个匹配平铺，计算其成本如下：cost = tile_cost + sum（costs_of_children）&lt;/li&gt;
-&lt;li&gt;选择成本最低的平铺&lt;/li&gt;
-&lt;/ol&gt;
-&lt;ul&gt;
-&lt;li&gt;对于&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;C&lt;/mi&gt;&lt;mi&gt;O&lt;/mi&gt;&lt;mi&gt;N&lt;/mi&gt;&lt;mi&gt;S&lt;/mi&gt;&lt;mi&gt;T&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;CONST i&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.68333em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.07153em;&#34;&gt;C&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.02778em;&#34;&gt;O&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.10903em;&#34;&gt;N&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.05764em;&#34;&gt;S&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.13889em;&#34;&gt;T&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;i&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;，它的代价为 1 (ADD r1, r0, i)&lt;/li&gt;
-&lt;li&gt;对于这棵树，有三种匹配方法&lt;br&gt;
-&lt;img data-src=&#34;f4.jpg&#34; alt&gt;&lt;br&gt;
-&lt;img data-src=&#34;f5.jpg&#34; alt&gt;&lt;br&gt;
-因为 2&amp;lt;3，所以我们从 cost=2 的两个任选一个&lt;br&gt;
-接下来对于 MEM，用的都是 LOAD，代价都是 1，2&amp;lt;3 所以选 cost=2 的&lt;/li&gt;
-&lt;/ul&gt;
-&lt;figure class=&#34;highlight c&#34;&gt;&lt;figcaption&gt;&lt;span&gt;指令发射&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;function &lt;span class=&#34;title function_&#34;&gt;Emission&lt;/span&gt;&lt;span class=&#34;params&#34;&gt;(node n)&lt;/span&gt;:&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    For each leaf l_i of the tile selected at node n:&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &lt;span class=&#34;title function_&#34;&gt;Emission&lt;/span&gt;&lt;span class=&#34;params&#34;&gt;(l_i)&lt;/span&gt; &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    Emit the instruction matched at node n&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h3 id=&#34;最大匹配-vs-动态规划&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#最大匹配-vs-动态规划&#34;&gt;#&lt;/a&gt; 最大匹配 vs 动态规划&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;T&lt;/strong&gt; - tile 的总种类数&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;K&lt;/strong&gt; - 一个 matching tile 平均覆盖的节点数&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;K’&lt;/strong&gt; - 需要检查的最大 tile 尺寸（即最大的瓦片包含的节点数）&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;T’&lt;/strong&gt; - 每个树节点平均能匹配上的 tile 数量&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;N&lt;/strong&gt; - 输入的中间表示 IR Tree 中的总节点数&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;两种算法的运行时间复杂度：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;最大匹配（Maximal Munch）&lt;/strong&gt; - 其时间复杂度与&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;span class=&#34;katex-display&#34;&gt;&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34; display=&#34;block&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mfrac&gt;&lt;mrow&gt;&lt;mo stretchy=&#34;false&#34;&gt;(&lt;/mo&gt;&lt;msup&gt;&lt;mi&gt;K&lt;/mi&gt;&lt;mo mathvariant=&#34;normal&#34; lspace=&#34;0em&#34; rspace=&#34;0em&#34;&gt;′&lt;/mo&gt;&lt;/msup&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;msup&gt;&lt;mi&gt;T&lt;/mi&gt;&lt;mo mathvariant=&#34;normal&#34; lspace=&#34;0em&#34; rspace=&#34;0em&#34;&gt;′&lt;/mo&gt;&lt;/msup&gt;&lt;mo stretchy=&#34;false&#34;&gt;)&lt;/mo&gt;&lt;mo&gt;∗&lt;/mo&gt;&lt;mi&gt;K&lt;/mi&gt;&lt;/mrow&gt;&lt;mi&gt;K&lt;/mi&gt;&lt;/mfrac&gt;&lt;mo&gt;∗&lt;/mo&gt;&lt;mi&gt;N&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mo stretchy=&#34;false&#34;&gt;(&lt;/mo&gt;&lt;msup&gt;&lt;mi&gt;K&lt;/mi&gt;&lt;mo mathvariant=&#34;normal&#34; lspace=&#34;0em&#34; rspace=&#34;0em&#34;&gt;′&lt;/mo&gt;&lt;/msup&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;msup&gt;&lt;mi&gt;T&lt;/mi&gt;&lt;mo mathvariant=&#34;normal&#34; lspace=&#34;0em&#34; rspace=&#34;0em&#34;&gt;′&lt;/mo&gt;&lt;/msup&gt;&lt;mo stretchy=&#34;false&#34;&gt;)&lt;/mo&gt;&lt;mo&gt;∗&lt;/mo&gt;&lt;mi&gt;N&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;\frac{(K&amp;#x27; + T&amp;#x27;) * K}{K} * N = (K&amp;#x27; + T&amp;#x27;) * N
-&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:2.114892em;vertical-align:-0.686em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mopen nulldelimiter&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mfrac&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:1.428892em;&#34;&gt;&lt;span style=&#34;top:-2.314em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:3em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.07153em;&#34;&gt;K&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;top:-3.23em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:3em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;frac-line&#34; style=&#34;border-bottom-width:0.04em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;top:-3.677em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:3em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mopen&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.07153em;&#34;&gt;K&lt;/span&gt;&lt;span class=&#34;msupsub&#34;&gt;&lt;span class=&#34;vlist-t&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.751892em;&#34;&gt;&lt;span style=&#34;top:-3.063em;margin-right:0.05em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.7em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mtight&#34;&gt;&lt;span class=&#34;mord mtight&#34;&gt;′&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mbin&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.13889em;&#34;&gt;T&lt;/span&gt;&lt;span class=&#34;msupsub&#34;&gt;&lt;span class=&#34;vlist-t&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.751892em;&#34;&gt;&lt;span style=&#34;top:-3.063em;margin-right:0.05em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.7em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mtight&#34;&gt;&lt;span class=&#34;mord mtight&#34;&gt;′&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;mclose&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mbin&#34;&gt;∗&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.07153em;&#34;&gt;K&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.686em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;mclose nulldelimiter&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mbin&#34;&gt;∗&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.68333em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.10903em;&#34;&gt;N&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mrel&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:1.051892em;vertical-align:-0.25em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mopen&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.07153em;&#34;&gt;K&lt;/span&gt;&lt;span class=&#34;msupsub&#34;&gt;&lt;span class=&#34;vlist-t&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.801892em;&#34;&gt;&lt;span style=&#34;top:-3.113em;margin-right:0.05em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.7em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mtight&#34;&gt;&lt;span class=&#34;mord mtight&#34;&gt;′&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mbin&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:1.051892em;vertical-align:-0.25em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.13889em;&#34;&gt;T&lt;/span&gt;&lt;span class=&#34;msupsub&#34;&gt;&lt;span class=&#34;vlist-t&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.801892em;&#34;&gt;&lt;span style=&#34;top:-3.113em;margin-right:0.05em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.7em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mtight&#34;&gt;&lt;span class=&#34;mord mtight&#34;&gt;′&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;mclose&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mbin&#34;&gt;∗&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.68333em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.10903em;&#34;&gt;N&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;成正比&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;动态规划（Dynamic Programming）&lt;/strong&gt; - 其时间复杂度与&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;span class=&#34;katex-display&#34;&gt;&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34; display=&#34;block&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mo stretchy=&#34;false&#34;&gt;(&lt;/mo&gt;&lt;msup&gt;&lt;mi&gt;K&lt;/mi&gt;&lt;mo mathvariant=&#34;normal&#34; lspace=&#34;0em&#34; rspace=&#34;0em&#34;&gt;′&lt;/mo&gt;&lt;/msup&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;msup&gt;&lt;mi&gt;T&lt;/mi&gt;&lt;mo mathvariant=&#34;normal&#34; lspace=&#34;0em&#34; rspace=&#34;0em&#34;&gt;′&lt;/mo&gt;&lt;/msup&gt;&lt;mo stretchy=&#34;false&#34;&gt;)&lt;/mo&gt;&lt;mo&gt;∗&lt;/mo&gt;&lt;mi&gt;N&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;(K&amp;#x27; + T&amp;#x27;) * N
-&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:1.051892em;vertical-align:-0.25em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mopen&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.07153em;&#34;&gt;K&lt;/span&gt;&lt;span class=&#34;msupsub&#34;&gt;&lt;span class=&#34;vlist-t&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.801892em;&#34;&gt;&lt;span style=&#34;top:-3.113em;margin-right:0.05em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.7em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mtight&#34;&gt;&lt;span class=&#34;mord mtight&#34;&gt;′&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mbin&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:1.051892em;vertical-align:-0.25em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.13889em;&#34;&gt;T&lt;/span&gt;&lt;span class=&#34;msupsub&#34;&gt;&lt;span class=&#34;vlist-t&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.801892em;&#34;&gt;&lt;span style=&#34;top:-3.113em;margin-right:0.05em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.7em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mtight&#34;&gt;&lt;span class=&#34;mord mtight&#34;&gt;′&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;mclose&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mbin&#34;&gt;∗&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.68333em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.10903em;&#34;&gt;N&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;成正比&lt;/p&gt;
-&lt;h2 id=&#34;tree-grammar-树文法&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#tree-grammar-树文法&#34;&gt;#&lt;/a&gt; Tree Grammar 树文法&lt;/h2&gt;
-&lt;p&gt;问题：对于具有复杂指令集和多种寄存器类型及寻址模式的机器，难以使用简单的 tree pattern 和 tiling 算法。&lt;br&gt;
-用一种文法来描述 tiles，代替手写过程式匹配代码，支持自动化的指令选择，增强了可移植性&lt;br&gt;
-图没看懂，后面再回来研究&lt;/p&gt;
- ]]></description>
-        </item>
-        <item>
             <guid isPermalink="true">http://example.com/2025/06/17/computer-science/compile-principles/ch8/</guid>
             <title>Basic Blocks &amp; Traces</title>
             <link>http://example.com/2025/06/17/computer-science/compile-principles/ch8/</link>
@@ -397,6 +321,91 @@ no internal jumps/labels&lt;/li&gt;
 &lt;p&gt;&lt;img data-src=&#34;f1.jpg&#34; alt&gt;&lt;br&gt;
 哪个划分比较好？&lt;br&gt;
 根据 3，c 比 a 好；&lt;/p&gt;
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">http://example.com/2025/06/17/computer-science/compile-principles/ch9/</guid>
+            <title>指令选择</title>
+            <link>http://example.com/2025/06/17/computer-science/compile-principles/ch9/</link>
+            <category>指令选择</category>
+            <pubDate>Tue, 17 Jun 2025 00:00:00 +0800</pubDate>
+            <description><![CDATA[ &lt;h1 id=&#34;指令选择&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#指令选择&#34;&gt;#&lt;/a&gt; 指令选择&lt;/h1&gt;
+&lt;p&gt;找出实现一个给定的 IR Tree 的恰当机器指令序列。Mapping IR into abstract assembly code&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Abstract assembly = assembly with infinite registers
+&lt;ul&gt;
+&lt;li&gt;Invent new temporaries for intermediate results&lt;/li&gt;
+&lt;li&gt;Map to actual registers later&lt;br&gt;
+Tree pattern, 也叫 tile&lt;br&gt;
+ 本质上是 pattern matching, 我们使用 tree covering 来实现&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;我们 &lt;code&gt;Jouette&lt;/code&gt;  体系将树模式映射为指令:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;寄存器中可以存储数据或地址，每条指令可以访问任意寄存器&lt;/li&gt;
+&lt;li&gt;寄存器 r0 的值永远是 0&lt;/li&gt;
+&lt;li&gt;每条指令的 latency 都是一周期（除了 MOVEM 的周期是 m）&lt;/li&gt;
+&lt;li&gt;每个周期执行一条指令&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img data-src=&#34;f2.jpg&#34; alt&gt;&lt;br&gt;
+&lt;img data-src=&#34;f1.jpg&#34; alt&gt;&lt;br&gt;
+将 IR 与后端的机器指令都转换为树结构。这样就把指令选择问题转换为机器指令树覆盖全 IR Tree 的问题。&lt;br&gt;
+一棵树可以有多种 tiling 方式&lt;/p&gt;
+&lt;h2 id=&#34;optimal-tiling-optimum-tiling&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#optimal-tiling-optimum-tiling&#34;&gt;#&lt;/a&gt; Optimal Tiling &amp;amp; Optimum Tiling&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Optimum Tiling：使得 tiling 数最少，是&lt;mark&gt;全局最优&lt;/mark&gt;&lt;/li&gt;
+&lt;li&gt;Optimal Tiling：No two adjacent tiles can be combined into a single tile of lower cost，是&lt;mark&gt;局部最优&lt;/mark&gt;&lt;br&gt;
+一个 optimum tiling 必定是 optimal tiling&lt;br&gt;
+&lt;img data-src=&#34;f3.jpg&#34; alt&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;algorithms-for-instruction-selection&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#algorithms-for-instruction-selection&#34;&gt;#&lt;/a&gt; Algorithms for Instruction Selection&lt;/h2&gt;
+&lt;h3 id=&#34;maximal-munch-find-an-optimal-tiling&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#maximal-munch-find-an-optimal-tiling&#34;&gt;#&lt;/a&gt; Maximal Munch: Find an optimal tiling&lt;/h3&gt;
+&lt;p&gt;最大匹配：贪心算法、自顶向下&lt;br&gt;
+方法：从 IR 树的根节点开始，用&lt;mark&gt;最大的&lt;/mark&gt; tile 覆盖当前节点（包含最多节点的），然后在子树中重复此过程&lt;/p&gt;
+&lt;h3 id=&#34;dp&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#dp&#34;&gt;#&lt;/a&gt; DP&lt;/h3&gt;
+&lt;p&gt;动态规划：自底向上&lt;br&gt;
+方法：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;递归计算每个子树的最优平铺成本&lt;/li&gt;
+&lt;li&gt;对于每个节点，考虑所有可能的匹配平铺&lt;/li&gt;
+&lt;li&gt;对于每个匹配平铺，计算其成本如下：cost = tile_cost + sum（costs_of_children）&lt;/li&gt;
+&lt;li&gt;选择成本最低的平铺&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;对于&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;C&lt;/mi&gt;&lt;mi&gt;O&lt;/mi&gt;&lt;mi&gt;N&lt;/mi&gt;&lt;mi&gt;S&lt;/mi&gt;&lt;mi&gt;T&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;CONST i&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.68333em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.07153em;&#34;&gt;C&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.02778em;&#34;&gt;O&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.10903em;&#34;&gt;N&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.05764em;&#34;&gt;S&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.13889em;&#34;&gt;T&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;i&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;，它的代价为 1 (ADD r1, r0, i)&lt;/li&gt;
+&lt;li&gt;对于这棵树，有三种匹配方法&lt;br&gt;
+&lt;img data-src=&#34;f4.jpg&#34; alt&gt;&lt;br&gt;
+&lt;img data-src=&#34;f5.jpg&#34; alt&gt;&lt;br&gt;
+因为 2&amp;lt;3，所以我们从 cost=2 的两个任选一个&lt;br&gt;
+接下来对于 MEM，用的都是 LOAD，代价都是 1，2&amp;lt;3 所以选 cost=2 的&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&#34;highlight c&#34;&gt;&lt;figcaption&gt;&lt;span&gt;指令发射&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;function &lt;span class=&#34;title function_&#34;&gt;Emission&lt;/span&gt;&lt;span class=&#34;params&#34;&gt;(node n)&lt;/span&gt;:&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    For each leaf l_i of the tile selected at node n:&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &lt;span class=&#34;title function_&#34;&gt;Emission&lt;/span&gt;&lt;span class=&#34;params&#34;&gt;(l_i)&lt;/span&gt; &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    Emit the instruction matched at node n&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&#34;最大匹配-vs-动态规划&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#最大匹配-vs-动态规划&#34;&gt;#&lt;/a&gt; 最大匹配 vs 动态规划&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;T&lt;/strong&gt; - tile 的总种类数&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;K&lt;/strong&gt; - 一个 matching tile 平均覆盖的节点数&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;K’&lt;/strong&gt; - 需要检查的最大 tile 尺寸（即最大的瓦片包含的节点数）&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;T’&lt;/strong&gt; - 每个树节点平均能匹配上的 tile 数量&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;N&lt;/strong&gt; - 输入的中间表示 IR Tree 中的总节点数&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;两种算法的运行时间复杂度：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;最大匹配（Maximal Munch）&lt;/strong&gt; - 其时间复杂度与&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;span class=&#34;katex-display&#34;&gt;&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34; display=&#34;block&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mfrac&gt;&lt;mrow&gt;&lt;mo stretchy=&#34;false&#34;&gt;(&lt;/mo&gt;&lt;msup&gt;&lt;mi&gt;K&lt;/mi&gt;&lt;mo mathvariant=&#34;normal&#34; lspace=&#34;0em&#34; rspace=&#34;0em&#34;&gt;′&lt;/mo&gt;&lt;/msup&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;msup&gt;&lt;mi&gt;T&lt;/mi&gt;&lt;mo mathvariant=&#34;normal&#34; lspace=&#34;0em&#34; rspace=&#34;0em&#34;&gt;′&lt;/mo&gt;&lt;/msup&gt;&lt;mo stretchy=&#34;false&#34;&gt;)&lt;/mo&gt;&lt;mo&gt;∗&lt;/mo&gt;&lt;mi&gt;K&lt;/mi&gt;&lt;/mrow&gt;&lt;mi&gt;K&lt;/mi&gt;&lt;/mfrac&gt;&lt;mo&gt;∗&lt;/mo&gt;&lt;mi&gt;N&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mo stretchy=&#34;false&#34;&gt;(&lt;/mo&gt;&lt;msup&gt;&lt;mi&gt;K&lt;/mi&gt;&lt;mo mathvariant=&#34;normal&#34; lspace=&#34;0em&#34; rspace=&#34;0em&#34;&gt;′&lt;/mo&gt;&lt;/msup&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;msup&gt;&lt;mi&gt;T&lt;/mi&gt;&lt;mo mathvariant=&#34;normal&#34; lspace=&#34;0em&#34; rspace=&#34;0em&#34;&gt;′&lt;/mo&gt;&lt;/msup&gt;&lt;mo stretchy=&#34;false&#34;&gt;)&lt;/mo&gt;&lt;mo&gt;∗&lt;/mo&gt;&lt;mi&gt;N&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;\frac{(K&amp;#x27; + T&amp;#x27;) * K}{K} * N = (K&amp;#x27; + T&amp;#x27;) * N
+&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:2.114892em;vertical-align:-0.686em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mopen nulldelimiter&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mfrac&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:1.428892em;&#34;&gt;&lt;span style=&#34;top:-2.314em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:3em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.07153em;&#34;&gt;K&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;top:-3.23em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:3em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;frac-line&#34; style=&#34;border-bottom-width:0.04em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;top:-3.677em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:3em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mopen&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.07153em;&#34;&gt;K&lt;/span&gt;&lt;span class=&#34;msupsub&#34;&gt;&lt;span class=&#34;vlist-t&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.751892em;&#34;&gt;&lt;span style=&#34;top:-3.063em;margin-right:0.05em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.7em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mtight&#34;&gt;&lt;span class=&#34;mord mtight&#34;&gt;′&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mbin&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.13889em;&#34;&gt;T&lt;/span&gt;&lt;span class=&#34;msupsub&#34;&gt;&lt;span class=&#34;vlist-t&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.751892em;&#34;&gt;&lt;span style=&#34;top:-3.063em;margin-right:0.05em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.7em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mtight&#34;&gt;&lt;span class=&#34;mord mtight&#34;&gt;′&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;mclose&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mbin&#34;&gt;∗&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.07153em;&#34;&gt;K&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.686em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;mclose nulldelimiter&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mbin&#34;&gt;∗&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.68333em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.10903em;&#34;&gt;N&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mrel&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:1.051892em;vertical-align:-0.25em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mopen&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.07153em;&#34;&gt;K&lt;/span&gt;&lt;span class=&#34;msupsub&#34;&gt;&lt;span class=&#34;vlist-t&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.801892em;&#34;&gt;&lt;span style=&#34;top:-3.113em;margin-right:0.05em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.7em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mtight&#34;&gt;&lt;span class=&#34;mord mtight&#34;&gt;′&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mbin&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:1.051892em;vertical-align:-0.25em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.13889em;&#34;&gt;T&lt;/span&gt;&lt;span class=&#34;msupsub&#34;&gt;&lt;span class=&#34;vlist-t&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.801892em;&#34;&gt;&lt;span style=&#34;top:-3.113em;margin-right:0.05em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.7em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mtight&#34;&gt;&lt;span class=&#34;mord mtight&#34;&gt;′&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;mclose&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mbin&#34;&gt;∗&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.68333em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.10903em;&#34;&gt;N&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;成正比&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;动态规划（Dynamic Programming）&lt;/strong&gt; - 其时间复杂度与&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;span class=&#34;katex-display&#34;&gt;&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34; display=&#34;block&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mo stretchy=&#34;false&#34;&gt;(&lt;/mo&gt;&lt;msup&gt;&lt;mi&gt;K&lt;/mi&gt;&lt;mo mathvariant=&#34;normal&#34; lspace=&#34;0em&#34; rspace=&#34;0em&#34;&gt;′&lt;/mo&gt;&lt;/msup&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;msup&gt;&lt;mi&gt;T&lt;/mi&gt;&lt;mo mathvariant=&#34;normal&#34; lspace=&#34;0em&#34; rspace=&#34;0em&#34;&gt;′&lt;/mo&gt;&lt;/msup&gt;&lt;mo stretchy=&#34;false&#34;&gt;)&lt;/mo&gt;&lt;mo&gt;∗&lt;/mo&gt;&lt;mi&gt;N&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;(K&amp;#x27; + T&amp;#x27;) * N
+&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:1.051892em;vertical-align:-0.25em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mopen&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.07153em;&#34;&gt;K&lt;/span&gt;&lt;span class=&#34;msupsub&#34;&gt;&lt;span class=&#34;vlist-t&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.801892em;&#34;&gt;&lt;span style=&#34;top:-3.113em;margin-right:0.05em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.7em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mtight&#34;&gt;&lt;span class=&#34;mord mtight&#34;&gt;′&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mbin&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:1.051892em;vertical-align:-0.25em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.13889em;&#34;&gt;T&lt;/span&gt;&lt;span class=&#34;msupsub&#34;&gt;&lt;span class=&#34;vlist-t&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.801892em;&#34;&gt;&lt;span style=&#34;top:-3.113em;margin-right:0.05em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.7em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mtight&#34;&gt;&lt;span class=&#34;mord mtight&#34;&gt;′&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;mclose&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mbin&#34;&gt;∗&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.68333em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.10903em;&#34;&gt;N&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;成正比&lt;/p&gt;
+&lt;h2 id=&#34;tree-grammar-树文法&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#tree-grammar-树文法&#34;&gt;#&lt;/a&gt; Tree Grammar 树文法&lt;/h2&gt;
+&lt;p&gt;问题：对于具有复杂指令集和多种寄存器类型及寻址模式的机器，难以使用简单的 tree pattern 和 tiling 算法。&lt;br&gt;
+用一种文法来描述 tiles，代替手写过程式匹配代码，支持自动化的指令选择，增强了可移植性&lt;br&gt;
+图没看懂，后面再回来研究&lt;/p&gt;
  ]]></description>
         </item>
         <item>
@@ -792,7 +801,7 @@ g 调用 f 时，g 中每一个实际（或被嵌套在 f 内的任意函数）�
 &lt;/ul&gt;
 &lt;h3 id=&#34;212-定点数的编码表示&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#212-定点数的编码表示&#34;&gt;#&lt;/a&gt; 2.1.2 定点数的编码表示&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;定点百世一般表示定点小数和定点整数，&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL3huLS1ucXE5Nml1cmlvNWprMWFjNDNnLnh4eA==&#34;&gt;小数是符号位.xxx&lt;/span&gt;，整数是符号位 xxxx.0&lt;/li&gt;
+&lt;li&gt;定点数一般表示定点小数和定点整数，&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL3huLS1ucXE5Nml1cmlvNWprMWFjNDNnLnh4eA==&#34;&gt;小数是符号位.xxx&lt;/span&gt;，整数是符号位 xxxx.0&lt;/li&gt;
 &lt;li&gt;
 &lt;blockquote&gt;
 &lt;p&gt;感觉不是什么重要的东西，浮点数表示比较重要&lt;/p&gt;
@@ -1110,7 +1119,25 @@ S_i &amp;amp;= P_i \oplus C_i
  总之两位不同则有溢出&lt;/p&gt;
 &lt;h3 id=&#34;定点数的乘除运算&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#定点数的乘除运算&#34;&gt;#&lt;/a&gt; 定点数的乘除运算&lt;/h3&gt;
 &lt;p&gt;略，列竖式即可&lt;/p&gt;
+&lt;h3 id=&#34;浮点数的表示与运算&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#浮点数的表示与运算&#34;&gt;#&lt;/a&gt; 浮点数的表示与运算&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;浮点数的表示格式&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;span class=&#34;katex-display&#34;&gt;&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34; display=&#34;block&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;N&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mo stretchy=&#34;false&#34;&gt;(&lt;/mo&gt;&lt;mo&gt;−&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;msup&gt;&lt;mo stretchy=&#34;false&#34;&gt;)&lt;/mo&gt;&lt;mi&gt;s&lt;/mi&gt;&lt;/msup&gt;&lt;mo&gt;⋅&lt;/mo&gt;&lt;mi&gt;M&lt;/mi&gt;&lt;mo&gt;⋅&lt;/mo&gt;&lt;msup&gt;&lt;mi&gt;R&lt;/mi&gt;&lt;mi&gt;E&lt;/mi&gt;&lt;/msup&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;N = (-1)^s \cdot M \cdot R^E
+&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.68333em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.10903em;&#34;&gt;N&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mrel&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:1em;vertical-align:-0.25em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mopen&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;−&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;mclose&#34;&gt;&lt;span class=&#34;mclose&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;msupsub&#34;&gt;&lt;span class=&#34;vlist-t&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.7143919999999999em;&#34;&gt;&lt;span style=&#34;top:-3.113em;margin-right:0.05em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.7em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mathnormal mtight&#34;&gt;s&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mbin&#34;&gt;⋅&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.68333em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.10903em;&#34;&gt;M&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mbin&#34;&gt;⋅&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.8913309999999999em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.00773em;&#34;&gt;R&lt;/span&gt;&lt;span class=&#34;msupsub&#34;&gt;&lt;span class=&#34;vlist-t&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.8913309999999999em;&#34;&gt;&lt;span style=&#34;top:-3.113em;margin-right:0.05em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.7em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mathnormal mtight&#34; style=&#34;margin-right:0.05764em;&#34;&gt;E&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;s 符号，M 尾数，E 阶码，R 基数&lt;br&gt;
+ 2. 浮点数的表示范围&lt;br&gt;
+范围关于原点对称，运算结果大于最大正数时成为正上溢，小遇绝对值最大负数是成为负上溢，统称上溢。运算结果在 0 - 最小整数之间成为正下溢，负数同理，统称下溢（原因是精度不够）&lt;br&gt;
+3. 浮点数的规格化&lt;/p&gt;
  ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">http://example.com/2025/05/13/computer-science/computer-network/ch1/</guid>
+            <title>Ch1</title>
+            <link>http://example.com/2025/05/13/computer-science/computer-network/ch1/</link>
+            <category>计算机网络</category>
+            <pubDate>Tue, 13 May 2025 00:00:00 +0800</pubDate>
+            <description><![CDATA[  ]]></description>
         </item>
         <item>
             <guid isPermalink="true">http://example.com/2025/05/13/computer-science/computer-organization/ch1/</guid>
@@ -1280,14 +1307,6 @@ A. 汇编程序&lt;br&gt;
 &lt;/ul&gt;
 &lt;/blockquote&gt;
  ]]></description>
-        </item>
-        <item>
-            <guid isPermalink="true">http://example.com/2025/05/13/computer-science/computer-network/ch1/</guid>
-            <title>Ch1</title>
-            <link>http://example.com/2025/05/13/computer-science/computer-network/ch1/</link>
-            <category>计算机网络</category>
-            <pubDate>Tue, 13 May 2025 00:00:00 +0800</pubDate>
-            <description><![CDATA[  ]]></description>
         </item>
         <item>
             <guid isPermalink="true">http://example.com/2025/03/30/computer-science/compile-principles/ch5/</guid>
