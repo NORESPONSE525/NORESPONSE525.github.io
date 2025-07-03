@@ -87,7 +87,7 @@
 
       </div>
       <div id="imgs" class="pjax">
-          <img src="/images/bg26.jpg">
+          <img src="/images/bg27.jpg">
       </div>
     </header>
     <div id="waves">
@@ -112,28 +112,6 @@
       <div class="cards">
           
 <section class="item">
-  <div class="cover" data-background-image="/SE/cover.jpg">
-    <h2 class="title">软件工程</h2>
-  </div>
-  <div class="info">
-    <div class="ribbon"><a href="/categories/SE/" itemprop="url" title="软件工程">软件工程</a></div>
-    <div class="inner">
-        <ul class="posts">
-            <li><a title="SE note" href="/2025/06/19/SE/note/">SE note</a></li>
-            <li><a title="画图题" href="/2025/06/19/SE/diagram/">画图题</a></li>
-        </ul>
-        <div class="meta footer">
-          <span>
-            <i class="ic i-file"></i>2 posts in total
-          </span>
-        </div>
-        <a href="/categories/SE/" itemprop="url" title="软件工程" class="btn">more...</a>
-    </div>
-  </div>
-</section>
-
-          
-<section class="item">
   <div class="cover" data-background-image="/AI/cover.jpg">
     <h2 class="title">人工智能</h2>
   </div>
@@ -154,6 +132,28 @@
           </span>
         </div>
         <a href="/categories/AI/" itemprop="url" title="人工智能" class="btn">more...</a>
+    </div>
+  </div>
+</section>
+
+          
+<section class="item">
+  <div class="cover" data-background-image="/SE/cover.jpg">
+    <h2 class="title">软件工程</h2>
+  </div>
+  <div class="info">
+    <div class="ribbon"><a href="/categories/SE/" itemprop="url" title="软件工程">软件工程</a></div>
+    <div class="inner">
+        <ul class="posts">
+            <li><a title="SE note" href="/2025/06/19/SE/note/">SE note</a></li>
+            <li><a title="画图题" href="/2025/06/19/SE/diagram/">画图题</a></li>
+        </ul>
+        <div class="meta footer">
+          <span>
+            <i class="ic i-file"></i>2 posts in total
+          </span>
+        </div>
+        <a href="/categories/SE/" itemprop="url" title="软件工程" class="btn">more...</a>
     </div>
   </div>
 </section>
@@ -187,7 +187,7 @@
         
 <article class="item">
   <div class="cover">
-    <a href="/2025/07/01/computer-science/computer-organization/ch3/" itemprop="url" title="Ch3"><img data-src="/images/bg24.jpg"></a>
+    <a href="/2025/07/01/computer-science/computer-organization/ch3/" itemprop="url" title="Ch3"><img data-src="/images/bg12.jpg"></a>
   </div>
   <div class="info">
     
@@ -202,20 +202,42 @@
     <span class="icon">
       <i class="ic i-pen"></i>
     </span>
-    <span>0</span>
+    <span>1.7k</span>
     <span class="text">words</span>
   </span>
   <span class="item" title="Reading time">
     <span class="icon">
       <i class="ic i-clock"></i>
     </span>
-    <span>1 mins.</span>
+    <span>2 mins.</span>
   </span>
 </div>
 
     <h3><a href="/2025/07/01/computer-science/computer-organization/ch3/" itemprop="url" title="Ch3">Ch3</a></h3>
     <div class="excerpt">
-        
+        # 存储系统
+# 存储器概述
+# 存储器的分类
+
+按层次分
+
+主存（小、快、成本高）
+辅存（大、慢、成本低）
+Cache
+
+按存储介质分
+
+磁表面存储器（磁盘、磁带）
+磁芯存储器
+半导体存储器（MOS 型、双极型）
+光存储器（光盘）
+
+按存储方式分
+
+RAM （随机存储器）: 随机读取存储单元，存取时间与存储单元的物理位置无关。读写方便，主要用作主存和 cache，分静态 RAM 和动态 RAM。
+ROM （只读存储器）：只能读不能写，非易失性，随机读取。广义的 ROM 也可以通过电擦除进行写入 (EEPROM)
+SAM （顺序存储器）：按顺序存储，存取时间与存储单元的物理位置有关
+DAM...
     </div>
     <div class="meta footer">
       <span>
@@ -244,7 +266,7 @@
     <span class="icon">
       <i class="ic i-pen"></i>
     </span>
-    <span>822</span>
+    <span>725</span>
     <span class="text">words</span>
   </span>
   <span class="item" title="Reading time">
@@ -257,13 +279,16 @@
 
     <h3><a href="/2025/07/01/computer-science/computer-organization/%E9%94%99%E9%A2%98%E9%9B%86%E5%90%88/" itemprop="url" title="错题集合">错题集合</a></h3>
     <div class="excerpt">
-        错题集合Ch2
-某计算机字长为8位，CPU中有一个8位加法器，已知无符号数x&amp;#x3D;69, y&amp;#x3D;38，若在该加法器中计算x-y，则加法器的两个输入短信息和输入的低位进位信息分别为（）
+        # 错题集合
+# Ch2
+
+某计算机字长为 8 位，CPU 中有一个 8 位加法器，已知无符号数 x=69, y=38，若在该加法器中计算 x-y，则加法器的两个输入短信息和输入的低位进位信息分别为（）
 
 0100 0101, 1101 1001, 1
-无符号数减法，在加法器中输入x的原码，y的取反和1
 
-减法指令 “sub R1, R2, R3” 的功能为 “(R1) - (R2) -&amp;gt; R3”, 该指令执行后将生成进位&amp;#x2F;借位标志CF和溢出标志OF，若(R1) &amp;#x3D; FFFF FFFFH, R2 &amp;#x3D; FFFF...
+无符号数减法，在加法器中输入 x 的原码，y 的取反和 1
+
+减法指令 “sub R1, R2, R3” 的功能为 “(R1) - (R2) -&amp;gt; R3”, 该指令执行后将生成进位 / 借位标志 CF 和溢出标志 OF，若 (R1) = FFFF FFFFH, R2 = FFFF FFF0H, 则该减法指令执行后，CF 和 OF...
     </div>
     <div class="meta footer">
       <span>
@@ -277,7 +302,7 @@
         
 <article class="item">
   <div class="cover">
-    <a href="/2025/06/19/SE/diagram/" itemprop="url" title="画图题"><img data-src="/images/bg12.jpg"></a>
+    <a href="/2025/06/19/SE/diagram/" itemprop="url" title="画图题"><img data-src="/images/bg27.jpg"></a>
   </div>
   <div class="info">
     
@@ -292,27 +317,31 @@
     <span class="icon">
       <i class="ic i-pen"></i>
     </span>
-    <span>1.8k</span>
+    <span>1.5k</span>
     <span class="text">words</span>
   </span>
   <span class="item" title="Reading time">
     <span class="icon">
       <i class="ic i-clock"></i>
     </span>
-    <span>2 mins.</span>
+    <span>1 mins.</span>
   </span>
 </div>
 
     <h3><a href="/2025/06/19/SE/diagram/" itemprop="url" title="画图题">画图题</a></h3>
     <div class="excerpt">
-        用例图 Use Case DiagramUse-Cases: A collection of user scenarios that describe the thread of usage of a system主要包含涉及的角色，角色对应的行为，第三方参与部分
+        用例图 Use Case Diagram
+Use-Cases: A collection of user scenarios that describe the thread of usage of a system
+主要包含涉及的角色，角色对应的行为，第三方参与部分
 
 参与者：与系统交互的用户或其他软硬件系统，用小人形表示
 用例：系统中执行的一系列动作，用椭圆表示。
 关系参与者与用例、参与者之间、用例之间的联系。连线
 边界：一组用例描述的系统或子系统，用矩形框表示。
 
-+++primary example: SafeHome;;;id3 题目Our research indicates that...
+example: SafeHome
+
+Our research indicates that the market for...
     </div>
     <div class="meta footer">
       <span>
@@ -326,7 +355,7 @@
         
 <article class="item">
   <div class="cover">
-    <a href="/2025/06/19/SE/note/" itemprop="url" title="SE note"><img data-src="/images/bg30.jpg"></a>
+    <a href="/2025/06/19/SE/note/" itemprop="url" title="SE note"><img data-src="/images/bg7.jpg"></a>
   </div>
   <div class="info">
     
@@ -341,21 +370,27 @@
     <span class="icon">
       <i class="ic i-pen"></i>
     </span>
-    <span>24k</span>
+    <span>23k</span>
     <span class="text">words</span>
   </span>
   <span class="item" title="Reading time">
     <span class="icon">
       <i class="ic i-clock"></i>
     </span>
-    <span>22 mins.</span>
+    <span>21 mins.</span>
   </span>
 </div>
 
     <h3><a href="/2025/06/19/SE/note/" itemprop="url" title="SE note">SE note</a></h3>
     <div class="excerpt">
-        Ch2 Software Engineering
-Definition: The application of a &amp;#x3D;&amp;#x3D;systematic&amp;#x3D;&amp;#x3D;, &amp;#x3D;&amp;#x3D;disciplined&amp;#x3D;&amp;#x3D;, &amp;#x3D;&amp;#x3D;quantifiable（可量化）&amp;#x3D;&amp;#x3D; approach to the &amp;#x3D;&amp;#x3D;development&amp;#x3D;&amp;#x3D;,...
+        # Ch2 Software Engineering
+
+Definition: The application of a systematic, disciplined, quantifiable（可量化） approach to the development, operation, and maintenance of software
+软件工程是一个多层次的技术体系 (a layered technology)
+
+从下往上是 a “quality” focus, process model, methods, tools, 反映了构建高质量软件产品的逻辑流程
+
+软件过程（The...
     </div>
     <div class="meta footer">
       <span>
@@ -369,7 +404,7 @@ Definition: The application of a &amp;#x3D;&amp;#x3D;systematic&amp;#x3D;&amp;#x
         
 <article class="item">
   <div class="cover">
-    <a href="/2025/06/18/computer-science/compile-principles/ch10/" itemprop="url" title="Liveness Analysis"><img data-src="/images/bg22.png"></a>
+    <a href="/2025/06/18/computer-science/compile-principles/ch10/" itemprop="url" title="Liveness Analysis"><img data-src="/images/bg35.jpg"></a>
   </div>
   <div class="info">
     
@@ -384,7 +419,7 @@ Definition: The application of a &amp;#x3D;&amp;#x3D;systematic&amp;#x3D;&amp;#x
     <span class="icon">
       <i class="ic i-pen"></i>
     </span>
-    <span>1.8k</span>
+    <span>1.9k</span>
     <span class="text">words</span>
   </span>
   <span class="item" title="Reading time">
@@ -397,9 +432,11 @@ Definition: The application of a &amp;#x3D;&amp;#x3D;systematic&amp;#x3D;&amp;#x
 
     <h3><a href="/2025/06/18/computer-science/compile-principles/ch10/" itemprop="url" title="Liveness Analysis">Liveness Analysis</a></h3>
     <div class="excerpt">
-        Liveness Analysis 活跃变量分析判断在程序执行的某个点上，一个变量的值是否可能在未来被使用，是寄存器分配、死代码消除的基础
-Compiler Optimizations
-Local: 基于basic blocks
+        # Liveness Analysis 活跃变量分析
+判断在程序执行的某个点上，一个变量的值是否可能在未来被使用，是寄存器分配、死代码消除的基础
+# Compiler Optimizations
+
+Local: 基于 basic blocks
 Intraprocedural (or “global’): 基本块的控制流转移
 Interprocedural (or “whole-program”): Operate on &amp;gt; 1 procedure, up to whole program; Sometimes, at link time (LTO, link time...
     </div>
@@ -415,7 +452,7 @@ Interprocedural (or “whole-program”): Operate on &amp;gt; 1 procedure, up to
         
 <article class="item">
   <div class="cover">
-    <a href="/2025/06/18/computer-science/compile-principles/ch11/" itemprop="url" title="Register Allocation"><img data-src="/images/bg19.jpg"></a>
+    <a href="/2025/06/18/computer-science/compile-principles/ch11/" itemprop="url" title="Register Allocation"><img data-src="/images/bg25.jpg"></a>
   </div>
   <div class="info">
     
@@ -430,7 +467,7 @@ Interprocedural (or “whole-program”): Operate on &amp;gt; 1 procedure, up to
     <span class="icon">
       <i class="ic i-pen"></i>
     </span>
-    <span>1.4k</span>
+    <span>1.5k</span>
     <span class="text">words</span>
   </span>
   <span class="item" title="Reading time">
@@ -443,16 +480,21 @@ Interprocedural (or “whole-program”): Operate on &amp;gt; 1 procedure, up to
 
     <h3><a href="/2025/06/18/computer-science/compile-principles/ch11/" itemprop="url" title="Register Allocation">Register Allocation</a></h3>
     <div class="excerpt">
-        Register Allocation目标：
+        # Register Allocation
+目标：
 
 Map temporaries to registers
 Preserve program semantics
 Optimize performance
 
-图着色算法冲突图是一个无向图，冲突图中，每个节点是一个变量（寄存器分配的候选对象）。如果两个变量在同一时刻是活跃的（live），它们就有冲突边（interference edge），表示它们不能被分配到同一个寄存器冲突信息可以用矩阵或者图来表示
-冲突图构建我们从一个中间代码的指令出发，根据live-out（就是out集合）添加冲突边：
+# 图着色算法
+冲突图是一个无向图，冲突图中，每个节点是一个变量（寄存器分配的候选对象）。
+如果两个变量在同一时刻是活跃的（live），它们就有冲突边（interference edge），表示它们不能被分配到同一个寄存器
+冲突信息可以用矩阵或者图来表示
+# 冲突图构建
+我们从一个中间代码的指令出发，根据 live-out（就是 out 集合）添加冲突边：
 
-非 move 指令（不是a :&amp;#x3D;...
+非 move 指令（不是 a...
     </div>
     <div class="meta footer">
       <span>
@@ -466,7 +508,7 @@ Optimize performance
         
 <article class="item">
   <div class="cover">
-    <a href="/2025/06/17/computer-science/compile-principles/ch8/" itemprop="url" title="Basic Blocks &amp; Traces"><img data-src="/images/bg26.jpg"></a>
+    <a href="/2025/06/17/computer-science/compile-principles/ch8/" itemprop="url" title="Basic Blocks &amp; Traces"><img data-src="/images/bg32.jpg"></a>
   </div>
   <div class="info">
     
@@ -481,28 +523,31 @@ Optimize performance
     <span class="icon">
       <i class="ic i-pen"></i>
     </span>
-    <span>2.7k</span>
+    <span>3.4k</span>
     <span class="text">words</span>
   </span>
   <span class="item" title="Reading time">
     <span class="icon">
       <i class="ic i-clock"></i>
     </span>
-    <span>2 mins.</span>
+    <span>3 mins.</span>
   </span>
 </div>
 
     <h3><a href="/2025/06/17/computer-science/compile-principles/ch8/" itemprop="url" title="Basic Blocks &amp; Traces">Basic Blocks & Traces</a></h3>
     <div class="excerpt">
-        Basic Blocks and TracesCanonical FormIR存在一些与机器语言不能完全对应的情况，和与编译优化分析相冲突的情况。
+        # Basic Blocks and Traces
+# Canonical Form
+IR 存在一些与机器语言不能完全对应的情况，和与编译优化分析相冲突的情况。
 
-CJUMP能够转移到t或者f，但是真正的机器语言在条件为假的时候直接下降至下一条指令（条件为真才跳转）
-在表达式中使用ESEQ不太方便，会使子树不同的计算顺序产生不同的计算结果
-CALL调用CALL作为参数的时候会有寄存器冲突、语句副作用（修改全局变量、改变堆内存, etc.）等问题
+CJUMP 能够转移到 t 或者 f，但是真正的机器语言在条件为假的时候直接下降至下一条指令（条件为真才跳转）
+在表达式中使用 ESEQ 不太方便，会使子树不同的计算顺序产生不同的计算结果
+CALL 调用 CALL 作为参数的时候会有寄存器冲突、语句副作用（修改全局变量、改变堆内存，etc.）等问题
 
 三种方法：
 
-Linearize: Transform trees into a list of canonicaltrees without SEQ or...
+Linearize: Transform trees into a list of canonical
+trees...
     </div>
     <div class="meta footer">
       <span>
@@ -516,7 +561,7 @@ Linearize: Transform trees into a list of canonicaltrees without SEQ or...
         
 <article class="item">
   <div class="cover">
-    <a href="/2025/06/17/computer-science/compile-principles/ch9/" itemprop="url" title="指令选择"><img data-src="/images/bg18.jpg"></a>
+    <a href="/2025/06/17/computer-science/compile-principles/ch9/" itemprop="url" title="指令选择"><img data-src="/images/bg31.jpg"></a>
   </div>
   <div class="info">
     
@@ -544,11 +589,17 @@ Linearize: Transform trees into a list of canonicaltrees without SEQ or...
 
     <h3><a href="/2025/06/17/computer-science/compile-principles/ch9/" itemprop="url" title="指令选择">指令选择</a></h3>
     <div class="excerpt">
-        指令选择找出实现一个给定的IR Tree的恰当机器指令序列。Mapping IR into abstract assembly code
+        # 指令选择
+找出实现一个给定的 IR Tree 的恰当机器指令序列。Mapping IR into abstract assembly code
 
-Abstract assembly &amp;#x3D; assembly with infinite registers
+Abstract assembly = assembly with infinite registers
+
 Invent new temporaries for intermediate results
-Map to actual registers laterTree pattern, 也叫tile本质上是pattern matching, 我们使用tree covering...
+Map to actual registers later
+Tree pattern, 也叫 tile
+本质上是 pattern matching, 我们使用 tree covering 来实现
+
+我们 Jouette...
     </div>
     <div class="meta footer">
       <span>
@@ -562,7 +613,7 @@ Map to actual registers laterTree pattern, 也叫tile本质上是pattern matchin
         
 <article class="item">
   <div class="cover">
-    <a href="/2025/06/16/AI/week10-11/" itemprop="url" title="Week10-11"><img data-src="/images/bg15.jpg"></a>
+    <a href="/2025/06/16/AI/week10-11/" itemprop="url" title="Week10-11"><img data-src="/images/bg5.jpg"></a>
   </div>
   <div class="info">
     
@@ -577,7 +628,7 @@ Map to actual registers laterTree pattern, 也叫tile本质上是pattern matchin
     <span class="icon">
       <i class="ic i-pen"></i>
     </span>
-    <span>1.3k</span>
+    <span>1.1k</span>
     <span class="text">words</span>
   </span>
   <span class="item" title="Reading time">
@@ -590,12 +641,24 @@ Map to actual registers laterTree pattern, 也叫tile本质上是pattern matchin
 
     <h3><a href="/2025/06/16/AI/week10-11/" itemprop="url" title="Week10-11">Week10-11</a></h3>
     <div class="excerpt">
-        深度学习前馈神经网络
+        # 深度学习
+# 前馈神经网络
+
 神经元
 感知机（多一个激活函数）
-激活函数: .RelU, Sigmoid, Softmax, tanh..
+激活函数: .RelU, Sigmoid, Softmax, tanh…
 损失函数: MSE, Cross Entropy…s
-参数优化: BP, 梯度下降具体懒得写了，都说烂了记一下这几个激活函数的形状和应用:...
+参数优化: BP, 梯度下降
+具体懒得写了，都说烂了
+记一下这几个激活函数的形状和应用: tanh 和 sigmoid 大多用于二分类，RelU 一般用在隐藏层，Softmax 用在多分类而且概率和为 1
+
+# CNN
+
+了解卷积操作和操作之后的结果
+
+池化操作（最大池化、平均池化）
+卷积层负责提取图像中的局部特征；
+池化层用来大幅降低参数量级...
     </div>
     <div class="meta footer">
       <span>
@@ -609,7 +672,7 @@ Map to actual registers laterTree pattern, 也叫tile本质上是pattern matchin
         
 <article class="item">
   <div class="cover">
-    <a href="/2025/06/16/AI/week12-13/" itemprop="url" title="Week12-13"><img data-src="/images/bg15.jpg"></a>
+    <a href="/2025/06/16/AI/week12-13/" itemprop="url" title="Week12-13"><img data-src="/images/bg1.jpg"></a>
   </div>
   <div class="info">
     
@@ -624,7 +687,7 @@ Map to actual registers laterTree pattern, 也叫tile本质上是pattern matchin
     <span class="icon">
       <i class="ic i-pen"></i>
     </span>
-    <span>2.8k</span>
+    <span>3.4k</span>
     <span class="text">words</span>
   </span>
   <span class="item" title="Reading time">
@@ -637,7 +700,8 @@ Map to actual registers laterTree pattern, 也叫tile本质上是pattern matchin
 
     <h3><a href="/2025/06/16/AI/week12-13/" itemprop="url" title="Week12-13">Week12-13</a></h3>
     <div class="excerpt">
-        强化学习根据环境所提供的奖罚反馈来学习所处状态可施加的最佳行动，在“探索（未知空间）-利用（已有经验）（exploration vs....
+        # 强化学习
+根据环境所提供的奖罚反馈来学习所处状态可施加的最佳行动，在 “探索（未知空间）- 利用（已有经验）（exploration vs. exploitation）”...
     </div>
     <div class="meta footer">
       <span>
@@ -783,10 +847,10 @@ Map to actual registers laterTree pattern, 也叫tile本质上是pattern matchin
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/SE/" title="In 软件工程">软件工程</a>
+<a href="/categories/AI/" title="In 人工智能">人工智能</a>
 </div>
 
-    <span><a href="/2025/06/19/SE/diagram/" title="画图题">画图题</a></span>
+    <span><a href="/2025/06/11/AI/week4-5/" title="Week4-5">Week4-5</a></span>
   </li>
 
       
@@ -796,7 +860,19 @@ Map to actual registers laterTree pattern, 也叫tile本质上是pattern matchin
 <a href="/categories/AI/" title="In 人工智能">人工智能</a>
 </div>
 
-    <span><a href="/2025/05/20/AI/week2-3/" title="Week2-3">Week2-3</a></span>
+    <span><a href="/2025/06/16/AI/week14-15/" title="Week14-15">Week14-15</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/computer-network/" title="In 计算机网络">计算机网络</a>
+</div>
+
+    <span><a href="/2025/05/13/computer-science/computer-network/ch1/" title="Ch1">Ch1</a></span>
   </li>
 
       
@@ -818,7 +894,7 @@ Map to actual registers laterTree pattern, 也叫tile本质上是pattern matchin
 <a href="/categories/AI/" title="In 人工智能">人工智能</a>
 </div>
 
-    <span><a href="/2025/05/20/AI/week1/" title="Week1">Week1</a></span>
+    <span><a href="/2025/06/16/AI/week10-11/" title="Week10-11">Week10-11</a></span>
   </li>
 
       
@@ -827,22 +903,10 @@ Map to actual registers laterTree pattern, 也叫tile本质上是pattern matchin
 <div class="breadcrumb">
 <a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/computer-organization/" title="In 计算机组成">计算机组成</a>
+<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
 </div>
 
-    <span><a href="/2025/05/13/computer-science/computer-organization/ch1/" title="Ch1">Ch1</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/computer-organization/" title="In 计算机组成">计算机组成</a>
-</div>
-
-    <span><a href="/2025/07/01/computer-science/computer-organization/%E9%94%99%E9%A2%98%E9%9B%86%E5%90%88/" title="错题集合">错题集合</a></span>
+    <span><a href="/2025/06/15/computer-science/compile-principles/ch6/" title="活动记录">活动记录</a></span>
   </li>
 
       
@@ -852,7 +916,31 @@ Map to actual registers laterTree pattern, 也叫tile本质上是pattern matchin
 <a href="/categories/SE/" title="In 软件工程">软件工程</a>
 </div>
 
-    <span><a href="/2025/06/19/SE/note/" title="SE note">SE note</a></span>
+    <span><a href="/2025/06/19/SE/diagram/" title="画图题">画图题</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/computer-organization/" title="In 计算机组成">计算机组成</a>
+</div>
+
+    <span><a href="/2025/07/01/computer-science/computer-organization/ch3/" title="Ch3">Ch3</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
+</div>
+
+    <span><a href="/2025/06/18/computer-science/compile-principles/ch10/" title="Liveness Analysis">Liveness Analysis</a></span>
   </li>
 
       
@@ -865,30 +953,6 @@ Map to actual registers laterTree pattern, 也叫tile本质上是pattern matchin
 </div>
 
     <span><a href="/2025/03/29/computer-science/compile-principles/ch4/" title="抽象语法">抽象语法</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
-</div>
-
-    <span><a href="/2025/03/22/computer-science/compile-principles/ch2/" title="词法分析">词法分析</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
-</div>
-
-    <span><a href="/2025/06/17/computer-science/compile-principles/ch8/" title="Basic Blocks &amp; Traces">Basic Blocks & Traces</a></span>
   </li>
 
   </ul>
@@ -913,13 +977,13 @@ Map to actual registers laterTree pattern, 也叫tile本质上是pattern matchin
     <span class="post-meta-item-icon">
       <i class="ic i-chart-area"></i>
     </span>
-    <span title="Symbols count total">67k words</span>
+    <span title="Symbols count total">73k words</span>
 
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="ic i-coffee"></i>
     </span>
-    <span title="Reading time total">1:01</span>
+    <span title="Reading time total">1:07</span>
   </div>
   <div class="powered-by">
     Powered by <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>

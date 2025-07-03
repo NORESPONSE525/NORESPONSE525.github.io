@@ -76,7 +76,7 @@ NoResponse's Blog = NoResponse's Blog</title>
       <i class="ic i-pen"></i>
     </span>
     <span class="text">Symbols count in article</span>
-    <span>2.1k</span>
+    <span>2k</span>
     <span class="text">words</span>
   </span>
   <span class="item" title="Reading time">
@@ -116,7 +116,7 @@ NoResponse's Blog = NoResponse's Blog</title>
 
       </div>
       <div id="imgs" class="pjax">
-          <img src="/images/bg35.jpg">
+          <img src="/images/bg36.jpg">
       </div>
     </header>
     <div id="waves">
@@ -164,52 +164,67 @@ NoResponse's Blog = NoResponse's Blog</title>
   <div class="body md" itemprop="articleBody">
     
 
-    <h1 id="Activation-Record-Stack-Frame"><a href="#Activation-Record-Stack-Frame" class="headerlink" title="Activation Record&#x2F;Stack Frame"></a>Activation Record&#x2F;Stack Frame</h1><p>函数的栈帧是栈上用来放函数的局部变量、参数、返回地址以及其他临时变量的区域<br>stack一般从高地址向低地址，heap从低地址向高地址<br>layout:<br><img data-src="/f1.jpg"></p>
+    <h1 id="activation-recordstack-frame"><a class="markdownIt-Anchor" href="#activation-recordstack-frame">#</a> Activation Record/Stack Frame</h1>
+<p>函数的栈帧是栈上用来放函数的局部变量、参数、返回地址以及其他临时变量的区域<br>
+ stack 一般从高地址向低地址，heap 从低地址向高地址<br>
+ layout:<br>
+<img data-src="f1.jpg" alt></p>
 <ul>
-<li>incoming arguments: 存储caller传递给callee的参数</li>
-<li>frame pointer: 帧指针，用来访问incoming arguments，从低向高是argument 1, argument 2, …</li>
+<li>incoming arguments: 存储 caller 传递给 callee 的参数</li>
+<li>frame pointer: 帧指针，用来访问 incoming arguments，从低向高是 argument 1, argument 2, …</li>
 <li>local variables: 存储函数的局部变量（还有一些保存在寄存器里）</li>
-<li>return address: 存储需要返回caller的哪里；non-leaf过程会把return address写入栈帧里面</li>
+<li>return address: 存储需要返回 caller 的哪里；non-leaf 过程会把 return address 写入栈帧里面</li>
 <li>temporaries: 存储临时变量，复杂表达式拆出来的中间变量放的地方</li>
 <li>saved registers</li>
 <li>outgoing arguments: 存储当前函数要传递给别的函数的参数</li>
 <li>stack pointer: 栈指针，从低向高</li>
 </ul>
-<h2 id="函数调用流程："><a href="#函数调用流程：" class="headerlink" title="函数调用流程："></a>函数调用流程：</h2><ul>
-<li>g调用f的时候</li>
+<h2 id="函数调用流程"><a class="markdownIt-Anchor" href="#函数调用流程">#</a> 函数调用流程：</h2>
+<ul>
+<li>g 调用 f 的时候</li>
 </ul>
 <ol>
-<li>进入f的时候，保存旧的FP(g的FP)</li>
-<li>把FP设置为原来的SP，把SP &#x3D; SP - frame size<br><img data-src="/f2.jpg"></li>
+<li>进入 f 的时候，保存旧的 FP (g 的 FP)</li>
+<li>把 FP 设置为原来的 SP，把 SP = SP - frame size<br>
+<img data-src="f2.jpg" alt></li>
 </ol>
 <ul>
-<li>f返回的时候</li>
+<li>f 返回的时候</li>
 </ul>
 <ol>
-<li>让SP &#x3D; FP(恢复g的SP)</li>
-<li>从内存中读出g的FP恢复回去</li>
+<li>让 SP = FP (恢复 g 的 SP)</li>
+<li>从内存中读出 g 的 FP 恢复回去</li>
 </ol>
-<p>如果栈帧大小固定就只需要FP不需要SP了，因为FP &#x3D; SP + frame size</p>
-<h2 id="saved-register"><a href="#saved-register" class="headerlink" title="saved register"></a>saved register</h2><p>函数g调用f的时候，用到了寄存器r，调用f的时候要把r保存在saved register中，等调用结束再恢复回去</p>
+<p>如果栈帧大小固定就只需要 FP 不需要 SP 了，因为 FP = SP + frame size</p>
+<h2 id="saved-register"><a class="markdownIt-Anchor" href="#saved-register">#</a> saved register</h2>
+<p>函数 g 调用 f 的时候，用到了寄存器 r，调用 f 的时候要把 r 保存在 saved register 中，等调用结束再恢复回去</p>
 <ul>
 <li>caller-saved register: 函数调用的时候用到的寄存器，调用结束后可以恢复</li>
-<li>callee-saved register: 函数调用的时候用不到的寄存器，调用结束后不能恢复<br>&#x3D;&#x3D;FP是由callee保存和恢复的&#x3D;&#x3D;</li>
+<li>callee-saved register: 函数调用的时候用不到的寄存器，调用结束后不能恢复<br>
+<mark> FP 是由 callee 保存和恢复的</mark></li>
 </ul>
-<h2 id="参数传递"><a href="#参数传递" class="headerlink" title="参数传递"></a>参数传递</h2><p>一般约定把前k(4 or 6)个参数放在寄存器传递，剩下的参数放在栈中传递<br>四种传参方法：</p>
+<h2 id="参数传递"><a class="markdownIt-Anchor" href="#参数传递">#</a> 参数传递</h2>
+<p>一般约定把前 k (4 or 6) 个参数放在寄存器传递，剩下的参数放在栈中传递<br>
+四种传参方法：</p>
 <ol>
-<li>不给叶过程 (leaf procedure) 分配栈帧<br>叶过程是指不调用其他过程的过程。在这种情况下，可以不为叶过程分配栈帧</li>
-<li>过程间寄存器分配 (interprocedural register allocation)<br>这种方法需要先分析代码中全部的函数，然后再根据分析结果来分配寄存器。<br>假设有一个程序包含多个函数，通过全局分析发现某些变量在多个函数之间频繁使用，可以为其分配固定的寄存器，避免频繁的内存读写</li>
-<li>若变量 x 不再被使用，可以直接写其寄存器，不需要再保存 x 到栈帧中<br>当一个变量在当前作用域内不再被使用时，可以直接将其值写入寄存器，而无需保存到栈帧中</li>
+<li>不给叶过程 (leaf procedure) 分配栈帧<br>
+叶过程是指不调用其他过程的过程。在这种情况下，可以不为叶过程分配栈帧</li>
+<li>过程间寄存器分配 (interprocedural register allocation)<br>
+ 这种方法需要先分析代码中全部的函数，然后再根据分析结果来分配寄存器。<br>
+假设有一个程序包含多个函数，通过全局分析发现某些变量在多个函数之间频繁使用，可以为其分配固定的寄存器，避免频繁的内存读写</li>
+<li>若变量 x 不再被使用，可以直接写其寄存器，不需要再保存 x 到栈帧中<br>
+当一个变量在当前作用域内不再被使用时，可以直接将其值写入寄存器，而无需保存到栈帧中</li>
 </ol>
 <figure class="highlight c"><figcaption><span>example</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">exampleFunction</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="type">int</span> x = <span class="number">5</span>;</span><br><span class="line">    <span class="type">int</span> y = x * <span class="number">2</span>;  <span class="comment">// 使用x后，x不再被使用</span></span><br><span class="line">    <span class="comment">// 直接将y的值写入寄存器，无需保存x到栈帧中</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Result: %d\n&quot;</span>, y);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ol start="4">
-<li>寄存器窗口技术 (register windows)<br>在每次函数调用时，系统会自动切换到一组新的寄存器，称为寄存器窗口。这样，每个函数都可以独立地使用自己的寄存器，而不会影响其他函数的寄存器状态。</li>
+<li>寄存器窗口技术 (register windows)<br>
+ 在每次函数调用时，系统会自动切换到一组新的寄存器，称为寄存器窗口。这样，每个函数都可以独立地使用自己的寄存器，而不会影响其他函数的寄存器状态。</li>
 </ol>
 <figure class="highlight c"><figcaption><span>example</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">functionA</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="comment">// 使用寄存器窗口A</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">functionB</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="comment">// 使用寄存器窗口B</span></span><br><span class="line">    functionA();  <span class="comment">// 调用functionA时，自动切换到寄存器窗口A</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Frame-Resident-Variables"><a href="#Frame-Resident-Variables" class="headerlink" title="Frame-Resident Variables"></a>Frame-Resident Variables</h2><p>什么情况下要把变量写入栈帧里面？、</p>
+<h2 id="frame-resident-variables"><a class="markdownIt-Anchor" href="#frame-resident-variables">#</a> Frame-Resident Variables</h2>
+<p>什么情况下要把变量写入栈帧里面？、</p>
 <ol>
-<li>the varibles will be passed by reference 变量传地址&#x2F;引用</li>
+<li>the varibles will be passed by reference 变量传地址 / 引用</li>
 <li>变量被嵌套在函数内部的函数访问（不绝对）</li>
 <li>变量太大了没法直接放寄存器</li>
 <li>变量是一个数组</li>
@@ -217,15 +232,30 @@ NoResponse's Blog = NoResponse's Blog</title>
 <li>有太多局部变量和临时变量放不下了</li>
 </ol>
 <ul>
-<li>escape 逃逸：如果一个变量需要传地址&#x2F;取地址&#x2F;被过程内部嵌套的函数访问，那么这个变量就会逃逸。</li>
+<li>escape 逃逸：如果一个变量需要传地址 / 取地址 / 被过程内部嵌套的函数访问，那么这个变量就会逃逸。</li>
 </ul>
-<h2 id="static-links"><a href="#static-links" class="headerlink" title="static links"></a>static links</h2><p>在嵌套的函数声明中，内层函数是有可能用到外层函数的局部变量的。</p>
+<h2 id="static-links"><a class="markdownIt-Anchor" href="#static-links">#</a> static links</h2>
+<p>在嵌套的函数声明中，内层函数是有可能用到外层函数的局部变量的。</p>
 <ul>
-<li>static links是指向上一层嵌套层级的栈帧的指针。内层嵌套函数调用外层定义的变量的时候需要用到static links，否则无法寻址。<br><img data-src="/f3.jpg"><br><img data-src="/f4.jpg"><br>只有调用自身的时候才传递自己的static link作为static link，其他的都是把外层函数的fp作为static link<br>如果要访问外层变量，就顺着static一层一层查上去直到找到了为止。<br>其他访问方法：</li>
-<li>嵌套层次显示表(display)<br>建立一个全局数组，位置i包含一个指针，指向最近一次进入的，其静态嵌套深度是i的过程的栈帧<br><img data-src="/f5.jpg"><br>先给它们标上嵌套深度<br>直接把链表变成数组了，需要用到一个变量，就查看当前变量的嵌套深度i然后直接找那个数组i位置的座位fp地址来找</li>
-<li>lambda lifting<br>g调用f时，g中每一个实际（或被嵌套在f内的任意函数）访问了的变量，都将作为额外的参数传递给f<br>把内部的函数，从内往外进行改写，改写函数的参数实现lambda lifting<br><img data-src="/f6.jpg"></li>
+<li>static links 是指向上一层嵌套层级的栈帧的指针。内层嵌套函数调用外层定义的变量的时候需要用到 static links，否则无法寻址。<br>
+<img data-src="f3.jpg" alt><br>
+<img data-src="f4.jpg" alt><br>
+只有调用自身的时候才传递自己的 static link 作为 static link，其他的都是把外层函数的 fp 作为 static link<br>
+ 如果要访问外层变量，就顺着 static 一层一层查上去直到找到了为止。<br>
+其他访问方法：</li>
+<li>嵌套层次显示表 (display)<br>
+ 建立一个全局数组，位置 i 包含一个指针，指向最近一次进入的，其静态嵌套深度是 i 的过程的栈帧<br>
+<img data-src="f5.jpg" alt><br>
+先给它们标上嵌套深度<br>
+直接把链表变成数组了，需要用到一个变量，就查看当前变量的嵌套深度 i 然后直接找那个数组 i 位置的座位 fp 地址来找</li>
+<li>lambda lifting<br>
+g 调用 f 时，g 中每一个实际（或被嵌套在 f 内的任意函数）访问了的变量，都将作为额外的参数传递给 f<br>
+ 把内部的函数，从内往外进行改写，改写函数的参数实现 lambda lifting<br>
+<img data-src="f6.jpg" alt></li>
 </ul>
-<h2 id="tiger编译器的栈帧"><a href="#tiger编译器的栈帧" class="headerlink" title="tiger编译器的栈帧"></a>tiger编译器的栈帧</h2><p>tiger不支持高阶函数<br>看不完了。。再说吧</p>
+<h2 id="tiger编译器的栈帧"><a class="markdownIt-Anchor" href="#tiger编译器的栈帧">#</a> tiger 编译器的栈帧</h2>
+<p>tiger 不支持高阶函数<br>
+看不完了。。再说吧</p>
 
       <div class="tags">
           <a href="/tags/%E6%B4%BB%E5%8A%A8%E8%AE%B0%E5%BD%95/" rel="tag"><i class="ic i-tag"></i> 活动记录</a>
@@ -295,7 +325,7 @@ NoResponse's Blog = NoResponse's Blog</title>
     <div class="item left">
       
 
-  <a href="/2025/06/12/AI/week6-7/" itemprop="url" rel="prev" data-background-image="&#x2F;images&#x2F;bg8.jpg" title="Week6-7">
+  <a href="/2025/06/12/AI/week6-7/" itemprop="url" rel="prev" data-background-image="&#x2F;images&#x2F;bg5.jpg" title="Week6-7">
   <span class="type">Previous Post</span>
   <span class="category"><i class="ic i-flag"></i> 人工智能</span>
   <h3>Week6-7</h3>
@@ -305,7 +335,7 @@ NoResponse's Blog = NoResponse's Blog</title>
     <div class="item right">
       
 
-  <a href="/2025/06/15/AI/week8-9/" itemprop="url" rel="next" data-background-image="&#x2F;images&#x2F;bg22.png" title="Week8-9">
+  <a href="/2025/06/15/AI/week8-9/" itemprop="url" rel="next" data-background-image="&#x2F;images&#x2F;bg19.jpg" title="Week8-9">
   <span class="type">Next Post</span>
   <span class="category"><i class="ic i-flag"></i> 人工智能</span>
   <h3>Week8-9</h3>
@@ -327,7 +357,7 @@ NoResponse's Blog = NoResponse's Blog</title>
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="Contents">
-          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Activation-Record-Stack-Frame"><span class="toc-number">1.</span> <span class="toc-text">Activation Record&#x2F;Stack Frame</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8%E6%B5%81%E7%A8%8B%EF%BC%9A"><span class="toc-number">1.1.</span> <span class="toc-text">函数调用流程：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#saved-register"><span class="toc-number">1.2.</span> <span class="toc-text">saved register</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E6%95%B0%E4%BC%A0%E9%80%92"><span class="toc-number">1.3.</span> <span class="toc-text">参数传递</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Frame-Resident-Variables"><span class="toc-number">1.4.</span> <span class="toc-text">Frame-Resident Variables</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#static-links"><span class="toc-number">1.5.</span> <span class="toc-text">static links</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#tiger%E7%BC%96%E8%AF%91%E5%99%A8%E7%9A%84%E6%A0%88%E5%B8%A7"><span class="toc-number">1.6.</span> <span class="toc-text">tiger编译器的栈帧</span></a></li></ol></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#activation-recordstack-frame"><span class="toc-number">1.</span> <span class="toc-text"> Activation Record&#x2F;Stack Frame</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8%E6%B5%81%E7%A8%8B"><span class="toc-number">1.1.</span> <span class="toc-text"> 函数调用流程：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#saved-register"><span class="toc-number">1.2.</span> <span class="toc-text"> saved register</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E6%95%B0%E4%BC%A0%E9%80%92"><span class="toc-number">1.3.</span> <span class="toc-text"> 参数传递</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#frame-resident-variables"><span class="toc-number">1.4.</span> <span class="toc-text"> Frame-Resident Variables</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#static-links"><span class="toc-number">1.5.</span> <span class="toc-text"> static links</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#tiger%E7%BC%96%E8%AF%91%E5%99%A8%E7%9A%84%E6%A0%88%E5%B8%A7"><span class="toc-number">1.6.</span> <span class="toc-text"> tiger 编译器的栈帧</span></a></li></ol></li></ol>
       </div>
       <div class="related panel pjax" data-title="Related">
         <ul>
@@ -447,36 +477,20 @@ NoResponse's Blog = NoResponse's Blog</title>
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
+<a href="/categories/SE/" title="In 软件工程">软件工程</a>
 </div>
 
-    <span><a href="/2025/06/18/computer-science/compile-principles/ch11/" title="Register Allocation">Register Allocation</a></span>
+    <span><a href="/2025/06/19/SE/note/" title="SE note">SE note</a></span>
   </li>
 
       
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
+<a href="/categories/AI/" title="In 人工智能">人工智能</a>
 </div>
 
-    <span><a href="/2025/03/21/computer-science/compile-principles/ch1/" title="Introduction">Introduction</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
-</div>
-
-    <span><a href="/2025/06/16/computer-science/compile-principles/ch7/" title="IR">IR</a></span>
+    <span><a href="/2025/06/15/AI/week8-9/" title="Week8-9">Week8-9</a></span>
   </li>
 
       
@@ -487,6 +501,62 @@ NoResponse's Blog = NoResponse's Blog</title>
 </div>
 
     <span><a href="/2025/06/12/AI/week6-7/" title="Week6-7">Week6-7</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/AI/" title="In 人工智能">人工智能</a>
+</div>
+
+    <span><a href="/2025/05/20/AI/week2-3/" title="Week2-3">Week2-3</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/computer-network/" title="In 计算机网络">计算机网络</a>
+</div>
+
+    <span><a href="/2025/05/13/computer-science/computer-network/ch1/" title="Ch1">Ch1</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
+</div>
+
+    <span><a href="/2025/06/15/computer-science/compile-principles/ch6/" title="活动记录">活动记录</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/SE/" title="In 软件工程">软件工程</a>
+</div>
+
+    <span><a href="/2025/06/19/SE/diagram/" title="画图题">画图题</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
+</div>
+
+    <span><a href="/2025/03/29/computer-science/compile-principles/ch4/" title="抽象语法">抽象语法</a></span>
   </li>
 
       
@@ -510,51 +580,7 @@ NoResponse's Blog = NoResponse's Blog</title>
 <a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
 </div>
 
-    <span><a href="/2025/03/30/computer-science/compile-principles/ch5/" title="语义分析">语义分析</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/AI/" title="In 人工智能">人工智能</a>
-</div>
-
-    <span><a href="/2025/05/20/AI/week1/" title="Week1">Week1</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/SE/" title="In 软件工程">软件工程</a>
-</div>
-
-    <span><a href="/2025/06/19/SE/diagram/" title="画图题">画图题</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
-</div>
-
     <span><a href="/2025/06/17/computer-science/compile-principles/ch9/" title="指令选择">指令选择</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
-</div>
-
-    <span><a href="/2025/03/29/computer-science/compile-principles/ch4/" title="抽象语法">抽象语法</a></span>
   </li>
 
   </ul>
@@ -579,13 +605,13 @@ NoResponse's Blog = NoResponse's Blog</title>
     <span class="post-meta-item-icon">
       <i class="ic i-chart-area"></i>
     </span>
-    <span title="Symbols count total">67k words</span>
+    <span title="Symbols count total">73k words</span>
 
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="ic i-coffee"></i>
     </span>
-    <span title="Reading time total">1:01</span>
+    <span title="Reading time total">1:07</span>
   </div>
   <div class="powered-by">
     Powered by <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>

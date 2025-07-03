@@ -76,7 +76,7 @@ NoResponse's Blog = NoResponse's Blog</title>
       <i class="ic i-pen"></i>
     </span>
     <span class="text">Symbols count in article</span>
-    <span>1.8k</span>
+    <span>1.9k</span>
     <span class="text">words</span>
   </span>
   <span class="item" title="Reading time">
@@ -116,7 +116,7 @@ NoResponse's Blog = NoResponse's Blog</title>
 
       </div>
       <div id="imgs" class="pjax">
-          <img src="/images/bg8.jpg">
+          <img src="/images/bg2.png">
       </div>
     </header>
     <div id="waves">
@@ -164,9 +164,11 @@ NoResponse's Blog = NoResponse's Blog</title>
   <div class="body md" itemprop="articleBody">
     
 
-    <h1 id="Liveness-Analysis-活跃变量分析"><a href="#Liveness-Analysis-活跃变量分析" class="headerlink" title="Liveness Analysis 活跃变量分析"></a>Liveness Analysis 活跃变量分析</h1><p>判断在程序执行的某个点上，一个变量的值是否可能在未来被使用，是寄存器分配、死代码消除的基础</p>
-<h2 id="Compiler-Optimizations"><a href="#Compiler-Optimizations" class="headerlink" title="Compiler Optimizations"></a>Compiler Optimizations</h2><ul>
-<li>Local: 基于basic blocks</li>
+    <h1 id="liveness-analysis-活跃变量分析"><a class="markdownIt-Anchor" href="#liveness-analysis-活跃变量分析">#</a> Liveness Analysis 活跃变量分析</h1>
+<p>判断在程序执行的某个点上，一个变量的值是否可能在未来被使用，是寄存器分配、死代码消除的基础</p>
+<h2 id="compiler-optimizations"><a class="markdownIt-Anchor" href="#compiler-optimizations">#</a> Compiler Optimizations</h2>
+<ul>
+<li>Local: 基于 basic blocks</li>
 <li>Intraprocedural (or “global’): 基本块的控制流转移</li>
 <li>Interprocedural (or “whole-program”): Operate on &gt; 1 procedure, up to whole program; Sometimes, at link time (LTO, link time optimization)</li>
 </ul>
@@ -175,53 +177,77 @@ NoResponse's Blog = NoResponse's Blog</title>
 <li>Analyze program to gather “facts”</li>
 <li>Apply transformation (e.g., optimizations)</li>
 </ul>
-<h2 id="Dataflow-Analysis"><a href="#Dataflow-Analysis" class="headerlink" title="Dataflow Analysis"></a>Dataflow Analysis</h2><p>Control Flow Graph: A directed graph 数据流图<br>– Nodes represent statements<br>– Edges represent control flow</p>
-<p>CFG的简化：基本块<br><img data-src="/f1.jpg"></p>
-<h3 id="变量的活跃性："><a href="#变量的活跃性：" class="headerlink" title="变量的活跃性："></a>变量的活跃性：</h3><p>变量x在语句s处（执行s之前）处于活动状态，当且仅当满足以下三个条件：</p>
+<h2 id="dataflow-analysis"><a class="markdownIt-Anchor" href="#dataflow-analysis">#</a> Dataflow Analysis</h2>
+<p>Control Flow Graph: A directed graph 数据流图<br>
+– Nodes represent statements<br>
+– Edges represent control flow</p>
+<p>CFG 的简化：基本块<br>
+<img data-src="f1.jpg" alt></p>
+<h3 id="变量的活跃性"><a class="markdownIt-Anchor" href="#变量的活跃性">#</a> 变量的活跃性：</h3>
+<p>变量 x 在语句 s 处（执行 s 之前）处于活动状态，当且仅当满足以下三个条件：</p>
 <ol>
-<li>存在一个使用x的语句s’；</li>
-<li>存在从s到s’的路径；</li>
-<li>这条路径上没有对x进行任何赋值操作</li>
+<li>存在一个使用 x 的语句 s’；</li>
+<li>存在从 s 到 s’的路径；</li>
+<li>这条路径上没有对 x 进行任何赋值操作</li>
 </ol>
-<p>通过分析liveness，我们可以实现：</p>
+<p>通过分析 liveness，我们可以实现：</p>
 <ol>
 <li>Register Allocation</li>
 <li>Code Optimizations：Remove unused assignments</li>
 <li>IR Construction： Optimize the construction of SSA</li>
-<li>Security&#x2F;Reliability: Detect the use of uninitialized variables</li>
+<li>Security/Reliability: Detect the use of uninitialized variables</li>
 </ol>
-<h2 id="Dataflow-Equations-for-Liveness-构建数据流方程"><a href="#Dataflow-Equations-for-Liveness-构建数据流方程" class="headerlink" title="Dataflow Equations for Liveness 构建数据流方程"></a>Dataflow Equations for Liveness 构建数据流方程</h2><p>A CFG node has</p>
+<h2 id="dataflow-equations-for-liveness-构建数据流方程"><a class="markdownIt-Anchor" href="#dataflow-equations-for-liveness-构建数据流方程">#</a> Dataflow Equations for Liveness 构建数据流方程</h2>
+<p>A CFG node has</p>
 <ul>
 <li>out-edges: lead to successor nodes</li>
 <li>in-edges: come from predecessor nodes</li>
-<li>pred[n]: the predecessors of node n       前驱</li>
-<li>succ[n]: the successors of node n     后继</li>
+<li>pred [n]: the predecessors of node n       前驱</li>
+<li>succ [n]: the successors of node n     后继</li>
 </ul>
 <p>几个定义：</p>
 <ul>
-<li>use[n]: 在节点n被读取或使用(x &#x3D; a + b的a和b, if(a &lt; b)的a和b, return c的c)</li>
-<li>def[n]: 在节点n被定义(x &#x3D; a + b的x)</li>
-<li>in[n]: 在节点n之前，所有活跃变量的集合</li>
-<li>out[n]: 在节点n之后，所有活跃变量的集合<br>三条活跃性规则：</li>
+<li>use [n]: 在节点 n 被读取或使用 (x = a + b 的 a 和 b, if (a &lt; b) 的 a 和 b, return c 的 c)</li>
+<li>def [n]: 在节点 n 被定义 (x = a + b 的 x)</li>
+<li>in [n]: 在节点 n 之前，所有活跃变量的集合</li>
+<li>out [n]: 在节点 n 之后，所有活跃变量的集合<br>
+三条活跃性规则：</li>
 </ul>
 <ol>
-<li>if $a \in in[n]$ then for $\all m \in pred[n]$ we have $a \in out[m]$</li>
-<li>if $a \in use[n]$ then $a \in in[n]$</li>
-<li>if $a \in out[n]$ and $a \notin def[n]$ then $a \in in[n]$</li>
+<li>if <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>∈</mo><mi>i</mi><mi>n</mi><mo stretchy="false">[</mo><mi>n</mi><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">a \in in[n]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5782em;vertical-align:-0.0391em;"></span><span class="mord mathnormal">a</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">∈</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">i</span><span class="mord mathnormal">n</span><span class="mopen">[</span><span class="mord mathnormal">n</span><span class="mclose">]</span></span></span></span> then for \all m \in pred[n] we have <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>∈</mo><mi>o</mi><mi>u</mi><mi>t</mi><mo stretchy="false">[</mo><mi>m</mi><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">a \in out[m]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5782em;vertical-align:-0.0391em;"></span><span class="mord mathnormal">a</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">∈</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">o</span><span class="mord mathnormal">u</span><span class="mord mathnormal">t</span><span class="mopen">[</span><span class="mord mathnormal">m</span><span class="mclose">]</span></span></span></span></li>
+<li>if <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>∈</mo><mi>u</mi><mi>s</mi><mi>e</mi><mo stretchy="false">[</mo><mi>n</mi><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">a \in use[n]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5782em;vertical-align:-0.0391em;"></span><span class="mord mathnormal">a</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">∈</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">u</span><span class="mord mathnormal">s</span><span class="mord mathnormal">e</span><span class="mopen">[</span><span class="mord mathnormal">n</span><span class="mclose">]</span></span></span></span> then <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>∈</mo><mi>i</mi><mi>n</mi><mo stretchy="false">[</mo><mi>n</mi><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">a \in in[n]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5782em;vertical-align:-0.0391em;"></span><span class="mord mathnormal">a</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">∈</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">i</span><span class="mord mathnormal">n</span><span class="mopen">[</span><span class="mord mathnormal">n</span><span class="mclose">]</span></span></span></span></li>
+<li>if <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>∈</mo><mi>o</mi><mi>u</mi><mi>t</mi><mo stretchy="false">[</mo><mi>n</mi><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">a \in out[n]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5782em;vertical-align:-0.0391em;"></span><span class="mord mathnormal">a</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">∈</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">o</span><span class="mord mathnormal">u</span><span class="mord mathnormal">t</span><span class="mopen">[</span><span class="mord mathnormal">n</span><span class="mclose">]</span></span></span></span> and <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo mathvariant="normal">∉</mo><mi>d</mi><mi>e</mi><mi>f</mi><mo stretchy="false">[</mo><mi>n</mi><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">a \notin def[n]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">a</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel"><span class="mord"><span class="mrel">∈</span></span><span class="mord vbox"><span class="thinbox"><span class="llap"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="inner"><span class="mord"><span class="mord">/</span><span class="mspace" style="margin-right:0.05555555555555555em;"></span></span></span><span class="fix"></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">d</span><span class="mord mathnormal">e</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mopen">[</span><span class="mord mathnormal">n</span><span class="mclose">]</span></span></span></span> then <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>∈</mo><mi>i</mi><mi>n</mi><mo stretchy="false">[</mo><mi>n</mi><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">a \in in[n]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.5782em;vertical-align:-0.0391em;"></span><span class="mord mathnormal">a</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">∈</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">i</span><span class="mord mathnormal">n</span><span class="mopen">[</span><span class="mord mathnormal">n</span><span class="mclose">]</span></span></span></span></li>
 </ol>
-<p>得到以下两个数据流方程：<br>$$<br>out[n] &#x3D; \cup_{s \in succ[n]} in[s]<br>$$<br> 一个节点在n的出口处活跃当且仅当在它后继的入口处是活跃的（活跃性的反向传播）<br>$$<br>in[n] &#x3D; use[n] \cup (out[n] - def[n])<br>$$</p>
-<h2 id="求解数据流方程"><a href="#求解数据流方程" class="headerlink" title="求解数据流方程"></a>求解数据流方程</h2><p>有了上面的两个数据流方程，就可以求解数据流方程了<br>算法：</p>
+<p>得到以下两个数据流方程：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>o</mi><mi>u</mi><mi>t</mi><mo stretchy="false">[</mo><mi>n</mi><mo stretchy="false">]</mo><mo>=</mo><msub><mo>∪</mo><mrow><mi>s</mi><mo>∈</mo><mi>s</mi><mi>u</mi><mi>c</mi><mi>c</mi><mo stretchy="false">[</mo><mi>n</mi><mo stretchy="false">]</mo></mrow></msub><mi>i</mi><mi>n</mi><mo stretchy="false">[</mo><mi>s</mi><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">out[n] = \cup_{s \in succ[n]} in[s]
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">o</span><span class="mord mathnormal">u</span><span class="mord mathnormal">t</span><span class="mopen">[</span><span class="mord mathnormal">n</span><span class="mclose">]</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.1052em;vertical-align:-0.3551999999999999em;"></span><span class="mord"><span class="mbin">∪</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.34480000000000005em;"><span style="top:-2.5198em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">s</span><span class="mrel mtight">∈</span><span class="mord mathnormal mtight">s</span><span class="mord mathnormal mtight">u</span><span class="mord mathnormal mtight">c</span><span class="mord mathnormal mtight">c</span><span class="mopen mtight">[</span><span class="mord mathnormal mtight">n</span><span class="mclose mtight">]</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.3551999999999999em;"><span></span></span></span></span></span></span><span class="mord mathnormal">i</span><span class="mord mathnormal">n</span><span class="mopen">[</span><span class="mord mathnormal">s</span><span class="mclose">]</span></span></span></span></span></p>
+<p>一个节点在 n 的出口处活跃当且仅当在它后继的入口处是活跃的（活跃性的反向传播）</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>i</mi><mi>n</mi><mo stretchy="false">[</mo><mi>n</mi><mo stretchy="false">]</mo><mo>=</mo><mi>u</mi><mi>s</mi><mi>e</mi><mo stretchy="false">[</mo><mi>n</mi><mo stretchy="false">]</mo><mo>∪</mo><mo stretchy="false">(</mo><mi>o</mi><mi>u</mi><mi>t</mi><mo stretchy="false">[</mo><mi>n</mi><mo stretchy="false">]</mo><mo>−</mo><mi>d</mi><mi>e</mi><mi>f</mi><mo stretchy="false">[</mo><mi>n</mi><mo stretchy="false">]</mo><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">in[n] = use[n] \cup (out[n] - def[n])
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">i</span><span class="mord mathnormal">n</span><span class="mopen">[</span><span class="mord mathnormal">n</span><span class="mclose">]</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">u</span><span class="mord mathnormal">s</span><span class="mord mathnormal">e</span><span class="mopen">[</span><span class="mord mathnormal">n</span><span class="mclose">]</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∪</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathnormal">o</span><span class="mord mathnormal">u</span><span class="mord mathnormal">t</span><span class="mopen">[</span><span class="mord mathnormal">n</span><span class="mclose">]</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">d</span><span class="mord mathnormal">e</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mopen">[</span><span class="mord mathnormal">n</span><span class="mclose">]</span><span class="mclose">)</span></span></span></span></span></p>
+<h2 id="求解数据流方程"><a class="markdownIt-Anchor" href="#求解数据流方程">#</a> 求解数据流方程</h2>
+<p>有了上面的两个数据流方程，就可以求解数据流方程了<br>
+算法：</p>
 <figure class="highlight plaintext"><figcaption><span>pseudo</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">for each n</span><br><span class="line">    in[n] ←&#123;&#125;; out[n] ←&#123;&#125;</span><br><span class="line">repeat</span><br><span class="line">    for each n</span><br><span class="line">        in′[n] ← in[n]; out′[n] ← out[n]</span><br><span class="line">        in[n] ← use[n] ∪ (out[n] − def[n])</span><br><span class="line">        out[n] ← ⋃( ∈()**[+] in[s]</span><br><span class="line">until in′[n] = in[n] and out′[n] = out[n] for all n</span><br></pre></td></tr></table></figure>
 <ol>
-<li>将所有节点的 <code>in</code> 和 <code>out</code> 集合初始化为空集。</li>
-<li>写出<code>use[n]</code>和<code>def[n]</code></li>
-<li>用数据流方程更新<code>in</code>和<code>out</code>集合</li>
-<li>直到<code>in</code>和<code>out</code>集合不再改变为止<br>例：<br><img data-src="/f2.jpg"><br>对于这个CFG<br>每一次迭代如图：<br><img data-src="/f3.jpg"></li>
+<li>将所有节点的  <code>in</code>  和  <code>out</code>  集合初始化为空集。</li>
+<li>写出 <code>use[n]</code>  和 <code>def[n]</code></li>
+<li>用数据流方程更新 <code>in</code>  和 <code>out</code>  集合</li>
+<li>直到 <code>in</code>  和 <code>out</code>  集合不再改变为止<br>
+例：<br>
+<img data-src="f2.jpg" alt><br>
+对于这个 CFG<br>
+ 每一次迭代如图：<br>
+<img data-src="f3.jpg" alt></li>
 </ol>
-<h2 id="Improvements"><a href="#Improvements" class="headerlink" title="Improvements"></a>Improvements</h2><h3 id="Use-Basic-Block"><a href="#Use-Basic-Block" class="headerlink" title="Use Basic Block"></a>Use Basic Block</h3><p>后面有点懒得看，先放着</p>
-<h2 id="集合的表示方法"><a href="#集合的表示方法" class="headerlink" title="集合的表示方法"></a>集合的表示方法</h2><p>对于in, out, use, def集合的表示和操作对性能有很大影响</p>
-<h3 id="Bit-Arrays"><a href="#Bit-Arrays" class="headerlink" title="Bit Arrays"></a>Bit Arrays</h3><p>有点像bit map，适用于稠密集合（1比较多的，如果0太多就浪费了）</p>
-<h3 id="Sorted-Lists"><a href="#Sorted-Lists" class="headerlink" title="Sorted Lists"></a>Sorted Lists</h3><p>适合稀疏集合（用一个链表存集合中的变量, Sorted by variable name&#x2F;ID）</p>
+<h2 id="improvements"><a class="markdownIt-Anchor" href="#improvements">#</a> Improvements</h2>
+<h3 id="use-basic-block"><a class="markdownIt-Anchor" href="#use-basic-block">#</a> Use Basic Block</h3>
+<p>后面有点懒得看，先放着</p>
+<h2 id="集合的表示方法"><a class="markdownIt-Anchor" href="#集合的表示方法">#</a> 集合的表示方法</h2>
+<p>对于 in, out, use, def 集合的表示和操作对性能有很大影响</p>
+<h3 id="bit-arrays"><a class="markdownIt-Anchor" href="#bit-arrays">#</a> Bit Arrays</h3>
+<p>有点像 bit map，适用于稠密集合（1 比较多的，如果 0 太多就浪费了）</p>
+<h3 id="sorted-lists"><a class="markdownIt-Anchor" href="#sorted-lists">#</a> Sorted Lists</h3>
+<p>适合稀疏集合（用一个链表存集合中的变量，Sorted by variable name/ID）</p>
 
       <div class="tags">
           <a href="/tags/Liveness-Analysis/" rel="tag"><i class="ic i-tag"></i> Liveness Analysis</a>
@@ -291,7 +317,7 @@ NoResponse's Blog = NoResponse's Blog</title>
     <div class="item left">
       
 
-  <a href="/2025/06/18/computer-science/compile-principles/ch11/" itemprop="url" rel="prev" data-background-image="&#x2F;images&#x2F;bg24.jpg" title="Register Allocation">
+  <a href="/2025/06/18/computer-science/compile-principles/ch11/" itemprop="url" rel="prev" data-background-image="&#x2F;images&#x2F;bg26.jpg" title="Register Allocation">
   <span class="type">Previous Post</span>
   <span class="category"><i class="ic i-flag"></i> 编译原理</span>
   <h3>Register Allocation</h3>
@@ -301,7 +327,7 @@ NoResponse's Blog = NoResponse's Blog</title>
     <div class="item right">
       
 
-  <a href="/2025/06/19/SE/note/" itemprop="url" rel="next" data-background-image="&#x2F;images&#x2F;bg1.jpg" title="SE note">
+  <a href="/2025/06/19/SE/note/" itemprop="url" rel="next" data-background-image="&#x2F;images&#x2F;bg14.jpg" title="SE note">
   <span class="type">Next Post</span>
   <span class="category"><i class="ic i-flag"></i> 软件工程</span>
   <h3>SE note</h3>
@@ -323,7 +349,7 @@ NoResponse's Blog = NoResponse's Blog</title>
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="Contents">
-          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Liveness-Analysis-%E6%B4%BB%E8%B7%83%E5%8F%98%E9%87%8F%E5%88%86%E6%9E%90"><span class="toc-number">1.</span> <span class="toc-text">Liveness Analysis 活跃变量分析</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Compiler-Optimizations"><span class="toc-number">1.1.</span> <span class="toc-text">Compiler Optimizations</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Dataflow-Analysis"><span class="toc-number">1.2.</span> <span class="toc-text">Dataflow Analysis</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%98%E9%87%8F%E7%9A%84%E6%B4%BB%E8%B7%83%E6%80%A7%EF%BC%9A"><span class="toc-number">1.2.1.</span> <span class="toc-text">变量的活跃性：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Dataflow-Equations-for-Liveness-%E6%9E%84%E5%BB%BA%E6%95%B0%E6%8D%AE%E6%B5%81%E6%96%B9%E7%A8%8B"><span class="toc-number">1.3.</span> <span class="toc-text">Dataflow Equations for Liveness 构建数据流方程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B1%82%E8%A7%A3%E6%95%B0%E6%8D%AE%E6%B5%81%E6%96%B9%E7%A8%8B"><span class="toc-number">1.4.</span> <span class="toc-text">求解数据流方程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Improvements"><span class="toc-number">1.5.</span> <span class="toc-text">Improvements</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Use-Basic-Block"><span class="toc-number">1.5.1.</span> <span class="toc-text">Use Basic Block</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9B%86%E5%90%88%E7%9A%84%E8%A1%A8%E7%A4%BA%E6%96%B9%E6%B3%95"><span class="toc-number">1.6.</span> <span class="toc-text">集合的表示方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Bit-Arrays"><span class="toc-number">1.6.1.</span> <span class="toc-text">Bit Arrays</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Sorted-Lists"><span class="toc-number">1.6.2.</span> <span class="toc-text">Sorted Lists</span></a></li></ol></li></ol></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#liveness-analysis-%E6%B4%BB%E8%B7%83%E5%8F%98%E9%87%8F%E5%88%86%E6%9E%90"><span class="toc-number">1.</span> <span class="toc-text"> Liveness Analysis 活跃变量分析</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#compiler-optimizations"><span class="toc-number">1.1.</span> <span class="toc-text"> Compiler Optimizations</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#dataflow-analysis"><span class="toc-number">1.2.</span> <span class="toc-text"> Dataflow Analysis</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%98%E9%87%8F%E7%9A%84%E6%B4%BB%E8%B7%83%E6%80%A7"><span class="toc-number">1.2.1.</span> <span class="toc-text"> 变量的活跃性：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#dataflow-equations-for-liveness-%E6%9E%84%E5%BB%BA%E6%95%B0%E6%8D%AE%E6%B5%81%E6%96%B9%E7%A8%8B"><span class="toc-number">1.3.</span> <span class="toc-text"> Dataflow Equations for Liveness 构建数据流方程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B1%82%E8%A7%A3%E6%95%B0%E6%8D%AE%E6%B5%81%E6%96%B9%E7%A8%8B"><span class="toc-number">1.4.</span> <span class="toc-text"> 求解数据流方程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#improvements"><span class="toc-number">1.5.</span> <span class="toc-text"> Improvements</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#use-basic-block"><span class="toc-number">1.5.1.</span> <span class="toc-text"> Use Basic Block</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9B%86%E5%90%88%E7%9A%84%E8%A1%A8%E7%A4%BA%E6%96%B9%E6%B3%95"><span class="toc-number">1.6.</span> <span class="toc-text"> 集合的表示方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#bit-arrays"><span class="toc-number">1.6.1.</span> <span class="toc-text"> Bit Arrays</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#sorted-lists"><span class="toc-number">1.6.2.</span> <span class="toc-text"> Sorted Lists</span></a></li></ol></li></ol></li></ol>
       </div>
       <div class="related panel pjax" data-title="Related">
         <ul>
@@ -445,52 +471,10 @@ NoResponse's Blog = NoResponse's Blog</title>
 <div class="breadcrumb">
 <a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
+<a href="/categories/computer-science/computer-network/" title="In 计算机网络">计算机网络</a>
 </div>
 
-    <span><a href="/2025/06/18/computer-science/compile-principles/ch10/" title="Liveness Analysis">Liveness Analysis</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/AI/" title="In 人工智能">人工智能</a>
-</div>
-
-    <span><a href="/2025/05/20/AI/week1/" title="Week1">Week1</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/AI/" title="In 人工智能">人工智能</a>
-</div>
-
-    <span><a href="/2025/06/16/AI/week14-15/" title="Week14-15">Week14-15</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/AI/" title="In 人工智能">人工智能</a>
-</div>
-
-    <span><a href="/2025/06/16/AI/week10-11/" title="Week10-11">Week10-11</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
-</div>
-
-    <span><a href="/2025/06/18/computer-science/compile-principles/ch11/" title="Register Allocation">Register Allocation</a></span>
+    <span><a href="/2025/05/13/computer-science/computer-network/ch1/" title="Ch1">Ch1</a></span>
   </li>
 
       
@@ -512,19 +496,7 @@ NoResponse's Blog = NoResponse's Blog</title>
 <a href="/categories/AI/" title="In 人工智能">人工智能</a>
 </div>
 
-    <span><a href="/2025/06/11/AI/week4-5/" title="Week4-5">Week4-5</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
-</div>
-
-    <span><a href="/2025/03/23/computer-science/compile-principles/ch3/" title="语法分析">语法分析</a></span>
+    <span><a href="/2025/06/12/AI/week6-7/" title="Week6-7">Week6-7</a></span>
   </li>
 
       
@@ -541,10 +513,66 @@ NoResponse's Blog = NoResponse's Blog</title>
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/SE/" title="In 软件工程">软件工程</a>
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
 </div>
 
-    <span><a href="/2025/06/19/SE/diagram/" title="画图题">画图题</a></span>
+    <span><a href="/2025/06/17/computer-science/compile-principles/ch9/" title="指令选择">指令选择</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
+</div>
+
+    <span><a href="/2025/03/30/computer-science/compile-principles/ch5/" title="语义分析">语义分析</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/AI/" title="In 人工智能">人工智能</a>
+</div>
+
+    <span><a href="/2025/06/16/AI/week10-11/" title="Week10-11">Week10-11</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/AI/" title="In 人工智能">人工智能</a>
+</div>
+
+    <span><a href="/2025/06/16/AI/week14-15/" title="Week14-15">Week14-15</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
+</div>
+
+    <span><a href="/2025/03/22/computer-science/compile-principles/ch2/" title="词法分析">词法分析</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/AI/" title="In 人工智能">人工智能</a>
+</div>
+
+    <span><a href="/2025/05/20/AI/week2-3/" title="Week2-3">Week2-3</a></span>
   </li>
 
   </ul>
@@ -569,13 +597,13 @@ NoResponse's Blog = NoResponse's Blog</title>
     <span class="post-meta-item-icon">
       <i class="ic i-chart-area"></i>
     </span>
-    <span title="Symbols count total">67k words</span>
+    <span title="Symbols count total">73k words</span>
 
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="ic i-coffee"></i>
     </span>
-    <span title="Reading time total">1:01</span>
+    <span title="Reading time total">1:07</span>
   </div>
   <div class="powered-by">
     Powered by <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
