@@ -5,23 +5,66 @@
     <link href="http://example.com" />
     <updated>2025-06-30T16:00:00.000Z</updated>
     <category term="人工智能" />
-    <category term="软件工程" />
-    <category term="计算机组成" />
-    <category term="存储系统" />
-    <category term="错题" />
-    <category term="编译原理" />
-    <category term="Liveness Analysis" />
-    <category term="数据的表示与运算" />
-    <category term="词法分析" />
     <category term="计算机网络" />
+    <category term="软件工程" />
+    <category term="Liveness Analysis" />
     <category term="Register Allocation" />
     <category term="语法分析" />
+    <category term="词法分析" />
+    <category term="编译原理" />
     <category term="抽象语法" />
     <category term="语义分析" />
-    <category term="中间代码" />
-    <category term="Basic Blocks and Traces" />
     <category term="指令选择" />
     <category term="活动记录" />
+    <category term="Basic Blocks and Traces" />
+    <category term="中间代码" />
+    <category term="计算机组成" />
+    <category term="数据的表示与运算" />
+    <category term="错题" />
+    <category term="存储系统" />
+    <entry>
+        <id>http://example.com/2025/07/01/computer-science/computer-organization/%E9%94%99%E9%A2%98%E9%9B%86%E5%90%88/</id>
+        <title>错题集合</title>
+        <link rel="alternate" href="http://example.com/2025/07/01/computer-science/computer-organization/%E9%94%99%E9%A2%98%E9%9B%86%E5%90%88/"/>
+        <content type="html">&lt;h1 id=&#34;错题集合&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#错题集合&#34;&gt;#&lt;/a&gt; 错题集合&lt;/h1&gt;
+&lt;h2 id=&#34;ch2&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#ch2&#34;&gt;#&lt;/a&gt; Ch2&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;某计算机字长为 8 位，CPU 中有一个 8 位加法器，已知无符号数 x=69, y=38，若在该加法器中计算 x-y，则加法器的两个输入短信息和输入的低位进位信息分别为（）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;0100 0101, 1101 1001, 1&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;无符号数减法，在加法器中输入 x 的原码，y 的取反和 1&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;减法指令 “sub R1, R2, R3” 的功能为 “(R1) - (R2) -&amp;gt; R3”, 该指令执行后将生成进位 / 借位标志 CF 和溢出标志 OF，若 (R1) = FFFF FFFFH, R2 = FFFF FFF0H, 则该减法指令执行后，CF 和 OF 分别为：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;CF = 0, OF = 0&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;已知 x, y 为 int 类型，当 x = 100, y = 200 时，执行 &amp;quot;x - y&amp;quot; 指令得到的溢出标志 OF 和结尾标志 CF 分别为 0，1，那么当 x = 1-, y = -20 时，执行该指令得到的 OF 和 CF 分别为：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;OF = 0, CF = 1&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;ALU 生成标志位时只负责计算，不管运算对象是有符号数还是无符号数。CF=1 表示当做无符号数运算时溢出，OF=1 表示当做有符号数运算时溢出。当做有符号数，10-(-20) 没问题，所以 OF=0；把它俩当做无符号数的时候，x = 10 = 0000 0000 0000 0000 0000 0000 0000 1010，y = -20 = 1111 1111 1111 1111 1111 1111 1110 1100，此时 x &amp;lt; y，所以 CF=1。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;下列关于整数乘法运算的叙述中，错误的是：D&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;A. 用阵列乘法器实现的乘运算可以在一个时钟周期内完成 -- 正确，因为是组合逻辑理论上可以在一个 clc 里完成&lt;/li&gt;
+&lt;li&gt;B. 用 ALU 和移位器实现的乘运算无法在一个时钟周期内完成&lt;/li&gt;
+&lt;li&gt;C. 变量与常数的乘运算可编译优化为若干移位及家 / 减运算指令&lt;/li&gt;
+&lt;li&gt;D. 两个变量的乘运算无法编译转换为移位及加法等指令的循环实现&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+        <category term="错题" />
+        <updated>2025-06-30T16:00:00.000Z</updated>
+    </entry>
     <entry>
         <id>http://example.com/2025/07/01/computer-science/computer-organization/ch3/</id>
         <title>Ch3</title>
@@ -129,51 +172,50 @@
  SSD 固态硬盘基于 Flash，由控制单元和 Flash 组成，长期保存、快速擦除和重写，对比传统硬盘读写速度快。低功耗。但是价格高&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h3 id=&#34;主存储器的基本组成&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#主存储器的基本组成&#34;&gt;#&lt;/a&gt; 主存储器的基本组成&lt;/h3&gt;
+&lt;p&gt;核心部件：一个个存储 0 或 1 的存储单元构成的存储矩阵&lt;br&gt;
+访问主存时，CPU 把地址送到 MAR，MAR 通过地址总线把地址送到主存中的地址寄存器，地址译码器进行译码，选中相应的内存单元，然后通过控制电路决定读 / 写操作：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;读操作：将选中的内存单元的内容通过数据总线送到 MDR 中&lt;/li&gt;
+&lt;li&gt;写操作：将 MDR 中的内容通过数据总线送到选中的内存单元中&lt;br&gt;
+ MDR 的位数和数据总线位数相同，通常等于存储字长；MAR 的位数和地址总线位数相同&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;多模块存储器&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#多模块存储器&#34;&gt;#&lt;/a&gt; 多模块存储器&lt;/h3&gt;
+&lt;p&gt;DRAM 芯片的恢复时间比较长，有可能是存取时间的几倍（SRAM 的恢复时间较短）。CPU 的读写速度比主存快很多，主存恢复时间太长&lt;br&gt;
+ —— 利用多个完全相同的存储模块并行工作来提高吞吐率：单体多字存储器，多体低位交叉存储器&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;双端口 RAM（408 不考，了解即可）&lt;br&gt;
+&lt;img data-src=&#34;f7.jpg&#34; alt&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;单体多字存储器&lt;br&gt;
+一般一个存储单元只存储一个 word，但是单体多字存储器一个存储单元存储多个 word，然后读的时候一次性读取这多个字。好处是快，缺点是只有指令和数据连续存放时才能提高存取速度，否则造成不必要的读取。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;mark&gt;多体并行存储器（重点）&lt;/mark&gt;&lt;br&gt;
+分为高位交叉编址和低位交叉编址两种&lt;br&gt;
+&lt;img data-src=&#34;f8.jpg&#34; alt&gt;&lt;br&gt;
+高位交叉编址每一块存储体的高位是一样的，实际上还是顺序存储。因此访问连续内存实际上访问的还是同一块存储体，并不能通过并行加快访问速度&lt;br&gt;
+低位交叉编址的每一块存储体低位相同，因此可以在恢复时间并行存取下一块内存的数据&lt;br&gt;
+存取周期为 &lt;code&gt;T&lt;/code&gt; , 存取时间为 &lt;code&gt;r&lt;/code&gt; , T = r + 恢复时间&lt;br&gt;
+对于 n 个存储器并行访问的存储器：&lt;br&gt;
+采用高位交叉编址的时间为 &lt;code&gt;n*T&lt;/code&gt; &lt;br&gt;
+ 低位交叉编址为 &lt;code&gt;T + (n-1)*r&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img data-src=&#34;f9.jpg&#34; alt&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;轮流启动：每个 bank 的存储位数等于数据总线的位数，此时采用轮流启动
+&lt;ul&gt;
+&lt;li&gt;对于低位交叉编址，要保证 &lt;code&gt;m&amp;gt;=T/r&lt;/code&gt; ，以保证流水线不间断&lt;/li&gt;
+&lt;li&gt;理想情况下，m 个 bank 的交叉存储器每隔 &lt;code&gt;T/m&lt;/code&gt;  个周期可以读 / 写一个数据，若相邻 m 次访问的当存地址出现在同一个模块内，则会发生访存冲突，此时需要延迟发生冲突的访问请求。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;同时启动：如果 m 个 bank 的总位数加起来刚好等于数据总线的位数，则 m 个同时存 / 取&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;主存储器与cpu的连接&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#主存储器与cpu的连接&#34;&gt;#&lt;/a&gt; 主存储器与 CPU 的连接&lt;/h2&gt;
 </content>
         <category term="存储系统" />
-        <updated>2025-06-30T16:00:00.000Z</updated>
-    </entry>
-    <entry>
-        <id>http://example.com/2025/07/01/computer-science/computer-organization/%E9%94%99%E9%A2%98%E9%9B%86%E5%90%88/</id>
-        <title>错题集合</title>
-        <link rel="alternate" href="http://example.com/2025/07/01/computer-science/computer-organization/%E9%94%99%E9%A2%98%E9%9B%86%E5%90%88/"/>
-        <content type="html">&lt;h1 id=&#34;错题集合&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#错题集合&#34;&gt;#&lt;/a&gt; 错题集合&lt;/h1&gt;
-&lt;h2 id=&#34;ch2&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#ch2&#34;&gt;#&lt;/a&gt; Ch2&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;某计算机字长为 8 位，CPU 中有一个 8 位加法器，已知无符号数 x=69, y=38，若在该加法器中计算 x-y，则加法器的两个输入短信息和输入的低位进位信息分别为（）&lt;/li&gt;
-&lt;/ol&gt;
-&lt;ul&gt;
-&lt;li&gt;0100 0101, 1101 1001, 1&lt;/li&gt;
-&lt;/ul&gt;
-&lt;blockquote&gt;
-&lt;p&gt;无符号数减法，在加法器中输入 x 的原码，y 的取反和 1&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;ol start=&#34;2&#34;&gt;
-&lt;li&gt;减法指令 “sub R1, R2, R3” 的功能为 “(R1) - (R2) -&amp;gt; R3”, 该指令执行后将生成进位 / 借位标志 CF 和溢出标志 OF，若 (R1) = FFFF FFFFH, R2 = FFFF FFF0H, 则该减法指令执行后，CF 和 OF 分别为：&lt;/li&gt;
-&lt;/ol&gt;
-&lt;ul&gt;
-&lt;li&gt;CF = 0, OF = 0&lt;/li&gt;
-&lt;/ul&gt;
-&lt;ol start=&#34;3&#34;&gt;
-&lt;li&gt;已知 x, y 为 int 类型，当 x = 100, y = 200 时，执行 &amp;quot;x - y&amp;quot; 指令得到的溢出标志 OF 和结尾标志 CF 分别为 0，1，那么当 x = 1-, y = -20 时，执行该指令得到的 OF 和 CF 分别为：&lt;/li&gt;
-&lt;/ol&gt;
-&lt;ul&gt;
-&lt;li&gt;OF = 0, CF = 1&lt;/li&gt;
-&lt;/ul&gt;
-&lt;blockquote&gt;
-&lt;p&gt;ALU 生成标志位时只负责计算，不管运算对象是有符号数还是无符号数。CF=1 表示当做无符号数运算时溢出，OF=1 表示当做有符号数运算时溢出。当做有符号数，10-(-20) 没问题，所以 OF=0；把它俩当做无符号数的时候，x = 10 = 0000 0000 0000 0000 0000 0000 0000 1010，y = -20 = 1111 1111 1111 1111 1111 1111 1110 1100，此时 x &amp;lt; y，所以 CF=1。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;ol start=&#34;4&#34;&gt;
-&lt;li&gt;下列关于整数乘法运算的叙述中，错误的是：D&lt;/li&gt;
-&lt;/ol&gt;
-&lt;ul&gt;
-&lt;li&gt;A. 用阵列乘法器实现的乘运算可以在一个时钟周期内完成 -- 正确，因为是组合逻辑理论上可以在一个 clc 里完成&lt;/li&gt;
-&lt;li&gt;B. 用 ALU 和移位器实现的乘运算无法在一个时钟周期内完成&lt;/li&gt;
-&lt;li&gt;C. 变量与常数的乘运算可编译优化为若干移位及家 / 减运算指令&lt;/li&gt;
-&lt;li&gt;D. 两个变量的乘运算无法编译转换为移位及加法等指令的循环实现&lt;/li&gt;
-&lt;/ul&gt;
-</content>
-        <category term="错题" />
         <updated>2025-06-30T16:00:00.000Z</updated>
     </entry>
     <entry>

@@ -76,7 +76,7 @@ NoResponse's Blog = NoResponse's Blog</title>
       <i class="ic i-pen"></i>
     </span>
     <span class="text">Symbols count in article</span>
-    <span>1.7k</span>
+    <span>2.5k</span>
     <span class="text">words</span>
   </span>
   <span class="item" title="Reading time">
@@ -116,7 +116,7 @@ NoResponse's Blog = NoResponse's Blog</title>
 
       </div>
       <div id="imgs" class="pjax">
-          <img src="/images/bg24.jpg">
+          <img src="/images/bg9.jpg">
       </div>
     </header>
     <div id="waves">
@@ -267,6 +267,48 @@ NoResponse's Blog = NoResponse's Blog</title>
  SSD 固态硬盘基于 Flash，由控制单元和 Flash 组成，长期保存、快速擦除和重写，对比传统硬盘读写速度快。低功耗。但是价格高</li>
 </ol>
 <h3 id="主存储器的基本组成"><a class="markdownIt-Anchor" href="#主存储器的基本组成">#</a> 主存储器的基本组成</h3>
+<p>核心部件：一个个存储 0 或 1 的存储单元构成的存储矩阵<br>
+访问主存时，CPU 把地址送到 MAR，MAR 通过地址总线把地址送到主存中的地址寄存器，地址译码器进行译码，选中相应的内存单元，然后通过控制电路决定读 / 写操作：</p>
+<ul>
+<li>读操作：将选中的内存单元的内容通过数据总线送到 MDR 中</li>
+<li>写操作：将 MDR 中的内容通过数据总线送到选中的内存单元中<br>
+ MDR 的位数和数据总线位数相同，通常等于存储字长；MAR 的位数和地址总线位数相同</li>
+</ul>
+<h3 id="多模块存储器"><a class="markdownIt-Anchor" href="#多模块存储器">#</a> 多模块存储器</h3>
+<p>DRAM 芯片的恢复时间比较长，有可能是存取时间的几倍（SRAM 的恢复时间较短）。CPU 的读写速度比主存快很多，主存恢复时间太长<br>
+ —— 利用多个完全相同的存储模块并行工作来提高吞吐率：单体多字存储器，多体低位交叉存储器</p>
+<ul>
+<li>双端口 RAM（408 不考，了解即可）<br>
+<img data-src="f7.jpg" alt></li>
+</ul>
+<ol>
+<li>
+<p>单体多字存储器<br>
+一般一个存储单元只存储一个 word，但是单体多字存储器一个存储单元存储多个 word，然后读的时候一次性读取这多个字。好处是快，缺点是只有指令和数据连续存放时才能提高存取速度，否则造成不必要的读取。</p>
+</li>
+<li>
+<p><mark>多体并行存储器（重点）</mark><br>
+分为高位交叉编址和低位交叉编址两种<br>
+<img data-src="f8.jpg" alt><br>
+高位交叉编址每一块存储体的高位是一样的，实际上还是顺序存储。因此访问连续内存实际上访问的还是同一块存储体，并不能通过并行加快访问速度<br>
+低位交叉编址的每一块存储体低位相同，因此可以在恢复时间并行存取下一块内存的数据<br>
+存取周期为 <code>T</code> , 存取时间为 <code>r</code> , T = r + 恢复时间<br>
+对于 n 个存储器并行访问的存储器：<br>
+采用高位交叉编址的时间为 <code>n*T</code> <br>
+ 低位交叉编址为 <code>T + (n-1)*r</code></p>
+</li>
+</ol>
+<p><img data-src="f9.jpg" alt></p>
+<ul>
+<li>轮流启动：每个 bank 的存储位数等于数据总线的位数，此时采用轮流启动
+<ul>
+<li>对于低位交叉编址，要保证 <code>m&gt;=T/r</code> ，以保证流水线不间断</li>
+<li>理想情况下，m 个 bank 的交叉存储器每隔 <code>T/m</code>  个周期可以读 / 写一个数据，若相邻 m 次访问的当存地址出现在同一个模块内，则会发生访存冲突，此时需要延迟发生冲突的访问请求。</li>
+</ul>
+</li>
+<li>同时启动：如果 m 个 bank 的总位数加起来刚好等于数据总线的位数，则 m 个同时存 / 取</li>
+</ul>
+<h2 id="主存储器与cpu的连接"><a class="markdownIt-Anchor" href="#主存储器与cpu的连接">#</a> 主存储器与 CPU 的连接</h2>
 
       <div class="tags">
           <a href="/tags/%E5%AD%98%E5%82%A8%E7%B3%BB%E7%BB%9F/" rel="tag"><i class="ic i-tag"></i> 存储系统</a>
@@ -281,7 +323,7 @@ NoResponse's Blog = NoResponse's Blog</title>
       <i class="ic i-calendar-check"></i>
     </span>
     <span class="text">Edited on</span>
-    <time title="Modified: 2025-07-03 22:38:08" itemprop="dateModified" datetime="2025-07-03T22:38:08+08:00">2025-07-03</time>
+    <time title="Modified: 2025-07-06 23:34:57" itemprop="dateModified" datetime="2025-07-06T23:34:57+08:00">2025-07-06</time>
   </span>
 </div>
 
@@ -336,14 +378,22 @@ NoResponse's Blog = NoResponse's Blog</title>
     <div class="item left">
       
 
-  <a href="/2025/07/01/computer-science/computer-organization/%E9%94%99%E9%A2%98%E9%9B%86%E5%90%88/" itemprop="url" rel="prev" data-background-image="&#x2F;images&#x2F;bg4.jpg" title="错题集合">
+  <a href="/2025/06/19/SE/diagram/" itemprop="url" rel="prev" data-background-image="&#x2F;images&#x2F;bg25.jpg" title="画图题">
   <span class="type">Previous Post</span>
-  <span class="category"><i class="ic i-flag"></i> 计算机组成</span>
-  <h3>错题集合</h3>
+  <span class="category"><i class="ic i-flag"></i> 软件工程</span>
+  <h3>画图题</h3>
   </a>
 
     </div>
     <div class="item right">
+      
+
+  <a href="/2025/07/01/computer-science/computer-organization/%E9%94%99%E9%A2%98%E9%9B%86%E5%90%88/" itemprop="url" rel="next" data-background-image="&#x2F;images&#x2F;bg34.jpg" title="错题集合">
+  <span class="type">Next Post</span>
+  <span class="category"><i class="ic i-flag"></i> 计算机组成</span>
+  <h3>错题集合</h3>
+  </a>
+
     </div>
 </div>
 
@@ -360,11 +410,11 @@ NoResponse's Blog = NoResponse's Blog</title>
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="Contents">
-          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AD%98%E5%82%A8%E7%B3%BB%E7%BB%9F"><span class="toc-number">1.</span> <span class="toc-text"> 存储系统</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AD%98%E5%82%A8%E5%99%A8%E6%A6%82%E8%BF%B0"><span class="toc-number">1.1.</span> <span class="toc-text"> 存储器概述</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%98%E5%82%A8%E5%99%A8%E7%9A%84%E5%88%86%E7%B1%BB"><span class="toc-number">1.1.1.</span> <span class="toc-text"> 存储器的分类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%98%E5%82%A8%E5%99%A8%E7%9A%84%E6%80%A7%E8%83%BD%E6%8C%87%E6%A0%87"><span class="toc-number">1.1.2.</span> <span class="toc-text"> 存储器的性能指标</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%9A%E7%BA%A7%E5%B1%82%E6%AC%A1%E7%9A%84%E5%AD%98%E5%82%A8%E7%B3%BB%E7%BB%9F"><span class="toc-number">1.1.3.</span> <span class="toc-text"> 多级层次的存储系统</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%BB%E5%AD%98%E5%82%A8%E5%99%A8"><span class="toc-number">1.2.</span> <span class="toc-text"> 主存储器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#sram-dram"><span class="toc-number">1.2.1.</span> <span class="toc-text"> SRAM &amp; DRAM</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#dram%E7%9A%84%E5%88%B7%E6%96%B0"><span class="toc-number">1.2.1.1.</span> <span class="toc-text"> DRAM 的刷新</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#dram%E7%9A%84%E5%9C%B0%E5%9D%80%E5%BC%95%E8%84%9A%E5%A4%8D%E7%94%A8%E6%8A%80%E6%9C%AF"><span class="toc-number">1.2.1.1.1.</span> <span class="toc-text"> DRAM 的地址引脚复用技术</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#rom"><span class="toc-number">1.2.2.</span> <span class="toc-text"> ROM</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BB%E5%AD%98%E5%82%A8%E5%99%A8%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%BB%84%E6%88%90"><span class="toc-number">1.2.3.</span> <span class="toc-text"> 主存储器的基本组成</span></a></li></ol></li></ol></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AD%98%E5%82%A8%E7%B3%BB%E7%BB%9F"><span class="toc-number">1.</span> <span class="toc-text"> 存储系统</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AD%98%E5%82%A8%E5%99%A8%E6%A6%82%E8%BF%B0"><span class="toc-number">1.1.</span> <span class="toc-text"> 存储器概述</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%98%E5%82%A8%E5%99%A8%E7%9A%84%E5%88%86%E7%B1%BB"><span class="toc-number">1.1.1.</span> <span class="toc-text"> 存储器的分类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%98%E5%82%A8%E5%99%A8%E7%9A%84%E6%80%A7%E8%83%BD%E6%8C%87%E6%A0%87"><span class="toc-number">1.1.2.</span> <span class="toc-text"> 存储器的性能指标</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%9A%E7%BA%A7%E5%B1%82%E6%AC%A1%E7%9A%84%E5%AD%98%E5%82%A8%E7%B3%BB%E7%BB%9F"><span class="toc-number">1.1.3.</span> <span class="toc-text"> 多级层次的存储系统</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%BB%E5%AD%98%E5%82%A8%E5%99%A8"><span class="toc-number">1.2.</span> <span class="toc-text"> 主存储器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#sram-dram"><span class="toc-number">1.2.1.</span> <span class="toc-text"> SRAM &amp; DRAM</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#dram%E7%9A%84%E5%88%B7%E6%96%B0"><span class="toc-number">1.2.1.1.</span> <span class="toc-text"> DRAM 的刷新</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#dram%E7%9A%84%E5%9C%B0%E5%9D%80%E5%BC%95%E8%84%9A%E5%A4%8D%E7%94%A8%E6%8A%80%E6%9C%AF"><span class="toc-number">1.2.1.1.1.</span> <span class="toc-text"> DRAM 的地址引脚复用技术</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#rom"><span class="toc-number">1.2.2.</span> <span class="toc-text"> ROM</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BB%E5%AD%98%E5%82%A8%E5%99%A8%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%BB%84%E6%88%90"><span class="toc-number">1.2.3.</span> <span class="toc-text"> 主存储器的基本组成</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%9A%E6%A8%A1%E5%9D%97%E5%AD%98%E5%82%A8%E5%99%A8"><span class="toc-number">1.2.4.</span> <span class="toc-text"> 多模块存储器</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%BB%E5%AD%98%E5%82%A8%E5%99%A8%E4%B8%8Ecpu%E7%9A%84%E8%BF%9E%E6%8E%A5"><span class="toc-number">1.3.</span> <span class="toc-text"> 主存储器与 CPU 的连接</span></a></li></ol></li></ol>
       </div>
       <div class="related panel pjax" data-title="Related">
         <ul>
-          <li><a href="/2025/05/13/computer-science/computer-organization/ch1/" rel="bookmark" title="Ch1">Ch1</a></li><li><a href="/2025/05/14/computer-science/computer-organization/ch2/" rel="bookmark" title="Ch2">Ch2</a></li><li class="active"><a href="/2025/07/01/computer-science/computer-organization/ch3/" rel="bookmark" title="Ch3">Ch3</a></li><li><a href="/2025/07/01/computer-science/computer-organization/%E9%94%99%E9%A2%98%E9%9B%86%E5%90%88/" rel="bookmark" title="错题集合">错题集合</a></li>
+          <li><a href="/2025/05/13/computer-science/computer-organization/ch1/" rel="bookmark" title="Ch1">Ch1</a></li><li><a href="/2025/05/14/computer-science/computer-organization/ch2/" rel="bookmark" title="Ch2">Ch2</a></li><li><a href="/2025/07/01/computer-science/computer-organization/%E9%94%99%E9%A2%98%E9%9B%86%E5%90%88/" rel="bookmark" title="错题集合">错题集合</a></li><li class="active"><a href="/2025/07/01/computer-science/computer-organization/ch3/" rel="bookmark" title="Ch3">Ch3</a></li>
         </ul>
       </div>
       <div class="overview panel" data-title="Overview">
@@ -453,10 +503,12 @@ NoResponse's Blog = NoResponse's Blog</title>
 
   <ul id="quick">
     <li class="prev pjax">
+        <a href="/2025/06/19/SE/diagram/" rel="prev" title="Previous Post"><i class="ic i-chevron-left"></i></a>
     </li>
     <li class="up"><i class="ic i-arrow-up"></i></li>
     <li class="down"><i class="ic i-arrow-down"></i></li>
     <li class="next pjax">
+        <a href="/2025/07/01/computer-science/computer-organization/%E9%94%99%E9%A2%98%E9%9B%86%E5%90%88/" rel="next" title="Next Post"><i class="ic i-chevron-right"></i></a>
     </li>
     <li class="percent"></li>
   </ul>
@@ -480,10 +532,20 @@ NoResponse's Blog = NoResponse's Blog</title>
 <div class="breadcrumb">
 <a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
+<a href="/categories/computer-science/computer-organization/" title="In 计算机组成">计算机组成</a>
 </div>
 
-    <span><a href="/2025/06/17/computer-science/compile-principles/ch9/" title="指令选择">指令选择</a></span>
+    <span><a href="/2025/05/14/computer-science/computer-organization/ch2/" title="Ch2">Ch2</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/AI/" title="In 人工智能">人工智能</a>
+</div>
+
+    <span><a href="/2025/05/20/AI/week2-3/" title="Week2-3">Week2-3</a></span>
   </li>
 
       
@@ -495,7 +557,17 @@ NoResponse's Blog = NoResponse's Blog</title>
 <a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
 </div>
 
-    <span><a href="/2025/06/18/computer-science/compile-principles/ch11/" title="Register Allocation">Register Allocation</a></span>
+    <span><a href="/2025/06/17/computer-science/compile-principles/ch8/" title="Basic Blocks &amp; Traces">Basic Blocks & Traces</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/AI/" title="In 人工智能">人工智能</a>
+</div>
+
+    <span><a href="/2025/06/16/AI/week10-11/" title="Week10-11">Week10-11</a></span>
   </li>
 
       
@@ -517,19 +589,7 @@ NoResponse's Blog = NoResponse's Blog</title>
 <a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
 </div>
 
-    <span><a href="/2025/03/22/computer-science/compile-principles/ch2/" title="词法分析">词法分析</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
-</div>
-
-    <span><a href="/2025/03/30/computer-science/compile-principles/ch5/" title="语义分析">语义分析</a></span>
+    <span><a href="/2025/03/23/computer-science/compile-principles/ch3/" title="语法分析">语法分析</a></span>
   </li>
 
       
@@ -548,32 +608,22 @@ NoResponse's Blog = NoResponse's Blog</title>
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/AI/" title="In 人工智能">人工智能</a>
-</div>
-
-    <span><a href="/2025/06/16/AI/week14-15/" title="Week14-15">Week14-15</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/AI/" title="In 人工智能">人工智能</a>
-</div>
-
-    <span><a href="/2025/06/12/AI/week6-7/" title="Week6-7">Week6-7</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
 <a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/computer-network/" title="In 计算机网络">计算机网络</a>
+<a href="/categories/computer-science/computer-organization/" title="In 计算机组成">计算机组成</a>
 </div>
 
-    <span><a href="/2025/05/13/computer-science/computer-network/ch1/" title="Ch1">Ch1</a></span>
+    <span><a href="/2025/07/01/computer-science/computer-organization/ch3/" title="Ch3">Ch3</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/AI/" title="In 人工智能">人工智能</a>
+</div>
+
+    <span><a href="/2025/05/20/AI/week1/" title="Week1">Week1</a></span>
   </li>
 
       
@@ -585,7 +635,7 @@ NoResponse's Blog = NoResponse's Blog</title>
 <a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
 </div>
 
-    <span><a href="/2025/06/16/computer-science/compile-principles/ch7/" title="IR">IR</a></span>
+    <span><a href="/2025/03/29/computer-science/compile-principles/ch4/" title="抽象语法">抽象语法</a></span>
   </li>
 
   </ul>
@@ -610,7 +660,7 @@ NoResponse's Blog = NoResponse's Blog</title>
     <span class="post-meta-item-icon">
       <i class="ic i-chart-area"></i>
     </span>
-    <span title="Symbols count total">73k words</span>
+    <span title="Symbols count total">74k words</span>
 
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
