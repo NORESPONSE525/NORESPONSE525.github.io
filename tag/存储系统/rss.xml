@@ -9,22 +9,22 @@
         <lastBuildDate>Tue, 01 Jul 2025 00:00:00 +0800</lastBuildDate>
         <category>人工智能</category>
         <category>软件工程</category>
-        <category>计算机网络</category>
-        <category>计算机组成</category>
-        <category>存储系统</category>
-        <category>错题</category>
-        <category>数据的表示与运算</category>
-        <category>编译原理</category>
         <category>Liveness Analysis</category>
         <category>Register Allocation</category>
+        <category>编译原理</category>
+        <category>语法分析</category>
         <category>词法分析</category>
         <category>抽象语法</category>
-        <category>活动记录</category>
         <category>语义分析</category>
-        <category>Basic Blocks and Traces</category>
-        <category>语法分析</category>
         <category>中间代码</category>
+        <category>活动记录</category>
+        <category>计算机网络</category>
+        <category>Basic Blocks and Traces</category>
         <category>指令选择</category>
+        <category>计算机组成</category>
+        <category>存储系统</category>
+        <category>数据的表示与运算</category>
+        <category>错题</category>
         <item>
             <guid isPermalink="true">http://example.com/2025/07/01/computer-science/computer-organization/ch3/</guid>
             <title>Ch3</title>
@@ -96,8 +96,8 @@
 &lt;h3 id=&#34;sram-dram&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#sram-dram&#34;&gt;#&lt;/a&gt; SRAM &amp;amp; DRAM&lt;/h3&gt;
 &lt;p&gt;RAM: SRAM 静态随机存储器和 DRAM 动态随机存储器&lt;br&gt;
 &lt;mark&gt;主存主要是 DRAM，Cache 主要是 SRAM&lt;/mark&gt;，都易失&lt;/p&gt;
-&lt;p&gt;DRAM 芯片：使用栅极电容存储信息，只要一个晶体管，读写更慢，是&lt;mark&gt;破坏性读出&lt;/mark&gt;，需要重写，&lt;mark&gt;成本低，集成度高，功耗低&lt;/mark&gt;&lt;/p&gt;
-&lt;p&gt;SRAM 芯片：使用双稳态触发器存储信息（六晶体管 MOS，RS, JK, D）。读写更快，是非破坏性读出，&lt;mark&gt;成本高，集成度低，功耗大&lt;/mark&gt;&lt;br&gt;
+&lt;p&gt;DRAM 芯片：使用栅极电容存储信息，只要一个晶体管，读写&lt;mark&gt;更慢&lt;/mark&gt;，是&lt;mark&gt;破坏性读出&lt;/mark&gt;，需要重写，&lt;mark&gt;成本低，集成度高，功耗低&lt;/mark&gt;&lt;/p&gt;
+&lt;p&gt;SRAM 芯片：使用双稳态触发器存储信息（六晶体管 MOS，RS, JK, D）。读写&lt;mark&gt;更快&lt;/mark&gt;，是非破坏性读出，&lt;mark&gt;成本高，集成度低，功耗大&lt;/mark&gt;&lt;br&gt;
 &lt;img data-src=&#34;f4.jpg&#34; alt&gt;&lt;br&gt;
 栅极电容需要一直刷新给电容充电，触发器不需要刷新，只要不断电状态不会改变&lt;/p&gt;
 &lt;h4 id=&#34;dram的刷新&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#dram的刷新&#34;&gt;#&lt;/a&gt; DRAM 的刷新&lt;/h4&gt;
@@ -130,7 +130,7 @@
 &lt;li&gt;EPROM 可擦除可编程 ROM&lt;br&gt;
  可以写入并多次改写，但是编程次数有限且时间长&lt;/li&gt;
 &lt;li&gt;Flash&lt;br&gt;
- 兼有 RAM 和 ROM 的优先，可以不加点长期保存信息，又能在线快速擦除和重写，价格便宜，急程度高，电可擦除重写且速度快&lt;br&gt;
+ 兼有 RAM 和 ROM 的优点，可以不加电长期保存信息，又能在线快速擦除和重写，价格便宜，急程度高，电可擦除重写且速度快&lt;br&gt;
  SSD 固态硬盘基于 Flash，由控制单元和 Flash 组成，长期保存、快速擦除和重写，对比传统硬盘读写速度快。低功耗。但是价格高&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h3 id=&#34;主存储器的基本组成&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#主存储器的基本组成&#34;&gt;#&lt;/a&gt; 主存储器的基本组成&lt;/h3&gt;
