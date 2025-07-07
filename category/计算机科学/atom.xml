@@ -4,24 +4,24 @@
     <title>NoResponse&#39;s Blog • Posts by &#34;计算机科学&#34; category</title>
     <link href="http://example.com" />
     <updated>2025-06-30T16:00:00.000Z</updated>
-    <category term="人工智能" />
     <category term="软件工程" />
-    <category term="Liveness Analysis" />
-    <category term="Register Allocation" />
+    <category term="人工智能" />
     <category term="编译原理" />
-    <category term="语法分析" />
+    <category term="Liveness Analysis" />
     <category term="词法分析" />
+    <category term="Register Allocation" />
+    <category term="语法分析" />
     <category term="抽象语法" />
     <category term="语义分析" />
-    <category term="中间代码" />
     <category term="活动记录" />
-    <category term="计算机网络" />
     <category term="Basic Blocks and Traces" />
     <category term="指令选择" />
+    <category term="中间代码" />
     <category term="计算机组成" />
-    <category term="存储系统" />
     <category term="数据的表示与运算" />
+    <category term="存储系统" />
     <category term="错题" />
+    <category term="计算机网络" />
     <entry>
         <id>http://example.com/2025/07/01/computer-science/computer-organization/ch3/</id>
         <title>Ch3</title>
@@ -171,6 +171,45 @@
 &lt;li&gt;同时启动：如果 m 个 bank 的总位数加起来刚好等于数据总线的位数，则 m 个同时存 / 取&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;主存储器与cpu的连接&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#主存储器与cpu的连接&#34;&gt;#&lt;/a&gt; 主存储器与 CPU 的连接&lt;/h2&gt;
+&lt;h3 id=&#34;连接原理&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#连接原理&#34;&gt;#&lt;/a&gt; 连接原理&lt;/h3&gt;
+&lt;p&gt;通过总线连接（控制、地址、数据）&lt;br&gt;
+传输速率 = 总线宽度 / 传输时间&lt;br&gt;
+地址总线的位数决定了可寻址的最大内存空间&lt;br&gt;
+控制总线指出总线周期的类型和本次输入输出完成的时刻&lt;br&gt;
+将多个芯片集成在内存条上，由多个内存条和主板上的 ROM 芯片组成计算机所需的主存空间，通过总线与 CPU 连接&lt;/p&gt;
+&lt;h3 id=&#34;主存容量的扩展&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#主存容量的扩展&#34;&gt;#&lt;/a&gt; 主存容量的扩展&lt;/h3&gt;
+&lt;p&gt;数据总线宽度 &amp;gt; 存储字长 —— 位扩展&lt;br&gt;
+地址总线宽度 &amp;gt; 存储字数量所需的宽度&lt;br&gt;
+&lt;img data-src=&#34;f10.jpg&#34; alt&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;位扩展法：增加存储字长&lt;br&gt;
+由于数据总线宽度大于存储字长，存在浪费情况，必须进行位扩展使数据位数与数据总线位数相等&lt;br&gt;
+如图：&lt;br&gt;
+&lt;img data-src=&#34;f11.jpg&#34; alt&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;字扩展法&lt;br&gt;
+地址总线存在浪费情况，对存储字的数量进行扩展&lt;br&gt;
+用多出来的地址线提供 CS 片选信号，决定输出的是哪个芯片的数据&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;线选法：n 条多余的地址线，对应 n 个选片信号，地址空间不连续造成地址空间浪费（只能有一个 1 有效），电路简单&lt;br&gt;
+&lt;img data-src=&#34;f13.jpg&#34; alt&gt;&lt;/li&gt;
+&lt;li&gt;译码器选法：n 条多余的线对应&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;msup&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;/msup&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;2^n&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.664392em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;msupsub&#34;&gt;&lt;span class=&#34;vlist-t&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.664392em;&#34;&gt;&lt;span style=&#34;top:-3.063em;margin-right:0.05em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.7em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mathnormal mtight&#34;&gt;n&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; 个选片信号，地址空间可以连续&lt;br&gt;
+&lt;img data-src=&#34;f12.jpg&#34; alt&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;字、位同时扩展&lt;br&gt;
+既增加存储字的数量，又增加存储字长&lt;br&gt;
+&lt;img data-src=&#34;f14.jpg&#34; alt&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;存储芯片的地址分配和片选&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#存储芯片的地址分配和片选&#34;&gt;#&lt;/a&gt; 存储芯片的地址分配和片选&lt;/h3&gt;
+&lt;p&gt;见上方线选法译码器选法&lt;/p&gt;
+&lt;h3 id=&#34;存储器与cpu的连接&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#存储器与cpu的连接&#34;&gt;#&lt;/a&gt; 存储器与 CPU 的连接&lt;/h3&gt;
+&lt;p&gt;…&lt;br&gt;
+ 片选信号还与 CPU 的方寸控制信号&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mover accent=&#34;true&#34;&gt;&lt;mrow&gt;&lt;mi&gt;M&lt;/mi&gt;&lt;mi&gt;R&lt;/mi&gt;&lt;mi&gt;E&lt;/mi&gt;&lt;mi&gt;Q&lt;/mi&gt;&lt;/mrow&gt;&lt;mo stretchy=&#34;true&#34;&gt;‾&lt;/mo&gt;&lt;/mover&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;\overline{MREQ}&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:1.0777700000000001em;vertical-align:-0.19444em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord overline&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.8833300000000001em;&#34;&gt;&lt;span style=&#34;top:-3em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:3em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.10903em;&#34;&gt;M&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.00773em;&#34;&gt;R&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.05764em;&#34;&gt;E&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;Q&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;top:-3.80333em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:3em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;overline-line&#34; style=&#34;border-bottom-width:0.04em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.19444em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; 有关（低电平有效），若 CPU 访问 IO 则此信号为高电平&lt;/p&gt;
 </content>
         <category term="存储系统" />
         <updated>2025-06-30T16:00:00.000Z</updated>
@@ -1320,14 +1359,6 @@ S_i &amp;amp;= P_i \oplus C_i
         <updated>2025-05-13T16:00:00.000Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/2025/05/13/computer-science/computer-network/ch1/</id>
-        <title>Ch1</title>
-        <link rel="alternate" href="http://example.com/2025/05/13/computer-science/computer-network/ch1/"/>
-        <content type="html"></content>
-        <category term="计算机网络" />
-        <updated>2025-05-12T16:00:00.000Z</updated>
-    </entry>
-    <entry>
         <id>http://example.com/2025/05/13/computer-science/computer-organization/ch1/</id>
         <title>Ch1</title>
         <link rel="alternate" href="http://example.com/2025/05/13/computer-science/computer-organization/ch1/"/>
@@ -1494,6 +1525,14 @@ A. 汇编程序&lt;br&gt;
 &lt;/blockquote&gt;
 </content>
         <category term="计算机组成" />
+        <updated>2025-05-12T16:00:00.000Z</updated>
+    </entry>
+    <entry>
+        <id>http://example.com/2025/05/13/computer-science/computer-network/ch1/</id>
+        <title>Ch1</title>
+        <link rel="alternate" href="http://example.com/2025/05/13/computer-science/computer-network/ch1/"/>
+        <content type="html"></content>
+        <category term="计算机网络" />
         <updated>2025-05-12T16:00:00.000Z</updated>
     </entry>
     <entry>
