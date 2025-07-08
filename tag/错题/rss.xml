@@ -10,58 +10,60 @@
         <category>人工智能</category>
         <category>软件工程</category>
         <category>编译原理</category>
-        <category>Register Allocation</category>
-        <category>语法分析</category>
         <category>Liveness Analysis</category>
-        <category>抽象语法</category>
+        <category>Register Allocation</category>
         <category>词法分析</category>
-        <category>活动记录</category>
+        <category>语法分析</category>
+        <category>抽象语法</category>
         <category>语义分析</category>
+        <category>活动记录</category>
         <category>中间代码</category>
         <category>Basic Blocks and Traces</category>
         <category>指令选择</category>
-        <category>计算机网络</category>
-        <category>计算机组成</category>
-        <category>错题</category>
         <category>数据的表示与运算</category>
+        <category>计算机组成</category>
         <category>存储系统</category>
+        <category>错题</category>
+        <category>计算机网络</category>
         <item>
             <guid isPermalink="true">http://example.com/2025/07/01/computer-science/computer-organization/%E9%94%99%E9%A2%98%E9%9B%86%E5%90%88/</guid>
             <title>错题集合</title>
             <link>http://example.com/2025/07/01/computer-science/computer-organization/%E9%94%99%E9%A2%98%E9%9B%86%E5%90%88/</link>
             <category>错题</category>
             <pubDate>Tue, 01 Jul 2025 00:00:00 +0800</pubDate>
-            <description><![CDATA[ &lt;h1 id=&#34;错题集合&#34;&gt;&lt;a href=&#34;#错题集合&#34; class=&#34;headerlink&#34; title=&#34;错题集合&#34;&gt;&lt;/a&gt;错题集合&lt;/h1&gt;&lt;h2 id=&#34;Ch2&#34;&gt;&lt;a href=&#34;#Ch2&#34; class=&#34;headerlink&#34; title=&#34;Ch2&#34;&gt;&lt;/a&gt;Ch2&lt;/h2&gt;&lt;ol&gt;
-&lt;li&gt;某计算机字长为8位，CPU中有一个8位加法器，已知无符号数x&amp;#x3D;69, y&amp;#x3D;38，若在该加法器中计算x-y，则加法器的两个输入短信息和输入的低位进位信息分别为（）&lt;/li&gt;
+            <description><![CDATA[ &lt;h1 id=&#34;错题集合&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#错题集合&#34;&gt;#&lt;/a&gt; 错题集合&lt;/h1&gt;
+&lt;h2 id=&#34;ch2&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#ch2&#34;&gt;#&lt;/a&gt; Ch2&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;某计算机字长为 8 位，CPU 中有一个 8 位加法器，已知无符号数 x=69, y=38，若在该加法器中计算 x-y，则加法器的两个输入短信息和输入的低位进位信息分别为（）&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
-&lt;li&gt;0100 0101, 1101 1001, 1 &lt;blockquote&gt;
-&lt;p&gt;无符号数减法，在加法器中输入x的原码，y的取反和1&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/li&gt;
+&lt;li&gt;0100 0101, 1101 1001, 1&lt;/li&gt;
 &lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;无符号数减法，在加法器中输入 x 的原码，y 的取反和 1&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;ol start=&#34;2&#34;&gt;
-&lt;li&gt;减法指令 “sub R1, R2, R3” 的功能为 “(R1) - (R2) -&amp;gt; R3”, 该指令执行后将生成进位&amp;#x2F;借位标志CF和溢出标志OF，若(R1) &amp;#x3D; FFFF FFFFH, R2 &amp;#x3D; FFFF FFF0H, 则该减法指令执行后，CF和OF分别为：&lt;/li&gt;
+&lt;li&gt;减法指令 “sub R1, R2, R3” 的功能为 “(R1) - (R2) -&amp;gt; R3”, 该指令执行后将生成进位 / 借位标志 CF 和溢出标志 OF，若 (R1) = FFFF FFFFH, R2 = FFFF FFF0H, 则该减法指令执行后，CF 和 OF 分别为：&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
-&lt;li&gt;CF &amp;#x3D; 0, OF &amp;#x3D; 0&lt;/li&gt;
+&lt;li&gt;CF = 0, OF = 0&lt;/li&gt;
 &lt;/ul&gt;
 &lt;ol start=&#34;3&#34;&gt;
-&lt;li&gt;已知x, y为int类型，当x &amp;#x3D; 100, y &amp;#x3D; 200时，执行 “x - y”指令得到的溢出标志OF和结尾标志CF分别为0，1，那么当x &amp;#x3D; 1-, y &amp;#x3D; -20时，执行该指令得到的OF和CF分别为：&lt;/li&gt;
+&lt;li&gt;已知 x, y 为 int 类型，当 x = 100, y = 200 时，执行 &amp;quot;x - y&amp;quot; 指令得到的溢出标志 OF 和结尾标志 CF 分别为 0，1，那么当 x = 1-, y = -20 时，执行该指令得到的 OF 和 CF 分别为：&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
-&lt;li&gt;OF &amp;#x3D; 0, CF &amp;#x3D; 1&lt;blockquote&gt;
-&lt;p&gt;ALU生成标志位时只负责计算，不管运算对象是有符号数还是无符号数。CF&amp;#x3D;1表示当做无符号数运算时溢出，OF&amp;#x3D;1表示当做有符号数运算时溢出。当做有符号数，10-(-20)没问题，所以OF&amp;#x3D;0；把它俩当做无符号数的时候，x &amp;#x3D; 10 &amp;#x3D; 0000 0000 0000 0000 0000 0000 0000 1010，y &amp;#x3D; -20 &amp;#x3D; 1111 1111 1111 1111 1111 1111 1110 1100，此时x &amp;lt; y，所以CF&amp;#x3D;1。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/li&gt;
+&lt;li&gt;OF = 0, CF = 1&lt;/li&gt;
 &lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;ALU 生成标志位时只负责计算，不管运算对象是有符号数还是无符号数。CF=1 表示当做无符号数运算时溢出，OF=1 表示当做有符号数运算时溢出。当做有符号数，10-(-20) 没问题，所以 OF=0；把它俩当做无符号数的时候，x = 10 = 0000 0000 0000 0000 0000 0000 0000 1010，y = -20 = 1111 1111 1111 1111 1111 1111 1110 1100，此时 x &amp;lt; y，所以 CF=1。&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;ol start=&#34;4&#34;&gt;
 &lt;li&gt;下列关于整数乘法运算的叙述中，错误的是：D&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
-&lt;li&gt;A. 用阵列乘法器实现的乘运算可以在一个时钟周期内完成 –正确，因为是组合逻辑理论上可以在一个clc里完成&lt;/li&gt;
-&lt;li&gt;B. 用ALU和移位器实现的乘运算无法在一个时钟周期内完成&lt;/li&gt;
-&lt;li&gt;C. 变量与常数的乘运算可编译优化为若干移位及家&amp;#x2F;减运算指令&lt;/li&gt;
+&lt;li&gt;A. 用阵列乘法器实现的乘运算可以在一个时钟周期内完成 -- 正确，因为是组合逻辑理论上可以在一个 clc 里完成&lt;/li&gt;
+&lt;li&gt;B. 用 ALU 和移位器实现的乘运算无法在一个时钟周期内完成&lt;/li&gt;
+&lt;li&gt;C. 变量与常数的乘运算可编译优化为若干移位及家 / 减运算指令&lt;/li&gt;
 &lt;li&gt;D. 两个变量的乘运算无法编译转换为移位及加法等指令的循环实现&lt;/li&gt;
 &lt;/ul&gt;
  ]]></description>
