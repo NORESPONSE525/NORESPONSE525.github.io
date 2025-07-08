@@ -8,20 +8,20 @@
     <category term="人工智能" />
     <category term="编译原理" />
     <category term="Liveness Analysis" />
-    <category term="词法分析" />
     <category term="Register Allocation" />
+    <category term="词法分析" />
     <category term="语法分析" />
     <category term="抽象语法" />
-    <category term="语义分析" />
     <category term="活动记录" />
+    <category term="语义分析" />
     <category term="Basic Blocks and Traces" />
     <category term="指令选择" />
     <category term="中间代码" />
+    <category term="计算机网络" />
     <category term="计算机组成" />
     <category term="数据的表示与运算" />
     <category term="存储系统" />
     <category term="错题" />
-    <category term="计算机网络" />
     <entry>
         <id>http://example.com/2025/07/01/computer-science/computer-organization/ch3/</id>
         <title>Ch3</title>
@@ -209,7 +209,104 @@
 &lt;p&gt;见上方线选法译码器选法&lt;/p&gt;
 &lt;h3 id=&#34;存储器与cpu的连接&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#存储器与cpu的连接&#34;&gt;#&lt;/a&gt; 存储器与 CPU 的连接&lt;/h3&gt;
 &lt;p&gt;…&lt;br&gt;
- 片选信号还与 CPU 的方寸控制信号&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mover accent=&#34;true&#34;&gt;&lt;mrow&gt;&lt;mi&gt;M&lt;/mi&gt;&lt;mi&gt;R&lt;/mi&gt;&lt;mi&gt;E&lt;/mi&gt;&lt;mi&gt;Q&lt;/mi&gt;&lt;/mrow&gt;&lt;mo stretchy=&#34;true&#34;&gt;‾&lt;/mo&gt;&lt;/mover&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;\overline{MREQ}&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:1.0777700000000001em;vertical-align:-0.19444em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord overline&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.8833300000000001em;&#34;&gt;&lt;span style=&#34;top:-3em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:3em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.10903em;&#34;&gt;M&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.00773em;&#34;&gt;R&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.05764em;&#34;&gt;E&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;Q&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;top:-3.80333em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:3em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;overline-line&#34; style=&#34;border-bottom-width:0.04em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.19444em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; 有关（低电平有效），若 CPU 访问 IO 则此信号为高电平&lt;/p&gt;
+ 片选信号还与 CPU 的方寸控制信号&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mover accent=&#34;true&#34;&gt;&lt;mrow&gt;&lt;mi&gt;M&lt;/mi&gt;&lt;mi&gt;R&lt;/mi&gt;&lt;mi&gt;E&lt;/mi&gt;&lt;mi&gt;Q&lt;/mi&gt;&lt;/mrow&gt;&lt;mo stretchy=&#34;true&#34;&gt;‾&lt;/mo&gt;&lt;/mover&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;\overline{MREQ}&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:1.0777700000000001em;vertical-align:-0.19444em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord overline&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.8833300000000001em;&#34;&gt;&lt;span style=&#34;top:-3em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:3em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.10903em;&#34;&gt;M&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.00773em;&#34;&gt;R&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.05764em;&#34;&gt;E&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;Q&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;top:-3.80333em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:3em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;overline-line&#34; style=&#34;border-bottom-width:0.04em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.19444em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; 有关（低电平有效），若 CPU 访问 IO 则此信号为高电平&lt;br&gt;
+ MAR 位数要看主存地址空间大小，而不能看实际上用了多少位&lt;/p&gt;
+&lt;h2 id=&#34;外部存储器&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#外部存储器&#34;&gt;#&lt;/a&gt; 外部存储器&lt;/h2&gt;
+&lt;p&gt;磁盘存储器是以磁盘为存储介质的存储器，优点：容量大，价格低；记录介质可重复使用；可以长期保存；非破坏性读出。缺点：存取速度慢；机械结构复杂；对工作环境要求高&lt;/p&gt;
+&lt;h3 id=&#34;磁盘存储器&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#磁盘存储器&#34;&gt;#&lt;/a&gt; 磁盘存储器&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;磁盘存储器&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;组成：磁盘驱动器，磁盘控制器，盘片&lt;br&gt;
+&lt;img data-src=&#34;f15.jpg&#34; alt&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;存储区域：&lt;mark&gt;扇区（也称块）是磁盘读写的最小单位&lt;/mark&gt;，按块存取&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;磁头数 (Heads)：一个记录面对应一个磁头&lt;/li&gt;
+&lt;li&gt;柱面数 (Cylinders)：表示每面盘片上的磁道数，不同记录面的相同位置的磁道构成一个柱面&lt;/li&gt;
+&lt;li&gt;扇区数 (Sectors)：每条磁道上有多少扇区&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Disk Cache&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;在内存上的一片区域，用来缓冲被送到磁盘上的数据。优点：写磁盘时按簇进行，可以避免频繁地用小块数据写；中间结果数据写回之前可以被快速再次使用&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;磁记录原理&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;原理：当磁头和磁性记录介质有相对运动时，通过电磁转换完成读 / 写操作。&lt;/li&gt;
+&lt;li&gt;编码方法：按某种方案（规律），把一连串的二进制信息变换成存储介质磁层中一个磁化翻转状态的序列，并使读 / 写控制电路容易、可靠地实现转换。&lt;/li&gt;
+&lt;li&gt;磁记录方式：通常采用调频制（FM）和改进型调频制（MFM）的记录方式。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;性能指标&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;磁盘的容量：一个磁盘所能存储的字节总数称为磁盘容量。磁盘容量有非格式化容量和格式化容量之分。&lt;br&gt;
+非格式化容量是指磁记录表面可以利用的磁化单元总数，非格式化容量 = 记录面数 * 柱面数 * 每条磁道的磁化单元数&lt;br&gt;
+格式化容量是指按照某种特定的记录格式所能存储信息的总量，格式化容量 = 记录面数 * 柱面数 * 每道扇区数 * 每个扇区的容量&lt;br&gt;
+&lt;mark&gt;格式化容量 &amp;lt; 非格式化容量&lt;/mark&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;记录密度：记录密度是指盘片单位面积上记录的二进制的信息量，通常以 &lt;code&gt;道密度&lt;/code&gt; 、 &lt;code&gt;位密度&lt;/code&gt; 和 &lt;code&gt;面密度&lt;/code&gt; 表示。道密度是&lt;mark&gt;沿磁盘半径方向单位长度上的磁道数&lt;/mark&gt;；位密度是&lt;mark&gt;磁道单位长度上能记录的二进制代码位数&lt;/mark&gt;；面密度是位密度和道密度的乘积。&lt;br&gt;
+&lt;mark&gt;磁盘所有磁道记录的信息量一定是相等的，并不是圆越大信息越多，故每个磁道的位密度都不同，越靠近圆心位密度越大&lt;/mark&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;平均存取时间：平均存取时间 = 寻道时间（磁头移动到目的磁道）+ 旋转延迟时间（磁头定位到所在扇区）+ 传输时间（传输数据所花费的时间）&lt;br&gt;
+&lt;mark&gt;寻道时间通常取从最外道到最内道时间的一半，旋转延迟时间通常取旋转半周的时间&lt;/mark&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;数据传输率：磁盘存储器在单位时间内向主机传送数据的字节数，称为数据传输率&lt;br&gt;
+假设磁盘转速为 r（转 / 秒），每条磁道容量为 N 个字节，则数据传输率为&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;msub&gt;&lt;mi&gt;D&lt;/mi&gt;&lt;mi&gt;r&lt;/mi&gt;&lt;/msub&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mi&gt;r&lt;/mi&gt;&lt;mi&gt;N&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;D_r=rN&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.83333em;vertical-align:-0.15em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.02778em;&#34;&gt;D&lt;/span&gt;&lt;span class=&#34;msupsub&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.151392em;&#34;&gt;&lt;span style=&#34;top:-2.5500000000000003em;margin-left:-0.02778em;margin-right:0.05em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.7em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mathnormal mtight&#34; style=&#34;margin-right:0.02778em;&#34;&gt;r&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.15em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mrel&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.68333em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.02778em;&#34;&gt;r&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.10903em;&#34;&gt;N&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;磁盘地址&lt;br&gt;
+&lt;img data-src=&#34;f16.jpg&#34; alt&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;磁盘的工作原理&lt;br&gt;
+硬盘的主要操作是寻址、读盘、写盘。每个操作都对应一个控制字，硬盘工作时，第一步是取控制字，第二步是执行控制字。&lt;br&gt;
+硬盘属于机械式部件，其读写操作是串行的，不可能在同一时刻既读又写，也不可能在同一时刻读两组数据或写两组数据。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;RAID&lt;br&gt;
+ 将多个独立的物理磁盘组成一个独立的逻辑磁盘，数据分割交叉存储，并行访问。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;RAID0：无冗余和无校验的磁盘阵列。&lt;/li&gt;
+&lt;li&gt;RAID1：镜像磁盘阵列。每份数据存两遍，成本太高&lt;/li&gt;
+&lt;li&gt;RAID2：采用纠错的海明码的磁盘阵列。&lt;br&gt;
+逻辑上连续的几个 bit 物理上分散存储在各个盘中 4bit 信息位 + 3bit 海明校验位 —— 可纠正 1bit 错误&lt;br&gt;
+每个码字有  &lt;code&gt;m&lt;/code&gt;  个信息位和  &lt;code&gt;r&lt;/code&gt;  个冗余位，$ (m+r+1)≤2^r$&lt;br&gt;
+ 参考 xyx 学长的计网笔记：&lt;br&gt;
+&lt;img data-src=&#34;f17.jpg&#34; alt&gt;&lt;/li&gt;
+&lt;li&gt;RAID3：位交叉奇偶校验的磁盘阵列。前三个盘的奇偶校验位写在第四个盘上&lt;/li&gt;
+&lt;li&gt;RAID4：块交叉奇偶校验的磁盘阵列。&lt;/li&gt;
+&lt;li&gt;RAID5：无独立校验的奇偶校验磁盘阵列。在所有磁盘之间分条，并且每个数据块的奇偶校验块 § 写入到同一条带上&lt;br&gt;
+ RAID1-RAID5 数据不会损坏&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;固态硬盘ssd&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#固态硬盘ssd&#34;&gt;#&lt;/a&gt; 固态硬盘 (SSD)&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;特性&lt;br&gt;
+属于 Flash memory, EEPROM&lt;br&gt;
+ 组成：闪存翻译层，存储介质&lt;br&gt;
+&lt;img data-src=&#34;f18.jpg&#34; alt&gt;&lt;br&gt;
+&lt;mark&gt;数据以页为单位读写，以块为单位擦除&lt;/mark&gt;只有整个块被擦除之后才能写这一页，若视图修改包含已有数据的页&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;msub&gt;&lt;mi&gt;P&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;/msub&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;P_i&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.83333em;vertical-align:-0.15em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.13889em;&#34;&gt;P&lt;/span&gt;&lt;span class=&#34;msupsub&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.31166399999999994em;&#34;&gt;&lt;span style=&#34;top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.7em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mathnormal mtight&#34;&gt;i&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.15em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;，则这个快中所有含有有用数据的页必须被复制到新的空白的块中，才能对&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;msub&gt;&lt;mi&gt;P&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;/msub&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;P_i&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.83333em;vertical-align:-0.15em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.13889em;&#34;&gt;P&lt;/span&gt;&lt;span class=&#34;msupsub&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.31166399999999994em;&#34;&gt;&lt;span style=&#34;top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.7em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mathnormal mtight&#34;&gt;i&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.15em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; 进行写操作&lt;br&gt;
+ SSD 的优点：随机访问比机械磁盘块，没噪声，能耗低，抗震性好，安全性高&lt;/li&gt;
+&lt;li&gt;Wear Leveling 磨损均衡&lt;br&gt;
+重复擦写块就会磨损坏，一般是几百次到几千次&lt;br&gt;
+ (1) 动态磨损均衡：&lt;mark&gt;写入时&lt;/mark&gt;优先选择擦除次数少的新闪存块，只在写入时触发，仅考虑可用空间（对于冷数据不包括在空间池中，减少了可以用的 block 数量）&lt;br&gt;
+(2) 静态磨损均衡：就算没有写入，SSD 也会监测并自动进行数据分配，让老的闪存快以读为主，让新的块腾出空间，以写为主：将数据从写入 / 擦除次数较低的 block 移动到其他 block 中，这样可以将低擦写次数的 block 释放出来，添加到可用可用空间池中，以便后续使用。仅覆盖单个闪存芯片单元&lt;/li&gt;
+&lt;/ol&gt;
 </content>
         <category term="存储系统" />
         <updated>2025-06-30T16:00:00.000Z</updated>
@@ -3318,6 +3415,14 @@ S_i &amp;amp;= P_i \oplus C_i
         <updated>2025-05-13T16:00:00.000Z</updated>
     </entry>
     <entry>
+        <id>http://example.com/2025/05/13/computer-science/computer-network/ch1/</id>
+        <title>Ch1</title>
+        <link rel="alternate" href="http://example.com/2025/05/13/computer-science/computer-network/ch1/"/>
+        <content type="html"></content>
+        <category term="计算机网络" />
+        <updated>2025-05-12T16:00:00.000Z</updated>
+    </entry>
+    <entry>
         <id>http://example.com/2025/05/13/computer-science/computer-organization/ch1/</id>
         <title>Ch1</title>
         <link rel="alternate" href="http://example.com/2025/05/13/computer-science/computer-organization/ch1/"/>
@@ -3484,14 +3589,6 @@ A. 汇编程序&lt;br&gt;
 &lt;/blockquote&gt;
 </content>
         <category term="计算机组成" />
-        <updated>2025-05-12T16:00:00.000Z</updated>
-    </entry>
-    <entry>
-        <id>http://example.com/2025/05/13/computer-science/computer-network/ch1/</id>
-        <title>Ch1</title>
-        <link rel="alternate" href="http://example.com/2025/05/13/computer-science/computer-network/ch1/"/>
-        <content type="html"></content>
-        <category term="计算机网络" />
         <updated>2025-05-12T16:00:00.000Z</updated>
     </entry>
     <entry>
