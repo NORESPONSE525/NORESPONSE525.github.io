@@ -4,35 +4,30 @@
     <title>NoResponse&#39;s Blog • Posts by &#34;语法分析&#34; tag</title>
     <link href="http://example.com" />
     <updated>2025-03-22T16:00:00.000Z</updated>
-    <category term="软件工程" />
     <category term="人工智能" />
+    <category term="软件工程" />
     <category term="编译原理" />
-    <category term="Liveness Analysis" />
     <category term="Register Allocation" />
-    <category term="词法分析" />
     <category term="语法分析" />
+    <category term="Liveness Analysis" />
     <category term="抽象语法" />
+    <category term="词法分析" />
     <category term="活动记录" />
     <category term="语义分析" />
+    <category term="中间代码" />
     <category term="Basic Blocks and Traces" />
     <category term="指令选择" />
-    <category term="中间代码" />
     <category term="计算机网络" />
     <category term="计算机组成" />
+    <category term="错题" />
     <category term="数据的表示与运算" />
     <category term="存储系统" />
-    <category term="错题" />
     <entry>
         <id>http://example.com/2025/03/23/computer-science/compile-principles/ch3/</id>
         <title>语法分析</title>
         <link rel="alternate" href="http://example.com/2025/03/23/computer-science/compile-principles/ch3/"/>
-        <content type="html">&lt;h1 id=&#34;语法分析&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#语法分析&#34;&gt;#&lt;/a&gt; 语法分析&lt;/h1&gt;
-&lt;h2 id=&#34;cfg&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#cfg&#34;&gt;#&lt;/a&gt; CFG&lt;/h2&gt;
-&lt;p&gt;见计算理论&lt;br&gt;
- Parse tree&lt;/p&gt;
-&lt;h3 id=&#34;ambiguous-grammars&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#ambiguous-grammars&#34;&gt;#&lt;/a&gt; Ambiguous grammars&lt;/h3&gt;
-&lt;h2 id&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#&#34;&gt;#&lt;/a&gt; &lt;/h2&gt;
-</content>
+        <content type="html">&lt;h1 id=&#34;语法分析&#34;&gt;&lt;a href=&#34;#语法分析&#34; class=&#34;headerlink&#34; title=&#34;语法分析&#34;&gt;&lt;/a&gt;语法分析&lt;/h1&gt;&lt;h2 id=&#34;CFG&#34;&gt;&lt;a href=&#34;#CFG&#34; class=&#34;headerlink&#34; title=&#34;CFG&#34;&gt;&lt;/a&gt;CFG&lt;/h2&gt;&lt;p&gt;见计算理论&lt;br&gt;Parse tree&lt;/p&gt;
+&lt;h3 id=&#34;Ambiguous-grammars&#34;&gt;&lt;a href=&#34;#Ambiguous-grammars&#34; class=&#34;headerlink&#34; title=&#34;Ambiguous grammars&#34;&gt;&lt;/a&gt;Ambiguous grammars&lt;/h3&gt;&lt;h2 id&gt;&lt;a href=&#34;#&#34; class=&#34;headerlink&#34; title&gt;&lt;/a&gt;&lt;/h2&gt;</content>
         <category term="语法分析" />
         <updated>2025-03-22T16:00:00.000Z</updated>
     </entry>
