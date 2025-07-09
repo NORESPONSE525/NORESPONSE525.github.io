@@ -76,7 +76,7 @@ NoResponse's Blog = NoResponse's Blog</title>
       <i class="ic i-pen"></i>
     </span>
     <span class="text">Symbols count in article</span>
-    <span>3.7k</span>
+    <span>4.6k</span>
     <span class="text">words</span>
   </span>
   <span class="item" title="Reading time">
@@ -84,7 +84,7 @@ NoResponse's Blog = NoResponse's Blog</title>
       <i class="ic i-clock"></i>
     </span>
     <span class="text">Reading time</span>
-    <span>3 mins.</span>
+    <span>4 mins.</span>
   </span>
 </div>
 
@@ -116,7 +116,7 @@ NoResponse's Blog = NoResponse's Blog</title>
 
       </div>
       <div id="imgs" class="pjax">
-          <img src="/images/bg25.jpg">
+          <img src="/images/bg2.png">
       </div>
     </header>
     <div id="waves">
@@ -505,7 +505,35 @@ S_i &amp;= P_i \oplus C_i
 <p>s 符号，M 尾数，E 阶码，R 基数<br>
  2. 浮点数的表示范围<br>
 范围关于原点对称，运算结果大于最大正数时成为正上溢，小遇绝对值最大负数是成为负上溢，统称上溢。运算结果在 0 - 最小整数之间成为正下溢，负数同理，统称下溢（原因是精度不够）<br>
-3. 浮点数的规格化</p>
+3. 浮点数的规格化<br>
+化成<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1.</mn><mi>x</mi><mi>x</mi><mi>x</mi><mi>x</mi><mi>x</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mi mathvariant="normal">.</mi><mo>⋅</mo><msup><mn>2</mn><mi>n</mi></msup></mrow><annotation encoding="application/x-tex">1.xxxxx... \cdot 2^n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">.</span><span class="mord mathnormal">x</span><span class="mord mathnormal">x</span><span class="mord mathnormal">x</span><span class="mord mathnormal">x</span><span class="mord mathnormal">x</span><span class="mord">.</span><span class="mord">.</span><span class="mord">.</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.664392em;vertical-align:0em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.664392em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">n</span></span></span></span></span></span></span></span></span></span></span> 的形式<br>
+ 4. IEEE754<br>
+ 符号，阶码，尾数<br>
+ 32 位单精度：1 8 23，偏置为<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>2</mn><mn>7</mn></msup><mo>−</mo><mn>1</mn><mo>=</mo><mn>127</mn></mrow><annotation encoding="application/x-tex">2^7-1=127</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.897438em;vertical-align:-0.08333em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">7</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">2</span><span class="mord">7</span></span></span></span>，真值为<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mo>−</mo><mn>1</mn><msup><mo stretchy="false">)</mo><mi>s</mi></msup><mo>⋅</mo><msup><mn>2</mn><mrow><mi>e</mi><mo>−</mo><mn>127</mn></mrow></msup><mo>⋅</mo><mo stretchy="false">(</mo><mn>1.</mn><mi>M</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(-1)^s \cdot 2^{e-127} \cdot (1.M)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">−</span><span class="mord">1</span><span class="mclose"><span class="mclose">)</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.664392em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">s</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">e</span><span class="mbin mtight">−</span><span class="mord mtight">1</span><span class="mord mtight">2</span><span class="mord mtight">7</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">1</span><span class="mord">.</span><span class="mord mathnormal" style="margin-right:0.10903em;">M</span><span class="mclose">)</span></span></span></span><br>
+ 单精度表示的最小值为<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>⋅</mo><msup><mn>2</mn><mrow><mn>1</mn><mo>−</mo><mn>127</mn></mrow></msup><mo>⋅</mo><mo stretchy="false">(</mo><mn>1.000...</mn><mo stretchy="false">)</mo><mo>=</mo><msup><mn>2</mn><mrow><mo>−</mo><mn>126</mn></mrow></msup></mrow><annotation encoding="application/x-tex">1 \cdot 2^{1-127} \cdot (1.000...) = 2^{-126}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span><span class="mbin mtight">−</span><span class="mord mtight">1</span><span class="mord mtight">2</span><span class="mord mtight">7</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">1</span><span class="mord">.</span><span class="mord">0</span><span class="mord">0</span><span class="mord">0</span><span class="mord">.</span><span class="mord">.</span><span class="mord">.</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">−</span><span class="mord mtight">1</span><span class="mord mtight">2</span><span class="mord mtight">6</span></span></span></span></span></span></span></span></span></span></span></span>，最大值为<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>⋅</mo><msup><mn>2</mn><mrow><mn>254</mn><mo>−</mo><mn>127</mn></mrow></msup><mo>⋅</mo><mo stretchy="false">(</mo><mn>1.111...</mn><mo stretchy="false">)</mo><mo>=</mo><mo stretchy="false">(</mo><mn>2</mn><mo>−</mo><msup><mn>2</mn><mrow><mo>−</mo><mn>23</mn></mrow></msup><mo stretchy="false">)</mo><mo>⋅</mo><msup><mn>2</mn><mn>127</mn></msup></mrow><annotation encoding="application/x-tex">1 \cdot 2^{254-127} \cdot (1.111...) = (2 - 2^{-23}) \cdot 2^{127}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span><span class="mord mtight">5</span><span class="mord mtight">4</span><span class="mbin mtight">−</span><span class="mord mtight">1</span><span class="mord mtight">2</span><span class="mord mtight">7</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">1</span><span class="mord">.</span><span class="mord">1</span><span class="mord">1</span><span class="mord">1</span><span class="mord">.</span><span class="mord">.</span><span class="mord">.</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">2</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">−</span><span class="mord mtight">2</span><span class="mord mtight">3</span></span></span></span></span></span></span></span></span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span><span class="mord mtight">2</span><span class="mord mtight">7</span></span></span></span></span></span></span></span></span></span></span></span>}<br>
+ 64 位双精度：1 11 52，偏置为<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mn>2</mn><mn>10</mn></msup><mo>−</mo><mn>1</mn><mo>=</mo><mn>1023</mn></mrow><annotation encoding="application/x-tex">2^{10}-1=1023</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.897438em;vertical-align:-0.08333em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span><span class="mord mtight">0</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">0</span><span class="mord">2</span><span class="mord">3</span></span></span></span>，真值为<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mo>−</mo><mn>1</mn><msup><mo stretchy="false">)</mo><mi>s</mi></msup><mo>⋅</mo><msup><mn>2</mn><mrow><mi>e</mi><mo>−</mo><mn>1023</mn></mrow></msup><mo>⋅</mo><mo stretchy="false">(</mo><mn>1.</mn><mi>M</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(-1)^s \cdot 2^{e-1023} \cdot (1.M)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">−</span><span class="mord">1</span><span class="mclose"><span class="mclose">)</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.664392em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">s</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">e</span><span class="mbin mtight">−</span><span class="mord mtight">1</span><span class="mord mtight">0</span><span class="mord mtight">2</span><span class="mord mtight">3</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">1</span><span class="mord">.</span><span class="mord mathnormal" style="margin-right:0.10903em;">M</span><span class="mclose">)</span></span></span></span>，最大值为<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mo>⋅</mo><msup><mn>2</mn><mrow><mn>2046</mn><mo>−</mo><mn>1023</mn></mrow></msup><mo>⋅</mo><mo stretchy="false">(</mo><mn>1.111...</mn><mo stretchy="false">)</mo><mo>=</mo><mo stretchy="false">(</mo><mn>2</mn><mo>−</mo><msup><mn>2</mn><mrow><mo>−</mo><mn>52</mn></mrow></msup><mo stretchy="false">)</mo><mo>⋅</mo><msup><mn>2</mn><mn>1023</mn></msup></mrow><annotation encoding="application/x-tex">1 \cdot 2^{2046-1023} \cdot (1.111...) = (2 - 2^{-52}) \cdot 2^{1023}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span><span class="mord mtight">0</span><span class="mord mtight">4</span><span class="mord mtight">6</span><span class="mbin mtight">−</span><span class="mord mtight">1</span><span class="mord mtight">0</span><span class="mord mtight">2</span><span class="mord mtight">3</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">1</span><span class="mord">.</span><span class="mord">1</span><span class="mord">1</span><span class="mord">1</span><span class="mord">.</span><span class="mord">.</span><span class="mord">.</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord">2</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">−</span><span class="mord mtight">5</span><span class="mord mtight">2</span></span></span></span></span></span></span></span></span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span><span class="mord mtight">0</span><span class="mord mtight">2</span><span class="mord mtight">3</span></span></span></span></span></span></span></span></span></span></span></span><br>
+ 阶码全为 0 或者全为 1 有特殊意义<br>
+<img data-src="f1.jpg" alt><br>
+阶码全 1 尾数不全 0 表示无穷大<br>
+阶码全 1 尾数全 0 表示 NaN<br>
+ 阶码全 0 尾数不全 0 表示非规格化数，隐藏位为 0（精度不够表示，需要特殊处理）</p>
+<h3 id="浮点数的加减运算"><a class="markdownIt-Anchor" href="#浮点数的加减运算">#</a> 浮点数的加减运算</h3>
+<ol>
+<li>对阶</li>
+<li>尾数相加减</li>
+<li>尾数规格化，修改阶数</li>
+<li>舍入</li>
+</ol>
+<ul>
+<li>就近舍入：舍入为最近的可表示数，当结果是两个可表示数的中间时，选择结果为偶数</li>
+<li>正向舍入：朝数轴正无穷方向舍入，取右边最近的可表示数</li>
+<li>负向舍入：和正向相反</li>
+<li>截断法：直接截取所需位数，是一种趋向原点的舍入</li>
+</ul>
+<ol start="5">
+<li>溢出判断<br>
+对阶码加减时要判断是否溢出</li>
+</ol>
 
       <div class="tags">
           <a href="/tags/%E6%95%B0%E6%8D%AE%E7%9A%84%E8%A1%A8%E7%A4%BA%E4%B8%8E%E8%BF%90%E7%AE%97/" rel="tag"><i class="ic i-tag"></i> 数据的表示与运算</a>
@@ -520,7 +548,7 @@ S_i &amp;= P_i \oplus C_i
       <i class="ic i-calendar-check"></i>
     </span>
     <span class="text">Edited on</span>
-    <time title="Modified: 2025-07-01 22:21:47" itemprop="dateModified" datetime="2025-07-01T22:21:47+08:00">2025-07-01</time>
+    <time title="Modified: 2025-07-09 20:47:37" itemprop="dateModified" datetime="2025-07-09T20:47:37+08:00">2025-07-09</time>
   </span>
 </div>
 
@@ -575,7 +603,7 @@ S_i &amp;= P_i \oplus C_i
     <div class="item left">
       
 
-  <a href="/2025/05/13/computer-science/computer-organization/ch1/" itemprop="url" rel="prev" data-background-image="&#x2F;images&#x2F;bg29.jpg" title="Ch1">
+  <a href="/2025/05/13/computer-science/computer-organization/ch1/" itemprop="url" rel="prev" data-background-image="&#x2F;images&#x2F;bg22.png" title="Ch1">
   <span class="type">Previous Post</span>
   <span class="category"><i class="ic i-flag"></i> 计算机组成</span>
   <h3>Ch1</h3>
@@ -585,7 +613,7 @@ S_i &amp;= P_i \oplus C_i
     <div class="item right">
       
 
-  <a href="/2025/05/20/AI/week2-3/" itemprop="url" rel="next" data-background-image="&#x2F;images&#x2F;bg20.jpg" title="Week2-3">
+  <a href="/2025/05/20/AI/week2-3/" itemprop="url" rel="next" data-background-image="&#x2F;images&#x2F;bg6.jpg" title="Week2-3">
   <span class="type">Next Post</span>
   <span class="category"><i class="ic i-flag"></i> 人工智能</span>
   <h3>Week2-3</h3>
@@ -607,11 +635,11 @@ S_i &amp;= P_i \oplus C_i
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="Contents">
-          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#ch2-%E6%95%B0%E6%8D%AE%E7%9A%84%E8%A1%A8%E7%A4%BA%E5%92%8C%E8%BF%90%E7%AE%97"><span class="toc-number">1.</span> <span class="toc-text"> Ch2 数据的表示和运算</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#21-%E8%BF%9B%E4%BD%8D%E8%AE%A1%E6%95%B0%E5%88%B6%E5%8F%8A%E5%85%B6%E7%9B%B8%E4%BA%92%E8%BD%AC%E6%8D%A2"><span class="toc-number">1.1.</span> <span class="toc-text"> 2.1 进位计数制及其相互转换</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#211"><span class="toc-number">1.1.1.</span> <span class="toc-text"> 2.1.1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#212-%E5%AE%9A%E7%82%B9%E6%95%B0%E7%9A%84%E7%BC%96%E7%A0%81%E8%A1%A8%E7%A4%BA"><span class="toc-number">1.1.2.</span> <span class="toc-text"> 2.1.2 定点数的编码表示</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#213-%E6%95%B4%E6%95%B0%E8%A1%A8%E7%A4%BA"><span class="toc-number">1.1.3.</span> <span class="toc-text"> 2.1.3 整数表示</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#214"><span class="toc-number">1.1.4.</span> <span class="toc-text"> 2.1.4</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#22-%E8%BF%90%E7%AE%97%E6%96%B9%E6%B3%95%E5%92%8C%E8%BF%90%E7%AE%97%E7%94%B5%E8%B7%AF"><span class="toc-number">1.2.</span> <span class="toc-text"> 2.2 运算方法和运算电路</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#221-%E5%9F%BA%E6%9C%AC%E8%BF%90%E7%AE%97%E9%83%A8%E4%BB%B6"><span class="toc-number">1.2.1.</span> <span class="toc-text"> 2.2.1 基本运算部件</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%80%E4%BD%8D%E5%85%A8%E5%8A%A0%E5%99%A8"><span class="toc-number">1.2.1.1.</span> <span class="toc-text"> 一位全加器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%B2%E8%A1%8C%E8%BF%9B%E4%BD%8D%E5%8A%A0%E6%B3%95%E5%99%A8"><span class="toc-number">1.2.1.2.</span> <span class="toc-text"> 串行进位加法器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B9%B6%E8%A1%8C%E8%BF%9B%E4%BD%8D%E5%8A%A0%E6%B3%95%E5%99%A8"><span class="toc-number">1.2.1.3.</span> <span class="toc-text"> 并行进位加法器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B8%A6%E6%A0%87%E5%BF%97%E5%8A%A0%E6%B3%95%E5%99%A8"><span class="toc-number">1.2.1.4.</span> <span class="toc-text"> 带标志加法器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#alu"><span class="toc-number">1.2.1.5.</span> <span class="toc-text"> ALU</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#222-%E5%AE%9A%E7%82%B9%E6%95%B0%E7%9A%84%E7%A7%BB%E4%BD%8D%E8%BF%90%E7%AE%97"><span class="toc-number">1.2.2.</span> <span class="toc-text"> 2.2.2 定点数的移位运算</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9A%E7%82%B9%E6%95%B0%E7%9A%84%E5%8A%A0%E5%87%8F%E8%BF%90%E7%AE%97"><span class="toc-number">1.2.3.</span> <span class="toc-text"> 定点数的加减运算</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9A%E7%82%B9%E6%95%B0%E7%9A%84%E4%B9%98%E9%99%A4%E8%BF%90%E7%AE%97"><span class="toc-number">1.2.4.</span> <span class="toc-text"> 定点数的乘除运算</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%AE%E7%82%B9%E6%95%B0%E7%9A%84%E8%A1%A8%E7%A4%BA%E4%B8%8E%E8%BF%90%E7%AE%97"><span class="toc-number">1.2.5.</span> <span class="toc-text"> 浮点数的表示与运算</span></a></li></ol></li></ol></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#ch2-%E6%95%B0%E6%8D%AE%E7%9A%84%E8%A1%A8%E7%A4%BA%E5%92%8C%E8%BF%90%E7%AE%97"><span class="toc-number">1.</span> <span class="toc-text"> Ch2 数据的表示和运算</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#21-%E8%BF%9B%E4%BD%8D%E8%AE%A1%E6%95%B0%E5%88%B6%E5%8F%8A%E5%85%B6%E7%9B%B8%E4%BA%92%E8%BD%AC%E6%8D%A2"><span class="toc-number">1.1.</span> <span class="toc-text"> 2.1 进位计数制及其相互转换</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#211"><span class="toc-number">1.1.1.</span> <span class="toc-text"> 2.1.1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#212-%E5%AE%9A%E7%82%B9%E6%95%B0%E7%9A%84%E7%BC%96%E7%A0%81%E8%A1%A8%E7%A4%BA"><span class="toc-number">1.1.2.</span> <span class="toc-text"> 2.1.2 定点数的编码表示</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#213-%E6%95%B4%E6%95%B0%E8%A1%A8%E7%A4%BA"><span class="toc-number">1.1.3.</span> <span class="toc-text"> 2.1.3 整数表示</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#214"><span class="toc-number">1.1.4.</span> <span class="toc-text"> 2.1.4</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#22-%E8%BF%90%E7%AE%97%E6%96%B9%E6%B3%95%E5%92%8C%E8%BF%90%E7%AE%97%E7%94%B5%E8%B7%AF"><span class="toc-number">1.2.</span> <span class="toc-text"> 2.2 运算方法和运算电路</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#221-%E5%9F%BA%E6%9C%AC%E8%BF%90%E7%AE%97%E9%83%A8%E4%BB%B6"><span class="toc-number">1.2.1.</span> <span class="toc-text"> 2.2.1 基本运算部件</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%80%E4%BD%8D%E5%85%A8%E5%8A%A0%E5%99%A8"><span class="toc-number">1.2.1.1.</span> <span class="toc-text"> 一位全加器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%B2%E8%A1%8C%E8%BF%9B%E4%BD%8D%E5%8A%A0%E6%B3%95%E5%99%A8"><span class="toc-number">1.2.1.2.</span> <span class="toc-text"> 串行进位加法器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B9%B6%E8%A1%8C%E8%BF%9B%E4%BD%8D%E5%8A%A0%E6%B3%95%E5%99%A8"><span class="toc-number">1.2.1.3.</span> <span class="toc-text"> 并行进位加法器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B8%A6%E6%A0%87%E5%BF%97%E5%8A%A0%E6%B3%95%E5%99%A8"><span class="toc-number">1.2.1.4.</span> <span class="toc-text"> 带标志加法器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#alu"><span class="toc-number">1.2.1.5.</span> <span class="toc-text"> ALU</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#222-%E5%AE%9A%E7%82%B9%E6%95%B0%E7%9A%84%E7%A7%BB%E4%BD%8D%E8%BF%90%E7%AE%97"><span class="toc-number">1.2.2.</span> <span class="toc-text"> 2.2.2 定点数的移位运算</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9A%E7%82%B9%E6%95%B0%E7%9A%84%E5%8A%A0%E5%87%8F%E8%BF%90%E7%AE%97"><span class="toc-number">1.2.3.</span> <span class="toc-text"> 定点数的加减运算</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9A%E7%82%B9%E6%95%B0%E7%9A%84%E4%B9%98%E9%99%A4%E8%BF%90%E7%AE%97"><span class="toc-number">1.2.4.</span> <span class="toc-text"> 定点数的乘除运算</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%AE%E7%82%B9%E6%95%B0%E7%9A%84%E8%A1%A8%E7%A4%BA%E4%B8%8E%E8%BF%90%E7%AE%97"><span class="toc-number">1.2.5.</span> <span class="toc-text"> 浮点数的表示与运算</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%AE%E7%82%B9%E6%95%B0%E7%9A%84%E5%8A%A0%E5%87%8F%E8%BF%90%E7%AE%97"><span class="toc-number">1.2.6.</span> <span class="toc-text"> 浮点数的加减运算</span></a></li></ol></li></ol></li></ol>
       </div>
       <div class="related panel pjax" data-title="Related">
         <ul>
-          <li><a href="/2025/05/13/computer-science/computer-organization/ch1/" rel="bookmark" title="Ch1">Ch1</a></li><li class="active"><a href="/2025/05/14/computer-science/computer-organization/ch2/" rel="bookmark" title="Ch2">Ch2</a></li><li><a href="/2025/07/01/computer-science/computer-organization/ch3/" rel="bookmark" title="Ch3">Ch3</a></li><li><a href="/2025/07/01/computer-science/computer-organization/%E9%94%99%E9%A2%98%E9%9B%86%E5%90%88/" rel="bookmark" title="错题集合">错题集合</a></li>
+          <li><a href="/2025/05/13/computer-science/computer-organization/ch1/" rel="bookmark" title="Ch1">Ch1</a></li><li class="active"><a href="/2025/05/14/computer-science/computer-organization/ch2/" rel="bookmark" title="Ch2">Ch2</a></li><li><a href="/2025/07/01/computer-science/computer-organization/%E9%94%99%E9%A2%98%E9%9B%86%E5%90%88/" rel="bookmark" title="错题集合">错题集合</a></li><li><a href="/2025/07/01/computer-science/computer-organization/ch3/" rel="bookmark" title="Ch3">Ch3</a></li>
         </ul>
       </div>
       <div class="overview panel" data-title="Overview">
@@ -732,18 +760,6 @@ S_i &amp;= P_i \oplus C_i
 <a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
 </div>
 
-    <span><a href="/2025/03/21/computer-science/compile-principles/ch1/" title="Introduction">Introduction</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
-</div>
-
     <span><a href="/2025/06/18/computer-science/compile-principles/ch10/" title="Liveness Analysis">Liveness Analysis</a></span>
   </li>
 
@@ -753,10 +769,20 @@ S_i &amp;= P_i \oplus C_i
 <div class="breadcrumb">
 <a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
+<a href="/categories/computer-science/computer-network/" title="In 计算机网络">计算机网络</a>
 </div>
 
-    <span><a href="/2025/06/17/computer-science/compile-principles/ch8/" title="Basic Blocks &amp; Traces">Basic Blocks & Traces</a></span>
+    <span><a href="/2025/05/13/computer-science/computer-network/ch1/" title="Ch1">Ch1</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/SE/" title="In 软件工程">软件工程</a>
+</div>
+
+    <span><a href="/2025/06/19/SE/note/" title="SE note">SE note</a></span>
   </li>
 
       
@@ -775,10 +801,24 @@ S_i &amp;= P_i \oplus C_i
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/AI/" title="In 人工智能">人工智能</a>
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
 </div>
 
-    <span><a href="/2025/06/16/AI/week10-11/" title="Week10-11">Week10-11</a></span>
+    <span><a href="/2025/03/29/computer-science/compile-principles/ch4/" title="抽象语法">抽象语法</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/computer-organization/" title="In 计算机组成">计算机组成</a>
+</div>
+
+    <span><a href="/2025/07/01/computer-science/computer-organization/%E9%94%99%E9%A2%98%E9%9B%86%E5%90%88/" title="错题集合">错题集合</a></span>
   </li>
 
       
@@ -788,7 +828,7 @@ S_i &amp;= P_i \oplus C_i
 <a href="/categories/AI/" title="In 人工智能">人工智能</a>
 </div>
 
-    <span><a href="/2025/05/20/AI/week2-3/" title="Week2-3">Week2-3</a></span>
+    <span><a href="/2025/06/15/AI/week8-9/" title="Week8-9">Week8-9</a></span>
   </li>
 
       
@@ -812,17 +852,7 @@ S_i &amp;= P_i \oplus C_i
 <a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
 </div>
 
-    <span><a href="/2025/03/29/computer-science/compile-principles/ch4/" title="抽象语法">抽象语法</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/SE/" title="In 软件工程">软件工程</a>
-</div>
-
-    <span><a href="/2025/06/19/SE/diagram/" title="画图题">画图题</a></span>
+    <span><a href="/2025/06/17/computer-science/compile-principles/ch9/" title="指令选择">指令选择</a></span>
   </li>
 
       
@@ -831,10 +861,10 @@ S_i &amp;= P_i \oplus C_i
 <div class="breadcrumb">
 <a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/computer-network/" title="In 计算机网络">计算机网络</a>
+<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
 </div>
 
-    <span><a href="/2025/05/13/computer-science/computer-network/ch1/" title="Ch1">Ch1</a></span>
+    <span><a href="/2025/03/21/computer-science/compile-principles/ch1/" title="Introduction">Introduction</a></span>
   </li>
 
   </ul>
@@ -859,13 +889,13 @@ S_i &amp;= P_i \oplus C_i
     <span class="post-meta-item-icon">
       <i class="ic i-chart-area"></i>
     </span>
-    <span title="Symbols count total">77k words</span>
+    <span title="Symbols count total">78k words</span>
 
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="ic i-coffee"></i>
     </span>
-    <span title="Reading time total">1:10</span>
+    <span title="Reading time total">1:11</span>
   </div>
   <div class="powered-by">
     Powered by <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>

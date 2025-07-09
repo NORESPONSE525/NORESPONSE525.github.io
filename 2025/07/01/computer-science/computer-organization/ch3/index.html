@@ -76,7 +76,7 @@ NoResponse's Blog = NoResponse's Blog</title>
       <i class="ic i-pen"></i>
     </span>
     <span class="text">Symbols count in article</span>
-    <span>4.9k</span>
+    <span>5.6k</span>
     <span class="text">words</span>
   </span>
   <span class="item" title="Reading time">
@@ -84,7 +84,7 @@ NoResponse's Blog = NoResponse's Blog</title>
       <i class="ic i-clock"></i>
     </span>
     <span class="text">Reading time</span>
-    <span>4 mins.</span>
+    <span>5 mins.</span>
   </span>
 </div>
 
@@ -116,7 +116,7 @@ NoResponse's Blog = NoResponse's Blog</title>
 
       </div>
       <div id="imgs" class="pjax">
-          <img src="/images/bg15.jpg">
+          <img src="/images/bg4.jpg">
       </div>
     </header>
     <div id="waves">
@@ -447,6 +447,49 @@ NoResponse's Blog = NoResponse's Blog</title>
 (2) 静态磨损均衡：就算没有写入，SSD 也会监测并自动进行数据分配，让老的闪存快以读为主，让新的块腾出空间，以写为主：将数据从写入 / 擦除次数较低的 block 移动到其他 block 中，这样可以将低擦写次数的 block 释放出来，添加到可用可用空间池中，以便后续使用。仅覆盖单个闪存芯片单元</li>
 </ol>
 <h2 id="cache"><a class="markdownIt-Anchor" href="#cache">#</a> Cache</h2>
+<p>解决 CPU 和主存速度不一致问题，由 SRAM 组成，通常集成在 CPU 中</p>
+<h3 id="程序访问的局部性原理"><a class="markdownIt-Anchor" href="#程序访问的局部性原理">#</a> 程序访问的局部性原理</h3>
+<ul>
+<li>时间局部性：比如循环、数组</li>
+<li>空间局部性：最近的未来用到的信息很可能和正在使用的信息在存储空间上是临近的<br>
+ Cache 利用局部性原理，将最近或频繁访问的数据复制到更快但容量较小的存储中，以便提高访问速度和系统性能。</li>
+</ul>
+<div class="note danger no-icon">
+<p><strong>hit/miss 计算</strong><br>
+设<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>t</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">t_c</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.76508em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">t</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">c</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> 为访问一次 Cache 所需时间，<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>t</mi><mi>m</mi></msub></mrow><annotation encoding="application/x-tex">t_m</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.76508em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">t</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">m</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> 为访问一次内存所需时间，则 Cache 和主存同时被访问总时间为</p>
+t = H \t_c + (1 - H) \t_m 
+
+<p>若先访问 Cache 再访问主存则时间为：</p>
+t = t_c + (1 - H) \t_m 
+
+</div>
+<h3 id="cache工作原理"><a class="markdownIt-Anchor" href="#cache工作原理">#</a> Cache 工作原理</h3>
+<p>主存和 Cache 之间以 == 块 (Block)== 为单位进行数据交换</p>
+<h3 id="映射方式"><a class="markdownIt-Anchor" href="#映射方式">#</a> 映射方式</h3>
+<ol>
+<li>直接映射 Directed mapped<br>
+<img data-src="f20.jpg" alt><br>
+cache 行号 = 主存块号 mod cache 行数<br>
+物理地址结构：<br>
+| tag | index（行号） | byte offset |<br>
+<img data-src="f19.jpg" alt></li>
+</ol>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>i</mi><mi>n</mi><mi>d</mi><mi>e</mi><mi>x</mi><mtext>的位数</mtext><mo>=</mo><mi>l</mi><mi>o</mi><msub><mi>g</mi><mn>2</mn></msub><mo stretchy="false">(</mo><mi>c</mi><mi>a</mi><mi>c</mi><mi>h</mi><mi>e</mi><mtext>的</mtext><mi>b</mi><mi>l</mi><mi>o</mi><mi>c</mi><mi>k</mi><mtext>数</mtext><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">index的位数 = log_2(cache的block数) 
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathnormal">i</span><span class="mord mathnormal">n</span><span class="mord mathnormal">d</span><span class="mord mathnormal">e</span><span class="mord mathnormal">x</span><span class="mord cjk_fallback">的</span><span class="mord cjk_fallback">位</span><span class="mord cjk_fallback">数</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mord mathnormal">o</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">g</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathnormal">c</span><span class="mord mathnormal">a</span><span class="mord mathnormal">c</span><span class="mord mathnormal">h</span><span class="mord mathnormal">e</span><span class="mord cjk_fallback">的</span><span class="mord mathnormal">b</span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mord mathnormal">o</span><span class="mord mathnormal">c</span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span><span class="mord cjk_fallback">数</span><span class="mclose">)</span></span></span></span></span></p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>b</mi><mi>y</mi><mi>t</mi><mi>e</mi><mtext> </mtext><mi>o</mi><mi>f</mi><mi>f</mi><mi>s</mi><mi>e</mi><mi>t</mi><mtext>的位数</mtext><mo>=</mo><mi>l</mi><mi>o</mi><msub><mi>g</mi><mn>2</mn></msub><mo stretchy="false">(</mo><mi>c</mi><mi>a</mi><mi>c</mi><mi>h</mi><mi>e</mi><mtext>的</mtext><mi>b</mi><mi>l</mi><mi>o</mi><mi>c</mi><mi>k</mi><mtext>的字节数</mtext><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">byte\ offset的位数 = log_2(cache的block的字节数) 
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathnormal">b</span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="mord mathnormal">t</span><span class="mord mathnormal">e</span><span class="mspace"> </span><span class="mord mathnormal">o</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mord mathnormal">s</span><span class="mord mathnormal">e</span><span class="mord mathnormal">t</span><span class="mord cjk_fallback">的</span><span class="mord cjk_fallback">位</span><span class="mord cjk_fallback">数</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mord mathnormal">o</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">g</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathnormal">c</span><span class="mord mathnormal">a</span><span class="mord mathnormal">c</span><span class="mord mathnormal">h</span><span class="mord mathnormal">e</span><span class="mord cjk_fallback">的</span><span class="mord mathnormal">b</span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mord mathnormal">o</span><span class="mord mathnormal">c</span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span><span class="mord cjk_fallback">的</span><span class="mord cjk_fallback">字</span><span class="mord cjk_fallback">节</span><span class="mord cjk_fallback">数</span><span class="mclose">)</span></span></span></span></span></p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>t</mi><mi>a</mi><mi>g</mi><mtext>的位数</mtext><mo>=</mo><mn>32</mn><mo>−</mo><mi>i</mi><mi>n</mi><mi>d</mi><mi>e</mi><mi>x</mi><mtext>的位数</mtext><mo>−</mo><mi>b</mi><mi>y</mi><mi>t</mi><mi>e</mi><mtext> </mtext><mi>o</mi><mi>f</mi><mi>f</mi><mi>s</mi><mi>e</mi><mi>t</mi><mtext>的位数</mtext></mrow><annotation encoding="application/x-tex">tag的位数 = 32 - index的位数 - byte\ offset的位数 
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8777699999999999em;vertical-align:-0.19444em;"></span><span class="mord mathnormal">t</span><span class="mord mathnormal">a</span><span class="mord mathnormal" style="margin-right:0.03588em;">g</span><span class="mord cjk_fallback">的</span><span class="mord cjk_fallback">位</span><span class="mord cjk_fallback">数</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">3</span><span class="mord">2</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.77777em;vertical-align:-0.08333em;"></span><span class="mord mathnormal">i</span><span class="mord mathnormal">n</span><span class="mord mathnormal">d</span><span class="mord mathnormal">e</span><span class="mord mathnormal">x</span><span class="mord cjk_fallback">的</span><span class="mord cjk_fallback">位</span><span class="mord cjk_fallback">数</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathnormal">b</span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="mord mathnormal">t</span><span class="mord mathnormal">e</span><span class="mspace"> </span><span class="mord mathnormal">o</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mord mathnormal">s</span><span class="mord mathnormal">e</span><span class="mord mathnormal">t</span><span class="mord cjk_fallback">的</span><span class="mord cjk_fallback">位</span><span class="mord cjk_fallback">数</span></span></span></span></span></p>
+<p>tag 的一行构成：<br>
+| valid bit | tag | data |</p>
+<details class="info"><summary>example</summary><div>
+<p><img data-src="f21.jpg" alt><br>
+<img data-src="f22.jpg" alt><br>
+<img data-src="f23.jpg" alt><br>
+<img data-src="f24.jpg" alt><br>
+<img data-src="f25.jpg" alt><br>
+<img data-src="f26.jpg" alt></p>
+</div></details>
 <h2 id="虚拟内存"><a class="markdownIt-Anchor" href="#虚拟内存">#</a> 虚拟内存</h2>
 
       <div class="tags">
@@ -462,7 +505,7 @@ NoResponse's Blog = NoResponse's Blog</title>
       <i class="ic i-calendar-check"></i>
     </span>
     <span class="text">Edited on</span>
-    <time title="Modified: 2025-07-08 21:27:40" itemprop="dateModified" datetime="2025-07-08T21:27:40+08:00">2025-07-08</time>
+    <time title="Modified: 2025-07-09 22:29:09" itemprop="dateModified" datetime="2025-07-09T22:29:09+08:00">2025-07-09</time>
   </span>
 </div>
 
@@ -517,14 +560,22 @@ NoResponse's Blog = NoResponse's Blog</title>
     <div class="item left">
       
 
-  <a href="/2025/07/01/computer-science/computer-organization/%E9%94%99%E9%A2%98%E9%9B%86%E5%90%88/" itemprop="url" rel="prev" data-background-image="&#x2F;images&#x2F;bg27.jpg" title="错题集合">
+  <a href="/2025/06/19/SE/diagram/" itemprop="url" rel="prev" data-background-image="&#x2F;images&#x2F;bg36.jpg" title="画图题">
   <span class="type">Previous Post</span>
-  <span class="category"><i class="ic i-flag"></i> 计算机组成</span>
-  <h3>错题集合</h3>
+  <span class="category"><i class="ic i-flag"></i> 软件工程</span>
+  <h3>画图题</h3>
   </a>
 
     </div>
     <div class="item right">
+      
+
+  <a href="/2025/07/01/computer-science/computer-organization/%E9%94%99%E9%A2%98%E9%9B%86%E5%90%88/" itemprop="url" rel="next" data-background-image="&#x2F;images&#x2F;bg27.jpg" title="错题集合">
+  <span class="type">Next Post</span>
+  <span class="category"><i class="ic i-flag"></i> 计算机组成</span>
+  <h3>错题集合</h3>
+  </a>
+
     </div>
 </div>
 
@@ -541,11 +592,11 @@ NoResponse's Blog = NoResponse's Blog</title>
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="Contents">
-          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#ch3-%E5%AD%98%E5%82%A8%E7%B3%BB%E7%BB%9F"><span class="toc-number">1.</span> <span class="toc-text"> Ch3 存储系统</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AD%98%E5%82%A8%E5%99%A8%E6%A6%82%E8%BF%B0"><span class="toc-number">1.1.</span> <span class="toc-text"> 存储器概述</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%98%E5%82%A8%E5%99%A8%E7%9A%84%E5%88%86%E7%B1%BB"><span class="toc-number">1.1.1.</span> <span class="toc-text"> 存储器的分类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%98%E5%82%A8%E5%99%A8%E7%9A%84%E6%80%A7%E8%83%BD%E6%8C%87%E6%A0%87"><span class="toc-number">1.1.2.</span> <span class="toc-text"> 存储器的性能指标</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%9A%E7%BA%A7%E5%B1%82%E6%AC%A1%E7%9A%84%E5%AD%98%E5%82%A8%E7%B3%BB%E7%BB%9F"><span class="toc-number">1.1.3.</span> <span class="toc-text"> 多级层次的存储系统</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%BB%E5%AD%98%E5%82%A8%E5%99%A8"><span class="toc-number">1.2.</span> <span class="toc-text"> 主存储器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#sram-dram"><span class="toc-number">1.2.1.</span> <span class="toc-text"> SRAM &amp; DRAM</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#dram%E7%9A%84%E5%88%B7%E6%96%B0"><span class="toc-number">1.2.1.1.</span> <span class="toc-text"> DRAM 的刷新</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#dram%E7%9A%84%E5%9C%B0%E5%9D%80%E5%BC%95%E8%84%9A%E5%A4%8D%E7%94%A8%E6%8A%80%E6%9C%AF"><span class="toc-number">1.2.1.1.1.</span> <span class="toc-text"> DRAM 的地址引脚复用技术</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#rom"><span class="toc-number">1.2.2.</span> <span class="toc-text"> ROM</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BB%E5%AD%98%E5%82%A8%E5%99%A8%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%BB%84%E6%88%90"><span class="toc-number">1.2.3.</span> <span class="toc-text"> 主存储器的基本组成</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%9A%E6%A8%A1%E5%9D%97%E5%AD%98%E5%82%A8%E5%99%A8"><span class="toc-number">1.2.4.</span> <span class="toc-text"> 多模块存储器</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%BB%E5%AD%98%E5%82%A8%E5%99%A8%E4%B8%8Ecpu%E7%9A%84%E8%BF%9E%E6%8E%A5"><span class="toc-number">1.3.</span> <span class="toc-text"> 主存储器与 CPU 的连接</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%9E%E6%8E%A5%E5%8E%9F%E7%90%86"><span class="toc-number">1.3.1.</span> <span class="toc-text"> 连接原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BB%E5%AD%98%E5%AE%B9%E9%87%8F%E7%9A%84%E6%89%A9%E5%B1%95"><span class="toc-number">1.3.2.</span> <span class="toc-text"> 主存容量的扩展</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%98%E5%82%A8%E8%8A%AF%E7%89%87%E7%9A%84%E5%9C%B0%E5%9D%80%E5%88%86%E9%85%8D%E5%92%8C%E7%89%87%E9%80%89"><span class="toc-number">1.3.3.</span> <span class="toc-text"> 存储芯片的地址分配和片选</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%98%E5%82%A8%E5%99%A8%E4%B8%8Ecpu%E7%9A%84%E8%BF%9E%E6%8E%A5"><span class="toc-number">1.3.4.</span> <span class="toc-text"> 存储器与 CPU 的连接</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%96%E9%83%A8%E5%AD%98%E5%82%A8%E5%99%A8"><span class="toc-number">1.4.</span> <span class="toc-text"> 外部存储器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A3%81%E7%9B%98%E5%AD%98%E5%82%A8%E5%99%A8"><span class="toc-number">1.4.1.</span> <span class="toc-text"> 磁盘存储器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%BA%E6%80%81%E7%A1%AC%E7%9B%98ssd"><span class="toc-number">1.4.2.</span> <span class="toc-text"> 固态硬盘 (SSD)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#cache"><span class="toc-number">1.5.</span> <span class="toc-text"> Cache</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%99%9A%E6%8B%9F%E5%86%85%E5%AD%98"><span class="toc-number">1.6.</span> <span class="toc-text"> 虚拟内存</span></a></li></ol></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#ch3-%E5%AD%98%E5%82%A8%E7%B3%BB%E7%BB%9F"><span class="toc-number">1.</span> <span class="toc-text"> Ch3 存储系统</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AD%98%E5%82%A8%E5%99%A8%E6%A6%82%E8%BF%B0"><span class="toc-number">1.1.</span> <span class="toc-text"> 存储器概述</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%98%E5%82%A8%E5%99%A8%E7%9A%84%E5%88%86%E7%B1%BB"><span class="toc-number">1.1.1.</span> <span class="toc-text"> 存储器的分类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%98%E5%82%A8%E5%99%A8%E7%9A%84%E6%80%A7%E8%83%BD%E6%8C%87%E6%A0%87"><span class="toc-number">1.1.2.</span> <span class="toc-text"> 存储器的性能指标</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%9A%E7%BA%A7%E5%B1%82%E6%AC%A1%E7%9A%84%E5%AD%98%E5%82%A8%E7%B3%BB%E7%BB%9F"><span class="toc-number">1.1.3.</span> <span class="toc-text"> 多级层次的存储系统</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%BB%E5%AD%98%E5%82%A8%E5%99%A8"><span class="toc-number">1.2.</span> <span class="toc-text"> 主存储器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#sram-dram"><span class="toc-number">1.2.1.</span> <span class="toc-text"> SRAM &amp; DRAM</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#dram%E7%9A%84%E5%88%B7%E6%96%B0"><span class="toc-number">1.2.1.1.</span> <span class="toc-text"> DRAM 的刷新</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#dram%E7%9A%84%E5%9C%B0%E5%9D%80%E5%BC%95%E8%84%9A%E5%A4%8D%E7%94%A8%E6%8A%80%E6%9C%AF"><span class="toc-number">1.2.1.1.1.</span> <span class="toc-text"> DRAM 的地址引脚复用技术</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#rom"><span class="toc-number">1.2.2.</span> <span class="toc-text"> ROM</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BB%E5%AD%98%E5%82%A8%E5%99%A8%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%BB%84%E6%88%90"><span class="toc-number">1.2.3.</span> <span class="toc-text"> 主存储器的基本组成</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%9A%E6%A8%A1%E5%9D%97%E5%AD%98%E5%82%A8%E5%99%A8"><span class="toc-number">1.2.4.</span> <span class="toc-text"> 多模块存储器</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%BB%E5%AD%98%E5%82%A8%E5%99%A8%E4%B8%8Ecpu%E7%9A%84%E8%BF%9E%E6%8E%A5"><span class="toc-number">1.3.</span> <span class="toc-text"> 主存储器与 CPU 的连接</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%9E%E6%8E%A5%E5%8E%9F%E7%90%86"><span class="toc-number">1.3.1.</span> <span class="toc-text"> 连接原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BB%E5%AD%98%E5%AE%B9%E9%87%8F%E7%9A%84%E6%89%A9%E5%B1%95"><span class="toc-number">1.3.2.</span> <span class="toc-text"> 主存容量的扩展</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%98%E5%82%A8%E8%8A%AF%E7%89%87%E7%9A%84%E5%9C%B0%E5%9D%80%E5%88%86%E9%85%8D%E5%92%8C%E7%89%87%E9%80%89"><span class="toc-number">1.3.3.</span> <span class="toc-text"> 存储芯片的地址分配和片选</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%98%E5%82%A8%E5%99%A8%E4%B8%8Ecpu%E7%9A%84%E8%BF%9E%E6%8E%A5"><span class="toc-number">1.3.4.</span> <span class="toc-text"> 存储器与 CPU 的连接</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%96%E9%83%A8%E5%AD%98%E5%82%A8%E5%99%A8"><span class="toc-number">1.4.</span> <span class="toc-text"> 外部存储器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A3%81%E7%9B%98%E5%AD%98%E5%82%A8%E5%99%A8"><span class="toc-number">1.4.1.</span> <span class="toc-text"> 磁盘存储器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%BA%E6%80%81%E7%A1%AC%E7%9B%98ssd"><span class="toc-number">1.4.2.</span> <span class="toc-text"> 固态硬盘 (SSD)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#cache"><span class="toc-number">1.5.</span> <span class="toc-text"> Cache</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A8%8B%E5%BA%8F%E8%AE%BF%E9%97%AE%E7%9A%84%E5%B1%80%E9%83%A8%E6%80%A7%E5%8E%9F%E7%90%86"><span class="toc-number">1.5.1.</span> <span class="toc-text"> 程序访问的局部性原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#cache%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86"><span class="toc-number">1.5.2.</span> <span class="toc-text"> Cache 工作原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%98%A0%E5%B0%84%E6%96%B9%E5%BC%8F"><span class="toc-number">1.5.3.</span> <span class="toc-text"> 映射方式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%99%9A%E6%8B%9F%E5%86%85%E5%AD%98"><span class="toc-number">1.6.</span> <span class="toc-text"> 虚拟内存</span></a></li></ol></li></ol>
       </div>
       <div class="related panel pjax" data-title="Related">
         <ul>
-          <li><a href="/2025/05/13/computer-science/computer-organization/ch1/" rel="bookmark" title="Ch1">Ch1</a></li><li><a href="/2025/05/14/computer-science/computer-organization/ch2/" rel="bookmark" title="Ch2">Ch2</a></li><li class="active"><a href="/2025/07/01/computer-science/computer-organization/ch3/" rel="bookmark" title="Ch3">Ch3</a></li><li><a href="/2025/07/01/computer-science/computer-organization/%E9%94%99%E9%A2%98%E9%9B%86%E5%90%88/" rel="bookmark" title="错题集合">错题集合</a></li>
+          <li><a href="/2025/05/13/computer-science/computer-organization/ch1/" rel="bookmark" title="Ch1">Ch1</a></li><li><a href="/2025/05/14/computer-science/computer-organization/ch2/" rel="bookmark" title="Ch2">Ch2</a></li><li><a href="/2025/07/01/computer-science/computer-organization/%E9%94%99%E9%A2%98%E9%9B%86%E5%90%88/" rel="bookmark" title="错题集合">错题集合</a></li><li class="active"><a href="/2025/07/01/computer-science/computer-organization/ch3/" rel="bookmark" title="Ch3">Ch3</a></li>
         </ul>
       </div>
       <div class="overview panel" data-title="Overview">
@@ -634,10 +685,12 @@ NoResponse's Blog = NoResponse's Blog</title>
 
   <ul id="quick">
     <li class="prev pjax">
+        <a href="/2025/06/19/SE/diagram/" rel="prev" title="Previous Post"><i class="ic i-chevron-left"></i></a>
     </li>
     <li class="up"><i class="ic i-arrow-up"></i></li>
     <li class="down"><i class="ic i-arrow-down"></i></li>
     <li class="next pjax">
+        <a href="/2025/07/01/computer-science/computer-organization/%E9%94%99%E9%A2%98%E9%9B%86%E5%90%88/" rel="next" title="Next Post"><i class="ic i-chevron-right"></i></a>
     </li>
     <li class="percent"></li>
   </ul>
@@ -664,7 +717,37 @@ NoResponse's Blog = NoResponse's Blog</title>
 <a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
 </div>
 
-    <span><a href="/2025/03/23/computer-science/compile-principles/ch3/" title="语法分析">语法分析</a></span>
+    <span><a href="/2025/06/18/computer-science/compile-principles/ch10/" title="Liveness Analysis">Liveness Analysis</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/AI/" title="In 人工智能">人工智能</a>
+</div>
+
+    <span><a href="/2025/06/16/AI/week10-11/" title="Week10-11">Week10-11</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/SE/" title="In 软件工程">软件工程</a>
+</div>
+
+    <span><a href="/2025/06/19/SE/diagram/" title="画图题">画图题</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/AI/" title="In 人工智能">人工智能</a>
+</div>
+
+    <span><a href="/2025/05/20/AI/week2-3/" title="Week2-3">Week2-3</a></span>
   </li>
 
       
@@ -685,10 +768,10 @@ NoResponse's Blog = NoResponse's Blog</title>
 <div class="breadcrumb">
 <a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
+<a href="/categories/computer-science/computer-organization/" title="In 计算机组成">计算机组成</a>
 </div>
 
-    <span><a href="/2025/06/15/computer-science/compile-principles/ch6/" title="活动记录">活动记录</a></span>
+    <span><a href="/2025/07/01/computer-science/computer-organization/ch3/" title="Ch3">Ch3</a></span>
   </li>
 
       
@@ -700,19 +783,17 @@ NoResponse's Blog = NoResponse's Blog</title>
 <a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
 </div>
 
-    <span><a href="/2025/06/18/computer-science/compile-principles/ch11/" title="Register Allocation">Register Allocation</a></span>
+    <span><a href="/2025/03/22/computer-science/compile-principles/ch2/" title="词法分析">词法分析</a></span>
   </li>
 
       
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
+<a href="/categories/AI/" title="In 人工智能">人工智能</a>
 </div>
 
-    <span><a href="/2025/06/17/computer-science/compile-principles/ch9/" title="指令选择">指令选择</a></span>
+    <span><a href="/2025/06/15/AI/week8-9/" title="Week8-9">Week8-9</a></span>
   </li>
 
       
@@ -733,42 +814,10 @@ NoResponse's Blog = NoResponse's Blog</title>
 <div class="breadcrumb">
 <a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/computer-organization/" title="In 计算机组成">计算机组成</a>
-</div>
-
-    <span><a href="/2025/05/14/computer-science/computer-organization/ch2/" title="Ch2">Ch2</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/AI/" title="In 人工智能">人工智能</a>
-</div>
-
-    <span><a href="/2025/06/16/AI/week14-15/" title="Week14-15">Week14-15</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
 <a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
 </div>
 
-    <span><a href="/2025/06/18/computer-science/compile-principles/ch10/" title="Liveness Analysis">Liveness Analysis</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/SE/" title="In 软件工程">软件工程</a>
-</div>
-
-    <span><a href="/2025/06/19/SE/diagram/" title="画图题">画图题</a></span>
+    <span><a href="/2025/06/17/computer-science/compile-principles/ch9/" title="指令选择">指令选择</a></span>
   </li>
 
   </ul>
@@ -793,13 +842,13 @@ NoResponse's Blog = NoResponse's Blog</title>
     <span class="post-meta-item-icon">
       <i class="ic i-chart-area"></i>
     </span>
-    <span title="Symbols count total">77k words</span>
+    <span title="Symbols count total">78k words</span>
 
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="ic i-coffee"></i>
     </span>
-    <span title="Reading time total">1:10</span>
+    <span title="Reading time total">1:11</span>
   </div>
   <div class="powered-by">
     Powered by <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
