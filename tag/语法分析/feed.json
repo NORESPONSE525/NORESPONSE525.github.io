@@ -9,7 +9,7 @@
             "url": "http://example.com/2025/03/23/computer-science/compile-principles/ch3/",
             "title": "语法分析",
             "date_published": "2025-03-22T16:00:00.000Z",
-            "content_html": "<h1 id=\"语法分析\"><a href=\"#语法分析\" class=\"headerlink\" title=\"语法分析\"></a>语法分析</h1><h2 id=\"CFG\"><a href=\"#CFG\" class=\"headerlink\" title=\"CFG\"></a>CFG</h2><p>见计算理论<br>Parse tree</p>\n<h3 id=\"Ambiguous-grammars\"><a href=\"#Ambiguous-grammars\" class=\"headerlink\" title=\"Ambiguous grammars\"></a>Ambiguous grammars</h3><h2 id><a href=\"#\" class=\"headerlink\" title></a></h2>",
+            "content_html": "<h1 id=\"语法分析\"><a class=\"markdownIt-Anchor\" href=\"#语法分析\">#</a> 语法分析</h1>\n<h2 id=\"cfg\"><a class=\"markdownIt-Anchor\" href=\"#cfg\">#</a> CFG</h2>\n<p>见计算理论<br>\n Parse tree</p>\n<h3 id=\"ambiguous-grammars\"><a class=\"markdownIt-Anchor\" href=\"#ambiguous-grammars\">#</a> Ambiguous grammars</h3>\n<h2 id><a class=\"markdownIt-Anchor\" href=\"#\">#</a> </h2>\n",
             "tags": [
                 "语法分析"
             ]
