@@ -6,146 +6,112 @@
     <updated>2025-03-29T16:00:00.000Z</updated>
     <category term="软件工程" />
     <category term="人工智能" />
-    <category term="编译原理" />
     <category term="Liveness Analysis" />
     <category term="Register Allocation" />
+    <category term="编译原理" />
     <category term="词法分析" />
     <category term="抽象语法" />
-    <category term="活动记录" />
     <category term="语法分析" />
     <category term="语义分析" />
+    <category term="活动记录" />
     <category term="中间代码" />
-    <category term="Basic Blocks and Traces" />
-    <category term="数据的表示与运算" />
     <category term="指令选择" />
     <category term="计算机组成" />
-    <category term="错题" />
     <category term="计算机网络" />
+    <category term="数据的表示与运算" />
+    <category term="错题" />
+    <category term="Basic Blocks and Traces" />
     <category term="存储系统" />
     <entry>
         <id>http://example.com/2025/03/30/computer-science/compile-principles/ch5/</id>
         <title>语义分析</title>
         <link rel="alternate" href="http://example.com/2025/03/30/computer-science/compile-principles/ch5/"/>
-        <content type="html">&lt;h1 id=&#34;语义分析&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#语义分析&#34;&gt;#&lt;/a&gt; 语义分析&lt;/h1&gt;
-&lt;blockquote&gt;
+        <content type="html">&lt;h1 id=&#34;语义分析&#34;&gt;&lt;a href=&#34;#语义分析&#34; class=&#34;headerlink&#34; title=&#34;语义分析&#34;&gt;&lt;/a&gt;语义分析&lt;/h1&gt;&lt;blockquote&gt;
 &lt;p&gt;绑定，类型检查&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h2 id=&#34;symbol-table&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#symbol-table&#34;&gt;#&lt;/a&gt; symbol table&lt;/h2&gt;
+&lt;h2 id=&#34;symbol-table&#34;&gt;&lt;a href=&#34;#symbol-table&#34; class=&#34;headerlink&#34; title=&#34;symbol table&#34;&gt;&lt;/a&gt;symbol table&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Imperative style: 命令式风格&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Imperative style: 命令式风格
+&lt;li&gt;Modify $\sigma_1$ until it becomes $\sigma_2$. &lt;/li&gt;
+&lt;li&gt;While $\sigma_2$ exists, we cannot look things up in $\sigma_1$. &lt;/li&gt;
+&lt;li&gt;When done with $\sigma_2$, can undo the modification to get $\sigma_1$ back again.&lt;br&gt;+++info 方法：&lt;br&gt;Hashing&lt;br&gt;插入：找到哈希值然后插入链表的表头&lt;br&gt;查找：找到哈希值然后遍历链表&lt;br&gt;pop: 找到哈希值然后把链表表头删掉  table[hash(key)] &amp;#x3D; table[hash(key)].next&lt;br&gt;+++&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Functional style: 函数式风格&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Modify &lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;msub&gt;&lt;mi&gt;σ&lt;/mi&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/msub&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;\sigma_1&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.58056em;vertical-align:-0.15em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.03588em;&#34;&gt;σ&lt;/span&gt;&lt;span class=&#34;msupsub&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.30110799999999993em;&#34;&gt;&lt;span style=&#34;top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.7em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mtight&#34;&gt;1&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.15em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; until it becomes &lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;msub&gt;&lt;mi&gt;σ&lt;/mi&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msub&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;\sigma_2&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.58056em;vertical-align:-0.15em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.03588em;&#34;&gt;σ&lt;/span&gt;&lt;span class=&#34;msupsub&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.30110799999999993em;&#34;&gt;&lt;span style=&#34;top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.7em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mtight&#34;&gt;2&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.15em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;.&lt;/li&gt;
-&lt;li&gt;While &lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;msub&gt;&lt;mi&gt;σ&lt;/mi&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msub&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;\sigma_2&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.58056em;vertical-align:-0.15em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.03588em;&#34;&gt;σ&lt;/span&gt;&lt;span class=&#34;msupsub&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.30110799999999993em;&#34;&gt;&lt;span style=&#34;top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.7em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mtight&#34;&gt;2&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.15em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; exists, we cannot look things up in &lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;msub&gt;&lt;mi&gt;σ&lt;/mi&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/msub&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;\sigma_1&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.58056em;vertical-align:-0.15em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.03588em;&#34;&gt;σ&lt;/span&gt;&lt;span class=&#34;msupsub&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.30110799999999993em;&#34;&gt;&lt;span style=&#34;top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.7em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mtight&#34;&gt;1&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.15em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;.&lt;/li&gt;
-&lt;li&gt;When done with &lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;msub&gt;&lt;mi&gt;σ&lt;/mi&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msub&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;\sigma_2&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.58056em;vertical-align:-0.15em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.03588em;&#34;&gt;σ&lt;/span&gt;&lt;span class=&#34;msupsub&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.30110799999999993em;&#34;&gt;&lt;span style=&#34;top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.7em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mtight&#34;&gt;2&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.15em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;, can undo the modification to get &lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;msub&gt;&lt;mi&gt;σ&lt;/mi&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/msub&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;\sigma_1&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.58056em;vertical-align:-0.15em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.03588em;&#34;&gt;σ&lt;/span&gt;&lt;span class=&#34;msupsub&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.30110799999999993em;&#34;&gt;&lt;span style=&#34;top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.7em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mtight&#34;&gt;1&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.15em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; back again.&lt;/li&gt;
+&lt;li&gt;To keep $\sigma_1$ in pristine condition while creating create $\sigma_2$ and $\sigma_3$&lt;br&gt;+++info 方法：&lt;br&gt;如果依旧用哈希，每次要复制一遍哈希表，开销太大了，不现实&lt;br&gt;&lt;img data-src=&#34;/f2.jpg&#34;&gt;&lt;br&gt;所以用persistent BST&lt;br&gt;&lt;img data-src=&#34;/f1.jpg&#34;&gt;&lt;br&gt;先遍历二叉搜索树找到要插入的位置，然后对于插入节点把它从根节点到它全都复制一遍然后插入&lt;br&gt;+++&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;details class=&#34;info&#34;&gt;&lt;summary&gt;方法：&lt;/summary&gt;&lt;div&gt;
-&lt;p&gt;Hashing&lt;br&gt;
- 插入：找到哈希值然后插入链表的表头&lt;br&gt;
-查找：找到哈希值然后遍历链表&lt;br&gt;
- pop: 找到哈希值然后把链表表头删掉  table [hash (key)] = table [hash (key)].next&lt;/p&gt;
-&lt;/div&gt;&lt;/details&gt;
+&lt;h2 id=&#34;Tiger编译器中的符号&#34;&gt;&lt;a href=&#34;#Tiger编译器中的符号&#34; class=&#34;headerlink&#34; title=&#34;Tiger编译器中的符号&#34;&gt;&lt;/a&gt;Tiger编译器中的符号&lt;/h2&gt;&lt;p&gt;对链表进行lookup的时候每一次都要进行string compare，开销是很大的。所以使用新的数据结构将符号对象关联到一个整数上，因此对于任意给定字符串的所有不同出现，都会被转换成同一个符号对象。&lt;br&gt;Symbol的实现：通过hash函数将字符串映射到一个symbol对象上&lt;br&gt;SymbolTable的实现：beginScope()和endScope()的实现&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Functional style: 函数式风格
-&lt;ul&gt;
-&lt;li&gt;To keep &lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;msub&gt;&lt;mi&gt;σ&lt;/mi&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/msub&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;\sigma_1&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.58056em;vertical-align:-0.15em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.03588em;&#34;&gt;σ&lt;/span&gt;&lt;span class=&#34;msupsub&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.30110799999999993em;&#34;&gt;&lt;span style=&#34;top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.7em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mtight&#34;&gt;1&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.15em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; in pristine condition while creating create &lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;msub&gt;&lt;mi&gt;σ&lt;/mi&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msub&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;\sigma_2&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.58056em;vertical-align:-0.15em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.03588em;&#34;&gt;σ&lt;/span&gt;&lt;span class=&#34;msupsub&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.30110799999999993em;&#34;&gt;&lt;span style=&#34;top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.7em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mtight&#34;&gt;2&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.15em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; and &lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;msub&gt;&lt;mi&gt;σ&lt;/mi&gt;&lt;mn&gt;3&lt;/mn&gt;&lt;/msub&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;\sigma_3&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.58056em;vertical-align:-0.15em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.03588em;&#34;&gt;σ&lt;/span&gt;&lt;span class=&#34;msupsub&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.30110799999999993em;&#34;&gt;&lt;span style=&#34;top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.7em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mtight&#34;&gt;3&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.15em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;details class=&#34;info&#34;&gt;&lt;summary&gt;方法：&lt;/summary&gt;&lt;div&gt;
-&lt;p&gt;如果依旧用哈希，每次要复制一遍哈希表，开销太大了，不现实&lt;br&gt;
-&lt;img data-src=&#34;f2.jpg&#34; alt&gt;&lt;br&gt;
-所以用 persistent BST&lt;br&gt;
-&lt;img data-src=&#34;f1.jpg&#34; alt&gt;&lt;br&gt;
- 先遍历二叉搜索树找到要插入的位置，然后对于插入节点把它从根节点到它全都复制一遍然后插入&lt;/p&gt;
-&lt;/div&gt;&lt;/details&gt;
-&lt;h2 id=&#34;tiger编译器中的符号&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#tiger编译器中的符号&#34;&gt;#&lt;/a&gt; Tiger 编译器中的符号&lt;/h2&gt;
-&lt;p&gt;对链表进行 lookup 的时候每一次都要进行 string compare，开销是很大的。所以使用新的数据结构将符号对象关联到一个整数上，因此对于任意给定字符串的所有不同出现，都会被转换成同一个符号对象。&lt;br&gt;
-Symbol 的实现：通过 hash 函数将字符串映射到一个 symbol 对象上&lt;br&gt;
- SymbolTable 的实现：beginScope () 和 endScope () 的实现&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;beginScope ()：添加一个 marksym&lt;/li&gt;
-&lt;li&gt;endScope ()：从符号表中不断 pop 直到 marksym&lt;/li&gt;
-&lt;li&gt;引入一个 辅助栈 (Auxiliary stack) 来维护
-&lt;ul&gt;
-&lt;li&gt;符号入栈时，会将 binding 联动地插入对应 bucket 的链表头&lt;/li&gt;
-&lt;li&gt;弹出栈顶符号时，对应 bucket 的链表头也会联动地被移除&lt;/li&gt;
+&lt;li&gt;beginScope()：添加一个marksym&lt;/li&gt;
+&lt;li&gt;endScope()：从符号表中不断pop直到marksym&lt;/li&gt;
+&lt;li&gt;引入一个 辅助栈(Auxiliary stack) 来维护&lt;ul&gt;
+&lt;li&gt;符号入栈时，会将binding联动地插入对应bucket的链表头&lt;/li&gt;
+&lt;li&gt;弹出栈顶符号时，对应bucket的链表头也会联动地被移除&lt;/li&gt;
 &lt;li&gt;beginScope: 压入一个特殊标记到辅助栈中&lt;/li&gt;
 &lt;li&gt;endScope: 一直弹出符号直到弹出了一个特殊标记&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;类型检查&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#类型检查&#34;&gt;#&lt;/a&gt; 类型检查&lt;/h2&gt;
-&lt;h3 id=&#34;哪些类型表达式是合法非法的&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#哪些类型表达式是合法非法的&#34;&gt;#&lt;/a&gt; 哪些类型表达式是合法 / 非法的&lt;/h3&gt;
-&lt;p&gt;Tiger 的类型系统：&lt;/p&gt;
+&lt;h2 id=&#34;类型检查&#34;&gt;&lt;a href=&#34;#类型检查&#34; class=&#34;headerlink&#34; title=&#34;类型检查&#34;&gt;&lt;/a&gt;类型检查&lt;/h2&gt;&lt;h3 id=&#34;哪些类型表达式是合法-非法的&#34;&gt;&lt;a href=&#34;#哪些类型表达式是合法-非法的&#34; class=&#34;headerlink&#34; title=&#34;哪些类型表达式是合法&amp;#x2F;非法的&#34;&gt;&lt;/a&gt;哪些类型表达式是合法&amp;#x2F;非法的&lt;/h3&gt;&lt;p&gt;Tiger的类型系统：&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;两种 primitive type: int, string&lt;/li&gt;
-&lt;li&gt;两种 constructed type: records, arrays&lt;/li&gt;
+&lt;li&gt;两种primitive type: int, string&lt;/li&gt;
+&lt;li&gt;两种constructed type: records, arrays&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;文法&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;typec → type type-id = ty
-&lt;ul&gt;
-&lt;li&gt;这表示定义一个类型。 &lt;code&gt;typec&lt;/code&gt;  是一个类型定义的开始，它由关键字  &lt;code&gt;type&lt;/code&gt; 、一个类型标识符  &lt;code&gt;type-id&lt;/code&gt;  和一个等号  &lt;code&gt;=&lt;/code&gt;  后跟类型定义  &lt;code&gt;ty&lt;/code&gt;  组成。&lt;/li&gt;
+&lt;li&gt;typec → type type-id &amp;#x3D; ty&lt;ul&gt;
+&lt;li&gt;这表示定义一个类型。&lt;code&gt;typec&lt;/code&gt; 是一个类型定义的开始，它由关键字 &lt;code&gt;type&lt;/code&gt;、一个类型标识符 &lt;code&gt;type-id&lt;/code&gt; 和一个等号 &lt;code&gt;=&lt;/code&gt; 后跟类型定义 &lt;code&gt;ty&lt;/code&gt; 组成。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;ty → type-id
-&lt;ul&gt;
-&lt;li&gt;这表示类型  &lt;code&gt;ty&lt;/code&gt;  可以直接是一个已定义的类型标识符  &lt;code&gt;type-id&lt;/code&gt; 。&lt;/li&gt;
+&lt;li&gt;ty → type-id&lt;ul&gt;
+&lt;li&gt;这表示类型 &lt;code&gt;ty&lt;/code&gt; 可以直接是一个已定义的类型标识符 &lt;code&gt;type-id&lt;/code&gt;。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;ty → ‘{’ tyfields ‘}’
-&lt;ul&gt;
-&lt;li&gt;这表示类型  &lt;code&gt;ty&lt;/code&gt;  可以是一个记录（record），由花括号  &lt;code&gt;&amp;#123;&amp;#125;&lt;/code&gt;  包围的一系列字段  &lt;code&gt;tyfields&lt;/code&gt;  定义。&lt;/li&gt;
+&lt;li&gt;ty → ‘{’ tyfields ‘}’&lt;ul&gt;
+&lt;li&gt;这表示类型 &lt;code&gt;ty&lt;/code&gt; 可以是一个记录（record），由花括号 &lt;code&gt;&amp;#123;&amp;#125;&lt;/code&gt; 包围的一系列字段 &lt;code&gt;tyfields&lt;/code&gt; 定义。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;ty → array of type-id
-&lt;ul&gt;
-&lt;li&gt;这表示类型  &lt;code&gt;ty&lt;/code&gt;  可以是一个数组，由关键字  &lt;code&gt;array of&lt;/code&gt;  后跟一个类型标识符  &lt;code&gt;type-id&lt;/code&gt;  定义。&lt;/li&gt;
+&lt;li&gt;ty → array of type-id&lt;ul&gt;
+&lt;li&gt;这表示类型 &lt;code&gt;ty&lt;/code&gt; 可以是一个数组，由关键字 &lt;code&gt;array of&lt;/code&gt; 后跟一个类型标识符 &lt;code&gt;type-id&lt;/code&gt; 定义。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;tyfields → ε
-&lt;ul&gt;
-&lt;li&gt;这表示字段列表  &lt;code&gt;tyfields&lt;/code&gt;  可以为空（ε 表示空串）。&lt;/li&gt;
+&lt;li&gt;tyfields → ε&lt;ul&gt;
+&lt;li&gt;这表示字段列表 &lt;code&gt;tyfields&lt;/code&gt; 可以为空（ε 表示空串）。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li , id:type-id&gt;tyfields → id: type-id
-&lt;ul&gt;
-&lt;li&gt;这表示字段列表  &lt;code&gt;tyfields&lt;/code&gt;  由一个或多个字段组成，每个字段由一个标识符  &lt;code&gt;id&lt;/code&gt;  和冒号  &lt;code&gt;:&lt;/code&gt;  后跟一个类型标识符  &lt;code&gt;type-id&lt;/code&gt;  定义，多个字段之间用逗号  &lt;code&gt;,&lt;/code&gt;  分隔。&lt;/li&gt;
+&lt;li&gt;tyfields → id: type-id {, id:type-id}&lt;ul&gt;
+&lt;li&gt;这表示字段列表 &lt;code&gt;tyfields&lt;/code&gt; 由一个或多个字段组成，每个字段由一个标识符 &lt;code&gt;id&lt;/code&gt; 和冒号 &lt;code&gt;:&lt;/code&gt; 后跟一个类型标识符 &lt;code&gt;type-id&lt;/code&gt; 定义，多个字段之间用逗号 &lt;code&gt;,&lt;/code&gt; 分隔。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;示例&lt;/p&gt;
 &lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;let type a = &amp;#123;x: int; y: int&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    type b = a&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    var i : a := ...&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    var j : b := ...&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;in i := j&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;end&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h3 id=&#34;类型等价&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#类型等价&#34;&gt;#&lt;/a&gt; 类型等价&lt;/h3&gt;
-&lt;ul&gt;
+
+
+&lt;h3 id=&#34;类型等价&#34;&gt;&lt;a href=&#34;#类型等价&#34; class=&#34;headerlink&#34; title=&#34;类型等价&#34;&gt;&lt;/a&gt;类型等价&lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;Name equivalence (NE): 必须声明是同一个类型才是同一类型&lt;/li&gt;
 &lt;li&gt;Structure equivalence (SE): 如果两个类型的结构完全相同（即它们由相同的构造器以相同的顺序组成），那么它们就被认为是等价的，即使它们的名字不同&lt;/li&gt;
 &lt;/ul&gt;
 &lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;type A = &amp;#123;x: int; y: int&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;type B = &amp;#123;x: int; y: int&amp;#125; &lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;Tiger 用的是 NE&lt;br&gt;
- 在 Tiger 编程语言中，存在两个独立的命名空间：一个用于类型（Types），另一个用于函数和变量（Functions and Variables）。所以类型和函数 / 变量可以存在相同的名字，但是函数和变量不能存在相同的名字。&lt;br&gt;
-所以需要两个 env&lt;/p&gt;
+&lt;p&gt;Tiger用的是NE&lt;br&gt;在Tiger编程语言中，存在两个独立的命名空间：一个用于类型（Types），另一个用于函数和变量（Functions and Variables）。所以类型和函数&amp;#x2F;变量可以存在相同的名字，但是函数和变量不能存在相同的名字。&lt;br&gt;所以需要两个env&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Type env
-&lt;ul&gt;
+&lt;li&gt;Type env&lt;ul&gt;
 &lt;li&gt;symbol -&amp;gt; Ty_ty&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;Value env
-&lt;ul&gt;
+&lt;li&gt;Value env&lt;ul&gt;
 &lt;li&gt;对于变量，symbol -&amp;gt; Ty_ty&lt;/li&gt;
-&lt;li ty_tylist formals, ty_ty results&gt;对于函数，symbol -&amp;gt; struct&lt;/li&gt;
+&lt;li&gt;对于函数，symbol -&amp;gt; struct{Ty_tyList formals, Ty_ty results}&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;类型检查的rule&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#类型检查的rule&#34;&gt;#&lt;/a&gt; 类型检查的 rule&lt;/h3&gt;
-&lt;p&gt;类型检查分为两部分:&lt;/p&gt;
+&lt;h3 id=&#34;类型检查的rule&#34;&gt;&lt;a href=&#34;#类型检查的rule&#34; class=&#34;headerlink&#34; title=&#34;类型检查的rule&#34;&gt;&lt;/a&gt;类型检查的rule&lt;/h3&gt;&lt;p&gt;类型检查分为两部分:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Type-checking expressions: 对于每个表达式，根据当前的 Type 和 Value 环境来确定其类型，并检查是否符合语言的类型规则&lt;/li&gt;
-&lt;li&gt;Type-checking declarations: 在 Tiger 语言中声明只可能在 let 语句中出现&lt;br&gt;
-好像就是讲了 transExp, transDec, transVar，AST 递归检查每个节点的类型然后一层一层往上传再检查&lt;/li&gt;
+&lt;li&gt;Type-checking expressions: 对于每个表达式，根据当前的Type和Value环境来确定其类型，并检查是否符合语言的类型规则&lt;/li&gt;
+&lt;li&gt;Type-checking declarations: 在Tiger语言中声明只可能在let语句中出现&lt;br&gt;好像就是讲了transExp, transDec, transVar，AST递归检查每个节点的类型然后一层一层往上传再检查&lt;/li&gt;
 &lt;/ul&gt;
 </content>
         <category term="语义分析" />
