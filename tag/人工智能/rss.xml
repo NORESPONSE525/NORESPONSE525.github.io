@@ -7,24 +7,79 @@
         <language>en</language>
         <pubDate>Mon, 16 Jun 2025 00:00:00 +0800</pubDate>
         <lastBuildDate>Mon, 16 Jun 2025 00:00:00 +0800</lastBuildDate>
-        <category>人工智能</category>
         <category>软件工程</category>
+        <category>人工智能</category>
         <category>编译原理</category>
-        <category>Register Allocation</category>
         <category>Liveness Analysis</category>
+        <category>Register Allocation</category>
         <category>词法分析</category>
-        <category>语法分析</category>
         <category>抽象语法</category>
-        <category>中间代码</category>
-        <category>活动记录</category>
+        <category>语法分析</category>
         <category>语义分析</category>
-        <category>Basic Blocks and Traces</category>
+        <category>活动记录</category>
+        <category>中间代码</category>
         <category>指令选择</category>
-        <category>计算机组成</category>
-        <category>存储系统</category>
-        <category>数据的表示与运算</category>
-        <category>错题</category>
         <category>计算机网络</category>
+        <category>Basic Blocks and Traces</category>
+        <category>计算机组成</category>
+        <category>数据的表示与运算</category>
+        <category>存储系统</category>
+        <category>错题</category>
+        <item>
+            <guid isPermalink="true">http://example.com/2025/06/16/AI/week10-11/</guid>
+            <title>Week10-11</title>
+            <link>http://example.com/2025/06/16/AI/week10-11/</link>
+            <category>人工智能</category>
+            <pubDate>Mon, 16 Jun 2025 00:00:00 +0800</pubDate>
+            <description><![CDATA[ &lt;h1 id=&#34;深度学习&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#深度学习&#34;&gt;#&lt;/a&gt; 深度学习&lt;/h1&gt;
+&lt;h2 id=&#34;前馈神经网络&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#前馈神经网络&#34;&gt;#&lt;/a&gt; 前馈神经网络&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;神经元&lt;/li&gt;
+&lt;li&gt;感知机（多一个激活函数）&lt;/li&gt;
+&lt;li&gt;激活函数: .RelU, Sigmoid, Softmax, tanh…&lt;/li&gt;
+&lt;li&gt;损失函数: MSE, Cross Entropy…s&lt;/li&gt;
+&lt;li&gt;参数优化: BP, 梯度下降&lt;br&gt;
+具体懒得写了，都说烂了&lt;br&gt;
+记一下这几个激活函数的形状和应用: tanh 和 sigmoid 大多用于二分类，RelU 一般用在隐藏层，Softmax 用在多分类而且概率和为 1&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;cnn&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#cnn&#34;&gt;#&lt;/a&gt; CNN&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;了解卷积操作和操作之后的结果&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;池化操作（最大池化、平均池化）&lt;br&gt;
+卷积层负责提取图像中的局部特征；&lt;br&gt;
+池化层用来大幅降低参数量级 (降维)；&lt;br&gt;
+激活函数负责非线性化；&lt;br&gt;
+全连接层类似传统神经网络的部分，用来输出想要的结果&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;神经网络正则化：为了缓解神经网络在训练过程中出现的过拟合问题，需要采取一些正则化技术来提升神经网络的泛化能力 (generalization)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Dropout：在训练神经网络过程中，每次参数更新时随机丢掉一部分神经元来减少神经网络复杂度，防止过拟合&lt;br&gt;
+&lt;img data-src=&#34;f1.jpg&#34; alt&gt;&lt;/li&gt;
+&lt;li&gt;Batch-Normalization（批归一化）: 通过规范化的手段，把神经网络每层中任意神经元的输入值分布改变到均值为 0、方差为 1 的标准正态分布。防止梯度消失，收敛更快&lt;/li&gt;
+&lt;li&gt;L1-Norm &amp;amp; L2-Norm&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;循环神经网络rnn&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#循环神经网络rnn&#34;&gt;#&lt;/a&gt; 循环神经网络（RNN）&lt;/h2&gt;
+&lt;p&gt;RNN 对具有序列特性的数据非常有效，它能挖掘数据中的时序信息以及语义信息&lt;/p&gt;
+&lt;p&gt;为了解决&lt;mark&gt;梯度消失问题&lt;/mark&gt;，长短时记忆模型（Long Short-Term Memory，LSTM）被提出&lt;br&gt;
+ LSTM：&lt;br&gt;
+与简单的循环神经网络结构不同，长短时记忆网络（Long Short-Term Memory，LSTM）中引入了&lt;mark&gt;内部记忆单元&lt;/mark&gt;（internal memory cell）和&lt;mark&gt;门&lt;/mark&gt;（gates）两种结构来对当前时刻输入信息以及前序时刻所生成信息进行整合和传递。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;输入门 (input gate)、遗忘门 (forget gate) 和输出门 (output gate) 三种 gate&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;门控循环单元（GRU）是一种对 LSTM 简化的深度学习模型。与长短时记忆网络相比，GRU 不再使用记忆单元来传递信息，仅使用隐藏状态来进行信息的传递。相比于长短时记忆网络来说，GRU 有更高的计算速度。&lt;/p&gt;
+&lt;h3 id=&#34;注意力机制&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#注意力机制&#34;&gt;#&lt;/a&gt; 注意力机制&lt;/h3&gt;
+&lt;p&gt;注意力机制对不同信息的关注程度（重要程度）由权值来体现，注意力机制可以视为&lt;mark&gt;查询矩阵 (Query)&lt;/mark&gt;&lt;mark&gt;、键 (key)&lt;mark&gt; 以及&lt;/mark&gt;加权平均值&lt;/mark&gt;构成了多层感知机 (Multilayer Perceptron, MLP)&lt;/p&gt;
+&lt;h2 id=&#34;深度生成学习deep-generative-learning-model&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#深度生成学习deep-generative-learning-model&#34;&gt;#&lt;/a&gt; 深度生成学习（deep generative learning model）&lt;/h2&gt;
+&lt;p&gt;判别模型 vs 生成模型&lt;br&gt;
+变分自编码器 (variational auto-encoder, VAE) 、 自回归模型 (Autoregressivemodels) 与生成对抗网络（generative adversarial network，GAN）等&lt;/p&gt;
+ ]]></description>
+        </item>
         <item>
             <guid isPermalink="true">http://example.com/2025/06/16/AI/week12-13/</guid>
             <title>Week12-13</title>
@@ -126,61 +181,6 @@
 &lt;/ul&gt;
 &lt;h4 id=&#34;q-learning&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#q-learning&#34;&gt;#&lt;/a&gt; Q-learning&lt;/h4&gt;
 &lt;h4 id=&#34;dqn&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#dqn&#34;&gt;#&lt;/a&gt; DQN&lt;/h4&gt;
- ]]></description>
-        </item>
-        <item>
-            <guid isPermalink="true">http://example.com/2025/06/16/AI/week10-11/</guid>
-            <title>Week10-11</title>
-            <link>http://example.com/2025/06/16/AI/week10-11/</link>
-            <category>人工智能</category>
-            <pubDate>Mon, 16 Jun 2025 00:00:00 +0800</pubDate>
-            <description><![CDATA[ &lt;h1 id=&#34;深度学习&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#深度学习&#34;&gt;#&lt;/a&gt; 深度学习&lt;/h1&gt;
-&lt;h2 id=&#34;前馈神经网络&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#前馈神经网络&#34;&gt;#&lt;/a&gt; 前馈神经网络&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;神经元&lt;/li&gt;
-&lt;li&gt;感知机（多一个激活函数）&lt;/li&gt;
-&lt;li&gt;激活函数: .RelU, Sigmoid, Softmax, tanh…&lt;/li&gt;
-&lt;li&gt;损失函数: MSE, Cross Entropy…s&lt;/li&gt;
-&lt;li&gt;参数优化: BP, 梯度下降&lt;br&gt;
-具体懒得写了，都说烂了&lt;br&gt;
-记一下这几个激活函数的形状和应用: tanh 和 sigmoid 大多用于二分类，RelU 一般用在隐藏层，Softmax 用在多分类而且概率和为 1&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;cnn&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#cnn&#34;&gt;#&lt;/a&gt; CNN&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;了解卷积操作和操作之后的结果&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;池化操作（最大池化、平均池化）&lt;br&gt;
-卷积层负责提取图像中的局部特征；&lt;br&gt;
-池化层用来大幅降低参数量级 (降维)；&lt;br&gt;
-激活函数负责非线性化；&lt;br&gt;
-全连接层类似传统神经网络的部分，用来输出想要的结果&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;神经网络正则化：为了缓解神经网络在训练过程中出现的过拟合问题，需要采取一些正则化技术来提升神经网络的泛化能力 (generalization)&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Dropout：在训练神经网络过程中，每次参数更新时随机丢掉一部分神经元来减少神经网络复杂度，防止过拟合&lt;br&gt;
-&lt;img data-src=&#34;f1.jpg&#34; alt&gt;&lt;/li&gt;
-&lt;li&gt;Batch-Normalization（批归一化）: 通过规范化的手段，把神经网络每层中任意神经元的输入值分布改变到均值为 0、方差为 1 的标准正态分布。防止梯度消失，收敛更快&lt;/li&gt;
-&lt;li&gt;L1-Norm &amp;amp; L2-Norm&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;循环神经网络rnn&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#循环神经网络rnn&#34;&gt;#&lt;/a&gt; 循环神经网络（RNN）&lt;/h2&gt;
-&lt;p&gt;RNN 对具有序列特性的数据非常有效，它能挖掘数据中的时序信息以及语义信息&lt;/p&gt;
-&lt;p&gt;为了解决&lt;mark&gt;梯度消失问题&lt;/mark&gt;，长短时记忆模型（Long Short-Term Memory，LSTM）被提出&lt;br&gt;
- LSTM：&lt;br&gt;
-与简单的循环神经网络结构不同，长短时记忆网络（Long Short-Term Memory，LSTM）中引入了&lt;mark&gt;内部记忆单元&lt;/mark&gt;（internal memory cell）和&lt;mark&gt;门&lt;/mark&gt;（gates）两种结构来对当前时刻输入信息以及前序时刻所生成信息进行整合和传递。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;输入门 (input gate)、遗忘门 (forget gate) 和输出门 (output gate) 三种 gate&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;门控循环单元（GRU）是一种对 LSTM 简化的深度学习模型。与长短时记忆网络相比，GRU 不再使用记忆单元来传递信息，仅使用隐藏状态来进行信息的传递。相比于长短时记忆网络来说，GRU 有更高的计算速度。&lt;/p&gt;
-&lt;h3 id=&#34;注意力机制&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#注意力机制&#34;&gt;#&lt;/a&gt; 注意力机制&lt;/h3&gt;
-&lt;p&gt;注意力机制对不同信息的关注程度（重要程度）由权值来体现，注意力机制可以视为&lt;mark&gt;查询矩阵 (Query)&lt;/mark&gt;&lt;mark&gt;、键 (key)&lt;mark&gt; 以及&lt;/mark&gt;加权平均值&lt;/mark&gt;构成了多层感知机 (Multilayer Perceptron, MLP)&lt;/p&gt;
-&lt;h2 id=&#34;深度生成学习deep-generative-learning-model&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#深度生成学习deep-generative-learning-model&#34;&gt;#&lt;/a&gt; 深度生成学习（deep generative learning model）&lt;/h2&gt;
-&lt;p&gt;判别模型 vs 生成模型&lt;br&gt;
-变分自编码器 (variational auto-encoder, VAE) 、 自回归模型 (Autoregressivemodels) 与生成对抗网络（generative adversarial network，GAN）等&lt;/p&gt;
  ]]></description>
         </item>
         <item>
