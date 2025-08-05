@@ -5,26 +5,124 @@
         <link>http://example.com</link>
         <description>成分复杂的CSer from ZJU</description>
         <language>en</language>
-        <pubDate>Tue, 01 Jul 2025 00:00:00 +0800</pubDate>
-        <lastBuildDate>Tue, 01 Jul 2025 00:00:00 +0800</lastBuildDate>
-        <category>软件工程</category>
+        <pubDate>Fri, 01 Aug 2025 00:00:00 +0800</pubDate>
+        <lastBuildDate>Fri, 01 Aug 2025 00:00:00 +0800</lastBuildDate>
         <category>人工智能</category>
+        <category>软件工程</category>
         <category>编译原理</category>
-        <category>Liveness Analysis</category>
         <category>Register Allocation</category>
         <category>词法分析</category>
-        <category>抽象语法</category>
         <category>语法分析</category>
-        <category>语义分析</category>
+        <category>Liveness Analysis</category>
+        <category>抽象语法</category>
         <category>活动记录</category>
         <category>中间代码</category>
+        <category>语义分析</category>
+        <category>Basic Blocks and Traces</category>
         <category>指令选择</category>
         <category>计算机网络</category>
-        <category>Basic Blocks and Traces</category>
         <category>计算机组成</category>
         <category>数据的表示与运算</category>
         <category>存储系统</category>
+        <category>指令</category>
         <category>错题</category>
+        <item>
+            <guid isPermalink="true">http://example.com/2025/08/01/computer-science/computer-organization/ch4/</guid>
+            <title>Ch4</title>
+            <link>http://example.com/2025/08/01/computer-science/computer-organization/ch4/</link>
+            <category>指令</category>
+            <pubDate>Fri, 01 Aug 2025 00:00:00 +0800</pubDate>
+            <description><![CDATA[ &lt;h1 id=&#34;ch4-指令系统&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#ch4-指令系统&#34;&gt;#&lt;/a&gt; Ch4 指令系统&lt;/h1&gt;
+&lt;h2 id=&#34;指令系统&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#指令系统&#34;&gt;#&lt;/a&gt; 指令系统&lt;/h2&gt;
+&lt;h3 id=&#34;isa王道叫它指令集体系结构&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#isa王道叫它指令集体系结构&#34;&gt;#&lt;/a&gt; ISA（王道叫它指令集体系结构）&lt;/h3&gt;
+&lt;p&gt;指令系统 vs ISA&lt;/p&gt;
+&lt;p&gt;ISA 完整地定义了软件和硬件之间的接口，规定了：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;指令格式（指令寻址方式，操作类型，操作数）&lt;/li&gt;
+&lt;li&gt;操作数的类型、寻址方式、大端小端存放&lt;/li&gt;
+&lt;li&gt;程序可访问的寄存器编号、个数和位数，存储空间大小和编址方式&lt;/li&gt;
+&lt;li&gt;指令执行过程的控制方式（PC, condition code, …）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;指令的基本格式&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#指令的基本格式&#34;&gt;#&lt;/a&gt; 指令的基本格式&lt;/h3&gt;
+&lt;p&gt;操作码 + 地址码&lt;br&gt;
+主存一般是按字节编址，所以指令字长通常为字节的整数倍&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;零地址指令&lt;br&gt;
+ NOP, HLT&lt;br&gt;
+ 不需要操作数。&lt;br&gt;
+零地址的运算类指令仅用在堆栈计算机中（操作数直接从栈顶弹出）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;一地址指令&lt;br&gt;
+ OP, A1&lt;br&gt;
+OP(A1) -&amp;gt; A1&lt;br&gt;
+ 加 1，减 1，取反，求补，移位等&lt;br&gt;
+可能有一个操作数或者两个操作数&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;隐含约定目的地址的双操作数指令，地址码指明一个操作数，另一个操作数来自隐含寻址&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;二地址指令&lt;br&gt;
+ OP, A1, A2&lt;br&gt;
+(A1)OP(A2) -&amp;gt; A1&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;三地址指令&lt;br&gt;
+ OP, A1, A2, A3&lt;br&gt;
+(A1)OP(A2) -&amp;gt; A3&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;四地址指令&lt;br&gt;
+ OP, A1, A2, A3, A4&lt;br&gt;
+ (A1) OP (A2) -&amp;gt; A3, A4 = 下一条将要执行指令的地址&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;定长操作码指令格式&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#定长操作码指令格式&#34;&gt;#&lt;/a&gt; 定长操作码指令格式&lt;/h3&gt;
+&lt;p&gt;n 位 opcode 最多能表示 2^n 条指令&lt;br&gt;
+指令字长：单字长 (PC = PC + 1)、双字长 (PC = PC + 2)…&lt;/p&gt;
+&lt;h3 id=&#34;扩展操作码指令格式&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#扩展操作码指令格式&#34;&gt;#&lt;/a&gt; 扩展操作码指令格式&lt;/h3&gt;
+&lt;p&gt;才去可变长度操作码，分散地放在指令字的不同位置上&lt;br&gt;
+要求：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;不允许短码是长码的前缀&lt;/li&gt;
+&lt;li&gt;各指令的操作码不能重复&lt;br&gt;
+&lt;img data-src=&#34;f1.jpg&#34; alt&gt;&lt;br&gt;
+ RISC-V 指令集&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;指令的操作类型&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#指令的操作类型&#34;&gt;#&lt;/a&gt; 指令的操作类型&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;数据传送&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;MOV: 寄存器到寄存器&lt;/li&gt;
+&lt;li&gt;LOAD: 从内存读到寄存器&lt;/li&gt;
+&lt;li&gt;STORE: 从寄存器写入内存&lt;/li&gt;
+&lt;li&gt;PUSH&lt;/li&gt;
+&lt;li&gt;POP&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;算术和逻辑运算&lt;br&gt;
+ ADD, SUB, MUL, DIV, MOD, AND, OR, XOR, NOT, XOR, INC (加一), DEC (减一)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;移位&lt;br&gt;
+算术移位，逻辑移位，循环移位&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;转移&lt;br&gt;
+ JMP, BRANCH, CALL, RET, TRAP（中断隐指令是硬件实现的，只有 TRAP 是软指令）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;I/O 操作&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+ ]]></description>
+        </item>
         <item>
             <guid isPermalink="true">http://example.com/2025/07/01/computer-science/computer-organization/ch3/</guid>
             <title>Ch3</title>
@@ -414,7 +512,7 @@ set index 是 10010001 也就是 145，所以可能的 block 号是 145*4 = 580,
 &lt;h3 id=&#34;cache一致性问题&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#cache一致性问题&#34;&gt;#&lt;/a&gt; Cache 一致性问题&lt;/h3&gt;
 &lt;p&gt;当 write hit 时：&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;Write through 全写法&lt;br&gt;
+&lt;li&gt;Write through 直写 / 全写法&lt;br&gt;
  Cache hit 的时候，CPU 不仅写入 Cache，而且写入主存&lt;br&gt;
 为了减少写入主存的时间小号，增加一个 write buffer，CPU 同时写入 Cache 和 write buffer，write buffer 采用 FIFO，当 write buffer 满时，将 write buffer 中的数据写入主存&lt;/li&gt;
 &lt;li&gt;Write back 写回法&lt;br&gt;
@@ -457,8 +555,9 @@ set index 是 10010001 也就是 145，所以可能的 block 号是 145*4 = 580,
 &lt;/ul&gt;
 &lt;ol&gt;
 &lt;li&gt;页表 (page table)&lt;br&gt;
+ 页表放在主存中。&lt;br&gt;
 &lt;img data-src=&#34;f33.jpg&#34; alt&gt;&lt;br&gt;
- 有效位（Valid Bit）：用于指示一个页面是否已经被加载到主存中。如果有效位被设置为 1，这意味着对应的页面已经在物理内存中，可以立即被访问。如果有效位为 0，则表示该页面当前不在内存中，可能需要从磁盘或其他存储设备中调入。当一个程序尝试访问一个页面时，操作系统会检查页表中的有效位，如果发现页面不在内存中，就会触发一个 page fault，然后将页面从磁盘加载到内存中。&lt;br&gt;
+有效位（Valid Bit）：用于指示一个页面是否已经被加载到主存中。如果有效位被设置为 1，这意味着对应的页面已经在物理内存中，可以立即被访问。如果有效位为 0，则表示该页面当前不在内存中，可能需要从磁盘或其他存储设备中调入。当一个程序尝试访问一个页面时，操作系统会检查页表中的有效位，如果发现页面不在内存中，就会触发一个 page fault，然后将页面从磁盘加载到内存中。&lt;br&gt;
 引用位（Reference Bit）：引用位主要用于页面置换算法中，它记录了页面最近是否被访问过。每当一个页面被访问时，操作系统会将该页面的引用位置为 1。随着时间的推移，如果一个页面长时间没有被访问，它的引用位可能会被清零。当操作系统需要选择一个页面进行置换时，它可能会优先选择那些引用位为 0 的页面。&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;转换过程：当一个程序尝试访问内存时，它会生成一个虚拟地址。虚拟地址包含两部分信息：页号（Page Number）和页内偏移（Offset）。用 VPN 作为索引查询 page table，检查 valid bit 是否为 1，从页表条目中获取 PPN，PPN 和 page offset 组合成物理地址。&lt;/p&gt;
@@ -475,7 +574,7 @@ set index 是 10010001 也就是 145，所以可能的 block 号是 145*4 = 580,
 &lt;li&gt;
 &lt;p&gt;TLB（快表）&lt;br&gt;
 为了减少访问主存的此书，TLB 相当于 page table 的 cache。&lt;br&gt;
-TLB 用 &lt;code&gt;SRAM&lt;/code&gt;  实现，工作原理类似于 Cache，通常采用 full associative 或者 set associative。&lt;br&gt;
+TLB 用 &lt;code&gt;SRAM&lt;/code&gt;  实现，不在主存中，工作原理类似于 Cache，通常采用 full associative 或者 set associative。&lt;br&gt;
 &lt;img data-src=&#34;f35.jpg&#34; alt&gt;&lt;br&gt;
 通过 VPN 查找 TLB 和 Cache 的查找一样，如果是全相连则直接比较 tag，如果是组相连则通过低位查找 set，然后用高位和 tag 比较。&lt;/p&gt;
 &lt;/li&gt;

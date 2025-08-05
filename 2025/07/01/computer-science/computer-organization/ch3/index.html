@@ -116,7 +116,7 @@ NoResponse's Blog = NoResponse's Blog</title>
 
       </div>
       <div id="imgs" class="pjax">
-          <img src="/images/bg17.jpg">
+          <img src="/images/bg30.jpg">
       </div>
     </header>
     <div id="waves">
@@ -547,7 +547,7 @@ set index 是 10010001 也就是 145，所以可能的 block 号是 145*4 = 580,
 <h3 id="cache一致性问题"><a class="markdownIt-Anchor" href="#cache一致性问题">#</a> Cache 一致性问题</h3>
 <p>当 write hit 时：</p>
 <ol>
-<li>Write through 全写法<br>
+<li>Write through 直写 / 全写法<br>
  Cache hit 的时候，CPU 不仅写入 Cache，而且写入主存<br>
 为了减少写入主存的时间小号，增加一个 write buffer，CPU 同时写入 Cache 和 write buffer，write buffer 采用 FIFO，当 write buffer 满时，将 write buffer 中的数据写入主存</li>
 <li>Write back 写回法<br>
@@ -590,8 +590,9 @@ set index 是 10010001 也就是 145，所以可能的 block 号是 145*4 = 580,
 </ul>
 <ol>
 <li>页表 (page table)<br>
+ 页表放在主存中。<br>
 <img data-src="f33.jpg" alt><br>
- 有效位（Valid Bit）：用于指示一个页面是否已经被加载到主存中。如果有效位被设置为 1，这意味着对应的页面已经在物理内存中，可以立即被访问。如果有效位为 0，则表示该页面当前不在内存中，可能需要从磁盘或其他存储设备中调入。当一个程序尝试访问一个页面时，操作系统会检查页表中的有效位，如果发现页面不在内存中，就会触发一个 page fault，然后将页面从磁盘加载到内存中。<br>
+有效位（Valid Bit）：用于指示一个页面是否已经被加载到主存中。如果有效位被设置为 1，这意味着对应的页面已经在物理内存中，可以立即被访问。如果有效位为 0，则表示该页面当前不在内存中，可能需要从磁盘或其他存储设备中调入。当一个程序尝试访问一个页面时，操作系统会检查页表中的有效位，如果发现页面不在内存中，就会触发一个 page fault，然后将页面从磁盘加载到内存中。<br>
 引用位（Reference Bit）：引用位主要用于页面置换算法中，它记录了页面最近是否被访问过。每当一个页面被访问时，操作系统会将该页面的引用位置为 1。随着时间的推移，如果一个页面长时间没有被访问，它的引用位可能会被清零。当操作系统需要选择一个页面进行置换时，它可能会优先选择那些引用位为 0 的页面。</li>
 </ol>
 <p>转换过程：当一个程序尝试访问内存时，它会生成一个虚拟地址。虚拟地址包含两部分信息：页号（Page Number）和页内偏移（Offset）。用 VPN 作为索引查询 page table，检查 valid bit 是否为 1，从页表条目中获取 PPN，PPN 和 page offset 组合成物理地址。</p>
@@ -608,7 +609,7 @@ set index 是 10010001 也就是 145，所以可能的 block 号是 145*4 = 580,
 <li>
 <p>TLB（快表）<br>
 为了减少访问主存的此书，TLB 相当于 page table 的 cache。<br>
-TLB 用 <code>SRAM</code>  实现，工作原理类似于 Cache，通常采用 full associative 或者 set associative。<br>
+TLB 用 <code>SRAM</code>  实现，不在主存中，工作原理类似于 Cache，通常采用 full associative 或者 set associative。<br>
 <img data-src="f35.jpg" alt><br>
 通过 VPN 查找 TLB 和 Cache 的查找一样，如果是全相连则直接比较 tag，如果是组相连则通过低位查找 set，然后用高位和 tag 比较。</p>
 </li>
@@ -649,7 +650,7 @@ TLB 用 <code>SRAM</code>  实现，工作原理类似于 Cache，通常采用 f
       <i class="ic i-calendar-check"></i>
     </span>
     <span class="text">Edited on</span>
-    <time title="Modified: 2025-08-04 16:44:33" itemprop="dateModified" datetime="2025-08-04T16:44:33+08:00">2025-08-04</time>
+    <time title="Modified: 2025-08-05 16:06:03" itemprop="dateModified" datetime="2025-08-05T16:06:03+08:00">2025-08-05</time>
   </span>
 </div>
 
@@ -704,7 +705,7 @@ TLB 用 <code>SRAM</code>  实现，工作原理类似于 Cache，通常采用 f
     <div class="item left">
       
 
-  <a href="/2025/07/01/computer-science/computer-organization/%E9%94%99%E9%A2%98%E9%9B%86%E5%90%88/" itemprop="url" rel="prev" data-background-image="&#x2F;images&#x2F;bg12.jpg" title="错题集合">
+  <a href="/2025/07/01/computer-science/computer-organization/%E9%94%99%E9%A2%98%E9%9B%86%E5%90%88/" itemprop="url" rel="prev" data-background-image="&#x2F;images&#x2F;bg7.jpg" title="错题集合">
   <span class="type">Previous Post</span>
   <span class="category"><i class="ic i-flag"></i> 计算机组成</span>
   <h3>错题集合</h3>
@@ -712,6 +713,14 @@ TLB 用 <code>SRAM</code>  实现，工作原理类似于 Cache，通常采用 f
 
     </div>
     <div class="item right">
+      
+
+  <a href="/2025/08/01/computer-science/computer-organization/ch4/" itemprop="url" rel="next" data-background-image="&#x2F;images&#x2F;bg5.jpg" title="Ch4">
+  <span class="type">Next Post</span>
+  <span class="category"><i class="ic i-flag"></i> 计算机组成</span>
+  <h3>Ch4</h3>
+  </a>
+
     </div>
 </div>
 
@@ -732,7 +741,7 @@ TLB 用 <code>SRAM</code>  实现，工作原理类似于 Cache，通常采用 f
       </div>
       <div class="related panel pjax" data-title="Related">
         <ul>
-          <li><a href="/2025/05/13/computer-science/computer-organization/ch1/" rel="bookmark" title="Ch1">Ch1</a></li><li><a href="/2025/05/14/computer-science/computer-organization/ch2/" rel="bookmark" title="Ch2">Ch2</a></li><li class="active"><a href="/2025/07/01/computer-science/computer-organization/ch3/" rel="bookmark" title="Ch3">Ch3</a></li><li><a href="/2025/07/01/computer-science/computer-organization/%E9%94%99%E9%A2%98%E9%9B%86%E5%90%88/" rel="bookmark" title="错题集合">错题集合</a></li>
+          <li><a href="/2025/05/13/computer-science/computer-organization/ch1/" rel="bookmark" title="Ch1">Ch1</a></li><li><a href="/2025/05/14/computer-science/computer-organization/ch2/" rel="bookmark" title="Ch2">Ch2</a></li><li class="active"><a href="/2025/07/01/computer-science/computer-organization/ch3/" rel="bookmark" title="Ch3">Ch3</a></li><li><a href="/2025/07/01/computer-science/computer-organization/%E9%94%99%E9%A2%98%E9%9B%86%E5%90%88/" rel="bookmark" title="错题集合">错题集合</a></li><li><a href="/2025/08/01/computer-science/computer-organization/ch4/" rel="bookmark" title="Ch4">Ch4</a></li>
         </ul>
       </div>
       <div class="overview panel" data-title="Overview">
@@ -746,7 +755,7 @@ TLB 用 <code>SRAM</code>  实现，工作原理类似于 Cache，通常采用 f
 <nav class="state">
     <div class="item posts">
       <a href="/archives/">
-        <span class="count">26</span>
+        <span class="count">27</span>
         <span class="name">posts</span>
       </a>
     </div>
@@ -758,7 +767,7 @@ TLB 用 <code>SRAM</code>  实现，工作原理类似于 Cache，通常采用 f
     </div>
     <div class="item tags">
       <a href="/tags/">
-        <span class="count">18</span>
+        <span class="count">19</span>
         <span class="name">tags</span>
       </a>
     </div>
@@ -821,10 +830,12 @@ TLB 用 <code>SRAM</code>  实现，工作原理类似于 Cache，通常采用 f
 
   <ul id="quick">
     <li class="prev pjax">
+        <a href="/2025/07/01/computer-science/computer-organization/%E9%94%99%E9%A2%98%E9%9B%86%E5%90%88/" rel="prev" title="Previous Post"><i class="ic i-chevron-left"></i></a>
     </li>
     <li class="up"><i class="ic i-arrow-up"></i></li>
     <li class="down"><i class="ic i-arrow-down"></i></li>
     <li class="next pjax">
+        <a href="/2025/08/01/computer-science/computer-organization/ch4/" rel="next" title="Next Post"><i class="ic i-chevron-right"></i></a>
     </li>
     <li class="percent"></li>
   </ul>
@@ -851,7 +862,49 @@ TLB 用 <code>SRAM</code>  实现，工作原理类似于 Cache，通常采用 f
 <a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
 </div>
 
-    <span><a href="/2025/06/18/computer-science/compile-principles/ch10/" title="Liveness Analysis">Liveness Analysis</a></span>
+    <span><a href="/2025/03/29/computer-science/compile-principles/ch4/" title="抽象语法">抽象语法</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/AI/" title="In 人工智能">人工智能</a>
+</div>
+
+    <span><a href="/2025/06/16/AI/week10-11/" title="Week10-11">Week10-11</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/AI/" title="In 人工智能">人工智能</a>
+</div>
+
+    <span><a href="/2025/05/20/AI/week2-3/" title="Week2-3">Week2-3</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
+</div>
+
+    <span><a href="/2025/03/22/computer-science/compile-principles/ch2/" title="词法分析">词法分析</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/AI/" title="In 人工智能">人工智能</a>
+</div>
+
+    <span><a href="/2025/06/16/AI/week14-15/" title="Week14-15">Week14-15</a></span>
   </li>
 
       
@@ -868,10 +921,32 @@ TLB 用 <code>SRAM</code>  实现，工作原理类似于 Cache，通常采用 f
   <li class="item">
     
 <div class="breadcrumb">
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
+</div>
+
+    <span><a href="/2025/06/17/computer-science/compile-principles/ch9/" title="指令选择">指令选择</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
 <a href="/categories/AI/" title="In 人工智能">人工智能</a>
 </div>
 
-    <span><a href="/2025/06/16/AI/week12-13/" title="Week12-13">Week12-13</a></span>
+    <span><a href="/2025/06/11/AI/week4-5/" title="Week4-5">Week4-5</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/SE/" title="In 软件工程">软件工程</a>
+</div>
+
+    <span><a href="/2025/06/19/SE/diagram/" title="画图题">画图题</a></span>
   </li>
 
       
@@ -883,79 +958,7 @@ TLB 用 <code>SRAM</code>  实现，工作原理类似于 Cache，通常采用 f
 <a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
 </div>
 
-    <span><a href="/2025/03/30/computer-science/compile-principles/ch5/" title="语义分析">语义分析</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/computer-network/" title="In 计算机网络">计算机网络</a>
-</div>
-
-    <span><a href="/2025/05/13/computer-science/computer-network/ch1/" title="Ch1">Ch1</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/computer-organization/" title="In 计算机组成">计算机组成</a>
-</div>
-
-    <span><a href="/2025/05/14/computer-science/computer-organization/ch2/" title="Ch2">Ch2</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
-</div>
-
-    <span><a href="/2025/03/21/computer-science/compile-principles/ch1/" title="Introduction">Introduction</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/computer-organization/" title="In 计算机组成">计算机组成</a>
-</div>
-
-    <span><a href="/2025/07/01/computer-science/computer-organization/%E9%94%99%E9%A2%98%E9%9B%86%E5%90%88/" title="错题集合">错题集合</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/computer-organization/" title="In 计算机组成">计算机组成</a>
-</div>
-
-    <span><a href="/2025/05/13/computer-science/computer-organization/ch1/" title="Ch1">Ch1</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
-</div>
-
-    <span><a href="/2025/03/29/computer-science/compile-principles/ch4/" title="抽象语法">抽象语法</a></span>
+    <span><a href="/2025/06/16/computer-science/compile-principles/ch7/" title="IR">IR</a></span>
   </li>
 
   </ul>
@@ -986,7 +989,7 @@ TLB 用 <code>SRAM</code>  实现，工作原理类似于 Cache，通常采用 f
     <span class="post-meta-item-icon">
       <i class="ic i-coffee"></i>
     </span>
-    <span title="Reading time total">1:14</span>
+    <span title="Reading time total">1:15</span>
   </div>
   <div class="powered-by">
     Powered by <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
