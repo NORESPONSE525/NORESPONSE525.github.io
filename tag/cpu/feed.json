@@ -1,0 +1,18 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "NoResponse's Blog • All posts by \"cpu\" tag",
+    "description": "成分复杂的CSer from ZJU",
+    "home_page_url": "http://example.com",
+    "items": [
+        {
+            "id": "http://example.com/2025/08/10/computer-science/computer-organization/ch5/",
+            "url": "http://example.com/2025/08/10/computer-science/computer-organization/ch5/",
+            "title": "Ch5",
+            "date_published": "2025-08-09T16:00:00.000Z",
+            "content_html": "<h1 id=\"Ch5-中央处理器\"><a href=\"#Ch5-中央处理器\" class=\"headerlink\" title=\"Ch5 中央处理器\"></a>Ch5 中央处理器</h1><h2 id=\"CPU的功能和基本结构\"><a href=\"#CPU的功能和基本结构\" class=\"headerlink\" title=\"CPU的功能和基本结构\"></a>CPU的功能和基本结构</h2><h3 id=\"功能\"><a href=\"#功能\" class=\"headerlink\" title=\"功能\"></a>功能</h3><p>CPU由运算器和控制器组成，具体功能包括：</p>\n<ul>\n<li>指令控制</li>\n<li>操作控制</li>\n<li>时间控制</li>\n<li>数据加工</li>\n<li>中断处理</li>\n</ul>\n<h3 id=\"基本结构\"><a href=\"#基本结构\" class=\"headerlink\" title=\"基本结构\"></a>基本结构</h3><ol>\n<li>运算器：ALU, 暂存器, ACC, GPRs, PSW, 移位寄存器， 计数器…</li>\n<li>控制器：PC, IR, ID, 时序电路，未操作信号发生器…</li>\n</ol>\n<h3 id=\"CPU的寄存器\"><a href=\"#CPU的寄存器\" class=\"headerlink\" title=\"CPU的寄存器\"></a>CPU的寄存器</h3><p>按汇编程序是否可访问分为用户可见寄存器(GPRs, PSW, PC)和用户不可见寄存器(存储器地址寄存器，存储器数据寄存器，IR, 暂存寄存器，累加寄存器，移位寄存器)<br>各寄存器的作用：</p>\n<ul>\n<li>在运算器中：<ul>\n<li>GPRs</li>\n<li>ACC: 通用寄存器，用于暂时存放ALU运算的结果</li>\n<li>SR（移位寄存器）：存放操作数且可以移位</li>\n<li>暂存寄存器：暂存从数据总线或通用寄存器送来的操作数，对应用程序员透明</li>\n<li>PSW：保留各种状态信息</li>\n</ul>\n</li>\n<li>在控制器中：<ul>\n<li>PC: 存放当前指令的地址</li>\n<li>IR: 存放当前指令</li>\n</ul>\n</li>\n</ul>\n<h2 id=\"指令执行过程\"><a href=\"#指令执行过程\" class=\"headerlink\" title=\"指令执行过程\"></a>指令执行过程</h2><h3 id=\"指令周期\"><a href=\"#指令周期\" class=\"headerlink\" title=\"指令周期\"></a>指令周期</h3><p>&#x3D; 取值周期 + 执行周期<br>间址周期在取址和执行之间<br>如果CPU在每条指令结束前都要发中断查询信号 （轮询法），后面要加上中断周期</p>\n<h3 id=\"指令周期的数据流\"><a href=\"#指令周期的数据流\" class=\"headerlink\" title=\"指令周期的数据流\"></a>指令周期的数据流</h3><ol>\n<li>取址周期</li>\n</ol>\n<ul>\n<li>PC-&gt;MAR-&gt;地址总线-&gt;存储器</li>\n<li>CU发出读命令-&gt;控制总线-&gt;主存</li>\n<li>主存-&gt;数据总线-&gt;IR</li>\n<li>CU发出控制信号-&gt;PC&#x3D;PC+1</li>\n</ul>\n<ol start=\"2\">\n<li>间址周期</li>\n</ol>\n",
+            "tags": [
+                "CPU"
+            ]
+        }
+    ]
+}
