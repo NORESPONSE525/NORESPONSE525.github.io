@@ -76,7 +76,7 @@ NoResponse's Blog = NoResponse's Blog</title>
       <i class="ic i-pen"></i>
     </span>
     <span class="text">Symbols count in article</span>
-    <span>844</span>
+    <span>748</span>
     <span class="text">words</span>
   </span>
   <span class="item" title="Reading time">
@@ -116,7 +116,7 @@ NoResponse's Blog = NoResponse's Blog</title>
 
       </div>
       <div id="imgs" class="pjax">
-          <img src="/images/bg24.jpg">
+          <img src="/images/bg21.jpg">
       </div>
     </header>
     <div id="waves">
@@ -164,40 +164,43 @@ NoResponse's Blog = NoResponse's Blog</title>
   <div class="body md" itemprop="articleBody">
     
 
-    <h1 id="错题集合"><a href="#错题集合" class="headerlink" title="错题集合"></a>错题集合</h1><h2 id="Ch2"><a href="#Ch2" class="headerlink" title="Ch2"></a>Ch2</h2><ol>
-<li>某计算机字长为8位，CPU中有一个8位加法器，已知无符号数x&#x3D;69, y&#x3D;38，若在该加法器中计算x-y，则加法器的两个输入短信息和输入的低位进位信息分别为（）</li>
+    <h1 id="错题集合"><a class="markdownIt-Anchor" href="#错题集合">#</a> 错题集合</h1>
+<h2 id="ch2"><a class="markdownIt-Anchor" href="#ch2">#</a> Ch2</h2>
+<ol>
+<li>某计算机字长为 8 位，CPU 中有一个 8 位加法器，已知无符号数 x=69, y=38，若在该加法器中计算 x-y，则加法器的两个输入短信息和输入的低位进位信息分别为（）</li>
 </ol>
 <ul>
-<li>0100 0101, 1101 1001, 1 <blockquote>
-<p>无符号数减法，在加法器中输入x的原码，y的取反和1</p>
-</blockquote>
-</li>
+<li>0100 0101, 1101 1001, 1</li>
 </ul>
+<blockquote>
+<p>无符号数减法，在加法器中输入 x 的原码，y 的取反和 1</p>
+</blockquote>
 <ol start="2">
-<li>减法指令 “sub R1, R2, R3” 的功能为 “(R1) - (R2) -&gt; R3”, 该指令执行后将生成进位&#x2F;借位标志CF和溢出标志OF，若(R1) &#x3D; FFFF FFFFH, R2 &#x3D; FFFF FFF0H, 则该减法指令执行后，CF和OF分别为：</li>
+<li>减法指令 “sub R1, R2, R3” 的功能为 “(R1) - (R2) -&gt; R3”, 该指令执行后将生成进位 / 借位标志 CF 和溢出标志 OF，若 (R1) = FFFF FFFFH, R2 = FFFF FFF0H, 则该减法指令执行后，CF 和 OF 分别为：</li>
 </ol>
 <ul>
-<li>CF &#x3D; 0, OF &#x3D; 0</li>
+<li>CF = 0, OF = 0</li>
 </ul>
 <ol start="3">
-<li>已知x, y为int类型，当x &#x3D; 100, y &#x3D; 200时，执行 “x - y”指令得到的溢出标志OF和结尾标志CF分别为0，1，那么当x &#x3D; 1-, y &#x3D; -20时，执行该指令得到的OF和CF分别为：</li>
+<li>已知 x, y 为 int 类型，当 x = 100, y = 200 时，执行 &quot;x - y&quot; 指令得到的溢出标志 OF 和结尾标志 CF 分别为 0，1，那么当 x = 1-, y = -20 时，执行该指令得到的 OF 和 CF 分别为：</li>
 </ol>
 <ul>
-<li>OF &#x3D; 0, CF &#x3D; 1<blockquote>
-<p>ALU生成标志位时只负责计算，不管运算对象是有符号数还是无符号数。CF&#x3D;1表示当做无符号数运算时溢出，OF&#x3D;1表示当做有符号数运算时溢出。当做有符号数，10-(-20)没问题，所以OF&#x3D;0；把它俩当做无符号数的时候，x &#x3D; 10 &#x3D; 0000 0000 0000 0000 0000 0000 0000 1010，y &#x3D; -20 &#x3D; 1111 1111 1111 1111 1111 1111 1110 1100，此时x &lt; y，所以CF&#x3D;1。</p>
-</blockquote>
-</li>
+<li>OF = 0, CF = 1</li>
 </ul>
+<blockquote>
+<p>ALU 生成标志位时只负责计算，不管运算对象是有符号数还是无符号数。CF=1 表示当做无符号数运算时溢出，OF=1 表示当做有符号数运算时溢出。当做有符号数，10-(-20) 没问题，所以 OF=0；把它俩当做无符号数的时候，x = 10 = 0000 0000 0000 0000 0000 0000 0000 1010，y = -20 = 1111 1111 1111 1111 1111 1111 1110 1100，此时 x &lt; y，所以 CF=1。</p>
+</blockquote>
 <ol start="4">
 <li>下列关于整数乘法运算的叙述中，错误的是：D</li>
 </ol>
 <ul>
-<li>A. 用阵列乘法器实现的乘运算可以在一个时钟周期内完成 –正确，因为是组合逻辑理论上可以在一个clc里完成</li>
-<li>B. 用ALU和移位器实现的乘运算无法在一个时钟周期内完成</li>
-<li>C. 变量与常数的乘运算可编译优化为若干移位及家&#x2F;减运算指令</li>
+<li>A. 用阵列乘法器实现的乘运算可以在一个时钟周期内完成 -- 正确，因为是组合逻辑理论上可以在一个 clc 里完成</li>
+<li>B. 用 ALU 和移位器实现的乘运算无法在一个时钟周期内完成</li>
+<li>C. 变量与常数的乘运算可编译优化为若干移位及家 / 减运算指令</li>
 <li>D. 两个变量的乘运算无法编译转换为移位及加法等指令的循环实现</li>
 </ul>
-<h2 id="Ch4"><a href="#Ch4" class="headerlink" title="Ch4"></a>Ch4</h2><ol>
+<h2 id="ch4"><a class="markdownIt-Anchor" href="#ch4">#</a> Ch4</h2>
+<ol>
 <li>简化地址结构的方式是尽量采用： 隐含寻址</li>
 </ol>
 
@@ -269,7 +272,7 @@ NoResponse's Blog = NoResponse's Blog</title>
     <div class="item left">
       
 
-  <a href="/2025/06/19/SE/diagram/" itemprop="url" rel="prev" data-background-image="&#x2F;images&#x2F;bg33.jpg" title="画图题">
+  <a href="/2025/06/19/SE/diagram/" itemprop="url" rel="prev" data-background-image="&#x2F;images&#x2F;bg18.jpg" title="画图题">
   <span class="type">Previous Post</span>
   <span class="category"><i class="ic i-flag"></i> 软件工程</span>
   <h3>画图题</h3>
@@ -279,7 +282,7 @@ NoResponse's Blog = NoResponse's Blog</title>
     <div class="item right">
       
 
-  <a href="/2025/07/01/computer-science/computer-organization/ch3/" itemprop="url" rel="next" data-background-image="&#x2F;images&#x2F;bg20.jpg" title="Ch3">
+  <a href="/2025/07/01/computer-science/computer-organization/ch3/" itemprop="url" rel="next" data-background-image="&#x2F;images&#x2F;bg19.jpg" title="Ch3">
   <span class="type">Next Post</span>
   <span class="category"><i class="ic i-flag"></i> 计算机组成</span>
   <h3>Ch3</h3>
@@ -301,11 +304,11 @@ NoResponse's Blog = NoResponse's Blog</title>
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="Contents">
-          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%94%99%E9%A2%98%E9%9B%86%E5%90%88"><span class="toc-number">1.</span> <span class="toc-text">错题集合</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Ch2"><span class="toc-number">1.1.</span> <span class="toc-text">Ch2</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Ch4"><span class="toc-number">1.2.</span> <span class="toc-text">Ch4</span></a></li></ol></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%94%99%E9%A2%98%E9%9B%86%E5%90%88"><span class="toc-number">1.</span> <span class="toc-text"> 错题集合</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#ch2"><span class="toc-number">1.1.</span> <span class="toc-text"> Ch2</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ch4"><span class="toc-number">1.2.</span> <span class="toc-text"> Ch4</span></a></li></ol></li></ol>
       </div>
       <div class="related panel pjax" data-title="Related">
         <ul>
-          <li><a href="/2025/05/13/computer-science/computer-organization/ch1/" rel="bookmark" title="Ch1">Ch1</a></li><li><a href="/2025/05/14/computer-science/computer-organization/ch2/" rel="bookmark" title="Ch2">Ch2</a></li><li><a href="/2025/07/01/computer-science/computer-organization/ch3/" rel="bookmark" title="Ch3">Ch3</a></li><li class="active"><a href="/2025/07/01/computer-science/computer-organization/%E9%94%99%E9%A2%98%E9%9B%86%E5%90%88/" rel="bookmark" title="错题集合">错题集合</a></li><li><a href="/2025/08/01/computer-science/computer-organization/ch4/" rel="bookmark" title="Ch4">Ch4</a></li><li><a href="/2025/08/10/computer-science/computer-organization/ch5/" rel="bookmark" title="Ch5">Ch5</a></li>
+          <li><a href="/2025/05/13/computer-science/computer-organization/ch1/" rel="bookmark" title="Ch1">Ch1</a></li><li><a href="/2025/05/14/computer-science/computer-organization/ch2/" rel="bookmark" title="Ch2">Ch2</a></li><li><a href="/2025/07/01/computer-science/computer-organization/ch3/" rel="bookmark" title="Ch3">Ch3</a></li><li class="active"><a href="/2025/07/01/computer-science/computer-organization/%E9%94%99%E9%A2%98%E9%9B%86%E5%90%88/" rel="bookmark" title="错题集合">错题集合</a></li><li><a href="/2025/08/01/computer-science/computer-organization/ch4/" rel="bookmark" title="Ch4">Ch4</a></li><li><a href="/2025/08/10/computer-science/computer-organization/ch6/" rel="bookmark" title="Ch6">Ch6</a></li><li><a href="/2025/08/10/computer-science/computer-organization/ch5/" rel="bookmark" title="Ch5">Ch5</a></li>
         </ul>
       </div>
       <div class="overview panel" data-title="Overview">
@@ -319,7 +322,7 @@ NoResponse's Blog = NoResponse's Blog</title>
 <nav class="state">
     <div class="item posts">
       <a href="/archives/">
-        <span class="count">28</span>
+        <span class="count">29</span>
         <span class="name">posts</span>
       </a>
     </div>
@@ -331,7 +334,7 @@ NoResponse's Blog = NoResponse's Blog</title>
     </div>
     <div class="item tags">
       <a href="/tags/">
-        <span class="count">20</span>
+        <span class="count">21</span>
         <span class="name">tags</span>
       </a>
     </div>
@@ -423,40 +426,22 @@ NoResponse's Blog = NoResponse's Blog</title>
 <div class="breadcrumb">
 <a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/computer-organization/" title="In 计算机组成">计算机组成</a>
+<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
 </div>
 
-    <span><a href="/2025/07/01/computer-science/computer-organization/%E9%94%99%E9%A2%98%E9%9B%86%E5%90%88/" title="错题集合">错题集合</a></span>
+    <span><a href="/2025/03/21/computer-science/compile-principles/ch1/" title="Introduction">Introduction</a></span>
   </li>
 
       
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/AI/" title="In 人工智能">人工智能</a>
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
 </div>
 
-    <span><a href="/2025/06/11/AI/week4-5/" title="Week4-5">Week4-5</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/SE/" title="In 软件工程">软件工程</a>
-</div>
-
-    <span><a href="/2025/06/19/SE/diagram/" title="画图题">画图题</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/AI/" title="In 人工智能">人工智能</a>
-</div>
-
-    <span><a href="/2025/06/16/AI/week14-15/" title="Week14-15">Week14-15</a></span>
+    <span><a href="/2025/03/22/computer-science/compile-principles/ch2/" title="词法分析">词法分析</a></span>
   </li>
 
       
@@ -467,18 +452,6 @@ NoResponse's Blog = NoResponse's Blog</title>
 </div>
 
     <span><a href="/2025/06/12/AI/week6-7/" title="Week6-7">Week6-7</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/computer-network/" title="In 计算机网络">计算机网络</a>
-</div>
-
-    <span><a href="/2025/05/13/computer-science/computer-network/ch1/" title="Ch1">Ch1</a></span>
   </li>
 
       
@@ -500,19 +473,27 @@ NoResponse's Blog = NoResponse's Blog</title>
 <a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
 </div>
 
-    <span><a href="/2025/03/21/computer-science/compile-principles/ch1/" title="Introduction">Introduction</a></span>
+    <span><a href="/2025/06/15/computer-science/compile-principles/ch6/" title="活动记录">活动记录</a></span>
   </li>
 
       
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
+<a href="/categories/AI/" title="In 人工智能">人工智能</a>
 </div>
 
-    <span><a href="/2025/06/18/computer-science/compile-principles/ch11/" title="Register Allocation">Register Allocation</a></span>
+    <span><a href="/2025/05/20/AI/week1/" title="Week1">Week1</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/AI/" title="In 人工智能">人工智能</a>
+</div>
+
+    <span><a href="/2025/06/16/AI/week10-11/" title="Week10-11">Week10-11</a></span>
   </li>
 
       
@@ -525,6 +506,28 @@ NoResponse's Blog = NoResponse's Blog</title>
 </div>
 
     <span><a href="/2025/03/30/computer-science/compile-principles/ch5/" title="语义分析">语义分析</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/computer-organization/" title="In 计算机组成">计算机组成</a>
+</div>
+
+    <span><a href="/2025/07/01/computer-science/computer-organization/ch3/" title="Ch3">Ch3</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/AI/" title="In 人工智能">人工智能</a>
+</div>
+
+    <span><a href="/2025/06/11/AI/week4-5/" title="Week4-5">Week4-5</a></span>
   </li>
 
   </ul>
@@ -549,13 +552,13 @@ NoResponse's Blog = NoResponse's Blog</title>
     <span class="post-meta-item-icon">
       <i class="ic i-chart-area"></i>
     </span>
-    <span title="Symbols count total">83k words</span>
+    <span title="Symbols count total">93k words</span>
 
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="ic i-coffee"></i>
     </span>
-    <span title="Reading time total">1:15</span>
+    <span title="Reading time total">1:25</span>
   </div>
   <div class="powered-by">
     Powered by <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>

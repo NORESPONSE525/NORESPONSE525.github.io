@@ -9,45 +9,72 @@
         <lastBuildDate>Mon, 16 Jun 2025 00:00:00 +0800</lastBuildDate>
         <category>人工智能</category>
         <category>软件工程</category>
+        <category>计算机组成</category>
+        <category>存储系统</category>
+        <category>数据的表示与运算</category>
+        <category>指令系统</category>
+        <category>总线</category>
+        <category>CPU</category>
         <category>编译原理</category>
         <category>Liveness Analysis</category>
-        <category>语法分析</category>
+        <category>错题</category>
         <category>Register Allocation</category>
-        <category>抽象语法</category>
         <category>词法分析</category>
-        <category>中间代码</category>
-        <category>活动记录</category>
+        <category>语法分析</category>
+        <category>抽象语法</category>
         <category>语义分析</category>
+        <category>活动记录</category>
         <category>Basic Blocks and Traces</category>
+        <category>中间代码</category>
         <category>指令选择</category>
         <category>计算机网络</category>
-        <category>计算机组成</category>
-        <category>指令系统</category>
-        <category>数据的表示与运算</category>
-        <category>存储系统</category>
-        <category>CPU</category>
-        <category>错题</category>
         <item>
             <guid isPermalink="true">http://example.com/2025/06/16/computer-science/compile-principles/ch7/</guid>
             <title>IR</title>
             <link>http://example.com/2025/06/16/computer-science/compile-principles/ch7/</link>
             <category>中间代码</category>
             <pubDate>Mon, 16 Jun 2025 00:00:00 +0800</pubDate>
-            <description><![CDATA[ &lt;h1 id=&#34;IR&#34;&gt;&lt;a href=&#34;#IR&#34; class=&#34;headerlink&#34; title=&#34;IR&#34;&gt;&lt;/a&gt;IR&lt;/h1&gt;&lt;p&gt;Intermediate Representation&lt;br&gt;解决高级语言和目标机器汇编语言之间的转化&lt;br&gt;为什么需要IR:&lt;/p&gt;
+            <description><![CDATA[ &lt;h1 id=&#34;ir&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#ir&#34;&gt;#&lt;/a&gt; IR&lt;/h1&gt;
+&lt;p&gt;Intermediate Representation&lt;br&gt;
+ 解决高级语言和目标机器汇编语言之间的转化&lt;br&gt;
+为什么需要 IR:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;更模块化、可迁移&lt;/li&gt;
-&lt;li&gt;分层分析和优化&lt;br&gt;IR可以有好多层：IR1-&amp;gt;IR2-&amp;gt;…-&amp;gt;IRn&lt;br&gt;+++info 编译流程划分&lt;br&gt;前端：源代码-&amp;gt;词法分析-&amp;gt;语法分析-&amp;gt;语义分析（IR之前的都是）&lt;br&gt;中端：基于IR的分析与变换（可能生成新IR，可以做一些机器无关优化比如循环展开等）&lt;br&gt;后端：指令选择-&amp;gt;寄存器分配-&amp;gt;指令调度-&amp;gt;机器码（IR之后的）&lt;br&gt;+++&lt;/li&gt;
+&lt;li&gt;分层分析和优化&lt;br&gt;
+ IR 可以有好多层：IR1-&amp;gt;IR2-&amp;gt;…-&amp;gt;IRn&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;Three-Address-Code&#34;&gt;&lt;a href=&#34;#Three-Address-Code&#34; class=&#34;headerlink&#34; title=&#34;Three-Address Code&#34;&gt;&lt;/a&gt;Three-Address Code&lt;/h2&gt;&lt;p&gt;最多有三个操作数&lt;br&gt;x &amp;#x3D; y op z&lt;br&gt;“地址”可以具有如下形式&lt;/p&gt;
+&lt;details class=&#34;info&#34;&gt;&lt;summary&gt;编译流程划分&lt;/summary&gt;&lt;div&gt;
+&lt;p&gt;前端：源代码 -&amp;gt; 词法分析 -&amp;gt; 语法分析 -&amp;gt; 语义分析（IR 之前的都是）&lt;br&gt;
+中端：基于 IR 的分析与变换（可能生成新 IR，可以做一些机器无关优化比如循环展开等）&lt;br&gt;
+后端：指令选择 -&amp;gt; 寄存器分配 -&amp;gt; 指令调度 -&amp;gt; 机器码（IR 之后的）&lt;/p&gt;
+&lt;/div&gt;&lt;/details&gt;
+&lt;h2 id=&#34;three-address-code&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#three-address-code&#34;&gt;#&lt;/a&gt; Three-Address Code&lt;/h2&gt;
+&lt;p&gt;最多有三个操作数&lt;br&gt;
+ x = y op z&lt;br&gt;
+ “地址” 可以具有如下形式&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;源程序中的名字(name)&lt;/li&gt;
+&lt;li&gt;源程序中的名字 (name)&lt;/li&gt;
 &lt;li&gt;常量 (constant)&lt;/li&gt;
-&lt;li&gt;临时变量(temporary)&lt;br&gt;&lt;img data-src=&#34;/f1.jpg&#34;&gt;&lt;br&gt;最常见的实现方法是将三地址代码作为四元组实现&lt;br&gt;+++info example&lt;br&gt;t1&amp;#x3D;x&amp;gt;0                  (gt, x, 0, t1)&lt;br&gt;if_false t1 goto L1     (if_f, t1, L1, _)&lt;br&gt;fact&amp;#x3D;1                  (asn, 1, fact, _)&lt;br&gt;label L2                (lab, L2, _, _)&lt;br&gt;+++&lt;/li&gt;
+&lt;li&gt;临时变量 (temporary)&lt;br&gt;
+&lt;img data-src=&#34;f1.jpg&#34; alt&gt;&lt;br&gt;
+ 最常见的实现方法是将三地址代码作为四元组实现&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;IR-Tree&#34;&gt;&lt;a href=&#34;#IR-Tree&#34; class=&#34;headerlink&#34; title=&#34;IR Tree&#34;&gt;&lt;/a&gt;IR Tree&lt;/h2&gt;&lt;p&gt;两大类节点：&lt;/p&gt;
+&lt;details class=&#34;info&#34;&gt;&lt;summary&gt;example&lt;/summary&gt;&lt;div&gt;
+&lt;p&gt;t1=x&amp;gt;0                  (gt, x, 0, t1)&lt;br&gt;
+if_false t1 goto L1     (if_f, t1, L1, _)&lt;br&gt;
+fact=1                  (asn, 1, fact, _)&lt;br&gt;
+label L2                (lab, L2, _, _)&lt;/p&gt;
+&lt;/div&gt;&lt;/details&gt;
+&lt;h2 id=&#34;ir-tree&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#ir-tree&#34;&gt;#&lt;/a&gt; IR Tree&lt;/h2&gt;
+&lt;p&gt;两大类节点：&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;表达式Exp&lt;/li&gt;
-&lt;li&gt;语句Stmt&lt;br&gt;文法：&lt;br&gt;&lt;img data-src=&#34;/f2.jpg&#34;&gt;&lt;br&gt;表达式：&lt;table&gt;
+&lt;li&gt;表达式 Exp&lt;/li&gt;
+&lt;li&gt;语句 Stmt&lt;br&gt;
+ 文法：&lt;br&gt;
+&lt;img data-src=&#34;f2.jpg&#34; alt&gt;&lt;br&gt;
+表达式：&lt;/li&gt;
+&lt;/ol&gt;
+&lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;Node&lt;/th&gt;
@@ -55,24 +82,25 @@
 &lt;th&gt;Example&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
-&lt;tbody&gt;&lt;tr&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
 &lt;td&gt;CONST(i)&lt;/td&gt;
-&lt;td&gt;整数常量i&lt;/td&gt;
+&lt;td&gt;整数常量 i&lt;/td&gt;
 &lt;td&gt;CONST(42) → the value 42&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;NAME(n)&lt;/td&gt;
-&lt;td&gt;符号常量n，通常是一个label，值是label的地址&lt;/td&gt;
+&lt;td&gt;符号常量 n，通常是一个 label，值是 label 的地址&lt;/td&gt;
 &lt;td&gt;NAME(L1) → address of label L1&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;TEMP(t)&lt;/td&gt;
-&lt;td&gt;临时变量t (like register)&lt;/td&gt;
+&lt;td&gt;临时变量 t (like register)&lt;/td&gt;
 &lt;td&gt;TEMP(t123) → contents of temporary t123&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;BINOP(o,e1,e2)&lt;/td&gt;
-&lt;td&gt;对e1和e2执行二元操作o&lt;/td&gt;
+&lt;td&gt;对 e1 和 e2 执行二元操作 o&lt;/td&gt;
 &lt;td&gt;BINOP(PLUS,TEMP(t1),CONST(1)) → t1+1&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -82,17 +110,16 @@
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;CALL(f,l)&lt;/td&gt;
-&lt;td&gt;Function call, l是参数列表&lt;/td&gt;
+&lt;td&gt;Function call, l 是参数列表&lt;/td&gt;
 &lt;td&gt;CALL(NAME(print),[TEMP(t1)]) → call print(t1)&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;ESEQ(s,e)&lt;/td&gt;
-&lt;td&gt;先执行语句s，再求值表达式e并返回e的结果&lt;/td&gt;
-&lt;td&gt;ESEQ(MOVE(TEMP(t),CONST(1)),TEMP(t)) → (t&amp;#x3D;1; t)&lt;/td&gt;
+&lt;td&gt;先执行语句 s，再求值表达式 e 并返回 e 的结果&lt;/td&gt;
+&lt;td&gt;ESEQ(MOVE(TEMP(t),CONST(1)),TEMP(t)) → (t=1; t)&lt;/td&gt;
 &lt;/tr&gt;
-&lt;/tbody&gt;&lt;/table&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
 &lt;p&gt;语句：&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
@@ -102,91 +129,123 @@
 &lt;th&gt;Example&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
-&lt;tbody&gt;&lt;tr&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
 &lt;td&gt;MOVE(TEMP t, e)&lt;/td&gt;
-&lt;td&gt;将表达式e的值赋给临时变量t&lt;/td&gt;
-&lt;td&gt;MOVE(TEMP(t1), CONST(42)) → t1 &amp;#x3D; 42&lt;/td&gt;
+&lt;td&gt;将表达式 e 的值赋给临时变量 t&lt;/td&gt;
+&lt;td&gt;MOVE(TEMP(t1), CONST(42)) → t1 = 42&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;MOVE(MEM(e1), e2)&lt;/td&gt;
-&lt;td&gt;将表达式e2的值存储到由e1指定的内存地址中&lt;/td&gt;
-&lt;td&gt;MOVE(MEM(TEMP(t1)), CONST(42)) → *t1 &amp;#x3D; 42&lt;/td&gt;
+&lt;td&gt;将表达式 e2 的值存储到由 e1 指定的内存地址中&lt;/td&gt;
+&lt;td&gt;MOVE(MEM(TEMP(t1)), CONST(42)) → *t1 = 42&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;EXP(e)&lt;/td&gt;
-&lt;td&gt;计算表达式e的值但不返回结果，通常用于有副作用的操作（如函数调用）&lt;/td&gt;
-&lt;td&gt;EXP(CALL(NAME(print), …)) → 调用print()函数以产生效果&lt;/td&gt;
+&lt;td&gt;计算表达式 e 的值但不返回结果，通常用于有副作用的操作（如函数调用）&lt;/td&gt;
+&lt;td&gt;EXP (CALL (NAME (print), …)) → 调用 print () 函数以产生效果&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;JUMP(e, labs)&lt;/td&gt;
-&lt;td&gt;无条件跳转到由e指定的地址&lt;/td&gt;
+&lt;td&gt;无条件跳转到由 e 指定的地址&lt;/td&gt;
 &lt;td&gt;JUMP(NAME(L1), [L1]) → goto L1&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;CJUMP(o,e1,e2,t,f)&lt;/td&gt;
-&lt;td&gt;条件跳转，根据操作o对e1和e2的结果决定跳转到t或f&lt;/td&gt;
-&lt;td&gt;CJUMP(LT, TEMP(t1), CONST(0), L1, L2) → 如果t1 &amp;lt; 0则跳转到L1，否则跳转到L2&lt;/td&gt;
+&lt;td&gt;条件跳转，根据操作 o 对 e1 和 e2 的结果决定跳转到 t 或 f&lt;/td&gt;
+&lt;td&gt;CJUMP (LT, TEMP (t1), CONST (0), L1, L2) → 如果 t1 &amp;lt; 0 则跳转到 L1，否则跳转到 L2&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;SEQ(s1, s2)&lt;/td&gt;
-&lt;td&gt;语句序列，先执行s1再执行s2&lt;/td&gt;
-&lt;td&gt;SEQ(MOVE(…), JUMP(…)) → 先赋值再跳转&lt;/td&gt;
+&lt;td&gt;语句序列，先执行 s1 再执行 s2&lt;/td&gt;
+&lt;td&gt;SEQ (MOVE (…), JUMP (…)) → 先赋值再跳转&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;LABEL(n)&lt;/td&gt;
 &lt;td&gt;定义一个标签&lt;/td&gt;
 &lt;td&gt;LABEL(L1) → L1:&lt;/td&gt;
 &lt;/tr&gt;
-&lt;/tbody&gt;&lt;/table&gt;
-&lt;p&gt;例子：&lt;br&gt;&lt;img data-src=&#34;/f3.jpg&#34;&gt;&lt;br&gt;ADD那个地方写成BINOP的写法也可以&lt;/p&gt;
-&lt;h2 id=&#34;翻译AST成IR-Tree&#34;&gt;&lt;a href=&#34;#翻译AST成IR-Tree&#34; class=&#34;headerlink&#34; title=&#34;翻译AST成IR Tree&#34;&gt;&lt;/a&gt;翻译AST成IR Tree&lt;/h2&gt;&lt;p&gt;把AST表达式分为三类：&lt;/p&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;例子：&lt;br&gt;
+&lt;img data-src=&#34;f3.jpg&#34; alt&gt;&lt;br&gt;
+ADD 那个地方写成 BINOP 的写法也可以&lt;/p&gt;
+&lt;h2 id=&#34;翻译ast成ir-tree&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#翻译ast成ir-tree&#34;&gt;#&lt;/a&gt; 翻译 AST 成 IR Tree&lt;/h2&gt;
+&lt;p&gt;把 AST 表达式分为三类：&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Ex: 有结果的AST表达式比如a+b&lt;/li&gt;
-&lt;li&gt;Nx：无结果的语句的比如print&lt;/li&gt;
-&lt;li&gt;Cx：条件语句，值为bool的AST表达式&lt;/li&gt;
+&lt;li&gt;Ex: 有结果的 AST 表达式比如 a+b&lt;/li&gt;
+&lt;li&gt;Nx：无结果的语句的比如 print&lt;/li&gt;
+&lt;li&gt;Cx：条件语句，值为 bool 的 AST 表达式&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;translate-Exp&#34;&gt;&lt;a href=&#34;#translate-Exp&#34; class=&#34;headerlink&#34; title=&#34;translate Exp&#34;&gt;&lt;/a&gt;translate Exp&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;翻译简单变量：&lt;br&gt;在函数中访问一个局部变量实际上是访问它在当前栈帧中的位置，所以访问一个距离fp的offset为k的局部变量v，其IR Tree表示为:&lt;br&gt;$$&lt;br&gt;MEM(BINOP(PLUS, TEMP fp, CONST k))&lt;br&gt;$$&lt;br&gt;&lt;img data-src=&#34;/f4.jpg&#34;&gt;&lt;br&gt;如果通过static link访问一个变量，就要嵌套好几层MEM和BINOP&lt;br&gt;比如这个访问嵌套两层外面的x&lt;br&gt;最内层使用 CONST(8)：是因为需要从 inner 函数的帧指针 FP 开始，偏移 8 字节来访问静态链，该静态链指向 middle 函数的帧。&lt;br&gt;中间层和最外层使用 CONST(0)：是因为它们分别通过静态链直接访问 outer 函数的帧和变量 x，不需要额外的偏移&lt;br&gt;&lt;img data-src=&#34;/f5.jpg&#34;&gt;&lt;br&gt;:::danger&lt;br&gt;这个地方为什么内层是8中层是0存疑&lt;br&gt;:::&lt;/li&gt;
+&lt;h3 id=&#34;translate-exp&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#translate-exp&#34;&gt;#&lt;/a&gt; translate Exp&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;翻译简单变量：&lt;br&gt;
+在函数中访问一个局部变量实际上是访问它在当前栈帧中的位置，所以访问一个距离 fp 的 offset 为 k 的局部变量 v，其 IR Tree 表示为:&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;左值和右值：&amp;#x3D;左右的&lt;br&gt;MEM(addr)可以是左值也可以是右值&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;katex-display&#34;&gt;&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34; display=&#34;block&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;M&lt;/mi&gt;&lt;mi&gt;E&lt;/mi&gt;&lt;mi&gt;M&lt;/mi&gt;&lt;mo stretchy=&#34;false&#34;&gt;(&lt;/mo&gt;&lt;mi&gt;B&lt;/mi&gt;&lt;mi&gt;I&lt;/mi&gt;&lt;mi&gt;N&lt;/mi&gt;&lt;mi&gt;O&lt;/mi&gt;&lt;mi&gt;P&lt;/mi&gt;&lt;mo stretchy=&#34;false&#34;&gt;(&lt;/mo&gt;&lt;mi&gt;P&lt;/mi&gt;&lt;mi&gt;L&lt;/mi&gt;&lt;mi&gt;U&lt;/mi&gt;&lt;mi&gt;S&lt;/mi&gt;&lt;mo separator=&#34;true&#34;&gt;,&lt;/mo&gt;&lt;mi&gt;T&lt;/mi&gt;&lt;mi&gt;E&lt;/mi&gt;&lt;mi&gt;M&lt;/mi&gt;&lt;mi&gt;P&lt;/mi&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mi&gt;p&lt;/mi&gt;&lt;mo separator=&#34;true&#34;&gt;,&lt;/mo&gt;&lt;mi&gt;C&lt;/mi&gt;&lt;mi&gt;O&lt;/mi&gt;&lt;mi&gt;N&lt;/mi&gt;&lt;mi&gt;S&lt;/mi&gt;&lt;mi&gt;T&lt;/mi&gt;&lt;mi&gt;k&lt;/mi&gt;&lt;mo stretchy=&#34;false&#34;&gt;)&lt;/mo&gt;&lt;mo stretchy=&#34;false&#34;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;MEM(BINOP(PLUS, TEMP fp, CONST k))
+&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:1em;vertical-align:-0.25em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.10903em;&#34;&gt;M&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.05764em;&#34;&gt;E&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.10903em;&#34;&gt;M&lt;/span&gt;&lt;span class=&#34;mopen&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.05017em;&#34;&gt;B&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.07847em;&#34;&gt;I&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.10903em;&#34;&gt;N&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.02778em;&#34;&gt;O&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.13889em;&#34;&gt;P&lt;/span&gt;&lt;span class=&#34;mopen&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.13889em;&#34;&gt;P&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;L&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.10903em;&#34;&gt;U&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.05764em;&#34;&gt;S&lt;/span&gt;&lt;span class=&#34;mpunct&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.16666666666666666em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.13889em;&#34;&gt;T&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.05764em;&#34;&gt;E&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.10903em;&#34;&gt;M&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.13889em;&#34;&gt;P&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.10764em;&#34;&gt;f&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;p&lt;/span&gt;&lt;span class=&#34;mpunct&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.16666666666666666em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.07153em;&#34;&gt;C&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.02778em;&#34;&gt;O&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.10903em;&#34;&gt;N&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.05764em;&#34;&gt;S&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.13889em;&#34;&gt;T&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.03148em;&#34;&gt;k&lt;/span&gt;&lt;span class=&#34;mclose&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;mclose&#34;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;f4.jpg&#34; alt&gt;&lt;br&gt;
+如果通过 static link 访问一个变量，就要嵌套好几层 MEM 和 BINOP&lt;br&gt;
+ 比如这个访问嵌套两层外面的 x&lt;br&gt;
+ 最内层使用 CONST (8)：是因为需要从 inner 函数的帧指针 FP 开始，偏移 8 字节来访问静态链，该静态链指向 middle 函数的帧。&lt;br&gt;
+中间层和最外层使用 CONST (0)：是因为它们分别通过静态链直接访问 outer 函数的帧和变量 x，不需要额外的偏移&lt;br&gt;
+&lt;img data-src=&#34;f5.jpg&#34; alt&gt;&lt;/p&gt;
+&lt;div class=&#34;note danger&#34;&gt;
+&lt;p&gt;这个地方为什么内层是 8 中层是 0 存疑&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;左值和右值：= 左右的&lt;br&gt;
+ MEM (addr) 可以是左值也可以是右值&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Scalar L-value(Tiger): 一个地址&lt;/li&gt;
-&lt;li&gt;Structured L-value(Pascal&amp;#x2F;C): 一块内存&lt;/li&gt;
+&lt;li&gt;Scalar L-value (Tiger): 一个地址&lt;/li&gt;
+&lt;li&gt;Structured L-value (Pascal/C): 一块内存&lt;/li&gt;
 &lt;/ul&gt;
 &lt;ol start=&#34;2&#34;&gt;
 &lt;li&gt;翻译算术运算&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
-&lt;li&gt;二元: BINOP(op, e1, e2)&lt;/li&gt;
-&lt;li&gt;一元: &lt;ul&gt;
-&lt;li&gt;-x &amp;#x3D;&amp;#x3D;&amp;gt; BINOP(MINUS, CONST(0), e_x)&lt;/li&gt;
-&lt;li&gt;~x &amp;#x3D;&amp;#x3D;&amp;gt; BINOP(XOR, e_x, CONST(-1))&lt;/li&gt;
+&lt;li&gt;二元: BINOP (op, e1, e2)&lt;/li&gt;
+&lt;li&gt;一元:
+&lt;ul&gt;
+&lt;li&gt;-x ==&amp;gt; BINOP(MINUS, CONST(0), e_x)&lt;/li&gt;
+&lt;li&gt;~x ==&amp;gt; BINOP(XOR, e_x, CONST(-1))&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;ol start=&#34;3&#34;&gt;
-&lt;li&gt;数组访问&lt;br&gt;$$&lt;br&gt;MEM(BINOP(PLUS, MEM(e_a), BINOP(MUL, e_i, CONST(W))))&lt;br&gt;$$&lt;/li&gt;
+&lt;li&gt;数组访问&lt;/li&gt;
 &lt;/ol&gt;
+&lt;p&gt;&lt;span class=&#34;katex-display&#34;&gt;&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34; display=&#34;block&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;M&lt;/mi&gt;&lt;mi&gt;E&lt;/mi&gt;&lt;mi&gt;M&lt;/mi&gt;&lt;mo stretchy=&#34;false&#34;&gt;(&lt;/mo&gt;&lt;mi&gt;B&lt;/mi&gt;&lt;mi&gt;I&lt;/mi&gt;&lt;mi&gt;N&lt;/mi&gt;&lt;mi&gt;O&lt;/mi&gt;&lt;mi&gt;P&lt;/mi&gt;&lt;mo stretchy=&#34;false&#34;&gt;(&lt;/mo&gt;&lt;mi&gt;P&lt;/mi&gt;&lt;mi&gt;L&lt;/mi&gt;&lt;mi&gt;U&lt;/mi&gt;&lt;mi&gt;S&lt;/mi&gt;&lt;mo separator=&#34;true&#34;&gt;,&lt;/mo&gt;&lt;mi&gt;M&lt;/mi&gt;&lt;mi&gt;E&lt;/mi&gt;&lt;mi&gt;M&lt;/mi&gt;&lt;mo stretchy=&#34;false&#34;&gt;(&lt;/mo&gt;&lt;msub&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;/msub&gt;&lt;mo stretchy=&#34;false&#34;&gt;)&lt;/mo&gt;&lt;mo separator=&#34;true&#34;&gt;,&lt;/mo&gt;&lt;mi&gt;B&lt;/mi&gt;&lt;mi&gt;I&lt;/mi&gt;&lt;mi&gt;N&lt;/mi&gt;&lt;mi&gt;O&lt;/mi&gt;&lt;mi&gt;P&lt;/mi&gt;&lt;mo stretchy=&#34;false&#34;&gt;(&lt;/mo&gt;&lt;mi&gt;M&lt;/mi&gt;&lt;mi&gt;U&lt;/mi&gt;&lt;mi&gt;L&lt;/mi&gt;&lt;mo separator=&#34;true&#34;&gt;,&lt;/mo&gt;&lt;msub&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;/msub&gt;&lt;mo separator=&#34;true&#34;&gt;,&lt;/mo&gt;&lt;mi&gt;C&lt;/mi&gt;&lt;mi&gt;O&lt;/mi&gt;&lt;mi&gt;N&lt;/mi&gt;&lt;mi&gt;S&lt;/mi&gt;&lt;mi&gt;T&lt;/mi&gt;&lt;mo stretchy=&#34;false&#34;&gt;(&lt;/mo&gt;&lt;mi&gt;W&lt;/mi&gt;&lt;mo stretchy=&#34;false&#34;&gt;)&lt;/mo&gt;&lt;mo stretchy=&#34;false&#34;&gt;)&lt;/mo&gt;&lt;mo stretchy=&#34;false&#34;&gt;)&lt;/mo&gt;&lt;mo stretchy=&#34;false&#34;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;MEM(BINOP(PLUS, MEM(e_a), BINOP(MUL, e_i, CONST(W))))
+&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:1em;vertical-align:-0.25em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.10903em;&#34;&gt;M&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.05764em;&#34;&gt;E&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.10903em;&#34;&gt;M&lt;/span&gt;&lt;span class=&#34;mopen&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.05017em;&#34;&gt;B&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.07847em;&#34;&gt;I&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.10903em;&#34;&gt;N&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.02778em;&#34;&gt;O&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.13889em;&#34;&gt;P&lt;/span&gt;&lt;span class=&#34;mopen&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.13889em;&#34;&gt;P&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;L&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.10903em;&#34;&gt;U&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.05764em;&#34;&gt;S&lt;/span&gt;&lt;span class=&#34;mpunct&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.16666666666666666em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.10903em;&#34;&gt;M&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.05764em;&#34;&gt;E&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.10903em;&#34;&gt;M&lt;/span&gt;&lt;span class=&#34;mopen&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;msupsub&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.151392em;&#34;&gt;&lt;span style=&#34;top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.7em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mathnormal mtight&#34;&gt;a&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.15em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;mclose&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;mpunct&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.16666666666666666em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.05017em;&#34;&gt;B&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.07847em;&#34;&gt;I&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.10903em;&#34;&gt;N&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.02778em;&#34;&gt;O&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.13889em;&#34;&gt;P&lt;/span&gt;&lt;span class=&#34;mopen&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.10903em;&#34;&gt;M&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.10903em;&#34;&gt;U&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;L&lt;/span&gt;&lt;span class=&#34;mpunct&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.16666666666666666em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;msupsub&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.31166399999999994em;&#34;&gt;&lt;span style=&#34;top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.7em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mathnormal mtight&#34;&gt;i&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.15em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;mpunct&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.16666666666666666em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.07153em;&#34;&gt;C&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.02778em;&#34;&gt;O&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.10903em;&#34;&gt;N&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.05764em;&#34;&gt;S&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.13889em;&#34;&gt;T&lt;/span&gt;&lt;span class=&#34;mopen&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.13889em;&#34;&gt;W&lt;/span&gt;&lt;span class=&#34;mclose&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;mclose&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;mclose&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;mclose&#34;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;code&gt;e_a&lt;/code&gt; 是表示变量 &lt;code&gt;a&lt;/code&gt; 的表达式，通常是&amp;#x3D;&amp;#x3D; &lt;code&gt;MEM(+(TEMP(fp), CONST(k_a)))&lt;/code&gt;&amp;#x3D;&amp;#x3D;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;MEM(e_a)&lt;/code&gt;：&amp;#x3D;&amp;#x3D;获取存储在变量 &lt;code&gt;a&lt;/code&gt; 中的值，即数组基地址&amp;#x3D;&amp;#x3D;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;e_i&lt;/code&gt; 是计算索引 &lt;code&gt;i&lt;/code&gt; 的表达式&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;BINOP(MUL, e_i, CONST(W))&lt;/code&gt;：计算偏移&lt;br&gt;&lt;img data-src=&#34;/f6.jpg&#34;&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;e_a&lt;/code&gt;  是表示变量  &lt;code&gt;a&lt;/code&gt;  的表达式，通常是 ==  &lt;code&gt;MEM(+(TEMP(fp), CONST(k_a)))&lt;/code&gt; ==&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;MEM(e_a)&lt;/code&gt; ：&lt;mark&gt;获取存储在变量  &lt;code&gt;a&lt;/code&gt;  中的值，即数组基地址&lt;/mark&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;e_i&lt;/code&gt;  是计算索引  &lt;code&gt;i&lt;/code&gt;  的表达式&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;BINOP(MUL, e_i, CONST(W))&lt;/code&gt; ：计算偏移&lt;br&gt;
+&lt;img data-src=&#34;f6.jpg&#34; alt&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;记录字段r.f访问:&lt;br&gt;$$&lt;br&gt;MEM(BINOP(PLUS, MEM(e_r), BINOP(MUL, n, CONST(W))))&lt;br&gt;$$&lt;/p&gt;
+&lt;p&gt;记录字段 r.f 访问:&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;katex-display&#34;&gt;&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34; display=&#34;block&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;M&lt;/mi&gt;&lt;mi&gt;E&lt;/mi&gt;&lt;mi&gt;M&lt;/mi&gt;&lt;mo stretchy=&#34;false&#34;&gt;(&lt;/mo&gt;&lt;mi&gt;B&lt;/mi&gt;&lt;mi&gt;I&lt;/mi&gt;&lt;mi&gt;N&lt;/mi&gt;&lt;mi&gt;O&lt;/mi&gt;&lt;mi&gt;P&lt;/mi&gt;&lt;mo stretchy=&#34;false&#34;&gt;(&lt;/mo&gt;&lt;mi&gt;P&lt;/mi&gt;&lt;mi&gt;L&lt;/mi&gt;&lt;mi&gt;U&lt;/mi&gt;&lt;mi&gt;S&lt;/mi&gt;&lt;mo separator=&#34;true&#34;&gt;,&lt;/mo&gt;&lt;mi&gt;M&lt;/mi&gt;&lt;mi&gt;E&lt;/mi&gt;&lt;mi&gt;M&lt;/mi&gt;&lt;mo stretchy=&#34;false&#34;&gt;(&lt;/mo&gt;&lt;msub&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mi&gt;r&lt;/mi&gt;&lt;/msub&gt;&lt;mo stretchy=&#34;false&#34;&gt;)&lt;/mo&gt;&lt;mo separator=&#34;true&#34;&gt;,&lt;/mo&gt;&lt;mi&gt;B&lt;/mi&gt;&lt;mi&gt;I&lt;/mi&gt;&lt;mi&gt;N&lt;/mi&gt;&lt;mi&gt;O&lt;/mi&gt;&lt;mi&gt;P&lt;/mi&gt;&lt;mo stretchy=&#34;false&#34;&gt;(&lt;/mo&gt;&lt;mi&gt;M&lt;/mi&gt;&lt;mi&gt;U&lt;/mi&gt;&lt;mi&gt;L&lt;/mi&gt;&lt;mo separator=&#34;true&#34;&gt;,&lt;/mo&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mo separator=&#34;true&#34;&gt;,&lt;/mo&gt;&lt;mi&gt;C&lt;/mi&gt;&lt;mi&gt;O&lt;/mi&gt;&lt;mi&gt;N&lt;/mi&gt;&lt;mi&gt;S&lt;/mi&gt;&lt;mi&gt;T&lt;/mi&gt;&lt;mo stretchy=&#34;false&#34;&gt;(&lt;/mo&gt;&lt;mi&gt;W&lt;/mi&gt;&lt;mo stretchy=&#34;false&#34;&gt;)&lt;/mo&gt;&lt;mo stretchy=&#34;false&#34;&gt;)&lt;/mo&gt;&lt;mo stretchy=&#34;false&#34;&gt;)&lt;/mo&gt;&lt;mo stretchy=&#34;false&#34;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;MEM(BINOP(PLUS, MEM(e_r), BINOP(MUL, n, CONST(W))))
+&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:1em;vertical-align:-0.25em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.10903em;&#34;&gt;M&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.05764em;&#34;&gt;E&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.10903em;&#34;&gt;M&lt;/span&gt;&lt;span class=&#34;mopen&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.05017em;&#34;&gt;B&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.07847em;&#34;&gt;I&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.10903em;&#34;&gt;N&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.02778em;&#34;&gt;O&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.13889em;&#34;&gt;P&lt;/span&gt;&lt;span class=&#34;mopen&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.13889em;&#34;&gt;P&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;L&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.10903em;&#34;&gt;U&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.05764em;&#34;&gt;S&lt;/span&gt;&lt;span class=&#34;mpunct&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.16666666666666666em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.10903em;&#34;&gt;M&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.05764em;&#34;&gt;E&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.10903em;&#34;&gt;M&lt;/span&gt;&lt;span class=&#34;mopen&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;msupsub&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.151392em;&#34;&gt;&lt;span style=&#34;top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.7em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mathnormal mtight&#34; style=&#34;margin-right:0.02778em;&#34;&gt;r&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.15em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;mclose&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;mpunct&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.16666666666666666em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.05017em;&#34;&gt;B&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.07847em;&#34;&gt;I&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.10903em;&#34;&gt;N&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.02778em;&#34;&gt;O&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.13889em;&#34;&gt;P&lt;/span&gt;&lt;span class=&#34;mopen&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.10903em;&#34;&gt;M&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.10903em;&#34;&gt;U&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;L&lt;/span&gt;&lt;span class=&#34;mpunct&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.16666666666666666em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;mpunct&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.16666666666666666em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.07153em;&#34;&gt;C&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.02778em;&#34;&gt;O&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.10903em;&#34;&gt;N&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.05764em;&#34;&gt;S&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.13889em;&#34;&gt;T&lt;/span&gt;&lt;span class=&#34;mopen&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.13889em;&#34;&gt;W&lt;/span&gt;&lt;span class=&#34;mclose&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;mclose&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;mclose&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;mclose&#34;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;ol start=&#34;4&#34;&gt;
-&lt;li&gt;翻译控制流&lt;br&gt;对于if e1 op e2 then stmt1 else stmt2翻译成&lt;/li&gt;
+&lt;li&gt;翻译控制流&lt;br&gt;
+对于 if e1 op e2 then stmt1 else stmt2 翻译成&lt;/li&gt;
 &lt;/ol&gt;
 &lt;figure class=&#34;highlight c&#34;&gt;&lt;figcaption&gt;&lt;span&gt;IR&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;17&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;// 6个SEQ&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;SEQ(&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    CJUMP(op, e1, e2, t, f),&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    SEQ(&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        LABEL(t),&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        SEQ(&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            stm1,&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            SEQ(&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;                JUMP(NAME(end)),&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;                SEQ(&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;                    LABEL(f),&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;                    SEQ(stm2, LABEL(end))&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;                )&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            )&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        )&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    )&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;p&gt;Tiger的逻辑运算符&amp;amp;(and)和|(or)需要实现短路求值：只计算必要的操作数&lt;br&gt;每个Cx是一个Label&lt;/p&gt;
+&lt;p&gt;Tiger 的逻辑运算符 &amp;amp;(and) 和 |(or) 需要实现短路求值：只计算必要的操作数&lt;br&gt;
+每个 Cx 是一个 Label&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;逻辑与 (a &amp;amp; b)的短路规则：&lt;ul&gt;
-&lt;li&gt;计算a&lt;br&gt;  -若a为假，直接得到假结果（不计算b）&lt;br&gt;  -若a为真，继续计算b，最终结果即为b的值&lt;/li&gt;
+&lt;li&gt;逻辑与 (a &amp;amp; b) 的短路规则：
+&lt;ul&gt;
+&lt;li&gt;计算 a&lt;br&gt;
+ - 若 a 为假，直接得到假结果（不计算 b）&lt;br&gt;
+- 若 a 为真，继续计算 b，最终结果即为 b 的值&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;逻辑或 (a | b)的短路规则：&lt;br&gt;  -计算a&lt;br&gt;  -若a为真，直接得到真结果（不计算b）&lt;ul&gt;
-&lt;li&gt;若a为假，继续计算b，最终结果即为b的值&lt;/li&gt;
+&lt;li&gt;逻辑或 (a | b) 的短路规则：&lt;br&gt;
+- 计算 a&lt;br&gt;
+ - 若 a 为真，直接得到真结果（不计算 b）
+&lt;ul&gt;
+&lt;li&gt;若 a 为假，继续计算 b，最终结果即为 b 的值&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
@@ -196,11 +255,17 @@
 &lt;figure class=&#34;highlight c&#34;&gt;&lt;figcaption&gt;&lt;span&gt;tiger&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;while&lt;/span&gt; a &amp;gt; &lt;span class=&#34;number&#34;&gt;0&lt;/span&gt; &lt;span class=&#34;keyword&#34;&gt;do&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;a := a - &lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;翻译成&lt;/p&gt;
 &lt;figure class=&#34;highlight c&#34;&gt;&lt;figcaption&gt;&lt;span&gt;IR&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;SEQ(LABEL test, &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    SEQ(CJUMP(GT, TEMP a, CONST &lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;, body, done), &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        SEQ(LABEL body, &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            SEQ(MOVE(TEMP a, BINOP(MINUS, TEMP a, CONST &lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;)), &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;                SEQ(JUMP(NAME(test), [test]), &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;                    LABEL done)))))&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;break翻译为直接跳转到done&lt;br&gt;for循环我懒得写了，也是一个道理&lt;br&gt;和汇编差不多意思&lt;/p&gt;
+&lt;p&gt;break 翻译为直接跳转到 done&lt;br&gt;
+for 循环我懒得写了，也是一个道理&lt;br&gt;
+和汇编差不多意思&lt;/p&gt;
 &lt;ol start=&#34;6&#34;&gt;
-&lt;li&gt;翻译函数&lt;br&gt;$$&lt;br&gt;CALL(NAME(l_f), [sl, a_1, …, a_n])&lt;br&gt;$$&lt;br&gt;sl是static link。&lt;/li&gt;
+&lt;li&gt;翻译函数&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h3 id=&#34;translate-Declaration&#34;&gt;&lt;a href=&#34;#translate-Declaration&#34; class=&#34;headerlink&#34; title=&#34;translate Declaration&#34;&gt;&lt;/a&gt;translate Declaration&lt;/h3&gt;&lt;ul&gt;
+&lt;p&gt;&lt;span class=&#34;katex-display&#34;&gt;&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34; display=&#34;block&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;C&lt;/mi&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mi&gt;L&lt;/mi&gt;&lt;mi&gt;L&lt;/mi&gt;&lt;mo stretchy=&#34;false&#34;&gt;(&lt;/mo&gt;&lt;mi&gt;N&lt;/mi&gt;&lt;mi&gt;A&lt;/mi&gt;&lt;mi&gt;M&lt;/mi&gt;&lt;mi&gt;E&lt;/mi&gt;&lt;mo stretchy=&#34;false&#34;&gt;(&lt;/mo&gt;&lt;msub&gt;&lt;mi&gt;l&lt;/mi&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;/msub&gt;&lt;mo stretchy=&#34;false&#34;&gt;)&lt;/mo&gt;&lt;mo separator=&#34;true&#34;&gt;,&lt;/mo&gt;&lt;mo stretchy=&#34;false&#34;&gt;[&lt;/mo&gt;&lt;mi&gt;s&lt;/mi&gt;&lt;mi&gt;l&lt;/mi&gt;&lt;mo separator=&#34;true&#34;&gt;,&lt;/mo&gt;&lt;msub&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/msub&gt;&lt;mo separator=&#34;true&#34;&gt;,&lt;/mo&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;.&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;.&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;.&lt;/mi&gt;&lt;mo separator=&#34;true&#34;&gt;,&lt;/mo&gt;&lt;msub&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;/msub&gt;&lt;mo stretchy=&#34;false&#34;&gt;]&lt;/mo&gt;&lt;mo stretchy=&#34;false&#34;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;CALL(NAME(l_f), [sl, a_1, ..., a_n])
+&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:1.036108em;vertical-align:-0.286108em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.07153em;&#34;&gt;C&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;A&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;L&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;L&lt;/span&gt;&lt;span class=&#34;mopen&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.10903em;&#34;&gt;N&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;A&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.10903em;&#34;&gt;M&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.05764em;&#34;&gt;E&lt;/span&gt;&lt;span class=&#34;mopen&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.01968em;&#34;&gt;l&lt;/span&gt;&lt;span class=&#34;msupsub&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.3361079999999999em;&#34;&gt;&lt;span style=&#34;top:-2.5500000000000003em;margin-left:-0.01968em;margin-right:0.05em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.7em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mathnormal mtight&#34; style=&#34;margin-right:0.10764em;&#34;&gt;f&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.286108em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;mclose&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;mpunct&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.16666666666666666em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mopen&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;s&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.01968em;&#34;&gt;l&lt;/span&gt;&lt;span class=&#34;mpunct&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.16666666666666666em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;msupsub&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.30110799999999993em;&#34;&gt;&lt;span style=&#34;top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.7em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mtight&#34;&gt;1&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.15em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;mpunct&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.16666666666666666em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;mpunct&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.16666666666666666em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;msupsub&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.151392em;&#34;&gt;&lt;span style=&#34;top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.7em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mathnormal mtight&#34;&gt;n&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.15em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;mclose&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;mclose&#34;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;sl 是 static link。&lt;/p&gt;
+&lt;h3 id=&#34;translate-declaration&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#translate-declaration&#34;&gt;#&lt;/a&gt; translate Declaration&lt;/h3&gt;
+&lt;ul&gt;
 &lt;li&gt;Variable declaration&lt;/li&gt;
 &lt;li&gt;Type declaration&lt;/li&gt;
 &lt;li&gt;Function declaration&lt;/li&gt;
@@ -209,20 +274,28 @@
 &lt;li&gt;翻译变量声明&lt;/li&gt;
 &lt;/ol&gt;
 &lt;figure class=&#34;highlight c&#34;&gt;&lt;figcaption&gt;&lt;span&gt;tiger&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;let&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    var x := &lt;span class=&#34;number&#34;&gt;10&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    var y := x + &lt;span class=&#34;number&#34;&gt;5&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;in &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    x + y&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;end&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
 &lt;figure class=&#34;highlight c&#34;&gt;&lt;figcaption&gt;&lt;span&gt;IR&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;ESEQ( &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    SEQ( &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        MOVE(MEM(+(FP, CONST(x_offset))), CONST(&lt;span class=&#34;number&#34;&gt;10&lt;/span&gt;)), &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        MOVE(MEM(+(FP, CONST(y_offset))), &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        BINOP(PLUS, &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        MEM(+(FP, CONST(x_offset))), &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        CONST(&lt;span class=&#34;number&#34;&gt;5&lt;/span&gt;))) &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    ), &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    BINOP(PLUS, &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    MEM(+(FP, CONST(x_offset))), &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    MEM(+(FP, CONST(y_offset)))) &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;let body in e end翻译成ESEQ(body, e)&lt;br&gt;变量定义翻译成 MEM(+(FP, CONST(offset)))&lt;br&gt;初始化翻译成 MOVE(MEM(+(FP, CONST(offset))), CONST(value))&lt;/p&gt;
+&lt;p&gt;let body in e end 翻译成 ESEQ (body, e)&lt;br&gt;
+ 变量定义翻译成 MEM (+(FP, CONST (offset)))&lt;br&gt;
+ 初始化翻译成 MOVE (MEM (+(FP, CONST (offset))), CONST (value))&lt;/p&gt;
 &lt;ol start=&#34;2&#34;&gt;
-&lt;li&gt;&lt;p&gt;类型声明&lt;br&gt;No need to generate any IR tree code&lt;/p&gt;
+&lt;li&gt;
+&lt;p&gt;类型声明&lt;br&gt;
+ No need to generate any IR tree code&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p&gt;函数声明&lt;br&gt; – Prologue（序言）&lt;br&gt; – Body（函数体）&lt;br&gt; – Epilogue（尾声）&lt;/p&gt;
+&lt;li&gt;
+&lt;p&gt;函数声明&lt;br&gt;
+– Prologue（序言）&lt;br&gt;
+– Body（函数体）&lt;br&gt;
+– Epilogue（尾声）&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
-&lt;li&gt;Prologue&lt;ul&gt;
+&lt;li&gt;Prologue
+&lt;ul&gt;
 &lt;li&gt;pseudo-instructions to announce the beginning of a function&lt;/li&gt;
-&lt;li&gt;定义函数标签用于跳转&amp;#x2F;调用&lt;/li&gt;
-&lt;li&gt;修改栈指针（SP），为新栈帧分配空间，一般是$SP :&amp;#x3D; SP - frame_size$&lt;/li&gt;
+&lt;li&gt;定义函数标签用于跳转 / 调用&lt;/li&gt;
+&lt;li&gt;修改栈指针（SP），为新栈帧分配空间，一般是&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;S&lt;/mi&gt;&lt;mi&gt;P&lt;/mi&gt;&lt;mo&gt;:&lt;/mo&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mi&gt;S&lt;/mi&gt;&lt;mi&gt;P&lt;/mi&gt;&lt;mo&gt;−&lt;/mo&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mi&gt;r&lt;/mi&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mi&gt;m&lt;/mi&gt;&lt;msub&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mi&gt;s&lt;/mi&gt;&lt;/msub&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mi&gt;z&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;SP := SP - frame_size&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.68333em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.05764em;&#34;&gt;S&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.13889em;&#34;&gt;P&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mrel&#34;&gt;:&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.36687em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mrel&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.76666em;vertical-align:-0.08333em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.05764em;&#34;&gt;S&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.13889em;&#34;&gt;P&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mbin&#34;&gt;−&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.8888799999999999em;vertical-align:-0.19444em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.10764em;&#34;&gt;f&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.02778em;&#34;&gt;r&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;m&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;msupsub&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.151392em;&#34;&gt;&lt;span style=&#34;top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.7em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mathnormal mtight&#34;&gt;s&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.15em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.04398em;&#34;&gt;z&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;e&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/li&gt;
 &lt;li&gt;保存被调用者需要保存的寄存器（callee-save），如 $s0-$s7；保存返回地址（RA）&lt;/li&gt;
 &lt;li&gt;保存函数参数到栈中（尤其是传值调用时）；保存静态链（static link）&lt;/li&gt;
 &lt;/ul&gt;
