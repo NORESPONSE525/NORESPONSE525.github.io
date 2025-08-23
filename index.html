@@ -87,7 +87,7 @@
 
       </div>
       <div id="imgs" class="pjax">
-          <img src="/images/bg24.jpg">
+          <img src="/images/bg19.jpg">
       </div>
     </header>
     <div id="waves">
@@ -112,28 +112,6 @@
       <div class="cards">
           
 <section class="item">
-  <div class="cover" data-background-image="/SE/cover.jpg">
-    <h2 class="title">软件工程</h2>
-  </div>
-  <div class="info">
-    <div class="ribbon"><a href="/categories/SE/" itemprop="url" title="软件工程">软件工程</a></div>
-    <div class="inner">
-        <ul class="posts">
-            <li><a title="SE note" href="/2025/06/19/SE/note/">SE note</a></li>
-            <li><a title="画图题" href="/2025/06/19/SE/diagram/">画图题</a></li>
-        </ul>
-        <div class="meta footer">
-          <span>
-            <i class="ic i-file"></i>2 posts in total
-          </span>
-        </div>
-        <a href="/categories/SE/" itemprop="url" title="软件工程" class="btn">more...</a>
-    </div>
-  </div>
-</section>
-
-          
-<section class="item">
   <div class="cover" data-background-image="/AI/cover.jpg">
     <h2 class="title">人工智能</h2>
   </div>
@@ -154,6 +132,28 @@
           </span>
         </div>
         <a href="/categories/AI/" itemprop="url" title="人工智能" class="btn">more...</a>
+    </div>
+  </div>
+</section>
+
+          
+<section class="item">
+  <div class="cover" data-background-image="/SE/cover.jpg">
+    <h2 class="title">软件工程</h2>
+  </div>
+  <div class="info">
+    <div class="ribbon"><a href="/categories/SE/" itemprop="url" title="软件工程">软件工程</a></div>
+    <div class="inner">
+        <ul class="posts">
+            <li><a title="SE note" href="/2025/06/19/SE/note/">SE note</a></li>
+            <li><a title="画图题" href="/2025/06/19/SE/diagram/">画图题</a></li>
+        </ul>
+        <div class="meta footer">
+          <span>
+            <i class="ic i-file"></i>2 posts in total
+          </span>
+        </div>
+        <a href="/categories/SE/" itemprop="url" title="软件工程" class="btn">more...</a>
     </div>
   </div>
 </section>
@@ -187,7 +187,7 @@
         
 <article class="item">
   <div class="cover">
-    <a href="/2025/08/15/computer-science/computer-organization/ch7/" itemprop="url" title="Ch7"><img data-src="/images/bg8.jpg"></a>
+    <a href="/2025/08/15/computer-science/computer-organization/ch7/" itemprop="url" title="Ch7"><img data-src="/images/bg3.png"></a>
   </div>
   <div class="info">
     
@@ -202,7 +202,7 @@
     <span class="icon">
       <i class="ic i-pen"></i>
     </span>
-    <span>3.5k</span>
+    <span>3.2k</span>
     <span class="text">words</span>
   </span>
   <span class="item" title="Reading time">
@@ -215,7 +215,23 @@
 
     <h3><a href="/2025/08/15/computer-science/computer-organization/ch7/" itemprop="url" title="Ch7">Ch7</a></h3>
     <div class="excerpt">
-        Ch7...
+        # Ch7 输入 / 输出系统
+# I/O 接口
+inerrface，主机与外设之间的交接界面
+# 功能
+
+进行地址译码和设备选择
+实现主机和外设的通信联络控制
+解决时序、工作速度不同的问题
+实现数据缓冲
+信号格式的转换
+电平转换、并 / 串或串 / 并转换、模 / 数或数 / 模转换
+传送控制命令和状态信息
+CPU 通过接口中的命令寄存器发出启动命令给外设，外设就绪是传回 Ready 状态信息通过接口中的状态寄存器反馈给 CPU
+
+# 基本结构
+
+主机侧通过 I/O 总线与内存、CPU 相连。数据缓冲器用来暂存与 CPU...
     </div>
     <div class="meta footer">
       <span>
@@ -229,7 +245,7 @@
         
 <article class="item">
   <div class="cover">
-    <a href="/2025/08/10/computer-science/computer-organization/ch6/" itemprop="url" title="Ch6"><img data-src="/images/bg10.jpg"></a>
+    <a href="/2025/08/10/computer-science/computer-organization/ch6/" itemprop="url" title="Ch6"><img data-src="/images/bg6.jpg"></a>
   </div>
   <div class="info">
     
@@ -244,7 +260,7 @@
     <span class="icon">
       <i class="ic i-pen"></i>
     </span>
-    <span>2.5k</span>
+    <span>2.4k</span>
     <span class="text">words</span>
   </span>
   <span class="item" title="Reading time">
@@ -257,7 +273,24 @@
 
     <h3><a href="/2025/08/10/computer-science/computer-organization/ch6/" itemprop="url" title="Ch6">Ch6</a></h3>
     <div class="excerpt">
-        Ch6...
+        # Ch6 总线
+# 概述
+# 概念
+总线是一组能为多个部件分时和共享的公共信息传送线路。分时和共享是总线的两个特点
+
+分时：同一时刻只允许有一个部件向总线发送信息
+共享：总线上可以挂接多个部件
+总线设备：按对总线有无控制权分
+主设备：发出总线请求且获得总线控制权的设备
+从设备：被主设备访问的设备，只能响应从这设备发来的各种总线命令
+特性：机械特性（尺寸、形状）、电气特性（传输方向、有效的电平范围）、功能特性（没跟传输线的功能）、时间特性（信号和时序的关系）
+
+# 分类
+
+按功能
+
+片内总线（CPU 内部的，连接各寄存器以及寄存器和 ALU）
+系统总线（连接...
     </div>
     <div class="meta footer">
       <span>
@@ -271,7 +304,7 @@
         
 <article class="item">
   <div class="cover">
-    <a href="/2025/08/10/computer-science/computer-organization/ch5/" itemprop="url" title="Ch5"><img data-src="/images/bg30.jpg"></a>
+    <a href="/2025/08/10/computer-science/computer-organization/ch5/" itemprop="url" title="Ch5"><img data-src="/images/bg35.jpg"></a>
   </div>
   <div class="info">
     
@@ -286,7 +319,7 @@
     <span class="icon">
       <i class="ic i-pen"></i>
     </span>
-    <span>4.6k</span>
+    <span>4.5k</span>
     <span class="text">words</span>
   </span>
   <span class="item" title="Reading time">
@@ -299,7 +332,10 @@
 
     <h3><a href="/2025/08/10/computer-science/computer-organization/ch5/" itemprop="url" title="Ch5">Ch5</a></h3>
     <div class="excerpt">
-        Ch5 中央处理器CPU的功能和基本结构功能CPU由运算器和控制器组成，具体功能包括：
+        # Ch5 中央处理器
+# CPU 的功能和基本结构
+# 功能
+CPU 由运算器和控制器组成，具体功能包括：
 
 指令控制
 操作控制
@@ -307,13 +343,17 @@
 数据加工
 中断处理
 
-基本结构
-运算器：ALU, 暂存器, ACC, GPRs, PSW, 移位寄存器， 计数器…
+# 基本结构
+
+运算器：ALU, 暂存器，ACC, GPRs, PSW, 移位寄存器， 计数器…
 控制器：PC, IR, ID, 时序电路，未操作信号发生器…
 
-CPU的寄存器按汇编程序是否可访问分为用户可见寄存器(GPRs, PSW, PC)和用户不可见寄存器(存储器地址寄存器，存储器数据寄存器，IR, 暂存寄存器，累加寄存器，移位寄存器)各寄存器的作用：
+# CPU 的寄存器
+按汇编程序是否可访问分为用户可见寄存器 (GPRs, PSW, PC) 和用户不可见寄存器 (存储器地址寄存器，存储器数据寄存器，IR, 暂存寄存器，累加寄存器，移位寄存器)
+各寄存器的作用：
 
 在运算器中：
+
 GPRs
 ACC:...
     </div>
@@ -329,7 +369,7 @@ ACC:...
         
 <article class="item">
   <div class="cover">
-    <a href="/2025/08/01/computer-science/computer-organization/ch4/" itemprop="url" title="Ch4"><img data-src="/images/bg19.jpg"></a>
+    <a href="/2025/08/01/computer-science/computer-organization/ch4/" itemprop="url" title="Ch4"><img data-src="/images/bg30.jpg"></a>
   </div>
   <div class="info">
     
@@ -344,7 +384,7 @@ ACC:...
     <span class="icon">
       <i class="ic i-pen"></i>
     </span>
-    <span>4.7k</span>
+    <span>4.4k</span>
     <span class="text">words</span>
   </span>
   <span class="item" title="Reading time">
@@ -357,19 +397,23 @@ ACC:...
 
     <h3><a href="/2025/08/01/computer-science/computer-organization/ch4/" itemprop="url" title="Ch4">Ch4</a></h3>
     <div class="excerpt">
-        Ch4 指令系统指令系统ISA（王道叫它指令集体系结构）指令系统 vs ISA
-ISA完整地定义了软件和硬件之间的接口，规定了：
+        # Ch4 指令系统
+# 指令系统
+# ISA（王道叫它指令集体系结构）
+指令系统 vs ISA
+ISA 完整地定义了软件和硬件之间的接口，规定了：
 
 指令格式（指令寻址方式，操作类型，操作数）
 操作数的类型、寻址方式、大端小端存放（大端：高位放在低地址；小端：低位放在低地址）
 程序可访问的寄存器编号、个数和位数，存储空间大小和编址方式
 指令执行过程的控制方式（PC, condition code, …）
 
-指令的基本格式操作码+地址码主存一般是按字节编址，所以指令字长通常为字节的整数倍
+# 指令的基本格式
+操作码 + 地址码
+主存一般是按字节编址，所以指令字长通常为字节的整数倍
 
-零地址指令NOP, HLT不需要操作数。零地址的运算类指令仅用在堆栈计算机中（操作数直接从栈顶弹出）
-
-一地址指令OP,...
+零地址指令
+NOP,...
     </div>
     <div class="meta footer">
       <span>
@@ -383,7 +427,7 @@ ISA完整地定义了软件和硬件之间的接口，规定了：
         
 <article class="item">
   <div class="cover">
-    <a href="/2025/07/01/computer-science/computer-organization/ch3/" itemprop="url" title="Ch3"><img data-src="/images/bg12.jpg"></a>
+    <a href="/2025/07/01/computer-science/computer-organization/ch3/" itemprop="url" title="Ch3"><img data-src="/images/bg23.png"></a>
   </div>
   <div class="info">
     
@@ -398,20 +442,23 @@ ISA完整地定义了软件和硬件之间的接口，规定了：
     <span class="icon">
       <i class="ic i-pen"></i>
     </span>
-    <span>9.6k</span>
+    <span>9k</span>
     <span class="text">words</span>
   </span>
   <span class="item" title="Reading time">
     <span class="icon">
       <i class="ic i-clock"></i>
     </span>
-    <span>9 mins.</span>
+    <span>8 mins.</span>
   </span>
 </div>
 
     <h3><a href="/2025/07/01/computer-science/computer-organization/ch3/" itemprop="url" title="Ch3">Ch3</a></h3>
     <div class="excerpt">
-        Ch3 存储系统存储器概述存储器的分类
+        # Ch3 存储系统
+# 存储器概述
+# 存储器的分类
+
 按层次分
 
 主存（小、快、成本高）
@@ -422,15 +469,14 @@ Cache
 
 磁表面存储器（磁盘、磁带）
 磁芯存储器
-半导体存储器（MOS型、双极型）
+半导体存储器（MOS 型、双极型）
 光存储器（光盘）
 
 按存储方式分
 
-RAM （随机存储器）:随机读取存储单元，存取时间与存储单元的物理位置无关。读写方便，主要用作主存和cache，分静态RAM和动态RAM。
-ROM （只读存储器）：只能读不能写，非易失性，随机读取。广义的ROM也可以通过电擦除进行写入(EEPROM)
-SAM （顺序存储器）：按顺序存储，存取时间与存储单元的物理位置有关
-DAM...
+RAM （随机存储器）: 随机读取存储单元，存取时间与存储单元的物理位置无关。读写方便，主要用作主存和 cache，分静态 RAM 和动态 RAM。
+ROM （只读存储器）：只能读不能写，非易失性，随机读取。广义的 ROM 也可以通过电擦除进行写入 (EEPROM)
+SAM...
     </div>
     <div class="meta footer">
       <span>
@@ -444,7 +490,7 @@ DAM...
         
 <article class="item">
   <div class="cover">
-    <a href="/2025/07/01/computer-science/computer-organization/%E9%94%99%E9%A2%98%E9%9B%86%E5%90%88/" itemprop="url" title="错题集合"><img data-src="/images/bg29.jpg"></a>
+    <a href="/2025/07/01/computer-science/computer-organization/%E9%94%99%E9%A2%98%E9%9B%86%E5%90%88/" itemprop="url" title="错题集合"><img data-src="/images/bg15.jpg"></a>
   </div>
   <div class="info">
     
@@ -459,7 +505,7 @@ DAM...
     <span class="icon">
       <i class="ic i-pen"></i>
     </span>
-    <span>844</span>
+    <span>748</span>
     <span class="text">words</span>
   </span>
   <span class="item" title="Reading time">
@@ -472,13 +518,16 @@ DAM...
 
     <h3><a href="/2025/07/01/computer-science/computer-organization/%E9%94%99%E9%A2%98%E9%9B%86%E5%90%88/" itemprop="url" title="错题集合">错题集合</a></h3>
     <div class="excerpt">
-        错题集合Ch2
-某计算机字长为8位，CPU中有一个8位加法器，已知无符号数x&amp;#x3D;69, y&amp;#x3D;38，若在该加法器中计算x-y，则加法器的两个输入短信息和输入的低位进位信息分别为（）
+        # 错题集合
+# Ch2
+
+某计算机字长为 8 位，CPU 中有一个 8 位加法器，已知无符号数 x=69, y=38，若在该加法器中计算 x-y，则加法器的两个输入短信息和输入的低位进位信息分别为（）
 
 0100 0101, 1101 1001, 1
-无符号数减法，在加法器中输入x的原码，y的取反和1
 
-减法指令 “sub R1, R2, R3” 的功能为 “(R1) - (R2) -&amp;gt; R3”, 该指令执行后将生成进位&amp;#x2F;借位标志CF和溢出标志OF，若(R1) &amp;#x3D; FFFF FFFFH, R2 &amp;#x3D; FFFF...
+无符号数减法，在加法器中输入 x 的原码，y 的取反和 1
+
+减法指令 “sub R1, R2, R3” 的功能为 “(R1) - (R2) -&amp;gt; R3”, 该指令执行后将生成进位 / 借位标志 CF 和溢出标志 OF，若 (R1) = FFFF FFFFH, R2 = FFFF FFF0H, 则该减法指令执行后，CF 和 OF...
     </div>
     <div class="meta footer">
       <span>
@@ -492,7 +541,7 @@ DAM...
         
 <article class="item">
   <div class="cover">
-    <a href="/2025/06/19/SE/diagram/" itemprop="url" title="画图题"><img data-src="/images/bg20.jpg"></a>
+    <a href="/2025/06/19/SE/diagram/" itemprop="url" title="画图题"><img data-src="/images/bg13.jpg"></a>
   </div>
   <div class="info">
     
@@ -507,27 +556,31 @@ DAM...
     <span class="icon">
       <i class="ic i-pen"></i>
     </span>
-    <span>1.8k</span>
+    <span>1.5k</span>
     <span class="text">words</span>
   </span>
   <span class="item" title="Reading time">
     <span class="icon">
       <i class="ic i-clock"></i>
     </span>
-    <span>2 mins.</span>
+    <span>1 mins.</span>
   </span>
 </div>
 
     <h3><a href="/2025/06/19/SE/diagram/" itemprop="url" title="画图题">画图题</a></h3>
     <div class="excerpt">
-        用例图 Use Case DiagramUse-Cases: A collection of user scenarios that describe the thread of usage of a system主要包含涉及的角色，角色对应的行为，第三方参与部分
+        用例图 Use Case Diagram
+Use-Cases: A collection of user scenarios that describe the thread of usage of a system
+主要包含涉及的角色，角色对应的行为，第三方参与部分
 
 参与者：与系统交互的用户或其他软硬件系统，用小人形表示
 用例：系统中执行的一系列动作，用椭圆表示。
 关系参与者与用例、参与者之间、用例之间的联系。连线
 边界：一组用例描述的系统或子系统，用矩形框表示。
 
-+++primary example: SafeHome;;;id3 题目Our research indicates that...
+example: SafeHome
+
+Our research indicates that the market for...
     </div>
     <div class="meta footer">
       <span>
@@ -556,21 +609,27 @@ DAM...
     <span class="icon">
       <i class="ic i-pen"></i>
     </span>
-    <span>24k</span>
+    <span>23k</span>
     <span class="text">words</span>
   </span>
   <span class="item" title="Reading time">
     <span class="icon">
       <i class="ic i-clock"></i>
     </span>
-    <span>22 mins.</span>
+    <span>21 mins.</span>
   </span>
 </div>
 
     <h3><a href="/2025/06/19/SE/note/" itemprop="url" title="SE note">SE note</a></h3>
     <div class="excerpt">
-        Ch2 Software Engineering
-Definition: The application of a &amp;#x3D;&amp;#x3D;systematic&amp;#x3D;&amp;#x3D;, &amp;#x3D;&amp;#x3D;disciplined&amp;#x3D;&amp;#x3D;, &amp;#x3D;&amp;#x3D;quantifiable（可量化）&amp;#x3D;&amp;#x3D; approach to the &amp;#x3D;&amp;#x3D;development&amp;#x3D;&amp;#x3D;,...
+        # Ch2 Software Engineering
+
+Definition: The application of a systematic, disciplined, quantifiable（可量化） approach to the development, operation, and maintenance of software
+软件工程是一个多层次的技术体系 (a layered technology)
+
+从下往上是 a “quality” focus, process model, methods, tools, 反映了构建高质量软件产品的逻辑流程
+
+软件过程（The...
     </div>
     <div class="meta footer">
       <span>
@@ -584,7 +643,7 @@ Definition: The application of a &amp;#x3D;&amp;#x3D;systematic&amp;#x3D;&amp;#x
         
 <article class="item">
   <div class="cover">
-    <a href="/2025/06/18/computer-science/compile-principles/ch10/" itemprop="url" title="Liveness Analysis"><img data-src="/images/bg25.jpg"></a>
+    <a href="/2025/06/18/computer-science/compile-principles/ch11/" itemprop="url" title="Register Allocation"><img data-src="/images/bg8.jpg"></a>
   </div>
   <div class="info">
     
@@ -599,53 +658,7 @@ Definition: The application of a &amp;#x3D;&amp;#x3D;systematic&amp;#x3D;&amp;#x
     <span class="icon">
       <i class="ic i-pen"></i>
     </span>
-    <span>1.8k</span>
-    <span class="text">words</span>
-  </span>
-  <span class="item" title="Reading time">
-    <span class="icon">
-      <i class="ic i-clock"></i>
-    </span>
-    <span>2 mins.</span>
-  </span>
-</div>
-
-    <h3><a href="/2025/06/18/computer-science/compile-principles/ch10/" itemprop="url" title="Liveness Analysis">Liveness Analysis</a></h3>
-    <div class="excerpt">
-        Liveness Analysis 活跃变量分析判断在程序执行的某个点上，一个变量的值是否可能在未来被使用，是寄存器分配、死代码消除的基础
-Compiler Optimizations
-Local: 基于basic blocks
-Intraprocedural (or “global’): 基本块的控制流转移
-Interprocedural (or “whole-program”): Operate on &amp;gt; 1 procedure, up to whole program; Sometimes, at link time (LTO, link time...
-    </div>
-    <div class="meta footer">
-      <span>
-        <a href="/categories/computer-science/compiler-principles/" itemprop="url" title="编译原理"><i class="ic i-flag"></i>编译原理</a>
-      </span>
-    </div>
-    <a href="/2025/06/18/computer-science/compile-principles/ch10/" itemprop="url" title="Liveness Analysis" class="btn">more...</a>
-  </div>
-</article>
-
-        
-<article class="item">
-  <div class="cover">
-    <a href="/2025/06/18/computer-science/compile-principles/ch11/" itemprop="url" title="Register Allocation"><img data-src="/images/bg28.jpg"></a>
-  </div>
-  <div class="info">
-    
-<div class="meta">
-  <span class="item" title="Created: 2025-06-18 00:00:00">
-    <span class="icon">
-      <i class="ic i-calendar"></i>
-    </span>
-    <time itemprop="dateCreated datePublished" datetime="2025-06-18T00:00:00+08:00">2025-06-18</time>
-  </span>
-  <span class="item" title="Symbols count in article">
-    <span class="icon">
-      <i class="ic i-pen"></i>
-    </span>
-    <span>1.4k</span>
+    <span>1.5k</span>
     <span class="text">words</span>
   </span>
   <span class="item" title="Reading time">
@@ -658,16 +671,21 @@ Interprocedural (or “whole-program”): Operate on &amp;gt; 1 procedure, up to
 
     <h3><a href="/2025/06/18/computer-science/compile-principles/ch11/" itemprop="url" title="Register Allocation">Register Allocation</a></h3>
     <div class="excerpt">
-        Register Allocation目标：
+        # Register Allocation
+目标：
 
 Map temporaries to registers
 Preserve program semantics
 Optimize performance
 
-图着色算法冲突图是一个无向图，冲突图中，每个节点是一个变量（寄存器分配的候选对象）。如果两个变量在同一时刻是活跃的（live），它们就有冲突边（interference edge），表示它们不能被分配到同一个寄存器冲突信息可以用矩阵或者图来表示
-冲突图构建我们从一个中间代码的指令出发，根据live-out（就是out集合）添加冲突边：
+# 图着色算法
+冲突图是一个无向图，冲突图中，每个节点是一个变量（寄存器分配的候选对象）。
+如果两个变量在同一时刻是活跃的（live），它们就有冲突边（interference edge），表示它们不能被分配到同一个寄存器
+冲突信息可以用矩阵或者图来表示
+# 冲突图构建
+我们从一个中间代码的指令出发，根据 live-out（就是 out 集合）添加冲突边：
 
-非 move 指令（不是a :&amp;#x3D;...
+非 move 指令（不是 a...
     </div>
     <div class="meta footer">
       <span>
@@ -675,6 +693,54 @@ Optimize performance
       </span>
     </div>
     <a href="/2025/06/18/computer-science/compile-principles/ch11/" itemprop="url" title="Register Allocation" class="btn">more...</a>
+  </div>
+</article>
+
+        
+<article class="item">
+  <div class="cover">
+    <a href="/2025/06/18/computer-science/compile-principles/ch10/" itemprop="url" title="Liveness Analysis"><img data-src="/images/bg21.jpg"></a>
+  </div>
+  <div class="info">
+    
+<div class="meta">
+  <span class="item" title="Created: 2025-06-18 00:00:00">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <time itemprop="dateCreated datePublished" datetime="2025-06-18T00:00:00+08:00">2025-06-18</time>
+  </span>
+  <span class="item" title="Symbols count in article">
+    <span class="icon">
+      <i class="ic i-pen"></i>
+    </span>
+    <span>1.9k</span>
+    <span class="text">words</span>
+  </span>
+  <span class="item" title="Reading time">
+    <span class="icon">
+      <i class="ic i-clock"></i>
+    </span>
+    <span>2 mins.</span>
+  </span>
+</div>
+
+    <h3><a href="/2025/06/18/computer-science/compile-principles/ch10/" itemprop="url" title="Liveness Analysis">Liveness Analysis</a></h3>
+    <div class="excerpt">
+        # Liveness Analysis 活跃变量分析
+判断在程序执行的某个点上，一个变量的值是否可能在未来被使用，是寄存器分配、死代码消除的基础
+# Compiler Optimizations
+
+Local: 基于 basic blocks
+Intraprocedural (or “global’): 基本块的控制流转移
+Interprocedural (or “whole-program”): Operate on &amp;gt; 1 procedure, up to whole program; Sometimes, at link time (LTO, link time...
+    </div>
+    <div class="meta footer">
+      <span>
+        <a href="/categories/computer-science/compiler-principles/" itemprop="url" title="编译原理"><i class="ic i-flag"></i>编译原理</a>
+      </span>
+    </div>
+    <a href="/2025/06/18/computer-science/compile-principles/ch10/" itemprop="url" title="Liveness Analysis" class="btn">more...</a>
   </div>
 </article>
 
@@ -816,7 +882,7 @@ Optimize performance
 <a href="/categories/AI/" title="In 人工智能">人工智能</a>
 </div>
 
-    <span><a href="/2025/06/16/AI/week12-13/" title="Week12-13">Week12-13</a></span>
+    <span><a href="/2025/06/15/AI/week8-9/" title="Week8-9">Week8-9</a></span>
   </li>
 
       
@@ -828,7 +894,19 @@ Optimize performance
 <a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
 </div>
 
-    <span><a href="/2025/03/23/computer-science/compile-principles/ch3/" title="语法分析">语法分析</a></span>
+    <span><a href="/2025/06/15/computer-science/compile-principles/ch6/" title="活动记录">活动记录</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
+</div>
+
+    <span><a href="/2025/06/16/computer-science/compile-principles/ch7/" title="IR">IR</a></span>
   </li>
 
       
@@ -840,7 +918,19 @@ Optimize performance
 <a href="/categories/computer-science/computer-organization/" title="In 计算机组成">计算机组成</a>
 </div>
 
-    <span><a href="/2025/05/13/computer-science/computer-organization/ch1/" title="Ch1">Ch1</a></span>
+    <span><a href="/2025/08/10/computer-science/computer-organization/ch5/" title="Ch5">Ch5</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
+</div>
+
+    <span><a href="/2025/03/30/computer-science/compile-principles/ch5/" title="语义分析">语义分析</a></span>
   </li>
 
       
@@ -850,7 +940,19 @@ Optimize performance
 <a href="/categories/AI/" title="In 人工智能">人工智能</a>
 </div>
 
-    <span><a href="/2025/06/15/AI/week8-9/" title="Week8-9">Week8-9</a></span>
+    <span><a href="/2025/06/16/AI/week10-11/" title="Week10-11">Week10-11</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
+</div>
+
+    <span><a href="/2025/06/17/computer-science/compile-principles/ch9/" title="指令选择">指令选择</a></span>
   </li>
 
       
@@ -860,7 +962,19 @@ Optimize performance
 <a href="/categories/SE/" title="In 软件工程">软件工程</a>
 </div>
 
-    <span><a href="/2025/06/19/SE/diagram/" title="画图题">画图题</a></span>
+    <span><a href="/2025/06/19/SE/note/" title="SE note">SE note</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/computer-organization/" title="In 计算机组成">计算机组成</a>
+</div>
+
+    <span><a href="/2025/08/15/computer-science/computer-organization/ch7/" title="Ch7">Ch7</a></span>
   </li>
 
       
@@ -873,50 +987,6 @@ Optimize performance
 </div>
 
     <span><a href="/2025/06/18/computer-science/compile-principles/ch11/" title="Register Allocation">Register Allocation</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/computer-network/" title="In 计算机网络">计算机网络</a>
-</div>
-
-    <span><a href="/2025/05/13/computer-science/computer-network/ch1/" title="Ch1">Ch1</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/AI/" title="In 人工智能">人工智能</a>
-</div>
-
-    <span><a href="/2025/05/20/AI/week2-3/" title="Week2-3">Week2-3</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/AI/" title="In 人工智能">人工智能</a>
-</div>
-
-    <span><a href="/2025/06/12/AI/week6-7/" title="Week6-7">Week6-7</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
-</div>
-
-    <span><a href="/2025/06/18/computer-science/compile-principles/ch10/" title="Liveness Analysis">Liveness Analysis</a></span>
   </li>
 
   </ul>
@@ -941,13 +1011,13 @@ Optimize performance
     <span class="post-meta-item-icon">
       <i class="ic i-chart-area"></i>
     </span>
-    <span title="Symbols count total">93k words</span>
+    <span title="Symbols count total">96k words</span>
 
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="ic i-coffee"></i>
     </span>
-    <span title="Reading time total">1:24</span>
+    <span title="Reading time total">1:27</span>
   </div>
   <div class="powered-by">
     Powered by <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>

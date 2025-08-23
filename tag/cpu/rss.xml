@@ -7,35 +7,38 @@
         <language>en</language>
         <pubDate>Sun, 10 Aug 2025 00:00:00 +0800</pubDate>
         <lastBuildDate>Sun, 10 Aug 2025 00:00:00 +0800</lastBuildDate>
-        <category>软件工程</category>
         <category>人工智能</category>
+        <category>软件工程</category>
+        <category>编译原理</category>
+        <category>Register Allocation</category>
+        <category>词法分析</category>
+        <category>抽象语法</category>
+        <category>语法分析</category>
+        <category>Liveness Analysis</category>
+        <category>语义分析</category>
+        <category>活动记录</category>
+        <category>中间代码</category>
+        <category>Basic Blocks and Traces</category>
+        <category>指令选择</category>
         <category>计算机网络</category>
-        <category>计算机组成</category>
         <category>数据的表示与运算</category>
+        <category>指令系统</category>
         <category>存储系统</category>
         <category>总线</category>
         <category>CPU</category>
-        <category>指令系统</category>
-        <category>错题</category>
-        <category>Liveness Analysis</category>
-        <category>编译原理</category>
         <category>I/O</category>
-        <category>词法分析</category>
-        <category>Register Allocation</category>
-        <category>抽象语法</category>
-        <category>语法分析</category>
-        <category>语义分析</category>
-        <category>活动记录</category>
-        <category>Basic Blocks and Traces</category>
-        <category>中间代码</category>
-        <category>指令选择</category>
+        <category>计算机组成</category>
+        <category>错题</category>
         <item>
             <guid isPermalink="true">http://example.com/2025/08/10/computer-science/computer-organization/ch5/</guid>
             <title>Ch5</title>
             <link>http://example.com/2025/08/10/computer-science/computer-organization/ch5/</link>
             <category>CPU</category>
             <pubDate>Sun, 10 Aug 2025 00:00:00 +0800</pubDate>
-            <description><![CDATA[ &lt;h1 id=&#34;Ch5-中央处理器&#34;&gt;&lt;a href=&#34;#Ch5-中央处理器&#34; class=&#34;headerlink&#34; title=&#34;Ch5 中央处理器&#34;&gt;&lt;/a&gt;Ch5 中央处理器&lt;/h1&gt;&lt;h2 id=&#34;CPU的功能和基本结构&#34;&gt;&lt;a href=&#34;#CPU的功能和基本结构&#34; class=&#34;headerlink&#34; title=&#34;CPU的功能和基本结构&#34;&gt;&lt;/a&gt;CPU的功能和基本结构&lt;/h2&gt;&lt;h3 id=&#34;功能&#34;&gt;&lt;a href=&#34;#功能&#34; class=&#34;headerlink&#34; title=&#34;功能&#34;&gt;&lt;/a&gt;功能&lt;/h3&gt;&lt;p&gt;CPU由运算器和控制器组成，具体功能包括：&lt;/p&gt;
+            <description><![CDATA[ &lt;h1 id=&#34;ch5-中央处理器&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#ch5-中央处理器&#34;&gt;#&lt;/a&gt; Ch5 中央处理器&lt;/h1&gt;
+&lt;h2 id=&#34;cpu的功能和基本结构&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#cpu的功能和基本结构&#34;&gt;#&lt;/a&gt; CPU 的功能和基本结构&lt;/h2&gt;
+&lt;h3 id=&#34;功能&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#功能&#34;&gt;#&lt;/a&gt; 功能&lt;/h3&gt;
+&lt;p&gt;CPU 由运算器和控制器组成，具体功能包括：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;指令控制&lt;/li&gt;
 &lt;li&gt;操作控制&lt;/li&gt;
@@ -43,181 +46,309 @@
 &lt;li&gt;数据加工&lt;/li&gt;
 &lt;li&gt;中断处理&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;基本结构&#34;&gt;&lt;a href=&#34;#基本结构&#34; class=&#34;headerlink&#34; title=&#34;基本结构&#34;&gt;&lt;/a&gt;基本结构&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;运算器：ALU, 暂存器, ACC, GPRs, PSW, 移位寄存器， 计数器…&lt;/li&gt;
+&lt;h3 id=&#34;基本结构&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#基本结构&#34;&gt;#&lt;/a&gt; 基本结构&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;运算器：ALU, 暂存器，ACC, GPRs, PSW, 移位寄存器， 计数器…&lt;/li&gt;
 &lt;li&gt;控制器：PC, IR, ID, 时序电路，未操作信号发生器…&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h3 id=&#34;CPU的寄存器&#34;&gt;&lt;a href=&#34;#CPU的寄存器&#34; class=&#34;headerlink&#34; title=&#34;CPU的寄存器&#34;&gt;&lt;/a&gt;CPU的寄存器&lt;/h3&gt;&lt;p&gt;按汇编程序是否可访问分为用户可见寄存器(GPRs, PSW, PC)和用户不可见寄存器(存储器地址寄存器，存储器数据寄存器，IR, 暂存寄存器，累加寄存器，移位寄存器)&lt;br&gt;各寄存器的作用：&lt;/p&gt;
+&lt;h3 id=&#34;cpu的寄存器&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#cpu的寄存器&#34;&gt;#&lt;/a&gt; CPU 的寄存器&lt;/h3&gt;
+&lt;p&gt;按汇编程序是否可访问分为用户可见寄存器 (GPRs, PSW, PC) 和用户不可见寄存器 (存储器地址寄存器，存储器数据寄存器，IR, 暂存寄存器，累加寄存器，移位寄存器)&lt;br&gt;
+ 各寄存器的作用：&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;在运算器中：&lt;ul&gt;
+&lt;li&gt;在运算器中：
+&lt;ul&gt;
 &lt;li&gt;GPRs&lt;/li&gt;
-&lt;li&gt;ACC: 通用寄存器，用于暂时存放ALU运算的结果&lt;/li&gt;
+&lt;li&gt;ACC: 通用寄存器，用于暂时存放 ALU 运算的结果&lt;/li&gt;
 &lt;li&gt;SR（移位寄存器）：存放操作数且可以移位&lt;/li&gt;
 &lt;li&gt;暂存寄存器：暂存从数据总线或通用寄存器送来的操作数，对应用程序员透明&lt;/li&gt;
 &lt;li&gt;PSW：保留各种状态信息&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;在控制器中：&lt;ul&gt;
+&lt;li&gt;在控制器中：
+&lt;ul&gt;
 &lt;li&gt;PC: 存放当前指令的地址&lt;/li&gt;
 &lt;li&gt;IR: 存放当前指令&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;指令执行过程&#34;&gt;&lt;a href=&#34;#指令执行过程&#34; class=&#34;headerlink&#34; title=&#34;指令执行过程&#34;&gt;&lt;/a&gt;指令执行过程&lt;/h2&gt;&lt;h3 id=&#34;指令周期&#34;&gt;&lt;a href=&#34;#指令周期&#34; class=&#34;headerlink&#34; title=&#34;指令周期&#34;&gt;&lt;/a&gt;指令周期&lt;/h3&gt;&lt;p&gt;&amp;#x3D; 取值周期 + 执行周期&lt;br&gt;间址周期在取址和执行之间&lt;br&gt;如果CPU在每条指令结束前都要发中断查询信号 （轮询法），后面要加上中断周期&lt;/p&gt;
-&lt;h3 id=&#34;指令周期的数据流&#34;&gt;&lt;a href=&#34;#指令周期的数据流&#34; class=&#34;headerlink&#34; title=&#34;指令周期的数据流&#34;&gt;&lt;/a&gt;指令周期的数据流&lt;/h3&gt;&lt;ol&gt;
+&lt;h2 id=&#34;指令执行过程&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#指令执行过程&#34;&gt;#&lt;/a&gt; 指令执行过程&lt;/h2&gt;
+&lt;h3 id=&#34;指令周期&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#指令周期&#34;&gt;#&lt;/a&gt; 指令周期&lt;/h3&gt;
+&lt;p&gt;= 取值周期 + 执行周期&lt;br&gt;
+间址周期在取址和执行之间&lt;br&gt;
+如果 CPU 在每条指令结束前都要发中断查询信号 （轮询法），后面要加上中断周期&lt;/p&gt;
+&lt;h3 id=&#34;指令周期的数据流&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#指令周期的数据流&#34;&gt;#&lt;/a&gt; 指令周期的数据流&lt;/h3&gt;
+&lt;ol&gt;
 &lt;li&gt;取址周期&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
-&lt;li&gt;PC-&amp;gt;MAR-&amp;gt;地址总线-&amp;gt;存储器&lt;/li&gt;
-&lt;li&gt;CU发出读命令-&amp;gt;控制总线-&amp;gt;主存&lt;/li&gt;
-&lt;li&gt;主存-&amp;gt;数据总线-&amp;gt;IR&lt;/li&gt;
-&lt;li&gt;CU发出控制信号-&amp;gt;PC&amp;#x3D;PC+1&lt;/li&gt;
+&lt;li&gt;PC-&amp;gt;MAR-&amp;gt; 地址总线 -&amp;gt; 存储器&lt;/li&gt;
+&lt;li&gt;CU 发出读命令 -&amp;gt; 控制总线 -&amp;gt; 主存&lt;/li&gt;
+&lt;li&gt;主存 -&amp;gt; 数据总线 -&amp;gt;IR&lt;/li&gt;
+&lt;li&gt;CU 发出控制信号 -&amp;gt;PC=PC+1&lt;/li&gt;
 &lt;/ul&gt;
 &lt;ol start=&#34;2&#34;&gt;
-&lt;li&gt;间址周期&lt;br&gt;取指结束后，控制单元CU会检查IR中是否有间接地址（操作数有效地址的地址）。若有，CPU执行如下操作：&lt;/li&gt;
+&lt;li&gt;间址周期&lt;br&gt;
+取指结束后，控制单元 CU 会检查 IR 中是否有间接地址（操作数有效地址的地址）。若有，CPU 执行如下操作：&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
-&lt;li&gt;IR(或MDR)的间址-&amp;gt;MAR-&amp;gt;地址总线-&amp;gt;主存&lt;/li&gt;
-&lt;li&gt;CU发出读命令-&amp;gt;控制总线-&amp;gt;主存&lt;/li&gt;
-&lt;li&gt;主存-&amp;gt;数据总线-&amp;gt;MDR（取出有效地址存入MDR）&lt;/li&gt;
+&lt;li&gt;IR (或 MDR) 的间址 -&amp;gt;MAR-&amp;gt; 地址总线 -&amp;gt; 主存&lt;/li&gt;
+&lt;li&gt;CU 发出读命令 -&amp;gt; 控制总线 -&amp;gt; 主存&lt;/li&gt;
+&lt;li&gt;主存 -&amp;gt; 数据总线 -&amp;gt;MDR（取出有效地址存入 MDR）&lt;/li&gt;
 &lt;/ul&gt;
 &lt;ol start=&#34;3&#34;&gt;
-&lt;li&gt;&lt;p&gt;执行周期&lt;/p&gt;
+&lt;li&gt;
+&lt;p&gt;执行周期&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p&gt;中断周期&lt;br&gt;假设程序断点存入堆栈中，push操作先修改SP再存入（x86采用满递减栈）&lt;/p&gt;
+&lt;li&gt;
+&lt;p&gt;中断周期&lt;br&gt;
+假设程序断点存入堆栈中，push 操作先修改 SP 再存入（x86 采用满递减栈）&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
-&lt;li&gt;CU控制将SP减1，SP-&amp;gt;MAR-&amp;gt;地址总线-&amp;gt;zhucun1&lt;/li&gt;
-&lt;li&gt;CU发出写命令-&amp;gt;控制总线-&amp;gt;主存&lt;/li&gt;
-&lt;li&gt;PC-&amp;gt;MDR-&amp;gt;数据总线-&amp;gt;主存（把中断时的PC存入栈中）&lt;/li&gt;
-&lt;li&gt;CU将中断服务程序入口地址存入PC&lt;/li&gt;
+&lt;li&gt;CU 控制将 SP 减 1，SP-&amp;gt;MAR-&amp;gt; 地址总线 -&amp;gt;zhucun1&lt;/li&gt;
+&lt;li&gt;CU 发出写命令 -&amp;gt; 控制总线 -&amp;gt; 主存&lt;/li&gt;
+&lt;li&gt;PC-&amp;gt;MDR-&amp;gt; 数据总线 -&amp;gt; 主存（把中断时的 PC 存入栈中）&lt;/li&gt;
+&lt;li&gt;CU 将中断服务程序入口地址存入 PC&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;指令执行方案&#34;&gt;&lt;a href=&#34;#指令执行方案&#34; class=&#34;headerlink&#34; title=&#34;指令执行方案&#34;&gt;&lt;/a&gt;指令执行方案&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;单周期处理器&lt;br&gt;CPI &amp;#x3D; 1，指令执行周期取决于执行时间最长的指令的执行时间&lt;/li&gt;
-&lt;li&gt;多周期处理器&lt;br&gt;CPI &amp;gt; 1,&lt;/li&gt;
-&lt;li&gt;流水线处理器&lt;br&gt;理想状态下CPI &amp;#x3D; 1，流水线并行&lt;/li&gt;
+&lt;h3 id=&#34;指令执行方案&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#指令执行方案&#34;&gt;#&lt;/a&gt; 指令执行方案&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;单周期处理器&lt;br&gt;
+ CPI = 1，指令执行周期取决于执行时间最长的指令的执行时间&lt;/li&gt;
+&lt;li&gt;多周期处理器&lt;br&gt;
+ CPI &amp;gt; 1,&lt;/li&gt;
+&lt;li&gt;流水线处理器&lt;br&gt;
+理想状态下 CPI = 1，流水线并行&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h2 id=&#34;数据通路&#34;&gt;&lt;a href=&#34;#数据通路&#34; class=&#34;headerlink&#34; title=&#34;数据通路&#34;&gt;&lt;/a&gt;数据通路&lt;/h2&gt;&lt;h3 id=&#34;功能-1&#34;&gt;&lt;a href=&#34;#功能-1&#34; class=&#34;headerlink&#34; title=&#34;功能&#34;&gt;&lt;/a&gt;功能&lt;/h3&gt;&lt;p&gt;。&lt;/p&gt;
-&lt;h3 id=&#34;组成&#34;&gt;&lt;a href=&#34;#组成&#34; class=&#34;headerlink&#34; title=&#34;组成&#34;&gt;&lt;/a&gt;组成&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;组合逻辑&lt;br&gt;译码器，MUX，三态门…&lt;/li&gt;
-&lt;li&gt;时序逻辑&lt;br&gt;包含存储信号的记忆单元&lt;/li&gt;
+&lt;h2 id=&#34;数据通路&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#数据通路&#34;&gt;#&lt;/a&gt; 数据通路&lt;/h2&gt;
+&lt;h3 id=&#34;功能-2&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#功能-2&#34;&gt;#&lt;/a&gt; 功能&lt;/h3&gt;
+&lt;p&gt;。&lt;/p&gt;
+&lt;h3 id=&#34;组成&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#组成&#34;&gt;#&lt;/a&gt; 组成&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;组合逻辑&lt;br&gt;
+译码器，MUX，三态门…&lt;/li&gt;
+&lt;li&gt;时序逻辑&lt;br&gt;
+包含存储信号的记忆单元&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h3 id=&#34;基本结构-1&#34;&gt;&lt;a href=&#34;#基本结构-1&#34; class=&#34;headerlink&#34; title=&#34;基本结构&#34;&gt;&lt;/a&gt;基本结构&lt;/h3&gt;&lt;p&gt;2种：&lt;/p&gt;
+&lt;h3 id=&#34;基本结构-2&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#基本结构-2&#34;&gt;#&lt;/a&gt; 基本结构&lt;/h3&gt;
+&lt;p&gt;2 种：&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;CPU内部总线（单总线、多总线）&lt;/li&gt;
+&lt;li&gt;CPU 内部总线（单总线、多总线）&lt;/li&gt;
 &lt;li&gt;专用数据通路&lt;/li&gt;
 &lt;/ul&gt;
 &lt;ol&gt;
-&lt;li&gt;CPU内部单总线方式&lt;br&gt;ALU和寄存器连接到一条总线上，性能低&lt;br&gt;单总线的ALU要配合暂存器使用，比如从内存取出来的数据要放在暂存器中，再从暂存器中取数据给ALU&lt;br&gt;&lt;img data-src=&#34;/f1.jpg&#34;&gt;&lt;br&gt;了解每条指令的datapath&lt;/li&gt;
-&lt;li&gt;CPU内部多总线方式&lt;br&gt;允许同时在多个总线上传送不同的数据，提高效率&lt;/li&gt;
-&lt;li&gt;专用数据通路方式&lt;br&gt;看图说话，没什么好说的&lt;/li&gt;
+&lt;li&gt;CPU 内部单总线方式&lt;br&gt;
+ ALU 和寄存器连接到一条总线上，性能低&lt;br&gt;
+单总线的 ALU 要配合暂存器使用，比如从内存取出来的数据要放在暂存器中，再从暂存器中取数据给 ALU&lt;br&gt;
+&lt;img data-src=&#34;f1.jpg&#34; alt&gt;&lt;br&gt;
+ 了解每条指令的 datapath&lt;/li&gt;
+&lt;li&gt;CPU 内部多总线方式&lt;br&gt;
+允许同时在多个总线上传送不同的数据，提高效率&lt;/li&gt;
+&lt;li&gt;专用数据通路方式&lt;br&gt;
+看图说话，没什么好说的&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h3 id=&#34;数据通路的操作举例&#34;&gt;&lt;a href=&#34;#数据通路的操作举例&#34; class=&#34;headerlink&#34; title=&#34;数据通路的操作举例&#34;&gt;&lt;/a&gt;数据通路的操作举例&lt;/h3&gt;&lt;p&gt;会画图就会&lt;/p&gt;
-&lt;h2 id=&#34;控制器的功能和工作原理&#34;&gt;&lt;a href=&#34;#控制器的功能和工作原理&#34; class=&#34;headerlink&#34; title=&#34;控制器的功能和工作原理&#34;&gt;&lt;/a&gt;控制器的功能和工作原理&lt;/h2&gt;&lt;h3 id=&#34;结构和功能&#34;&gt;&lt;a href=&#34;#结构和功能&#34; class=&#34;headerlink&#34; title=&#34;结构和功能&#34;&gt;&lt;/a&gt;结构和功能&lt;/h3&gt;&lt;ol&gt;
+&lt;h3 id=&#34;数据通路的操作举例&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#数据通路的操作举例&#34;&gt;#&lt;/a&gt; 数据通路的操作举例&lt;/h3&gt;
+&lt;p&gt;会画图就会&lt;/p&gt;
+&lt;h2 id=&#34;控制器的功能和工作原理&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#控制器的功能和工作原理&#34;&gt;#&lt;/a&gt; 控制器的功能和工作原理&lt;/h2&gt;
+&lt;h3 id=&#34;结构和功能&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#结构和功能&#34;&gt;#&lt;/a&gt; 结构和功能&lt;/h3&gt;
+&lt;ol&gt;
 &lt;li&gt;取指令，指出下一条指令的位置&lt;/li&gt;
 &lt;li&gt;译码或测试，产生控制信号&lt;/li&gt;
-&lt;li&gt;控制CPU，主存，I&amp;#x2F;O的数据流动方向&lt;br&gt;分为硬布线控制器和微程序控制器&lt;/li&gt;
+&lt;li&gt;控制 CPU，主存，I/O 的数据流动方向&lt;br&gt;
+分为硬布线控制器和微程序控制器&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h3 id=&#34;硬布线控制器&#34;&gt;&lt;a href=&#34;#硬布线控制器&#34; class=&#34;headerlink&#34; title=&#34;硬布线控制器&#34;&gt;&lt;/a&gt;硬布线控制器&lt;/h3&gt;&lt;p&gt;组合逻辑控制器&lt;br&gt;CU的输入信号来自(1)指令译码器(2)时钟脉冲(3)执行单元的反馈信息&lt;br&gt;比如这种：&lt;br&gt;&lt;img data-src=&#34;/f2.jpg&#34;&gt;&lt;/p&gt;
-&lt;h3 id=&#34;微程序控制器&#34;&gt;&lt;a href=&#34;#微程序控制器&#34; class=&#34;headerlink&#34; title=&#34;微程序控制器&#34;&gt;&lt;/a&gt;微程序控制器&lt;/h3&gt;&lt;p&gt;采用存储逻辑实现，将未操作信号代码化，使没调机器指令转化成一段微程序并存入专门的控制存储器中&lt;br&gt;晚点回来学&lt;/p&gt;
-&lt;h2 id=&#34;异常和中断机制&#34;&gt;&lt;a href=&#34;#异常和中断机制&#34; class=&#34;headerlink&#34; title=&#34;异常和中断机制&#34;&gt;&lt;/a&gt;异常和中断机制&lt;/h2&gt;&lt;h3 id=&#34;概念&#34;&gt;&lt;a href=&#34;#概念&#34; class=&#34;headerlink&#34; title=&#34;概念&#34;&gt;&lt;/a&gt;概念&lt;/h3&gt;&lt;p&gt;内部产生的意外事件叫异常，是同步的；外部产生的事件叫中断，是异步的&lt;/p&gt;
-&lt;h3 id=&#34;分类&#34;&gt;&lt;a href=&#34;#分类&#34; class=&#34;headerlink&#34; title=&#34;分类&#34;&gt;&lt;/a&gt;分类&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;异常：CPU内部执行指令引起的异常事件，比如整除0，溢出，单步跟踪，非法指令，栈溢出，地址越界，缺页等&lt;/p&gt;
+&lt;h3 id=&#34;硬布线控制器&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#硬布线控制器&#34;&gt;#&lt;/a&gt; 硬布线控制器&lt;/h3&gt;
+&lt;p&gt;组合逻辑控制器&lt;br&gt;
+ CU 的输入信号来自 (1) 指令译码器 (2) 时钟脉冲 (3) 执行单元的反馈信息&lt;br&gt;
+比如这种：&lt;br&gt;
+&lt;img data-src=&#34;f2.jpg&#34; alt&gt;&lt;/p&gt;
+&lt;h3 id=&#34;微程序控制器&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#微程序控制器&#34;&gt;#&lt;/a&gt; 微程序控制器&lt;/h3&gt;
+&lt;p&gt;采用存储逻辑实现，将未操作信号代码化，使没调机器指令转化成一段微程序并存入专门的控制存储器中&lt;br&gt;
+晚点回来学&lt;/p&gt;
+&lt;h2 id=&#34;异常和中断机制&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#异常和中断机制&#34;&gt;#&lt;/a&gt; 异常和中断机制&lt;/h2&gt;
+&lt;h3 id=&#34;概念&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#概念&#34;&gt;#&lt;/a&gt; 概念&lt;/h3&gt;
+&lt;p&gt;内部产生的意外事件叫异常，是同步的；外部产生的事件叫中断，是异步的&lt;/p&gt;
+&lt;h3 id=&#34;分类&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#分类&#34;&gt;#&lt;/a&gt; 分类&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;ol&gt;
-&lt;li&gt;Fault故障&lt;br&gt;引起故障的指令启动后、执行结束前检测到的异常事件（所以处理完之后要重新执行该指令或者无法恢复的终止进程）&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;ol start=&#34;2&#34;&gt;
-&lt;li&gt;Trap自陷&lt;br&gt;人为设定的特殊中断机制，最常见的是sys call，还有断点、单步，还有一些条件自陷指令（MIPS的teq, teqi, tne, tnei）等&lt;br&gt;&amp;#x3D;&amp;#x3D;以上两种都属于软件中断&amp;#x3D;&amp;#x3D;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;ol start=&#34;3&#34;&gt;
-&lt;li&gt;Abort终止&lt;br&gt;执行过程中发生了硬件故障，比如控制器出错、存储器校验错、总线错误等&lt;br&gt;&amp;#x3D;&amp;#x3D;Abort和外中断属于硬件中断&amp;#x3D;&amp;#x3D;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;中断：CPU外部比如I&amp;#x2F;O引起的中断，分为可屏蔽中断和不可屏蔽中断&lt;/p&gt;
+&lt;li&gt;
+&lt;p&gt;异常：CPU 内部执行指令引起的异常事件，比如整除 0，溢出，单步跟踪，非法指令，栈溢出，地址越界，缺页等&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;可屏蔽中断：可屏蔽中断请求线INTR向CPU发出中断请求，CPU可以设置相应的bit屏蔽&lt;/li&gt;
-&lt;li&gt;不可屏蔽中断：通过专门的不可屏蔽中断请求线NMI向CPU发出的中断请求，通常是非常紧急的硬件故障&lt;br&gt;&amp;#x3D;&amp;#x3D;所有的异常和终端都是由硬件检测发现的&amp;#x3D;&amp;#x3D;&lt;br&gt;根据识别中断服务程序地址的方式，可以分为向量中断和非向量中断；&lt;br&gt;根据中断处理过程是否允许被打断分为单重中断和多重中断&lt;/li&gt;
+&lt;li&gt;
+&lt;ol&gt;
+&lt;li&gt;Fault 故障&lt;br&gt;
+引起故障的指令启动后、执行结束前检测到的异常事件（所以处理完之后要重新执行该指令或者无法恢复的终止进程）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;Trap 自陷&lt;br&gt;
+人为设定的特殊中断机制，最常见的是 sys call，还有断点、单步，还有一些条件自陷指令（MIPS 的 teq, teqi, tne, tnei）等&lt;br&gt;
+&lt;mark&gt;以上两种都属于软件中断&lt;/mark&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;Abort 终止&lt;br&gt;
+执行过程中发生了硬件故障，比如控制器出错、存储器校验错、总线错误等&lt;br&gt;
+&lt;mark&gt; Abort 和外中断属于硬件中断&lt;/mark&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;中断：CPU 外部比如 I/O 引起的中断，分为可屏蔽中断和不可屏蔽中断&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;可屏蔽中断：可屏蔽中断请求线 INTR 向 CPU 发出中断请求，CPU 可以设置相应的 bit 屏蔽&lt;/li&gt;
+&lt;li&gt;不可屏蔽中断：通过专门的不可屏蔽中断请求线 NMI 向 CPU 发出的中断请求，通常是非常紧急的硬件故障&lt;br&gt;
+&lt;mark&gt;所有的异常和终端都是由硬件检测发现的&lt;/mark&gt;&lt;br&gt;
+根据识别中断服务程序地址的方式，可以分为向量中断和非向量中断；&lt;br&gt;
+根据中断处理过程是否允许被打断分为单重中断和多重中断&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;异常和中断的响应过程&#34;&gt;&lt;a href=&#34;#异常和中断的响应过程&#34; class=&#34;headerlink&#34; title=&#34;异常和中断的响应过程&#34;&gt;&lt;/a&gt;异常和中断的响应过程&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;关中断&lt;br&gt;保存断点和程序状态期间，把IF置0不允许响应中断&lt;/li&gt;
-&lt;li&gt;保存断点和程序状态&lt;br&gt;将返回地址和被中断时的PSW送到栈或特定寄存器中（通常是栈，才能支持嵌套中断），处理完之后恢复&lt;/li&gt;
-&lt;li&gt;识别异常和中断并转到相应的处理程序&lt;br&gt;异常大多采用软件识别，中断可以采用软件识别或硬件识别&lt;br&gt;软件识别：CPU设置异常状态寄存器，操作系统使用查询程序按优先级顺序查询异常状态寄存器以检测类型并处理&lt;br&gt;硬件识别：向量中断。每个异常或中断被指定一个中断类型号，发生之后查询中断向量表，找到处理程序的入口地址（中断向量），并跳转到处理程序&lt;/li&gt;
+&lt;h3 id=&#34;异常和中断的响应过程&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#异常和中断的响应过程&#34;&gt;#&lt;/a&gt; 异常和中断的响应过程&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;关中断&lt;br&gt;
+保存断点和程序状态期间，把 IF 置 0 不允许响应中断&lt;/li&gt;
+&lt;li&gt;保存断点和程序状态&lt;br&gt;
+将返回地址和被中断时的 PSW 送到栈或特定寄存器中（通常是栈，才能支持嵌套中断），处理完之后恢复&lt;/li&gt;
+&lt;li&gt;识别异常和中断并转到相应的处理程序&lt;br&gt;
+异常大多采用软件识别，中断可以采用软件识别或硬件识别&lt;br&gt;
+软件识别：CPU 设置异常状态寄存器，操作系统使用查询程序按优先级顺序查询异常状态寄存器以检测类型并处理&lt;br&gt;
+硬件识别：向量中断。每个异常或中断被指定一个中断类型号，发生之后查询中断向量表，找到处理程序的入口地址（中断向量），并跳转到处理程序&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h2 id=&#34;指令流水线&#34;&gt;&lt;a href=&#34;#指令流水线&#34; class=&#34;headerlink&#34; title=&#34;指令流水线&#34;&gt;&lt;/a&gt;指令流水线&lt;/h2&gt;&lt;ul&gt;
+&lt;h2 id=&#34;指令流水线&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#指令流水线&#34;&gt;#&lt;/a&gt; 指令流水线&lt;/h2&gt;
+&lt;ul&gt;
 &lt;li&gt;Performance via parallelism&lt;/li&gt;
 &lt;li&gt;Performance via pipelining&lt;/li&gt;
-&lt;li&gt;Performance via prediction&lt;br&gt;时间并行：流水线&lt;br&gt;空间并行：超标量&lt;/li&gt;
+&lt;li&gt;Performance via prediction&lt;br&gt;
+ 时间并行：流水线&lt;br&gt;
+空间并行：超标量&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;基本实现&#34;&gt;&lt;a href=&#34;#基本实现&#34; class=&#34;headerlink&#34; title=&#34;基本实现&#34;&gt;&lt;/a&gt;基本实现&lt;/h3&gt;&lt;p&gt;单周期CPU以执行最慢的指令周期作为时钟周期。不能缩短单挑指令的执行时间，但可以提高整个程序的执行速度&lt;br&gt;每个流水段后面都要加一个流水段寄存器锁存数据，保证本段的执行结果能在下个周期给下一流水段使用。&lt;/p&gt;
-&lt;h3 id=&#34;Hazard&#34;&gt;&lt;a href=&#34;#Hazard&#34; class=&#34;headerlink&#34; title=&#34;Hazard&#34;&gt;&lt;/a&gt;Hazard&lt;/h3&gt;&lt;ul&gt;
+&lt;h3 id=&#34;基本实现&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#基本实现&#34;&gt;#&lt;/a&gt; 基本实现&lt;/h3&gt;
+&lt;p&gt;单周期 CPU 以执行最慢的指令周期作为时钟周期。不能缩短单挑指令的执行时间，但可以提高整个程序的执行速度&lt;br&gt;
+每个流水段后面都要加一个流水段寄存器锁存数据，保证本段的执行结果能在下个周期给下一流水段使用。&lt;/p&gt;
+&lt;h3 id=&#34;hazard&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#hazard&#34;&gt;#&lt;/a&gt; Hazard&lt;/h3&gt;
+&lt;ul&gt;
 &lt;li&gt;结构冒险、数据冒险、控制冒险&lt;/li&gt;
 &lt;/ul&gt;
 &lt;ol&gt;
-&lt;li&gt;structural hazard&lt;br&gt;在流水线执行期间，两条及以上指令同一时间对同一个硬件资源发起使用的请求（Memory conflicts, Register File conflicts, Other units conflicts）&lt;br&gt;解决方法：(1)stall (2)增加更多的硬件支持单元（比如Double Bump，前半周期写后半周期读）&lt;/li&gt;
-&lt;li&gt;data hazard&lt;br&gt;RAW, WAR, WAW&lt;br&gt;统考不考乱序执行所以只需要考虑RAW写后读&lt;br&gt;解决方法：(1)stall (2)NOP (3)forwarding&lt;/li&gt;
+&lt;li&gt;structural hazard&lt;br&gt;
+ 在流水线执行期间，两条及以上指令同一时间对同一个硬件资源发起使用的请求（Memory conflicts, Register File conflicts, Other units conflicts）&lt;br&gt;
+解决方法：(1) stall (2) 增加更多的硬件支持单元（比如 Double Bump，前半周期写后半周期读）&lt;/li&gt;
+&lt;li&gt;data hazard&lt;br&gt;
+RAW, WAR, WAW&lt;br&gt;
+ 统考不考乱序执行所以只需要考虑 RAW 写后读&lt;br&gt;
+解决方法：(1) stall (2) NOP (3) forwarding&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
-&lt;li&gt;stall&lt;br&gt;硬件解决方法，流水线阻塞，使数据相关的后续指令延迟执行，也称为插入气泡（bubble）&lt;/li&gt;
-&lt;li&gt;NOP&lt;br&gt;软件解决方法，编译时插入空操作（NOP）比如&lt;code&gt;addi x0,x0,0&lt;/code&gt;，使数据相关的后续指令延迟执行&lt;/li&gt;
-&lt;li&gt;forwarding&lt;br&gt;旁路转发，将数据通路生成的中间数据直接往前传递到ALU的输入端，参与下一条指令的运算&lt;br&gt;必须同时满足两个条件：&lt;/li&gt;
+&lt;li&gt;stall&lt;br&gt;
+ 硬件解决方法，流水线阻塞，使数据相关的后续指令延迟执行，也称为插入气泡（bubble）&lt;/li&gt;
+&lt;li&gt;NOP&lt;br&gt;
+ 软件解决方法，编译时插入空操作（NOP）比如 &lt;code&gt;addi x0,x0,0&lt;/code&gt; ，使数据相关的后续指令延迟执行&lt;/li&gt;
+&lt;li&gt;forwarding&lt;br&gt;
+ 旁路转发，将数据通路生成的中间数据直接往前传递到 ALU 的输入端，参与下一条指令的运算&lt;br&gt;
+必须同时满足两个条件：&lt;/li&gt;
 &lt;li&gt;指令确实会写入寄存器（通过检查 RegWrite 信号）。&lt;/li&gt;
-&lt;li&gt;目标寄存器编号不是 x0（零寄存器不会变）&lt;br&gt;才需要forwarding&lt;blockquote&gt;
-&lt;p&gt;ALU-&amp;gt;ALU&lt;br&gt;数据可以从 &lt;code&gt;EX/MEM&lt;/code&gt; 或 &lt;code&gt;MEM/WB&lt;/code&gt; 阶段转发到当前在 EX 阶段的 ALU 输入&lt;br&gt;MEM-&amp;gt;ALU&lt;br&gt;load指令的数据只有在&lt;code&gt;MEM/WB&lt;/code&gt;阶段才能被转发到当前在 EX 阶段的 ALU 输入，所以如果load下一条指令要用到load指令的数据，则需要先stall一周期再forwarding&lt;/p&gt;
+&lt;li&gt;目标寄存器编号不是 x0（零寄存器不会变）&lt;br&gt;
+才需要 forwarding&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;ALU-&amp;gt;ALU&lt;br&gt;
+ 数据可以从  &lt;code&gt;EX/MEM&lt;/code&gt;  或  &lt;code&gt;MEM/WB&lt;/code&gt;  阶段转发到当前在 EX 阶段的 ALU 输入&lt;br&gt;
+ MEM-&amp;gt;ALU&lt;br&gt;
+load 指令的数据只有在 &lt;code&gt;MEM/WB&lt;/code&gt;  阶段才能被转发到当前在 EX 阶段的 ALU 输入，所以如果 load 下一条指令要用到 load 指令的数据，则需要先 stall 一周期再 forwarding&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
 &lt;ol start=&#34;3&#34;&gt;
-&lt;li&gt;control hazard&lt;br&gt;解决方法：&lt;/li&gt;
+&lt;li&gt;control hazard&lt;br&gt;
+ 解决方法：&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
-&lt;li&gt;插入3条&lt;code&gt;NOP&lt;/code&gt;直到分支指令的&lt;code&gt;WB&lt;/code&gt;阶段才进行下一条指令的&lt;code&gt;IF&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;分支预测&lt;br&gt;&lt;img data-src=&#34;/f5.jpg&#34;&gt;&lt;/li&gt;
+&lt;li&gt;插入 3 条 &lt;code&gt;NOP&lt;/code&gt;  直到分支指令的 &lt;code&gt;WB&lt;/code&gt;  阶段才进行下一条指令的 &lt;code&gt;IF&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;分支预测&lt;br&gt;
+&lt;img data-src=&#34;f5.jpg&#34; alt&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;流水线的性能指标&#34;&gt;&lt;a href=&#34;#流水线的性能指标&#34; class=&#34;headerlink&#34; title=&#34;流水线的性能指标&#34;&gt;&lt;/a&gt;流水线的性能指标&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;吞吐率&lt;br&gt;单位时间内流水线所完成的任务数量&lt;br&gt;$$&lt;br&gt;TP &amp;#x3D; \frac{n}{T_k}&lt;br&gt;$$&lt;br&gt;k是流水线的段数，n是任务数，Tk是处理n个任务所用的总时间。理想状态下一条k段流水线能在&lt;code&gt;k+n-1&lt;/code&gt;个时钟周期完成&lt;code&gt;n&lt;/code&gt;个任务，吞吐率为$\frac{n}{(k + n - 1) \Delta t}$&lt;/li&gt;
-&lt;li&gt;流水线的加速比&lt;br&gt;完成同一批任务，不适用流水线和使用流水线所用的时间之比&lt;br&gt;理想状态下流水线加速比为$\frac{k n}{k+n-1}$&lt;/li&gt;
+&lt;h3 id=&#34;流水线的性能指标&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#流水线的性能指标&#34;&gt;#&lt;/a&gt; 流水线的性能指标&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;吞吐率&lt;br&gt;
+单位时间内流水线所完成的任务数量&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h3 id=&#34;高级流水线技术&#34;&gt;&lt;a href=&#34;#高级流水线技术&#34; class=&#34;headerlink&#34; title=&#34;高级流水线技术&#34;&gt;&lt;/a&gt;高级流水线技术&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;超标量流水线&lt;br&gt;动态多发射技术，支持乱序执行&lt;/li&gt;
+&lt;p&gt;&lt;span class=&#34;katex-display&#34;&gt;&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34; display=&#34;block&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;T&lt;/mi&gt;&lt;mi&gt;P&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mfrac&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;msub&gt;&lt;mi&gt;T&lt;/mi&gt;&lt;mi&gt;k&lt;/mi&gt;&lt;/msub&gt;&lt;/mfrac&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;TP = \frac{n}{T_k}
+&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.68333em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.13889em;&#34;&gt;T&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.13889em;&#34;&gt;P&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mrel&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:1.9435600000000002em;vertical-align:-0.8360000000000001em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mopen nulldelimiter&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mfrac&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:1.10756em;&#34;&gt;&lt;span style=&#34;top:-2.3139999999999996em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:3em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.13889em;&#34;&gt;T&lt;/span&gt;&lt;span class=&#34;msupsub&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.33610799999999996em;&#34;&gt;&lt;span style=&#34;top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.7em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mathnormal mtight&#34; style=&#34;margin-right:0.03148em;&#34;&gt;k&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.15em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;top:-3.23em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:3em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;frac-line&#34; style=&#34;border-bottom-width:0.04em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;top:-3.677em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:3em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;n&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.8360000000000001em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;mclose nulldelimiter&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p k+n-1&gt;k 是流水线的段数，n 是任务数，Tk 是处理 n 个任务所用的总时间。理想状态下一条 k 段流水线能在 &lt;code&gt;k+n-1&lt;/code&gt;  个时钟周期完成 &lt;code&gt;n&lt;/code&gt;  个任务，吞吐率为&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mfrac&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mrow&gt;&lt;mo stretchy=&#34;false&#34;&gt;(&lt;/mo&gt;&lt;mi&gt;k&lt;/mi&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mo&gt;−&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mo stretchy=&#34;false&#34;&gt;)&lt;/mo&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;Δ&lt;/mi&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;/mrow&gt;&lt;/mfrac&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;\frac{n}{(k + n - 1) \Delta t}&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:1.215392em;vertical-align:-0.52em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mopen nulldelimiter&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mfrac&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.695392em;&#34;&gt;&lt;span style=&#34;top:-2.655em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:3em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mtight&#34;&gt;&lt;span class=&#34;mopen mtight&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mord mathnormal mtight&#34; style=&#34;margin-right:0.03148em;&#34;&gt;k&lt;/span&gt;&lt;span class=&#34;mbin mtight&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;mord mathnormal mtight&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;mbin mtight&#34;&gt;−&lt;/span&gt;&lt;span class=&#34;mord mtight&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;mclose mtight&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;mord mtight&#34;&gt;Δ&lt;/span&gt;&lt;span class=&#34;mord mathnormal mtight&#34;&gt;t&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;top:-3.23em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:3em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;frac-line&#34; style=&#34;border-bottom-width:0.04em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;top:-3.394em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:3em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mtight&#34;&gt;&lt;span class=&#34;mord mathnormal mtight&#34;&gt;n&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.52em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;mclose nulldelimiter&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;
+ 2. 流水线的加速比&lt;br&gt;
+完成同一批任务，不适用流水线和使用流水线所用的时间之比&lt;br&gt;
+理想状态下流水线加速比为\frac{k n}&lt;/p&gt;
+&lt;h3 id=&#34;高级流水线技术&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#高级流水线技术&#34;&gt;#&lt;/a&gt; 高级流水线技术&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;超标量流水线&lt;br&gt;
+动态多发射技术，支持乱序执行&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
-&lt;li&gt;Scoreboard&lt;br&gt;&lt;img data-src=&#34;/f3.jpg&#34;&gt;&lt;/li&gt;
-&lt;li&gt;Tomasulo&lt;br&gt;&lt;img data-src=&#34;/f4.jpg&#34;&gt;&lt;/li&gt;
+&lt;li&gt;Scoreboard&lt;br&gt;
+&lt;img data-src=&#34;f3.jpg&#34; alt&gt;&lt;/li&gt;
+&lt;li&gt;Tomasulo&lt;br&gt;
+&lt;img data-src=&#34;f4.jpg&#34; alt&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;ol start=&#34;2&#34;&gt;
-&lt;li&gt;超长指令字技术&lt;br&gt;静态多发射技术，将多条能并行操作的指令组合成一个超长指令字，需要多个处理不见&lt;/li&gt;
-&lt;li&gt;超流水线技术&lt;br&gt;流水线功能段划分的越多，时钟周期越短，指令吞吐率越高。&lt;br&gt;超流水线技术通过提高流水线主频来提高性能，但是流水段越多中间寄存器的开销就越大&lt;blockquote&gt;
-&lt;p&gt;超流水线或者理想状态下流水线技术CPI&amp;#x3D;1；多发射流水线的CPI可以小于1&lt;/p&gt;
+&lt;li&gt;超长指令字技术&lt;br&gt;
+静态多发射技术，将多条能并行操作的指令组合成一个超长指令字，需要多个处理不见&lt;/li&gt;
+&lt;li&gt;超流水线技术&lt;br&gt;
+流水线功能段划分的越多，时钟周期越短，指令吞吐率越高。&lt;br&gt;
+超流水线技术通过提高流水线主频来提高性能，但是流水段越多中间寄存器的开销就越大&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;超流水线或者理想状态下流水线技术 CPI=1；多发射流水线的 CPI 可以小于 1&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;/li&gt;
+&lt;h2 id=&#34;多处理器&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#多处理器&#34;&gt;#&lt;/a&gt; 多处理器&lt;/h2&gt;
+&lt;h3 id=&#34;sisd-simd-mimd&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#sisd-simd-mimd&#34;&gt;#&lt;/a&gt; SISD SIMD MIMD&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;SISD: single instruction single data&lt;br&gt;
+ 传统串行处理器&lt;/li&gt;
+&lt;li&gt;SIMD: single instruction multiple data&lt;br&gt;
+ 数据级并行技术 (DLP)，一条指令可以同时对多个数据元素执行相同的操作，用到向量寄存器&lt;br&gt;
+在处理 for 循环数组时最有效（比如两个数组相加）；在使用 case/seitch 时效率最低&lt;/li&gt;
+&lt;li&gt;MISD: multiple instruction single data&lt;br&gt;
+ 实际上不存在&lt;/li&gt;
+&lt;li&gt;MIMD: multiple instruction multiple data&lt;br&gt;
+TLP&lt;br&gt;
+ 分为多计算机系统和多处理器系统。&lt;br&gt;
+多计算机系统由多个独立的计算机节点组成，每个节点通常包含自己的存储器、CPU，具有独立的主存地址空间，通过消息传递进行数据传送，也称 &lt;code&gt;消息传递MIMD&lt;/code&gt; &lt;br&gt;
+ 多处理器系统是共享存储多处理器 &lt;code&gt;SMP&lt;/code&gt;  系统的简称，共享单一地址空间，也称共享存储 MIMD&lt;br&gt;
+ 向量处理器是 SIMD 的变体，实现了直接操作一维数组指令集&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h2 id=&#34;多处理器&#34;&gt;&lt;a href=&#34;#多处理器&#34; class=&#34;headerlink&#34; title=&#34;多处理器&#34;&gt;&lt;/a&gt;多处理器&lt;/h2&gt;&lt;h3 id=&#34;SISD-SIMD-MIMD&#34;&gt;&lt;a href=&#34;#SISD-SIMD-MIMD&#34; class=&#34;headerlink&#34; title=&#34;SISD SIMD MIMD&#34;&gt;&lt;/a&gt;SISD SIMD MIMD&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;SISD: single instruction single data&lt;br&gt;传统串行处理器&lt;/li&gt;
-&lt;li&gt;SIMD: single instruction multiple data&lt;br&gt;数据级并行技术(DLP)，一条指令可以同时对多个数据元素执行相同的操作，用到向量寄存器&lt;br&gt;在处理for循环数组时最有效（比如两个数组相加）；在使用case&amp;#x2F;seitch时效率最低&lt;/li&gt;
-&lt;li&gt;MISD: multiple instruction single data&lt;br&gt;实际上不存在&lt;/li&gt;
-&lt;li&gt;MIMD: multiple instruction multiple data&lt;br&gt;TLP&lt;br&gt;分为多计算机系统和多处理器系统。&lt;br&gt;多计算机系统由多个独立的计算机节点组成，每个节点通常包含自己的存储器、CPU，具有独立的主存地址空间，通过消息传递进行数据传送，也称&lt;code&gt;消息传递MIMD&lt;/code&gt;&lt;br&gt;多处理器系统是共享存储多处理器&lt;code&gt;SMP&lt;/code&gt;系统的简称，共享单一地址空间，也称共享存储MIMD&lt;br&gt;向量处理器是SIMD的变体，实现了直接操作一维数组指令集&lt;/li&gt;
+&lt;h3 id=&#34;硬件多线程&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#硬件多线程&#34;&gt;#&lt;/a&gt; 硬件多线程&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;细粒度多线程 Fine-grained multithreading&lt;br&gt;
+ 多个线程交叉执行指令，线程之间的指令不相关，可以乱序并行执行，需要频繁进行上下文切换，不需要重载流水线。牺牲单个线程执行的性能，来换取整个进程吞吐量的提升&lt;/li&gt;
+&lt;li&gt;粗粒度多线程 Coarse-grained multithreading&lt;br&gt;
+ 连续几个时钟周期都执行同一线程的指令序列，尽在当前线程出现较大开销的阻塞才切换（比如 L2 miss, L2 miss）相比细粒度多线程，上下文切换的频率较低，切换时需要重载流水线&lt;/li&gt;
+&lt;li&gt;同时多线程 SMT&lt;br&gt;
+ILP+TLP，指令级并行的同时实现线程级并行，在同一个时钟周期发射多个不同线程中的多条指令执行&lt;br&gt;
+ Intal 的 Hyper-threading 就是 SMT&lt;br&gt;
+&lt;img data-src=&#34;f6.jpg&#34; alt&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h3 id=&#34;硬件多线程&#34;&gt;&lt;a href=&#34;#硬件多线程&#34; class=&#34;headerlink&#34; title=&#34;硬件多线程&#34;&gt;&lt;/a&gt;硬件多线程&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;细粒度多线程 Fine-grained multithreading&lt;br&gt;多个线程交叉执行指令，线程之间的指令不相关，可以乱序并行执行，需要频繁进行上下文切换，不需要重载流水线。牺牲单个线程执行的性能，来换取整个进程吞吐量的提升&lt;/li&gt;
-&lt;li&gt;粗粒度多线程 Coarse-grained multithreading&lt;br&gt;连续几个时钟周期都执行同一线程的指令序列，尽在当前线程出现较大开销的阻塞才切换（比如L2 miss, L2 miss）相比细粒度多线程，上下文切换的频率较低，切换时需要重载流水线&lt;/li&gt;
-&lt;li&gt;同时多线程 SMT&lt;br&gt;ILP+TLP，指令级并行的同时实现线程级并行，在同一个时钟周期发射多个不同线程中的多条指令执行&lt;br&gt;Intal的Hyper-threading就是SMT&lt;br&gt;&lt;img data-src=&#34;/f6.jpg&#34;&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3 id=&#34;多核处理器&#34;&gt;&lt;a href=&#34;#多核处理器&#34; class=&#34;headerlink&#34; title=&#34;多核处理器&#34;&gt;&lt;/a&gt;多核处理器&lt;/h3&gt;&lt;p&gt;一个CPU有多个core，也称片上多处理器&lt;br&gt;每个核既可以有自己的Cache，又可以共享同一个Cache，所有核共享主存储器&lt;br&gt;多核处理器必须采用多线程（或多进程）才能发挥性能&lt;/p&gt;
-&lt;h3 id=&#34;共享内存多处理器-SMP&#34;&gt;&lt;a href=&#34;#共享内存多处理器-SMP&#34; class=&#34;headerlink&#34; title=&#34;共享内存多处理器 SMP&#34;&gt;&lt;/a&gt;共享内存多处理器 SMP&lt;/h3&gt;&lt;p&gt;处理器通过存储器中的共享变量互相通信，所有存储器都能通过存取指令访问存储器的任何位置，有两种：&lt;br&gt;&lt;img data-src=&#34;/f7.jpg&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;多核处理器&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#多核处理器&#34;&gt;#&lt;/a&gt; 多核处理器&lt;/h3&gt;
+&lt;p&gt;一个 CPU 有多个 core，也称片上多处理器&lt;br&gt;
+每个核既可以有自己的 Cache，又可以共享同一个 Cache，所有核共享主存储器&lt;br&gt;
+多核处理器必须采用多线程（或多进程）才能发挥性能&lt;/p&gt;
+&lt;h3 id=&#34;共享内存多处理器-smp&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#共享内存多处理器-smp&#34;&gt;#&lt;/a&gt; 共享内存多处理器 SMP&lt;/h3&gt;
+&lt;p&gt;处理器通过存储器中的共享变量互相通信，所有存储器都能通过存取指令访问存储器的任何位置，有两种：&lt;br&gt;
+&lt;img data-src=&#34;f7.jpg&#34; alt&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;UMA 统一存储访问多处理器&lt;br&gt;UMA中所有处理器对所有内存模块的访问延迟是相同的，由于访问延迟一致，数据放在哪个内存模块上对性能影响不大。随着系统规模扩大，所有处理器都通过同一个前端总线访问内存，导致互连网络成为瓶颈，延迟增加，带宽受限&lt;br&gt;&lt;img data-src=&#34;/f8.jpg&#34;&gt;&lt;/li&gt;
-&lt;li&gt;NUMA 非统一存储访问多处理器&lt;br&gt;内存有本地内存和远程内存，访问本地内存快。CPU可以通过QPI总线访问远程内存&lt;br&gt;&lt;img data-src=&#34;/f9.jpg&#34;&gt;&lt;/li&gt;
-&lt;li&gt;需要解决 Cache coherence 问题：Snooping(MSI, MESI, MOESI…), Directory&lt;br&gt;基本思想都是对共享变量加锁，保证互斥访问&lt;ul&gt;
-&lt;li&gt;Snooping:&lt;br&gt;&lt;img data-src=&#34;/f10.jpg&#34;&gt;&lt;br&gt;&lt;img data-src=&#34;/f11.jpg&#34;&gt;&lt;/li&gt;
-&lt;li&gt;Directory:&lt;br&gt;&lt;img data-src=&#34;/f12.jpg&#34;&gt;&lt;/li&gt;
+&lt;li&gt;UMA 统一存储访问多处理器&lt;br&gt;
+ UMA 中所有处理器对所有内存模块的访问延迟是相同的，由于访问延迟一致，数据放在哪个内存模块上对性能影响不大。随着系统规模扩大，所有处理器都通过同一个前端总线访问内存，导致互连网络成为瓶颈，延迟增加，带宽受限&lt;br&gt;
+&lt;img data-src=&#34;f8.jpg&#34; alt&gt;&lt;/li&gt;
+&lt;li&gt;NUMA 非统一存储访问多处理器&lt;br&gt;
+内存有本地内存和远程内存，访问本地内存快。CPU 可以通过 QPI 总线访问远程内存&lt;br&gt;
+&lt;img data-src=&#34;f9.jpg&#34; alt&gt;&lt;/li&gt;
+&lt;li&gt;需要解决 Cache coherence 问题：Snooping (MSI, MESI, MOESI…), Directory&lt;br&gt;
+ 基本思想都是对共享变量加锁，保证互斥访问
+&lt;ul&gt;
+&lt;li&gt;Snooping:&lt;br&gt;
+&lt;img data-src=&#34;f10.jpg&#34; alt&gt;&lt;br&gt;
+&lt;img data-src=&#34;f11.jpg&#34; alt&gt;&lt;/li&gt;
+&lt;li&gt;Directory:&lt;br&gt;
+&lt;img data-src=&#34;f12.jpg&#34; alt&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
