@@ -4,99 +4,67 @@
     <title>NoResponse&#39;s Blog • Posts by &#34;指令系统&#34; tag</title>
     <link href="http://example.com" />
     <updated>2025-07-31T16:00:00.000Z</updated>
-    <category term="软件工程" />
     <category term="人工智能" />
+    <category term="软件工程" />
     <category term="自监督学习" />
-    <category term="数据结构" />
-    <category term="线性表" />
     <category term="操作系统" />
-    <category term="Liveness Analysis" />
+    <category term="线性表" />
+    <category term="数据结构" />
     <category term="编译原理" />
+    <category term="Register Allocation" />
     <category term="语法分析" />
     <category term="词法分析" />
-    <category term="Register Allocation" />
+    <category term="Liveness Analysis" />
     <category term="抽象语法" />
-    <category term="活动记录" />
     <category term="语义分析" />
+    <category term="活动记录" />
     <category term="中间代码" />
     <category term="指令选择" />
     <category term="Basic Blocks and Traces" />
-    <category term="数据的表示与运算" />
-    <category term="指令系统" />
     <category term="计算机组成" />
-    <category term="存储系统" />
-    <category term="I/O" />
-    <category term="CPU" />
-    <category term="错题" />
-    <category term="总线" />
     <category term="计算机网络" />
+    <category term="数据的表示与运算" />
+    <category term="存储系统" />
+    <category term="总线" />
+    <category term="CPU" />
+    <category term="I/O" />
+    <category term="指令系统" />
+    <category term="错题" />
     <entry>
         <id>http://example.com/2025/08/01/computer-science/computer-organization/ch4/</id>
         <title>Ch4</title>
         <link rel="alternate" href="http://example.com/2025/08/01/computer-science/computer-organization/ch4/"/>
-        <content type="html">&lt;h1 id=&#34;ch4-指令系统&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#ch4-指令系统&#34;&gt;#&lt;/a&gt; Ch4 指令系统&lt;/h1&gt;
-&lt;h2 id=&#34;指令系统&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#指令系统&#34;&gt;#&lt;/a&gt; 指令系统&lt;/h2&gt;
-&lt;h3 id=&#34;isa王道叫它指令集体系结构&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#isa王道叫它指令集体系结构&#34;&gt;#&lt;/a&gt; ISA（王道叫它指令集体系结构）&lt;/h3&gt;
-&lt;p&gt;指令系统 vs ISA&lt;/p&gt;
-&lt;p&gt;ISA 完整地定义了软件和硬件之间的接口，规定了：&lt;/p&gt;
+        <content type="html">&lt;h1 id=&#34;Ch4-指令系统&#34;&gt;&lt;a href=&#34;#Ch4-指令系统&#34; class=&#34;headerlink&#34; title=&#34;Ch4 指令系统&#34;&gt;&lt;/a&gt;Ch4 指令系统&lt;/h1&gt;&lt;h2 id=&#34;指令系统&#34;&gt;&lt;a href=&#34;#指令系统&#34; class=&#34;headerlink&#34; title=&#34;指令系统&#34;&gt;&lt;/a&gt;指令系统&lt;/h2&gt;&lt;h3 id=&#34;ISA（王道叫它指令集体系结构）&#34;&gt;&lt;a href=&#34;#ISA（王道叫它指令集体系结构）&#34; class=&#34;headerlink&#34; title=&#34;ISA（王道叫它指令集体系结构）&#34;&gt;&lt;/a&gt;ISA（王道叫它指令集体系结构）&lt;/h3&gt;&lt;p&gt;指令系统 vs ISA&lt;/p&gt;
+&lt;p&gt;ISA完整地定义了软件和硬件之间的接口，规定了：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;指令格式（指令寻址方式，操作类型，操作数）&lt;/li&gt;
 &lt;li&gt;操作数的类型、寻址方式、大端小端存放（大端：高位放在低地址；小端：低位放在低地址）&lt;/li&gt;
 &lt;li&gt;程序可访问的寄存器编号、个数和位数，存储空间大小和编址方式&lt;/li&gt;
 &lt;li&gt;指令执行过程的控制方式（PC, condition code, …）&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;指令的基本格式&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#指令的基本格式&#34;&gt;#&lt;/a&gt; 指令的基本格式&lt;/h3&gt;
-&lt;p&gt;操作码 + 地址码&lt;br&gt;
-主存一般是按字节编址，所以指令字长通常为字节的整数倍&lt;/p&gt;
+&lt;h3 id=&#34;指令的基本格式&#34;&gt;&lt;a href=&#34;#指令的基本格式&#34; class=&#34;headerlink&#34; title=&#34;指令的基本格式&#34;&gt;&lt;/a&gt;指令的基本格式&lt;/h3&gt;&lt;p&gt;操作码+地址码&lt;br&gt;主存一般是按字节编址，所以指令字长通常为字节的整数倍&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;零地址指令&lt;br&gt;
- NOP, HLT&lt;br&gt;
- 不需要操作数。&lt;br&gt;
-零地址的运算类指令仅用在堆栈计算机中（操作数直接从栈顶弹出）&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;零地址指令&lt;br&gt;NOP, HLT&lt;br&gt;不需要操作数。&lt;br&gt;零地址的运算类指令仅用在堆栈计算机中（操作数直接从栈顶弹出）&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;一地址指令&lt;br&gt;
- OP, A1&lt;br&gt;
-OP(A1) -&amp;gt; A1&lt;br&gt;
- 加 1，减 1，取反，求补，移位等&lt;br&gt;
-可能有一个操作数或者两个操作数&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
+&lt;li&gt;&lt;p&gt;一地址指令&lt;br&gt;OP, A1&lt;br&gt;OP(A1) -&amp;gt; A1&lt;br&gt;加1，减1，取反，求补，移位等&lt;br&gt;可能有一个操作数或者两个操作数&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;隐含约定目的地址的双操作数指令，地址码指明一个操作数，另一个操作数来自隐含寻址&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;ol start=&#34;3&#34;&gt;
-&lt;li&gt;
-&lt;p&gt;二地址指令&lt;br&gt;
- OP, A1, A2&lt;br&gt;
-(A1)OP(A2) -&amp;gt; A1&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;三地址指令&lt;br&gt;
- OP, A1, A2, A3&lt;br&gt;
-(A1)OP(A2) -&amp;gt; A3&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;二地址指令&lt;br&gt;OP, A1, A2&lt;br&gt;(A1)OP(A2) -&amp;gt; A1&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;四地址指令&lt;br&gt;
- OP, A1, A2, A3, A4&lt;br&gt;
- (A1) OP (A2) -&amp;gt; A3, A4 = 下一条将要执行指令的地址&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;三地址指令&lt;br&gt;OP, A1, A2, A3&lt;br&gt;(A1)OP(A2) -&amp;gt; A3&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;四地址指令&lt;br&gt;OP, A1, A2, A3, A4&lt;br&gt;(A1)OP(A2) -&amp;gt; A3, A4 &amp;#x3D; 下一条将要执行指令的地址&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;h3 id=&#34;定长操作码指令格式&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#定长操作码指令格式&#34;&gt;#&lt;/a&gt; 定长操作码指令格式&lt;/h3&gt;
-&lt;p&gt;n 位 opcode 最多能表示 2^n 条指令&lt;br&gt;
-指令字长：单字长 (PC = PC + 1)、双字长 (PC = PC + 2)…&lt;/p&gt;
-&lt;h3 id=&#34;扩展操作码指令格式&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#扩展操作码指令格式&#34;&gt;#&lt;/a&gt; 扩展操作码指令格式&lt;/h3&gt;
-&lt;p&gt;才去可变长度操作码，分散地放在指令字的不同位置上&lt;br&gt;
-要求：&lt;/p&gt;
+&lt;h3 id=&#34;定长操作码指令格式&#34;&gt;&lt;a href=&#34;#定长操作码指令格式&#34; class=&#34;headerlink&#34; title=&#34;定长操作码指令格式&#34;&gt;&lt;/a&gt;定长操作码指令格式&lt;/h3&gt;&lt;p&gt;n位opcode最多能表示2^n条指令&lt;br&gt;指令字长：单字长(PC &amp;#x3D; PC + 1)、双字长(PC &amp;#x3D; PC + 2)…&lt;/p&gt;
+&lt;h3 id=&#34;扩展操作码指令格式&#34;&gt;&lt;a href=&#34;#扩展操作码指令格式&#34; class=&#34;headerlink&#34; title=&#34;扩展操作码指令格式&#34;&gt;&lt;/a&gt;扩展操作码指令格式&lt;/h3&gt;&lt;p&gt;才去可变长度操作码，分散地放在指令字的不同位置上&lt;br&gt;要求：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;不允许短码是长码的前缀&lt;/li&gt;
-&lt;li&gt;各指令的操作码不能重复&lt;br&gt;
-&lt;img data-src=&#34;f1.jpg&#34; alt&gt;&lt;br&gt;
- RISC-V 指令集&lt;/li&gt;
+&lt;li&gt;各指令的操作码不能重复&lt;br&gt;&lt;img data-src=&#34;/f1.jpg&#34;&gt;&lt;br&gt;RISC-V指令集&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h3 id=&#34;指令的操作类型&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#指令的操作类型&#34;&gt;#&lt;/a&gt; 指令的操作类型&lt;/h3&gt;
-&lt;ol&gt;
+&lt;h3 id=&#34;指令的操作类型&#34;&gt;&lt;a href=&#34;#指令的操作类型&#34; class=&#34;headerlink&#34; title=&#34;指令的操作类型&#34;&gt;&lt;/a&gt;指令的操作类型&lt;/h3&gt;&lt;ol&gt;
 &lt;li&gt;数据传送&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
@@ -107,103 +75,55 @@ OP(A1) -&amp;gt; A1&lt;br&gt;
 &lt;li&gt;POP&lt;/li&gt;
 &lt;/ul&gt;
 &lt;ol start=&#34;2&#34;&gt;
-&lt;li&gt;
-&lt;p&gt;算术和逻辑运算&lt;br&gt;
- ADD, SUB, MUL, DIV, MOD, AND, OR, XOR, NOT, XOR, INC (加一), DEC (减一)&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;算术和逻辑运算&lt;br&gt;ADD, SUB, MUL, DIV, MOD, AND, OR, XOR, NOT, XOR, INC(加一), DEC(减一)&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;移位&lt;br&gt;
-算术移位，逻辑移位，循环移位&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;移位&lt;br&gt;算术移位，逻辑移位，循环移位&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;转移&lt;br&gt;
- JMP, BRANCH, CALL, RET, TRAP（中断隐指令是硬件实现的，只有 TRAP 是软指令）&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;转移&lt;br&gt;JMP, BRANCH, CALL, RET, TRAP（中断隐指令是硬件实现的，只有TRAP是软指令）&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;I/O 操作&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;I&amp;#x2F;O操作&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;h2 id=&#34;指令的寻址方式&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#指令的寻址方式&#34;&gt;#&lt;/a&gt; 指令的寻址方式&lt;/h2&gt;
-&lt;h3 id=&#34;指令寻址与数据寻址&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#指令寻址与数据寻址&#34;&gt;#&lt;/a&gt; 指令寻址与数据寻址&lt;/h3&gt;
-&lt;ol&gt;
+&lt;h2 id=&#34;指令的寻址方式&#34;&gt;&lt;a href=&#34;#指令的寻址方式&#34; class=&#34;headerlink&#34; title=&#34;指令的寻址方式&#34;&gt;&lt;/a&gt;指令的寻址方式&lt;/h2&gt;&lt;h3 id=&#34;指令寻址与数据寻址&#34;&gt;&lt;a href=&#34;#指令寻址与数据寻址&#34; class=&#34;headerlink&#34; title=&#34;指令寻址与数据寻址&#34;&gt;&lt;/a&gt;指令寻址与数据寻址&lt;/h3&gt;&lt;ol&gt;
 &lt;li&gt;指令寻址&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
-&lt;li&gt;顺序： PC = PC + 1&lt;/li&gt;
-&lt;li&gt;跳转： 绝对转移 (PC = 跳转地址) , 相对转移 (PC = PC + offset)&lt;/li&gt;
+&lt;li&gt;顺序： PC &amp;#x3D; PC + 1&lt;/li&gt;
+&lt;li&gt;跳转： 绝对转移(PC &amp;#x3D; 跳转地址) ,相对转移(PC &amp;#x3D; PC + offset)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;ol start=&#34;2&#34;&gt;
-&lt;li&gt;数据寻址&lt;br&gt;
-格式：操作码 寻址特征 形式地址 A&lt;/li&gt;
+&lt;li&gt;数据寻址&lt;br&gt;格式：操作码 寻址特征 形式地址A&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
-&lt;li&gt;立即寻址 (addi, …)&lt;/li&gt;
-&lt;li&gt;直接寻址（A 直接表示地址）&lt;/li&gt;
-&lt;li&gt;寄存器寻址 (add, …)&lt;/li&gt;
-&lt;li&gt;寄存器间接寻址 (lw r1 offset (r2), …)&lt;/li&gt;
+&lt;li&gt;立即寻址(addi, …)&lt;/li&gt;
+&lt;li&gt;直接寻址（A直接表示地址）&lt;/li&gt;
+&lt;li&gt;寄存器寻址(add, …)&lt;/li&gt;
+&lt;li&gt;寄存器间接寻址(lw r1 offset(r2), …)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;常见的数据寻址方式&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#常见的数据寻址方式&#34;&gt;#&lt;/a&gt; 常见的数据寻址方式&lt;/h3&gt;
-&lt;ol&gt;
-&lt;li&gt;隐含寻址&lt;br&gt;
-比如单地址的第二个操作数由 ACC 提供: Intel 8080 的 &lt;code&gt;ADD A&lt;/code&gt;  指令会将寄存器 A 的内容与指定的操作数（放在 ACC 内）相加，并将结果存储回累加器中&lt;br&gt;
-优点是缩短指令字长；缺点是需要增加存储操作数或隐含地址的硬件&lt;/li&gt;
-&lt;li&gt;立即（数）寻址&lt;br&gt;
-比如 riscv 的 &lt;code&gt;addi x5, x6, #1&lt;/code&gt; &lt;br&gt;
- 优点是不用访存速度快，缺点是立即数位数有限&lt;/li&gt;
-&lt;li&gt;直接寻址&lt;br&gt;
- &lt;code&gt;OP #A&lt;/code&gt; &lt;br&gt;
- 比如 lc3 的 &lt;code&gt;LD R1, LABEL1&lt;/code&gt;  翻译成汇编是 &lt;code&gt;LD R1, x3100&lt;/code&gt;  表示 &lt;code&gt;R1 &amp;lt;- MEM[x3100]&lt;/code&gt; &lt;br&gt;
- 形式地址 A 就是操作数的真实地址 EA&lt;br&gt;
- 优点是简单，缺点是寻址范围受 A 的位数限制&lt;/li&gt;
-&lt;li&gt;间接寻址&lt;br&gt;
- EA = (A)&lt;br&gt;
- 指令中给出的地址是包含实际地址的内存位置或寄存器&lt;br&gt;
-比如 lc3 的 &lt;code&gt;LDI R1, LABEL1&lt;/code&gt;  翻译成汇编是 &lt;code&gt;LDI R1, x3100&lt;/code&gt;  表示 &lt;code&gt;R1 &amp;lt;- MEM[MEM[x3100]]&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;寄存器寻址&lt;br&gt;
- EA = (Ri)&lt;br&gt;
- &lt;code&gt;ADD R1, R2, R3&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;寄存器间接寻址&lt;br&gt;
- EA = (Ri)&lt;br&gt;
- 比如 &lt;code&gt;LW R1, offset(R2)&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;相对寻址&lt;br&gt;
-相对 PC 寻址&lt;br&gt;
- EA = (PC) + A&lt;br&gt;
- 比如 branch&lt;/li&gt;
-&lt;li&gt;基址寻址&lt;br&gt;
- EA = (BR) + A&lt;br&gt;
- 面向操作系统，优点是扩大寻址范围，有利于躲到程序设计；缺点是偏移量 (A) 的位数较短&lt;/li&gt;
-&lt;li&gt;变址寻址&lt;br&gt;
- EA = (IX) + A&lt;br&gt;
- 比如用来访问数组&lt;/li&gt;
+&lt;h3 id=&#34;常见的数据寻址方式&#34;&gt;&lt;a href=&#34;#常见的数据寻址方式&#34; class=&#34;headerlink&#34; title=&#34;常见的数据寻址方式&#34;&gt;&lt;/a&gt;常见的数据寻址方式&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;隐含寻址&lt;br&gt;比如单地址的第二个操作数由ACC提供: Intel 8080的&lt;code&gt;ADD A&lt;/code&gt;指令会将寄存器A的内容与指定的操作数（放在ACC内）相加，并将结果存储回累加器中&lt;br&gt;优点是缩短指令字长；缺点是需要增加存储操作数或隐含地址的硬件&lt;/li&gt;
+&lt;li&gt;立即（数）寻址&lt;br&gt;比如riscv的&lt;code&gt;addi x5, x6, #1&lt;/code&gt;&lt;br&gt;优点是不用访存速度快，缺点是立即数位数有限&lt;/li&gt;
+&lt;li&gt;直接寻址&lt;br&gt;&lt;code&gt;OP #A&lt;/code&gt;&lt;/li&gt;
 &lt;/ol&gt;
+&lt;p&gt;比如lc3的&lt;code&gt;LD R1, LABEL1&lt;/code&gt;翻译成汇编是&lt;code&gt;LD R1, x3100&lt;/code&gt;表示&lt;code&gt;R1 &amp;lt;- MEM[x3100]&lt;/code&gt;&lt;br&gt;形式地址A就是操作数的真实地址EA&lt;br&gt;优点是简单，缺点是寻址范围受A的位数限制&lt;br&gt;4. 间接寻址&lt;br&gt;EA &amp;#x3D; (A)&lt;br&gt;指令中给出的地址是包含实际地址的内存位置或寄存器&lt;br&gt;比如lc3的&lt;code&gt;LDI R1, LABEL1&lt;/code&gt;翻译成汇编是&lt;code&gt;LDI R1, x3100&lt;/code&gt;表示&lt;code&gt;R1 &amp;lt;- MEM[MEM[x3100]]&lt;/code&gt;&lt;br&gt;5. 寄存器寻址&lt;br&gt;EA &amp;#x3D; (Ri)&lt;br&gt;&lt;code&gt;ADD R1, R2, R3&lt;/code&gt;&lt;br&gt;6. 寄存器间接寻址&lt;br&gt;EA &amp;#x3D; (Ri)&lt;br&gt;比如&lt;code&gt;LW R1, offset(R2)&lt;/code&gt;&lt;br&gt;7. 相对寻址&lt;br&gt;相对PC寻址&lt;br&gt;EA &amp;#x3D; (PC) + A&lt;br&gt;比如branch&lt;br&gt;8. 基址寻址&lt;br&gt;EA &amp;#x3D; (BR) + A&lt;br&gt;面向操作系统，优点是扩大寻址范围，有利于躲到程序设计；缺点是偏移量(A)的位数较短&lt;br&gt;9. 变址寻址&lt;br&gt;EA &amp;#x3D; (IX) + A&lt;br&gt;比如用来访问数组&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;偏址寻址：相对寻址、基址寻址、变址寻址&lt;/p&gt;
-&lt;/blockquote&gt;
 &lt;ol start=&#34;10&#34;&gt;
-&lt;li&gt;堆栈寻址有一个堆栈指针 SP，堆栈分为硬堆栈，软堆栈。寄存器堆栈是硬堆栈，内存是软堆栈。采用无操作数指令&lt;br&gt;
-&lt;img data-src=&#34;f2.jpg&#34; alt&gt;&lt;/li&gt;
+&lt;li&gt;堆栈寻址有一个堆栈指针SP，堆栈分为硬堆栈，软堆栈。寄存器堆栈是硬堆栈，内存是软堆栈。采用无操作数指令&lt;br&gt;&lt;img data-src=&#34;/f2.jpg&#34;&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h2 id=&#34;程序的机器级代码表示&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#程序的机器级代码表示&#34;&gt;#&lt;/a&gt; 程序的机器级代码表示&lt;/h2&gt;
-&lt;p&gt;x86 汇编&lt;/p&gt;
-&lt;h3 id=&#34;常用汇编指令介绍&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#常用汇编指令介绍&#34;&gt;#&lt;/a&gt; 常用汇编指令介绍&lt;/h3&gt;
-&lt;ol&gt;
-&lt;li&gt;相关寄存器&lt;br&gt;
- x86 架构有 8 个 32 位的通用寄存器：EAX、EBX、ECX、EDX、ESI、EDI、EBP、ESP&lt;br&gt;
-&lt;img data-src=&#34;f3.jpg&#34; alt&gt;&lt;br&gt;
-&lt;img data-src=&#34;f4.jpg&#34; alt&gt;&lt;br&gt;
-&lt;img data-src=&#34;f5.jpg&#34; alt&gt;&lt;/li&gt;
-&lt;li&gt;汇编指令格式&lt;br&gt;
- x86 汇编指令格式有两种：AT&amp;amp;T 格式和 Intel 格式&lt;/li&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;程序的机器级代码表示&#34;&gt;&lt;a href=&#34;#程序的机器级代码表示&#34; class=&#34;headerlink&#34; title=&#34;程序的机器级代码表示&#34;&gt;&lt;/a&gt;程序的机器级代码表示&lt;/h2&gt;&lt;p&gt;x86汇编&lt;/p&gt;
+&lt;h3 id=&#34;常用汇编指令介绍&#34;&gt;&lt;a href=&#34;#常用汇编指令介绍&#34; class=&#34;headerlink&#34; title=&#34;常用汇编指令介绍&#34;&gt;&lt;/a&gt;常用汇编指令介绍&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;相关寄存器&lt;br&gt;x86架构有8个32位的通用寄存器：EAX、EBX、ECX、EDX、ESI、EDI、EBP、ESP&lt;br&gt;&lt;img data-src=&#34;/f3.jpg&#34;&gt;&lt;br&gt;&lt;img data-src=&#34;/f4.jpg&#34;&gt;&lt;br&gt;&lt;img data-src=&#34;/f5.jpg&#34;&gt;&lt;/li&gt;
+&lt;li&gt;汇编指令格式&lt;br&gt;x86汇编指令格式有两种：AT&amp;amp;T格式和Intel格式&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
-&lt;li&gt;AT&amp;amp;T 只能小写，Intel 大小写都行&lt;/li&gt;
-&lt;li&gt;AT&amp;amp;T 第一个操作数是源操作数，第二个是目的操作数；Intel 第一个操作数是目的操作数，第二个是源操作数&lt;/li&gt;
-&lt;li&gt;AT&amp;amp;T 寄存器前缀 %，立即数前缀 $；Intel 格式寄存器和立即数不需要加前缀&lt;/li&gt;
-&lt;li&gt;内存寻址：AT&amp;amp;T 格式为 (addr)，Intel 格式为 [addr]&lt;/li&gt;
-&lt;li&gt;处理复杂寻址方式时，AT&amp;amp;T 格式为 disp (base, index, scale)，表示偏移量，基址寄存器，变址寄存器，比例因子，表示的操作数为 M [R [base]+R [index]*scale + disp];&lt;/li&gt;
-&lt;li&gt;指定数据长度时，AT&amp;amp;T 用 b, w, l; Intel 用 byte ptr, word ptr, dword ptr (一个 word 是 16 位，一个 dword 是 32 位)&lt;br&gt;
-&lt;img data-src=&#34;f6.jpg&#34; alt&gt;&lt;br&gt;
-&lt;img data-src=&#34;f7.jpg&#34; alt&gt;&lt;/li&gt;
+&lt;li&gt;AT&amp;amp;T只能小写，Intel大小写都行&lt;/li&gt;
+&lt;li&gt;AT&amp;amp;T第一个操作数是源操作数，第二个是目的操作数；Intel第一个操作数是目的操作数，第二个是源操作数&lt;/li&gt;
+&lt;li&gt;AT&amp;amp;T寄存器前缀%，立即数前缀$；Intel格式寄存器和立即数不需要加前缀&lt;/li&gt;
+&lt;li&gt;内存寻址：AT&amp;amp;T格式为(addr)，Intel格式为[addr]&lt;/li&gt;
+&lt;li&gt;处理复杂寻址方式时，AT&amp;amp;T格式为disp(base, index, scale)，表示偏移量，基址寄存器，变址寄存器，比例因子，表示的操作数为M[R[base]+R[index]*scale + disp];&lt;/li&gt;
+&lt;li&gt;指定数据长度时，AT&amp;amp;T用b, w, l; Intel用byte ptr, word ptr, dword ptr(一个word是16位，一个dword是32位)&lt;br&gt;&lt;img data-src=&#34;/f6.jpg&#34;&gt;&lt;br&gt;&lt;img data-src=&#34;/f7.jpg&#34;&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;ol start=&#34;3&#34;&gt;
 &lt;li&gt;常用指令&lt;/li&gt;
@@ -211,12 +131,9 @@ OP(A1) -&amp;gt; A1&lt;br&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;reg&gt;表示任意寄存器，后面跟数字指定其位数&lt;/reg&gt;&lt;/li&gt;
 &lt;li&gt;&lt;mem&gt;内存地址&lt;/mem&gt;&lt;/li&gt;
-&lt;li&gt;&lt;con&gt;后面跟数字表示几位常数&lt;br&gt;
-常见的指令：&lt;/con&gt;&lt;/li&gt;
-&lt;li&gt;数据传送指令
-&lt;ul&gt;
-&lt;li&gt;mov
-&lt;ul&gt;
+&lt;li&gt;&lt;con&gt;后面跟数字表示几位常数&lt;br&gt;常见的指令：&lt;/con&gt;&lt;/li&gt;
+&lt;li&gt;数据传送指令&lt;ul&gt;
+&lt;li&gt;mov&lt;ul&gt;
 &lt;li&gt;mov &lt;reg&gt;, &lt;reg&gt;&lt;/reg&gt;&lt;/reg&gt;&lt;/li&gt;
 &lt;li&gt;mov &lt;reg&gt;, &lt;mem&gt;&lt;/mem&gt;&lt;/reg&gt;&lt;/li&gt;
 &lt;li&gt;mov &lt;mem&gt;, &lt;reg&gt;&lt;/reg&gt;&lt;/mem&gt;&lt;/li&gt;
@@ -224,72 +141,61 @@ OP(A1) -&amp;gt; A1&lt;br&gt;
 &lt;li&gt;mov &lt;mem&gt;, &lt;con&gt;&lt;/con&gt;&lt;/mem&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;push (ESP 指向栈顶空的位置，push 之前 ESP = ESP - 4)&lt;mark&gt; 栈中元素固定为 32 位&lt;/mark&gt;
-&lt;ul&gt;
+&lt;li&gt;push(ESP指向栈顶空的位置，push之前ESP &amp;#x3D; ESP - 4)&amp;#x3D;&amp;#x3D;栈中元素固定为32位&amp;#x3D;&amp;#x3D;&lt;ul&gt;
 &lt;li&gt;push &amp;lt;reg32&lt;/li&gt;
 &lt;li&gt;push &lt;mem&gt;&lt;/mem&gt;&lt;/li&gt;
 &lt;li&gt;push &lt;con32&gt;&lt;/con32&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;pop (pop 之后 ESP = ESP + 4)
-&lt;ul&gt;
+&lt;li&gt;pop(pop之后ESP &amp;#x3D; ESP + 4)&lt;ul&gt;
 &lt;li&gt;pop &lt;reg32&gt;&lt;/reg32&gt;&lt;/li&gt;
 &lt;li&gt;pop &lt;mem&gt;&lt;/mem&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;算术和逻辑运算
-&lt;ul&gt;
-&lt;li&gt;add/sub (把两个操作数相加 / 减，结果放回目的操作数)
-&lt;ul&gt;
-&lt;li&gt;add eax, 10    # eax = eax + 10&lt;/li&gt;
-&lt;li&gt;add byte ptr [var], 10    # 10 与 var 指向的内存地址的一字节值相加，结果放回 var 指向的内存中&lt;/li&gt;
+&lt;li&gt;算术和逻辑运算&lt;ul&gt;
+&lt;li&gt;add&amp;#x2F;sub(把两个操作数相加&amp;#x2F;减，结果放回目的操作数)&lt;ul&gt;
+&lt;li&gt;add eax, 10    # eax &amp;#x3D; eax + 10&lt;/li&gt;
+&lt;li&gt;add byte ptr [var], 10    # 10与var指向的内存地址的一字节值相加，结果放回var指向的内存中&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;inc/dec (把操作数自加 1 / 自减 1)
-&lt;ul&gt;
-&lt;li&gt;dec eax    # eax = eax - 1&lt;/li&gt;
-&lt;li&gt;inc dword ptr [var]    # var 指向的 32 位值自加 1，结果放回 var 指向的 32 位内存中&lt;/li&gt;
+&lt;li&gt;inc&amp;#x2F;dec(把操作数自加1&amp;#x2F;自减1)&lt;ul&gt;
+&lt;li&gt;dec eax    # eax &amp;#x3D; eax - 1&lt;/li&gt;
+&lt;li&gt;inc dword ptr [var]    # var指向的32位值自加1，结果放回var指向的32位内存中&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;imul (有符号数整数乘法，mul 是无符号数乘法) 目的操作数必须是寄存器，溢出时 &lt;code&gt;OF = 1&lt;/code&gt;
-&lt;ul&gt;
+&lt;li&gt;imul(有符号数整数乘法, mul是无符号数乘法)目的操作数必须是寄存器，溢出时&lt;code&gt;OF = 1&lt;/code&gt;&lt;ul&gt;
 &lt;li&gt;imul &lt;reg32&gt;, &lt;reg32&gt;&lt;/reg32&gt;&lt;/reg32&gt;&lt;/li&gt;
 &lt;li&gt;imul &lt;reg32&gt;, &lt;mem&gt;&lt;/mem&gt;&lt;/reg32&gt;&lt;/li&gt;
 &lt;li&gt;imul &lt;reg32&gt;, &lt;reg32&gt;, &lt;con&gt;&lt;/con&gt;&lt;/reg32&gt;&lt;/reg32&gt;&lt;/li&gt;
 &lt;li&gt;imul &lt;reg32&gt;, &lt;mem&gt;, &lt;con&gt;&lt;/con&gt;&lt;/mem&gt;&lt;/reg32&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;idiv (有符号数整数除法，&lt;mark&gt;只有一个操作数为除数，被除数有 64 位放在  &lt;code&gt;edx:eax&lt;/code&gt;  中，操作结果商放到 &lt;code&gt;eax&lt;/code&gt; ，余数放到 &lt;code&gt;edx&lt;/code&gt; &lt;/mark&gt;)
-&lt;ul&gt;
+&lt;li&gt;idiv(有符号数整数除法，&amp;#x3D;&amp;#x3D;只有一个操作数为除数，被除数有64位放在 &lt;code&gt;edx:eax&lt;/code&gt; 中，操作结果商放到&lt;code&gt;eax&lt;/code&gt;，余数放到&lt;code&gt;edx&lt;/code&gt;&amp;#x3D;&amp;#x3D;)&lt;ul&gt;
 &lt;li&gt;idiv &lt;reg32&gt;&lt;/reg32&gt;&lt;/li&gt;
 &lt;li&gt;idiv &lt;mem&gt;&lt;/mem&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;and/or/xor
-&lt;ul&gt;
-&lt;li&gt;and/or/xor &lt;reg&gt;, &lt;reg&gt;&lt;/reg&gt;&lt;/reg&gt;&lt;/li&gt;
-&lt;li&gt;and/or/xor &lt;reg&gt;, &lt;mem&gt;&lt;/mem&gt;&lt;/reg&gt;&lt;/li&gt;
-&lt;li&gt;and/or/xor &lt;mem&gt;, &lt;reg&gt;&lt;/reg&gt;&lt;/mem&gt;&lt;/li&gt;
-&lt;li&gt;and/or/xor &lt;reg&gt;, &lt;con&gt;&lt;/con&gt;&lt;/reg&gt;&lt;/li&gt;
-&lt;li&gt;and/or/xor &lt;mem&gt;, &lt;con&gt;&lt;/con&gt;&lt;/mem&gt;&lt;/li&gt;
+&lt;li&gt;and&amp;#x2F;or&amp;#x2F;xor&lt;ul&gt;
+&lt;li&gt;and&amp;#x2F;or&amp;#x2F;xor &lt;reg&gt;, &lt;reg&gt;&lt;/reg&gt;&lt;/reg&gt;&lt;/li&gt;
+&lt;li&gt;and&amp;#x2F;or&amp;#x2F;xor &lt;reg&gt;, &lt;mem&gt;&lt;/mem&gt;&lt;/reg&gt;&lt;/li&gt;
+&lt;li&gt;and&amp;#x2F;or&amp;#x2F;xor &lt;mem&gt;, &lt;reg&gt;&lt;/reg&gt;&lt;/mem&gt;&lt;/li&gt;
+&lt;li&gt;and&amp;#x2F;or&amp;#x2F;xor &lt;reg&gt;, &lt;con&gt;&lt;/con&gt;&lt;/reg&gt;&lt;/li&gt;
+&lt;li&gt;and&amp;#x2F;or&amp;#x2F;xor &lt;mem&gt;, &lt;con&gt;&lt;/con&gt;&lt;/mem&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;not (按位取反)
-&lt;ul&gt;
+&lt;li&gt;not(按位取反)&lt;ul&gt;
 &lt;li&gt;not &lt;reg&gt;&lt;/reg&gt;&lt;/li&gt;
 &lt;li&gt;not &lt;mem&gt;&lt;/mem&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;neg (取负)
-&lt;ul&gt;
+&lt;li&gt;neg(取负)&lt;ul&gt;
 &lt;li&gt;neg &lt;reg&gt;&lt;/reg&gt;&lt;/li&gt;
 &lt;li&gt;neg &lt;mem&gt;&lt;/mem&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;shl/shr (逻辑左移 / 右移)
-&lt;ul&gt;
+&lt;li&gt;shl&amp;#x2F;shr(逻辑左移&amp;#x2F;右移)&lt;ul&gt;
 &lt;li&gt;shl &lt;reg&gt;, &lt;con8&gt;&lt;/con8&gt;&lt;/reg&gt;&lt;/li&gt;
 &lt;li&gt;shl &lt;mem&gt;, &lt;con8&gt;&lt;/con8&gt;&lt;/mem&gt;&lt;/li&gt;
 &lt;li&gt;shr &lt;reg&gt;, &lt;reg8&gt;&lt;/reg8&gt;&lt;/reg&gt;&lt;/li&gt;
@@ -298,15 +204,12 @@ OP(A1) -&amp;gt; A1&lt;br&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;控制流
-&lt;ul&gt;
-&lt;li&gt;jmp
-&lt;ul&gt;
+&lt;li&gt;控制流&lt;ul&gt;
+&lt;li&gt;jmp&lt;ul&gt;
 &lt;li&gt;jmp &lt;label&gt;&lt;/label&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;jcondition
-&lt;ul&gt;
+&lt;li&gt;jcondition&lt;ul&gt;
 &lt;li&gt;je &lt;label&gt;&lt;/label&gt;&lt;/li&gt;
 &lt;li&gt;jz &lt;label&gt;&lt;/label&gt;&lt;/li&gt;
 &lt;li&gt;jne &lt;label&gt;&lt;/label&gt;&lt;/li&gt;
@@ -316,16 +219,14 @@ OP(A1) -&amp;gt; A1&lt;br&gt;
 &lt;li&gt;jle &lt;label&gt;&lt;/label&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;cmp/test (cmp 相当于相减，test 相当于按位与，不保存操作结果仅设置条件码用于跳转指令)
-&lt;ul&gt;
-&lt;li&gt;cmp/test &lt;reg&gt;, &lt;reg&gt;&lt;/reg&gt;&lt;/reg&gt;&lt;/li&gt;
-&lt;li&gt;cmp/test &lt;reg&gt;, &lt;mem&gt;&lt;/mem&gt;&lt;/reg&gt;&lt;/li&gt;
-&lt;li&gt;cmp/test &lt;mem&gt;, &lt;reg&gt;&lt;/reg&gt;&lt;/mem&gt;&lt;/li&gt;
-&lt;li&gt;cmp/test &lt;reg&gt;, &lt;con&gt;&lt;/con&gt;&lt;/reg&gt;&lt;/li&gt;
+&lt;li&gt;cmp&amp;#x2F;test(cmp相当于相减，test相当于按位与，不保存操作结果仅设置条件码用于跳转指令)&lt;ul&gt;
+&lt;li&gt;cmp&amp;#x2F;test &lt;reg&gt;, &lt;reg&gt;&lt;/reg&gt;&lt;/reg&gt;&lt;/li&gt;
+&lt;li&gt;cmp&amp;#x2F;test &lt;reg&gt;, &lt;mem&gt;&lt;/mem&gt;&lt;/reg&gt;&lt;/li&gt;
+&lt;li&gt;cmp&amp;#x2F;test &lt;mem&gt;, &lt;reg&gt;&lt;/reg&gt;&lt;/mem&gt;&lt;/li&gt;
+&lt;li&gt;cmp&amp;#x2F;test &lt;reg&gt;, &lt;con&gt;&lt;/con&gt;&lt;/reg&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;call/ret (call 将返回地址入栈然后跳转，ret 弹出返回地址并跳转)
-&lt;ul&gt;
+&lt;li&gt;call&amp;#x2F;ret(call将返回地址入栈然后跳转，ret弹出返回地址并跳转)&lt;ul&gt;
 &lt;li&gt;call &lt;label&gt;&lt;/label&gt;&lt;/li&gt;
 &lt;li&gt;ret&lt;/li&gt;
 &lt;/ul&gt;
@@ -333,12 +234,11 @@ OP(A1) -&amp;gt; A1&lt;br&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;选择语句的机器级表示&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#选择语句的机器级表示&#34;&gt;#&lt;/a&gt; 选择语句的机器级表示&lt;/h3&gt;
-&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;if(test_exp)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    then_stmt&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;else&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    else_stmt&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&#34;选择语句的机器级表示&#34;&gt;&lt;a href=&#34;#选择语句的机器级表示&#34; class=&#34;headerlink&#34; title=&#34;选择语句的机器级表示&#34;&gt;&lt;/a&gt;选择语句的机器级表示&lt;/h3&gt;&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;if(test_exp)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    then_stmt&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;else&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    else_stmt&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;翻译成&lt;/p&gt;
 &lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;if(!t)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    goto false;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;then_stmt;   &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;goto done;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;false:  else_stmt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;done:&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h3 id=&#34;循环语句的机器级表示&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#循环语句的机器级表示&#34;&gt;#&lt;/a&gt; 循环语句的机器级表示&lt;/h3&gt;
-&lt;ol&gt;
+
+&lt;h3 id=&#34;循环语句的机器级表示&#34;&gt;&lt;a href=&#34;#循环语句的机器级表示&#34; class=&#34;headerlink&#34; title=&#34;循环语句的机器级表示&#34;&gt;&lt;/a&gt;循环语句的机器级表示&lt;/h3&gt;&lt;ol&gt;
 &lt;li&gt;do-while&lt;/li&gt;
 &lt;/ol&gt;
 &lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;do&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  body_stmt&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  while(test_exp);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
@@ -356,58 +256,44 @@ OP(A1) -&amp;gt; A1&lt;br&gt;
 &lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;for(init_exp; test_exp; update_exp)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  body_stmt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;翻译成：&lt;/p&gt;
 &lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;init_exp;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;t = test_exp;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;if(!t)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  goto done;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;loop:&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  body_stmt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  update_exp;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  t = test_exp;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  if(t)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    goto loop;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;done:&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h3 id=&#34;过程调用的机器级表示&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#过程调用的机器级表示&#34;&gt;#&lt;/a&gt; 过程调用的机器级表示&lt;/h3&gt;
-&lt;ol&gt;
-&lt;li&gt;caller 将实参放到 callee 能访问的地方（寄存器放不下放栈里）&lt;/li&gt;
-&lt;li&gt;caller 保存返回地址（通过 call 指令实现）&lt;/li&gt;
-&lt;li&gt;callee 保存 caller 通用寄存器的内容，并为自己的非静态局部变量分配空间&lt;/li&gt;
-&lt;li&gt;执行 callee&lt;/li&gt;
-&lt;li&gt;恢复 caller 的寄存器内容，将返回值放到 caller 能访问的地方（寄存器、栈），释放局部变量&lt;/li&gt;
-&lt;li&gt;callee 取出返回地址，恢复 PC（ret 实现）&lt;/li&gt;
-&lt;/ol&gt;
-&lt;blockquote&gt;
-&lt;p&gt;EAX, ECX, EDX 是 caller saved register&lt;br&gt;
- 通常用于传递参数、存储临时变量或返回值，所以 call 的时候内容可能会变，要先保存再调用。比如返回值一般保存在 EAX&lt;br&gt;
-EBX, ESI, EDI 是 callee saved register&lt;br&gt;
- 这些寄存器的值在函数调用后应保持不变，所以由 callee 保存，ret 的时候要恢复&lt;/p&gt;
+
+&lt;h3 id=&#34;过程调用的机器级表示&#34;&gt;&lt;a href=&#34;#过程调用的机器级表示&#34; class=&#34;headerlink&#34; title=&#34;过程调用的机器级表示&#34;&gt;&lt;/a&gt;过程调用的机器级表示&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;caller将实参放到callee能访问的地方（寄存器放不下放栈里）&lt;/li&gt;
+&lt;li&gt;caller保存返回地址（通过call指令实现）&lt;/li&gt;
+&lt;li&gt;callee保存caller通用寄存器的内容，并为自己的非静态局部变量分配空间&lt;/li&gt;
+&lt;li&gt;执行callee&lt;/li&gt;
+&lt;li&gt;恢复caller的寄存器内容，将返回值放到caller能访问的地方（寄存器、栈），释放局部变量&lt;/li&gt;
+&lt;li&gt;callee取出返回地址，恢复PC（ret实现）&lt;blockquote&gt;
+&lt;p&gt;EAX, ECX, EDX是caller saved register&lt;br&gt;通常用于传递参数、存储临时变量或返回值，所以call的时候内容可能会变，要先保存再调用。比如返回值一般保存在EAX&lt;br&gt;EBX, ESI, EDI是callee saved register&lt;br&gt;这些寄存器的值在函数调用后应保持不变，所以由callee保存，ret的时候要恢复&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;每个过程有自己的栈帧， &lt;code&gt;EBP&lt;/code&gt;  保存栈帧的基址， &lt;code&gt;ESP&lt;/code&gt;  指向栈顶位置， &lt;code&gt;EBP&lt;/code&gt;  的值不变，当前栈帧的范围在 &lt;code&gt;EBP&lt;/code&gt;  和 &lt;code&gt;ESP&lt;/code&gt;  之间（详见编译原理 &lt;code&gt;activated record&lt;/code&gt; ）&lt;br&gt;
-&lt;img data-src=&#34;f8.jpg&#34; alt&gt;&lt;br&gt;
-前三行的意思是新开一个栈帧，分配了 24 字节的栈帧空间。 &lt;code&gt;push epb&lt;/code&gt;  实际上就是把 static link 压栈。&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9ub3Jlc3BvbnNlNTI1LmdpdGh1Yi5pby8yMDI1LzA2LzE1L2NvbXB1dGVyLXNjaWVuY2UvY29tcGlsZS1wcmluY2lwbGVzL2NoNi8jJUU1JTg3JUJEJUU2JTk1JUIwJUU4JUIwJTgzJUU3JTk0JUE4JUU2JUI1JTgxJUU3JUE4JThC&#34;&gt;详见编译原理笔记&lt;/span&gt;&lt;br&gt;
-执行 &lt;code&gt;call&lt;/code&gt;  之后， &lt;code&gt;call&lt;/code&gt;  会先将返回地址压栈，然后跳转到 &lt;code&gt;add&lt;/code&gt;  的起始地址，为 &lt;code&gt;add&lt;/code&gt;  创建栈帧。 &lt;code&gt;add&lt;/code&gt;  的返回值存放在 &lt;code&gt;EAX&lt;/code&gt;  中。&lt;br&gt;
-执行 &lt;code&gt;ret&lt;/code&gt;  之前需要释放当前栈帧，恢复 caller 的栈帧。因此 &lt;code&gt;leave&lt;/code&gt;  相当于 &lt;code&gt;mov esp, ebp&lt;/code&gt;   &lt;code&gt;pop ebp&lt;/code&gt;&lt;/p&gt;
-&lt;h2 id=&#34;cisc和risc的基本概念&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#cisc和risc的基本概念&#34;&gt;#&lt;/a&gt; CISC 和 RISC 的基本概念&lt;/h2&gt;
-&lt;p&gt;复杂指令系统计算机 (CISC)：比如 x86&lt;br&gt;
- 精简指令系统计算机 (RISC)：ARM, MIPS…&lt;/p&gt;
-&lt;h3 id=&#34;cisc&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#cisc&#34;&gt;#&lt;/a&gt; CISC&lt;/h3&gt;
-&lt;ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;每个过程有自己的栈帧，&lt;code&gt;EBP&lt;/code&gt;保存栈帧的基址，&lt;code&gt;ESP&lt;/code&gt;指向栈顶位置，&lt;code&gt;EBP&lt;/code&gt;的值不变，当前栈帧的范围在&lt;code&gt;EBP&lt;/code&gt;和&lt;code&gt;ESP&lt;/code&gt;之间（详见编译原理&lt;code&gt;activated record&lt;/code&gt;）&lt;br&gt;&lt;img data-src=&#34;/f8.jpg&#34;&gt;&lt;br&gt;前三行的意思是新开一个栈帧，分配了24字节的栈帧空间。&lt;code&gt;push epb&lt;/code&gt;实际上就是把static link压栈。&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9ub3Jlc3BvbnNlNTI1LmdpdGh1Yi5pby8yMDI1LzA2LzE1L2NvbXB1dGVyLXNjaWVuY2UvY29tcGlsZS1wcmluY2lwbGVzL2NoNi8jJUU1JTg3JUJEJUU2JTk1JUIwJUU4JUIwJTgzJUU3JTk0JUE4JUU2JUI1JTgxJUU3JUE4JThC&#34;&gt;详见编译原理笔记&lt;/span&gt;&lt;br&gt;执行&lt;code&gt;call&lt;/code&gt;之后，&lt;code&gt;call&lt;/code&gt;会先将返回地址压栈，然后跳转到&lt;code&gt;add&lt;/code&gt;的起始地址，为&lt;code&gt;add&lt;/code&gt;创建栈帧。&lt;code&gt;add&lt;/code&gt;的返回值存放在&lt;code&gt;EAX&lt;/code&gt;中。&lt;br&gt;执行&lt;code&gt;ret&lt;/code&gt;之前需要释放当前栈帧，恢复caller的栈帧。因此&lt;code&gt;leave&lt;/code&gt;相当于&lt;code&gt;mov esp, ebp&lt;/code&gt; &lt;code&gt;pop ebp&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&#34;CISC和RISC的基本概念&#34;&gt;&lt;a href=&#34;#CISC和RISC的基本概念&#34; class=&#34;headerlink&#34; title=&#34;CISC和RISC的基本概念&#34;&gt;&lt;/a&gt;CISC和RISC的基本概念&lt;/h2&gt;&lt;p&gt;复杂指令系统计算机(CISC)：比如x86&lt;br&gt;精简指令系统计算机(RISC)：ARM, MIPS…&lt;/p&gt;
+&lt;h3 id=&#34;CISC&#34;&gt;&lt;a href=&#34;#CISC&#34; class=&#34;headerlink&#34; title=&#34;CISC&#34;&gt;&lt;/a&gt;CISC&lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;指令系统复杂庞大，指令数目多&lt;/li&gt;
 &lt;li&gt;指令长度不固定，格式多，寻址方式多&lt;/li&gt;
-&lt;li&gt;可以访存的指令不受限制（比如 x86 的 add 可以直接把 reg 和 mem 相加，但是 riscv 的只能 reg 和 reg 或者 reg 和 imm）&lt;/li&gt;
+&lt;li&gt;可以访存的指令不受限制（比如x86的add可以直接把reg和mem相加，但是riscv的只能reg和reg或者reg和imm）&lt;/li&gt;
 &lt;li&gt;各种指令使用频度相差很大&lt;/li&gt;
 &lt;li&gt;各种指令执行时间相差很大，大多指令需要多个时钟周期&lt;/li&gt;
 &lt;li&gt;控制器大多采用微程序控制，无法采用硬连线控制&lt;/li&gt;
 &lt;li&gt;难以用优化编译生成高效的目标代码程序&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;risc&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#risc&#34;&gt;#&lt;/a&gt; RISC&lt;/h3&gt;
-&lt;ul&gt;
+&lt;h3 id=&#34;RISC&#34;&gt;&lt;a href=&#34;#RISC&#34; class=&#34;headerlink&#34; title=&#34;RISC&#34;&gt;&lt;/a&gt;RISC&lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;选取使用频率最高的一些简单指令，复杂指令的功能由简单指令的组合来实现&lt;/li&gt;
 &lt;li&gt;指令长度固定，指令格式种类少，寻址方式种类少&lt;/li&gt;
-&lt;li&gt;只有 LOAD/STORE 访存，其余指令的操作只能访问寄存器 /imm&lt;/li&gt;
-&lt;li&gt;CPU 中通用寄存器数量相当多&lt;/li&gt;
+&lt;li&gt;只有LOAD&amp;#x2F;STORE访存，其余指令的操作只能访问寄存器&amp;#x2F;imm&lt;/li&gt;
+&lt;li&gt;CPU中通用寄存器数量相当多&lt;/li&gt;
 &lt;li&gt;采用流水线技术，大部分指令在一个时钟周期内完成&lt;/li&gt;
 &lt;li&gt;硬布线控制为主，不用或少用微程序控制&lt;/li&gt;
-&lt;li&gt;重视编译优化&lt;br&gt;
- CISC 兼容性好，大多 RISC 不能和老机器兼容，但具有更强的实用性。CISC 可以提供更多的功能&lt;/li&gt;
+&lt;li&gt;重视编译优化&lt;br&gt;CISC兼容性好，大多RISC不能和老机器兼容，但具有更强的实用性。CISC可以提供更多的功能&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;cisc和risc的比较&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#cisc和risc的比较&#34;&gt;#&lt;/a&gt; CISC 和 RISC 的比较&lt;/h3&gt;
-&lt;p&gt;和 CISC 相比，RISC 的优点：&lt;/p&gt;
+&lt;h3 id=&#34;CISC和RISC的比较&#34;&gt;&lt;a href=&#34;#CISC和RISC的比较&#34; class=&#34;headerlink&#34; title=&#34;CISC和RISC的比较&#34;&gt;&lt;/a&gt;CISC和RISC的比较&lt;/h3&gt;&lt;p&gt;和CISC相比，RISC的优点：&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;RISC 更能充分利用 VLSI（超大规模集成电路）芯片的面积（减少了控制逻辑）&lt;/li&gt;
-&lt;li&gt;RISC 更能提高运算速度&lt;/li&gt;
-&lt;li&gt;RISC 便于设计，可以降低成本，提高可靠性&lt;/li&gt;
-&lt;li&gt;有利于编译优化&lt;br&gt;
-&lt;img data-src=&#34;f9.jpg&#34; alt&gt;&lt;/li&gt;
+&lt;li&gt;RISC更能充分利用VLSI（超大规模集成电路）芯片的面积（减少了控制逻辑）&lt;/li&gt;
+&lt;li&gt;RISC更能提高运算速度&lt;/li&gt;
+&lt;li&gt;RISC便于设计，可以降低成本，提高可靠性&lt;/li&gt;
+&lt;li&gt;有利于编译优化&lt;br&gt;&lt;img data-src=&#34;/f9.jpg&#34;&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </content>
         <category term="指令系统" />

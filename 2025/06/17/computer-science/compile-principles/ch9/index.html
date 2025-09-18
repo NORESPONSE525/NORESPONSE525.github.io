@@ -116,7 +116,7 @@ NoResponse's Blog = NoResponse's Blog</title>
 
       </div>
       <div id="imgs" class="pjax">
-          <img src="/images/bg5.jpg">
+          <img src="/images/bg3.png">
       </div>
     </header>
     <div id="waves">
@@ -164,83 +164,54 @@ NoResponse's Blog = NoResponse's Blog</title>
   <div class="body md" itemprop="articleBody">
     
 
-    <h1 id="指令选择"><a class="markdownIt-Anchor" href="#指令选择">#</a> 指令选择</h1>
-<p>找出实现一个给定的 IR Tree 的恰当机器指令序列。Mapping IR into abstract assembly code</p>
+    <h1 id="指令选择"><a href="#指令选择" class="headerlink" title="指令选择"></a>指令选择</h1><p>找出实现一个给定的IR Tree的恰当机器指令序列。Mapping IR into abstract assembly code</p>
 <ul>
-<li>Abstract assembly = assembly with infinite registers
-<ul>
+<li>Abstract assembly &#x3D; assembly with infinite registers<ul>
 <li>Invent new temporaries for intermediate results</li>
-<li>Map to actual registers later<br>
-Tree pattern, 也叫 tile<br>
- 本质上是 pattern matching, 我们使用 tree covering 来实现</li>
+<li>Map to actual registers later<br>Tree pattern, 也叫tile<br>本质上是pattern matching, 我们使用tree covering 来实现</li>
 </ul>
 </li>
 </ul>
-<p>我们 <code>Jouette</code>  体系将树模式映射为指令:</p>
+<p>我们<code>Jouette</code>体系将树模式映射为指令:</p>
 <ul>
 <li>寄存器中可以存储数据或地址，每条指令可以访问任意寄存器</li>
-<li>寄存器 r0 的值永远是 0</li>
-<li>每条指令的 latency 都是一周期（除了 MOVEM 的周期是 m）</li>
+<li>寄存器r0的值永远是0</li>
+<li>每条指令的latency都是一周期（除了MOVEM的周期是m）</li>
 <li>每个周期执行一条指令</li>
 </ul>
-<p><img data-src="f2.jpg" alt><br>
-<img data-src="f1.jpg" alt><br>
-将 IR 与后端的机器指令都转换为树结构。这样就把指令选择问题转换为机器指令树覆盖全 IR Tree 的问题。<br>
-一棵树可以有多种 tiling 方式</p>
-<h2 id="optimal-tiling-optimum-tiling"><a class="markdownIt-Anchor" href="#optimal-tiling-optimum-tiling">#</a> Optimal Tiling &amp; Optimum Tiling</h2>
-<ul>
-<li>Optimum Tiling：使得 tiling 数最少，是<mark>全局最优</mark></li>
-<li>Optimal Tiling：No two adjacent tiles can be combined into a single tile of lower cost，是<mark>局部最优</mark><br>
-一个 optimum tiling 必定是 optimal tiling<br>
-<img data-src="f3.jpg" alt></li>
+<p><img data-src="/f2.jpg"><br><img data-src="/f1.jpg"><br>将IR与后端的机器指令都转换为树结构。这样就把指令选择问题转换为机器指令树覆盖全IR Tree的问题。<br>一棵树可以有多种tiling方式</p>
+<h2 id="Optimal-Tiling-Optimum-Tiling"><a href="#Optimal-Tiling-Optimum-Tiling" class="headerlink" title="Optimal Tiling &amp; Optimum Tiling"></a>Optimal Tiling &amp; Optimum Tiling</h2><ul>
+<li>Optimum Tiling：使得tiling数最少，是&#x3D;&#x3D;全局最优&#x3D;&#x3D;</li>
+<li>Optimal Tiling：No two adjacent tiles can be combined into a single tile of lower cost，是&#x3D;&#x3D;局部最优&#x3D;&#x3D;<br>一个optimum tiling必定是optimal tiling<br><img data-src="/f3.jpg"></li>
 </ul>
-<h2 id="algorithms-for-instruction-selection"><a class="markdownIt-Anchor" href="#algorithms-for-instruction-selection">#</a> Algorithms for Instruction Selection</h2>
-<h3 id="maximal-munch-find-an-optimal-tiling"><a class="markdownIt-Anchor" href="#maximal-munch-find-an-optimal-tiling">#</a> Maximal Munch: Find an optimal tiling</h3>
-<p>最大匹配：贪心算法、自顶向下<br>
-方法：从 IR 树的根节点开始，用<mark>最大的</mark> tile 覆盖当前节点（包含最多节点的），然后在子树中重复此过程</p>
-<h3 id="dp"><a class="markdownIt-Anchor" href="#dp">#</a> DP</h3>
-<p>动态规划：自底向上<br>
-方法：</p>
+<h2 id="Algorithms-for-Instruction-Selection"><a href="#Algorithms-for-Instruction-Selection" class="headerlink" title="Algorithms for Instruction Selection"></a>Algorithms for Instruction Selection</h2><h3 id="Maximal-Munch-Find-an-optimal-tiling"><a href="#Maximal-Munch-Find-an-optimal-tiling" class="headerlink" title="Maximal Munch: Find an optimal tiling"></a>Maximal Munch: Find an optimal tiling</h3><p>最大匹配：贪心算法、自顶向下<br>方法：从IR树的根节点开始，用&#x3D;&#x3D;最大的&#x3D;&#x3D;tile覆盖当前节点（包含最多节点的），然后在子树中重复此过程</p>
+<h3 id="DP"><a href="#DP" class="headerlink" title="DP"></a>DP</h3><p>动态规划：自底向上<br>方法：</p>
 <ol>
 <li>递归计算每个子树的最优平铺成本</li>
 <li>对于每个节点，考虑所有可能的匹配平铺</li>
-<li>对于每个匹配平铺，计算其成本如下：cost = tile_cost + sum（costs_of_children）</li>
+<li>对于每个匹配平铺，计算其成本如下：cost &#x3D; tile_cost + sum（costs_of_children）</li>
 <li>选择成本最低的平铺</li>
 </ol>
 <ul>
-<li>对于<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>C</mi><mi>O</mi><mi>N</mi><mi>S</mi><mi>T</mi><mi>i</mi></mrow><annotation encoding="application/x-tex">CONST i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.07153em;">C</span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mord mathnormal" style="margin-right:0.05764em;">S</span><span class="mord mathnormal" style="margin-right:0.13889em;">T</span><span class="mord mathnormal">i</span></span></span></span>，它的代价为 1 (ADD r1, r0, i)</li>
-<li>对于这棵树，有三种匹配方法<br>
-<img data-src="f4.jpg" alt><br>
-<img data-src="f5.jpg" alt><br>
-因为 2&lt;3，所以我们从 cost=2 的两个任选一个<br>
-接下来对于 MEM，用的都是 LOAD，代价都是 1，2&lt;3 所以选 cost=2 的</li>
+<li>对于$CONST i$，它的代价为1( ADD r1, r0, i)</li>
+<li>对于这棵树，有三种匹配方法<br><img data-src="/f4.jpg"><br><img data-src="/f5.jpg"><br>因为2&lt;3，所以我们从cost&#x3D;2的两个任选一个<br>接下来对于MEM，用的都是LOAD，代价都是1，2&lt;3所以选cost&#x3D;2的</li>
 </ul>
 <figure class="highlight c"><figcaption><span>指令发射</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">function <span class="title function_">Emission</span><span class="params">(node n)</span>:</span><br><span class="line">    For each leaf l_i of the tile selected at node n:</span><br><span class="line">        <span class="title function_">Emission</span><span class="params">(l_i)</span> </span><br><span class="line">    Emit the instruction matched at node n</span><br></pre></td></tr></table></figure>
-<h3 id="最大匹配-vs-动态规划"><a class="markdownIt-Anchor" href="#最大匹配-vs-动态规划">#</a> 最大匹配 vs 动态规划</h3>
-<ul>
-<li><strong>T</strong> - tile 的总种类数</li>
-<li><strong>K</strong> - 一个 matching tile 平均覆盖的节点数</li>
-<li><strong>K’</strong> - 需要检查的最大 tile 尺寸（即最大的瓦片包含的节点数）</li>
-<li><strong>T’</strong> - 每个树节点平均能匹配上的 tile 数量</li>
-<li><strong>N</strong> - 输入的中间表示 IR Tree 中的总节点数</li>
+<h3 id="最大匹配-vs-动态规划"><a href="#最大匹配-vs-动态规划" class="headerlink" title="最大匹配 vs 动态规划"></a>最大匹配 vs 动态规划</h3><ul>
+<li><strong>T</strong> - tile的总种类数  </li>
+<li><strong>K</strong> - 一个matching tile平均覆盖的节点数  </li>
+<li><strong>K’</strong> - 需要检查的最大tile尺寸（即最大的瓦片包含的节点数）  </li>
+<li><strong>T’</strong> - 每个树节点平均能匹配上的tile数量  </li>
+<li><strong>N</strong> - 输入的中间表示IR Tree中的总节点数</li>
 </ul>
 <p>两种算法的运行时间复杂度：</p>
 <ul>
-<li><strong>最大匹配（Maximal Munch）</strong> - 其时间复杂度与</li>
+<li><p><strong>最大匹配（Maximal Munch）</strong> - 其时间复杂度与<br>$$<br>\frac{(K’ + T’) * K}{K} * N &#x3D; (K’ + T’) * N<br>$$<br>成正比</p>
+</li>
+<li><p><strong>动态规划（Dynamic Programming）</strong> - 其时间复杂度与<br>$$<br>(K’ + T’) * N<br>$$<br>成正比</p>
+</li>
 </ul>
-<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mfrac><mrow><mo stretchy="false">(</mo><msup><mi>K</mi><mo mathvariant="normal" lspace="0em" rspace="0em">′</mo></msup><mo>+</mo><msup><mi>T</mi><mo mathvariant="normal" lspace="0em" rspace="0em">′</mo></msup><mo stretchy="false">)</mo><mo>∗</mo><mi>K</mi></mrow><mi>K</mi></mfrac><mo>∗</mo><mi>N</mi><mo>=</mo><mo stretchy="false">(</mo><msup><mi>K</mi><mo mathvariant="normal" lspace="0em" rspace="0em">′</mo></msup><mo>+</mo><msup><mi>T</mi><mo mathvariant="normal" lspace="0em" rspace="0em">′</mo></msup><mo stretchy="false">)</mo><mo>∗</mo><mi>N</mi></mrow><annotation encoding="application/x-tex">\frac{(K&#x27; + T&#x27;) * K}{K} * N = (K&#x27; + T&#x27;) * N
-</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:2.114892em;vertical-align:-0.686em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.428892em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07153em;">K</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mopen">(</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07153em;">K</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.751892em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">T</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.751892em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord mathnormal" style="margin-right:0.07153em;">K</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.051892em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07153em;">K</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.801892em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1.051892em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">T</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.801892em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span></span></span></span></span></p>
-<p>成正比</p>
-<ul>
-<li><strong>动态规划（Dynamic Programming）</strong> - 其时间复杂度与</li>
-</ul>
-<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mo stretchy="false">(</mo><msup><mi>K</mi><mo mathvariant="normal" lspace="0em" rspace="0em">′</mo></msup><mo>+</mo><msup><mi>T</mi><mo mathvariant="normal" lspace="0em" rspace="0em">′</mo></msup><mo stretchy="false">)</mo><mo>∗</mo><mi>N</mi></mrow><annotation encoding="application/x-tex">(K&#x27; + T&#x27;) * N
-</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.051892em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07153em;">K</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.801892em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1.051892em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">T</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.801892em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span></span></span></span></span></p>
-<p>成正比</p>
-<h2 id="tree-grammar-树文法"><a class="markdownIt-Anchor" href="#tree-grammar-树文法">#</a> Tree Grammar 树文法</h2>
-<p>问题：对于具有复杂指令集和多种寄存器类型及寻址模式的机器，难以使用简单的 tree pattern 和 tiling 算法。<br>
-用一种文法来描述 tiles，代替手写过程式匹配代码，支持自动化的指令选择，增强了可移植性<br>
-图没看懂，后面再回来研究</p>
+<h2 id="Tree-Grammar-树文法"><a href="#Tree-Grammar-树文法" class="headerlink" title="Tree Grammar 树文法"></a>Tree Grammar 树文法</h2><p>问题：对于具有复杂指令集和多种寄存器类型及寻址模式的机器，难以使用简单的tree pattern和tiling算法。<br>用一种文法来描述tiles，代替手写过程式匹配代码，支持自动化的指令选择，增强了可移植性<br>图没看懂，后面再回来研究</p>
 
       <div class="tags">
           <a href="/tags/%E6%8C%87%E4%BB%A4%E9%80%89%E6%8B%A9/" rel="tag"><i class="ic i-tag"></i> 指令选择</a>
@@ -310,7 +281,7 @@ Tree pattern, 也叫 tile<br>
     <div class="item left">
       
 
-  <a href="/2025/06/17/computer-science/compile-principles/ch8/" itemprop="url" rel="prev" data-background-image="&#x2F;images&#x2F;bg12.jpg" title="Basic Blocks &amp; Traces">
+  <a href="/2025/06/17/computer-science/compile-principles/ch8/" itemprop="url" rel="prev" data-background-image="&#x2F;images&#x2F;bg22.png" title="Basic Blocks &amp; Traces">
   <span class="type">Previous Post</span>
   <span class="category"><i class="ic i-flag"></i> 编译原理</span>
   <h3>Basic Blocks & Traces</h3>
@@ -320,10 +291,10 @@ Tree pattern, 也叫 tile<br>
     <div class="item right">
       
 
-  <a href="/2025/06/18/computer-science/compile-principles/ch11/" itemprop="url" rel="next" data-background-image="&#x2F;images&#x2F;bg31.jpg" title="Register Allocation">
+  <a href="/2025/06/18/computer-science/compile-principles/ch10/" itemprop="url" rel="next" data-background-image="&#x2F;images&#x2F;bg11.jpg" title="Liveness Analysis">
   <span class="type">Next Post</span>
   <span class="category"><i class="ic i-flag"></i> 编译原理</span>
-  <h3>Register Allocation</h3>
+  <h3>Liveness Analysis</h3>
   </a>
 
     </div>
@@ -342,11 +313,11 @@ Tree pattern, 也叫 tile<br>
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="Contents">
-          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%8C%87%E4%BB%A4%E9%80%89%E6%8B%A9"><span class="toc-number">1.</span> <span class="toc-text"> 指令选择</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#optimal-tiling-optimum-tiling"><span class="toc-number">1.1.</span> <span class="toc-text"> Optimal Tiling &amp; Optimum Tiling</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#algorithms-for-instruction-selection"><span class="toc-number">1.2.</span> <span class="toc-text"> Algorithms for Instruction Selection</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#maximal-munch-find-an-optimal-tiling"><span class="toc-number">1.2.1.</span> <span class="toc-text"> Maximal Munch: Find an optimal tiling</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#dp"><span class="toc-number">1.2.2.</span> <span class="toc-text"> DP</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%80%E5%A4%A7%E5%8C%B9%E9%85%8D-vs-%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92"><span class="toc-number">1.2.3.</span> <span class="toc-text"> 最大匹配 vs 动态规划</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#tree-grammar-%E6%A0%91%E6%96%87%E6%B3%95"><span class="toc-number">1.3.</span> <span class="toc-text"> Tree Grammar 树文法</span></a></li></ol></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%8C%87%E4%BB%A4%E9%80%89%E6%8B%A9"><span class="toc-number">1.</span> <span class="toc-text">指令选择</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Optimal-Tiling-Optimum-Tiling"><span class="toc-number">1.1.</span> <span class="toc-text">Optimal Tiling &amp; Optimum Tiling</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Algorithms-for-Instruction-Selection"><span class="toc-number">1.2.</span> <span class="toc-text">Algorithms for Instruction Selection</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Maximal-Munch-Find-an-optimal-tiling"><span class="toc-number">1.2.1.</span> <span class="toc-text">Maximal Munch: Find an optimal tiling</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DP"><span class="toc-number">1.2.2.</span> <span class="toc-text">DP</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%80%E5%A4%A7%E5%8C%B9%E9%85%8D-vs-%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92"><span class="toc-number">1.2.3.</span> <span class="toc-text">最大匹配 vs 动态规划</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Tree-Grammar-%E6%A0%91%E6%96%87%E6%B3%95"><span class="toc-number">1.3.</span> <span class="toc-text">Tree Grammar 树文法</span></a></li></ol></li></ol>
       </div>
       <div class="related panel pjax" data-title="Related">
         <ul>
-          <li><a href="/2025/03/21/computer-science/compile-principles/ch1/" rel="bookmark" title="Introduction">Introduction</a></li><li><a href="/2025/03/22/computer-science/compile-principles/ch2/" rel="bookmark" title="词法分析">词法分析</a></li><li><a href="/2025/03/23/computer-science/compile-principles/ch3/" rel="bookmark" title="语法分析">语法分析</a></li><li><a href="/2025/03/29/computer-science/compile-principles/ch4/" rel="bookmark" title="抽象语法">抽象语法</a></li><li><a href="/2025/03/30/computer-science/compile-principles/ch5/" rel="bookmark" title="语义分析">语义分析</a></li><li><a href="/2025/06/15/computer-science/compile-principles/ch6/" rel="bookmark" title="活动记录">活动记录</a></li><li><a href="/2025/06/16/computer-science/compile-principles/ch7/" rel="bookmark" title="IR">IR</a></li><li class="active"><a href="/2025/06/17/computer-science/compile-principles/ch9/" rel="bookmark" title="指令选择">指令选择</a></li><li><a href="/2025/06/17/computer-science/compile-principles/ch8/" rel="bookmark" title="Basic Blocks & Traces">Basic Blocks & Traces</a></li><li><a href="/2025/06/18/computer-science/compile-principles/ch10/" rel="bookmark" title="Liveness Analysis">Liveness Analysis</a></li><li><a href="/2025/06/18/computer-science/compile-principles/ch11/" rel="bookmark" title="Register Allocation">Register Allocation</a></li>
+          <li><a href="/2025/03/21/computer-science/compile-principles/ch1/" rel="bookmark" title="Introduction">Introduction</a></li><li><a href="/2025/03/22/computer-science/compile-principles/ch2/" rel="bookmark" title="词法分析">词法分析</a></li><li><a href="/2025/03/23/computer-science/compile-principles/ch3/" rel="bookmark" title="语法分析">语法分析</a></li><li><a href="/2025/03/29/computer-science/compile-principles/ch4/" rel="bookmark" title="抽象语法">抽象语法</a></li><li><a href="/2025/03/30/computer-science/compile-principles/ch5/" rel="bookmark" title="语义分析">语义分析</a></li><li><a href="/2025/06/15/computer-science/compile-principles/ch6/" rel="bookmark" title="活动记录">活动记录</a></li><li><a href="/2025/06/16/computer-science/compile-principles/ch7/" rel="bookmark" title="IR">IR</a></li><li class="active"><a href="/2025/06/17/computer-science/compile-principles/ch9/" rel="bookmark" title="指令选择">指令选择</a></li><li><a href="/2025/06/17/computer-science/compile-principles/ch8/" rel="bookmark" title="Basic Blocks & Traces">Basic Blocks & Traces</a></li><li><a href="/2025/06/18/computer-science/compile-principles/ch11/" rel="bookmark" title="Register Allocation">Register Allocation</a></li><li><a href="/2025/06/18/computer-science/compile-principles/ch10/" rel="bookmark" title="Liveness Analysis">Liveness Analysis</a></li>
         </ul>
       </div>
       <div class="overview panel" data-title="Overview">
@@ -440,7 +411,7 @@ Tree pattern, 也叫 tile<br>
     <li class="up"><i class="ic i-arrow-up"></i></li>
     <li class="down"><i class="ic i-arrow-down"></i></li>
     <li class="next pjax">
-        <a href="/2025/06/18/computer-science/compile-principles/ch11/" rel="next" title="Next Post"><i class="ic i-chevron-right"></i></a>
+        <a href="/2025/06/18/computer-science/compile-principles/ch10/" rel="next" title="Next Post"><i class="ic i-chevron-right"></i></a>
     </li>
     <li class="percent"></li>
   </ul>
@@ -462,12 +433,20 @@ Tree pattern, 也叫 tile<br>
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
+<a href="/categories/AI/" title="In 人工智能">人工智能</a>
 </div>
 
-    <span><a href="/2025/03/22/computer-science/compile-principles/ch2/" title="词法分析">词法分析</a></span>
+    <span><a href="/2025/06/12/AI/week6-7/" title="Week6-7">Week6-7</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/note/" title="In 论文阅读">论文阅读</a>
+</div>
+
+    <span><a href="/2025/08/02/note/20250802/" title="20250802">20250802</a></span>
   </li>
 
       
@@ -477,7 +456,29 @@ Tree pattern, 也叫 tile<br>
 <a href="/categories/AI/" title="In 人工智能">人工智能</a>
 </div>
 
-    <span><a href="/2025/06/15/AI/week8-9/" title="Week8-9">Week8-9</a></span>
+    <span><a href="/2025/05/20/AI/week1/" title="Week1">Week1</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
+</div>
+
+    <span><a href="/2025/03/29/computer-science/compile-principles/ch4/" title="抽象语法">抽象语法</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/AI/" title="In 人工智能">人工智能</a>
+</div>
+
+    <span><a href="/2025/06/16/AI/week12-13/" title="Week12-13">Week12-13</a></span>
   </li>
 
       
@@ -489,19 +490,17 @@ Tree pattern, 也叫 tile<br>
 <a href="/categories/computer-science/computer-organization/" title="In 计算机组成">计算机组成</a>
 </div>
 
-    <span><a href="/2025/07/01/computer-science/computer-organization/%E9%94%99%E9%A2%98%E9%9B%86%E5%90%88/" title="错题集合">错题集合</a></span>
+    <span><a href="/2025/05/14/computer-science/computer-organization/ch2/" title="Ch2">Ch2</a></span>
   </li>
 
       
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
+<a href="/categories/AI/" title="In 人工智能">人工智能</a>
 </div>
 
-    <span><a href="/2025/03/30/computer-science/compile-principles/ch5/" title="语义分析">语义分析</a></span>
+    <span><a href="/2025/06/16/AI/week14-15/" title="Week14-15">Week14-15</a></span>
   </li>
 
       
@@ -525,27 +524,7 @@ Tree pattern, 也叫 tile<br>
 <a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
 </div>
 
-    <span><a href="/2025/06/15/computer-science/compile-principles/ch6/" title="活动记录">活动记录</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/AI/" title="In 人工智能">人工智能</a>
-</div>
-
-    <span><a href="/2025/06/16/AI/week12-13/" title="Week12-13">Week12-13</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/AI/" title="In 人工智能">人工智能</a>
-</div>
-
-    <span><a href="/2025/05/20/AI/week1/" title="Week1">Week1</a></span>
+    <span><a href="/2025/06/17/computer-science/compile-principles/ch9/" title="指令选择">指令选择</a></span>
   </li>
 
       
@@ -554,20 +533,10 @@ Tree pattern, 也叫 tile<br>
 <div class="breadcrumb">
 <a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/DS/" title="In 数据结构">数据结构</a>
+<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
 </div>
 
-    <span><a href="/2025/09/15/computer-science/DS/ch2/" title="ch1">ch1</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/AI/" title="In 人工智能">人工智能</a>
-</div>
-
-    <span><a href="/2025/06/12/AI/week6-7/" title="Week6-7">Week6-7</a></span>
+    <span><a href="/2025/06/15/computer-science/compile-principles/ch6/" title="活动记录">活动记录</a></span>
   </li>
 
   </ul>
@@ -592,13 +561,13 @@ Tree pattern, 也叫 tile<br>
     <span class="post-meta-item-icon">
       <i class="ic i-chart-area"></i>
     </span>
-    <span title="Symbols count total">97k words</span>
+    <span title="Symbols count total">94k words</span>
 
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="ic i-coffee"></i>
     </span>
-    <span title="Reading time total">1:28</span>
+    <span title="Reading time total">1:25</span>
   </div>
   <div class="powered-by">
     Powered by <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
