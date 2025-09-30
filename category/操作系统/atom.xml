@@ -4,58 +4,68 @@
     <title>NoResponse&#39;s Blog • Posts by &#34;操作系统&#34; category</title>
     <link href="http://example.com" />
     <updated>2025-09-17T16:00:00.000Z</updated>
-    <category term="人工智能" />
     <category term="软件工程" />
+    <category term="人工智能" />
     <category term="自监督学习" />
     <category term="操作系统" />
     <category term="线性表" />
     <category term="数据结构" />
     <category term="编译原理" />
-    <category term="Register Allocation" />
-    <category term="语法分析" />
-    <category term="词法分析" />
+    <category term="计算机网络" />
     <category term="Liveness Analysis" />
+    <category term="Register Allocation" />
+    <category term="词法分析" />
+    <category term="语法分析" />
     <category term="抽象语法" />
     <category term="语义分析" />
-    <category term="活动记录" />
     <category term="中间代码" />
-    <category term="指令选择" />
+    <category term="活动记录" />
     <category term="Basic Blocks and Traces" />
+    <category term="指令选择" />
     <category term="计算机组成" />
-    <category term="计算机网络" />
-    <category term="数据的表示与运算" />
     <category term="存储系统" />
-    <category term="总线" />
+    <category term="数据的表示与运算" />
+    <category term="指令系统" />
     <category term="CPU" />
     <category term="I/O" />
-    <category term="指令系统" />
+    <category term="总线" />
     <category term="错题" />
     <entry>
         <id>http://example.com/2025/09/18/computer-science/OS/ch1/</id>
         <title>ch1</title>
         <link rel="alternate" href="http://example.com/2025/09/18/computer-science/OS/ch1/"/>
-        <content type="html">&lt;h1 id=&#34;Ch1&#34;&gt;&lt;a href=&#34;#Ch1&#34; class=&#34;headerlink&#34; title=&#34;Ch1&#34;&gt;&lt;/a&gt;Ch1&lt;/h1&gt;&lt;p&gt;计算机系统自下而上可以大致分为硬件、操作系统、应用程序、用户&lt;br&gt;OS管理各种硬件，为应用程序提供基础，充当计算机硬件与用户之间的中介，是计算机系统中最基本的系统软件&lt;/p&gt;
-&lt;h2 id=&#34;基本概念&#34;&gt;&lt;a href=&#34;#基本概念&#34; class=&#34;headerlink&#34; title=&#34;基本概念&#34;&gt;&lt;/a&gt;基本概念&lt;/h2&gt;&lt;h3 id=&#34;操作系统的功能&#34;&gt;&lt;a href=&#34;#操作系统的功能&#34; class=&#34;headerlink&#34; title=&#34;操作系统的功能&#34;&gt;&lt;/a&gt;操作系统的功能&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;管理计算机系统资源&lt;br&gt;处理机管理（进程&amp;#x2F;线程管理）、存储器管理、设备管理、文件管理，向用户提供接口&lt;/li&gt;
+        <content type="html">&lt;h1 id=&#34;ch1&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#ch1&#34;&gt;#&lt;/a&gt; Ch1&lt;/h1&gt;
+&lt;p&gt;计算机系统自下而上可以大致分为硬件、操作系统、应用程序、用户&lt;br&gt;
+ OS 管理各种硬件，为应用程序提供基础，充当计算机硬件与用户之间的中介，是计算机系统中最基本的系统软件&lt;/p&gt;
+&lt;h2 id=&#34;基本概念&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#基本概念&#34;&gt;#&lt;/a&gt; 基本概念&lt;/h2&gt;
+&lt;h3 id=&#34;操作系统的功能&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#操作系统的功能&#34;&gt;#&lt;/a&gt; 操作系统的功能&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;管理计算机系统资源&lt;br&gt;
+处理机管理（进程 / 线程管理）、存储器管理、设备管理、文件管理，向用户提供接口&lt;/li&gt;
 &lt;li&gt;作为用户与硬件系统之间的接口&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
-&lt;li&gt;命令接口（联机控制方式和脱机控制方式）&lt;ul&gt;
+&lt;li&gt;命令接口（联机控制方式和脱机控制方式）
+&lt;ul&gt;
 &lt;li&gt;联机命令接口也称为交互式命令接口，由一组键盘操作命令组成&lt;/li&gt;
 &lt;li&gt;脱机命令接口也称批处理命令接口，由一组作业控制命令组成&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;程序接口&lt;ul&gt;
+&lt;li&gt;程序接口
+&lt;ul&gt;
 &lt;li&gt;由一组系统调用组成&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;ol start=&#34;3&#34;&gt;
-&lt;li&gt;实现了对计算机资源的补充&lt;br&gt;虚拟机&lt;/li&gt;
+&lt;li&gt;实现了对计算机资源的补充&lt;br&gt;
+虚拟机&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h3 id=&#34;操作系统的特征&#34;&gt;&lt;a href=&#34;#操作系统的特征&#34; class=&#34;headerlink&#34; title=&#34;操作系统的特征&#34;&gt;&lt;/a&gt;操作系统的特征&lt;/h3&gt;&lt;p&gt;最基本的两个：并发与共享&lt;/p&gt;
+&lt;h3 id=&#34;操作系统的特征&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#操作系统的特征&#34;&gt;#&lt;/a&gt; 操作系统的特征&lt;/h3&gt;
+&lt;p&gt;最基本的两个：并发与共享&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;并发&lt;br&gt;多道程序交替运行（和并行不一样）&lt;/li&gt;
+&lt;li&gt;并发&lt;br&gt;
+多道程序交替运行（和并行不一样）&lt;/li&gt;
 &lt;li&gt;共享&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
@@ -66,8 +76,12 @@
 &lt;li&gt;虚拟&lt;/li&gt;
 &lt;li&gt;异步&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h2 id=&#34;发展历程&#34;&gt;&lt;a href=&#34;#发展历程&#34; class=&#34;headerlink&#34; title=&#34;发展历程&#34;&gt;&lt;/a&gt;发展历程&lt;/h2&gt;&lt;h3 id=&#34;手工操作阶段（无操作系统）&#34;&gt;&lt;a href=&#34;#手工操作阶段（无操作系统）&#34; class=&#34;headerlink&#34; title=&#34;手工操作阶段（无操作系统）&#34;&gt;&lt;/a&gt;手工操作阶段（无操作系统）&lt;/h3&gt;&lt;h3 id=&#34;批处理阶段&#34;&gt;&lt;a href=&#34;#批处理阶段&#34; class=&#34;headerlink&#34; title=&#34;批处理阶段&#34;&gt;&lt;/a&gt;批处理阶段&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;单道批处理&lt;br&gt;单道程序&lt;/li&gt;
+&lt;h2 id=&#34;发展历程&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#发展历程&#34;&gt;#&lt;/a&gt; 发展历程&lt;/h2&gt;
+&lt;h3 id=&#34;手工操作阶段无操作系统&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#手工操作阶段无操作系统&#34;&gt;#&lt;/a&gt; 手工操作阶段（无操作系统）&lt;/h3&gt;
+&lt;h3 id=&#34;批处理阶段&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#批处理阶段&#34;&gt;#&lt;/a&gt; 批处理阶段&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;单道批处理&lt;br&gt;
+单道程序&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
 &lt;li&gt;自动型：一批作业自动地逐个运行&lt;/li&gt;
@@ -75,14 +89,17 @@
 &lt;li&gt;单道性：内存中仅有一道程序运行，一道程序运行完才换入下一道&lt;/li&gt;
 &lt;/ul&gt;
 &lt;ol start=&#34;2&#34;&gt;
-&lt;li&gt;多道批处理&lt;br&gt;多道，宏观上并行，微观上串行&lt;/li&gt;
+&lt;li&gt;多道批处理&lt;br&gt;
+多道，宏观上并行，微观上串行&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
 &lt;li&gt;多道：内存中同时存放多道相互独立的程序&lt;/li&gt;
 &lt;li&gt;宏观上并行&lt;/li&gt;
-&lt;li&gt;微观上串行：轮流占有CPU，交替执行&lt;br&gt;缺点：用户响应时间长，不提供人机交互能力，用户既不能了解自己的程序的运行情况，又不能控制计算机&lt;/li&gt;
+&lt;li&gt;微观上串行：轮流占有 CPU，交替执行&lt;br&gt;
+缺点：用户响应时间长，不提供人机交互能力，用户既不能了解自己的程序的运行情况，又不能控制计算机&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;分时操作系统&#34;&gt;&lt;a href=&#34;#分时操作系统&#34; class=&#34;headerlink&#34; title=&#34;分时操作系统&#34;&gt;&lt;/a&gt;分时操作系统&lt;/h3&gt;&lt;p&gt;将运行时间分成时间片&lt;/p&gt;
+&lt;h3 id=&#34;分时操作系统&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#分时操作系统&#34;&gt;#&lt;/a&gt; 分时操作系统&lt;/h3&gt;
+&lt;p&gt;将运行时间分成时间片&lt;/p&gt;
 </content>
         <category term="操作系统" />
         <updated>2025-09-17T16:00:00.000Z</updated>

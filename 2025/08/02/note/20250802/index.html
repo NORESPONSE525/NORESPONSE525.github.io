@@ -76,7 +76,7 @@ NoResponse's Blog = NoResponse's Blog</title>
       <i class="ic i-pen"></i>
     </span>
     <span class="text">Symbols count in article</span>
-    <span>643</span>
+    <span>645</span>
     <span class="text">words</span>
   </span>
   <span class="item" title="Reading time">
@@ -116,7 +116,7 @@ NoResponse's Blog = NoResponse's Blog</title>
 
       </div>
       <div id="imgs" class="pjax">
-          <img src="/images/bg28.jpg">
+          <img src="/images/bg32.jpg">
       </div>
     </header>
     <div id="waves">
@@ -162,13 +162,24 @@ NoResponse's Blog = NoResponse's Blog</title>
     
 
     <blockquote>
-<p><strong>标题</strong>：Self-supervised representation learning from 12-lead ECG data<br><strong>作者</strong>：Temesgen Mehari, Nils Strodthoff<br><strong>期刊</strong>：<em>Computers in Biology and Medicine</em>, 2022<br><strong>DOI</strong>: <span class="exturl" data-url="aHR0cHM6Ly9kb2kub3JnLzEwLjEwMTYvai5jb21wYmlvbWVkLjIwMjEuMTA1MTE0">10.1016&#x2F;j.compbiomed.2021.105114</span><br><strong>关键词</strong>：自监督学习、对比学习、心电图（ECG）、时间序列分析、深度学习</p>
+<p><strong>标题</strong>：Self-supervised representation learning from 12-lead ECG data<br>
+<strong> 作者</strong>：Temesgen Mehari, Nils Strodthoff<br>
+<strong> 期刊</strong>：<em>Computers in Biology and Medicine</em>, 2022<br>
+<strong>DOI</strong>: <span class="exturl" data-url="aHR0cHM6Ly9kb2kub3JnLzEwLjEwMTYvai5jb21wYmlvbWVkLjIwMjEuMTA1MTE0">10.1016/j.compbiomed.2021.105114</span><br>
+<strong> 关键词</strong>：自监督学习、对比学习、心电图（ECG）、时间序列分析、深度学习</p>
 </blockquote>
-<p>12-lead ECG是常见生物信号，但高质量标注数据稀缺，标注依赖专家，成本高，尤其对罕见病或睡眠相关心血管事件更难获取标签，然而，无标签ECG数据海量存在，因此利用自监督学习从大量无标签ECG中预训练模型，学习通用特征表示，再用于下游任务微调，提升性能与标签效率。</p>
-<p>本文采用 <code>xresnet1d50</code> 作为主干网络，对比了不同的自监督学习方法。</p>
-<h2 id="xresnet1d"><a href="#xresnet1d" class="headerlink" title="xresnet1d"></a>xresnet1d</h2><p><span class="exturl" data-url="aHR0cHM6Ly90aW1lc2VyaWVzYWkuZ2l0aHViLmlvL3RzYWkvbW9kZWxzLnhyZXNuZXQxZC5odG1s">https://timeseriesai.github.io/tsai/models.xresnet1d.html</span></p>
-<h2 id="Instance-Discrimination"><a href="#Instance-Discrimination" class="headerlink" title="Instance Discrimination"></a>Instance Discrimination</h2><h3 id="SimCLR"><a href="#SimCLR" class="headerlink" title="SimCLR"></a>SimCLR</h3><p><span class="exturl" data-url="aHR0cHM6Ly9hcnhpdi5vcmcvYWJzLzIwMDIuMDU3MDk=">T. Chen, S. Kornblith, M. Norouzi, G. Hinton, A simple framework for contrastive learning of visual representations, in: International Conference on Machine Learning, 2020.</span></p>
-<h3 id="BYOL"><a href="#BYOL" class="headerlink" title="BYOL"></a>BYOL</h3><h3 id="SwAV"><a href="#SwAV" class="headerlink" title="SwAV"></a>SwAV</h3><h3 id="CPC"><a href="#CPC" class="headerlink" title="CPC"></a>CPC</h3><h2 id="Latent-Forecasting"><a href="#Latent-Forecasting" class="headerlink" title="Latent Forecasting"></a>Latent Forecasting</h2>
+<p>12-lead ECG 是常见生物信号，但高质量标注数据稀缺，标注依赖专家，成本高，尤其对罕见病或睡眠相关心血管事件更难获取标签，然而，无标签 ECG 数据海量存在，因此利用自监督学习从大量无标签 ECG 中预训练模型，学习通用特征表示，再用于下游任务微调，提升性能与标签效率。</p>
+<p>本文采用  <code>xresnet1d50</code>  作为主干网络，对比了不同的自监督学习方法。</p>
+<h2 id="xresnet1d"><a class="markdownIt-Anchor" href="#xresnet1d">#</a> xresnet1d</h2>
+<p><span class="exturl" data-url="aHR0cHM6Ly90aW1lc2VyaWVzYWkuZ2l0aHViLmlvL3RzYWkvbW9kZWxzLnhyZXNuZXQxZC5odG1s">https://timeseriesai.github.io/tsai/models.xresnet1d.html</span></p>
+<h2 id="instance-discrimination"><a class="markdownIt-Anchor" href="#instance-discrimination">#</a> Instance Discrimination</h2>
+<h3 id="simclr"><a class="markdownIt-Anchor" href="#simclr">#</a> SimCLR</h3>
+<p><span class="exturl" data-url="aHR0cHM6Ly9hcnhpdi5vcmcvYWJzLzIwMDIuMDU3MDk=">T. Chen, S. Kornblith, M. Norouzi, G. Hinton, A simple framework for contrastive learning of visual representations, in: International Conference on Machine Learning, 2020.</span></p>
+<h3 id="byol"><a class="markdownIt-Anchor" href="#byol">#</a> BYOL</h3>
+<h3 id="swav"><a class="markdownIt-Anchor" href="#swav">#</a> SwAV</h3>
+<h3 id="cpc"><a class="markdownIt-Anchor" href="#cpc">#</a> CPC</h3>
+<h2 id="latent-forecasting"><a class="markdownIt-Anchor" href="#latent-forecasting">#</a> Latent Forecasting</h2>
+
       <div class="tags">
           <a href="/tags/%E8%87%AA%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0/" rel="tag"><i class="ic i-tag"></i> 自监督学习</a>
       </div>
@@ -237,7 +248,7 @@ NoResponse's Blog = NoResponse's Blog</title>
     <div class="item left">
       
 
-  <a href="/2025/08/01/computer-science/computer-organization/ch4/" itemprop="url" rel="prev" data-background-image="&#x2F;images&#x2F;bg26.jpg" title="Ch4">
+  <a href="/2025/08/01/computer-science/computer-organization/ch4/" itemprop="url" rel="prev" data-background-image="&#x2F;images&#x2F;bg5.jpg" title="Ch4">
   <span class="type">Previous Post</span>
   <span class="category"><i class="ic i-flag"></i> 计算机组成</span>
   <h3>Ch4</h3>
@@ -247,10 +258,10 @@ NoResponse's Blog = NoResponse's Blog</title>
     <div class="item right">
       
 
-  <a href="/2025/08/10/computer-science/computer-organization/ch5/" itemprop="url" rel="next" data-background-image="&#x2F;images&#x2F;bg24.jpg" title="Ch5">
+  <a href="/2025/08/10/computer-science/computer-organization/ch6/" itemprop="url" rel="next" data-background-image="&#x2F;images&#x2F;bg17.jpg" title="Ch6">
   <span class="type">Next Post</span>
   <span class="category"><i class="ic i-flag"></i> 计算机组成</span>
-  <h3>Ch5</h3>
+  <h3>Ch6</h3>
   </a>
 
     </div>
@@ -269,7 +280,7 @@ NoResponse's Blog = NoResponse's Blog</title>
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="Contents">
-          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#xresnet1d"><span class="toc-number">1.</span> <span class="toc-text">xresnet1d</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Instance-Discrimination"><span class="toc-number">2.</span> <span class="toc-text">Instance Discrimination</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#SimCLR"><span class="toc-number">2.1.</span> <span class="toc-text">SimCLR</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#BYOL"><span class="toc-number">2.2.</span> <span class="toc-text">BYOL</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SwAV"><span class="toc-number">2.3.</span> <span class="toc-text">SwAV</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CPC"><span class="toc-number">2.4.</span> <span class="toc-text">CPC</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Latent-Forecasting"><span class="toc-number">3.</span> <span class="toc-text">Latent Forecasting</span></a></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#xresnet1d"><span class="toc-number">1.</span> <span class="toc-text"> xresnet1d</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#instance-discrimination"><span class="toc-number">2.</span> <span class="toc-text"> Instance Discrimination</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#simclr"><span class="toc-number">2.1.</span> <span class="toc-text"> SimCLR</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#byol"><span class="toc-number">2.2.</span> <span class="toc-text"> BYOL</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#swav"><span class="toc-number">2.3.</span> <span class="toc-text"> SwAV</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#cpc"><span class="toc-number">2.4.</span> <span class="toc-text"> CPC</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#latent-forecasting"><span class="toc-number">3.</span> <span class="toc-text"> Latent Forecasting</span></a></li></ol>
       </div>
       <div class="related panel pjax" data-title="Related">
         <ul>
@@ -367,7 +378,7 @@ NoResponse's Blog = NoResponse's Blog</title>
     <li class="up"><i class="ic i-arrow-up"></i></li>
     <li class="down"><i class="ic i-arrow-down"></i></li>
     <li class="next pjax">
-        <a href="/2025/08/10/computer-science/computer-organization/ch5/" rel="next" title="Next Post"><i class="ic i-chevron-right"></i></a>
+        <a href="/2025/08/10/computer-science/computer-organization/ch6/" rel="next" title="Next Post"><i class="ic i-chevron-right"></i></a>
     </li>
     <li class="percent"></li>
   </ul>
@@ -394,7 +405,55 @@ NoResponse's Blog = NoResponse's Blog</title>
 <a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
 </div>
 
-    <span><a href="/2025/06/18/computer-science/compile-principles/ch10/" title="Liveness Analysis">Liveness Analysis</a></span>
+    <span><a href="/2025/06/15/computer-science/compile-principles/ch6/" title="活动记录">活动记录</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/computer-organization/" title="In 计算机组成">计算机组成</a>
+</div>
+
+    <span><a href="/2025/08/15/computer-science/computer-organization/ch7/" title="Ch7">Ch7</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
+</div>
+
+    <span><a href="/2025/03/23/computer-science/compile-principles/ch3/" title="语法分析">语法分析</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
+</div>
+
+    <span><a href="/2025/06/17/computer-science/compile-principles/ch9/" title="指令选择">指令选择</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/DS/" title="In 数据结构">数据结构</a>
+</div>
+
+    <span><a href="/2025/09/15/computer-science/DS/ch2/" title="ch2">ch2</a></span>
   </li>
 
       
@@ -415,10 +474,10 @@ NoResponse's Blog = NoResponse's Blog</title>
 <div class="breadcrumb">
 <a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
+<a href="/categories/computer-science/computer-organization/" title="In 计算机组成">计算机组成</a>
 </div>
 
-    <span><a href="/2025/03/22/computer-science/compile-principles/ch2/" title="词法分析">词法分析</a></span>
+    <span><a href="/2025/08/10/computer-science/computer-organization/ch5/" title="Ch5">Ch5</a></span>
   </li>
 
       
@@ -427,10 +486,10 @@ NoResponse's Blog = NoResponse's Blog</title>
 <div class="breadcrumb">
 <a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/DS/" title="In 数据结构">数据结构</a>
+<a href="/categories/computer-science/computer-network/" title="In 计算机网络">计算机网络</a>
 </div>
 
-    <span><a href="/2025/09/15/computer-science/DS/ch2/" title="ch2">ch2</a></span>
+    <span><a href="/2025/05/13/computer-science/computer-network/ch1/" title="Ch1">Ch1</a></span>
   </li>
 
       
@@ -440,55 +499,7 @@ NoResponse's Blog = NoResponse's Blog</title>
 <a href="/categories/AI/" title="In 人工智能">人工智能</a>
 </div>
 
-    <span><a href="/2025/06/16/AI/week12-13/" title="Week12-13">Week12-13</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/computer-organization/" title="In 计算机组成">计算机组成</a>
-</div>
-
-    <span><a href="/2025/05/13/computer-science/computer-organization/ch1/" title="Ch1">Ch1</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
-</div>
-
-    <span><a href="/2025/03/30/computer-science/compile-principles/ch5/" title="语义分析">语义分析</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
-</div>
-
-    <span><a href="/2025/03/21/computer-science/compile-principles/ch1/" title="Introduction">Introduction</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/computer-organization/" title="In 计算机组成">计算机组成</a>
-</div>
-
-    <span><a href="/2025/07/01/computer-science/computer-organization/%E9%94%99%E9%A2%98%E9%9B%86%E5%90%88/" title="错题集合">错题集合</a></span>
+    <span><a href="/2025/06/11/AI/week4-5/" title="Week4-5">Week4-5</a></span>
   </li>
 
       
@@ -525,13 +536,13 @@ NoResponse's Blog = NoResponse's Blog</title>
     <span class="post-meta-item-icon">
       <i class="ic i-chart-area"></i>
     </span>
-    <span title="Symbols count total">94k words</span>
+    <span title="Symbols count total">98k words</span>
 
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="ic i-coffee"></i>
     </span>
-    <span title="Reading time total">1:25</span>
+    <span title="Reading time total">1:29</span>
   </div>
   <div class="powered-by">
     Powered by <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
