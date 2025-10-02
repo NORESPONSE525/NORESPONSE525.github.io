@@ -10,26 +10,26 @@
     <category term="线性表" />
     <category term="数据结构" />
     <category term="操作系统" />
-    <category term="编译原理" />
     <category term="Liveness Analysis" />
-    <category term="Register Allocation" />
+    <category term="编译原理" />
     <category term="词法分析" />
-    <category term="语法分析" />
-    <category term="语义分析" />
     <category term="抽象语法" />
+    <category term="Register Allocation" />
+    <category term="语法分析" />
     <category term="活动记录" />
-    <category term="Basic Blocks and Traces" />
     <category term="中间代码" />
+    <category term="语义分析" />
+    <category term="Basic Blocks and Traces" />
     <category term="指令选择" />
-    <category term="计算机网络" />
-    <category term="数据的表示与运算" />
     <category term="计算机组成" />
     <category term="存储系统" />
+    <category term="数据的表示与运算" />
+    <category term="指令系统" />
     <category term="CPU" />
     <category term="总线" />
-    <category term="指令系统" />
-    <category term="错题" />
     <category term="I/O" />
+    <category term="错题" />
+    <category term="计算机网络" />
     <entry>
         <id>http://example.com/2025/09/18/computer-science/OS/ch1/</id>
         <title>ch1</title>
@@ -159,6 +159,37 @@
 &lt;figure class=&#34;highlight c++&#34;&gt;&lt;figcaption&gt;&lt;span&gt;采用头插法建立单链表&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;function&#34;&gt;LinkLisk &lt;span class=&#34;title&#34;&gt;List_HeadInsert&lt;/span&gt;&lt;span class=&#34;params&#34;&gt;(LinkList &amp;amp;L)&lt;/span&gt;&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    LNode *s;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; x;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    L = (*LNode)&lt;span class=&#34;built_in&#34;&gt;malloc&lt;/span&gt;(&lt;span class=&#34;built_in&#34;&gt;sizeof&lt;/span&gt;(LNode));&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    L-&amp;gt;next = &lt;span class=&#34;literal&#34;&gt;NULL&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;built_in&#34;&gt;scanf&lt;/span&gt;(&lt;span class=&#34;string&#34;&gt;&amp;quot;%d&amp;quot;&lt;/span&gt;, &amp;amp;x);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;keyword&#34;&gt;while&lt;/span&gt;(x != &lt;span class=&#34;number&#34;&gt;9999&lt;/span&gt;)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        s = (LNode*)&lt;span class=&#34;built_in&#34;&gt;malloc&lt;/span&gt;(&lt;span class=&#34;built_in&#34;&gt;sizeof&lt;/span&gt;(LNode));&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        s-&amp;gt;data = x;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        s-&amp;gt;next = L-&amp;gt;next;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        L-&amp;gt;next = s;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &lt;span class=&#34;built_in&#34;&gt;scanf&lt;/span&gt;(&lt;span class=&#34;string&#34;&gt;&amp;quot;%d&amp;quot;&lt;/span&gt;, &amp;amp;x);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;keyword&#34;&gt;return&lt;/span&gt; L;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;h3 id=&#34;采用尾插法建立单链表&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#采用尾插法建立单链表&#34;&gt;#&lt;/a&gt; 采用尾插法建立单链表&lt;/h3&gt;
 &lt;figure class=&#34;highlight c++&#34;&gt;&lt;figcaption&gt;&lt;span&gt;采用尾插法建立单链表&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;function&#34;&gt;LinkList &lt;span class=&#34;title&#34;&gt;List_TailInsert&lt;/span&gt;&lt;span class=&#34;params&#34;&gt;(LinkList &amp;amp;L)&lt;/span&gt;&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; x;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    L = (LNode*)&lt;span class=&#34;built_in&#34;&gt;malloc&lt;/span&gt;(&lt;span class=&#34;built_in&#34;&gt;sizeof&lt;/span&gt;(LNode));&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    LNode *s, *r = L;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;built_in&#34;&gt;scanf&lt;/span&gt;(&lt;span class=&#34;string&#34;&gt;&amp;quot;%d&amp;quot;&lt;/span&gt;, &amp;amp;x);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;keyword&#34;&gt;while&lt;/span&gt;(x != &lt;span class=&#34;number&#34;&gt;9999&lt;/span&gt;)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        s = (LNode*)&lt;span class=&#34;built_in&#34;&gt;malloc&lt;/span&gt;(&lt;span class=&#34;built_in&#34;&gt;sizeof&lt;/span&gt;(LNode));&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        s-&amp;gt;data = x;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        r-&amp;gt;next = s;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        r = s;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &lt;span class=&#34;built_in&#34;&gt;scanf&lt;/span&gt;(&lt;span class=&#34;string&#34;&gt;&amp;quot;%d&amp;quot;&lt;/span&gt;, &amp;amp;x);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    r-&amp;gt;next = &lt;span class=&#34;literal&#34;&gt;NULL&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;keyword&#34;&gt;return&lt;/span&gt; L;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&#34;双链表&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#双链表&#34;&gt;#&lt;/a&gt; 双链表&lt;/h2&gt;
+&lt;h3 id=&#34;双链表结构&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#双链表结构&#34;&gt;#&lt;/a&gt; 双链表结构&lt;/h3&gt;
+&lt;figure class=&#34;highlight c++&#34;&gt;&lt;figcaption&gt;&lt;span&gt;双链表结构&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;typedef&lt;/span&gt; &lt;span class=&#34;keyword&#34;&gt;struct&lt;/span&gt; &lt;span class=&#34;title class_&#34;&gt;DNode&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    ElemType data;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;keyword&#34;&gt;struct&lt;/span&gt; &lt;span class=&#34;title class_&#34;&gt;DNode&lt;/span&gt; *prior, *next;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;DNode, *DLinkList;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&#34;双链表的插入&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#双链表的插入&#34;&gt;#&lt;/a&gt; 双链表的插入&lt;/h3&gt;
+&lt;figure class=&#34;highlight c++&#34;&gt;&lt;figcaption&gt;&lt;span&gt;双链表的插入&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;s-&amp;gt;next = p-&amp;gt;next;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;p-&amp;gt;next-&amp;gt;prior = s;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;s-&amp;gt;prior = p;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;p-&amp;gt;next = s;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&#34;双链表的删除&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#双链表的删除&#34;&gt;#&lt;/a&gt; 双链表的删除&lt;/h3&gt;
+&lt;figure class=&#34;highlight c++&#34;&gt;&lt;figcaption&gt;&lt;span&gt;双链表的删除&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;p-&amp;gt;next = q-&amp;gt;next;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;q-next-&amp;gt;prior = p;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;free&lt;/span&gt;(q);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h2 id=&#34;循环链表&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#循环链表&#34;&gt;#&lt;/a&gt; 循环链表&lt;/h2&gt;
+&lt;h3 id=&#34;循环单链表&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#循环单链表&#34;&gt;#&lt;/a&gt; 循环单链表&lt;/h3&gt;
+&lt;h3 id=&#34;循环双链表&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#循环双链表&#34;&gt;#&lt;/a&gt; 循环双链表&lt;/h3&gt;
+&lt;h2 id=&#34;静态链表&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#静态链表&#34;&gt;#&lt;/a&gt; 静态链表&lt;/h2&gt;
+&lt;p&gt;用数组来表示线性表的链式存储结构&lt;/p&gt;
+&lt;figure class=&#34;highlight c++&#34;&gt;&lt;figcaption&gt;&lt;span&gt;静态链表结构&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;meta&#34;&gt;#&lt;span class=&#34;keyword&#34;&gt;define&lt;/span&gt; MaxSize 50&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;typedef&lt;/span&gt; &lt;span class=&#34;keyword&#34;&gt;struct&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    ElemType data;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; next;   &lt;span class=&#34;comment&#34;&gt;//下一个元素的数组下标&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125; SlinkList[MaxSize];&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;blockquote&gt;
+&lt;p&gt;next = -1 表示结束标志&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;顺序表和链表比较&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#顺序表和链表比较&#34;&gt;#&lt;/a&gt; 顺序表和链表比较&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;存取&lt;br&gt;
+顺序表可以顺序存取 / 随机存取，链表只能顺序&lt;/li&gt;
+&lt;li&gt;逻辑结构和物理结构&lt;br&gt;
+顺序表和链表的逻辑结构相同，顺序表物理结构存储连续，链表物理结构存储不一定连续&lt;/li&gt;
+&lt;li&gt;删改查的复杂度&lt;br&gt;
+略&lt;/li&gt;
+&lt;li&gt;空间分配&lt;br&gt;
+链表的空间分配比较灵活，但存储密度低&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;难以估计线性表的长度时不宜采用顺序表&lt;/li&gt;
+&lt;li&gt;按序号访问多选顺序表，插入删除多选链表&lt;/li&gt;
+&lt;/ul&gt;
 </content>
         <category term="线性表" />
         <updated>2025-09-14T16:00:00.000Z</updated>
@@ -2857,14 +2888,6 @@ S_i &amp;amp;= P_i \oplus C_i
         <updated>2025-05-13T16:00:00.000Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/2025/05/13/computer-science/computer-network/ch1/</id>
-        <title>Ch1</title>
-        <link rel="alternate" href="http://example.com/2025/05/13/computer-science/computer-network/ch1/"/>
-        <content type="html"></content>
-        <category term="计算机网络" />
-        <updated>2025-05-12T16:00:00.000Z</updated>
-    </entry>
-    <entry>
         <id>http://example.com/2025/05/13/computer-science/computer-organization/ch1/</id>
         <title>Ch1</title>
         <link rel="alternate" href="http://example.com/2025/05/13/computer-science/computer-organization/ch1/"/>
@@ -3031,6 +3054,14 @@ A. 汇编程序&lt;br&gt;
 &lt;/blockquote&gt;
 </content>
         <category term="计算机组成" />
+        <updated>2025-05-12T16:00:00.000Z</updated>
+    </entry>
+    <entry>
+        <id>http://example.com/2025/05/13/computer-science/computer-network/ch1/</id>
+        <title>Ch1</title>
+        <link rel="alternate" href="http://example.com/2025/05/13/computer-science/computer-network/ch1/"/>
+        <content type="html"></content>
+        <category term="计算机网络" />
         <updated>2025-05-12T16:00:00.000Z</updated>
     </entry>
     <entry>
