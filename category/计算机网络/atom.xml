@@ -4,32 +4,32 @@
     <title>NoResponse&#39;s Blog • Posts by &#34;计算机网络&#34; category</title>
     <link href="http://example.com" />
     <updated>2025-05-12T16:00:00.000Z</updated>
-    <category term="软件工程" />
     <category term="人工智能" />
+    <category term="软件工程" />
     <category term="自监督学习" />
-    <category term="操作系统" />
     <category term="线性表" />
     <category term="数据结构" />
+    <category term="操作系统" />
     <category term="编译原理" />
-    <category term="计算机网络" />
     <category term="Liveness Analysis" />
     <category term="Register Allocation" />
     <category term="词法分析" />
     <category term="语法分析" />
-    <category term="抽象语法" />
     <category term="语义分析" />
-    <category term="中间代码" />
+    <category term="抽象语法" />
     <category term="活动记录" />
     <category term="Basic Blocks and Traces" />
+    <category term="中间代码" />
     <category term="指令选择" />
+    <category term="计算机网络" />
+    <category term="数据的表示与运算" />
     <category term="计算机组成" />
     <category term="存储系统" />
-    <category term="数据的表示与运算" />
-    <category term="指令系统" />
     <category term="CPU" />
-    <category term="I/O" />
     <category term="总线" />
+    <category term="指令系统" />
     <category term="错题" />
+    <category term="I/O" />
     <entry>
         <id>http://example.com/2025/05/13/computer-science/computer-network/ch1/</id>
         <title>Ch1</title>
