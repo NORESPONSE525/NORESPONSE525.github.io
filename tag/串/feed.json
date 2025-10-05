@@ -1,0 +1,18 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "NoResponse's Blog • All posts by \"串\" tag",
+    "description": "成分复杂的CSer from ZJU",
+    "home_page_url": "http://example.com",
+    "items": [
+        {
+            "id": "http://example.com/2025/10/05/computer-science/DS/ch4/",
+            "url": "http://example.com/2025/10/05/computer-science/DS/ch4/",
+            "title": "ch4",
+            "date_published": "2025-10-04T16:00:00.000Z",
+            "content_html": "<h1 id=\"ch4\"><a class=\"markdownIt-Anchor\" href=\"#ch4\">#</a> Ch4</h1>\n",
+            "tags": [
+                "串"
+            ]
+        }
+    ]
+}
