@@ -76,7 +76,7 @@ NoResponse's Blog = NoResponse's Blog</title>
       <i class="ic i-pen"></i>
     </span>
     <span class="text">Symbols count in article</span>
-    <span>4</span>
+    <span>430</span>
     <span class="text">words</span>
   </span>
   <span class="item" title="Reading time">
@@ -116,7 +116,7 @@ NoResponse's Blog = NoResponse's Blog</title>
 
       </div>
       <div id="imgs" class="pjax">
-          <img src="/images/bg8.jpg">
+          <img src="/images/bg28.jpg">
       </div>
     </header>
     <div id="waves">
@@ -165,6 +165,30 @@ NoResponse's Blog = NoResponse's Blog</title>
     
 
     <h1 id="ch4"><a class="markdownIt-Anchor" href="#ch4">#</a> Ch4</h1>
+<h2 id="模式匹配"><a class="markdownIt-Anchor" href="#模式匹配">#</a> 模式匹配</h2>
+<p>i: 主串当前待比较的字符位置<br>
+ j: 模式串当前待比较的字符位置</p>
+<p>字符串模式匹配，在主串中找到与模式串相同的子串</p>
+<h3 id="暴力算法"><a class="markdownIt-Anchor" href="#暴力算法">#</a> 暴力算法</h3>
+<p>遍历主串，从每个和第一个字符相同的位置开始，继续比较后继字符<br>
+时间复杂度：<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>m</mi><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(mn)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal">m</span><span class="mord mathnormal">n</span><span class="mclose">)</span></span></span></span>（主串长度 n，模式串长度 m）</p>
+<h3 id="kmp算法"><a class="markdownIt-Anchor" href="#kmp算法">#</a> KMP 算法</h3>
+<p>前缀：除了最后一个字符外所有的头部子串<br>
+后缀：除了第一个字符外所有的尾部子串</p>
+<ul>
+<li>PM 数组<br>
+方法：算出所有前缀的前缀和后缀的最长公共子串，并保存在数组中（PM，部分匹配值）<br>
+从头开始，右滑位数 = 已匹配的字符数 - 对应的部分匹配值（最后一个匹配的字符的 PM）<br>
+<mark>时间复杂度：<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>m</mi><mo>+</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(m+n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal">m</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">n</span><span class="mclose">)</span></span></span></span></mark></li>
+<li>next 数组</li>
+</ul>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>n</mi><mi>e</mi><mi>x</mi><mi>t</mi><mo stretchy="false">[</mo><mi>j</mi><mo stretchy="false">]</mo><mo>=</mo><mi>P</mi><mi>M</mi><mo stretchy="false">[</mo><mi>j</mi><mo>−</mo><mn>1</mn><mo stretchy="false">]</mo><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">next[j] = PM[j-1] + 1 
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">n</span><span class="mord mathnormal">e</span><span class="mord mathnormal">x</span><span class="mord mathnormal">t</span><span class="mopen">[</span><span class="mord mathnormal" style="margin-right:0.05724em;">j</span><span class="mclose">]</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mord mathnormal" style="margin-right:0.10903em;">M</span><span class="mopen">[</span><span class="mord mathnormal" style="margin-right:0.05724em;">j</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mclose">]</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span></span></p>
+<p>将模式串的 PM 表右移一位并整体 + 1，左边空缺用 0 来填充，右边溢出舍去</p>
+<div class="note info">
+<p>在上面方法中，串的编号是从 1 开始的</p>
+</div>
+<p>当模式串在位置 j 与主串不匹配时，模式串应该向右滑动的位数 = j - next [j-1]</p>
 
       <div class="tags">
           <a href="/tags/%E4%B8%B2/" rel="tag"><i class="ic i-tag"></i> 串</a>
@@ -179,7 +203,7 @@ NoResponse's Blog = NoResponse's Blog</title>
       <i class="ic i-calendar-check"></i>
     </span>
     <span class="text">Edited on</span>
-    <time title="Modified: 2025-10-05 16:46:15" itemprop="dateModified" datetime="2025-10-05T16:46:15+08:00">2025-10-05</time>
+    <time title="Modified: 2025-10-07 18:01:55" itemprop="dateModified" datetime="2025-10-07T18:01:55+08:00">2025-10-07</time>
   </span>
 </div>
 
@@ -234,7 +258,7 @@ NoResponse's Blog = NoResponse's Blog</title>
     <div class="item left">
       
 
-  <a href="/2025/10/04/computer-science/DS/ch3/" itemprop="url" rel="prev" data-background-image="&#x2F;images&#x2F;bg6.jpg" title="ch3">
+  <a href="/2025/10/04/computer-science/DS/ch3/" itemprop="url" rel="prev" data-background-image="&#x2F;images&#x2F;bg21.jpg" title="ch3">
   <span class="type">Previous Post</span>
   <span class="category"><i class="ic i-flag"></i> 数据结构</span>
   <h3>ch3</h3>
@@ -258,11 +282,11 @@ NoResponse's Blog = NoResponse's Blog</title>
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="Contents">
-          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#ch4"><span class="toc-number">1.</span> <span class="toc-text"> Ch4</span></a></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#ch4"><span class="toc-number">1.</span> <span class="toc-text"> Ch4</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A8%A1%E5%BC%8F%E5%8C%B9%E9%85%8D"><span class="toc-number">1.1.</span> <span class="toc-text"> 模式匹配</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9A%B4%E5%8A%9B%E7%AE%97%E6%B3%95"><span class="toc-number">1.1.1.</span> <span class="toc-text"> 暴力算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#kmp%E7%AE%97%E6%B3%95"><span class="toc-number">1.1.2.</span> <span class="toc-text"> KMP 算法</span></a></li></ol></li></ol></li></ol>
       </div>
       <div class="related panel pjax" data-title="Related">
         <ul>
-          <li><a href="/2025/09/15/computer-science/DS/ch2/" rel="bookmark" title="ch2">ch2</a></li><li><a href="/2025/09/15/computer-science/DS/ch1/" rel="bookmark" title="ch1">ch1</a></li><li><a href="/2025/10/04/computer-science/DS/ch3/" rel="bookmark" title="ch3">ch3</a></li><li class="active"><a href="/2025/10/05/computer-science/DS/ch4/" rel="bookmark" title="ch4">ch4</a></li>
+          <li><a href="/2025/09/15/computer-science/DS/ch1/" rel="bookmark" title="ch1">ch1</a></li><li><a href="/2025/09/15/computer-science/DS/ch2/" rel="bookmark" title="ch2">ch2</a></li><li><a href="/2025/10/04/computer-science/DS/ch3/" rel="bookmark" title="ch3">ch3</a></li><li class="active"><a href="/2025/10/05/computer-science/DS/ch4/" rel="bookmark" title="ch4">ch4</a></li>
         </ul>
       </div>
       <div class="overview panel" data-title="Overview">
@@ -376,28 +400,6 @@ NoResponse's Blog = NoResponse's Blog</title>
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/AI/" title="In 人工智能">人工智能</a>
-</div>
-
-    <span><a href="/2025/06/15/AI/week8-9/" title="Week8-9">Week8-9</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
-</div>
-
-    <span><a href="/2025/03/22/computer-science/compile-principles/ch2/" title="词法分析">词法分析</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
 <a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
 <i class="ic i-angle-right"></i>
 <a href="/categories/computer-science/DS/" title="In 数据结构">数据结构</a>
@@ -413,55 +415,7 @@ NoResponse's Blog = NoResponse's Blog</title>
 <a href="/categories/AI/" title="In 人工智能">人工智能</a>
 </div>
 
-    <span><a href="/2025/06/11/AI/week4-5/" title="Week4-5">Week4-5</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
-</div>
-
-    <span><a href="/2025/03/23/computer-science/compile-principles/ch3/" title="语法分析">语法分析</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
-</div>
-
-    <span><a href="/2025/06/16/computer-science/compile-principles/ch7/" title="IR">IR</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/DS/" title="In 数据结构">数据结构</a>
-</div>
-
-    <span><a href="/2025/10/05/computer-science/DS/ch4/" title="ch4">ch4</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/DS/" title="In 数据结构">数据结构</a>
-</div>
-
-    <span><a href="/2025/09/15/computer-science/DS/ch2/" title="ch2">ch2</a></span>
+    <span><a href="/2025/06/15/AI/week8-9/" title="Week8-9">Week8-9</a></span>
   </li>
 
       
@@ -482,10 +436,80 @@ NoResponse's Blog = NoResponse's Blog</title>
 <div class="breadcrumb">
 <a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
 <i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
+</div>
+
+    <span><a href="/2025/06/15/computer-science/compile-principles/ch6/" title="活动记录">活动记录</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/computer-network/" title="In 计算机网络">计算机网络</a>
+</div>
+
+    <span><a href="/2025/05/13/computer-science/computer-network/ch1/" title="Ch1">Ch1</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
 <a href="/categories/computer-science/computer-organization/" title="In 计算机组成">计算机组成</a>
 </div>
 
-    <span><a href="/2025/08/01/computer-science/computer-organization/ch4/" title="Ch4">Ch4</a></span>
+    <span><a href="/2025/05/14/computer-science/computer-organization/ch2/" title="Ch2">Ch2</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/AI/" title="In 人工智能">人工智能</a>
+</div>
+
+    <span><a href="/2025/06/16/AI/week12-13/" title="Week12-13">Week12-13</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
+</div>
+
+    <span><a href="/2025/06/17/computer-science/compile-principles/ch8/" title="Basic Blocks &amp; Traces">Basic Blocks & Traces</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
+</div>
+
+    <span><a href="/2025/03/21/computer-science/compile-principles/ch1/" title="Introduction">Introduction</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/OS/" title="In 操作系统">操作系统</a>
+</div>
+
+    <span><a href="/2025/09/18/computer-science/OS/ch1/" title="ch1">ch1</a></span>
   </li>
 
   </ul>
@@ -510,7 +534,7 @@ NoResponse's Blog = NoResponse's Blog</title>
     <span class="post-meta-item-icon">
       <i class="ic i-chart-area"></i>
     </span>
-    <span title="Symbols count total">104k words</span>
+    <span title="Symbols count total">105k words</span>
 
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
