@@ -76,7 +76,7 @@ NoResponse's Blog = NoResponse's Blog</title>
       <i class="ic i-pen"></i>
     </span>
     <span class="text">Symbols count in article</span>
-    <span>430</span>
+    <span>1.6k</span>
     <span class="text">words</span>
   </span>
   <span class="item" title="Reading time">
@@ -116,7 +116,7 @@ NoResponse's Blog = NoResponse's Blog</title>
 
       </div>
       <div id="imgs" class="pjax">
-          <img src="/images/bg28.jpg">
+          <img src="/images/bg18.jpg">
       </div>
     </header>
     <div id="waves">
@@ -173,14 +173,20 @@ NoResponse's Blog = NoResponse's Blog</title>
 <p>遍历主串，从每个和第一个字符相同的位置开始，继续比较后继字符<br>
 时间复杂度：<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>m</mi><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(mn)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal">m</span><span class="mord mathnormal">n</span><span class="mclose">)</span></span></span></span>（主串长度 n，模式串长度 m）</p>
 <h3 id="kmp算法"><a class="markdownIt-Anchor" href="#kmp算法">#</a> KMP 算法</h3>
+<p><span class="exturl" data-url="aHR0cHM6Ly93d3cuYmlsaWJpbGkuY29tL3ZpZGVvL0JWMVBENHkxbzduZC8/c3BtX2lkX2Zyb209MzMzLjEzODcuaG9tZXBhZ2UudmlkZW9fY2FyZC5jbGljayZhbXA7dmRfc291cmNlPTFhN2Q4ZjU5NmYzZGZlNDBmZWUzNGM4NThlZDQ3ZTcz">https://www.bilibili.com/video/BV1PD4y1o7nd/?spm_id_from=333.1387.homepage.video_card.click&amp;vd_source=1a7d8f596f3dfe40fee34c858ed47e73</span><br>
+ 这个讲得好</p>
+<div class="note danger">
+<p>KMP 算法中 i 永远不递减</p>
+</div>
 <p>前缀：除了最后一个字符外所有的头部子串<br>
 后缀：除了第一个字符外所有的尾部子串</p>
 <ul>
 <li>PM 数组<br>
-方法：算出所有前缀的前缀和后缀的最长公共子串，并保存在数组中（PM，部分匹配值）<br>
+方法：算出所有前缀的前缀和后缀的最长公共子串的长度，并保存在数组中（PM，部分匹配值）<br>
 从头开始，右滑位数 = 已匹配的字符数 - 对应的部分匹配值（最后一个匹配的字符的 PM）<br>
 <mark>时间复杂度：<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>m</mi><mo>+</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(m+n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal">m</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">n</span><span class="mclose">)</span></span></span></span></mark></li>
-<li>next 数组</li>
+<li>next 数组<br>
+ next 数组代表匹配的时候子串中可以跳过匹配的字符个数</li>
 </ul>
 <p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>n</mi><mi>e</mi><mi>x</mi><mi>t</mi><mo stretchy="false">[</mo><mi>j</mi><mo stretchy="false">]</mo><mo>=</mo><mi>P</mi><mi>M</mi><mo stretchy="false">[</mo><mi>j</mi><mo>−</mo><mn>1</mn><mo stretchy="false">]</mo><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">next[j] = PM[j-1] + 1 
 </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">n</span><span class="mord mathnormal">e</span><span class="mord mathnormal">x</span><span class="mord mathnormal">t</span><span class="mopen">[</span><span class="mord mathnormal" style="margin-right:0.05724em;">j</span><span class="mclose">]</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mord mathnormal" style="margin-right:0.10903em;">M</span><span class="mopen">[</span><span class="mord mathnormal" style="margin-right:0.05724em;">j</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mclose">]</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span></span></p>
@@ -189,6 +195,25 @@ NoResponse's Blog = NoResponse's Blog</title>
 <p>在上面方法中，串的编号是从 1 开始的</p>
 </div>
 <p>当模式串在位置 j 与主串不匹配时，模式串应该向右滑动的位数 = j - next [j-1]</p>
+<ul>
+<li>next 数组的一般公式</li>
+</ul>
+<ol>
+<li>第 1 个是 0，第 2 个是 1</li>
+<li>当前位置前面的串的相等的最长的前缀和后缀的长度 + 1</li>
+<li>前缀后缀都不相等，填 1</li>
+</ol>
+<p>直接看代码</p>
+<figure class="highlight c++"><figcaption><span>KMP</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">get_next</span><span class="params">(SString T, <span class="type">int</span> nexxt[])</span></span>&#123;</span><br><span class="line">    <span class="type">int</span> i = <span class="number">1</span>, j = <span class="number">0</span>;   <span class="comment">//i指向当前要计算next[i]的位置，j表示上一个最长前后缀长度</span></span><br><span class="line">    next[<span class="number">1</span>] = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(i &lt; T.length)&#123;</span><br><span class="line">        <span class="keyword">if</span>(j == <span class="number">0</span> || T.ch[i] == T.ch[j])&#123;</span><br><span class="line">            ++i;</span><br><span class="line">            ++j;</span><br><span class="line">            next[i] = j;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            j = next[j];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>next [0] 是不用的</p>
+<p>KMP 匹配算法</p>
+<figure class="highlight c++"><figcaption><span>KMP</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">index_KMP</span><span class="params">(SString S, SString T, <span class="type">int</span> next[])</span></span>&#123;</span><br><span class="line">    <span class="type">int</span> i = <span class="number">1</span>, j = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(i &lt;= S.length &amp;&amp; j &lt;= T.length)&#123;</span><br><span class="line">        <span class="keyword">if</span>(j == <span class="number">0</span> || S.ch[i] == T.ch[j])&#123;   <span class="comment">//表示模式串已经回退到不能再回退的位置,此时必须让主串指针i前进一步，模式串从第一个字符重新开始匹配</span></span><br><span class="line">            ++i;</span><br><span class="line">            ++j;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            j = next[j];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(j &gt; T.length) <span class="keyword">return</span> i - T.length;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>nextval 数组<br>
+如果<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>p</mi><mi>j</mi></msub></mrow><annotation encoding="application/x-tex">p_j</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.716668em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathnormal">p</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.311664em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.05724em;">j</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span></span></span></span> 和<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>p</mi><mrow><mi>n</mi><mi>e</mi><mi>x</mi><mi>t</mi><mo stretchy="false">[</mo><mi>j</mi><mo stretchy="false">]</mo></mrow></msub></mrow><annotation encoding="application/x-tex">p_{next[j]}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7857599999999999em;vertical-align:-0.3551999999999999em;"></span><span class="mord"><span class="mord mathnormal">p</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.34480000000000005em;"><span style="top:-2.5198em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">n</span><span class="mord mathnormal mtight">e</span><span class="mord mathnormal mtight">x</span><span class="mord mathnormal mtight">t</span><span class="mopen mtight">[</span><span class="mord mathnormal mtight" style="margin-right:0.05724em;">j</span><span class="mclose mtight">]</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.3551999999999999em;"><span></span></span></span></span></span></span></span></span></span> 相等，让 next [j] 的值等于 next [next [j]]，一直递归下去<br>
+如果跳转后的位置字符和当前字符相同，那就直接跳到更前面的位置（即 nextval [j]），避免无效比较</li>
+</ul>
+<figure class="highlight c++"><figcaption><span>nextval</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">get_nextval</span><span class="params">(SString T, <span class="type">int</span> nextval[])</span></span>&#123;</span><br><span class="line">    <span class="type">int</span> i = <span class="number">1</span>, j = <span class="number">0</span>;</span><br><span class="line">    nextval[<span class="number">1</span>] = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(i &lt; T.length)&#123;</span><br><span class="line">        <span class="keyword">if</span>(j == <span class="number">0</span> || T.ch[i] == T.ch[j])&#123;</span><br><span class="line">            ++i;</span><br><span class="line">            ++j;</span><br><span class="line">            <span class="keyword">if</span>(T.ch[i] != T.ch[j])</span><br><span class="line">                nextval[i] = j;</span><br><span class="line">            <span class="keyword">else</span> nextval[i] = nextval[j];</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            j = nextval[j];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       <div class="tags">
           <a href="/tags/%E4%B8%B2/" rel="tag"><i class="ic i-tag"></i> 串</a>
@@ -203,7 +228,7 @@ NoResponse's Blog = NoResponse's Blog</title>
       <i class="ic i-calendar-check"></i>
     </span>
     <span class="text">Edited on</span>
-    <time title="Modified: 2025-10-07 18:01:55" itemprop="dateModified" datetime="2025-10-07T18:01:55+08:00">2025-10-07</time>
+    <time title="Modified: 2025-10-10 16:41:00" itemprop="dateModified" datetime="2025-10-10T16:41:00+08:00">2025-10-10</time>
   </span>
 </div>
 
@@ -258,7 +283,7 @@ NoResponse's Blog = NoResponse's Blog</title>
     <div class="item left">
       
 
-  <a href="/2025/10/04/computer-science/DS/ch3/" itemprop="url" rel="prev" data-background-image="&#x2F;images&#x2F;bg21.jpg" title="ch3">
+  <a href="/2025/10/04/computer-science/DS/ch3/" itemprop="url" rel="prev" data-background-image="&#x2F;images&#x2F;bg18.jpg" title="ch3">
   <span class="type">Previous Post</span>
   <span class="category"><i class="ic i-flag"></i> 数据结构</span>
   <h3>ch3</h3>
@@ -266,6 +291,14 @@ NoResponse's Blog = NoResponse's Blog</title>
 
     </div>
     <div class="item right">
+      
+
+  <a href="/2025/10/09/computer-science/OS/ch2/" itemprop="url" rel="next" data-background-image="&#x2F;images&#x2F;bg9.jpg" title="ch2">
+  <span class="type">Next Post</span>
+  <span class="category"><i class="ic i-flag"></i> 操作系统</span>
+  <h3>ch2</h3>
+  </a>
+
     </div>
 </div>
 
@@ -286,7 +319,7 @@ NoResponse's Blog = NoResponse's Blog</title>
       </div>
       <div class="related panel pjax" data-title="Related">
         <ul>
-          <li><a href="/2025/09/15/computer-science/DS/ch1/" rel="bookmark" title="ch1">ch1</a></li><li><a href="/2025/09/15/computer-science/DS/ch2/" rel="bookmark" title="ch2">ch2</a></li><li><a href="/2025/10/04/computer-science/DS/ch3/" rel="bookmark" title="ch3">ch3</a></li><li class="active"><a href="/2025/10/05/computer-science/DS/ch4/" rel="bookmark" title="ch4">ch4</a></li>
+          <li><a href="/2025/09/15/computer-science/DS/ch1/" rel="bookmark" title="ch1">ch1</a></li><li><a href="/2025/09/15/computer-science/DS/ch2/" rel="bookmark" title="ch2">ch2</a></li><li><a href="/2025/10/04/computer-science/DS/ch3/" rel="bookmark" title="ch3">ch3</a></li><li class="active"><a href="/2025/10/05/computer-science/DS/ch4/" rel="bookmark" title="ch4">ch4</a></li><li><a href="/2025/10/10/computer-science/DS/ch5/" rel="bookmark" title="ch5">ch5</a></li>
         </ul>
       </div>
       <div class="overview panel" data-title="Overview">
@@ -300,7 +333,7 @@ NoResponse's Blog = NoResponse's Blog</title>
 <nav class="state">
     <div class="item posts">
       <a href="/archives/">
-        <span class="count">36</span>
+        <span class="count">38</span>
         <span class="name">posts</span>
       </a>
     </div>
@@ -312,7 +345,7 @@ NoResponse's Blog = NoResponse's Blog</title>
     </div>
     <div class="item tags">
       <a href="/tags/">
-        <span class="count">28</span>
+        <span class="count">29</span>
         <span class="name">tags</span>
       </a>
     </div>
@@ -375,10 +408,12 @@ NoResponse's Blog = NoResponse's Blog</title>
 
   <ul id="quick">
     <li class="prev pjax">
+        <a href="/2025/10/04/computer-science/DS/ch3/" rel="prev" title="Previous Post"><i class="ic i-chevron-left"></i></a>
     </li>
     <li class="up"><i class="ic i-arrow-up"></i></li>
     <li class="down"><i class="ic i-arrow-down"></i></li>
     <li class="next pjax">
+        <a href="/2025/10/09/computer-science/OS/ch2/" rel="next" title="Next Post"><i class="ic i-chevron-right"></i></a>
     </li>
     <li class="percent"></li>
   </ul>
@@ -402,56 +437,32 @@ NoResponse's Blog = NoResponse's Blog</title>
 <div class="breadcrumb">
 <a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
 <i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
+</div>
+
+    <span><a href="/2025/06/16/computer-science/compile-principles/ch7/" title="IR">IR</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
 <a href="/categories/computer-science/DS/" title="In 数据结构">数据结构</a>
 </div>
 
-    <span><a href="/2025/10/04/computer-science/DS/ch3/" title="ch3">ch3</a></span>
+    <span><a href="/2025/09/15/computer-science/DS/ch1/" title="ch1">ch1</a></span>
   </li>
 
       
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/AI/" title="In 人工智能">人工智能</a>
+<a href="/categories/SE/" title="In 软件工程">软件工程</a>
 </div>
 
-    <span><a href="/2025/06/15/AI/week8-9/" title="Week8-9">Week8-9</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/computer-organization/" title="In 计算机组成">计算机组成</a>
-</div>
-
-    <span><a href="/2025/05/13/computer-science/computer-organization/ch1/" title="Ch1">Ch1</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
-</div>
-
-    <span><a href="/2025/06/15/computer-science/compile-principles/ch6/" title="活动记录">活动记录</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/computer-network/" title="In 计算机网络">计算机网络</a>
-</div>
-
-    <span><a href="/2025/05/13/computer-science/computer-network/ch1/" title="Ch1">Ch1</a></span>
+    <span><a href="/2025/06/19/SE/diagram/" title="画图题">画图题</a></span>
   </li>
 
       
@@ -463,17 +474,7 @@ NoResponse's Blog = NoResponse's Blog</title>
 <a href="/categories/computer-science/computer-organization/" title="In 计算机组成">计算机组成</a>
 </div>
 
-    <span><a href="/2025/05/14/computer-science/computer-organization/ch2/" title="Ch2">Ch2</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/AI/" title="In 人工智能">人工智能</a>
-</div>
-
-    <span><a href="/2025/06/16/AI/week12-13/" title="Week12-13">Week12-13</a></span>
+    <span><a href="/2025/07/01/computer-science/computer-organization/ch3/" title="Ch3">Ch3</a></span>
   </li>
 
       
@@ -482,10 +483,10 @@ NoResponse's Blog = NoResponse's Blog</title>
 <div class="breadcrumb">
 <a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
+<a href="/categories/computer-science/computer-organization/" title="In 计算机组成">计算机组成</a>
 </div>
 
-    <span><a href="/2025/06/17/computer-science/compile-principles/ch8/" title="Basic Blocks &amp; Traces">Basic Blocks & Traces</a></span>
+    <span><a href="/2025/08/10/computer-science/computer-organization/ch5/" title="Ch5">Ch5</a></span>
   </li>
 
       
@@ -494,10 +495,22 @@ NoResponse's Blog = NoResponse's Blog</title>
 <div class="breadcrumb">
 <a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
+<a href="/categories/computer-science/computer-organization/" title="In 计算机组成">计算机组成</a>
 </div>
 
-    <span><a href="/2025/03/21/computer-science/compile-principles/ch1/" title="Introduction">Introduction</a></span>
+    <span><a href="/2025/08/15/computer-science/computer-organization/ch7/" title="Ch7">Ch7</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/computer-organization/" title="In 计算机组成">计算机组成</a>
+</div>
+
+    <span><a href="/2025/07/01/computer-science/computer-organization/%E9%94%99%E9%A2%98%E9%9B%86%E5%90%88/" title="错题集合">错题集合</a></span>
   </li>
 
       
@@ -510,6 +523,28 @@ NoResponse's Blog = NoResponse's Blog</title>
 </div>
 
     <span><a href="/2025/09/18/computer-science/OS/ch1/" title="ch1">ch1</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/note/" title="In 论文阅读">论文阅读</a>
+</div>
+
+    <span><a href="/2025/08/02/note/20250802/" title="20250802">20250802</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
+</div>
+
+    <span><a href="/2025/06/18/computer-science/compile-principles/ch11/" title="Register Allocation">Register Allocation</a></span>
   </li>
 
   </ul>
@@ -534,13 +569,13 @@ NoResponse's Blog = NoResponse's Blog</title>
     <span class="post-meta-item-icon">
       <i class="ic i-chart-area"></i>
     </span>
-    <span title="Symbols count total">105k words</span>
+    <span title="Symbols count total">107k words</span>
 
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="ic i-coffee"></i>
     </span>
-    <span title="Reading time total">1:35</span>
+    <span title="Reading time total">1:37</span>
   </div>
   <div class="powered-by">
     Powered by <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
