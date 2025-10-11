@@ -76,7 +76,7 @@ NoResponse's Blog = NoResponse's Blog</title>
       <i class="ic i-pen"></i>
     </span>
     <span class="text">Symbols count in article</span>
-    <span>2.3k</span>
+    <span>5.8k</span>
     <span class="text">words</span>
   </span>
   <span class="item" title="Reading time">
@@ -84,7 +84,7 @@ NoResponse's Blog = NoResponse's Blog</title>
       <i class="ic i-clock"></i>
     </span>
     <span class="text">Reading time</span>
-    <span>2 mins.</span>
+    <span>5 mins.</span>
   </span>
 </div>
 
@@ -116,7 +116,7 @@ NoResponse's Blog = NoResponse's Blog</title>
 
       </div>
       <div id="imgs" class="pjax">
-          <img src="/images/bg26.jpg">
+          <img src="/images/bg35.jpg">
       </div>
     </header>
     <div id="waves">
@@ -227,7 +227,7 @@ NoResponse's Blog = NoResponse's Blog</title>
 </ol>
 <figure class="highlight c++"><figcaption><span>后序遍历</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">PostOrder</span><span class="params">(BiTree T)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(T != <span class="literal">NULL</span>)&#123;</span><br><span class="line">        <span class="built_in">PostOrder</span>(T-&gt;lchild);</span><br><span class="line">        <span class="built_in">PostOrder</span>(T-&gt;rchild);</span><br><span class="line">        <span class="built_in">Visit</span>(T);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <div class="note info">
-<p>以上三种遍历方式都是递归方式，占的深度就是树的高度，时间复杂度都是<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mclose">)</span></span></span></span><br>
+<p>以上三种遍历方式都是递归方式，栈的深度就是树的高度，时间复杂度都是<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mclose">)</span></span></span></span><br>
  最坏的情况下，二叉树是有 n 个结点且深度为 n 的单支树，此时空间复杂度为<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mclose">)</span></span></span></span></p>
 </div>
 <ol start="4">
@@ -252,6 +252,108 @@ NoResponse's Blog = NoResponse's Blog</title>
 <img data-src="f2.jpg" alt></p>
 </div></details>
 <h3 id="线索二叉树"><a class="markdownIt-Anchor" href="#线索二叉树">#</a> 线索二叉树</h3>
+<p>利用叶子结点和不满的结点的空指针存放指向其前驱或者后继的指针，若没有左子树，则 lchild 指向前驱结点，若没有右子树，则 rchild 指向后继结点。新增 ltag 和 rtag，如果为 0 表示指向左 / 右孩子，为 1 表示为线索指向前驱 / 后继结点</p>
+<figure class="highlight c++"><figcaption><span>线索二叉树</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span> <span class="title class_">ThreadNode</span>&#123;</span><br><span class="line">    ElemType data;</span><br><span class="line">    <span class="keyword">struct</span> <span class="title class_">ThreadNode</span> *lchild, *rchild;</span><br><span class="line">    <span class="type">int</span> ltag, rtag;</span><br><span class="line">&#125;ThreadNode, *ThreadTree;</span><br></pre></td></tr></table></figure>
+<p>方法就是找出遍历的序列，然后对每个不满的节点建立线索</p>
+<h4 id="中序线索二叉树"><a class="markdownIt-Anchor" href="#中序线索二叉树">#</a> 中序线索二叉树：</h4>
+<figure class="highlight c++"><figcaption><span>中序线索二叉树</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">InThread</span><span class="params">(ThreadTree &amp;p, ThreadTree &amp;pre)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(p != <span class="literal">NULL</span>)&#123;</span><br><span class="line">        <span class="built_in">InThread</span>(p-&gt;lchild, pre);</span><br><span class="line">        <span class="keyword">if</span>(p-&gt;lchild == <span class="literal">NULL</span>)&#123; </span><br><span class="line">            p-&gt;lchild = pre;</span><br><span class="line">            p-&gt;ltag = <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(pre != <span class="literal">NULL</span> &amp;&amp; pre-&gt;rchild == <span class="literal">NULL</span>)&#123; </span><br><span class="line">            pre-&gt;rchild = p;</span><br><span class="line">            pre-&gt;rtag = <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        pre = p;</span><br><span class="line">        <span class="built_in">InThread</span>(p-&gt;rchild, pre);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">CreateInThread</span><span class="params">(ThreadTree &amp;T)</span></span>&#123;</span><br><span class="line">    ThreadTree pre = <span class="literal">NULL</span>;</span><br><span class="line">    <span class="keyword">if</span>(T != <span class="literal">NULL</span>)&#123;</span><br><span class="line">        <span class="built_in">InThread</span>(T, pre);</span><br><span class="line">    pre-&gt;rchild = <span class="literal">NULL</span>;</span><br><span class="line">    pre-&gt;rtag = <span class="number">1</span>;</span><br><span class="line">    &#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>为了方便会增加一个 head 结点的 lchild 指向根节点，rchild 指向中序遍历的最后一个结点，令中序遍历第一个节点的 lchild 和最后一个节点的 rchild 指向 head</p>
+<figure class="highlight c++"><figcaption><span>求中序线索二叉树中序序列下的第一个节点</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">ThreadNode *<span class="title">Firstnode</span><span class="params">(ThreadNode *p)</span></span>&#123;</span><br><span class="line">    <span class="keyword">while</span>(p-&gt;ltag == <span class="number">0</span>) p = p-&gt;lchild;  <span class="comment">//找到最左下的节点但不一定是叶子</span></span><br><span class="line">    <span class="keyword">return</span> p;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><figcaption><span>求节点p的后继结点</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">ThreadNode *<span class="title">Nextnode</span><span class="params">(ThreadNode *p)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(p-&gt;rtag == <span class="number">0</span>) <span class="keyword">return</span> <span class="built_in">Firstnode</span>(p-&gt;rchild);   <span class="comment">//如果有右孩子，则返回右孩子的最左下的节点</span></span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">return</span> p-&gt;rchild;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><figcaption><span>求中序线索二叉树的最后一个结点</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">ThreadNode *<span class="title">Lastnode</span><span class="params">(ThreadNode *p)</span></span>&#123;</span><br><span class="line">    <span class="keyword">while</span>(p-&gt;rtag == <span class="number">0</span>) p = p-&gt;rchild;</span><br><span class="line">    <span class="keyword">return</span> p;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><figcaption><span>求节点p的前驱结点</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">ThreadNode *<span class="title">Prevnode</span><span class="params">(ThreadNode *p)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(p-&gt;ltag == <span class="number">0</span>) <span class="keyword">return</span> <span class="built_in">Lastnode</span>(p-&gt;lchild);</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">return</span> p-&gt;lchild;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><figcaption><span>不含头结点的中序线索二叉树的中序遍历</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">InOrder</span><span class="params">(ThreadNode *T)</span></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(ThreadNode *p = <span class="built_in">Firstnode</span>(T); p != <span class="literal">NULL</span>; p = <span class="built_in">Nextnode</span>(p))</span><br><span class="line">        <span class="built_in">Visit</span>(p);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="先序线索二叉树"><a class="markdownIt-Anchor" href="#先序线索二叉树">#</a> 先序线索二叉树</h4>
+<h4 id="后序线索二叉树"><a class="markdownIt-Anchor" href="#后序线索二叉树">#</a> 后序线索二叉树</h4>
+<h2 id="树森林"><a class="markdownIt-Anchor" href="#树森林">#</a> 树，森林</h2>
+<h3 id="树的存储结构"><a class="markdownIt-Anchor" href="#树的存储结构">#</a> 树的存储结构</h3>
+<ol>
+<li>双亲表示法<br>
+用一个结构体数组来存，一个 node 包括数据域和 parent 域，parent 域的值是父节点的数组下标。根节点的 parent 域为 - 1</li>
+</ol>
+<figure class="highlight c++"><figcaption><span>双亲表示法</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> MAX_TREE_SIZE 100</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span>&#123;</span><br><span class="line">    ElemType data;</span><br><span class="line">    <span class="type">int</span> parent;</span><br><span class="line">&#125;PTNode;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span>&#123;</span><br><span class="line">    PTNode nodes[MAX_TREE_SIZE];</span><br><span class="line">    <span class="type">int</span> n;</span><br><span class="line">&#125;PTree;</span><br></pre></td></tr></table></figure>
+<p>优点：可以很快找到 parent，但求孩子需要遍历整个树<br>
+ 2. 孩子表示法<br>
+将每个结点的孩子视为一个线性表，以单链表作为存储结构<br>
+ 3. 孩子兄弟表示法<br>
+二叉树表示法，每个结点包括数据域，左孩子指针，右兄弟指针</p>
+<figure class="highlight c++"><figcaption><span>孩子兄弟表示法</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span> <span class="title class_">CSNode</span>&#123;</span><br><span class="line">    ElemType data;</span><br><span class="line">    <span class="keyword">struct</span> <span class="title class_">CSNode</span> *firstchild, *nextsibling;</span><br><span class="line">&#125;CSNode, *CSTree;</span><br></pre></td></tr></table></figure>
+<details class="primary"><summary>图示</summary><div>
+<p><img data-src="f3.jpg" alt><br>
+<img data-src="f4.jpg" alt></p>
+</div></details>
+<h3 id="树-森林和二叉树的转换"><a class="markdownIt-Anchor" href="#树-森林和二叉树的转换">#</a> 树、森林和二叉树的转换</h3>
+<ol>
+<li>树转二叉树<br>
+用孩子兄弟表示法（左孩子右兄弟）</li>
+<li>森林转二叉树<br>
+先讲森林中的每棵树转为二叉树，每棵树视为兄弟，将第二棵树对应的二叉树作为第一颗二叉树根的右子树……</li>
+</ol>
+<details class="primary"><summary>例</summary><div>
+<p><img data-src="f5.jpg" alt></p>
+</div></details>
+<ol start="3">
+<li>二叉树转森林<br>
+把右子树分开，知道最后只剩一棵没有右子树的二叉树为止。和森林转二叉树相反</li>
+</ol>
+<h3 id="树和森林的遍历"><a class="markdownIt-Anchor" href="#树和森林的遍历">#</a> 树和森林的遍历</h3>
+<ol>
+<li>树的遍历</li>
+</ol>
+<ul>
+<li>先根后子树，遍历序列和这棵树对应的二叉树的先序序列相同</li>
+<li>先子树后根，遍历序列和这棵树对应的二叉树的中序序列相同</li>
+</ul>
+<ol start="2">
+<li>森林的遍历</li>
+</ol>
+<ul>
+<li>先序遍历：从第一棵树开始，先根，再子树</li>
+<li>中序遍历：从第一棵树开始，先子树，再根</li>
+</ul>
+<h2 id="树与二叉树的应用"><a class="markdownIt-Anchor" href="#树与二叉树的应用">#</a> 树与二叉树的应用</h2>
+<h3 id="哈夫曼树"><a class="markdownIt-Anchor" href="#哈夫曼树">#</a> 哈夫曼树</h3>
+<h4 id="定义"><a class="markdownIt-Anchor" href="#定义">#</a> 定义</h4>
+<p>带权路径长度：根结点到该结点的路径长度 * 该结点的权值<br>
+树的带权路径长度</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>W</mi><mi>P</mi><mi>L</mi><mo>=</mo><munderover><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></munderover><msub><mi>w</mi><mi>i</mi></msub><mo>∗</mo><msub><mi>l</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">WPL = \sum_{i=1}^{n}w_i*l_i
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">W</span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mord mathnormal">L</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.929066em;vertical-align:-1.277669em;"></span><span class="mop op-limits"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.6513970000000002em;"><span style="top:-1.872331em;margin-left:0em;"><span class="pstrut" style="height:3.05em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">i</span><span class="mrel mtight">=</span><span class="mord mtight">1</span></span></span></span><span style="top:-3.050005em;"><span class="pstrut" style="height:3.05em;"></span><span><span class="mop op-symbol large-op">∑</span></span></span><span style="top:-4.3000050000000005em;margin-left:0em;"><span class="pstrut" style="height:3.05em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">n</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.277669em;"><span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02691em;">w</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.02691em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.84444em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.01968em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span></p>
+<p>WPL 最小的二叉树称为哈夫曼树，也称最优二叉树</p>
+<h4 id="构造"><a class="markdownIt-Anchor" href="#构造">#</a> 构造</h4>
+<ul>
+<li>构造方法：不断合并两个权值加起来最小的结点<br>
+<img data-src="f6.jpg" alt></li>
+</ul>
+<h4 id="哈夫曼编码"><a class="markdownIt-Anchor" href="#哈夫曼编码">#</a> 哈夫曼编码</h4>
+<p>可变长度编码，让频率高的字符编码长度短，频率低的字符编码长度长<br>
+用哈夫曼树构建哈夫曼编码，是前缀编码，因此每个编码都可以唯一区分一个字符（没有字符的编码是其他编码的前缀）<br>
+构造的方法是权值为频率，左分支为 0，右分支为 1（左边 1 右边 0 也可以，主要是看长度）<br>
+<img data-src="f7.jpg" alt><br>
+编码方式不唯一，因为长度相同的字符编码方式是可以互换的</p>
+<h3 id="并查集-disjoint-set"><a class="markdownIt-Anchor" href="#并查集-disjoint-set">#</a> 并查集 Disjoint Set</h3>
+<p>主要用来求等价关系<br>
+基本操作：</p>
+<ul>
+<li>初始化：所有元素都是单元素集合</li>
+<li>Union (S, Root1, Root2): 合并两个集合，把 Root2 的根节点连到 Root1 的根节点上</li>
+<li>Find (S, x): 查找 x 的根节点</li>
+</ul>
+<p>基本实现：</p>
+<figure class="highlight c++"><figcaption><span>disjoint set</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> SIZE 100</span></span><br><span class="line"><span class="type">int</span> UFSets[SIZE];</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">Initial</span><span class="params">(<span class="type">int</span> S[])</span></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; SIZE; i++)&#123;</span><br><span class="line">        S[i] = <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">Find</span><span class="params">(<span class="type">int</span> S[], <span class="type">int</span> x)</span></span>&#123;   <span class="comment">//时间复杂度为O(d)，d为树的深度</span></span><br><span class="line">    <span class="keyword">while</span>(S[x] &gt;= <span class="number">0</span>)&#123;</span><br><span class="line">        x = S[x];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> x;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">Union</span><span class="params">(<span class="type">int</span> S[], <span class="type">int</span> Root1, <span class="type">int</span> Root2)</span></span>&#123;  <span class="comment">//时间复杂度为O(1)</span></span><br><span class="line">    <span class="keyword">if</span>(Root1 == Root2) <span class="keyword">return</span>;</span><br><span class="line">    S[Root2] = Root1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="并查集的优化"><a class="markdownIt-Anchor" href="#并查集的优化">#</a> 并查集的优化</h4>
+<ol>
+<li>按高度求并 Union-by-Height</li>
+</ol>
+<ul>
+<li>用根节点的绝对值表示树的结点总数（根节点的值是负数）</li>
+<li>把小树合并到大树，能够保证所有树的深度最多是<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>l</mi><mi>o</mi><mi>g</mi><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(logn)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mord mathnormal">o</span><span class="mord mathnormal" style="margin-right:0.03588em;">g</span><span class="mord mathnormal">n</span><span class="mclose">)</span></span></span></span></li>
+</ul>
+<figure class="highlight c++"><figcaption><span>Union-by-Height</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">Union</span><span class="params">(<span class="type">int</span> S[], <span class="type">int</span> Root1, <span class="type">int</span> Root2)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(Root1 == Root2) <span class="keyword">return</span>;</span><br><span class="line">    <span class="keyword">if</span>(S[Root2] &gt; S[Root1])&#123;    <span class="comment">//Root2的深度小于Root1</span></span><br><span class="line">        S[Root1] += S[Root2];</span><br><span class="line">        S[Root2] = Root1;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        S[Root2] += S[Root1];</span><br><span class="line">        S[Root1] = Root2;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>路径压缩<br>
+为了减少深度，在 Find 操作时将从根到元素 x 路径上的所有元素都变成根的孩子</li>
+</ol>
+<figure class="highlight c++"><figcaption><span>路径压缩</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">Find</span><span class="params">(<span class="type">int</span> S[], <span class="type">int</span> x)</span></span>&#123;   <span class="comment">//先搜一次找到根，再搜一次把路径上所有节点的父节点都改成根</span></span><br><span class="line">    <span class="type">int</span> root = x;</span><br><span class="line">    <span class="keyword">while</span>(S[root] &gt;= <span class="number">0</span>)&#123;</span><br><span class="line">        root = S[root];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span>(x != root)&#123;</span><br><span class="line">        <span class="type">int</span> temp = S[x];</span><br><span class="line">        S[x] = root;</span><br><span class="line">        x = temp;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> root;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       <div class="tags">
           <a href="/tags/%E6%A0%91%E4%B8%8E%E4%BA%8C%E5%8F%89%E6%A0%91/" rel="tag"><i class="ic i-tag"></i> 树与二叉树</a>
@@ -266,7 +368,7 @@ NoResponse's Blog = NoResponse's Blog</title>
       <i class="ic i-calendar-check"></i>
     </span>
     <span class="text">Edited on</span>
-    <time title="Modified: 2025-10-11 00:00:57" itemprop="dateModified" datetime="2025-10-11T00:00:57+08:00">2025-10-11</time>
+    <time title="Modified: 2025-10-11 12:11:58" itemprop="dateModified" datetime="2025-10-11T12:11:58+08:00">2025-10-11</time>
   </span>
 </div>
 
@@ -321,7 +423,7 @@ NoResponse's Blog = NoResponse's Blog</title>
     <div class="item left">
       
 
-  <a href="/2025/10/09/computer-science/OS/ch2/" itemprop="url" rel="prev" data-background-image="&#x2F;images&#x2F;bg28.jpg" title="ch2">
+  <a href="/2025/10/09/computer-science/OS/ch2/" itemprop="url" rel="prev" data-background-image="&#x2F;images&#x2F;bg1.jpg" title="ch2">
   <span class="type">Previous Post</span>
   <span class="category"><i class="ic i-flag"></i> 操作系统</span>
   <h3>ch2</h3>
@@ -345,11 +447,11 @@ NoResponse's Blog = NoResponse's Blog</title>
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="Contents">
-          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#ch5"><span class="toc-number">1.</span> <span class="toc-text"> Ch5</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%91"><span class="toc-number">1.1.</span> <span class="toc-text"> 树</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E5%8F%89%E6%A0%91"><span class="toc-number">1.2.</span> <span class="toc-text"> 二叉树</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84"><span class="toc-number">1.2.1.</span> <span class="toc-text"> 二叉树的存储结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E9%81%8D%E5%8E%86%E5%92%8C%E7%BA%BF%E7%B4%A2%E4%BA%8C%E5%8F%89%E6%A0%91"><span class="toc-number">1.2.2.</span> <span class="toc-text"> 二叉树的遍历和线索二叉树</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BA%BF%E7%B4%A2%E4%BA%8C%E5%8F%89%E6%A0%91"><span class="toc-number">1.2.3.</span> <span class="toc-text"> 线索二叉树</span></a></li></ol></li></ol></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#ch5"><span class="toc-number">1.</span> <span class="toc-text"> Ch5</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%91"><span class="toc-number">1.1.</span> <span class="toc-text"> 树</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E5%8F%89%E6%A0%91"><span class="toc-number">1.2.</span> <span class="toc-text"> 二叉树</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84"><span class="toc-number">1.2.1.</span> <span class="toc-text"> 二叉树的存储结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E9%81%8D%E5%8E%86%E5%92%8C%E7%BA%BF%E7%B4%A2%E4%BA%8C%E5%8F%89%E6%A0%91"><span class="toc-number">1.2.2.</span> <span class="toc-text"> 二叉树的遍历和线索二叉树</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BA%BF%E7%B4%A2%E4%BA%8C%E5%8F%89%E6%A0%91"><span class="toc-number">1.2.3.</span> <span class="toc-text"> 线索二叉树</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%AD%E5%BA%8F%E7%BA%BF%E7%B4%A2%E4%BA%8C%E5%8F%89%E6%A0%91"><span class="toc-number">1.2.3.1.</span> <span class="toc-text"> 中序线索二叉树：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%88%E5%BA%8F%E7%BA%BF%E7%B4%A2%E4%BA%8C%E5%8F%89%E6%A0%91"><span class="toc-number">1.2.3.2.</span> <span class="toc-text"> 先序线索二叉树</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%90%8E%E5%BA%8F%E7%BA%BF%E7%B4%A2%E4%BA%8C%E5%8F%89%E6%A0%91"><span class="toc-number">1.2.3.3.</span> <span class="toc-text"> 后序线索二叉树</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%91%E6%A3%AE%E6%9E%97"><span class="toc-number">1.3.</span> <span class="toc-text"> 树，森林</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%91%E7%9A%84%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84"><span class="toc-number">1.3.1.</span> <span class="toc-text"> 树的存储结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%91-%E6%A3%AE%E6%9E%97%E5%92%8C%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E8%BD%AC%E6%8D%A2"><span class="toc-number">1.3.2.</span> <span class="toc-text"> 树、森林和二叉树的转换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%91%E5%92%8C%E6%A3%AE%E6%9E%97%E7%9A%84%E9%81%8D%E5%8E%86"><span class="toc-number">1.3.3.</span> <span class="toc-text"> 树和森林的遍历</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%91%E4%B8%8E%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%BA%94%E7%94%A8"><span class="toc-number">1.4.</span> <span class="toc-text"> 树与二叉树的应用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%93%88%E5%A4%AB%E6%9B%BC%E6%A0%91"><span class="toc-number">1.4.1.</span> <span class="toc-text"> 哈夫曼树</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89"><span class="toc-number">1.4.1.1.</span> <span class="toc-text"> 定义</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9E%84%E9%80%A0"><span class="toc-number">1.4.1.2.</span> <span class="toc-text"> 构造</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%93%88%E5%A4%AB%E6%9B%BC%E7%BC%96%E7%A0%81"><span class="toc-number">1.4.1.3.</span> <span class="toc-text"> 哈夫曼编码</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B9%B6%E6%9F%A5%E9%9B%86-disjoint-set"><span class="toc-number">1.4.2.</span> <span class="toc-text"> 并查集 Disjoint Set</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B9%B6%E6%9F%A5%E9%9B%86%E7%9A%84%E4%BC%98%E5%8C%96"><span class="toc-number">1.4.2.1.</span> <span class="toc-text"> 并查集的优化</span></a></li></ol></li></ol></li></ol></li></ol>
       </div>
       <div class="related panel pjax" data-title="Related">
         <ul>
-          <li><a href="/2025/09/15/computer-science/DS/ch2/" rel="bookmark" title="ch2">ch2</a></li><li><a href="/2025/09/15/computer-science/DS/ch1/" rel="bookmark" title="ch1">ch1</a></li><li><a href="/2025/10/04/computer-science/DS/ch3/" rel="bookmark" title="ch3">ch3</a></li><li><a href="/2025/10/05/computer-science/DS/ch4/" rel="bookmark" title="ch4">ch4</a></li><li class="active"><a href="/2025/10/10/computer-science/DS/ch5/" rel="bookmark" title="ch5">ch5</a></li>
+          <li><a href="/2025/09/15/computer-science/DS/ch1/" rel="bookmark" title="ch1">ch1</a></li><li><a href="/2025/09/15/computer-science/DS/ch2/" rel="bookmark" title="ch2">ch2</a></li><li><a href="/2025/10/04/computer-science/DS/ch3/" rel="bookmark" title="ch3">ch3</a></li><li><a href="/2025/10/05/computer-science/DS/ch4/" rel="bookmark" title="ch4">ch4</a></li><li class="active"><a href="/2025/10/10/computer-science/DS/ch5/" rel="bookmark" title="ch5">ch5</a></li>
         </ul>
       </div>
       <div class="overview panel" data-title="Overview">
@@ -468,29 +570,17 @@ NoResponse's Blog = NoResponse's Blog</title>
 <a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
 </div>
 
-    <span><a href="/2025/06/18/computer-science/compile-principles/ch11/" title="Register Allocation">Register Allocation</a></span>
+    <span><a href="/2025/06/16/computer-science/compile-principles/ch7/" title="IR">IR</a></span>
   </li>
 
       
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/note/" title="In 论文阅读">论文阅读</a>
+<a href="/categories/SE/" title="In 软件工程">软件工程</a>
 </div>
 
-    <span><a href="/2025/08/02/note/20250802/" title="20250802">20250802</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
-</div>
-
-    <span><a href="/2025/06/17/computer-science/compile-principles/ch9/" title="指令选择">指令选择</a></span>
+    <span><a href="/2025/06/19/SE/diagram/" title="画图题">画图题</a></span>
   </li>
 
       
@@ -509,20 +599,24 @@ NoResponse's Blog = NoResponse's Blog</title>
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/SE/" title="In 软件工程">软件工程</a>
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
 </div>
 
-    <span><a href="/2025/06/19/SE/diagram/" title="画图题">画图题</a></span>
+    <span><a href="/2025/06/17/computer-science/compile-principles/ch8/" title="Basic Blocks &amp; Traces">Basic Blocks & Traces</a></span>
   </li>
 
       
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/AI/" title="In 人工智能">人工智能</a>
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/computer-organization/" title="In 计算机组成">计算机组成</a>
 </div>
 
-    <span><a href="/2025/06/15/AI/week8-9/" title="Week8-9">Week8-9</a></span>
+    <span><a href="/2025/05/14/computer-science/computer-organization/ch2/" title="Ch2">Ch2</a></span>
   </li>
 
       
@@ -541,12 +635,10 @@ NoResponse's Blog = NoResponse's Blog</title>
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
+<a href="/categories/AI/" title="In 人工智能">人工智能</a>
 </div>
 
-    <span><a href="/2025/06/16/computer-science/compile-principles/ch7/" title="IR">IR</a></span>
+    <span><a href="/2025/06/12/AI/week6-7/" title="Week6-7">Week6-7</a></span>
   </li>
 
       
@@ -558,7 +650,7 @@ NoResponse's Blog = NoResponse's Blog</title>
 <a href="/categories/computer-science/computer-organization/" title="In 计算机组成">计算机组成</a>
 </div>
 
-    <span><a href="/2025/08/10/computer-science/computer-organization/ch5/" title="Ch5">Ch5</a></span>
+    <span><a href="/2025/07/01/computer-science/computer-organization/%E9%94%99%E9%A2%98%E9%9B%86%E5%90%88/" title="错题集合">错题集合</a></span>
   </li>
 
       
@@ -567,10 +659,20 @@ NoResponse's Blog = NoResponse's Blog</title>
 <div class="breadcrumb">
 <a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/OS/" title="In 操作系统">操作系统</a>
+<a href="/categories/computer-science/computer-organization/" title="In 计算机组成">计算机组成</a>
 </div>
 
-    <span><a href="/2025/10/09/computer-science/OS/ch2/" title="ch2">ch2</a></span>
+    <span><a href="/2025/08/01/computer-science/computer-organization/ch4/" title="Ch4">Ch4</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/SE/" title="In 软件工程">软件工程</a>
+</div>
+
+    <span><a href="/2025/06/19/SE/note/" title="SE note">SE note</a></span>
   </li>
 
   </ul>
@@ -595,13 +697,13 @@ NoResponse's Blog = NoResponse's Blog</title>
     <span class="post-meta-item-icon">
       <i class="ic i-chart-area"></i>
     </span>
-    <span title="Symbols count total">109k words</span>
+    <span title="Symbols count total">113k words</span>
 
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="ic i-coffee"></i>
     </span>
-    <span title="Reading time total">1:39</span>
+    <span title="Reading time total">1:42</span>
   </div>
   <div class="powered-by">
     Powered by <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>

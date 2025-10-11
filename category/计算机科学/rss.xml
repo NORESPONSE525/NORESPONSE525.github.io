@@ -10,30 +10,30 @@
         <category>人工智能</category>
         <category>软件工程</category>
         <category>自监督学习</category>
-        <category>线性表</category>
+        <category>数据结构</category>
         <category>栈、队列和数组</category>
-        <category>串</category>
-        <category>操作系统</category>
+        <category>线性表</category>
         <category>树与二叉树</category>
+        <category>操作系统</category>
+        <category>串</category>
         <category>计算机网络</category>
-        <category>Liveness Analysis</category>
         <category>Register Allocation</category>
-        <category>抽象语法</category>
+        <category>Liveness Analysis</category>
         <category>编译原理</category>
         <category>词法分析</category>
+        <category>抽象语法</category>
         <category>语法分析</category>
-        <category>语义分析</category>
         <category>活动记录</category>
         <category>中间代码</category>
-        <category>数据结构</category>
+        <category>语义分析</category>
         <category>Basic Blocks and Traces</category>
-        <category>指令选择</category>
         <category>计算机组成</category>
-        <category>存储系统</category>
+        <category>指令选择</category>
         <category>数据的表示与运算</category>
-        <category>CPU</category>
+        <category>存储系统</category>
         <category>指令系统</category>
         <category>总线</category>
+        <category>CPU</category>
         <category>I/O</category>
         <category>错题</category>
         <item>
@@ -105,7 +105,7 @@
 &lt;/ol&gt;
 &lt;figure class=&#34;highlight c++&#34;&gt;&lt;figcaption&gt;&lt;span&gt;后序遍历&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;function&#34;&gt;&lt;span class=&#34;type&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;title&#34;&gt;PostOrder&lt;/span&gt;&lt;span class=&#34;params&#34;&gt;(BiTree T)&lt;/span&gt;&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;keyword&#34;&gt;if&lt;/span&gt;(T != &lt;span class=&#34;literal&#34;&gt;NULL&lt;/span&gt;)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &lt;span class=&#34;built_in&#34;&gt;PostOrder&lt;/span&gt;(T-&amp;gt;lchild);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &lt;span class=&#34;built_in&#34;&gt;PostOrder&lt;/span&gt;(T-&amp;gt;rchild);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &lt;span class=&#34;built_in&#34;&gt;Visit&lt;/span&gt;(T);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;div class=&#34;note info&#34;&gt;
-&lt;p&gt;以上三种遍历方式都是递归方式，占的深度就是树的高度，时间复杂度都是&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;O&lt;/mi&gt;&lt;mo stretchy=&#34;false&#34;&gt;(&lt;/mo&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mo stretchy=&#34;false&#34;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;O(n)&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:1em;vertical-align:-0.25em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.02778em;&#34;&gt;O&lt;/span&gt;&lt;span class=&#34;mopen&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;mclose&#34;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;
+&lt;p&gt;以上三种遍历方式都是递归方式，栈的深度就是树的高度，时间复杂度都是&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;O&lt;/mi&gt;&lt;mo stretchy=&#34;false&#34;&gt;(&lt;/mo&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mo stretchy=&#34;false&#34;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;O(n)&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:1em;vertical-align:-0.25em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.02778em;&#34;&gt;O&lt;/span&gt;&lt;span class=&#34;mopen&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;mclose&#34;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;
  最坏的情况下，二叉树是有 n 个结点且深度为 n 的单支树，此时空间复杂度为&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;O&lt;/mi&gt;&lt;mo stretchy=&#34;false&#34;&gt;(&lt;/mo&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mo stretchy=&#34;false&#34;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;O(n)&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:1em;vertical-align:-0.25em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.02778em;&#34;&gt;O&lt;/span&gt;&lt;span class=&#34;mopen&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;mclose&#34;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;ol start=&#34;4&#34;&gt;
@@ -130,6 +130,108 @@
 &lt;img data-src=&#34;f2.jpg&#34; alt&gt;&lt;/p&gt;
 &lt;/div&gt;&lt;/details&gt;
 &lt;h3 id=&#34;线索二叉树&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#线索二叉树&#34;&gt;#&lt;/a&gt; 线索二叉树&lt;/h3&gt;
+&lt;p&gt;利用叶子结点和不满的结点的空指针存放指向其前驱或者后继的指针，若没有左子树，则 lchild 指向前驱结点，若没有右子树，则 rchild 指向后继结点。新增 ltag 和 rtag，如果为 0 表示指向左 / 右孩子，为 1 表示为线索指向前驱 / 后继结点&lt;/p&gt;
+&lt;figure class=&#34;highlight c++&#34;&gt;&lt;figcaption&gt;&lt;span&gt;线索二叉树&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;typedef&lt;/span&gt; &lt;span class=&#34;keyword&#34;&gt;struct&lt;/span&gt; &lt;span class=&#34;title class_&#34;&gt;ThreadNode&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    ElemType data;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;keyword&#34;&gt;struct&lt;/span&gt; &lt;span class=&#34;title class_&#34;&gt;ThreadNode&lt;/span&gt; *lchild, *rchild;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; ltag, rtag;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;ThreadNode, *ThreadTree;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;方法就是找出遍历的序列，然后对每个不满的节点建立线索&lt;/p&gt;
+&lt;h4 id=&#34;中序线索二叉树&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#中序线索二叉树&#34;&gt;#&lt;/a&gt; 中序线索二叉树：&lt;/h4&gt;
+&lt;figure class=&#34;highlight c++&#34;&gt;&lt;figcaption&gt;&lt;span&gt;中序线索二叉树&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;24&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;function&#34;&gt;&lt;span class=&#34;type&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;title&#34;&gt;InThread&lt;/span&gt;&lt;span class=&#34;params&#34;&gt;(ThreadTree &amp;amp;p, ThreadTree &amp;amp;pre)&lt;/span&gt;&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;keyword&#34;&gt;if&lt;/span&gt;(p != &lt;span class=&#34;literal&#34;&gt;NULL&lt;/span&gt;)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &lt;span class=&#34;built_in&#34;&gt;InThread&lt;/span&gt;(p-&amp;gt;lchild, pre);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &lt;span class=&#34;keyword&#34;&gt;if&lt;/span&gt;(p-&amp;gt;lchild == &lt;span class=&#34;literal&#34;&gt;NULL&lt;/span&gt;)&amp;#123; &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            p-&amp;gt;lchild = pre;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            p-&amp;gt;ltag = &lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &lt;span class=&#34;keyword&#34;&gt;if&lt;/span&gt;(pre != &lt;span class=&#34;literal&#34;&gt;NULL&lt;/span&gt; &amp;amp;&amp;amp; pre-&amp;gt;rchild == &lt;span class=&#34;literal&#34;&gt;NULL&lt;/span&gt;)&amp;#123; &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            pre-&amp;gt;rchild = p;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            pre-&amp;gt;rtag = &lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        pre = p;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &lt;span class=&#34;built_in&#34;&gt;InThread&lt;/span&gt;(p-&amp;gt;rchild, pre);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;function&#34;&gt;&lt;span class=&#34;type&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;title&#34;&gt;CreateInThread&lt;/span&gt;&lt;span class=&#34;params&#34;&gt;(ThreadTree &amp;amp;T)&lt;/span&gt;&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    ThreadTree pre = &lt;span class=&#34;literal&#34;&gt;NULL&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;keyword&#34;&gt;if&lt;/span&gt;(T != &lt;span class=&#34;literal&#34;&gt;NULL&lt;/span&gt;)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &lt;span class=&#34;built_in&#34;&gt;InThread&lt;/span&gt;(T, pre);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    pre-&amp;gt;rchild = &lt;span class=&#34;literal&#34;&gt;NULL&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    pre-&amp;gt;rtag = &lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &amp;#125; &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;为了方便会增加一个 head 结点的 lchild 指向根节点，rchild 指向中序遍历的最后一个结点，令中序遍历第一个节点的 lchild 和最后一个节点的 rchild 指向 head&lt;/p&gt;
+&lt;figure class=&#34;highlight c++&#34;&gt;&lt;figcaption&gt;&lt;span&gt;求中序线索二叉树中序序列下的第一个节点&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;function&#34;&gt;ThreadNode *&lt;span class=&#34;title&#34;&gt;Firstnode&lt;/span&gt;&lt;span class=&#34;params&#34;&gt;(ThreadNode *p)&lt;/span&gt;&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;keyword&#34;&gt;while&lt;/span&gt;(p-&amp;gt;ltag == &lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;) p = p-&amp;gt;lchild;  &lt;span class=&#34;comment&#34;&gt;//找到最左下的节点但不一定是叶子&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;keyword&#34;&gt;return&lt;/span&gt; p;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;figure class=&#34;highlight c++&#34;&gt;&lt;figcaption&gt;&lt;span&gt;求节点p的后继结点&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;function&#34;&gt;ThreadNode *&lt;span class=&#34;title&#34;&gt;Nextnode&lt;/span&gt;&lt;span class=&#34;params&#34;&gt;(ThreadNode *p)&lt;/span&gt;&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;keyword&#34;&gt;if&lt;/span&gt;(p-&amp;gt;rtag == &lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;) &lt;span class=&#34;keyword&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;built_in&#34;&gt;Firstnode&lt;/span&gt;(p-&amp;gt;rchild);   &lt;span class=&#34;comment&#34;&gt;//如果有右孩子，则返回右孩子的最左下的节点&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;keyword&#34;&gt;else&lt;/span&gt; &lt;span class=&#34;keyword&#34;&gt;return&lt;/span&gt; p-&amp;gt;rchild;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;figure class=&#34;highlight c++&#34;&gt;&lt;figcaption&gt;&lt;span&gt;求中序线索二叉树的最后一个结点&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;function&#34;&gt;ThreadNode *&lt;span class=&#34;title&#34;&gt;Lastnode&lt;/span&gt;&lt;span class=&#34;params&#34;&gt;(ThreadNode *p)&lt;/span&gt;&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;keyword&#34;&gt;while&lt;/span&gt;(p-&amp;gt;rtag == &lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;) p = p-&amp;gt;rchild;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;keyword&#34;&gt;return&lt;/span&gt; p;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;figure class=&#34;highlight c++&#34;&gt;&lt;figcaption&gt;&lt;span&gt;求节点p的前驱结点&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;function&#34;&gt;ThreadNode *&lt;span class=&#34;title&#34;&gt;Prevnode&lt;/span&gt;&lt;span class=&#34;params&#34;&gt;(ThreadNode *p)&lt;/span&gt;&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;keyword&#34;&gt;if&lt;/span&gt;(p-&amp;gt;ltag == &lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;) &lt;span class=&#34;keyword&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;built_in&#34;&gt;Lastnode&lt;/span&gt;(p-&amp;gt;lchild);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;keyword&#34;&gt;else&lt;/span&gt; &lt;span class=&#34;keyword&#34;&gt;return&lt;/span&gt; p-&amp;gt;lchild;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;figure class=&#34;highlight c++&#34;&gt;&lt;figcaption&gt;&lt;span&gt;不含头结点的中序线索二叉树的中序遍历&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;function&#34;&gt;&lt;span class=&#34;type&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;title&#34;&gt;InOrder&lt;/span&gt;&lt;span class=&#34;params&#34;&gt;(ThreadNode *T)&lt;/span&gt;&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;keyword&#34;&gt;for&lt;/span&gt;(ThreadNode *p = &lt;span class=&#34;built_in&#34;&gt;Firstnode&lt;/span&gt;(T); p != &lt;span class=&#34;literal&#34;&gt;NULL&lt;/span&gt;; p = &lt;span class=&#34;built_in&#34;&gt;Nextnode&lt;/span&gt;(p))&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &lt;span class=&#34;built_in&#34;&gt;Visit&lt;/span&gt;(p);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h4 id=&#34;先序线索二叉树&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#先序线索二叉树&#34;&gt;#&lt;/a&gt; 先序线索二叉树&lt;/h4&gt;
+&lt;h4 id=&#34;后序线索二叉树&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#后序线索二叉树&#34;&gt;#&lt;/a&gt; 后序线索二叉树&lt;/h4&gt;
+&lt;h2 id=&#34;树森林&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#树森林&#34;&gt;#&lt;/a&gt; 树，森林&lt;/h2&gt;
+&lt;h3 id=&#34;树的存储结构&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#树的存储结构&#34;&gt;#&lt;/a&gt; 树的存储结构&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;双亲表示法&lt;br&gt;
+用一个结构体数组来存，一个 node 包括数据域和 parent 域，parent 域的值是父节点的数组下标。根节点的 parent 域为 - 1&lt;/li&gt;
+&lt;/ol&gt;
+&lt;figure class=&#34;highlight c++&#34;&gt;&lt;figcaption&gt;&lt;span&gt;双亲表示法&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;meta&#34;&gt;#&lt;span class=&#34;keyword&#34;&gt;define&lt;/span&gt; MAX_TREE_SIZE 100&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;typedef&lt;/span&gt; &lt;span class=&#34;keyword&#34;&gt;struct&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    ElemType data;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; parent;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;PTNode;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;typedef&lt;/span&gt; &lt;span class=&#34;keyword&#34;&gt;struct&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    PTNode nodes[MAX_TREE_SIZE];&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; n;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;PTree;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;优点：可以很快找到 parent，但求孩子需要遍历整个树&lt;br&gt;
+ 2. 孩子表示法&lt;br&gt;
+将每个结点的孩子视为一个线性表，以单链表作为存储结构&lt;br&gt;
+ 3. 孩子兄弟表示法&lt;br&gt;
+二叉树表示法，每个结点包括数据域，左孩子指针，右兄弟指针&lt;/p&gt;
+&lt;figure class=&#34;highlight c++&#34;&gt;&lt;figcaption&gt;&lt;span&gt;孩子兄弟表示法&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;typedef&lt;/span&gt; &lt;span class=&#34;keyword&#34;&gt;struct&lt;/span&gt; &lt;span class=&#34;title class_&#34;&gt;CSNode&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    ElemType data;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;keyword&#34;&gt;struct&lt;/span&gt; &lt;span class=&#34;title class_&#34;&gt;CSNode&lt;/span&gt; *firstchild, *nextsibling;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;CSNode, *CSTree;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;details class=&#34;primary&#34;&gt;&lt;summary&gt;图示&lt;/summary&gt;&lt;div&gt;
+&lt;p&gt;&lt;img data-src=&#34;f3.jpg&#34; alt&gt;&lt;br&gt;
+&lt;img data-src=&#34;f4.jpg&#34; alt&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;/details&gt;
+&lt;h3 id=&#34;树-森林和二叉树的转换&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#树-森林和二叉树的转换&#34;&gt;#&lt;/a&gt; 树、森林和二叉树的转换&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;树转二叉树&lt;br&gt;
+用孩子兄弟表示法（左孩子右兄弟）&lt;/li&gt;
+&lt;li&gt;森林转二叉树&lt;br&gt;
+先讲森林中的每棵树转为二叉树，每棵树视为兄弟，将第二棵树对应的二叉树作为第一颗二叉树根的右子树……&lt;/li&gt;
+&lt;/ol&gt;
+&lt;details class=&#34;primary&#34;&gt;&lt;summary&gt;例&lt;/summary&gt;&lt;div&gt;
+&lt;p&gt;&lt;img data-src=&#34;f5.jpg&#34; alt&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;/details&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;二叉树转森林&lt;br&gt;
+把右子树分开，知道最后只剩一棵没有右子树的二叉树为止。和森林转二叉树相反&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;树和森林的遍历&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#树和森林的遍历&#34;&gt;#&lt;/a&gt; 树和森林的遍历&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;树的遍历&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;先根后子树，遍历序列和这棵树对应的二叉树的先序序列相同&lt;/li&gt;
+&lt;li&gt;先子树后根，遍历序列和这棵树对应的二叉树的中序序列相同&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;森林的遍历&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;先序遍历：从第一棵树开始，先根，再子树&lt;/li&gt;
+&lt;li&gt;中序遍历：从第一棵树开始，先子树，再根&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;树与二叉树的应用&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#树与二叉树的应用&#34;&gt;#&lt;/a&gt; 树与二叉树的应用&lt;/h2&gt;
+&lt;h3 id=&#34;哈夫曼树&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#哈夫曼树&#34;&gt;#&lt;/a&gt; 哈夫曼树&lt;/h3&gt;
+&lt;h4 id=&#34;定义&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#定义&#34;&gt;#&lt;/a&gt; 定义&lt;/h4&gt;
+&lt;p&gt;带权路径长度：根结点到该结点的路径长度 * 该结点的权值&lt;br&gt;
+树的带权路径长度&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;katex-display&#34;&gt;&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34; display=&#34;block&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;W&lt;/mi&gt;&lt;mi&gt;P&lt;/mi&gt;&lt;mi&gt;L&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;munderover&gt;&lt;mo&gt;∑&lt;/mo&gt;&lt;mrow&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/mrow&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;/munderover&gt;&lt;msub&gt;&lt;mi&gt;w&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;/msub&gt;&lt;mo&gt;∗&lt;/mo&gt;&lt;msub&gt;&lt;mi&gt;l&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;/msub&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;WPL = \sum_{i=1}^{n}w_i*l_i
+&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.68333em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.13889em;&#34;&gt;W&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.13889em;&#34;&gt;P&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;L&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mrel&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:2.929066em;vertical-align:-1.277669em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mop op-limits&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:1.6513970000000002em;&#34;&gt;&lt;span style=&#34;top:-1.872331em;margin-left:0em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:3.05em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mtight&#34;&gt;&lt;span class=&#34;mord mathnormal mtight&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;mrel mtight&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mord mtight&#34;&gt;1&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;top:-3.050005em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:3.05em;&#34;&gt;&lt;/span&gt;&lt;span&gt;&lt;span class=&#34;mop op-symbol large-op&#34;&gt;∑&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;top:-4.3000050000000005em;margin-left:0em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:3.05em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mtight&#34;&gt;&lt;span class=&#34;mord mathnormal mtight&#34;&gt;n&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:1.277669em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.16666666666666666em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.02691em;&#34;&gt;w&lt;/span&gt;&lt;span class=&#34;msupsub&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.31166399999999994em;&#34;&gt;&lt;span style=&#34;top:-2.5500000000000003em;margin-left:-0.02691em;margin-right:0.05em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.7em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mathnormal mtight&#34;&gt;i&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.15em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mbin&#34;&gt;∗&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.84444em;vertical-align:-0.15em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.01968em;&#34;&gt;l&lt;/span&gt;&lt;span class=&#34;msupsub&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.31166399999999994em;&#34;&gt;&lt;span style=&#34;top:-2.5500000000000003em;margin-left:-0.01968em;margin-right:0.05em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.7em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mathnormal mtight&#34;&gt;i&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.15em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;WPL 最小的二叉树称为哈夫曼树，也称最优二叉树&lt;/p&gt;
+&lt;h4 id=&#34;构造&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#构造&#34;&gt;#&lt;/a&gt; 构造&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;构造方法：不断合并两个权值加起来最小的结点&lt;br&gt;
+&lt;img data-src=&#34;f6.jpg&#34; alt&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;哈夫曼编码&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#哈夫曼编码&#34;&gt;#&lt;/a&gt; 哈夫曼编码&lt;/h4&gt;
+&lt;p&gt;可变长度编码，让频率高的字符编码长度短，频率低的字符编码长度长&lt;br&gt;
+用哈夫曼树构建哈夫曼编码，是前缀编码，因此每个编码都可以唯一区分一个字符（没有字符的编码是其他编码的前缀）&lt;br&gt;
+构造的方法是权值为频率，左分支为 0，右分支为 1（左边 1 右边 0 也可以，主要是看长度）&lt;br&gt;
+&lt;img data-src=&#34;f7.jpg&#34; alt&gt;&lt;br&gt;
+编码方式不唯一，因为长度相同的字符编码方式是可以互换的&lt;/p&gt;
+&lt;h3 id=&#34;并查集-disjoint-set&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#并查集-disjoint-set&#34;&gt;#&lt;/a&gt; 并查集 Disjoint Set&lt;/h3&gt;
+&lt;p&gt;主要用来求等价关系&lt;br&gt;
+基本操作：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;初始化：所有元素都是单元素集合&lt;/li&gt;
+&lt;li&gt;Union (S, Root1, Root2): 合并两个集合，把 Root2 的根节点连到 Root1 的根节点上&lt;/li&gt;
+&lt;li&gt;Find (S, x): 查找 x 的根节点&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;基本实现：&lt;/p&gt;
+&lt;figure class=&#34;highlight c++&#34;&gt;&lt;figcaption&gt;&lt;span&gt;disjoint set&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;17&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;meta&#34;&gt;#&lt;span class=&#34;keyword&#34;&gt;define&lt;/span&gt; SIZE 100&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; UFSets[SIZE];&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;function&#34;&gt;&lt;span class=&#34;type&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;title&#34;&gt;Initial&lt;/span&gt;&lt;span class=&#34;params&#34;&gt;(&lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; S[])&lt;/span&gt;&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;keyword&#34;&gt;for&lt;/span&gt;(&lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; i = &lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;; i &amp;lt; SIZE; i++)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        S[i] = &lt;span class=&#34;number&#34;&gt;-1&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;function&#34;&gt;&lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;title&#34;&gt;Find&lt;/span&gt;&lt;span class=&#34;params&#34;&gt;(&lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; S[], &lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; x)&lt;/span&gt;&lt;/span&gt;&amp;#123;   &lt;span class=&#34;comment&#34;&gt;//时间复杂度为O(d)，d为树的深度&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;keyword&#34;&gt;while&lt;/span&gt;(S[x] &amp;gt;= &lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        x = S[x];&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;keyword&#34;&gt;return&lt;/span&gt; x;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;function&#34;&gt;&lt;span class=&#34;type&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;title&#34;&gt;Union&lt;/span&gt;&lt;span class=&#34;params&#34;&gt;(&lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; S[], &lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; Root1, &lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; Root2)&lt;/span&gt;&lt;/span&gt;&amp;#123;  &lt;span class=&#34;comment&#34;&gt;//时间复杂度为O(1)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;keyword&#34;&gt;if&lt;/span&gt;(Root1 == Root2) &lt;span class=&#34;keyword&#34;&gt;return&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    S[Root2] = Root1;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h4 id=&#34;并查集的优化&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#并查集的优化&#34;&gt;#&lt;/a&gt; 并查集的优化&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;按高度求并 Union-by-Height&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;用根节点的绝对值表示树的结点总数（根节点的值是负数）&lt;/li&gt;
+&lt;li&gt;把小树合并到大树，能够保证所有树的深度最多是&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;O&lt;/mi&gt;&lt;mo stretchy=&#34;false&#34;&gt;(&lt;/mo&gt;&lt;mi&gt;l&lt;/mi&gt;&lt;mi&gt;o&lt;/mi&gt;&lt;mi&gt;g&lt;/mi&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mo stretchy=&#34;false&#34;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;O(logn)&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:1em;vertical-align:-0.25em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.02778em;&#34;&gt;O&lt;/span&gt;&lt;span class=&#34;mopen&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.01968em;&#34;&gt;l&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;o&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.03588em;&#34;&gt;g&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;mclose&#34;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&#34;highlight c++&#34;&gt;&lt;figcaption&gt;&lt;span&gt;Union-by-Height&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;function&#34;&gt;&lt;span class=&#34;type&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;title&#34;&gt;Union&lt;/span&gt;&lt;span class=&#34;params&#34;&gt;(&lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; S[], &lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; Root1, &lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; Root2)&lt;/span&gt;&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;keyword&#34;&gt;if&lt;/span&gt;(Root1 == Root2) &lt;span class=&#34;keyword&#34;&gt;return&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;keyword&#34;&gt;if&lt;/span&gt;(S[Root2] &amp;gt; S[Root1])&amp;#123;    &lt;span class=&#34;comment&#34;&gt;//Root2的深度小于Root1&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        S[Root1] += S[Root2];&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        S[Root2] = Root1;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &amp;#125;&lt;span class=&#34;keyword&#34;&gt;else&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        S[Root2] += S[Root1];&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        S[Root1] = Root2;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;路径压缩&lt;br&gt;
+为了减少深度，在 Find 操作时将从根到元素 x 路径上的所有元素都变成根的孩子&lt;/li&gt;
+&lt;/ol&gt;
+&lt;figure class=&#34;highlight c++&#34;&gt;&lt;figcaption&gt;&lt;span&gt;路径压缩&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;function&#34;&gt;&lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;title&#34;&gt;Find&lt;/span&gt;&lt;span class=&#34;params&#34;&gt;(&lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; S[], &lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; x)&lt;/span&gt;&lt;/span&gt;&amp;#123;   &lt;span class=&#34;comment&#34;&gt;//先搜一次找到根，再搜一次把路径上所有节点的父节点都改成根&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; root = x;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;keyword&#34;&gt;while&lt;/span&gt;(S[root] &amp;gt;= &lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        root = S[root];&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;keyword&#34;&gt;while&lt;/span&gt;(x != root)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; temp = S[x];&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        S[x] = root;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        x = temp;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;keyword&#34;&gt;return&lt;/span&gt; root;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
  ]]></description>
         </item>
         <item>
@@ -409,6 +511,28 @@
  ]]></description>
         </item>
         <item>
+            <guid isPermalink="true">http://example.com/2025/09/15/computer-science/DS/ch1/</guid>
+            <title>ch1</title>
+            <link>http://example.com/2025/09/15/computer-science/DS/ch1/</link>
+            <category>数据结构</category>
+            <pubDate>Mon, 15 Sep 2025 00:00:00 +0800</pubDate>
+            <description><![CDATA[ &lt;h1 id=&#34;ch1-绪论&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#ch1-绪论&#34;&gt;#&lt;/a&gt; Ch1 绪论&lt;/h1&gt;
+&lt;p&gt;数据&lt;br&gt;
+数据元素是数据的基本单位&lt;br&gt;
+数据对象&lt;br&gt;
+数据类型：原子类型、结构类型、抽象数据类型&lt;br&gt;
+数据结构：三要素包括逻辑结构、存储结构和数据的运算&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;逻辑结构：集合、线性结构、树形结构、图状或网状&lt;/li&gt;
+&lt;li&gt;存储结构：顺序存储、链式存储、索引存储、散列存储&lt;/li&gt;
+&lt;li&gt;数据的运算：定义针对逻辑结构，实现针对存储结构&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;算法的特性：又穷行、确定性、可行性、输入、输出&lt;br&gt;
+好的算法还应该考虑：正确性、可读性、健壮性、高效率和低存储量需求&lt;/p&gt;
+&lt;p&gt;复杂度：时间复杂度、空间复杂度&lt;/p&gt;
+ ]]></description>
+        </item>
+        <item>
             <guid isPermalink="true">http://example.com/2025/09/15/computer-science/DS/ch2/</guid>
             <title>ch2</title>
             <link>http://example.com/2025/09/15/computer-science/DS/ch2/</link>
@@ -496,28 +620,6 @@
 &lt;li&gt;难以估计线性表的长度时不宜采用顺序表&lt;/li&gt;
 &lt;li&gt;按序号访问多选顺序表，插入删除多选链表&lt;/li&gt;
 &lt;/ul&gt;
- ]]></description>
-        </item>
-        <item>
-            <guid isPermalink="true">http://example.com/2025/09/15/computer-science/DS/ch1/</guid>
-            <title>ch1</title>
-            <link>http://example.com/2025/09/15/computer-science/DS/ch1/</link>
-            <category>数据结构</category>
-            <pubDate>Mon, 15 Sep 2025 00:00:00 +0800</pubDate>
-            <description><![CDATA[ &lt;h1 id=&#34;ch1-绪论&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#ch1-绪论&#34;&gt;#&lt;/a&gt; Ch1 绪论&lt;/h1&gt;
-&lt;p&gt;数据&lt;br&gt;
-数据元素是数据的基本单位&lt;br&gt;
-数据对象&lt;br&gt;
-数据类型：原子类型、结构类型、抽象数据类型&lt;br&gt;
-数据结构：三要素包括逻辑结构、存储结构和数据的运算&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;逻辑结构：集合、线性结构、树形结构、图状或网状&lt;/li&gt;
-&lt;li&gt;存储结构：顺序存储、链式存储、索引存储、散列存储&lt;/li&gt;
-&lt;li&gt;数据的运算：定义针对逻辑结构，实现针对存储结构&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;算法的特性：又穷行、确定性、可行性、输入、输出&lt;br&gt;
-好的算法还应该考虑：正确性、可读性、健壮性、高效率和低存储量需求&lt;/p&gt;
-&lt;p&gt;复杂度：时间复杂度、空间复杂度&lt;/p&gt;
  ]]></description>
         </item>
         <item>
@@ -694,6 +796,136 @@ CPU 能对数据端口中的数据进行读 / 写操作，但对状态端口中�
 &lt;li&gt;中断方式具有处理异常事件的能力，DMA 方式局限于大批数据的传送&lt;/li&gt;
 &lt;li&gt;中断方式靠程序传送，DMA 方式靠硬件传送&lt;/li&gt;
 &lt;/ul&gt;
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">http://example.com/2025/08/10/computer-science/computer-organization/ch6/</guid>
+            <title>Ch6</title>
+            <link>http://example.com/2025/08/10/computer-science/computer-organization/ch6/</link>
+            <category>总线</category>
+            <pubDate>Sun, 10 Aug 2025 00:00:00 +0800</pubDate>
+            <description><![CDATA[ &lt;h1 id=&#34;ch6-总线&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#ch6-总线&#34;&gt;#&lt;/a&gt; Ch6 总线&lt;/h1&gt;
+&lt;h2 id=&#34;概述&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#概述&#34;&gt;#&lt;/a&gt; 概述&lt;/h2&gt;
+&lt;h3 id=&#34;概念&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#概念&#34;&gt;#&lt;/a&gt; 概念&lt;/h3&gt;
+&lt;p&gt;总线是一组能为多个部件分时和共享的公共信息传送线路。&lt;mark&gt;分时&lt;/mark&gt;和&lt;mark&gt;共享&lt;/mark&gt;是总线的两个特点&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;分时：同一时刻只允许有一个部件向总线发送信息&lt;/li&gt;
+&lt;li&gt;共享：总线上可以挂接多个部件&lt;br&gt;
+总线设备：按对总线有无控制权分&lt;/li&gt;
+&lt;li&gt;主设备：发出总线请求且获得总线控制权的设备&lt;/li&gt;
+&lt;li&gt;从设备：被主设备访问的设备，只能响应从这设备发来的各种总线命令&lt;br&gt;
+特性：机械特性（尺寸、形状）、电气特性（传输方向、有效的电平范围）、功能特性（没跟传输线的功能）、时间特性（信号和时序的关系）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;分类&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#分类&#34;&gt;#&lt;/a&gt; 分类&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;按功能&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;片内总线（CPU 内部的，连接各寄存器以及寄存器和 ALU）&lt;/li&gt;
+&lt;li&gt;系统总线（连接 CPU、主存、I/O）。按传输内容又分为数据总线（数据、指令、终端类型号，双向传输）、地址总线（主存单元或 IO 端口地址，单向传输）、控制总线（clk, rst, 总线请求 / 允许，中断请求 / 回答，r/w…）&lt;/li&gt;
+&lt;li&gt;I/O 总线（将低速的 IO 和告诉总线分离，常见的有 USB/PCI）&lt;/li&gt;
+&lt;li&gt;通信总线（外部总线，计算机系统之间或计算机系统与其他系统）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;按时序控制方式&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;同步总线&lt;/li&gt;
+&lt;li&gt;异步总线&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;按数据传输方式&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;串行总线（一条双向或两条单向，数据按 bit 串行顺序传输，适合长距离通信）&lt;/li&gt;
+&lt;li&gt;并行总线（有多条双向，容易出现干扰 / 延迟，适合近距离通信）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;系统总线的结构&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#系统总线的结构&#34;&gt;#&lt;/a&gt; 系统总线的结构&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;单总线结构&lt;br&gt;
+ CPU，主存，IO，都挂在一组（地址、数据、控制）总线上，允许 IO 之间、IO 与主存直接交换信息&lt;br&gt;
+结构简单、成本低、易于接入新的设备&lt;br&gt;
+贷款低、负载中、不支持并发传送&lt;br&gt;
+&lt;img data-src=&#34;f13.jpg&#34; alt&gt;&lt;/li&gt;
+&lt;li&gt;双总线结构&lt;br&gt;
+一条主存总线，一条 I/O 总线&lt;br&gt;
+主存总线支持突发传送，突发传送（Burst Transfer）是一种数据传输方式，它允许在一次地址发送后，连续传输多个数据块，而不需要为每个数据块单独发送地址和控制信号&lt;br&gt;
+将低速的 I/O 设备分离开来，实现了存储器总线和 I/O 总线的分离&lt;br&gt;
+需要增加通道等硬件设备&lt;br&gt;
+&lt;img data-src=&#34;f14.jpg&#34; alt&gt;&lt;/li&gt;
+&lt;li&gt;三总线结构&lt;br&gt;
+主存总线、I/O 总线、直接内存访问 (DMA) 总线&lt;br&gt;
+ DMA 允许外部设备（如硬盘、网卡、显卡）直接与主存进行数据交换，无需 CPU 的直接参与和干预，把 CPU 从繁琐、低效的数据搬运工作中解放出来，让它可以去做更复杂的计算任务&lt;br&gt;
+优点是提高了 I/O 设备的性能，使其更快地响应命令，提高系统吞吐量；缺点是任意时刻只能使用一种总线，系统工作效率较低（意思是一个设备不能同时使用多个总线，比如主存总线和 DMA 总线不能同时对主存进行存取）&lt;br&gt;
+&lt;img data-src=&#34;f15.jpg&#34; alt&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;常见的总线标准&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#常见的总线标准&#34;&gt;#&lt;/a&gt; 常见的总线标准&lt;/h3&gt;
+&lt;p&gt;略&lt;/p&gt;
+&lt;h3 id=&#34;总线的性能指标&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#总线的性能指标&#34;&gt;#&lt;/a&gt; 总线的性能指标&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;总线时钟周期&lt;/li&gt;
+&lt;li&gt;总线时钟频率&lt;/li&gt;
+&lt;li&gt;总线传输周期：申请、寻址、传输、结束&lt;/li&gt;
+&lt;li&gt;总线工作频率：1 / 总线（传输）周期&lt;/li&gt;
+&lt;li&gt;总线宽度：通常指数据总线的根数&lt;/li&gt;
+&lt;li&gt;总线带宽：最大数据传输速率，B/s，带宽 = 总线工作频率 *（总线宽度 / 8）&lt;/li&gt;
+&lt;li&gt;总线复用：一种信号现在不同的时间传输不同的信息，比如地址 / 数据线复用（地址通过数据线传送）&lt;/li&gt;
+&lt;li&gt;信号线数：地址总线、数据总线、控制总线数量的总和&lt;br&gt;
+最主要的性能指标：&lt;mark&gt;总线宽度、总线工作频率、总线带宽&lt;/mark&gt;&lt;br&gt;
+带宽 = 总线工作频率 * 总线宽度 bits/s&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;总线事务和定时&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#总线事务和定时&#34;&gt;#&lt;/a&gt; 总线事务和定时&lt;/h2&gt;
+&lt;h3 id=&#34;总线事务&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#总线事务&#34;&gt;#&lt;/a&gt; 总线事务&lt;/h3&gt;
+&lt;p&gt;从请求总线到完成总线使用的操作序列称为&lt;strong&gt;总线事务&lt;/strong&gt;，典型的总线事务包括请求操作、仲裁操作、地址传输、数据传输和总线释放&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;请求阶段：主设备（CPU 或 DMA）发出总线传输请求，获得总线控制权&lt;/li&gt;
+&lt;li&gt;仲裁阶段：总选仲裁机构决定将下一个传输周期的总线使用权授予某个申请者&lt;/li&gt;
+&lt;li&gt;寻址阶段：传输地址和命令，启动从模块&lt;/li&gt;
+&lt;li&gt;传输阶段：主模块和从模块进行数据交换，单向或双向&lt;/li&gt;
+&lt;li&gt;释放阶段：主模块有关信息从系统总线上撤除，让出总线使用权、&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;数据传送方式：突发方式和非突发方式&lt;br&gt;
+突发传送：寻址阶段发送的是连续数据单元的首地址，传输阶段传送多个连续单元的数据，每个时钟周期可以传送一个字长的信息（如果总线宽度等于一个字长），一组数据全部传送完毕后再释放总线&lt;br&gt;
+非突发传送：每个传送周期内都先传送地址，再传送数据，每次只能传输一个字长的数据&lt;/p&gt;
+&lt;h3 id=&#34;总线定时&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#总线定时&#34;&gt;#&lt;/a&gt; 总线定时&lt;/h3&gt;
+&lt;p&gt;同步、异步、半同步、分离式&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;同步定时方式&lt;br&gt;
+适用于总线较短且部件存取时间比较接近的系统。每个部件或设备发送或接收信息都在固定的总线传送周期中，一个总线的传送周期结束，下一个总线传送周期开始&lt;br&gt;
+优点：传送速度快，具有较高的传输速率；总线控制逻辑简单。&lt;br&gt;
+缺点：主从设备属于强制性同步；不能及时进行数据通信的有效性检验，可靠性较差&lt;/li&gt;
+&lt;li&gt;异步定时方式&lt;br&gt;
+依靠传送双方相互制约的 “握手” 信号来实现定时控制。主设备发出请求，从设备接收到请求后发出回答。&lt;br&gt;
+优点：总线周期长度可变，能保证两个工作速度相差很大的部件或设备之间可靠地进行信息交换，自动适应时间的配合。&lt;br&gt;
+缺点：比同步控制方式稍复杂一些，速度比同步定时方式慢&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;根据 “请求” 和 “回答” 的撤销是否互锁分为
+&lt;ul&gt;
+&lt;li&gt;不互锁方式：发出请求不必等回答，一段时间后自动撤销请求信号。收到请求信号后发出回答信号，一段时间后自动撤销回答信号。（速度最快 可靠性最差）&lt;/li&gt;
+&lt;li&gt;半互锁方式：发出请求后等待收到回答信号才撤销请求信号。收到请求信号后发出回答信号，一段时间后自动撤销回答信号。&lt;/li&gt;
+&lt;li&gt;全互锁方式：发出请求后等待收到回答信号才撤销请求信号，收到请求信号后发出回答，必须获知请求信号撤销之后才撤销回答信号（最可靠 速度最慢）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;异步串行通信的方式一步串行通信的第一位是开始位，表示字符传送的开始。铜芯线上没有数据传送时处于逻辑 &amp;quot;1&amp;quot; 状态，发出逻辑 &amp;quot;0&amp;quot; 为开始位在从最低位开始传输信号。发送完字符之后可以发送几奇偶校验（若有），之后发送停止位。&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;半同步定时方式&lt;br&gt;
+&lt;img data-src=&#34;f1.jpg&#34; alt&gt;&lt;br&gt;
+保留时钟信号的同时增设 Wait 响应信号线，Wait=1 的时候才取数据&lt;br&gt;
+优点：控制方式比异步简单&lt;br&gt;
+缺点：时钟频率不能太高&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;分离式定时方式&lt;br&gt;
+将总线事务分解为请求和应答两个子过程。第一个子过程中，主设备发送命令、地址到总线上，发完立即释放总线（第一个字过程很短）。第二个另外以个设备接受命令并发送数据到总线。两个子过程都只有单向信息流，每个设备都变为主设备。&lt;br&gt;
+&lt;img data-src=&#34;f2.jpg&#34; alt&gt;&lt;br&gt;
+&lt;img data-src=&#34;f3.jpg&#34; alt&gt;&lt;br&gt;
+在空闲阶段释放总线使总线可接受其他设备的请求&lt;br&gt;
+控制复杂，开销大&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
  ]]></description>
         </item>
         <item>
@@ -1019,136 +1251,6 @@ ILP+TLP，指令级并行的同时实现线程级并行，在同一个时钟周�
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
- ]]></description>
-        </item>
-        <item>
-            <guid isPermalink="true">http://example.com/2025/08/10/computer-science/computer-organization/ch6/</guid>
-            <title>Ch6</title>
-            <link>http://example.com/2025/08/10/computer-science/computer-organization/ch6/</link>
-            <category>总线</category>
-            <pubDate>Sun, 10 Aug 2025 00:00:00 +0800</pubDate>
-            <description><![CDATA[ &lt;h1 id=&#34;ch6-总线&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#ch6-总线&#34;&gt;#&lt;/a&gt; Ch6 总线&lt;/h1&gt;
-&lt;h2 id=&#34;概述&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#概述&#34;&gt;#&lt;/a&gt; 概述&lt;/h2&gt;
-&lt;h3 id=&#34;概念&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#概念&#34;&gt;#&lt;/a&gt; 概念&lt;/h3&gt;
-&lt;p&gt;总线是一组能为多个部件分时和共享的公共信息传送线路。&lt;mark&gt;分时&lt;/mark&gt;和&lt;mark&gt;共享&lt;/mark&gt;是总线的两个特点&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;分时：同一时刻只允许有一个部件向总线发送信息&lt;/li&gt;
-&lt;li&gt;共享：总线上可以挂接多个部件&lt;br&gt;
-总线设备：按对总线有无控制权分&lt;/li&gt;
-&lt;li&gt;主设备：发出总线请求且获得总线控制权的设备&lt;/li&gt;
-&lt;li&gt;从设备：被主设备访问的设备，只能响应从这设备发来的各种总线命令&lt;br&gt;
-特性：机械特性（尺寸、形状）、电气特性（传输方向、有效的电平范围）、功能特性（没跟传输线的功能）、时间特性（信号和时序的关系）&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;分类&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#分类&#34;&gt;#&lt;/a&gt; 分类&lt;/h3&gt;
-&lt;ol&gt;
-&lt;li&gt;按功能&lt;/li&gt;
-&lt;/ol&gt;
-&lt;ul&gt;
-&lt;li&gt;片内总线（CPU 内部的，连接各寄存器以及寄存器和 ALU）&lt;/li&gt;
-&lt;li&gt;系统总线（连接 CPU、主存、I/O）。按传输内容又分为数据总线（数据、指令、终端类型号，双向传输）、地址总线（主存单元或 IO 端口地址，单向传输）、控制总线（clk, rst, 总线请求 / 允许，中断请求 / 回答，r/w…）&lt;/li&gt;
-&lt;li&gt;I/O 总线（将低速的 IO 和告诉总线分离，常见的有 USB/PCI）&lt;/li&gt;
-&lt;li&gt;通信总线（外部总线，计算机系统之间或计算机系统与其他系统）&lt;/li&gt;
-&lt;/ul&gt;
-&lt;ol start=&#34;2&#34;&gt;
-&lt;li&gt;按时序控制方式&lt;/li&gt;
-&lt;/ol&gt;
-&lt;ul&gt;
-&lt;li&gt;同步总线&lt;/li&gt;
-&lt;li&gt;异步总线&lt;/li&gt;
-&lt;/ul&gt;
-&lt;ol start=&#34;3&#34;&gt;
-&lt;li&gt;按数据传输方式&lt;/li&gt;
-&lt;/ol&gt;
-&lt;ul&gt;
-&lt;li&gt;串行总线（一条双向或两条单向，数据按 bit 串行顺序传输，适合长距离通信）&lt;/li&gt;
-&lt;li&gt;并行总线（有多条双向，容易出现干扰 / 延迟，适合近距离通信）&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;系统总线的结构&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#系统总线的结构&#34;&gt;#&lt;/a&gt; 系统总线的结构&lt;/h3&gt;
-&lt;ol&gt;
-&lt;li&gt;单总线结构&lt;br&gt;
- CPU，主存，IO，都挂在一组（地址、数据、控制）总线上，允许 IO 之间、IO 与主存直接交换信息&lt;br&gt;
-结构简单、成本低、易于接入新的设备&lt;br&gt;
-贷款低、负载中、不支持并发传送&lt;br&gt;
-&lt;img data-src=&#34;f13.jpg&#34; alt&gt;&lt;/li&gt;
-&lt;li&gt;双总线结构&lt;br&gt;
-一条主存总线，一条 I/O 总线&lt;br&gt;
-主存总线支持突发传送，突发传送（Burst Transfer）是一种数据传输方式，它允许在一次地址发送后，连续传输多个数据块，而不需要为每个数据块单独发送地址和控制信号&lt;br&gt;
-将低速的 I/O 设备分离开来，实现了存储器总线和 I/O 总线的分离&lt;br&gt;
-需要增加通道等硬件设备&lt;br&gt;
-&lt;img data-src=&#34;f14.jpg&#34; alt&gt;&lt;/li&gt;
-&lt;li&gt;三总线结构&lt;br&gt;
-主存总线、I/O 总线、直接内存访问 (DMA) 总线&lt;br&gt;
- DMA 允许外部设备（如硬盘、网卡、显卡）直接与主存进行数据交换，无需 CPU 的直接参与和干预，把 CPU 从繁琐、低效的数据搬运工作中解放出来，让它可以去做更复杂的计算任务&lt;br&gt;
-优点是提高了 I/O 设备的性能，使其更快地响应命令，提高系统吞吐量；缺点是任意时刻只能使用一种总线，系统工作效率较低（意思是一个设备不能同时使用多个总线，比如主存总线和 DMA 总线不能同时对主存进行存取）&lt;br&gt;
-&lt;img data-src=&#34;f15.jpg&#34; alt&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3 id=&#34;常见的总线标准&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#常见的总线标准&#34;&gt;#&lt;/a&gt; 常见的总线标准&lt;/h3&gt;
-&lt;p&gt;略&lt;/p&gt;
-&lt;h3 id=&#34;总线的性能指标&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#总线的性能指标&#34;&gt;#&lt;/a&gt; 总线的性能指标&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;总线时钟周期&lt;/li&gt;
-&lt;li&gt;总线时钟频率&lt;/li&gt;
-&lt;li&gt;总线传输周期：申请、寻址、传输、结束&lt;/li&gt;
-&lt;li&gt;总线工作频率：1 / 总线（传输）周期&lt;/li&gt;
-&lt;li&gt;总线宽度：通常指数据总线的根数&lt;/li&gt;
-&lt;li&gt;总线带宽：最大数据传输速率，B/s，带宽 = 总线工作频率 *（总线宽度 / 8）&lt;/li&gt;
-&lt;li&gt;总线复用：一种信号现在不同的时间传输不同的信息，比如地址 / 数据线复用（地址通过数据线传送）&lt;/li&gt;
-&lt;li&gt;信号线数：地址总线、数据总线、控制总线数量的总和&lt;br&gt;
-最主要的性能指标：&lt;mark&gt;总线宽度、总线工作频率、总线带宽&lt;/mark&gt;&lt;br&gt;
-带宽 = 总线工作频率 * 总线宽度 bits/s&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;总线事务和定时&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#总线事务和定时&#34;&gt;#&lt;/a&gt; 总线事务和定时&lt;/h2&gt;
-&lt;h3 id=&#34;总线事务&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#总线事务&#34;&gt;#&lt;/a&gt; 总线事务&lt;/h3&gt;
-&lt;p&gt;从请求总线到完成总线使用的操作序列称为&lt;strong&gt;总线事务&lt;/strong&gt;，典型的总线事务包括请求操作、仲裁操作、地址传输、数据传输和总线释放&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;请求阶段：主设备（CPU 或 DMA）发出总线传输请求，获得总线控制权&lt;/li&gt;
-&lt;li&gt;仲裁阶段：总选仲裁机构决定将下一个传输周期的总线使用权授予某个申请者&lt;/li&gt;
-&lt;li&gt;寻址阶段：传输地址和命令，启动从模块&lt;/li&gt;
-&lt;li&gt;传输阶段：主模块和从模块进行数据交换，单向或双向&lt;/li&gt;
-&lt;li&gt;释放阶段：主模块有关信息从系统总线上撤除，让出总线使用权、&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;数据传送方式：突发方式和非突发方式&lt;br&gt;
-突发传送：寻址阶段发送的是连续数据单元的首地址，传输阶段传送多个连续单元的数据，每个时钟周期可以传送一个字长的信息（如果总线宽度等于一个字长），一组数据全部传送完毕后再释放总线&lt;br&gt;
-非突发传送：每个传送周期内都先传送地址，再传送数据，每次只能传输一个字长的数据&lt;/p&gt;
-&lt;h3 id=&#34;总线定时&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#总线定时&#34;&gt;#&lt;/a&gt; 总线定时&lt;/h3&gt;
-&lt;p&gt;同步、异步、半同步、分离式&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;同步定时方式&lt;br&gt;
-适用于总线较短且部件存取时间比较接近的系统。每个部件或设备发送或接收信息都在固定的总线传送周期中，一个总线的传送周期结束，下一个总线传送周期开始&lt;br&gt;
-优点：传送速度快，具有较高的传输速率；总线控制逻辑简单。&lt;br&gt;
-缺点：主从设备属于强制性同步；不能及时进行数据通信的有效性检验，可靠性较差&lt;/li&gt;
-&lt;li&gt;异步定时方式&lt;br&gt;
-依靠传送双方相互制约的 “握手” 信号来实现定时控制。主设备发出请求，从设备接收到请求后发出回答。&lt;br&gt;
-优点：总线周期长度可变，能保证两个工作速度相差很大的部件或设备之间可靠地进行信息交换，自动适应时间的配合。&lt;br&gt;
-缺点：比同步控制方式稍复杂一些，速度比同步定时方式慢&lt;/li&gt;
-&lt;/ol&gt;
-&lt;ul&gt;
-&lt;li&gt;根据 “请求” 和 “回答” 的撤销是否互锁分为
-&lt;ul&gt;
-&lt;li&gt;不互锁方式：发出请求不必等回答，一段时间后自动撤销请求信号。收到请求信号后发出回答信号，一段时间后自动撤销回答信号。（速度最快 可靠性最差）&lt;/li&gt;
-&lt;li&gt;半互锁方式：发出请求后等待收到回答信号才撤销请求信号。收到请求信号后发出回答信号，一段时间后自动撤销回答信号。&lt;/li&gt;
-&lt;li&gt;全互锁方式：发出请求后等待收到回答信号才撤销请求信号，收到请求信号后发出回答，必须获知请求信号撤销之后才撤销回答信号（最可靠 速度最慢）&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;异步串行通信的方式一步串行通信的第一位是开始位，表示字符传送的开始。铜芯线上没有数据传送时处于逻辑 &amp;quot;1&amp;quot; 状态，发出逻辑 &amp;quot;0&amp;quot; 为开始位在从最低位开始传输信号。发送完字符之后可以发送几奇偶校验（若有），之后发送停止位。&lt;/p&gt;
-&lt;ol start=&#34;3&#34;&gt;
-&lt;li&gt;
-&lt;p&gt;半同步定时方式&lt;br&gt;
-&lt;img data-src=&#34;f1.jpg&#34; alt&gt;&lt;br&gt;
-保留时钟信号的同时增设 Wait 响应信号线，Wait=1 的时候才取数据&lt;br&gt;
-优点：控制方式比异步简单&lt;br&gt;
-缺点：时钟频率不能太高&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;分离式定时方式&lt;br&gt;
-将总线事务分解为请求和应答两个子过程。第一个子过程中，主设备发送命令、地址到总线上，发完立即释放总线（第一个字过程很短）。第二个另外以个设备接受命令并发送数据到总线。两个子过程都只有单向信息流，每个设备都变为主设备。&lt;br&gt;
-&lt;img data-src=&#34;f2.jpg&#34; alt&gt;&lt;br&gt;
-&lt;img data-src=&#34;f3.jpg&#34; alt&gt;&lt;br&gt;
-在空闲阶段释放总线使总线可接受其他设备的请求&lt;br&gt;
-控制复杂，开销大&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
  ]]></description>
         </item>
         <item>
@@ -2062,6 +2164,78 @@ TLB 用 &lt;code&gt;SRAM&lt;/code&gt;  实现，不在主存中，工作原理�
  ]]></description>
         </item>
         <item>
+            <guid isPermalink="true">http://example.com/2025/06/18/computer-science/compile-principles/ch11/</guid>
+            <title>Register Allocation</title>
+            <link>http://example.com/2025/06/18/computer-science/compile-principles/ch11/</link>
+            <category>Register Allocation</category>
+            <pubDate>Wed, 18 Jun 2025 00:00:00 +0800</pubDate>
+            <description><![CDATA[ &lt;h1 id=&#34;register-allocation&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#register-allocation&#34;&gt;#&lt;/a&gt; Register Allocation&lt;/h1&gt;
+&lt;p&gt;目标：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Map temporaries to registers&lt;/li&gt;
+&lt;li&gt;Preserve program semantics&lt;/li&gt;
+&lt;li&gt;Optimize performance&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;图着色算法&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#图着色算法&#34;&gt;#&lt;/a&gt; 图着色算法&lt;/h2&gt;
+&lt;p&gt;冲突图是一个无向图，冲突图中，每个节点是一个变量（寄存器分配的候选对象）。&lt;br&gt;
+如果两个变量在同一时刻是活跃的（live），它们就有冲突边（interference edge），表示它们不能被分配到同一个寄存器&lt;br&gt;
+冲突信息可以用矩阵或者图来表示&lt;/p&gt;
+&lt;h3 id=&#34;冲突图构建&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#冲突图构建&#34;&gt;#&lt;/a&gt; 冲突图构建&lt;/h3&gt;
+&lt;p&gt;我们从一个中间代码的指令出发，根据 live-out（就是 out 集合）添加冲突边：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;非 move 指令（不是 a := b 这种）&lt;br&gt;
+比如 a := b1 + b2&lt;br&gt;
+ 对于每个 bn 和 a 之间都添加冲突边&lt;br&gt;
+比如下面这个例子：&lt;br&gt;
+&lt;img data-src=&#34;f1.jpg&#34; alt&gt;&lt;br&gt;
+可以看到有 ab ac 同时 live 了，所以为 a 和 b，a 和 c 添加冲突边&lt;/li&gt;
+&lt;li&gt;move 指令&lt;br&gt;
+对于 move 指令，不添加冲突边：&lt;br&gt;
+比如对于第 2 条指令 d ← a，out [2] = {a, e}，那么只对 d 和 e 添加冲突边，对 d 和 a 不添加&lt;br&gt;
+但如果 move 之后又对 d 重新赋值了，那么还是要添加上 d 和 a 之间的冲突边&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;冲突图着色&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#冲突图着色&#34;&gt;#&lt;/a&gt; 冲突图着色&lt;/h3&gt;
+&lt;p&gt;Vertex Coloring: 给图中的顶点着色，使得图中没有边连接相同颜色的顶点&lt;br&gt;
+ K-Coloring: 颜色数小于 K&lt;/p&gt;
+&lt;h4 id=&#34;kempe-简化&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#kempe-简化&#34;&gt;#&lt;/a&gt; Kempe 简化&lt;/h4&gt;
+&lt;p&gt;如果图中有一个节点 n 的度数 &amp;lt;K（也就是它的冲突数少于寄存器数），那我们可以 “临时删掉” 这个节点，并递归给剩下的图上色。之后再把这个节点加回来，它一定可以找到一个合法颜色。&lt;/p&gt;
+&lt;p&gt;如果图中所有节点的度数都 ≥ K，那就可能要进入溢出（spill）处理&lt;br&gt;
+算法步骤：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;build: 画冲突图&lt;/li&gt;
+&lt;li&gt;simplify the nodes with insignificant degree: 选取 degree &amp;lt; k 的节点，压栈&lt;/li&gt;
+&lt;li&gt;select (or color) while rebuilding the graph: 出栈，分配颜色&lt;br&gt;
+ A vertex such that its degree &amp;lt; k is always k-colorable&lt;br&gt;
+Remove such vertices and push them to a stack until the graph becomes empty&lt;br&gt;
+ 移除顶点的同时移除相关边&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;coalescing&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#coalescing&#34;&gt;#&lt;/a&gt; Coalescing&lt;/h4&gt;
+&lt;p&gt;遵循两种策略：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Briggs Criteria&lt;/strong&gt;: 如果将节点  &lt;code&gt;a&lt;/code&gt;  和  &lt;code&gt;b&lt;/code&gt;  合并后得到的新节点  &lt;code&gt;ab&lt;/code&gt; ，其相邻节点中 degree &amp;gt;= K 的节点（significant-degree neighbors）的数量 小于 K，则可以合并&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;George Criteria&lt;/strong&gt;: 如果对节点  &lt;code&gt;a&lt;/code&gt;  和  &lt;code&gt;b&lt;/code&gt; ，对于  &lt;code&gt;a&lt;/code&gt;  的每一个邻居  &lt;code&gt;t&lt;/code&gt; ， 满足二者其中之一，就能合并：
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;t&lt;/code&gt;  本来就和  &lt;code&gt;b&lt;/code&gt;  有冲突&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;t&lt;/code&gt;  的 degree &amp;lt; K&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;整体流程：&lt;br&gt;
+&lt;img data-src=&#34;f2.jpg&#34; alt&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;为什么要 simplify non-move-related node: 保留 move-related 的后续可以合并&lt;/li&gt;
+&lt;li&gt;freeze: 当我们遇到两个变量 a ← b 有 move 指令，但现在还不能安全合并，我们又不想立刻 spill，于是我们 “冻结” 这条 move 指令：不再试图合并 a 和 b，而是让其中一个变成非 move 相关（non-move-related），进入 Simplify 阶段继续处理&lt;/li&gt;
+&lt;li&gt;spill 规则：优先移除不被经常使用、degree 大的节点
+&lt;ul&gt;
+&lt;li&gt;实际溢出的 priority 计算，对于节点 a：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;span class=&#34;katex-display&#34;&gt;&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34; display=&#34;block&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;p&lt;/mi&gt;&lt;mi&gt;r&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mi&gt;o&lt;/mi&gt;&lt;mi&gt;r&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mo stretchy=&#34;false&#34;&gt;(&lt;/mo&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mo stretchy=&#34;false&#34;&gt;)&lt;/mo&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mfrac&gt;&lt;mrow&gt;&lt;mo stretchy=&#34;false&#34;&gt;(&lt;/mo&gt;&lt;mi&gt;u&lt;/mi&gt;&lt;mi&gt;s&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mi&gt;d&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mi&gt;o&lt;/mi&gt;&lt;mi&gt;u&lt;/mi&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mi&gt;s&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mi&gt;d&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mi&gt;l&lt;/mi&gt;&lt;mi&gt;o&lt;/mi&gt;&lt;mi&gt;o&lt;/mi&gt;&lt;mi&gt;p&lt;/mi&gt;&lt;mo stretchy=&#34;false&#34;&gt;)&lt;/mo&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mi&gt;l&lt;/mi&gt;&lt;mi&gt;o&lt;/mi&gt;&lt;mi&gt;o&lt;/mi&gt;&lt;msub&gt;&lt;mi&gt;p&lt;/mi&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;/msub&gt;&lt;mi&gt;u&lt;/mi&gt;&lt;mi&gt;m&lt;/mi&gt;&lt;mo&gt;∗&lt;/mo&gt;&lt;mo stretchy=&#34;false&#34;&gt;(&lt;/mo&gt;&lt;mi&gt;u&lt;/mi&gt;&lt;mi&gt;s&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mi&gt;d&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mi&gt;s&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mi&gt;d&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mi&gt;l&lt;/mi&gt;&lt;mi&gt;o&lt;/mi&gt;&lt;mi&gt;o&lt;/mi&gt;&lt;mi&gt;p&lt;/mi&gt;&lt;mo stretchy=&#34;false&#34;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;mi&gt;D&lt;/mi&gt;&lt;/mfrac&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;priority(t) = \frac{(use + def outside loop) + loop_num * (use + def inside loop)}{D}
+&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:1em;vertical-align:-0.25em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;p&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.02778em;&#34;&gt;r&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;o&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.02778em;&#34;&gt;r&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;t&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.03588em;&#34;&gt;y&lt;/span&gt;&lt;span class=&#34;mopen&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;t&lt;/span&gt;&lt;span class=&#34;mclose&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mrel&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:2.113em;vertical-align:-0.686em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mopen nulldelimiter&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mfrac&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:1.427em;&#34;&gt;&lt;span style=&#34;top:-2.314em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:3em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.02778em;&#34;&gt;D&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;top:-3.23em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:3em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;frac-line&#34; style=&#34;border-bottom-width:0.04em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;top:-3.677em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:3em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mopen&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;u&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;s&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mbin&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;d&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.10764em;&#34;&gt;f&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;o&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;u&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;t&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;s&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;d&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.01968em;&#34;&gt;l&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;o&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;o&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;p&lt;/span&gt;&lt;span class=&#34;mclose&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mbin&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.01968em;&#34;&gt;l&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;o&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;o&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;p&lt;/span&gt;&lt;span class=&#34;msupsub&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.151392em;&#34;&gt;&lt;span style=&#34;top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.7em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mathnormal mtight&#34;&gt;n&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.15em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;u&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;m&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mbin&#34;&gt;∗&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mopen&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;u&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;s&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mbin&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;d&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.10764em;&#34;&gt;f&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;s&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;d&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.01968em;&#34;&gt;l&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;o&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;o&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;p&lt;/span&gt;&lt;span class=&#34;mclose&#34;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.686em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;mclose nulldelimiter&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+ ]]></description>
+        </item>
+        <item>
             <guid isPermalink="true">http://example.com/2025/06/18/computer-science/compile-principles/ch10/</guid>
             <title>Liveness Analysis</title>
             <link>http://example.com/2025/06/18/computer-science/compile-principles/ch10/</link>
@@ -2151,78 +2325,6 @@ TLB 用 &lt;code&gt;SRAM&lt;/code&gt;  实现，不在主存中，工作原理�
 &lt;p&gt;有点像 bit map，适用于稠密集合（1 比较多的，如果 0 太多就浪费了）&lt;/p&gt;
 &lt;h3 id=&#34;sorted-lists&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#sorted-lists&#34;&gt;#&lt;/a&gt; Sorted Lists&lt;/h3&gt;
 &lt;p&gt;适合稀疏集合（用一个链表存集合中的变量，Sorted by variable name/ID）&lt;/p&gt;
- ]]></description>
-        </item>
-        <item>
-            <guid isPermalink="true">http://example.com/2025/06/18/computer-science/compile-principles/ch11/</guid>
-            <title>Register Allocation</title>
-            <link>http://example.com/2025/06/18/computer-science/compile-principles/ch11/</link>
-            <category>Register Allocation</category>
-            <pubDate>Wed, 18 Jun 2025 00:00:00 +0800</pubDate>
-            <description><![CDATA[ &lt;h1 id=&#34;register-allocation&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#register-allocation&#34;&gt;#&lt;/a&gt; Register Allocation&lt;/h1&gt;
-&lt;p&gt;目标：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Map temporaries to registers&lt;/li&gt;
-&lt;li&gt;Preserve program semantics&lt;/li&gt;
-&lt;li&gt;Optimize performance&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;图着色算法&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#图着色算法&#34;&gt;#&lt;/a&gt; 图着色算法&lt;/h2&gt;
-&lt;p&gt;冲突图是一个无向图，冲突图中，每个节点是一个变量（寄存器分配的候选对象）。&lt;br&gt;
-如果两个变量在同一时刻是活跃的（live），它们就有冲突边（interference edge），表示它们不能被分配到同一个寄存器&lt;br&gt;
-冲突信息可以用矩阵或者图来表示&lt;/p&gt;
-&lt;h3 id=&#34;冲突图构建&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#冲突图构建&#34;&gt;#&lt;/a&gt; 冲突图构建&lt;/h3&gt;
-&lt;p&gt;我们从一个中间代码的指令出发，根据 live-out（就是 out 集合）添加冲突边：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;非 move 指令（不是 a := b 这种）&lt;br&gt;
-比如 a := b1 + b2&lt;br&gt;
- 对于每个 bn 和 a 之间都添加冲突边&lt;br&gt;
-比如下面这个例子：&lt;br&gt;
-&lt;img data-src=&#34;f1.jpg&#34; alt&gt;&lt;br&gt;
-可以看到有 ab ac 同时 live 了，所以为 a 和 b，a 和 c 添加冲突边&lt;/li&gt;
-&lt;li&gt;move 指令&lt;br&gt;
-对于 move 指令，不添加冲突边：&lt;br&gt;
-比如对于第 2 条指令 d ← a，out [2] = {a, e}，那么只对 d 和 e 添加冲突边，对 d 和 a 不添加&lt;br&gt;
-但如果 move 之后又对 d 重新赋值了，那么还是要添加上 d 和 a 之间的冲突边&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3 id=&#34;冲突图着色&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#冲突图着色&#34;&gt;#&lt;/a&gt; 冲突图着色&lt;/h3&gt;
-&lt;p&gt;Vertex Coloring: 给图中的顶点着色，使得图中没有边连接相同颜色的顶点&lt;br&gt;
- K-Coloring: 颜色数小于 K&lt;/p&gt;
-&lt;h4 id=&#34;kempe-简化&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#kempe-简化&#34;&gt;#&lt;/a&gt; Kempe 简化&lt;/h4&gt;
-&lt;p&gt;如果图中有一个节点 n 的度数 &amp;lt;K（也就是它的冲突数少于寄存器数），那我们可以 “临时删掉” 这个节点，并递归给剩下的图上色。之后再把这个节点加回来，它一定可以找到一个合法颜色。&lt;/p&gt;
-&lt;p&gt;如果图中所有节点的度数都 ≥ K，那就可能要进入溢出（spill）处理&lt;br&gt;
-算法步骤：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;build: 画冲突图&lt;/li&gt;
-&lt;li&gt;simplify the nodes with insignificant degree: 选取 degree &amp;lt; k 的节点，压栈&lt;/li&gt;
-&lt;li&gt;select (or color) while rebuilding the graph: 出栈，分配颜色&lt;br&gt;
- A vertex such that its degree &amp;lt; k is always k-colorable&lt;br&gt;
-Remove such vertices and push them to a stack until the graph becomes empty&lt;br&gt;
- 移除顶点的同时移除相关边&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h4 id=&#34;coalescing&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#coalescing&#34;&gt;#&lt;/a&gt; Coalescing&lt;/h4&gt;
-&lt;p&gt;遵循两种策略：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Briggs Criteria&lt;/strong&gt;: 如果将节点  &lt;code&gt;a&lt;/code&gt;  和  &lt;code&gt;b&lt;/code&gt;  合并后得到的新节点  &lt;code&gt;ab&lt;/code&gt; ，其相邻节点中 degree &amp;gt;= K 的节点（significant-degree neighbors）的数量 小于 K，则可以合并&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;George Criteria&lt;/strong&gt;: 如果对节点  &lt;code&gt;a&lt;/code&gt;  和  &lt;code&gt;b&lt;/code&gt; ，对于  &lt;code&gt;a&lt;/code&gt;  的每一个邻居  &lt;code&gt;t&lt;/code&gt; ， 满足二者其中之一，就能合并：
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;t&lt;/code&gt;  本来就和  &lt;code&gt;b&lt;/code&gt;  有冲突&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;t&lt;/code&gt;  的 degree &amp;lt; K&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;整体流程：&lt;br&gt;
-&lt;img data-src=&#34;f2.jpg&#34; alt&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;为什么要 simplify non-move-related node: 保留 move-related 的后续可以合并&lt;/li&gt;
-&lt;li&gt;freeze: 当我们遇到两个变量 a ← b 有 move 指令，但现在还不能安全合并，我们又不想立刻 spill，于是我们 “冻结” 这条 move 指令：不再试图合并 a 和 b，而是让其中一个变成非 move 相关（non-move-related），进入 Simplify 阶段继续处理&lt;/li&gt;
-&lt;li&gt;spill 规则：优先移除不被经常使用、degree 大的节点
-&lt;ul&gt;
-&lt;li&gt;实际溢出的 priority 计算，对于节点 a：&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;span class=&#34;katex-display&#34;&gt;&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34; display=&#34;block&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;p&lt;/mi&gt;&lt;mi&gt;r&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mi&gt;o&lt;/mi&gt;&lt;mi&gt;r&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mo stretchy=&#34;false&#34;&gt;(&lt;/mo&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mo stretchy=&#34;false&#34;&gt;)&lt;/mo&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mfrac&gt;&lt;mrow&gt;&lt;mo stretchy=&#34;false&#34;&gt;(&lt;/mo&gt;&lt;mi&gt;u&lt;/mi&gt;&lt;mi&gt;s&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mi&gt;d&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mi&gt;o&lt;/mi&gt;&lt;mi&gt;u&lt;/mi&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mi&gt;s&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mi&gt;d&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mi&gt;l&lt;/mi&gt;&lt;mi&gt;o&lt;/mi&gt;&lt;mi&gt;o&lt;/mi&gt;&lt;mi&gt;p&lt;/mi&gt;&lt;mo stretchy=&#34;false&#34;&gt;)&lt;/mo&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mi&gt;l&lt;/mi&gt;&lt;mi&gt;o&lt;/mi&gt;&lt;mi&gt;o&lt;/mi&gt;&lt;msub&gt;&lt;mi&gt;p&lt;/mi&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;/msub&gt;&lt;mi&gt;u&lt;/mi&gt;&lt;mi&gt;m&lt;/mi&gt;&lt;mo&gt;∗&lt;/mo&gt;&lt;mo stretchy=&#34;false&#34;&gt;(&lt;/mo&gt;&lt;mi&gt;u&lt;/mi&gt;&lt;mi&gt;s&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mi&gt;d&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mi&gt;s&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mi&gt;d&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mi&gt;l&lt;/mi&gt;&lt;mi&gt;o&lt;/mi&gt;&lt;mi&gt;o&lt;/mi&gt;&lt;mi&gt;p&lt;/mi&gt;&lt;mo stretchy=&#34;false&#34;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;mi&gt;D&lt;/mi&gt;&lt;/mfrac&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;priority(t) = \frac{(use + def outside loop) + loop_num * (use + def inside loop)}{D}
-&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:1em;vertical-align:-0.25em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;p&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.02778em;&#34;&gt;r&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;o&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.02778em;&#34;&gt;r&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;t&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.03588em;&#34;&gt;y&lt;/span&gt;&lt;span class=&#34;mopen&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;t&lt;/span&gt;&lt;span class=&#34;mclose&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mrel&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:2.113em;vertical-align:-0.686em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mopen nulldelimiter&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mfrac&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:1.427em;&#34;&gt;&lt;span style=&#34;top:-2.314em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:3em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.02778em;&#34;&gt;D&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;top:-3.23em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:3em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;frac-line&#34; style=&#34;border-bottom-width:0.04em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;top:-3.677em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:3em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mopen&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;u&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;s&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mbin&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;d&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.10764em;&#34;&gt;f&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;o&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;u&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;t&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;s&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;d&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.01968em;&#34;&gt;l&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;o&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;o&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;p&lt;/span&gt;&lt;span class=&#34;mclose&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mbin&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.01968em;&#34;&gt;l&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;o&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;o&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;p&lt;/span&gt;&lt;span class=&#34;msupsub&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.151392em;&#34;&gt;&lt;span style=&#34;top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.7em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mathnormal mtight&#34;&gt;n&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.15em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;u&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;m&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mbin&#34;&gt;∗&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mopen&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;u&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;s&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mbin&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;d&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.10764em;&#34;&gt;f&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;s&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;d&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.01968em;&#34;&gt;l&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;o&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;o&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;p&lt;/span&gt;&lt;span class=&#34;mclose&#34;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.686em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;mclose nulldelimiter&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
  ]]></description>
         </item>
         <item>
