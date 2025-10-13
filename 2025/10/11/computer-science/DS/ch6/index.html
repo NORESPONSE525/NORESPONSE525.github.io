@@ -76,7 +76,7 @@ NoResponse's Blog = NoResponse's Blog</title>
       <i class="ic i-pen"></i>
     </span>
     <span class="text">Symbols count in article</span>
-    <span>3.5k</span>
+    <span>5.4k</span>
     <span class="text">words</span>
   </span>
   <span class="item" title="Reading time">
@@ -84,7 +84,7 @@ NoResponse's Blog = NoResponse's Blog</title>
       <i class="ic i-clock"></i>
     </span>
     <span class="text">Reading time</span>
-    <span>3 mins.</span>
+    <span>5 mins.</span>
   </span>
 </div>
 
@@ -116,7 +116,7 @@ NoResponse's Blog = NoResponse's Blog</title>
 
       </div>
       <div id="imgs" class="pjax">
-          <img src="/images/bg6.jpg">
+          <img src="/images/bg5.jpg">
       </div>
     </header>
     <div id="waves">
@@ -291,8 +291,167 @@ w_{ij}, &amp; \text{如果顶点 } i \text{ 和 } j \text{ 之间有边，权重
 </ul>
 <figure class="highlight c++"><figcaption><span>BFS求最短路径</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">BFS_MIN_Distance</span><span class="params">(ALGraph G, <span class="type">int</span> u, <span class="type">int</span> target)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 初始化</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; G.vexnum; i++) &#123;</span><br><span class="line">        d[i] = INF;</span><br><span class="line">        pre[i] = <span class="number">-1</span>;</span><br><span class="line">        visited[i] = <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">visit</span>(u);</span><br><span class="line">    visited[u] = <span class="literal">true</span>;</span><br><span class="line">    d[u] = <span class="number">0</span>;</span><br><span class="line">    pre[u] = <span class="number">-1</span>;</span><br><span class="line">    <span class="built_in">EnQueue</span>(Q, u);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> (!<span class="built_in">IsEmpty</span>(Q)) &#123;</span><br><span class="line">        <span class="type">int</span> v;</span><br><span class="line">        <span class="built_in">Dequeue</span>(Q, v);</span><br><span class="line">        <span class="keyword">for</span> (anto p = G.vertices[v].firstarc; p; p = p-&gt;nextarc) &#123;</span><br><span class="line">            <span class="type">int</span> w = p-&gt;adjvex;</span><br><span class="line">            <span class="keyword">if</span> (!visited[w]) &#123;</span><br><span class="line">                visited[w] = <span class="literal">true</span>;</span><br><span class="line">                <span class="built_in">visit</span>(w);</span><br><span class="line">                d[w] = d[v] + <span class="number">1</span>;  <span class="comment">// 距离 = 前驱距离 + 1</span></span><br><span class="line">                pre[w] = v;       <span class="comment">// 记录前驱</span></span><br><span class="line">                <span class="built_in">EnQueue</span>(Q, w);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ol start="2">
-<li>DFS</li>
+<li>DFS<br>
+ 用栈实现</li>
 </ol>
+<figure class="highlight c++"><figcaption><span>DFS邻接表实现</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">DFS</span><span class="params">(ALGraph G, <span class="type">int</span> i)</span></span>&#123;</span><br><span class="line">    <span class="built_in">visit</span>(i);</span><br><span class="line">    visited[i] = <span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">auto</span> p=G.vertices[i].firstarc; p; p=p-&gt;nextarc)&#123;</span><br><span class="line">        j = p-&gt;adjvex;</span><br><span class="line">        <span class="keyword">if</span>(!visited[j])&#123;</span><br><span class="line">            <span class="built_in">DFS</span>(G, j);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>时间复杂度：<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi mathvariant="normal">∣</mi><mi>V</mi><mi mathvariant="normal">∣</mi><mo>+</mo><mi mathvariant="normal">∣</mi><mi>E</mi><mi mathvariant="normal">∣</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(|V|+|E|)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">∣</span><span class="mord mathnormal" style="margin-right:0.22222em;">V</span><span class="mord">∣</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">∣</span><span class="mord mathnormal" style="margin-right:0.05764em;">E</span><span class="mord">∣</span><span class="mclose">)</span></span></span></span></p>
+<figure class="highlight c++"><figcaption><span>DFS邻接矩阵实现</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">DFS</span><span class="params">(MGraph G, <span class="type">int</span> i)</span></span>&#123;</span><br><span class="line">    <span class="built_in">visit</span>(i);</span><br><span class="line">    visited[i] = <span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">0</span>; j&lt;G.vexnum; j++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(G.edge[i][j] &amp;&amp; !visited[j])&#123;</span><br><span class="line">            <span class="built_in">DFS</span>(G, j);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>时间复杂度：<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi mathvariant="normal">∣</mi><mi>V</mi><msup><mi mathvariant="normal">∣</mi><mn>2</mn></msup><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(|V|^2)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">∣</span><span class="mord mathnormal" style="margin-right:0.22222em;">V</span><span class="mord"><span class="mord">∣</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span><br>
+ 如果是非连通图，则需要多次调用 DFS（再扫描一次 visit 数组，找到未访问的顶点然后继续调用 DFS）</p>
+<h2 id="图的应用"><a class="markdownIt-Anchor" href="#图的应用">#</a> 图的应用</h2>
+<h3 id="最小生成树-mst"><a class="markdownIt-Anchor" href="#最小生成树-mst">#</a> 最小生成树 MST</h3>
+<p>最小生成树：从连通无向图中找出一棵树（包含所有 n 个节点和 n-1 条边），同时边的权重之和要最小</p>
+<ol>
+<li>Prim 算法<br>
+随便取一个根节点记作 visited，不断寻找 visited 节点和 unvisited 节点之间权重最小的边<br>
+初始的时候只有一个结点，<mark>从顶点开始每次找到和已有的结点距离最小的边</mark>，加入树中，直到树中顶点数等于顶点数（每次要保证树是连通的且没有回路）<br>
+时间复杂度：<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi mathvariant="normal">∣</mi><mi>V</mi><msup><mi mathvariant="normal">∣</mi><mn>2</mn></msup><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(|V|^2)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">∣</span><span class="mord mathnormal" style="margin-right:0.22222em;">V</span><span class="mord"><span class="mord">∣</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span>，适用于求稠密图的最小生成树</li>
+<li>Kruskal 算法<br>
+每次找到距离最短的边，加入树中，直到所有顶点都在一个连通分量上<br>
+ 1）创建一个队列，将边按权重排序，最小的在最上面；（2）从顶端不断 dequeue，如果符合不在同一棵树里就接受那条边</li>
+</ol>
+<h3 id="最短路径"><a class="markdownIt-Anchor" href="#最短路径">#</a> 最短路径</h3>
+<ol>
+<li>
+<p>Dijkstra 算法<br>
+有权图的单源最短路算法<br>
+求从源点到其他点的最短路径：每次选距离最近的点，更新源点到其他点的最短距离<br>
+一开始和其他点的距离全都初始化为 <code>INF</code> ，和自己的距离为 0，每次在 unvisited 的结点中找距离最小的 visit，然后看这个结点的邻接点，新的距离比旧距离小则更新<br>
+画一个表，分别是是否 visit、编号、距离和路径，每次取 unvisited 里最小的</p>
+</li>
+<li>
+<p>Floyd 算法<br>
+多源最短路算法，求所有顶点之间的最短路径<br>
+递归产生一个 n 阶方阵序列<br>
+直接看例子：<br>
+<img data-src="f9.jpg" alt><br>
+路径就是加起来的两个值的路径</p>
+</li>
+</ol>
+<h3 id="有向无环图描述表达式"><a class="markdownIt-Anchor" href="#有向无环图描述表达式">#</a> 有向无环图描述表达式</h3>
+<p>有向图中不存在环，则称为有向无环图，DAG<br>
+<img data-src="f10.jpg" alt><br>
+ 先用树表示，然后把能合并的合并到一起，得到一个有向无环图</p>
+<details class="primary"><summary></summary><div>
+<p><img data-src="f11.png" alt><br>
+<img data-src="f12.png" alt><br>
+<img data-src="f13.png" alt></p>
+</div></details>
+<h3 id="拓扑排序"><a class="markdownIt-Anchor" href="#拓扑排序">#</a> 拓扑排序</h3>
+<p>AOV 图顶点表示活动，边表示活动间的依赖关系</p>
+<ul>
+<li>拓扑排序<br>
+当且仅当一个有向图为有向无环图（directed acyclic graph，或称 DAG）时，才能得到对应于该图的拓扑排序。每一个有向无环图都至少存在一种拓扑排序。</li>
+</ul>
+<p>方法：不断寻找入度为 0 的节点 pop 出去，删除该节点和相关的边<br>
+采用邻接表时，时间复杂度为<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi mathvariant="normal">∣</mi><mi>V</mi><mi mathvariant="normal">∣</mi><mo>+</mo><mi mathvariant="normal">∣</mi><mi>E</mi><mi mathvariant="normal">∣</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(|V|+|E|)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">∣</span><span class="mord mathnormal" style="margin-right:0.22222em;">V</span><span class="mord">∣</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">∣</span><span class="mord mathnormal" style="margin-right:0.05764em;">E</span><span class="mord">∣</span><span class="mclose">)</span></span></span></span>，采用邻接矩阵时，时间复杂度为<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi mathvariant="normal">∣</mi><mi>V</mi><msup><mi mathvariant="normal">∣</mi><mn>2</mn></msup><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(|V|^2)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">∣</span><span class="mord mathnormal" style="margin-right:0.22222em;">V</span><span class="mord"><span class="mord">∣</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span><br>
+ 序列不唯一<br>
+<img data-src="f14.png" alt></p>
+<ul>
+<li>
+<p>逆拓扑排序<br>
+<img data-src="f15.png" alt><br>
+每次删除出度为 0 的顶点，并把该顶点的邻接点出度减 1<br>
+ 序列不唯一</p>
+</li>
+<li>
+<p>用 dfs 实现拓扑排序<br>
+<img data-src="f16.jpg" alt></p>
+</li>
+</ul>
+<h3 id="aoe网"><a class="markdownIt-Anchor" href="#aoe网">#</a> AOE 网</h3>
+<p>边表示活动，顶点表示事件</p>
+<ol>
+<li>只有在某顶点所代表的事件发生后，从该顶点出发的各有向边所代表的活动才能开始；</li>
+<li>只有在进入某顶点的各有向边所代表的活动都已结束时，该顶点所代表的事件才能发生（所以事件的最早开始时间要取最大的）</li>
+</ol>
+<blockquote>
+<p>求事件的最早开始时间和最晚完成时间<br>
+<img data-src="f17.png" alt><br>
+ V 代表事件，a 代表活动</p>
+</blockquote>
+<p>先求事件（V）：</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>V1</th>
+<th>V2</th>
+<th>V3</th>
+<th>V4</th>
+<th>V5</th>
+<th>V6</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>最早开始时间</td>
+<td>0</td>
+<td>3</td>
+<td>2</td>
+<td>6</td>
+<td>6</td>
+<td>8</td>
+</tr>
+<tr>
+<td>最晚完成时间</td>
+<td>0</td>
+<td>4</td>
+<td>2</td>
+<td>6</td>
+<td>7</td>
+<td>8</td>
+</tr>
+</tbody>
+</table>
+<p>最早开始时间<mark>从前往后取最大的</mark>（V1 填 0，V4 有 V1-&gt;V2-&gt;V4 和 V1-&gt;V3-&gt;V4 两条，取大的是 6）<br>
+最晚完成时间<mark>从后往前推 (用最早开始时间 - a），取最小的</mark>（V6 填 8，V5=V6-1，V3 有 V6-&gt;V3 和 V6-&gt;V4-&gt;V3 两条，取最小的 V4-4=2）</p>
+<p><mark>最早开始时间 = 最晚完成时间 —— 关键路径</mark></p>
+<p>活动（A）：</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>a1</th>
+<th>a2</th>
+<th>a3</th>
+<th>a4</th>
+<th>a5</th>
+<th>a6</th>
+<th>a7</th>
+<th>a8</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>最早开始时间</td>
+<td>0</td>
+<td>0</td>
+<td>3</td>
+<td>3</td>
+<td>2</td>
+<td>2</td>
+<td>6</td>
+<td>6</td>
+</tr>
+<tr>
+<td>最晚完成时间</td>
+<td>1</td>
+<td>0</td>
+<td>4</td>
+<td>4</td>
+<td>2</td>
+<td>5</td>
+<td>6</td>
+<td>7</td>
+</tr>
+</tbody>
+</table>
+<p>最早开始时间取箭头的出发点的最早开始时间，最晚完成时间取箭头指向的点的最晚完成时间 - a</p>
+<p><mark>最早开始时间 = 最晚完成时间 —— 关键活动</mark></p>
+<h3 id="各种时间复杂度"><a class="markdownIt-Anchor" href="#各种时间复杂度">#</a> 各种时间复杂度</h3>
+<p><img data-src="f18.jpg" alt></p>
 
       <div class="tags">
           <a href="/tags/%E5%9B%BE%E8%AE%BA/" rel="tag"><i class="ic i-tag"></i> 图论</a>
@@ -307,7 +466,7 @@ w_{ij}, &amp; \text{如果顶点 } i \text{ 和 } j \text{ 之间有边，权重
       <i class="ic i-calendar-check"></i>
     </span>
     <span class="text">Edited on</span>
-    <time title="Modified: 2025-10-12 15:34:27" itemprop="dateModified" datetime="2025-10-12T15:34:27+08:00">2025-10-12</time>
+    <time title="Modified: 2025-10-13 17:43:02" itemprop="dateModified" datetime="2025-10-13T17:43:02+08:00">2025-10-13</time>
   </span>
 </div>
 
@@ -362,7 +521,7 @@ w_{ij}, &amp; \text{如果顶点 } i \text{ 和 } j \text{ 之间有边，权重
     <div class="item left">
       
 
-  <a href="/2025/10/10/computer-science/DS/ch5/" itemprop="url" rel="prev" data-background-image="&#x2F;images&#x2F;bg3.png" title="ch5">
+  <a href="/2025/10/10/computer-science/DS/ch5/" itemprop="url" rel="prev" data-background-image="&#x2F;images&#x2F;bg22.png" title="ch5">
   <span class="type">Previous Post</span>
   <span class="category"><i class="ic i-flag"></i> 数据结构</span>
   <h3>ch5</h3>
@@ -370,6 +529,14 @@ w_{ij}, &amp; \text{如果顶点 } i \text{ 和 } j \text{ 之间有边，权重
 
     </div>
     <div class="item right">
+      
+
+  <a href="/2025/10/13/computer-science/DS/ch7/" itemprop="url" rel="next" data-background-image="&#x2F;images&#x2F;bg13.jpg" title="ch7">
+  <span class="type">Next Post</span>
+  <span class="category"><i class="ic i-flag"></i> 数据结构</span>
+  <h3>ch7</h3>
+  </a>
+
     </div>
 </div>
 
@@ -386,11 +553,11 @@ w_{ij}, &amp; \text{如果顶点 } i \text{ 和 } j \text{ 之间有边，权重
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="Contents">
-          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#ch6"><span class="toc-number">1.</span> <span class="toc-text"> Ch6</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A6%82%E5%BF%B5"><span class="toc-number">1.1.</span> <span class="toc-text"> 概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%BE%E7%9A%84%E5%AD%98%E5%82%A8%E5%8F%8A%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C"><span class="toc-number">1.2.</span> <span class="toc-text"> 图的存储及基本操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%82%BB%E6%8E%A5%E7%9F%A9%E9%98%B5%E6%B3%95"><span class="toc-number">1.2.1.</span> <span class="toc-text"> 邻接矩阵法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%82%BB%E6%8E%A5%E8%A1%A8%E6%B3%95"><span class="toc-number">1.2.2.</span> <span class="toc-text"> 邻接表法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%81%E5%AD%97%E9%93%BE%E8%A1%A8"><span class="toc-number">1.2.3.</span> <span class="toc-text"> 十字链表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%82%BB%E6%8E%A5%E5%A4%9A%E9%87%8D%E8%A1%A8"><span class="toc-number">1.2.4.</span> <span class="toc-text"> 邻接多重表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%BE%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C"><span class="toc-number">1.2.5.</span> <span class="toc-text"> 图的基本操作</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%BE%E7%9A%84%E9%81%8D%E5%8E%86"><span class="toc-number">1.3.</span> <span class="toc-text"> 图的遍历</span></a></li></ol></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#ch6"><span class="toc-number">1.</span> <span class="toc-text"> Ch6</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A6%82%E5%BF%B5"><span class="toc-number">1.1.</span> <span class="toc-text"> 概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%BE%E7%9A%84%E5%AD%98%E5%82%A8%E5%8F%8A%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C"><span class="toc-number">1.2.</span> <span class="toc-text"> 图的存储及基本操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%82%BB%E6%8E%A5%E7%9F%A9%E9%98%B5%E6%B3%95"><span class="toc-number">1.2.1.</span> <span class="toc-text"> 邻接矩阵法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%82%BB%E6%8E%A5%E8%A1%A8%E6%B3%95"><span class="toc-number">1.2.2.</span> <span class="toc-text"> 邻接表法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%81%E5%AD%97%E9%93%BE%E8%A1%A8"><span class="toc-number">1.2.3.</span> <span class="toc-text"> 十字链表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%82%BB%E6%8E%A5%E5%A4%9A%E9%87%8D%E8%A1%A8"><span class="toc-number">1.2.4.</span> <span class="toc-text"> 邻接多重表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%BE%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C"><span class="toc-number">1.2.5.</span> <span class="toc-text"> 图的基本操作</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%BE%E7%9A%84%E9%81%8D%E5%8E%86"><span class="toc-number">1.3.</span> <span class="toc-text"> 图的遍历</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%BE%E7%9A%84%E5%BA%94%E7%94%A8"><span class="toc-number">1.4.</span> <span class="toc-text"> 图的应用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91-mst"><span class="toc-number">1.4.1.</span> <span class="toc-text"> 最小生成树 MST</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84"><span class="toc-number">1.4.2.</span> <span class="toc-text"> 最短路径</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%89%E5%90%91%E6%97%A0%E7%8E%AF%E5%9B%BE%E6%8F%8F%E8%BF%B0%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="toc-number">1.4.3.</span> <span class="toc-text"> 有向无环图描述表达式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F"><span class="toc-number">1.4.4.</span> <span class="toc-text"> 拓扑排序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#aoe%E7%BD%91"><span class="toc-number">1.4.5.</span> <span class="toc-text"> AOE 网</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%84%E7%A7%8D%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6"><span class="toc-number">1.4.6.</span> <span class="toc-text"> 各种时间复杂度</span></a></li></ol></li></ol></li></ol>
       </div>
       <div class="related panel pjax" data-title="Related">
         <ul>
-          <li><a href="/2023/10/31/computer-science/DS/fds/" rel="bookmark" title="fds课程笔记">fds课程笔记</a></li><li><a href="/2025/09/15/computer-science/DS/ch1/" rel="bookmark" title="ch1">ch1</a></li><li><a href="/2025/09/15/computer-science/DS/ch2/" rel="bookmark" title="ch2">ch2</a></li><li><a href="/2025/10/04/computer-science/DS/ch3/" rel="bookmark" title="ch3">ch3</a></li><li><a href="/2025/10/05/computer-science/DS/ch4/" rel="bookmark" title="ch4">ch4</a></li><li><a href="/2025/10/10/computer-science/DS/ch5/" rel="bookmark" title="ch5">ch5</a></li><li class="active"><a href="/2025/10/11/computer-science/DS/ch6/" rel="bookmark" title="ch6">ch6</a></li>
+          <li><a href="/2023/10/31/computer-science/DS/fds/" rel="bookmark" title="fds课程笔记">fds课程笔记</a></li><li><a href="/2025/09/15/computer-science/DS/ch1/" rel="bookmark" title="ch1">ch1</a></li><li><a href="/2025/09/15/computer-science/DS/ch2/" rel="bookmark" title="ch2">ch2</a></li><li><a href="/2025/10/04/computer-science/DS/ch3/" rel="bookmark" title="ch3">ch3</a></li><li><a href="/2025/10/05/computer-science/DS/ch4/" rel="bookmark" title="ch4">ch4</a></li><li><a href="/2025/10/10/computer-science/DS/ch5/" rel="bookmark" title="ch5">ch5</a></li><li class="active"><a href="/2025/10/11/computer-science/DS/ch6/" rel="bookmark" title="ch6">ch6</a></li><li><a href="/2025/10/13/computer-science/DS/ch8/" rel="bookmark" title="ch8">ch8</a></li><li><a href="/2025/10/13/computer-science/DS/ch7/" rel="bookmark" title="ch7">ch7</a></li>
         </ul>
       </div>
       <div class="overview panel" data-title="Overview">
@@ -404,7 +571,7 @@ w_{ij}, &amp; \text{如果顶点 } i \text{ 和 } j \text{ 之间有边，权重
 <nav class="state">
     <div class="item posts">
       <a href="/archives/">
-        <span class="count">40</span>
+        <span class="count">42</span>
         <span class="name">posts</span>
       </a>
     </div>
@@ -416,7 +583,7 @@ w_{ij}, &amp; \text{如果顶点 } i \text{ 和 } j \text{ 之间有边，权重
     </div>
     <div class="item tags">
       <a href="/tags/">
-        <span class="count">31</span>
+        <span class="count">33</span>
         <span class="name">tags</span>
       </a>
     </div>
@@ -479,10 +646,12 @@ w_{ij}, &amp; \text{如果顶点 } i \text{ 和 } j \text{ 之间有边，权重
 
   <ul id="quick">
     <li class="prev pjax">
+        <a href="/2025/10/10/computer-science/DS/ch5/" rel="prev" title="Previous Post"><i class="ic i-chevron-left"></i></a>
     </li>
     <li class="up"><i class="ic i-arrow-up"></i></li>
     <li class="down"><i class="ic i-arrow-down"></i></li>
     <li class="next pjax">
+        <a href="/2025/10/13/computer-science/DS/ch7/" rel="next" title="Next Post"><i class="ic i-chevron-right"></i></a>
     </li>
     <li class="percent"></li>
   </ul>
@@ -506,20 +675,10 @@ w_{ij}, &amp; \text{如果顶点 } i \text{ 和 } j \text{ 之间有边，权重
 <div class="breadcrumb">
 <a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/computer-organization/" title="In 计算机组成">计算机组成</a>
+<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
 </div>
 
-    <span><a href="/2025/05/13/computer-science/computer-organization/ch1/" title="Ch1">Ch1</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/AI/" title="In 人工智能">人工智能</a>
-</div>
-
-    <span><a href="/2025/05/20/AI/week2-3/" title="Week2-3">Week2-3</a></span>
+    <span><a href="/2025/03/23/computer-science/compile-principles/ch3/" title="语法分析">语法分析</a></span>
   </li>
 
       
@@ -528,10 +687,10 @@ w_{ij}, &amp; \text{如果顶点 } i \text{ 和 } j \text{ 之间有边，权重
 <div class="breadcrumb">
 <a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/computer-organization/" title="In 计算机组成">计算机组成</a>
+<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
 </div>
 
-    <span><a href="/2025/07/01/computer-science/computer-organization/%E9%94%99%E9%A2%98%E9%9B%86%E5%90%88/" title="错题集合">错题集合</a></span>
+    <span><a href="/2025/03/21/computer-science/compile-principles/ch1/" title="Introduction">Introduction</a></span>
   </li>
 
       
@@ -540,10 +699,10 @@ w_{ij}, &amp; \text{如果顶点 } i \text{ 和 } j \text{ 之间有边，权重
 <div class="breadcrumb">
 <a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/DS/" title="In 数据结构">数据结构</a>
+<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
 </div>
 
-    <span><a href="/2025/10/11/computer-science/DS/ch6/" title="ch6">ch6</a></span>
+    <span><a href="/2025/03/22/computer-science/compile-principles/ch2/" title="词法分析">词法分析</a></span>
   </li>
 
       
@@ -560,48 +719,20 @@ w_{ij}, &amp; \text{如果顶点 } i \text{ 和 } j \text{ 之间有边，权重
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/DS/" title="In 数据结构">数据结构</a>
+<a href="/categories/AI/" title="In 人工智能">人工智能</a>
 </div>
 
-    <span><a href="/2025/09/15/computer-science/DS/ch2/" title="ch2">ch2</a></span>
+    <span><a href="/2025/05/20/AI/week1/" title="Week1">Week1</a></span>
   </li>
 
       
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/computer-organization/" title="In 计算机组成">计算机组成</a>
+<a href="/categories/AI/" title="In 人工智能">人工智能</a>
 </div>
 
-    <span><a href="/2025/08/15/computer-science/computer-organization/ch7/" title="Ch7">Ch7</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/computer-organization/" title="In 计算机组成">计算机组成</a>
-</div>
-
-    <span><a href="/2025/05/14/computer-science/computer-organization/ch2/" title="Ch2">Ch2</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
-</div>
-
-    <span><a href="/2025/03/30/computer-science/compile-principles/ch5/" title="语义分析">语义分析</a></span>
+    <span><a href="/2025/06/16/AI/week14-15/" title="Week14-15">Week14-15</a></span>
   </li>
 
       
@@ -612,6 +743,38 @@ w_{ij}, &amp; \text{如果顶点 } i \text{ 和 } j \text{ 之间有边，权重
 </div>
 
     <span><a href="/2025/06/15/AI/week8-9/" title="Week8-9">Week8-9</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/AI/" title="In 人工智能">人工智能</a>
+</div>
+
+    <span><a href="/2025/06/16/AI/week10-11/" title="Week10-11">Week10-11</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/computer-organization/" title="In 计算机组成">计算机组成</a>
+</div>
+
+    <span><a href="/2025/08/01/computer-science/computer-organization/ch4/" title="Ch4">Ch4</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/AI/" title="In 人工智能">人工智能</a>
+</div>
+
+    <span><a href="/2025/05/20/AI/week2-3/" title="Week2-3">Week2-3</a></span>
   </li>
 
   </ul>
@@ -636,13 +799,13 @@ w_{ij}, &amp; \text{如果顶点 } i \text{ 和 } j \text{ 之间有边，权重
     <span class="post-meta-item-icon">
       <i class="ic i-chart-area"></i>
     </span>
-    <span title="Symbols count total">150k words</span>
+    <span title="Symbols count total">152k words</span>
 
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="ic i-coffee"></i>
     </span>
-    <span title="Reading time total">2:17</span>
+    <span title="Reading time total">2:18</span>
   </div>
   <div class="powered-by">
     Powered by <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
