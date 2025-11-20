@@ -32,7 +32,7 @@
 
 
   <title>
-C++八股 - C++ |
+C++相关 - C++ |
 NoResponse's Blog = NoResponse's Blog</title>
 <meta name="generator" content="Hexo 7.3.0"></head>
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -60,7 +60,7 @@ NoResponse's Blog = NoResponse's Blog</title>
         <div id="brand">
           <div class="pjax">
           
-  <h1 itemprop="name headline">C++八股
+  <h1 itemprop="name headline">C++相关
   </h1>
   
 <div class="meta">
@@ -76,7 +76,7 @@ NoResponse's Blog = NoResponse's Blog</title>
       <i class="ic i-pen"></i>
     </span>
     <span class="text">Symbols count in article</span>
-    <span>9.8k</span>
+    <span>15k</span>
     <span class="text">words</span>
   </span>
   <span class="item" title="Reading time">
@@ -84,7 +84,7 @@ NoResponse's Blog = NoResponse's Blog</title>
       <i class="ic i-clock"></i>
     </span>
     <span class="text">Reading time</span>
-    <span>9 mins.</span>
+    <span>14 mins.</span>
   </span>
 </div>
 
@@ -116,7 +116,7 @@ NoResponse's Blog = NoResponse's Blog</title>
 
       </div>
       <div id="imgs" class="pjax">
-          <img src="/images/bg11.jpg">
+          <img src="/images/bg36.jpg">
       </div>
     </header>
     <div id="waves">
@@ -303,11 +303,36 @@ NoResponse's Blog = NoResponse's Blog</title>
 <li>继承</li>
 </ol>
 <figure class="highlight c++"><figcaption><span>继承</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Animal</span> &#123;</span><br><span class="line"><span class="keyword">protected</span>:</span><br><span class="line">    string name;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">Animal</span>(string n) : <span class="built_in">name</span>(n) &#123;&#125;</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">eat</span><span class="params">()</span> </span>&#123; cout &lt;&lt; name &lt;&lt; <span class="string">&quot; 在吃东西&quot;</span> &lt;&lt; endl; &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Dog 继承 Animal，继承方式为 public</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Dog</span> : <span class="keyword">public</span> Animal &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">Dog</span>(string n) : <span class="built_in">Animal</span>(n) &#123;&#125;  <span class="comment">// 调用基类构造函数</span></span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">bark</span><span class="params">()</span> </span>&#123; cout &lt;&lt; name &lt;&lt; <span class="string">&quot; 汪汪叫！&quot;</span> &lt;&lt; endl; &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="function">Dog <span class="title">d</span><span class="params">(<span class="string">&quot;小黄&quot;</span>)</span></span>;</span><br><span class="line">    d.<span class="built_in">eat</span>();   <span class="comment">// 继承自 Animal</span></span><br><span class="line">    d.<span class="built_in">bark</span>();  <span class="comment">// Dog 自己的方法</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>| — | — | — | — |<br>
-| 继承方式 | 基类 public 成员 | 基类 protected 成员 | 基类 private 成员 |<br>
-|public | 在派生类中仍是 public | 在派生类中是 protected | 不可访问 |<br>
-|protected | 在派生类中是 protected | 在派生类中是 protected | 不可访问 |<br>
-|private | 在派生类中是 private | 在派生类中是 private | 不可访问 |</p>
+<table>
+<thead>
+<tr>
+<th>继承方式</th>
+<th>基类 public 成员</th>
+<th>基类 protected 成员</th>
+<th>基类 private 成员</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>public</td>
+<td>在派生类中仍是 public</td>
+<td>在派生类中是 protected</td>
+<td>不可访问</td>
+</tr>
+<tr>
+<td>protected</td>
+<td>在派生类中是 protected</td>
+<td>在派生类中是 protected</td>
+<td>不可访问</td>
+</tr>
+<tr>
+<td>private</td>
+<td>在派生类中是 private</td>
+<td>在派生类中是 private</td>
+<td>不可访问</td>
+</tr>
+</tbody>
+</table>
 <p>继承中的构造与析构顺序</p>
 <blockquote>
 <p>构造顺序：<br>
@@ -415,14 +440,139 @@ Hiding: 两种情况① 函数名相同，参数不同；② 函数名相同，�
 <figure class="highlight c++"><figcaption><span>宏定义vs内联函数</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> MAX(a,b) ((a) &gt; (b) ? (a) : (b))</span></span><br><span class="line"><span class="type">int</span> x = <span class="built_in">MAX</span>(i++, j++);  <span class="comment">// i 和 j 可能被 ++ 两次！</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="type">int</span> <span class="title">max</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b)</span> </span>&#123; <span class="keyword">return</span> a &gt; b ? a : b; &#125;</span><br><span class="line"><span class="type">int</span> x = <span class="built_in">max</span>(i++, j++);  <span class="comment">// 安全，参数只计算一次</span></span><br></pre></td></tr></table></figure>
 <p>定义写在类内不需要显式写 inline 关键字，定义在类外需要</p>
 <ol start="16">
+<li>友元<br>
+允许某个函数或类 “突破封装”，访问另一个类的私有（private）和保护（protected）成员。</li>
+</ol>
+<ul>
+<li>将非成员函数声明为友元函数：非成员函数可以直接访问 <code>private</code>  和 <code>protected</code>  成员</li>
+<li>将其他类的成员函数声明为友元函数：其他类成员函数可以直接访问 <code>private</code>  和 <code>protected</code>  成员</li>
+</ul>
+<figure class="highlight c++"><figcaption><span>友元</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">friend</span> <span class="type">void</span> <span class="title">Student::show</span><span class="params">(Address *addr)</span></span>;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>友元类：一个类声明为另一个类的友元类，则该类中的所有成员函数都可以访问该类的 <code>private</code>  和 <code>protected</code>  成员</li>
+</ul>
+<figure class="highlight c++"><figcaption><span>友元类</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Address</span>&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line"> <span class="built_in">Address</span>(<span class="type">char</span> *province, <span class="type">char</span> *city, <span class="type">char</span> *district);</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line"> <span class="comment">//将Student类声明为Address类的友元类，Student类中的所有成员函数都可以访问Address类的private成员</span></span><br><span class="line"> <span class="keyword">friend</span> <span class="keyword">class</span> <span class="title class_">Student</span>;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line"> <span class="type">char</span> *m_province; <span class="comment">//省份</span></span><br><span class="line"> <span class="type">char</span> *m_city; <span class="comment">//城市</span></span><br><span class="line"> <span class="type">char</span> *m_district; <span class="comment">//区（市区）</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<ol start="17">
+<li>智能指针<br>
+ new 了没有 delete —— 内存泄漏<br>
+ delete 之后没有置为 nullptr / 指针指向的对象生命周期结束 —— 野指针<br>
+多个指针指向同一块内存 —— 悬空指针<br>
+<mark>智能指针本质是封装指针的类模板</mark><br>
+ RAII（Resource Acquisition Is Initialization）原则：资源在构造时获取，在析构时释放。</li>
+</ol>
+<ul>
+<li><code>unique_ptr</code> ：独占指针，只能有一个指针指向一块内存，不能拷贝，不能赋值，析构时会自动释放内存。赋值只能用 <code>std::move()</code>  转移所有权，此时 <code>u1</code>  的所有权被转移给 <code>u3</code> ， <code>u1</code>  变成空指针。<br>
+ <code>unique_ptr</code>  支持管理数组，它会使用 <code>delete[]</code>  来释放数组内存（区别于 <code>auto_ptr</code> ，它使用 <code>delete</code>  来释放内存）</li>
+</ul>
+<figure class="highlight c++"><figcaption><span>unique_ptr</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">std::unique_ptr&lt;<span class="type">int</span>&gt; <span class="title">u1</span><span class="params">(<span class="keyword">new</span> <span class="type">int</span>(<span class="number">10</span>))</span></span>;</span><br><span class="line"><span class="comment">// std::unique_ptr&lt;int&gt; u2 = u1;  // 编译错误，不允许拷贝</span></span><br><span class="line">std::unique_ptr&lt;<span class="type">int</span>&gt; u3 = std::<span class="built_in">move</span>(u1);</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>shared_ptr</code> ：共享指针，多个指针可以指向一块内存，通过引用计数机制来管理对象的生命周期 。当一个 <code>shared_ptr</code>  指向对象时，引用计数加 1；当 <code>shared_ptr</code>  离开作用域或被重新赋值时，引用计数减 1，当引用计数为 0 时，对象会被自动释放<br>
+ <code>shared_ptr</code>  在多线程环境中使用时，需要注意线程安全问题，因为引用计数的修改不是原子操作，可能会导致数据竞争 。为了解决这个问题，可以使用 <code>std::atomic</code>  来实现原子操作，或者使用互斥锁来保护引用计数的修改</li>
+<li><code>weak_ptr</code> ：不能访问指针指向的对象，不控制对象的生命周期，只能判断指针是否为空，不能赋值，析构时会自动释放内存。主要是用来解决两个 <code>shared_ptr</code>  对象之间形成循环引用的问题（循环引用计数永远不会归零，导致这两个对象永远无法被销毁），当一个 <code>shared_ptr</code>  对象被另一个 <code>shared_ptr</code>  对象所引用时，两个对象之间形成循环引用，导致内存泄漏。 <code>weak_ptr</code>  对象用来监视 <code>shared_ptr</code>  中管理的资源是否存在，可以判断指针是否为空，也可以获取指针指向的对象，但无法访问对象。 <code>weak_ptr</code>  对象可以通过 <code>lock()</code>  方法获取对应的 <code>shared_ptr</code>  对象，如果对象仍然存在，则返回对应的 <code>shared_ptr</code>  对象，否则返回一个空的 <code>shared_ptr</code>  对象。<br>
+使用 <code>weak_ptr</code>  时，需要通过 <code>lock</code>  函数将其提升为 <code>shared_ptr</code> ，才能访问对象 。如果对象已经被释放， <code>lock</code>  函数会返回一个空的 <code>shared_ptr</code></li>
+</ul>
+<ol start="18">
+<li>模板<br>
+允许你写一份代码，编译器根据不同的类型自动生成对应的函数或类<br>
+比如 <code>swap</code> ：</li>
+</ol>
+<figure class="highlight c++"><figcaption><span>模板</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">swap</span><span class="params">(T&amp; a, T&amp; b)</span> </span>&#123;</span><br><span class="line">    T temp = a;</span><br><span class="line">    a = b;</span><br><span class="line">    b = temp;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>基本语法：</p>
+<figure class="highlight c++"><figcaption><span>函数模板</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> U&gt;</span><br><span class="line"><span class="function"><span class="keyword">auto</span> <span class="title">add</span><span class="params">(T a, U b)</span> -&gt; <span class="title">decltype</span><span class="params">(a + b)</span> </span>&#123; <span class="comment">// auto表示返回值在后面指定，编译器会根据a+b的结果自动推导返回类型</span></span><br><span class="line">    <span class="keyword">return</span> a + b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><figcaption><span>类模板</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// template &lt;typename T1, typename T2, ...&gt;</span></span><br><span class="line"><span class="comment">// class ClassName &#123;</span></span><br><span class="line"><span class="comment">//     // 使用 T1, T2 等作为类型</span></span><br><span class="line"><span class="comment">// &#125;;</span></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="type">int</span> N&gt;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Array</span> &#123;</span><br><span class="line">    T data[N];</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    T&amp; <span class="keyword">operator</span>[](<span class="type">int</span> index) &#123;</span><br><span class="line">        <span class="keyword">return</span> data[index];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">size</span><span class="params">()</span> </span>&#123; <span class="keyword">return</span> N; &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>模板的实现（函数体）必须和声明放在同一个头文件中，STL 就是模板</p>
+<ol start="19">
+<li>volatile<br>
+ 原因：多处理器访问变量，缓存和主存可能存在不一致的问题<br>
+ volatile 让变量的读写都从主存中读写，而不是从缓存中读写</li>
+</ol>
+<ul>
+<li>易变性（可见性）: … 可能不一致</li>
+<li>不可优化的：编译器不要做优化</li>
+</ul>
+<figure class="highlight c"><figcaption><span>volatile</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">volatile</span> <span class="type">int</span> a;</span><br><span class="line">a = <span class="number">1</span>;</span><br><span class="line"><span class="built_in">printf</span>(%d, a);  </span><br></pre></td></tr></table></figure>
+<p>不加 <code>volatile</code>  的话编译器可能会优化成 `printf (% d, 1);</p>
+<ul>
+<li>顺序执行的：编译器会对无关的语句进行优化，可能会把 <code>printf</code>  放到 <code>a = 1</code>  的前面执行</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> i = <span class="number">1</span>;</span><br><span class="line"><span class="type">int</span> j = <span class="number">1</span></span><br><span class="line">i += <span class="number">1</span>;</span><br><span class="line">j += <span class="number">2</span>;</span><br></pre></td></tr></table></figure>
+<p>实际上执行顺序可能不是这样的（原因详见编译原理），写了 <code>volatile</code>  之后，编译器就不会改变顺序</p>
+<ul>
+<li>使用场景：多线程共享字段（标志位）且经常被修改；中断服务程序和硬件设备访问相关的情况（指针可以是 <code>volatile</code> ）</li>
+<li>误区： <code>volatile</code>  修饰的变量不能保证原子性，原子性需要通过原子操作或者锁来实现</li>
+</ul>
+<ol start="20">
+<li>static<br>
+c 语言中：</li>
+<li>用于局部变量（函数内部）</li>
+</ol>
+<ul>
+<li>作用：使局部变量具有静态存储期（即程序运行期间一直存在），但作用域仍限于当前括号之内。</li>
+<li>初始化：只在第一次进入函数时初始化一次。</li>
+<li>默认值：未显式初始化则为 0。</li>
+</ul>
+<ol start="2">
+<li>用于全局变量或函数</li>
+</ol>
+<ul>
+<li>作用：将变量或函数的链接属性（linkage）设为内部链接（internal linkage），即仅在当前源文件中可见，其他文件无法访问。</li>
+<li>目的：实现封装，避免命名冲突。<br>
+c++ 中：<br>
+ <code>C++</code>  继承了 <code>C</code>  中 <code>static</code>  的所有用法，还增加了面向对象场景下的新用途</li>
+</ul>
+<ol>
+<li>静态成员变量：<br>
+属于类本身，而不是类的某个对象。<br>
+所有对象共享同一个静态成员。<br>
+必须在类外定义（C<ins>17 前），C</ins>17 起可用 inline static 在类内定义。</li>
+</ol>
+<figure class="highlight c++"><figcaption><span>static</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">MyClass</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="type">static</span> <span class="type">int</span> count;       <span class="comment">// 声明</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="type">int</span> MyClass::count = <span class="number">0</span>;     <span class="comment">// 定义（C++17 前必需）</span></span><br><span class="line"><span class="comment">// 或 C++17 起：</span></span><br><span class="line"><span class="comment">// inline static int count = 0;</span></span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>静态成员函数：<br>
+不属于任何对象，不能访问非静态成员（因为没有 this 指针）。<br>
+可直接通过类名调用。</li>
+</ol>
+<figure class="highlight c++"><figcaption><span>static</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">MyClass</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">static</span> <span class="type">void</span> <span class="title">print</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 不能访问非静态成员</span></span><br><span class="line">        std::cout &lt;&lt; <span class="string">&quot;Static function\n&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">MyClass::<span class="built_in">print</span>(); <span class="comment">// 无需对象</span></span><br></pre></td></tr></table></figure>
+<p>C++11 起，static 局部变量的初始化自动线程安全，c 语言没有这种保证</p>
+<ol start="21">
+<li>c 语言保证线程安全<br>
+ C 语言标准库本身（C89/C99/C11 等）在早期版本中并不直接提供线程或锁操作，但 C11 标准（ISO/IEC 9899:2011）引入了多线程支持，包括锁（mutex）等同步原语。<br>
+C11 引入了 &lt;threads.h&gt; 头文件，提供了类似 POSIX 的线程和锁接口。</li>
+</ol>
+<figure class="highlight c"><figcaption><span>mutex</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;threads.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 互斥锁类型</span></span><br><span class="line"><span class="type">mtx_t</span> mutex;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 初始化锁</span></span><br><span class="line"><span class="type">int</span> <span class="title function_">mtx_init</span><span class="params">(<span class="type">mtx_t</span> *mtx, <span class="type">int</span> type)</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 加锁（阻塞）</span></span><br><span class="line"><span class="type">int</span> <span class="title function_">mtx_lock</span><span class="params">(<span class="type">mtx_t</span> *mtx)</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 尝试加锁（非阻塞）</span></span><br><span class="line"><span class="type">int</span> <span class="title function_">mtx_trylock</span><span class="params">(<span class="type">mtx_t</span> *mtx)</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 解锁</span></span><br><span class="line"><span class="type">int</span> <span class="title function_">mtx_unlock</span><span class="params">(<span class="type">mtx_t</span> *mtx)</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 销毁锁</span></span><br><span class="line"><span class="type">void</span> <span class="title function_">mtx_destroy</span><span class="params">(<span class="type">mtx_t</span> *mtx)</span>;</span><br></pre></td></tr></table></figure>
+<p>比如线程安全计数器</p>
+<figure class="highlight c"><figcaption><span>mutex</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;threads.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> counter = <span class="number">0</span>;</span><br><span class="line"><span class="type">mtx_t</span> mutex;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">increment</span><span class="params">(<span class="type">void</span>* arg)</span> &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">100000</span>; i++) &#123;</span><br><span class="line">        mtx_lock(&amp;mutex);</span><br><span class="line">        counter++;</span><br><span class="line">        mtx_unlock(&amp;mutex);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    mtx_init(&amp;mutex, mtx_plain);</span><br><span class="line">    </span><br><span class="line">    <span class="type">thrd_t</span> t1, t2;</span><br><span class="line">    thrd_create(&amp;t1, increment, <span class="literal">NULL</span>);</span><br><span class="line">    thrd_create(&amp;t2, increment, <span class="literal">NULL</span>);</span><br><span class="line">    </span><br><span class="line">    thrd_join(t1, <span class="literal">NULL</span>);</span><br><span class="line">    thrd_join(t2, <span class="literal">NULL</span>);</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Counter = %d\n&quot;</span>, counter); <span class="comment">// 应为 200000</span></span><br><span class="line">    mtx_destroy(&amp;mutex);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>实际上用得多的可能是 pthreads</p>
+<figure class="highlight c"><figcaption><span>pthreads</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;pthread.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">pthread_mutex_t</span> mutex = PTHREAD_MUTEX_INITIALIZER;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 或动态初始化</span></span><br><span class="line">pthread_mutex_init(&amp;mutex, <span class="literal">NULL</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 加锁</span></span><br><span class="line">pthread_mutex_lock(&amp;mutex);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 尝试加锁</span></span><br><span class="line">pthread_mutex_trylock(&amp;mutex);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 解锁</span></span><br><span class="line">pthread_mutex_unlock(&amp;mutex);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 销毁</span></span><br><span class="line">pthread_mutex_destroy(&amp;mutex);</span><br></pre></td></tr></table></figure>
+<p>示例</p>
+<figure class="highlight c"><figcaption><span>pthreads</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;pthread.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> counter = <span class="number">0</span>;</span><br><span class="line"><span class="type">pthread_mutex_t</span> mutex = PTHREAD_MUTEX_INITIALIZER;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span>* <span class="title function_">increment</span><span class="params">(<span class="type">void</span>* arg)</span> &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">100000</span>; i++) &#123;</span><br><span class="line">        pthread_mutex_lock(&amp;mutex);</span><br><span class="line">        counter++;</span><br><span class="line">        pthread_mutex_unlock(&amp;mutex);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="type">pthread_t</span> t1, t2;</span><br><span class="line">    pthread_create(&amp;t1, <span class="literal">NULL</span>, increment, <span class="literal">NULL</span>);</span><br><span class="line">    pthread_create(&amp;t2, <span class="literal">NULL</span>, increment, <span class="literal">NULL</span>);</span><br><span class="line">    </span><br><span class="line">    pthread_join(t1, <span class="literal">NULL</span>);</span><br><span class="line">    pthread_join(t2, <span class="literal">NULL</span>);</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Counter = %d\n&quot;</span>, counter);</span><br><span class="line">    pthread_mutex_destroy(&amp;mutex);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol start="22">
 <li>
-<p>友元</p>
+<p>typedef 和 define<br>
+#define 是 “文本替换”，像 Word 的 “查找替换”，预处理的时候替换；<br>
+typedef 是 “类型定义” 的关键字，是编译器理解的真正类型别名。typedef 可以定义新的类型，也可以定义新的类型别名，但不能定义常量 / 宏函数，在编译的时候处理</p>
 </li>
 <li>
-<p>智能指针<br>
-允许某个函数或类 “突破封装”，访问另一个类的私有（private）和保护（protected）成员。</p>
+<p>数组指针和指针数组<br>
+数组指针：<br>
+指向数组的指针</p>
 </li>
 </ol>
+<figure class="highlight c++"><figcaption><span>array pointer</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> *p[<span class="number">4</span>];</span><br><span class="line"><span class="type">int</span> b[<span class="number">12</span>] = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">10</span>, <span class="number">11</span>, <span class="number">12</span>&#125;;</span><br><span class="line">p = b;</span><br></pre></td></tr></table></figure>
+<p>指针数组：<br>
+数组的元素是指针</p>
+<figure class="highlight c++"><figcaption><span>pointer array</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span>* p[<span class="number">4</span>];</span><br></pre></td></tr></table></figure>
+<ol start="24">
+<li>函数指针<br>
+函数指针：<br>
+指向函数的指针</li>
+</ol>
+<figure class="highlight c++"><figcaption><span>function pointer</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">int</span> (*p)(<span class="type">int</span>, <span class="type">int</span>); <span class="comment">// 括号不能省略</span></span><br><span class="line">p = add;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">add</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b)</span> </span>&#123; <span class="keyword">return</span> a + b; &#125;</span><br><span class="line"><span class="type">int</span> result = <span class="built_in">p</span>(<span class="number">1</span>, <span class="number">2</span>);</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, result); <span class="comment">// 3</span></span><br></pre></td></tr></table></figure>
+<p>函数指针没有自增和自减运算</p>
+<blockquote>
+<p>区分 int *p 和 int (*p)<br>
+ 前者是一个指向 int 类型的指针，后者有可能是一个数组指针或是返回 int 类型的函数指针</p>
+</blockquote>
 
       <div class="tags">
           <a href="/tags/C/" rel="tag"><i class="ic i-tag"></i> C++</a>
@@ -437,7 +587,7 @@ Hiding: 两种情况① 函数名相同，参数不同；② 函数名相同，�
       <i class="ic i-calendar-check"></i>
     </span>
     <span class="text">Edited on</span>
-    <time title="Modified: 2025-10-28 11:11:11" itemprop="dateModified" datetime="2025-10-28T11:11:11+08:00">2025-10-28</time>
+    <time title="Modified: 2025-11-20 12:21:22" itemprop="dateModified" datetime="2025-11-20T12:21:22+08:00">2025-11-20</time>
   </span>
 </div>
 
@@ -473,7 +623,7 @@ Hiding: 两种情况① 函数名相同，参数不同；② 函数名相同，�
   </li>
   <li class="link">
     <strong>Post link: </strong>
-    <a href="http://example.com/2025/10/26/oop/note/" title="C++八股">http://example.com/2025/10/26/oop/note/</a>
+    <a href="http://example.com/2025/10/26/oop/note/" title="C++相关">http://example.com/2025/10/26/oop/note/</a>
   </li>
   <li class="license">
     <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> unless stating additionally.
@@ -492,7 +642,7 @@ Hiding: 两种情况① 函数名相同，参数不同；② 函数名相同，�
     <div class="item left">
       
 
-  <a href="/2025/10/15/note/20251015/" itemprop="url" rel="prev" data-background-image="&#x2F;images&#x2F;bg5.jpg" title="20251015力扣刷题笔记">
+  <a href="/2025/10/15/note/20251015/" itemprop="url" rel="prev" data-background-image="&#x2F;images&#x2F;bg6.jpg" title="20251015力扣刷题笔记">
   <span class="type">Previous Post</span>
   <span class="category"><i class="ic i-flag"></i> 七七八八</span>
   <h3>20251015力扣刷题笔记</h3>
@@ -519,7 +669,7 @@ Hiding: 两种情况① 函数名相同，参数不同；② 函数名相同，�
       </div>
       <div class="related panel pjax" data-title="Related">
         <ul>
-          <li class="active"><a href="/2025/10/26/oop/note/" rel="bookmark" title="C++八股">C++八股</a></li>
+          <li class="active"><a href="/2025/10/26/oop/note/" rel="bookmark" title="C++相关">C++相关</a></li>
         </ul>
       </div>
       <div class="overview panel" data-title="Overview">
@@ -635,46 +785,30 @@ Hiding: 两种情况① 函数名相同，参数不同；② 函数名相同，�
 <div class="breadcrumb">
 <a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
-</div>
-
-    <span><a href="/2025/06/17/computer-science/compile-principles/ch9/" title="指令选择">指令选择</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/DS/" title="In 数据结构">数据结构</a>
-</div>
-
-    <span><a href="/2025/09/15/computer-science/DS/ch1/" title="ch1">ch1</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
 <a href="/categories/computer-science/computer-organization/" title="In 计算机组成">计算机组成</a>
 </div>
 
-    <span><a href="/2025/05/14/computer-science/computer-organization/ch2/" title="Ch2">Ch2</a></span>
+    <span><a href="/2025/08/15/computer-science/computer-organization/ch7/" title="Ch7">Ch7</a></span>
   </li>
 
       
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/DS/" title="In 数据结构">数据结构</a>
+<a href="/categories/note/" title="In 七七八八">七七八八</a>
 </div>
 
-    <span><a href="/2025/10/13/computer-science/DS/ch7/" title="ch7">ch7</a></span>
+    <span><a href="/2025/08/02/note/20250802/" title="20250802阅读论文">20250802阅读论文</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/AI/" title="In 人工智能">人工智能</a>
+</div>
+
+    <span><a href="/2025/06/16/AI/week10-11/" title="Week10-11">Week10-11</a></span>
   </li>
 
       
@@ -693,12 +827,10 @@ Hiding: 两种情况① 函数名相同，参数不同；② 函数名相同，�
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/DS/" title="In 数据结构">数据结构</a>
+<a href="/categories/SE/" title="In 软件工程">软件工程</a>
 </div>
 
-    <span><a href="/2025/10/10/computer-science/DS/ch5/" title="ch5">ch5</a></span>
+    <span><a href="/2025/06/19/SE/note/" title="SE note">SE note</a></span>
   </li>
 
       
@@ -707,10 +839,10 @@ Hiding: 两种情况① 函数名相同，参数不同；② 函数名相同，�
 <div class="breadcrumb">
 <a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
+<a href="/categories/computer-science/DS/" title="In 数据结构">数据结构</a>
 </div>
 
-    <span><a href="/2025/03/21/computer-science/compile-principles/ch1/" title="Introduction">Introduction</a></span>
+    <span><a href="/2025/10/11/computer-science/DS/ch6/" title="ch6">ch6</a></span>
   </li>
 
       
@@ -722,7 +854,7 @@ Hiding: 两种情况① 函数名相同，参数不同；② 函数名相同，�
 <a href="/categories/computer-science/computer-organization/" title="In 计算机组成">计算机组成</a>
 </div>
 
-    <span><a href="/2025/08/01/computer-science/computer-organization/ch4/" title="Ch4">Ch4</a></span>
+    <span><a href="/2025/07/01/computer-science/computer-organization/ch3/" title="Ch3">Ch3</a></span>
   </li>
 
       
@@ -732,7 +864,7 @@ Hiding: 两种情况① 函数名相同，参数不同；② 函数名相同，�
 <a href="/categories/AI/" title="In 人工智能">人工智能</a>
 </div>
 
-    <span><a href="/2025/05/20/AI/week1/" title="Week1">Week1</a></span>
+    <span><a href="/2025/06/12/AI/week6-7/" title="Week6-7">Week6-7</a></span>
   </li>
 
       
@@ -741,10 +873,22 @@ Hiding: 两种情况① 函数名相同，参数不同；② 函数名相同，�
 <div class="breadcrumb">
 <a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/DS/" title="In 数据结构">数据结构</a>
+<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
 </div>
 
-    <span><a href="/2025/10/13/computer-science/DS/ch8/" title="ch8">ch8</a></span>
+    <span><a href="/2025/03/23/computer-science/compile-principles/ch3/" title="语法分析">语法分析</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
+</div>
+
+    <span><a href="/2025/06/16/computer-science/compile-principles/ch7/" title="IR">IR</a></span>
   </li>
 
   </ul>
@@ -769,13 +913,13 @@ Hiding: 两种情况① 函数名相同，参数不同；② 函数名相同，�
     <span class="post-meta-item-icon">
       <i class="ic i-chart-area"></i>
     </span>
-    <span title="Symbols count total">164k words</span>
+    <span title="Symbols count total">170k words</span>
 
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="ic i-coffee"></i>
     </span>
-    <span title="Reading time total">2:29</span>
+    <span title="Reading time total">2:34</span>
   </div>
   <div class="powered-by">
     Powered by <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>

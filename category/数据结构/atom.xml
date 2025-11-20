@@ -4,41 +4,41 @@
     <title>NoResponse&#39;s Blog • Posts by &#34;数据结构&#34; category</title>
     <link href="http://example.com" />
     <updated>2025-10-12T16:00:00.000Z</updated>
-    <category term="软件工程" />
     <category term="人工智能" />
-    <category term="C++" />
-    <category term="自监督学习" />
+    <category term="软件工程" />
     <category term="容器" />
-    <category term="操作系统" />
-    <category term="数据结构" />
+    <category term="自监督学习" />
+    <category term="C++" />
     <category term="线性表" />
+    <category term="数据结构" />
     <category term="串" />
     <category term="栈、队列和数组" />
-    <category term="树与二叉树" />
     <category term="图论" />
+    <category term="树与二叉树" />
     <category term="查找" />
     <category term="排序" />
-    <category term="计算机网络" />
-    <category term="编译原理" />
     <category term="fds" />
-    <category term="Register Allocation" />
+    <category term="操作系统" />
     <category term="Liveness Analysis" />
+    <category term="编译原理" />
     <category term="词法分析" />
+    <category term="Register Allocation" />
     <category term="语法分析" />
-    <category term="抽象语法" />
     <category term="语义分析" />
+    <category term="抽象语法" />
     <category term="中间代码" />
     <category term="活动记录" />
     <category term="Basic Blocks and Traces" />
-    <category term="指令选择" />
     <category term="计算机组成" />
-    <category term="存储系统" />
+    <category term="指令选择" />
     <category term="数据的表示与运算" />
+    <category term="存储系统" />
     <category term="指令系统" />
     <category term="CPU" />
+    <category term="I/O" />
     <category term="总线" />
     <category term="错题" />
-    <category term="I/O" />
+    <category term="计算机网络" />
     <entry>
         <id>http://example.com/2025/10/13/computer-science/DS/ch7/</id>
         <title>ch7</title>
@@ -710,28 +710,6 @@ w_{ij}, &amp;amp; \text{如果顶点 } i \text{ 和 } j \text{ 之间有边，�
         <updated>2025-10-03T16:00:00.000Z</updated>
     </entry>
     <entry>
-        <id>http://example.com/2025/09/15/computer-science/DS/ch1/</id>
-        <title>ch1</title>
-        <link rel="alternate" href="http://example.com/2025/09/15/computer-science/DS/ch1/"/>
-        <content type="html">&lt;h1 id=&#34;ch1-绪论&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#ch1-绪论&#34;&gt;#&lt;/a&gt; Ch1 绪论&lt;/h1&gt;
-&lt;p&gt;数据&lt;br&gt;
-数据元素是数据的基本单位&lt;br&gt;
-数据对象&lt;br&gt;
-数据类型：原子类型、结构类型、抽象数据类型&lt;br&gt;
-数据结构：三要素包括逻辑结构、存储结构和数据的运算&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;逻辑结构：集合、线性结构、树形结构、图状或网状&lt;/li&gt;
-&lt;li&gt;存储结构：顺序存储、链式存储、索引存储、散列存储&lt;/li&gt;
-&lt;li&gt;数据的运算：定义针对逻辑结构，实现针对存储结构&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;算法的特性：又穷行、确定性、可行性、输入、输出&lt;br&gt;
-好的算法还应该考虑：正确性、可读性、健壮性、高效率和低存储量需求&lt;/p&gt;
-&lt;p&gt;复杂度：时间复杂度、空间复杂度&lt;/p&gt;
-</content>
-        <category term="数据结构" />
-        <updated>2025-09-14T16:00:00.000Z</updated>
-    </entry>
-    <entry>
         <id>http://example.com/2025/09/15/computer-science/DS/ch2/</id>
         <title>ch2</title>
         <link rel="alternate" href="http://example.com/2025/09/15/computer-science/DS/ch2/"/>
@@ -819,6 +797,28 @@ w_{ij}, &amp;amp; \text{如果顶点 } i \text{ 和 } j \text{ 之间有边，�
 &lt;/ul&gt;
 </content>
         <category term="线性表" />
+        <updated>2025-09-14T16:00:00.000Z</updated>
+    </entry>
+    <entry>
+        <id>http://example.com/2025/09/15/computer-science/DS/ch1/</id>
+        <title>ch1</title>
+        <link rel="alternate" href="http://example.com/2025/09/15/computer-science/DS/ch1/"/>
+        <content type="html">&lt;h1 id=&#34;ch1-绪论&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#ch1-绪论&#34;&gt;#&lt;/a&gt; Ch1 绪论&lt;/h1&gt;
+&lt;p&gt;数据&lt;br&gt;
+数据元素是数据的基本单位&lt;br&gt;
+数据对象&lt;br&gt;
+数据类型：原子类型、结构类型、抽象数据类型&lt;br&gt;
+数据结构：三要素包括逻辑结构、存储结构和数据的运算&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;逻辑结构：集合、线性结构、树形结构、图状或网状&lt;/li&gt;
+&lt;li&gt;存储结构：顺序存储、链式存储、索引存储、散列存储&lt;/li&gt;
+&lt;li&gt;数据的运算：定义针对逻辑结构，实现针对存储结构&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;算法的特性：又穷行、确定性、可行性、输入、输出&lt;br&gt;
+好的算法还应该考虑：正确性、可读性、健壮性、高效率和低存储量需求&lt;/p&gt;
+&lt;p&gt;复杂度：时间复杂度、空间复杂度&lt;/p&gt;
+</content>
+        <category term="数据结构" />
         <updated>2025-09-14T16:00:00.000Z</updated>
     </entry>
     <entry>
