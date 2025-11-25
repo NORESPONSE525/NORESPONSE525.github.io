@@ -76,7 +76,7 @@ NoResponse's Blog = NoResponse's Blog</title>
       <i class="ic i-pen"></i>
     </span>
     <span class="text">Symbols count in article</span>
-    <span>15k</span>
+    <span>16k</span>
     <span class="text">words</span>
   </span>
   <span class="item" title="Reading time">
@@ -116,7 +116,7 @@ NoResponse's Blog = NoResponse's Blog</title>
 
       </div>
       <div id="imgs" class="pjax">
-          <img src="/images/bg8.jpg">
+          <img src="/images/bg20.jpg">
       </div>
     </header>
     <div id="waves">
@@ -220,7 +220,12 @@ NoResponse's Blog = NoResponse's Blog</title>
 运算符重载（Operator Overloading）<br>
 函数模板（Function Templates）</p>
 </blockquote>
-<figure class="highlight c++"><figcaption><span>例子</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 1. 函数重载</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">print</span><span class="params">(<span class="type">int</span> x)</span> </span>&#123;</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;Integer: &quot;</span> &lt;&lt; x &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">print</span><span class="params">(<span class="type">double</span> x)</span> </span>&#123;</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;Double: &quot;</span> &lt;&lt; x &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">print</span><span class="params">(<span class="type">const</span> string&amp; s)</span> </span>&#123;</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;String: &quot;</span> &lt;&lt; s &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 2. 函数模板（泛型）</span></span><br><span class="line"><span class="function"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">printGeneric</span><span class="params">(<span class="type">const</span> T&amp; value)</span> </span>&#123;</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;Generic: &quot;</span> &lt;&lt; value &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 3. 运算符重载</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Point</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="type">int</span> x, y;</span><br><span class="line">    <span class="built_in">Point</span>(<span class="type">int</span> x, <span class="type">int</span> y) : <span class="built_in">x</span>(x), <span class="built_in">y</span>(y) &#123;&#125;</span><br><span class="line"></span><br><span class="line">    Point <span class="keyword">operator</span>+(<span class="type">const</span> Point&amp; other) <span class="type">const</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">Point</span>(x + other.x, y + other.y);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="number">42</span>);           <span class="comment">// 调用 print(int)</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="number">3.14</span>);         <span class="comment">// 调用 print(double)</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;Hello&quot;</span>);      <span class="comment">// 调用 print(string)</span></span><br><span class="line"></span><br><span class="line">    <span class="built_in">printGeneric</span>(<span class="number">100</span>);   <span class="comment">// 编译时生成 printGeneric&lt;int&gt;</span></span><br><span class="line">    <span class="built_in">printGeneric</span>(<span class="number">2.5</span>);   <span class="comment">// 生成 printGeneric&lt;double&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="function">Point <span class="title">p1</span><span class="params">(<span class="number">1</span>, <span class="number">2</span>)</span>, <span class="title">p2</span><span class="params">(<span class="number">3</span>, <span class="number">4</span>)</span></span>;</span><br><span class="line">    Point p3 = p1 + p2;  <span class="comment">// 使用重载的 +</span></span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;Point: (&quot;</span> &lt;&lt; p<span class="number">3.</span>x &lt;&lt; <span class="string">&quot;, &quot;</span> &lt;&lt; p<span class="number">3.</span>y &lt;&lt; <span class="string">&quot;)&quot;</span> &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><figcaption><span>例子</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 1. 函数重载</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">print</span><span class="params">(<span class="type">int</span> x)</span> </span>&#123;</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;Integer: &quot;</span> &lt;&lt; x &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">print</span><span class="params">(<span class="type">double</span> x)</span> </span>&#123;</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;Double: &quot;</span> &lt;&lt; x &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">print</span><span class="params">(<span class="type">const</span> string&amp; s)</span> </span>&#123;</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;String: &quot;</span> &lt;&lt; s &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line">&gt; 符号表如何支持函数重载？</span><br><span class="line">在支持重载的语言（如 C++）中，符号表不会把同名函数合并成一个条目，而是为每个不同的函数签名单独存储一条记录，并将它们组织成一个“重载集合”，用的时候根据实参的类型和数量等样进行匹配，找到最匹配的函数调用。</span><br><span class="line"></span><br><span class="line"><span class="comment">// 2. 函数模板（泛型）</span></span><br><span class="line"><span class="function"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">printGeneric</span><span class="params">(<span class="type">const</span> T&amp; value)</span> </span>&#123;</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;Generic: &quot;</span> &lt;&lt; value &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 3. 运算符重载</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Point</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="type">int</span> x, y;</span><br><span class="line">    <span class="built_in">Point</span>(<span class="type">int</span> x, <span class="type">int</span> y) : <span class="built_in">x</span>(x), <span class="built_in">y</span>(y) &#123;&#125;</span><br><span class="line"></span><br><span class="line">    Point <span class="keyword">operator</span>+(<span class="type">const</span> Point&amp; other) <span class="type">const</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">Point</span>(x + other.x, y + other.y);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">print</span>(<span class="number">42</span>);           <span class="comment">// 调用 print(int)</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="number">3.14</span>);         <span class="comment">// 调用 print(double)</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;Hello&quot;</span>);      <span class="comment">// 调用 print(string)</span></span><br><span class="line"></span><br><span class="line">    <span class="built_in">printGeneric</span>(<span class="number">100</span>);   <span class="comment">// 编译时生成 printGeneric&lt;int&gt;</span></span><br><span class="line">    <span class="built_in">printGeneric</span>(<span class="number">2.5</span>);   <span class="comment">// 生成 printGeneric&lt;double&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="function">Point <span class="title">p1</span><span class="params">(<span class="number">1</span>, <span class="number">2</span>)</span>, <span class="title">p2</span><span class="params">(<span class="number">3</span>, <span class="number">4</span>)</span></span>;</span><br><span class="line">    Point p3 = p1 + p2;  <span class="comment">// 使用重载的 +</span></span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;Point: (&quot;</span> &lt;&lt; p<span class="number">3.</span>x &lt;&lt; <span class="string">&quot;, &quot;</span> &lt;&lt; p<span class="number">3.</span>y &lt;&lt; <span class="string">&quot;)&quot;</span> &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<ol>
+<li>参数推导；2. 实例化具体函数 (在符号表中对应不同的条目); 3. 编译链接</li>
+</ol>
+</blockquote>
 <ol start="5">
 <li>必须通过指针或引用调用 才能触发多态。如果直接用对象调用，会是静态绑定。<br>
 想用多态，必须用基类指针或基类引用去操作派生类对象</li>
@@ -504,34 +509,40 @@ Hiding: 两种情况① 函数名相同，参数不同；② 函数名相同，�
 <ol start="20">
 <li>static<br>
 c 语言中：</li>
-<li>用于局部变量（函数内部）</li>
 </ol>
+<ul>
+<li>用于局部变量（函数内部）
 <ul>
 <li>作用：使局部变量具有静态存储期（即程序运行期间一直存在），但作用域仍限于当前括号之内。</li>
 <li>初始化：只在第一次进入函数时初始化一次。</li>
 <li>默认值：未显式初始化则为 0。</li>
 </ul>
-<ol start="2">
-<li>用于全局变量或函数</li>
-</ol>
+</li>
+<li>用于全局变量或函数
 <ul>
 <li>作用：将变量或函数的链接属性（linkage）设为内部链接（internal linkage），即仅在当前源文件中可见，其他文件无法访问。</li>
 <li>目的：实现封装，避免命名冲突。<br>
 c++ 中：<br>
  <code>C++</code>  继承了 <code>C</code>  中 <code>static</code>  的所有用法，还增加了面向对象场景下的新用途</li>
 </ul>
-<ol>
-<li>静态成员变量：<br>
-属于类本身，而不是类的某个对象。<br>
-所有对象共享同一个静态成员。<br>
-必须在类外定义（C<ins>17 前），C</ins>17 起可用 inline static 在类内定义。</li>
-</ol>
+</li>
+<li>静态成员变量：
+<ul>
+<li>属于类本身，而不是类的某个对象。</li>
+<li>所有对象共享同一个静态成员。</li>
+<li>必须在类外定义（C<ins>17 前），C</ins>17 起可用 inline static 在类内定义。</li>
+</ul>
+</li>
+</ul>
 <figure class="highlight c++"><figcaption><span>static</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">MyClass</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="type">static</span> <span class="type">int</span> count;       <span class="comment">// 声明</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="type">int</span> MyClass::count = <span class="number">0</span>;     <span class="comment">// 定义（C++17 前必需）</span></span><br><span class="line"><span class="comment">// 或 C++17 起：</span></span><br><span class="line"><span class="comment">// inline static int count = 0;</span></span><br></pre></td></tr></table></figure>
-<ol start="2">
-<li>静态成员函数：<br>
-不属于任何对象，不能访问非静态成员（因为没有 this 指针）。<br>
-可直接通过类名调用。</li>
-</ol>
+<ul>
+<li>静态成员函数：
+<ul>
+<li>不属于任何对象，不能访问非静态成员（因为没有 this 指针）。</li>
+<li>可直接通过类名调用。</li>
+</ul>
+</li>
+</ul>
 <figure class="highlight c++"><figcaption><span>static</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">MyClass</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">static</span> <span class="type">void</span> <span class="title">print</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 不能访问非静态成员</span></span><br><span class="line">        std::cout &lt;&lt; <span class="string">&quot;Static function\n&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">MyClass::<span class="built_in">print</span>(); <span class="comment">// 无需对象</span></span><br></pre></td></tr></table></figure>
 <p>C++11 起，static 局部变量的初始化自动线程安全，c 语言没有这种保证</p>
 <ol start="21">
@@ -573,6 +584,17 @@ typedef 是 “类型定义” 的关键字，是编译器理解的真正类型�
 <p>区分 int *p 和 int (*p)<br>
  前者是一个指向 int 类型的指针，后者有可能是一个数组指针或是返回 int 类型的函数指针</p>
 </blockquote>
+<ol start="25">
+<li>如何保证线程安全？</li>
+</ol>
+<ul>
+<li>锁</li>
+<li>原子操作</li>
+</ul>
+<figure class="highlight c++"><figcaption><span>atomic</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;atomic&gt;</span></span></span><br><span class="line">std::atomic&lt;<span class="type">int</span>&gt; counter;</span><br><span class="line">counter.<span class="built_in">fetch_add</span>(<span class="number">1</span>);   <span class="comment">// fetch_sub(), fetch_and(), fetch_or()...</span></span><br><span class="line">counter.<span class="built_in">load</span>();</span><br><span class="line">counter.<span class="built_in">store</span>(<span class="number">0</span>);</span><br><span class="line">counter.<span class="built_in">exchange</span>(<span class="number">0</span>);</span><br><span class="line">counter.<span class="built_in">compare_exchange_strong</span>(old_value, new_value);  <span class="comment">// 如果old_value == counter，则将 counter 设为 new_value</span></span><br><span class="line">counter.<span class="built_in">compare_exchange_weak</span>(old_value, new_value);    <span class="comment">// 区别：weak 版本允许虚假失败，需要循环</span></span><br><span class="line">counter.<span class="built_in">is_lock_free</span>();</span><br></pre></td></tr></table></figure>
+<ul>
+<li>线程同步原语</li>
+</ul>
 
       <div class="tags">
           <a href="/tags/C/" rel="tag"><i class="ic i-tag"></i> C++</a>
@@ -587,7 +609,7 @@ typedef 是 “类型定义” 的关键字，是编译器理解的真正类型�
       <i class="ic i-calendar-check"></i>
     </span>
     <span class="text">Edited on</span>
-    <time title="Modified: 2025-11-20 12:21:22" itemprop="dateModified" datetime="2025-11-20T12:21:22+08:00">2025-11-20</time>
+    <time title="Modified: 2025-11-25 17:39:39" itemprop="dateModified" datetime="2025-11-25T17:39:39+08:00">2025-11-25</time>
   </span>
 </div>
 
@@ -642,7 +664,7 @@ typedef 是 “类型定义” 的关键字，是编译器理解的真正类型�
     <div class="item left">
       
 
-  <a href="/2025/10/15/note/20251015/" itemprop="url" rel="prev" data-background-image="&#x2F;images&#x2F;bg20.jpg" title="20251015力扣刷题笔记">
+  <a href="/2025/10/15/note/20251015/" itemprop="url" rel="prev" data-background-image="&#x2F;images&#x2F;bg30.jpg" title="20251015力扣刷题笔记">
   <span class="type">Previous Post</span>
   <span class="category"><i class="ic i-flag"></i> 七七八八</span>
   <h3>20251015力扣刷题笔记</h3>
@@ -650,6 +672,14 @@ typedef 是 “类型定义” 的关键字，是编译器理解的真正类型�
 
     </div>
     <div class="item right">
+      
+
+  <a href="/2025/11/23/note/20251123/" itemprop="url" rel="next" data-background-image="&#x2F;images&#x2F;bg25.jpg" title="20251123面经回忆">
+  <span class="type">Next Post</span>
+  <span class="category"><i class="ic i-flag"></i> 七七八八</span>
+  <h3>20251123面经回忆</h3>
+  </a>
+
     </div>
 </div>
 
@@ -683,7 +713,7 @@ typedef 是 “类型定义” 的关键字，是编译器理解的真正类型�
 <nav class="state">
     <div class="item posts">
       <a href="/archives/">
-        <span class="count">44</span>
+        <span class="count">45</span>
         <span class="name">posts</span>
       </a>
     </div>
@@ -695,7 +725,7 @@ typedef 是 “类型定义” 的关键字，是编译器理解的真正类型�
     </div>
     <div class="item tags">
       <a href="/tags/">
-        <span class="count">35</span>
+        <span class="count">36</span>
         <span class="name">tags</span>
       </a>
     </div>
@@ -758,10 +788,12 @@ typedef 是 “类型定义” 的关键字，是编译器理解的真正类型�
 
   <ul id="quick">
     <li class="prev pjax">
+        <a href="/2025/10/15/note/20251015/" rel="prev" title="Previous Post"><i class="ic i-chevron-left"></i></a>
     </li>
     <li class="up"><i class="ic i-arrow-up"></i></li>
     <li class="down"><i class="ic i-arrow-down"></i></li>
     <li class="next pjax">
+        <a href="/2025/11/23/note/20251123/" rel="next" title="Next Post"><i class="ic i-chevron-right"></i></a>
     </li>
     <li class="percent"></li>
   </ul>
@@ -785,10 +817,10 @@ typedef 是 “类型定义” 的关键字，是编译器理解的真正类型�
 <div class="breadcrumb">
 <a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
+<a href="/categories/computer-science/DS/" title="In 数据结构">数据结构</a>
 </div>
 
-    <span><a href="/2025/06/18/computer-science/compile-principles/ch11/" title="Register Allocation">Register Allocation</a></span>
+    <span><a href="/2025/10/13/computer-science/DS/ch7/" title="ch7">ch7</a></span>
   </li>
 
       
@@ -800,7 +832,7 @@ typedef 是 “类型定义” 的关键字，是编译器理解的真正类型�
 <a href="/categories/computer-science/DS/" title="In 数据结构">数据结构</a>
 </div>
 
-    <span><a href="/2025/09/15/computer-science/DS/ch2/" title="ch2">ch2</a></span>
+    <span><a href="/2025/10/13/computer-science/DS/ch8/" title="ch8">ch8</a></span>
   </li>
 
       
@@ -809,10 +841,20 @@ typedef 是 “类型定义” 的关键字，是编译器理解的真正类型�
 <div class="breadcrumb">
 <a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
+<a href="/categories/computer-science/computer-organization/" title="In 计算机组成">计算机组成</a>
 </div>
 
-    <span><a href="/2025/06/17/computer-science/compile-principles/ch9/" title="指令选择">指令选择</a></span>
+    <span><a href="/2025/07/01/computer-science/computer-organization/ch3/" title="Ch3">Ch3</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/SE/" title="In 软件工程">软件工程</a>
+</div>
+
+    <span><a href="/2025/06/19/SE/note/" title="SE note">SE note</a></span>
   </li>
 
       
@@ -821,10 +863,10 @@ typedef 是 “类型定义” 的关键字，是编译器理解的真正类型�
 <div class="breadcrumb">
 <a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
+<a href="/categories/computer-science/DS/" title="In 数据结构">数据结构</a>
 </div>
 
-    <span><a href="/2025/06/17/computer-science/compile-principles/ch8/" title="Basic Blocks &amp; Traces">Basic Blocks & Traces</a></span>
+    <span><a href="/2025/10/10/computer-science/DS/ch5/" title="ch5">ch5</a></span>
   </li>
 
       
@@ -845,44 +887,30 @@ typedef 是 “类型定义” 的关键字，是编译器理解的真正类型�
 <div class="breadcrumb">
 <a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
+<a href="/categories/computer-science/DS/" title="In 数据结构">数据结构</a>
 </div>
 
-    <span><a href="/2025/03/30/computer-science/compile-principles/ch5/" title="语义分析">语义分析</a></span>
+    <span><a href="/2025/10/11/computer-science/DS/ch6/" title="ch6">ch6</a></span>
   </li>
 
       
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/oop/" title="In C++">C++</a>
+<a href="/categories/AI/" title="In 人工智能">人工智能</a>
 </div>
 
-    <span><a href="/2025/10/26/oop/note/" title="C++相关">C++相关</a></span>
+    <span><a href="/2025/06/15/AI/week8-9/" title="Week8-9">Week8-9</a></span>
   </li>
 
       
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
+<a href="/categories/AI/" title="In 人工智能">人工智能</a>
 </div>
 
-    <span><a href="/2025/06/16/computer-science/compile-principles/ch7/" title="IR">IR</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/OS/" title="In 操作系统">操作系统</a>
-</div>
-
-    <span><a href="/2025/09/18/computer-science/OS/ch1/" title="ch1">ch1</a></span>
+    <span><a href="/2025/06/16/AI/week12-13/" title="Week12-13">Week12-13</a></span>
   </li>
 
       
@@ -894,7 +922,7 @@ typedef 是 “类型定义” 的关键字，是编译器理解的真正类型�
 <a href="/categories/computer-science/DS/" title="In 数据结构">数据结构</a>
 </div>
 
-    <span><a href="/2023/10/31/computer-science/DS/fds/" title="fds课程笔记">fds课程笔记</a></span>
+    <span><a href="/2025/09/15/computer-science/DS/ch1/" title="ch1">ch1</a></span>
   </li>
 
   </ul>
@@ -919,13 +947,13 @@ typedef 是 “类型定义” 的关键字，是编译器理解的真正类型�
     <span class="post-meta-item-icon">
       <i class="ic i-chart-area"></i>
     </span>
-    <span title="Symbols count total">172k words</span>
+    <span title="Symbols count total">177k words</span>
 
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="ic i-coffee"></i>
     </span>
-    <span title="Reading time total">2:36</span>
+    <span title="Reading time total">2:41</span>
   </div>
   <div class="powered-by">
     Powered by <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>

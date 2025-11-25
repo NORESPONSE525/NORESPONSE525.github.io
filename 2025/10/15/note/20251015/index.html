@@ -76,7 +76,7 @@ NoResponse's Blog = NoResponse's Blog</title>
       <i class="ic i-pen"></i>
     </span>
     <span class="text">Symbols count in article</span>
-    <span>2.4k</span>
+    <span>4.6k</span>
     <span class="text">words</span>
   </span>
   <span class="item" title="Reading time">
@@ -84,7 +84,7 @@ NoResponse's Blog = NoResponse's Blog</title>
       <i class="ic i-clock"></i>
     </span>
     <span class="text">Reading time</span>
-    <span>2 mins.</span>
+    <span>4 mins.</span>
   </span>
 </div>
 
@@ -116,7 +116,7 @@ NoResponse's Blog = NoResponse's Blog</title>
 
       </div>
       <div id="imgs" class="pjax">
-          <img src="/images/bg34.jpg">
+          <img src="/images/bg11.jpg">
       </div>
     </header>
     <div id="waves">
@@ -744,7 +744,10 @@ NoResponse's Blog = NoResponse's Blog</title>
 </tr>
 </tbody>
 </table>
-
+<p>LRU：</p>
+<figure class="highlight c++"><figcaption><span>lru</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 哈希表+双向链表</span></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">DLinkedNode</span> &#123;</span><br><span class="line">    <span class="type">int</span> key, value;</span><br><span class="line">    DLinkedNode* prev;</span><br><span class="line">    DLinkedNode* next;</span><br><span class="line">    <span class="built_in">DLinkedNode</span>(): <span class="built_in">key</span>(<span class="number">0</span>), <span class="built_in">value</span>(<span class="number">0</span>), <span class="built_in">prev</span>(<span class="literal">nullptr</span>), <span class="built_in">next</span>(<span class="literal">nullptr</span>) &#123;&#125;</span><br><span class="line">    <span class="built_in">DLinkedNode</span>(<span class="type">int</span> _key, <span class="type">int</span> _value): <span class="built_in">key</span>(_key), <span class="built_in">value</span>(_value), <span class="built_in">prev</span>(<span class="literal">nullptr</span>), <span class="built_in">next</span>(<span class="literal">nullptr</span>) &#123;&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">LRUCache</span> &#123;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    unordered_map&lt;<span class="type">int</span>, DLinkedNode*&gt; cache;</span><br><span class="line">    DLinkedNode* head;</span><br><span class="line">    DLinkedNode* tail;</span><br><span class="line">    <span class="type">int</span> size;</span><br><span class="line">    <span class="type">int</span> capacity;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">LRUCache</span>(<span class="type">int</span> _capacity): <span class="built_in">capacity</span>(_capacity), <span class="built_in">size</span>(<span class="number">0</span>) &#123;</span><br><span class="line">        <span class="comment">// 使用伪头部和伪尾部节点</span></span><br><span class="line">        head = <span class="keyword">new</span> <span class="built_in">DLinkedNode</span>();</span><br><span class="line">        tail = <span class="keyword">new</span> <span class="built_in">DLinkedNode</span>();</span><br><span class="line">        head-&gt;next = tail;</span><br><span class="line">        tail-&gt;prev = head;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">get</span><span class="params">(<span class="type">int</span> key)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (!cache.<span class="built_in">count</span>(key)) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 如果 key 存在，先通过哈希表定位，再移到头部</span></span><br><span class="line">        DLinkedNode* node = cache[key];</span><br><span class="line">        <span class="built_in">moveToHead</span>(node);</span><br><span class="line">        <span class="keyword">return</span> node-&gt;value;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">put</span><span class="params">(<span class="type">int</span> key, <span class="type">int</span> value)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (!cache.<span class="built_in">count</span>(key)) &#123;</span><br><span class="line">            <span class="comment">// 如果 key 不存在，创建一个新的节点</span></span><br><span class="line">            DLinkedNode* node = <span class="keyword">new</span> <span class="built_in">DLinkedNode</span>(key, value);</span><br><span class="line">            <span class="comment">// 添加进哈希表</span></span><br><span class="line">            cache[key] = node;</span><br><span class="line">            <span class="comment">// 添加至双向链表的头部</span></span><br><span class="line">            <span class="built_in">addToHead</span>(node);</span><br><span class="line">            ++size;</span><br><span class="line">            <span class="keyword">if</span> (size &gt; capacity) &#123;</span><br><span class="line">                <span class="comment">// 如果超出容量，删除双向链表的尾部节点</span></span><br><span class="line">                DLinkedNode* removed = <span class="built_in">removeTail</span>();</span><br><span class="line">                <span class="comment">// 删除哈希表中对应的项</span></span><br><span class="line">                cache.<span class="built_in">erase</span>(removed-&gt;key);</span><br><span class="line">                <span class="comment">// 防止内存泄漏</span></span><br><span class="line">                <span class="keyword">delete</span> removed;</span><br><span class="line">                --size;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="comment">// 如果 key 存在，先通过哈希表定位，再修改 value，并移到头部</span></span><br><span class="line">            DLinkedNode* node = cache[key];</span><br><span class="line">            node-&gt;value = value;</span><br><span class="line">            <span class="built_in">moveToHead</span>(node);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">addToHead</span><span class="params">(DLinkedNode* node)</span> </span>&#123;</span><br><span class="line">        node-&gt;prev = head;</span><br><span class="line">        node-&gt;next = head-&gt;next;</span><br><span class="line">        head-&gt;next-&gt;prev = node;</span><br><span class="line">        head-&gt;next = node;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">removeNode</span><span class="params">(DLinkedNode* node)</span> </span>&#123;</span><br><span class="line">        node-&gt;prev-&gt;next = node-&gt;next;</span><br><span class="line">        node-&gt;next-&gt;prev = node-&gt;prev;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">moveToHead</span><span class="params">(DLinkedNode* node)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">removeNode</span>(node);</span><br><span class="line">        <span class="built_in">addToHead</span>(node);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function">DLinkedNode* <span class="title">removeTail</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        DLinkedNode* node = tail-&gt;prev;</span><br><span class="line">        <span class="built_in">removeNode</span>(node);</span><br><span class="line">        <span class="keyword">return</span> node;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>反转链表</p>
+<figure class="highlight c++"><figcaption><span>reverse</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">ListNode</span> &#123;</span><br><span class="line">    <span class="type">int</span> val;</span><br><span class="line">    ListNode *next;</span><br><span class="line">    <span class="built_in">ListNode</span>() : <span class="built_in">val</span>(<span class="number">0</span>), <span class="built_in">next</span>(<span class="literal">nullptr</span>) &#123;&#125;</span><br><span class="line">    <span class="built_in">ListNode</span>(<span class="type">int</span> x) : <span class="built_in">val</span>(x), <span class="built_in">next</span>(<span class="literal">nullptr</span>) &#123;&#125;</span><br><span class="line">    <span class="built_in">ListNode</span>(<span class="type">int</span> x, ListNode *next) : <span class="built_in">val</span>(x), <span class="built_in">next</span>(next) &#123;&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function">ListNode* <span class="title">reverseList</span><span class="params">(ListNode* head)</span> </span>&#123;</span><br><span class="line">    ListNode* prev = <span class="literal">nullptr</span>;</span><br><span class="line">    ListNode* curr = head;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">while</span> (curr != <span class="literal">nullptr</span>) &#123;</span><br><span class="line">        ListNode* next = curr-&gt;next; <span class="comment">// 保存下一个节点</span></span><br><span class="line">        curr-&gt;next = prev;           <span class="comment">// 反转当前节点</span></span><br><span class="line">        prev = curr;                 <span class="comment">// prev 前进</span></span><br><span class="line">        curr = next;                 <span class="comment">// curr 前进</span></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> prev; <span class="comment">// 新的头节点</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       <div class="tags">
           <a href="/tags/%E5%AE%B9%E5%99%A8/" rel="tag"><i class="ic i-tag"></i> 容器</a>
       </div>
@@ -758,7 +761,7 @@ NoResponse's Blog = NoResponse's Blog</title>
       <i class="ic i-calendar-check"></i>
     </span>
     <span class="text">Edited on</span>
-    <time title="Modified: 2025-10-15 17:50:16" itemprop="dateModified" datetime="2025-10-15T17:50:16+08:00">2025-10-15</time>
+    <time title="Modified: 2025-11-21 13:26:42" itemprop="dateModified" datetime="2025-11-21T13:26:42+08:00">2025-11-21</time>
   </span>
 </div>
 
@@ -813,7 +816,7 @@ NoResponse's Blog = NoResponse's Blog</title>
     <div class="item left">
       
 
-  <a href="/2025/10/13/computer-science/DS/ch7/" itemprop="url" rel="prev" data-background-image="&#x2F;images&#x2F;bg20.jpg" title="ch7">
+  <a href="/2025/10/13/computer-science/DS/ch7/" itemprop="url" rel="prev" data-background-image="&#x2F;images&#x2F;bg18.jpg" title="ch7">
   <span class="type">Previous Post</span>
   <span class="category"><i class="ic i-flag"></i> 数据结构</span>
   <h3>ch7</h3>
@@ -823,7 +826,7 @@ NoResponse's Blog = NoResponse's Blog</title>
     <div class="item right">
       
 
-  <a href="/2025/10/26/oop/note/" itemprop="url" rel="next" data-background-image="&#x2F;images&#x2F;bg7.jpg" title="C++相关">
+  <a href="/2025/10/26/oop/note/" itemprop="url" rel="next" data-background-image="&#x2F;images&#x2F;bg17.jpg" title="C++相关">
   <span class="type">Next Post</span>
   <span class="category"><i class="ic i-flag"></i> C++</span>
   <h3>C++相关</h3>
@@ -849,7 +852,7 @@ NoResponse's Blog = NoResponse's Blog</title>
       </div>
       <div class="related panel pjax" data-title="Related">
         <ul>
-          <li><a href="/2025/08/02/note/20250802/" rel="bookmark" title="20250802阅读论文">20250802阅读论文</a></li><li class="active"><a href="/2025/10/15/note/20251015/" rel="bookmark" title="20251015力扣刷题笔记">20251015力扣刷题笔记</a></li>
+          <li><a href="/2025/08/02/note/20250802/" rel="bookmark" title="20250802阅读论文">20250802阅读论文</a></li><li class="active"><a href="/2025/10/15/note/20251015/" rel="bookmark" title="20251015力扣刷题笔记">20251015力扣刷题笔记</a></li><li><a href="/2025/11/23/note/20251123/" rel="bookmark" title="20251123面经回忆">20251123面经回忆</a></li>
         </ul>
       </div>
       <div class="overview panel" data-title="Overview">
@@ -863,7 +866,7 @@ NoResponse's Blog = NoResponse's Blog</title>
 <nav class="state">
     <div class="item posts">
       <a href="/archives/">
-        <span class="count">44</span>
+        <span class="count">45</span>
         <span class="name">posts</span>
       </a>
     </div>
@@ -875,7 +878,7 @@ NoResponse's Blog = NoResponse's Blog</title>
     </div>
     <div class="item tags">
       <a href="/tags/">
-        <span class="count">35</span>
+        <span class="count">36</span>
         <span class="name">tags</span>
       </a>
     </div>
@@ -967,20 +970,80 @@ NoResponse's Blog = NoResponse's Blog</title>
 <div class="breadcrumb">
 <a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
+<a href="/categories/computer-science/OS/" title="In 操作系统">操作系统</a>
 </div>
 
-    <span><a href="/2025/03/22/computer-science/compile-principles/ch2/" title="词法分析">词法分析</a></span>
+    <span><a href="/2025/10/09/computer-science/OS/ch2/" title="ch2">ch2</a></span>
   </li>
 
       
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/AI/" title="In 人工智能">人工智能</a>
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
 </div>
 
-    <span><a href="/2025/05/20/AI/week2-3/" title="Week2-3">Week2-3</a></span>
+    <span><a href="/2025/06/17/computer-science/compile-principles/ch9/" title="指令选择">指令选择</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
+</div>
+
+    <span><a href="/2025/06/17/computer-science/compile-principles/ch8/" title="Basic Blocks &amp; Traces">Basic Blocks & Traces</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
+</div>
+
+    <span><a href="/2025/06/15/computer-science/compile-principles/ch6/" title="活动记录">活动记录</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
+</div>
+
+    <span><a href="/2025/03/30/computer-science/compile-principles/ch5/" title="语义分析">语义分析</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/computer-organization/" title="In 计算机组成">计算机组成</a>
+</div>
+
+    <span><a href="/2025/08/01/computer-science/computer-organization/ch4/" title="Ch4">Ch4</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/note/" title="In 七七八八">七七八八</a>
+</div>
+
+    <span><a href="/2025/08/02/note/20250802/" title="20250802阅读论文">20250802阅读论文</a></span>
   </li>
 
       
@@ -992,41 +1055,7 @@ NoResponse's Blog = NoResponse's Blog</title>
 <a href="/categories/computer-science/DS/" title="In 数据结构">数据结构</a>
 </div>
 
-    <span><a href="/2025/09/15/computer-science/DS/ch1/" title="ch1">ch1</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/computer-organization/" title="In 计算机组成">计算机组成</a>
-</div>
-
-    <span><a href="/2025/07/01/computer-science/computer-organization/%E9%94%99%E9%A2%98%E9%9B%86%E5%90%88/" title="错题集合">错题集合</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/AI/" title="In 人工智能">人工智能</a>
-</div>
-
-    <span><a href="/2025/06/16/AI/week12-13/" title="Week12-13">Week12-13</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/computer-organization/" title="In 计算机组成">计算机组成</a>
-</div>
-
-    <span><a href="/2025/08/10/computer-science/computer-organization/ch6/" title="Ch6">Ch6</a></span>
+    <span><a href="/2023/10/31/computer-science/DS/fds/" title="fds课程笔记">fds课程笔记</a></span>
   </li>
 
       
@@ -1047,34 +1076,10 @@ NoResponse's Blog = NoResponse's Blog</title>
 <div class="breadcrumb">
 <a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/DS/" title="In 数据结构">数据结构</a>
-</div>
-
-    <span><a href="/2025/09/15/computer-science/DS/ch2/" title="ch2">ch2</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
 <a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
 </div>
 
-    <span><a href="/2025/03/21/computer-science/compile-principles/ch1/" title="Introduction">Introduction</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
-</div>
-
-    <span><a href="/2025/03/23/computer-science/compile-principles/ch3/" title="语法分析">语法分析</a></span>
+    <span><a href="/2025/03/22/computer-science/compile-principles/ch2/" title="词法分析">词法分析</a></span>
   </li>
 
   </ul>
@@ -1099,13 +1104,13 @@ NoResponse's Blog = NoResponse's Blog</title>
     <span class="post-meta-item-icon">
       <i class="ic i-chart-area"></i>
     </span>
-    <span title="Symbols count total">172k words</span>
+    <span title="Symbols count total">177k words</span>
 
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="ic i-coffee"></i>
     </span>
-    <span title="Reading time total">2:36</span>
+    <span title="Reading time total">2:41</span>
   </div>
   <div class="powered-by">
     Powered by <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
