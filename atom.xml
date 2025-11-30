@@ -7,39 +7,40 @@
     <category term="人工智能" />
     <category term="软件工程" />
     <category term="自监督学习" />
-    <category term="容器" />
-    <category term="面经" />
     <category term="C++" />
+    <category term="面经" />
+    <category term="容器" />
+    <category term="杂项" />
     <category term="数据结构" />
     <category term="线性表" />
     <category term="栈、队列和数组" />
     <category term="串" />
     <category term="树与二叉树" />
     <category term="查找" />
-    <category term="排序" />
     <category term="图论" />
-    <category term="fds" />
+    <category term="排序" />
     <category term="操作系统" />
-    <category term="计算机网络" />
+    <category term="fds" />
+    <category term="Register Allocation" />
     <category term="编译原理" />
     <category term="Liveness Analysis" />
-    <category term="Register Allocation" />
-    <category term="词法分析" />
     <category term="语法分析" />
     <category term="抽象语法" />
+    <category term="词法分析" />
+    <category term="Basic Blocks and Traces" />
+    <category term="语义分析" />
     <category term="活动记录" />
     <category term="中间代码" />
-    <category term="Basic Blocks and Traces" />
     <category term="指令选择" />
-    <category term="语义分析" />
+    <category term="计算机网络" />
     <category term="计算机组成" />
-    <category term="数据的表示与运算" />
     <category term="存储系统" />
-    <category term="指令系统" />
+    <category term="数据的表示与运算" />
     <category term="CPU" />
     <category term="I/O" />
-    <category term="总线" />
+    <category term="指令系统" />
     <category term="错题" />
+    <category term="总线" />
     <entry>
         <id>http://example.com/2025/11/23/note/20251123/</id>
         <title>20251123面经回忆</title>
@@ -65,6 +66,90 @@
 </content>
         <category term="面经" />
         <updated>2025-11-22T16:00:00.000Z</updated>
+    </entry>
+    <entry>
+        <id>http://example.com/2025/11/20/note/20251130/</id>
+        <title>杂项</title>
+        <link rel="alternate" href="http://example.com/2025/11/20/note/20251130/"/>
+        <content type="html">&lt;h1 id=&#34;杂项&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#杂项&#34;&gt;#&lt;/a&gt; 杂项&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;explicit&lt;br&gt;
+ 构造函数默认是隐式转换的，如果想要禁止隐式转换，可以使用 explicit 关键字修饰构造函数。&lt;br&gt;
+比如&lt;/li&gt;
+&lt;/ol&gt;
+&lt;figure class=&#34;highlight c++&#34;&gt;&lt;figcaption&gt;&lt;span&gt;explicit&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;23&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;meta&#34;&gt;#&lt;span class=&#34;keyword&#34;&gt;include&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;&amp;lt;iostream&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;title class_&#34;&gt;FileSize&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;public&lt;/span&gt;:&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;comment&#34;&gt;// 构造函数：接受字节数&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;built_in&#34;&gt;FileSize&lt;/span&gt;(&lt;span class=&#34;type&#34;&gt;long&lt;/span&gt; &lt;span class=&#34;type&#34;&gt;long&lt;/span&gt; bytes) : &lt;span class=&#34;built_in&#34;&gt;bytes_&lt;/span&gt;(bytes) &amp;#123;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;function&#34;&gt;&lt;span class=&#34;type&#34;&gt;long&lt;/span&gt; &lt;span class=&#34;type&#34;&gt;long&lt;/span&gt; &lt;span class=&#34;title&#34;&gt;getBytes&lt;/span&gt;&lt;span class=&#34;params&#34;&gt;()&lt;/span&gt; &lt;span class=&#34;type&#34;&gt;const&lt;/span&gt; &lt;/span&gt;&amp;#123; &lt;span class=&#34;keyword&#34;&gt;return&lt;/span&gt; bytes_; &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;private&lt;/span&gt;:&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;type&#34;&gt;long&lt;/span&gt; &lt;span class=&#34;type&#34;&gt;long&lt;/span&gt; bytes_;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;function&#34;&gt;&lt;span class=&#34;type&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;title&#34;&gt;deleteFileLargerThan&lt;/span&gt;&lt;span class=&#34;params&#34;&gt;(&lt;span class=&#34;type&#34;&gt;const&lt;/span&gt; FileSize&amp;amp; maxSize)&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    std::cout &amp;lt;&amp;lt; &lt;span class=&#34;string&#34;&gt;&amp;quot;Deleting files larger than &amp;quot;&lt;/span&gt; &amp;lt;&amp;lt; maxSize.&lt;span class=&#34;built_in&#34;&gt;getBytes&lt;/span&gt;() &amp;lt;&amp;lt; &lt;span class=&#34;string&#34;&gt;&amp;quot; bytes.\n&amp;quot;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;comment&#34;&gt;// 实际逻辑省略...&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;function&#34;&gt;&lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;title&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;params&#34;&gt;()&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;built_in&#34;&gt;deleteFileLargerThan&lt;/span&gt;(&lt;span class=&#34;string&#34;&gt;&amp;quot;100MB&amp;quot;&lt;/span&gt;);  &lt;span class=&#34;comment&#34;&gt;// 打错了！本想传字符串配置，但函数不接受 string&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;comment&#34;&gt;// &amp;quot;100MB&amp;quot;  →  const char*  →  bool(true)  →  long long(1)   →  FileSize(1)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;comment&#34;&gt;// 变成：Deleting files larger than 1 bytes. 严重错误&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;回调函数&lt;br&gt;
+回调函数是一种函数指针，它允许在运行时指定一个函数，并在某个事件发生时调用该函数。&lt;br&gt;
+人话：一个被作为参数传递给另一个函数，并在 “合适的时候” 被调用的函数。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;figure class=&#34;highlight c++&#34;&gt;&lt;figcaption&gt;&lt;span&gt;callback&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;meta&#34;&gt;#&lt;span class=&#34;keyword&#34;&gt;include&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;&amp;lt;functional&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;std::function&amp;lt;R(Args...)&amp;gt; cb;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;// R: 返回类型&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;// Args...: 参数列表&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;blockquote&gt;
+&lt;p&gt;std::function 能装什么？&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;普通函数&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&#34;highlight c++&#34;&gt;&lt;figcaption&gt;&lt;span&gt;callback&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;function&#34;&gt;&lt;span class=&#34;type&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;title&#34;&gt;greet&lt;/span&gt;&lt;span class=&#34;params&#34;&gt;()&lt;/span&gt; &lt;/span&gt;&amp;#123; std::cout &amp;lt;&amp;lt; &lt;span class=&#34;string&#34;&gt;&amp;quot;Hello!\n&amp;quot;&lt;/span&gt;; &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;std::function&amp;lt;&lt;span class=&#34;type&#34;&gt;void&lt;/span&gt;()&amp;gt; cb = greet;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;cb&lt;/span&gt;(); &lt;span class=&#34;comment&#34;&gt;// 输出 Hello!&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;ul&gt;
+&lt;li&gt;Lambda 表达式&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&#34;highlight c++&#34;&gt;&lt;figcaption&gt;&lt;span&gt;callback&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; x = &lt;span class=&#34;number&#34;&gt;42&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;std::function&amp;lt;&lt;span class=&#34;type&#34;&gt;void&lt;/span&gt;()&amp;gt; cb = [x]() &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    std::cout &amp;lt;&amp;lt; &lt;span class=&#34;string&#34;&gt;&amp;quot;Captured x = &amp;quot;&lt;/span&gt; &amp;lt;&amp;lt; x &amp;lt;&amp;lt; &lt;span class=&#34;string&#34;&gt;&amp;quot;\n&amp;quot;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;cb&lt;/span&gt;(); &lt;span class=&#34;comment&#34;&gt;// 输出 Captured x = 42&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;ul&gt;
+&lt;li&gt;函数对象&lt;/li&gt;
+&lt;li&gt;成员函数&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;mutable std::mutex mtx_;&lt;/code&gt; &lt;br&gt;
+ &lt;code&gt;mutable&lt;/code&gt;  关键字表示变量可以在常量函数中修改。&lt;br&gt;
+如果没有 mutable，mtx_ 是普通成员变量，在 const 函数中，所有成员都被视为 const，调用 mtx_.lock () 会报错&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;std::unique_lock&lt;span class=&#34;exturl&#34; data-url=&#34;c3RkOjptdXRleA==&#34;&gt;std::mutex&lt;/span&gt; lock(mtx_)&lt;br&gt;
+ 进入时自动调用 mtx_.lock ()（当前线程获得锁），当 lock 变量离开作用域（比如函数返回、出 {}），会自动调用 mtx_.unlock ()&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;lambda&lt;br&gt;
+ 有点抽象，有空继续研究&lt;br&gt;
+&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9jLmJpYW5jaGVuZy5uZXQvdmlldy9ibDF5dnd5Lmh0bWw=&#34;&gt; https://c.biancheng.net/view/bl1yvwy.html&lt;/span&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;作为函数对象（Functor）替代手写类&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&#34;highlight c++&#34;&gt;&lt;figcaption&gt;&lt;span&gt;lambda&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;struct&lt;/span&gt; &lt;span class=&#34;title class_&#34;&gt;IsEven&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;function&#34;&gt;&lt;span class=&#34;type&#34;&gt;bool&lt;/span&gt; &lt;span class=&#34;title&#34;&gt;operator&lt;/span&gt;&lt;span class=&#34;params&#34;&gt;()&lt;/span&gt;&lt;span class=&#34;params&#34;&gt;(&lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; x)&lt;/span&gt; &lt;span class=&#34;type&#34;&gt;const&lt;/span&gt; &lt;/span&gt;&amp;#123; &lt;span class=&#34;keyword&#34;&gt;return&lt;/span&gt; x % &lt;span class=&#34;number&#34;&gt;2&lt;/span&gt; == &lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;; &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;std::vector&amp;lt;&lt;span class=&#34;type&#34;&gt;int&lt;/span&gt;&amp;gt; v = &amp;#123;&lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;,&lt;span class=&#34;number&#34;&gt;2&lt;/span&gt;,&lt;span class=&#34;number&#34;&gt;3&lt;/span&gt;,&lt;span class=&#34;number&#34;&gt;4&lt;/span&gt;,&lt;span class=&#34;number&#34;&gt;5&lt;/span&gt;&amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;auto&lt;/span&gt; it = std::&lt;span class=&#34;built_in&#34;&gt;find_if&lt;/span&gt;(v.&lt;span class=&#34;built_in&#34;&gt;begin&lt;/span&gt;(), v.&lt;span class=&#34;built_in&#34;&gt;end&lt;/span&gt;(), IsEven&amp;#123;&amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;// lambda写法&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;auto&lt;/span&gt; it = std::&lt;span class=&#34;built_in&#34;&gt;find_if&lt;/span&gt;(v.&lt;span class=&#34;built_in&#34;&gt;begin&lt;/span&gt;(), v.&lt;span class=&#34;built_in&#34;&gt;end&lt;/span&gt;(), [](&lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; x) &amp;#123; &lt;span class=&#34;keyword&#34;&gt;return&lt;/span&gt; x % &lt;span class=&#34;number&#34;&gt;2&lt;/span&gt; == &lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;; &amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;ul&gt;
+&lt;li&gt;STL 算法的自定义谓词（最常用！）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&#34;highlight c++&#34;&gt;&lt;figcaption&gt;&lt;span&gt;lambda&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;17&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;std::vector&amp;lt;Person&amp;gt; people = &amp;#123;...&amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;// 按年龄降序&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;std::&lt;span class=&#34;built_in&#34;&gt;sort&lt;/span&gt;(people.&lt;span class=&#34;built_in&#34;&gt;begin&lt;/span&gt;(), people.&lt;span class=&#34;built_in&#34;&gt;end&lt;/span&gt;(),&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;          [](&lt;span class=&#34;type&#34;&gt;const&lt;/span&gt; Person&amp;amp; a, &lt;span class=&#34;type&#34;&gt;const&lt;/span&gt; Person&amp;amp; b) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;              &lt;span class=&#34;keyword&#34;&gt;return&lt;/span&gt; a.age &amp;gt; b.age;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;          &amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;// 删除所有空字符串&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;vec.&lt;span class=&#34;built_in&#34;&gt;erase&lt;/span&gt;(&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    std::&lt;span class=&#34;built_in&#34;&gt;remove_if&lt;/span&gt;(vec.&lt;span class=&#34;built_in&#34;&gt;begin&lt;/span&gt;(), vec.&lt;span class=&#34;built_in&#34;&gt;end&lt;/span&gt;(),&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;                   [](&lt;span class=&#34;type&#34;&gt;const&lt;/span&gt; std::string&amp;amp; s) &amp;#123; &lt;span class=&#34;keyword&#34;&gt;return&lt;/span&gt; s.&lt;span class=&#34;built_in&#34;&gt;empty&lt;/span&gt;(); &amp;#125;),&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    vec.&lt;span class=&#34;built_in&#34;&gt;end&lt;/span&gt;()&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;// 找第一个大于 10 的数&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;auto&lt;/span&gt; it = std::&lt;span class=&#34;built_in&#34;&gt;find_if&lt;/span&gt;(v.&lt;span class=&#34;built_in&#34;&gt;begin&lt;/span&gt;(), v.&lt;span class=&#34;built_in&#34;&gt;end&lt;/span&gt;(), [](&lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; x) &amp;#123; &lt;span class=&#34;keyword&#34;&gt;return&lt;/span&gt; x &amp;gt; &lt;span class=&#34;number&#34;&gt;10&lt;/span&gt;; &amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;ol start=&#34;6&#34;&gt;
+&lt;li&gt;condition_variable&lt;br&gt;
+ 不希望 FSM 的 worker 线程这样:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;figure class=&#34;highlight c++&#34;&gt;&lt;figcaption&gt;&lt;span&gt;轮询&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;while&lt;/span&gt; (&lt;span class=&#34;literal&#34;&gt;true&lt;/span&gt;) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;keyword&#34;&gt;if&lt;/span&gt; (queue 空)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        一直查（忙等）&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;condition_variable 的作用：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;队列空 → 工作线程睡觉&lt;/li&gt;
+&lt;li&gt;有事件 → 唤醒工作线程&lt;br&gt;
+写法：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&#34;highlight c++&#34;&gt;&lt;figcaption&gt;&lt;span&gt;condition_variable&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;cv.&lt;span class=&#34;built_in&#34;&gt;wait&lt;/span&gt;(lock, []&amp;#123; &lt;span class=&#34;keyword&#34;&gt;return&lt;/span&gt; !queue.&lt;span class=&#34;built_in&#34;&gt;empty&lt;/span&gt;(); &amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;ol start=&#34;7&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;atomic 库&lt;br&gt;
+ &lt;code&gt;atomic&amp;lt;bool&amp;gt;&lt;/code&gt;  原子变量，线程安全的 bool&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;匿名函数&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;workerThread + 队列 + 状态机&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+</content>
+        <category term="杂项" />
+        <updated>2025-11-19T16:00:00.000Z</updated>
     </entry>
     <entry>
         <id>http://example.com/2025/10/26/oop/note/</id>
@@ -503,6 +588,21 @@ typedef 是 “类型定义” 的关键字，是编译器理解的真正类型�
 &lt;figure class=&#34;highlight c++&#34;&gt;&lt;figcaption&gt;&lt;span&gt;atomic&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;meta&#34;&gt;#&lt;span class=&#34;keyword&#34;&gt;include&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;&amp;lt;atomic&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;std::atomic&amp;lt;&lt;span class=&#34;type&#34;&gt;int&lt;/span&gt;&amp;gt; counter;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;counter.&lt;span class=&#34;built_in&#34;&gt;fetch_add&lt;/span&gt;(&lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;);   &lt;span class=&#34;comment&#34;&gt;// fetch_sub(), fetch_and(), fetch_or()...&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;counter.&lt;span class=&#34;built_in&#34;&gt;load&lt;/span&gt;();&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;counter.&lt;span class=&#34;built_in&#34;&gt;store&lt;/span&gt;(&lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;counter.&lt;span class=&#34;built_in&#34;&gt;exchange&lt;/span&gt;(&lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;counter.&lt;span class=&#34;built_in&#34;&gt;compare_exchange_strong&lt;/span&gt;(old_value, new_value);  &lt;span class=&#34;comment&#34;&gt;// 如果old_value == counter，则将 counter 设为 new_value&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;counter.&lt;span class=&#34;built_in&#34;&gt;compare_exchange_weak&lt;/span&gt;(old_value, new_value);    &lt;span class=&#34;comment&#34;&gt;// 区别：weak 版本允许虚假失败，需要循环&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;counter.&lt;span class=&#34;built_in&#34;&gt;is_lock_free&lt;/span&gt;();&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;ul&gt;
 &lt;li&gt;线程同步原语&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;26&#34;&gt;
+&lt;li&gt;&lt;code&gt;const&lt;/code&gt;  用法&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;常量变量&lt;br&gt;
+必须在定义时初始化&lt;/li&gt;
+&lt;li&gt;常量指针 vs 指针常量：见上&lt;/li&gt;
+&lt;li&gt;引用与 const：见上 &lt;code&gt;const 引用&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;类中的 const:
+&lt;ul&gt;
+&lt;li&gt;const 成员函数：不能修改对象成员变量，不能调用非 const 成员函数&lt;/li&gt;
+&lt;li&gt;const 对象：const 对象只能调用 const 成员函数&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 </content>
         <category term="C++" />
@@ -4583,6 +4683,78 @@ Navigation Syntax&lt;/p&gt;
         <updated>2025-06-18T16:00:00.000Z</updated>
     </entry>
     <entry>
+        <id>http://example.com/2025/06/18/computer-science/compile-principles/ch11/</id>
+        <title>Register Allocation</title>
+        <link rel="alternate" href="http://example.com/2025/06/18/computer-science/compile-principles/ch11/"/>
+        <content type="html">&lt;h1 id=&#34;register-allocation&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#register-allocation&#34;&gt;#&lt;/a&gt; Register Allocation&lt;/h1&gt;
+&lt;p&gt;目标：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Map temporaries to registers&lt;/li&gt;
+&lt;li&gt;Preserve program semantics&lt;/li&gt;
+&lt;li&gt;Optimize performance&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;图着色算法&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#图着色算法&#34;&gt;#&lt;/a&gt; 图着色算法&lt;/h2&gt;
+&lt;p&gt;冲突图是一个无向图，冲突图中，每个节点是一个变量（寄存器分配的候选对象）。&lt;br&gt;
+如果两个变量在同一时刻是活跃的（live），它们就有冲突边（interference edge），表示它们不能被分配到同一个寄存器&lt;br&gt;
+冲突信息可以用矩阵或者图来表示&lt;/p&gt;
+&lt;h3 id=&#34;冲突图构建&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#冲突图构建&#34;&gt;#&lt;/a&gt; 冲突图构建&lt;/h3&gt;
+&lt;p&gt;我们从一个中间代码的指令出发，根据 live-out（就是 out 集合）添加冲突边：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;非 move 指令（不是 a := b 这种）&lt;br&gt;
+比如 a := b1 + b2&lt;br&gt;
+ 对于每个 bn 和 a 之间都添加冲突边&lt;br&gt;
+比如下面这个例子：&lt;br&gt;
+&lt;img data-src=&#34;f1.jpg&#34; alt&gt;&lt;br&gt;
+可以看到有 ab ac 同时 live 了，所以为 a 和 b，a 和 c 添加冲突边&lt;/li&gt;
+&lt;li&gt;move 指令&lt;br&gt;
+对于 move 指令，不添加冲突边：&lt;br&gt;
+比如对于第 2 条指令 d ← a，out [2] = {a, e}，那么只对 d 和 e 添加冲突边，对 d 和 a 不添加&lt;br&gt;
+但如果 move 之后又对 d 重新赋值了，那么还是要添加上 d 和 a 之间的冲突边&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;冲突图着色&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#冲突图着色&#34;&gt;#&lt;/a&gt; 冲突图着色&lt;/h3&gt;
+&lt;p&gt;Vertex Coloring: 给图中的顶点着色，使得图中没有边连接相同颜色的顶点&lt;br&gt;
+ K-Coloring: 颜色数小于 K&lt;/p&gt;
+&lt;h4 id=&#34;kempe-简化&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#kempe-简化&#34;&gt;#&lt;/a&gt; Kempe 简化&lt;/h4&gt;
+&lt;p&gt;如果图中有一个节点 n 的度数 &amp;lt;K（也就是它的冲突数少于寄存器数），那我们可以 “临时删掉” 这个节点，并递归给剩下的图上色。之后再把这个节点加回来，它一定可以找到一个合法颜色。&lt;/p&gt;
+&lt;p&gt;如果图中所有节点的度数都 ≥ K，那就可能要进入溢出（spill）处理&lt;br&gt;
+算法步骤：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;build: 画冲突图&lt;/li&gt;
+&lt;li&gt;simplify the nodes with insignificant degree: 选取 degree &amp;lt; k 的节点，压栈&lt;/li&gt;
+&lt;li&gt;select (or color) while rebuilding the graph: 出栈，分配颜色&lt;br&gt;
+ A vertex such that its degree &amp;lt; k is always k-colorable&lt;br&gt;
+Remove such vertices and push them to a stack until the graph becomes empty&lt;br&gt;
+ 移除顶点的同时移除相关边&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;coalescing&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#coalescing&#34;&gt;#&lt;/a&gt; Coalescing&lt;/h4&gt;
+&lt;p&gt;遵循两种策略：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Briggs Criteria&lt;/strong&gt;: 如果将节点  &lt;code&gt;a&lt;/code&gt;  和  &lt;code&gt;b&lt;/code&gt;  合并后得到的新节点  &lt;code&gt;ab&lt;/code&gt; ，其相邻节点中 degree &amp;gt;= K 的节点（significant-degree neighbors）的数量 小于 K，则可以合并&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;George Criteria&lt;/strong&gt;: 如果对节点  &lt;code&gt;a&lt;/code&gt;  和  &lt;code&gt;b&lt;/code&gt; ，对于  &lt;code&gt;a&lt;/code&gt;  的每一个邻居  &lt;code&gt;t&lt;/code&gt; ， 满足二者其中之一，就能合并：
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;t&lt;/code&gt;  本来就和  &lt;code&gt;b&lt;/code&gt;  有冲突&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;t&lt;/code&gt;  的 degree &amp;lt; K&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;整体流程：&lt;br&gt;
+&lt;img data-src=&#34;f2.jpg&#34; alt&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;为什么要 simplify non-move-related node: 保留 move-related 的后续可以合并&lt;/li&gt;
+&lt;li&gt;freeze: 当我们遇到两个变量 a ← b 有 move 指令，但现在还不能安全合并，我们又不想立刻 spill，于是我们 “冻结” 这条 move 指令：不再试图合并 a 和 b，而是让其中一个变成非 move 相关（non-move-related），进入 Simplify 阶段继续处理&lt;/li&gt;
+&lt;li&gt;spill 规则：优先移除不被经常使用、degree 大的节点
+&lt;ul&gt;
+&lt;li&gt;实际溢出的 priority 计算，对于节点 a：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;span class=&#34;katex-display&#34;&gt;&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34; display=&#34;block&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;p&lt;/mi&gt;&lt;mi&gt;r&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mi&gt;o&lt;/mi&gt;&lt;mi&gt;r&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mo stretchy=&#34;false&#34;&gt;(&lt;/mo&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mo stretchy=&#34;false&#34;&gt;)&lt;/mo&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mfrac&gt;&lt;mrow&gt;&lt;mo stretchy=&#34;false&#34;&gt;(&lt;/mo&gt;&lt;mi&gt;u&lt;/mi&gt;&lt;mi&gt;s&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mi&gt;d&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mi&gt;o&lt;/mi&gt;&lt;mi&gt;u&lt;/mi&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mi&gt;s&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mi&gt;d&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mi&gt;l&lt;/mi&gt;&lt;mi&gt;o&lt;/mi&gt;&lt;mi&gt;o&lt;/mi&gt;&lt;mi&gt;p&lt;/mi&gt;&lt;mo stretchy=&#34;false&#34;&gt;)&lt;/mo&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mi&gt;l&lt;/mi&gt;&lt;mi&gt;o&lt;/mi&gt;&lt;mi&gt;o&lt;/mi&gt;&lt;msub&gt;&lt;mi&gt;p&lt;/mi&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;/msub&gt;&lt;mi&gt;u&lt;/mi&gt;&lt;mi&gt;m&lt;/mi&gt;&lt;mo&gt;∗&lt;/mo&gt;&lt;mo stretchy=&#34;false&#34;&gt;(&lt;/mo&gt;&lt;mi&gt;u&lt;/mi&gt;&lt;mi&gt;s&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mi&gt;d&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mi&gt;s&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mi&gt;d&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mi&gt;l&lt;/mi&gt;&lt;mi&gt;o&lt;/mi&gt;&lt;mi&gt;o&lt;/mi&gt;&lt;mi&gt;p&lt;/mi&gt;&lt;mo stretchy=&#34;false&#34;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;mi&gt;D&lt;/mi&gt;&lt;/mfrac&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;priority(t) = \frac{(use + def outside loop) + loop_num * (use + def inside loop)}{D}
+&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:1em;vertical-align:-0.25em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;p&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.02778em;&#34;&gt;r&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;o&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.02778em;&#34;&gt;r&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;t&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.03588em;&#34;&gt;y&lt;/span&gt;&lt;span class=&#34;mopen&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;t&lt;/span&gt;&lt;span class=&#34;mclose&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mrel&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:2.113em;vertical-align:-0.686em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mopen nulldelimiter&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mfrac&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:1.427em;&#34;&gt;&lt;span style=&#34;top:-2.314em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:3em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.02778em;&#34;&gt;D&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;top:-3.23em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:3em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;frac-line&#34; style=&#34;border-bottom-width:0.04em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;top:-3.677em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:3em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mopen&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;u&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;s&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mbin&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;d&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.10764em;&#34;&gt;f&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;o&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;u&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;t&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;s&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;d&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.01968em;&#34;&gt;l&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;o&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;o&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;p&lt;/span&gt;&lt;span class=&#34;mclose&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mbin&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.01968em;&#34;&gt;l&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;o&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;o&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;p&lt;/span&gt;&lt;span class=&#34;msupsub&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.151392em;&#34;&gt;&lt;span style=&#34;top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.7em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mathnormal mtight&#34;&gt;n&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.15em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;u&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;m&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mbin&#34;&gt;∗&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mopen&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;u&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;s&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mbin&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;d&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.10764em;&#34;&gt;f&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;s&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;d&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.01968em;&#34;&gt;l&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;o&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;o&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;p&lt;/span&gt;&lt;span class=&#34;mclose&#34;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.686em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;mclose nulldelimiter&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+</content>
+        <category term="Register Allocation" />
+        <updated>2025-06-17T16:00:00.000Z</updated>
+    </entry>
+    <entry>
         <id>http://example.com/2025/06/18/computer-science/compile-principles/ch10/</id>
         <title>Liveness Analysis</title>
         <link rel="alternate" href="http://example.com/2025/06/18/computer-science/compile-principles/ch10/"/>
@@ -4672,78 +4844,6 @@ Navigation Syntax&lt;/p&gt;
 &lt;p&gt;适合稀疏集合（用一个链表存集合中的变量，Sorted by variable name/ID）&lt;/p&gt;
 </content>
         <category term="Liveness Analysis" />
-        <updated>2025-06-17T16:00:00.000Z</updated>
-    </entry>
-    <entry>
-        <id>http://example.com/2025/06/18/computer-science/compile-principles/ch11/</id>
-        <title>Register Allocation</title>
-        <link rel="alternate" href="http://example.com/2025/06/18/computer-science/compile-principles/ch11/"/>
-        <content type="html">&lt;h1 id=&#34;register-allocation&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#register-allocation&#34;&gt;#&lt;/a&gt; Register Allocation&lt;/h1&gt;
-&lt;p&gt;目标：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Map temporaries to registers&lt;/li&gt;
-&lt;li&gt;Preserve program semantics&lt;/li&gt;
-&lt;li&gt;Optimize performance&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;图着色算法&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#图着色算法&#34;&gt;#&lt;/a&gt; 图着色算法&lt;/h2&gt;
-&lt;p&gt;冲突图是一个无向图，冲突图中，每个节点是一个变量（寄存器分配的候选对象）。&lt;br&gt;
-如果两个变量在同一时刻是活跃的（live），它们就有冲突边（interference edge），表示它们不能被分配到同一个寄存器&lt;br&gt;
-冲突信息可以用矩阵或者图来表示&lt;/p&gt;
-&lt;h3 id=&#34;冲突图构建&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#冲突图构建&#34;&gt;#&lt;/a&gt; 冲突图构建&lt;/h3&gt;
-&lt;p&gt;我们从一个中间代码的指令出发，根据 live-out（就是 out 集合）添加冲突边：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;非 move 指令（不是 a := b 这种）&lt;br&gt;
-比如 a := b1 + b2&lt;br&gt;
- 对于每个 bn 和 a 之间都添加冲突边&lt;br&gt;
-比如下面这个例子：&lt;br&gt;
-&lt;img data-src=&#34;f1.jpg&#34; alt&gt;&lt;br&gt;
-可以看到有 ab ac 同时 live 了，所以为 a 和 b，a 和 c 添加冲突边&lt;/li&gt;
-&lt;li&gt;move 指令&lt;br&gt;
-对于 move 指令，不添加冲突边：&lt;br&gt;
-比如对于第 2 条指令 d ← a，out [2] = {a, e}，那么只对 d 和 e 添加冲突边，对 d 和 a 不添加&lt;br&gt;
-但如果 move 之后又对 d 重新赋值了，那么还是要添加上 d 和 a 之间的冲突边&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3 id=&#34;冲突图着色&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#冲突图着色&#34;&gt;#&lt;/a&gt; 冲突图着色&lt;/h3&gt;
-&lt;p&gt;Vertex Coloring: 给图中的顶点着色，使得图中没有边连接相同颜色的顶点&lt;br&gt;
- K-Coloring: 颜色数小于 K&lt;/p&gt;
-&lt;h4 id=&#34;kempe-简化&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#kempe-简化&#34;&gt;#&lt;/a&gt; Kempe 简化&lt;/h4&gt;
-&lt;p&gt;如果图中有一个节点 n 的度数 &amp;lt;K（也就是它的冲突数少于寄存器数），那我们可以 “临时删掉” 这个节点，并递归给剩下的图上色。之后再把这个节点加回来，它一定可以找到一个合法颜色。&lt;/p&gt;
-&lt;p&gt;如果图中所有节点的度数都 ≥ K，那就可能要进入溢出（spill）处理&lt;br&gt;
-算法步骤：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;build: 画冲突图&lt;/li&gt;
-&lt;li&gt;simplify the nodes with insignificant degree: 选取 degree &amp;lt; k 的节点，压栈&lt;/li&gt;
-&lt;li&gt;select (or color) while rebuilding the graph: 出栈，分配颜色&lt;br&gt;
- A vertex such that its degree &amp;lt; k is always k-colorable&lt;br&gt;
-Remove such vertices and push them to a stack until the graph becomes empty&lt;br&gt;
- 移除顶点的同时移除相关边&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h4 id=&#34;coalescing&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#coalescing&#34;&gt;#&lt;/a&gt; Coalescing&lt;/h4&gt;
-&lt;p&gt;遵循两种策略：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Briggs Criteria&lt;/strong&gt;: 如果将节点  &lt;code&gt;a&lt;/code&gt;  和  &lt;code&gt;b&lt;/code&gt;  合并后得到的新节点  &lt;code&gt;ab&lt;/code&gt; ，其相邻节点中 degree &amp;gt;= K 的节点（significant-degree neighbors）的数量 小于 K，则可以合并&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;George Criteria&lt;/strong&gt;: 如果对节点  &lt;code&gt;a&lt;/code&gt;  和  &lt;code&gt;b&lt;/code&gt; ，对于  &lt;code&gt;a&lt;/code&gt;  的每一个邻居  &lt;code&gt;t&lt;/code&gt; ， 满足二者其中之一，就能合并：
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;t&lt;/code&gt;  本来就和  &lt;code&gt;b&lt;/code&gt;  有冲突&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;t&lt;/code&gt;  的 degree &amp;lt; K&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;整体流程：&lt;br&gt;
-&lt;img data-src=&#34;f2.jpg&#34; alt&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;为什么要 simplify non-move-related node: 保留 move-related 的后续可以合并&lt;/li&gt;
-&lt;li&gt;freeze: 当我们遇到两个变量 a ← b 有 move 指令，但现在还不能安全合并，我们又不想立刻 spill，于是我们 “冻结” 这条 move 指令：不再试图合并 a 和 b，而是让其中一个变成非 move 相关（non-move-related），进入 Simplify 阶段继续处理&lt;/li&gt;
-&lt;li&gt;spill 规则：优先移除不被经常使用、degree 大的节点
-&lt;ul&gt;
-&lt;li&gt;实际溢出的 priority 计算，对于节点 a：&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;span class=&#34;katex-display&#34;&gt;&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34; display=&#34;block&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;p&lt;/mi&gt;&lt;mi&gt;r&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mi&gt;o&lt;/mi&gt;&lt;mi&gt;r&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mo stretchy=&#34;false&#34;&gt;(&lt;/mo&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mo stretchy=&#34;false&#34;&gt;)&lt;/mo&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mfrac&gt;&lt;mrow&gt;&lt;mo stretchy=&#34;false&#34;&gt;(&lt;/mo&gt;&lt;mi&gt;u&lt;/mi&gt;&lt;mi&gt;s&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mi&gt;d&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mi&gt;o&lt;/mi&gt;&lt;mi&gt;u&lt;/mi&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mi&gt;s&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mi&gt;d&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mi&gt;l&lt;/mi&gt;&lt;mi&gt;o&lt;/mi&gt;&lt;mi&gt;o&lt;/mi&gt;&lt;mi&gt;p&lt;/mi&gt;&lt;mo stretchy=&#34;false&#34;&gt;)&lt;/mo&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mi&gt;l&lt;/mi&gt;&lt;mi&gt;o&lt;/mi&gt;&lt;mi&gt;o&lt;/mi&gt;&lt;msub&gt;&lt;mi&gt;p&lt;/mi&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;/msub&gt;&lt;mi&gt;u&lt;/mi&gt;&lt;mi&gt;m&lt;/mi&gt;&lt;mo&gt;∗&lt;/mo&gt;&lt;mo stretchy=&#34;false&#34;&gt;(&lt;/mo&gt;&lt;mi&gt;u&lt;/mi&gt;&lt;mi&gt;s&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mi&gt;d&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mi&gt;s&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mi&gt;d&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mi&gt;l&lt;/mi&gt;&lt;mi&gt;o&lt;/mi&gt;&lt;mi&gt;o&lt;/mi&gt;&lt;mi&gt;p&lt;/mi&gt;&lt;mo stretchy=&#34;false&#34;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;mi&gt;D&lt;/mi&gt;&lt;/mfrac&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;priority(t) = \frac{(use + def outside loop) + loop_num * (use + def inside loop)}{D}
-&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:1em;vertical-align:-0.25em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;p&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.02778em;&#34;&gt;r&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;o&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.02778em;&#34;&gt;r&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;t&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.03588em;&#34;&gt;y&lt;/span&gt;&lt;span class=&#34;mopen&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;t&lt;/span&gt;&lt;span class=&#34;mclose&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mrel&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:2.113em;vertical-align:-0.686em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mopen nulldelimiter&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mfrac&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:1.427em;&#34;&gt;&lt;span style=&#34;top:-2.314em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:3em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.02778em;&#34;&gt;D&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;top:-3.23em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:3em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;frac-line&#34; style=&#34;border-bottom-width:0.04em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;top:-3.677em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:3em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mopen&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;u&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;s&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mbin&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;d&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.10764em;&#34;&gt;f&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;o&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;u&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;t&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;s&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;d&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.01968em;&#34;&gt;l&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;o&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;o&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;p&lt;/span&gt;&lt;span class=&#34;mclose&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mbin&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.01968em;&#34;&gt;l&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;o&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;o&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;p&lt;/span&gt;&lt;span class=&#34;msupsub&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.151392em;&#34;&gt;&lt;span style=&#34;top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.7em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mathnormal mtight&#34;&gt;n&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.15em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;u&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;m&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mbin&#34;&gt;∗&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mopen&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;u&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;s&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mbin&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;d&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.10764em;&#34;&gt;f&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;s&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;d&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.01968em;&#34;&gt;l&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;o&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;o&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;p&lt;/span&gt;&lt;span class=&#34;mclose&#34;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.686em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;mclose nulldelimiter&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
-</content>
-        <category term="Register Allocation" />
         <updated>2025-06-17T16:00:00.000Z</updated>
     </entry>
     <entry>

@@ -10,39 +10,40 @@
         <category>人工智能</category>
         <category>软件工程</category>
         <category>自监督学习</category>
-        <category>容器</category>
-        <category>面经</category>
         <category>C++</category>
+        <category>面经</category>
+        <category>容器</category>
+        <category>杂项</category>
         <category>数据结构</category>
         <category>线性表</category>
         <category>栈、队列和数组</category>
         <category>串</category>
         <category>树与二叉树</category>
         <category>查找</category>
-        <category>排序</category>
         <category>图论</category>
-        <category>fds</category>
+        <category>排序</category>
         <category>操作系统</category>
-        <category>计算机网络</category>
+        <category>fds</category>
+        <category>Register Allocation</category>
         <category>编译原理</category>
         <category>Liveness Analysis</category>
-        <category>Register Allocation</category>
-        <category>词法分析</category>
         <category>语法分析</category>
         <category>抽象语法</category>
+        <category>词法分析</category>
+        <category>Basic Blocks and Traces</category>
+        <category>语义分析</category>
         <category>活动记录</category>
         <category>中间代码</category>
-        <category>Basic Blocks and Traces</category>
         <category>指令选择</category>
-        <category>语义分析</category>
+        <category>计算机网络</category>
         <category>计算机组成</category>
-        <category>数据的表示与运算</category>
         <category>存储系统</category>
-        <category>指令系统</category>
+        <category>数据的表示与运算</category>
         <category>CPU</category>
         <category>I/O</category>
-        <category>总线</category>
+        <category>指令系统</category>
         <category>错题</category>
+        <category>总线</category>
         <item>
             <guid isPermalink="true">http://example.com/2025/11/23/note/20251123/</guid>
             <title>20251123面经回忆</title>
@@ -65,6 +66,90 @@
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;忘了&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">http://example.com/2025/11/20/note/20251130/</guid>
+            <title>杂项</title>
+            <link>http://example.com/2025/11/20/note/20251130/</link>
+            <category>杂项</category>
+            <pubDate>Thu, 20 Nov 2025 00:00:00 +0800</pubDate>
+            <description><![CDATA[ &lt;h1 id=&#34;杂项&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#杂项&#34;&gt;#&lt;/a&gt; 杂项&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;explicit&lt;br&gt;
+ 构造函数默认是隐式转换的，如果想要禁止隐式转换，可以使用 explicit 关键字修饰构造函数。&lt;br&gt;
+比如&lt;/li&gt;
+&lt;/ol&gt;
+&lt;figure class=&#34;highlight c++&#34;&gt;&lt;figcaption&gt;&lt;span&gt;explicit&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;23&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;meta&#34;&gt;#&lt;span class=&#34;keyword&#34;&gt;include&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;&amp;lt;iostream&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;title class_&#34;&gt;FileSize&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;public&lt;/span&gt;:&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;comment&#34;&gt;// 构造函数：接受字节数&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;built_in&#34;&gt;FileSize&lt;/span&gt;(&lt;span class=&#34;type&#34;&gt;long&lt;/span&gt; &lt;span class=&#34;type&#34;&gt;long&lt;/span&gt; bytes) : &lt;span class=&#34;built_in&#34;&gt;bytes_&lt;/span&gt;(bytes) &amp;#123;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;function&#34;&gt;&lt;span class=&#34;type&#34;&gt;long&lt;/span&gt; &lt;span class=&#34;type&#34;&gt;long&lt;/span&gt; &lt;span class=&#34;title&#34;&gt;getBytes&lt;/span&gt;&lt;span class=&#34;params&#34;&gt;()&lt;/span&gt; &lt;span class=&#34;type&#34;&gt;const&lt;/span&gt; &lt;/span&gt;&amp;#123; &lt;span class=&#34;keyword&#34;&gt;return&lt;/span&gt; bytes_; &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;private&lt;/span&gt;:&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;type&#34;&gt;long&lt;/span&gt; &lt;span class=&#34;type&#34;&gt;long&lt;/span&gt; bytes_;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;function&#34;&gt;&lt;span class=&#34;type&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;title&#34;&gt;deleteFileLargerThan&lt;/span&gt;&lt;span class=&#34;params&#34;&gt;(&lt;span class=&#34;type&#34;&gt;const&lt;/span&gt; FileSize&amp;amp; maxSize)&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    std::cout &amp;lt;&amp;lt; &lt;span class=&#34;string&#34;&gt;&amp;quot;Deleting files larger than &amp;quot;&lt;/span&gt; &amp;lt;&amp;lt; maxSize.&lt;span class=&#34;built_in&#34;&gt;getBytes&lt;/span&gt;() &amp;lt;&amp;lt; &lt;span class=&#34;string&#34;&gt;&amp;quot; bytes.\n&amp;quot;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;comment&#34;&gt;// 实际逻辑省略...&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;function&#34;&gt;&lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;title&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;params&#34;&gt;()&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;built_in&#34;&gt;deleteFileLargerThan&lt;/span&gt;(&lt;span class=&#34;string&#34;&gt;&amp;quot;100MB&amp;quot;&lt;/span&gt;);  &lt;span class=&#34;comment&#34;&gt;// 打错了！本想传字符串配置，但函数不接受 string&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;comment&#34;&gt;// &amp;quot;100MB&amp;quot;  →  const char*  →  bool(true)  →  long long(1)   →  FileSize(1)&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;comment&#34;&gt;// 变成：Deleting files larger than 1 bytes. 严重错误&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;回调函数&lt;br&gt;
+回调函数是一种函数指针，它允许在运行时指定一个函数，并在某个事件发生时调用该函数。&lt;br&gt;
+人话：一个被作为参数传递给另一个函数，并在 “合适的时候” 被调用的函数。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;figure class=&#34;highlight c++&#34;&gt;&lt;figcaption&gt;&lt;span&gt;callback&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;meta&#34;&gt;#&lt;span class=&#34;keyword&#34;&gt;include&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;&amp;lt;functional&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;std::function&amp;lt;R(Args...)&amp;gt; cb;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;// R: 返回类型&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;// Args...: 参数列表&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;blockquote&gt;
+&lt;p&gt;std::function 能装什么？&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;普通函数&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&#34;highlight c++&#34;&gt;&lt;figcaption&gt;&lt;span&gt;callback&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;function&#34;&gt;&lt;span class=&#34;type&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;title&#34;&gt;greet&lt;/span&gt;&lt;span class=&#34;params&#34;&gt;()&lt;/span&gt; &lt;/span&gt;&amp;#123; std::cout &amp;lt;&amp;lt; &lt;span class=&#34;string&#34;&gt;&amp;quot;Hello!\n&amp;quot;&lt;/span&gt;; &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;std::function&amp;lt;&lt;span class=&#34;type&#34;&gt;void&lt;/span&gt;()&amp;gt; cb = greet;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;cb&lt;/span&gt;(); &lt;span class=&#34;comment&#34;&gt;// 输出 Hello!&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;ul&gt;
+&lt;li&gt;Lambda 表达式&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&#34;highlight c++&#34;&gt;&lt;figcaption&gt;&lt;span&gt;callback&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; x = &lt;span class=&#34;number&#34;&gt;42&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;std::function&amp;lt;&lt;span class=&#34;type&#34;&gt;void&lt;/span&gt;()&amp;gt; cb = [x]() &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    std::cout &amp;lt;&amp;lt; &lt;span class=&#34;string&#34;&gt;&amp;quot;Captured x = &amp;quot;&lt;/span&gt; &amp;lt;&amp;lt; x &amp;lt;&amp;lt; &lt;span class=&#34;string&#34;&gt;&amp;quot;\n&amp;quot;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;cb&lt;/span&gt;(); &lt;span class=&#34;comment&#34;&gt;// 输出 Captured x = 42&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;ul&gt;
+&lt;li&gt;函数对象&lt;/li&gt;
+&lt;li&gt;成员函数&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;mutable std::mutex mtx_;&lt;/code&gt; &lt;br&gt;
+ &lt;code&gt;mutable&lt;/code&gt;  关键字表示变量可以在常量函数中修改。&lt;br&gt;
+如果没有 mutable，mtx_ 是普通成员变量，在 const 函数中，所有成员都被视为 const，调用 mtx_.lock () 会报错&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;std::unique_lock&lt;span class=&#34;exturl&#34; data-url=&#34;c3RkOjptdXRleA==&#34;&gt;std::mutex&lt;/span&gt; lock(mtx_)&lt;br&gt;
+ 进入时自动调用 mtx_.lock ()（当前线程获得锁），当 lock 变量离开作用域（比如函数返回、出 {}），会自动调用 mtx_.unlock ()&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;lambda&lt;br&gt;
+ 有点抽象，有空继续研究&lt;br&gt;
+&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9jLmJpYW5jaGVuZy5uZXQvdmlldy9ibDF5dnd5Lmh0bWw=&#34;&gt; https://c.biancheng.net/view/bl1yvwy.html&lt;/span&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;作为函数对象（Functor）替代手写类&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&#34;highlight c++&#34;&gt;&lt;figcaption&gt;&lt;span&gt;lambda&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;struct&lt;/span&gt; &lt;span class=&#34;title class_&#34;&gt;IsEven&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;function&#34;&gt;&lt;span class=&#34;type&#34;&gt;bool&lt;/span&gt; &lt;span class=&#34;title&#34;&gt;operator&lt;/span&gt;&lt;span class=&#34;params&#34;&gt;()&lt;/span&gt;&lt;span class=&#34;params&#34;&gt;(&lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; x)&lt;/span&gt; &lt;span class=&#34;type&#34;&gt;const&lt;/span&gt; &lt;/span&gt;&amp;#123; &lt;span class=&#34;keyword&#34;&gt;return&lt;/span&gt; x % &lt;span class=&#34;number&#34;&gt;2&lt;/span&gt; == &lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;; &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;std::vector&amp;lt;&lt;span class=&#34;type&#34;&gt;int&lt;/span&gt;&amp;gt; v = &amp;#123;&lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;,&lt;span class=&#34;number&#34;&gt;2&lt;/span&gt;,&lt;span class=&#34;number&#34;&gt;3&lt;/span&gt;,&lt;span class=&#34;number&#34;&gt;4&lt;/span&gt;,&lt;span class=&#34;number&#34;&gt;5&lt;/span&gt;&amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;auto&lt;/span&gt; it = std::&lt;span class=&#34;built_in&#34;&gt;find_if&lt;/span&gt;(v.&lt;span class=&#34;built_in&#34;&gt;begin&lt;/span&gt;(), v.&lt;span class=&#34;built_in&#34;&gt;end&lt;/span&gt;(), IsEven&amp;#123;&amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;// lambda写法&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;auto&lt;/span&gt; it = std::&lt;span class=&#34;built_in&#34;&gt;find_if&lt;/span&gt;(v.&lt;span class=&#34;built_in&#34;&gt;begin&lt;/span&gt;(), v.&lt;span class=&#34;built_in&#34;&gt;end&lt;/span&gt;(), [](&lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; x) &amp;#123; &lt;span class=&#34;keyword&#34;&gt;return&lt;/span&gt; x % &lt;span class=&#34;number&#34;&gt;2&lt;/span&gt; == &lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;; &amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;ul&gt;
+&lt;li&gt;STL 算法的自定义谓词（最常用！）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&#34;highlight c++&#34;&gt;&lt;figcaption&gt;&lt;span&gt;lambda&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;17&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;std::vector&amp;lt;Person&amp;gt; people = &amp;#123;...&amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;// 按年龄降序&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;std::&lt;span class=&#34;built_in&#34;&gt;sort&lt;/span&gt;(people.&lt;span class=&#34;built_in&#34;&gt;begin&lt;/span&gt;(), people.&lt;span class=&#34;built_in&#34;&gt;end&lt;/span&gt;(),&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;          [](&lt;span class=&#34;type&#34;&gt;const&lt;/span&gt; Person&amp;amp; a, &lt;span class=&#34;type&#34;&gt;const&lt;/span&gt; Person&amp;amp; b) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;              &lt;span class=&#34;keyword&#34;&gt;return&lt;/span&gt; a.age &amp;gt; b.age;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;          &amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;// 删除所有空字符串&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;vec.&lt;span class=&#34;built_in&#34;&gt;erase&lt;/span&gt;(&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    std::&lt;span class=&#34;built_in&#34;&gt;remove_if&lt;/span&gt;(vec.&lt;span class=&#34;built_in&#34;&gt;begin&lt;/span&gt;(), vec.&lt;span class=&#34;built_in&#34;&gt;end&lt;/span&gt;(),&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;                   [](&lt;span class=&#34;type&#34;&gt;const&lt;/span&gt; std::string&amp;amp; s) &amp;#123; &lt;span class=&#34;keyword&#34;&gt;return&lt;/span&gt; s.&lt;span class=&#34;built_in&#34;&gt;empty&lt;/span&gt;(); &amp;#125;),&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    vec.&lt;span class=&#34;built_in&#34;&gt;end&lt;/span&gt;()&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;// 找第一个大于 10 的数&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;auto&lt;/span&gt; it = std::&lt;span class=&#34;built_in&#34;&gt;find_if&lt;/span&gt;(v.&lt;span class=&#34;built_in&#34;&gt;begin&lt;/span&gt;(), v.&lt;span class=&#34;built_in&#34;&gt;end&lt;/span&gt;(), [](&lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; x) &amp;#123; &lt;span class=&#34;keyword&#34;&gt;return&lt;/span&gt; x &amp;gt; &lt;span class=&#34;number&#34;&gt;10&lt;/span&gt;; &amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;ol start=&#34;6&#34;&gt;
+&lt;li&gt;condition_variable&lt;br&gt;
+ 不希望 FSM 的 worker 线程这样:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;figure class=&#34;highlight c++&#34;&gt;&lt;figcaption&gt;&lt;span&gt;轮询&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;while&lt;/span&gt; (&lt;span class=&#34;literal&#34;&gt;true&lt;/span&gt;) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;keyword&#34;&gt;if&lt;/span&gt; (queue 空)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        一直查（忙等）&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;condition_variable 的作用：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;队列空 → 工作线程睡觉&lt;/li&gt;
+&lt;li&gt;有事件 → 唤醒工作线程&lt;br&gt;
+写法：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&#34;highlight c++&#34;&gt;&lt;figcaption&gt;&lt;span&gt;condition_variable&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;cv.&lt;span class=&#34;built_in&#34;&gt;wait&lt;/span&gt;(lock, []&amp;#123; &lt;span class=&#34;keyword&#34;&gt;return&lt;/span&gt; !queue.&lt;span class=&#34;built_in&#34;&gt;empty&lt;/span&gt;(); &amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;ol start=&#34;7&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;atomic 库&lt;br&gt;
+ &lt;code&gt;atomic&amp;lt;bool&amp;gt;&lt;/code&gt;  原子变量，线程安全的 bool&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;匿名函数&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;workerThread + 队列 + 状态机&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
  ]]></description>

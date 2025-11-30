@@ -10,39 +10,40 @@
         <category>人工智能</category>
         <category>软件工程</category>
         <category>自监督学习</category>
-        <category>容器</category>
-        <category>面经</category>
         <category>C++</category>
+        <category>面经</category>
+        <category>容器</category>
+        <category>杂项</category>
         <category>数据结构</category>
         <category>线性表</category>
         <category>栈、队列和数组</category>
         <category>串</category>
         <category>树与二叉树</category>
         <category>查找</category>
-        <category>排序</category>
         <category>图论</category>
-        <category>fds</category>
+        <category>排序</category>
         <category>操作系统</category>
-        <category>计算机网络</category>
+        <category>fds</category>
+        <category>Register Allocation</category>
         <category>编译原理</category>
         <category>Liveness Analysis</category>
-        <category>Register Allocation</category>
-        <category>词法分析</category>
         <category>语法分析</category>
         <category>抽象语法</category>
+        <category>词法分析</category>
+        <category>Basic Blocks and Traces</category>
+        <category>语义分析</category>
         <category>活动记录</category>
         <category>中间代码</category>
-        <category>Basic Blocks and Traces</category>
         <category>指令选择</category>
-        <category>语义分析</category>
+        <category>计算机网络</category>
         <category>计算机组成</category>
-        <category>数据的表示与运算</category>
         <category>存储系统</category>
-        <category>指令系统</category>
+        <category>数据的表示与运算</category>
         <category>CPU</category>
         <category>I/O</category>
-        <category>总线</category>
+        <category>指令系统</category>
         <category>错题</category>
+        <category>总线</category>
         <item>
             <guid isPermalink="true">http://example.com/2025/03/23/computer-science/compile-principles/ch3/</guid>
             <title>语法分析</title>

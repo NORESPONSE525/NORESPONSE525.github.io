@@ -7,39 +7,40 @@
     <category term="人工智能" />
     <category term="软件工程" />
     <category term="自监督学习" />
-    <category term="容器" />
-    <category term="面经" />
     <category term="C++" />
+    <category term="面经" />
+    <category term="容器" />
+    <category term="杂项" />
     <category term="数据结构" />
     <category term="线性表" />
     <category term="栈、队列和数组" />
     <category term="串" />
     <category term="树与二叉树" />
     <category term="查找" />
-    <category term="排序" />
     <category term="图论" />
-    <category term="fds" />
+    <category term="排序" />
     <category term="操作系统" />
-    <category term="计算机网络" />
+    <category term="fds" />
+    <category term="Register Allocation" />
     <category term="编译原理" />
     <category term="Liveness Analysis" />
-    <category term="Register Allocation" />
-    <category term="词法分析" />
     <category term="语法分析" />
     <category term="抽象语法" />
+    <category term="词法分析" />
+    <category term="Basic Blocks and Traces" />
+    <category term="语义分析" />
     <category term="活动记录" />
     <category term="中间代码" />
-    <category term="Basic Blocks and Traces" />
     <category term="指令选择" />
-    <category term="语义分析" />
+    <category term="计算机网络" />
     <category term="计算机组成" />
-    <category term="数据的表示与运算" />
     <category term="存储系统" />
-    <category term="指令系统" />
+    <category term="数据的表示与运算" />
     <category term="CPU" />
     <category term="I/O" />
-    <category term="总线" />
+    <category term="指令系统" />
     <category term="错题" />
+    <category term="总线" />
     <entry>
         <id>http://example.com/2025/10/26/oop/note/</id>
         <title>C++相关</title>
@@ -477,6 +478,21 @@ typedef 是 “类型定义” 的关键字，是编译器理解的真正类型�
 &lt;figure class=&#34;highlight c++&#34;&gt;&lt;figcaption&gt;&lt;span&gt;atomic&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;meta&#34;&gt;#&lt;span class=&#34;keyword&#34;&gt;include&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;&amp;lt;atomic&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;std::atomic&amp;lt;&lt;span class=&#34;type&#34;&gt;int&lt;/span&gt;&amp;gt; counter;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;counter.&lt;span class=&#34;built_in&#34;&gt;fetch_add&lt;/span&gt;(&lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;);   &lt;span class=&#34;comment&#34;&gt;// fetch_sub(), fetch_and(), fetch_or()...&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;counter.&lt;span class=&#34;built_in&#34;&gt;load&lt;/span&gt;();&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;counter.&lt;span class=&#34;built_in&#34;&gt;store&lt;/span&gt;(&lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;counter.&lt;span class=&#34;built_in&#34;&gt;exchange&lt;/span&gt;(&lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;counter.&lt;span class=&#34;built_in&#34;&gt;compare_exchange_strong&lt;/span&gt;(old_value, new_value);  &lt;span class=&#34;comment&#34;&gt;// 如果old_value == counter，则将 counter 设为 new_value&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;counter.&lt;span class=&#34;built_in&#34;&gt;compare_exchange_weak&lt;/span&gt;(old_value, new_value);    &lt;span class=&#34;comment&#34;&gt;// 区别：weak 版本允许虚假失败，需要循环&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;counter.&lt;span class=&#34;built_in&#34;&gt;is_lock_free&lt;/span&gt;();&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;ul&gt;
 &lt;li&gt;线程同步原语&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;26&#34;&gt;
+&lt;li&gt;&lt;code&gt;const&lt;/code&gt;  用法&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;常量变量&lt;br&gt;
+必须在定义时初始化&lt;/li&gt;
+&lt;li&gt;常量指针 vs 指针常量：见上&lt;/li&gt;
+&lt;li&gt;引用与 const：见上 &lt;code&gt;const 引用&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;类中的 const:
+&lt;ul&gt;
+&lt;li&gt;const 成员函数：不能修改对象成员变量，不能调用非 const 成员函数&lt;/li&gt;
+&lt;li&gt;const 对象：const 对象只能调用 const 成员函数&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 </content>
         <category term="C++" />
