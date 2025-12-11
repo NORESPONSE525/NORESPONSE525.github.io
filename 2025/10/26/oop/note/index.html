@@ -116,7 +116,7 @@ NoResponse's Blog = NoResponse's Blog</title>
 
       </div>
       <div id="imgs" class="pjax">
-          <img src="/images/bg5.jpg">
+          <img src="/images/bg3.png">
       </div>
     </header>
     <div id="waves">
@@ -203,10 +203,10 @@ NoResponse's Blog = NoResponse's Blog</title>
 </blockquote>
 <div class="note info">
 <p>虚函数如何实现晚绑定？<br>
-每个有虚函数的类有一个 虚函数表（vtable），存函数指针。<br>
-每个对象有一个 虚指针（vptr），指向自己的 vtable。<br>
+每个有虚函数的类有一个 虚函数表（vtable），存函数指针。（编译时候产生的，放在静态存储区中）<br>
+每个对象构造时会有一个 虚指针（vptr），指向自己的 vtable。<br>
 调用虚函数时：<br>
-通过对象的 vptr 找到 vtable<br>
+程序运行时，通过对象的 vptr 找到 vtable<br>
  在 vtable 中查找对应函数地址<br>
 调用该函数<br>
 这个过程在运行时完成，所以是晚绑定。</p>
@@ -611,8 +611,13 @@ typedef 是 “类型定义” 的关键字，是编译器理解的真正类型�
 </li>
 </ul>
 <ol start="27">
-<li>多线程<br>
-<span class="exturl" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS9jcGx1c3BsdXMvY3BwLW11bHRpdGhyZWFkaW5nLmh0bWw="> https://www.runoob.com/cplusplus/cpp-multithreading.html</span></li>
+<li>
+<p>多线程<br>
+<span class="exturl" data-url="aHR0cHM6Ly93d3cucnVub29iLmNvbS9jcGx1c3BsdXMvY3BwLW11bHRpdGhyZWFkaW5nLmh0bWw="> https://www.runoob.com/cplusplus/cpp-multithreading.html</span></p>
+</li>
+<li>
+<p>协程</p>
+</li>
 </ol>
 
       <div class="tags">
@@ -628,7 +633,7 @@ typedef 是 “类型定义” 的关键字，是编译器理解的真正类型�
       <i class="ic i-calendar-check"></i>
     </span>
     <span class="text">Edited on</span>
-    <time title="Modified: 2025-12-01 01:01:34" itemprop="dateModified" datetime="2025-12-01T01:01:34+08:00">2025-12-01</time>
+    <time title="Modified: 2025-12-11 13:23:11" itemprop="dateModified" datetime="2025-12-11T13:23:11+08:00">2025-12-11</time>
   </span>
 </div>
 
@@ -683,7 +688,7 @@ typedef 是 “类型定义” 的关键字，是编译器理解的真正类型�
     <div class="item left">
       
 
-  <a href="/2025/10/15/note/20251015/" itemprop="url" rel="prev" data-background-image="&#x2F;images&#x2F;bg34.jpg" title="20251015力扣刷题笔记">
+  <a href="/2025/10/15/note/20251015/" itemprop="url" rel="prev" data-background-image="&#x2F;images&#x2F;bg31.jpg" title="20251015力扣刷题笔记">
   <span class="type">Previous Post</span>
   <span class="category"><i class="ic i-flag"></i> 七七八八</span>
   <h3>20251015力扣刷题笔记</h3>
@@ -693,10 +698,10 @@ typedef 是 “类型定义” 的关键字，是编译器理解的真正类型�
     <div class="item right">
       
 
-  <a href="/2025/11/20/note/20251201/" itemprop="url" rel="next" data-background-image="&#x2F;images&#x2F;bg31.jpg" title="测试相关">
+  <a href="/2025/11/20/note/20251130/" itemprop="url" rel="next" data-background-image="&#x2F;images&#x2F;bg18.jpg" title="杂项">
   <span class="type">Next Post</span>
   <span class="category"><i class="ic i-flag"></i> 七七八八</span>
-  <h3>测试相关</h3>
+  <h3>杂项</h3>
   </a>
 
     </div>
@@ -732,7 +737,7 @@ typedef 是 “类型定义” 的关键字，是编译器理解的真正类型�
 <nav class="state">
     <div class="item posts">
       <a href="/archives/">
-        <span class="count">47</span>
+        <span class="count">50</span>
         <span class="name">posts</span>
       </a>
     </div>
@@ -744,7 +749,7 @@ typedef 是 “类型定义” 的关键字，是编译器理解的真正类型�
     </div>
     <div class="item tags">
       <a href="/tags/">
-        <span class="count">40</span>
+        <span class="count">41</span>
         <span class="name">tags</span>
       </a>
     </div>
@@ -795,6 +800,11 @@ typedef 是 “类型定义” 的关键字，是编译器理解的真正类型�
 
     
   <li class="item">
+    <a href="/plan/" rel="section"><i class="ic i-star"></i>plan</a>
+  </li>
+
+    
+  <li class="item">
     <a href="/links/" rel="section"><i class="ic i-magic"></i>links</a>
   </li>
 
@@ -812,7 +822,7 @@ typedef 是 “类型定义” 的关键字，是编译器理解的真正类型�
     <li class="up"><i class="ic i-arrow-up"></i></li>
     <li class="down"><i class="ic i-arrow-down"></i></li>
     <li class="next pjax">
-        <a href="/2025/11/20/note/20251201/" rel="next" title="Next Post"><i class="ic i-chevron-right"></i></a>
+        <a href="/2025/11/20/note/20251130/" rel="next" title="Next Post"><i class="ic i-chevron-right"></i></a>
     </li>
     <li class="percent"></li>
   </ul>
@@ -834,12 +844,10 @@ typedef 是 “类型定义” 的关键字，是编译器理解的真正类型�
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/DS/" title="In 数据结构">数据结构</a>
+<a href="/categories/note/" title="In 七七八八">七七八八</a>
 </div>
 
-    <span><a href="/2025/09/15/computer-science/DS/ch2/" title="ch2">ch2</a></span>
+    <span><a href="/2025/11/20/note/20251201/" title="测试相关">测试相关</a></span>
   </li>
 
       
@@ -849,7 +857,27 @@ typedef 是 “类型定义” 的关键字，是编译器理解的真正类型�
 <a href="/categories/AI/" title="In 人工智能">人工智能</a>
 </div>
 
-    <span><a href="/2025/06/11/AI/week4-5/" title="Week4-5">Week4-5</a></span>
+    <span><a href="/2025/05/20/AI/week1/" title="Week1">Week1</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/AI/" title="In 人工智能">人工智能</a>
+</div>
+
+    <span><a href="/2025/06/15/AI/week8-9/" title="Week8-9">Week8-9</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/AI/" title="In 人工智能">人工智能</a>
+</div>
+
+    <span><a href="/2025/06/12/AI/week6-7/" title="Week6-7">Week6-7</a></span>
   </li>
 
       
@@ -861,7 +889,7 @@ typedef 是 “类型定义” 的关键字，是编译器理解的真正类型�
 <a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
 </div>
 
-    <span><a href="/2025/06/17/computer-science/compile-principles/ch9/" title="指令选择">指令选择</a></span>
+    <span><a href="/2025/03/21/computer-science/compile-principles/ch1/" title="Introduction">Introduction</a></span>
   </li>
 
       
@@ -870,22 +898,10 @@ typedef 是 “类型定义” 的关键字，是编译器理解的真正类型�
 <div class="breadcrumb">
 <a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/OS/" title="In 操作系统">操作系统</a>
+<a href="/categories/computer-science/DS/" title="In 数据结构">数据结构</a>
 </div>
 
-    <span><a href="/2025/09/18/computer-science/OS/ch1/" title="ch1">ch1</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
-</div>
-
-    <span><a href="/2025/06/18/computer-science/compile-principles/ch11/" title="Register Allocation">Register Allocation</a></span>
+    <span><a href="/2025/09/15/computer-science/DS/Amortized%20Analysis/" title="Amortized Analysis">Amortized Analysis</a></span>
   </li>
 
       
@@ -904,46 +920,32 @@ typedef 是 “类型定义” 的关键字，是编译器理解的真正类型�
   <li class="item">
     
 <div class="breadcrumb">
+<a href="/categories/note/" title="In 七七八八">七七八八</a>
+</div>
+
+    <span><a href="/2025/11/20/note/20251130/" title="杂项">杂项</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/AI/" title="In 人工智能">人工智能</a>
+</div>
+
+    <span><a href="/2025/12/09/AI/agent/" title="agent相关">agent相关</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
 <a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
 <i class="ic i-angle-right"></i>
 <a href="/categories/computer-science/DS/" title="In 数据结构">数据结构</a>
 </div>
 
-    <span><a href="/2025/10/10/computer-science/DS/ch5/" title="ch5">ch5</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
-</div>
-
-    <span><a href="/2025/03/30/computer-science/compile-principles/ch5/" title="语义分析">语义分析</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/computer-organization/" title="In 计算机组成">计算机组成</a>
-</div>
-
-    <span><a href="/2025/08/15/computer-science/computer-organization/ch7/" title="Ch7">Ch7</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/note/" title="In 七七八八">七七八八</a>
-</div>
-
-    <span><a href="/2025/11/23/note/20251123/" title="20251123面经回忆">20251123面经回忆</a></span>
+    <span><a href="/2025/10/13/computer-science/DS/ch7/" title="ch7">ch7</a></span>
   </li>
 
   </ul>
@@ -968,13 +970,13 @@ typedef 是 “类型定义” 的关键字，是编译器理解的真正类型�
     <span class="post-meta-item-icon">
       <i class="ic i-chart-area"></i>
     </span>
-    <span title="Symbols count total">180k words</span>
+    <span title="Symbols count total">182k words</span>
 
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="ic i-coffee"></i>
     </span>
-    <span title="Reading time total">2:44</span>
+    <span title="Reading time total">2:46</span>
   </div>
   <div class="powered-by">
     Powered by <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>

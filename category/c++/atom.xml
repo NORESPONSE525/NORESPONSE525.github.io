@@ -6,44 +6,45 @@
     <updated>2025-10-25T16:00:00.000Z</updated>
     <category term="人工智能" />
     <category term="软件工程" />
-    <category term="自监督学习" />
-    <category term="容器" />
-    <category term="C++" />
-    <category term="杂项" />
-    <category term="数据结构" />
-    <category term="线性表" />
     <category term="面经" />
     <category term="ctest" />
     <category term="gtest" />
     <category term="test coverage" />
+    <category term="杂项" />
+    <category term="容器" />
+    <category term="自监督学习" />
+    <category term="Amortized Analysis" />
+    <category term="数据结构" />
+    <category term="C++" />
+    <category term="线性表" />
     <category term="栈、队列和数组" />
     <category term="串" />
+    <category term="树与二叉树" />
     <category term="图论" />
     <category term="查找" />
-    <category term="树与二叉树" />
     <category term="排序" />
-    <category term="计算机网络" />
-    <category term="编译原理" />
     <category term="fds" />
-    <category term="语法分析" />
-    <category term="Register Allocation" />
-    <category term="Liveness Analysis" />
-    <category term="抽象语法" />
-    <category term="活动记录" />
-    <category term="词法分析" />
-    <category term="语义分析" />
-    <category term="中间代码" />
-    <category term="Basic Blocks and Traces" />
-    <category term="指令选择" />
+    <category term="编译原理" />
     <category term="操作系统" />
+    <category term="Liveness Analysis" />
+    <category term="词法分析" />
+    <category term="Register Allocation" />
+    <category term="语法分析" />
+    <category term="语义分析" />
+    <category term="活动记录" />
+    <category term="抽象语法" />
+    <category term="Basic Blocks and Traces" />
+    <category term="中间代码" />
+    <category term="指令选择" />
     <category term="数据的表示与运算" />
     <category term="存储系统" />
-    <category term="CPU" />
     <category term="计算机组成" />
     <category term="指令系统" />
-    <category term="I/O" />
-    <category term="错题" />
+    <category term="CPU" />
     <category term="总线" />
+    <category term="I/O" />
+    <category term="计算机网络" />
+    <category term="错题" />
     <entry>
         <id>http://example.com/2025/10/26/oop/note/</id>
         <title>C++相关</title>
@@ -90,10 +91,10 @@
 &lt;/blockquote&gt;
 &lt;div class=&#34;note info&#34;&gt;
 &lt;p&gt;虚函数如何实现晚绑定？&lt;br&gt;
-每个有虚函数的类有一个 虚函数表（vtable），存函数指针。&lt;br&gt;
-每个对象有一个 虚指针（vptr），指向自己的 vtable。&lt;br&gt;
+每个有虚函数的类有一个 虚函数表（vtable），存函数指针。（编译时候产生的，放在静态存储区中）&lt;br&gt;
+每个对象构造时会有一个 虚指针（vptr），指向自己的 vtable。&lt;br&gt;
 调用虚函数时：&lt;br&gt;
-通过对象的 vptr 找到 vtable&lt;br&gt;
+程序运行时，通过对象的 vptr 找到 vtable&lt;br&gt;
  在 vtable 中查找对应函数地址&lt;br&gt;
 调用该函数&lt;br&gt;
 这个过程在运行时完成，所以是晚绑定。&lt;/p&gt;
@@ -498,8 +499,13 @@ typedef 是 “类型定义” 的关键字，是编译器理解的真正类型�
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;ol start=&#34;27&#34;&gt;
-&lt;li&gt;多线程&lt;br&gt;
-&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly93d3cucnVub29iLmNvbS9jcGx1c3BsdXMvY3BwLW11bHRpdGhyZWFkaW5nLmh0bWw=&#34;&gt; https://www.runoob.com/cplusplus/cpp-multithreading.html&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;多线程&lt;br&gt;
+&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly93d3cucnVub29iLmNvbS9jcGx1c3BsdXMvY3BwLW11bHRpdGhyZWFkaW5nLmh0bWw=&#34;&gt; https://www.runoob.com/cplusplus/cpp-multithreading.html&lt;/span&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;协程&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ol&gt;
 </content>
         <category term="C++" />
