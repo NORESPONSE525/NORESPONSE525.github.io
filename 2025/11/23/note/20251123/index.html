@@ -116,7 +116,7 @@ NoResponse's Blog = NoResponse's Blog</title>
 
       </div>
       <div id="imgs" class="pjax">
-          <img src="/images/bg34.jpg">
+          <img src="/images/bg30.jpg">
       </div>
     </header>
     <div id="waves">
@@ -162,16 +162,21 @@ NoResponse's Blog = NoResponse's Blog</title>
     
 
     <ol>
-<li>pdd二面，手撕开放地址法哈希，实现Get, Set, Delete操作</li>
+<li>pdd 二面，手撕开放地址法哈希，实现 Get, Set, Delete 操作</li>
 </ol>
 <figure class="highlight c++"><figcaption><span>Hashing</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">Node</span>&#123;</span><br><span class="line">    <span class="type">int</span> key;</span><br><span class="line">    <span class="type">int</span> value;</span><br><span class="line">    <span class="built_in">Node</span>(): <span class="built_in">key</span>(<span class="number">-1</span>), <span class="built_in">value</span>(<span class="number">-1</span>)&#123;&#125;</span><br><span class="line">    <span class="built_in">Node</span>(<span class="type">int</span> key, <span class="type">int</span> value) : <span class="built_in">key</span>(key), <span class="built_in">value</span>(value) &#123;&#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">HashTable</span>&#123;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="type">int</span> size;</span><br><span class="line">    vector&lt;Node&gt; table;</span><br><span class="line">    <span class="type">const</span> <span class="type">int</span> EMPTY = <span class="number">-1</span>;</span><br><span class="line">    <span class="type">const</span> <span class="type">int</span> DELETED = <span class="number">-2</span>;</span><br><span class="line"><span class="keyword">public</span>: </span><br><span class="line">    <span class="built_in">HashTable</span>(<span class="type">int</span> size): <span class="built_in">size</span>(size), <span class="built_in">table</span>(size)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; size; ++i)&#123;</span><br><span class="line">            table[i].key = EMPTY;</span><br><span class="line">            table[i].value = <span class="number">-1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">Get</span><span class="params">(<span class="type">int</span> key)</span></span>&#123; </span><br><span class="line">        <span class="keyword">if</span> (size == <span class="number">0</span>) <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">        <span class="type">int</span> h = key % size;</span><br><span class="line">        <span class="keyword">if</span> (h &lt; <span class="number">0</span>) h += size;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; size; ++i)&#123;</span><br><span class="line">            <span class="type">int</span> idx = (h + i) % size;</span><br><span class="line">            <span class="keyword">if</span> (table[idx].key == EMPTY) <span class="keyword">return</span> <span class="number">-1</span>; <span class="comment">// not found</span></span><br><span class="line">            <span class="keyword">if</span> (table[idx].key == key) <span class="keyword">return</span> table[idx].value;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">Set</span><span class="params">(<span class="type">int</span> key, <span class="type">int</span> value)</span></span>&#123; </span><br><span class="line">        <span class="keyword">if</span> (size == <span class="number">0</span>) <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">        <span class="type">int</span> h = key % size;</span><br><span class="line">        <span class="keyword">if</span> (h &lt; <span class="number">0</span>) h += size;</span><br><span class="line">        <span class="type">int</span> firstDeleted = <span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; size; ++i)&#123;</span><br><span class="line">            <span class="type">int</span> idx = (h + i) % size;</span><br><span class="line">            <span class="keyword">if</span> (table[idx].key == key)&#123;</span><br><span class="line">                table[idx].value = value; <span class="comment">// update existing</span></span><br><span class="line">                <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (firstDeleted == <span class="number">-1</span> &amp;&amp; table[idx].key == DELETED)&#123;</span><br><span class="line">                firstDeleted = idx;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (table[idx].key == EMPTY)&#123;</span><br><span class="line">                <span class="keyword">if</span> (firstDeleted != <span class="number">-1</span>) idx = firstDeleted;</span><br><span class="line">                table[idx].key = key;</span><br><span class="line">                table[idx].value = value;</span><br><span class="line">                <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (firstDeleted != <span class="number">-1</span>)&#123;</span><br><span class="line">            table[firstDeleted].key = key;</span><br><span class="line">            table[firstDeleted].value = value;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>; <span class="comment">// table full</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">Delete</span><span class="params">(<span class="type">int</span> key)</span></span>&#123; </span><br><span class="line">        <span class="keyword">if</span> (size == <span class="number">0</span>) <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">        <span class="type">int</span> h = key % size;</span><br><span class="line">        <span class="keyword">if</span> (h &lt; <span class="number">0</span>) h += size;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; size; ++i)&#123;</span><br><span class="line">            <span class="type">int</span> idx = (h + i) % size;</span><br><span class="line">            <span class="keyword">if</span> (table[idx].key == EMPTY) <span class="keyword">return</span> <span class="number">-1</span>; <span class="comment">// not found</span></span><br><span class="line">            <span class="keyword">if</span> (table[idx].key == key)&#123;</span><br><span class="line">                <span class="type">int</span> value = table[idx].value;</span><br><span class="line">                table[idx].key = DELETED; <span class="comment">// tombstone</span></span><br><span class="line">                table[idx].value = <span class="number">-1</span>;</span><br><span class="line">                <span class="keyword">return</span> value;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
 <ol start="2">
-<li><p>网易<br>找到n个数里面第k大的，除了排序有没有别的方法<br>问了一堆基础知识，static&#x2F;inline等等</p>
+<li>
+<p>网易<br>
+找到 n 个数里面第 k 大的，除了排序有没有别的方法<br>
+问了一堆基础知识，static/inline 等等</p>
 </li>
-<li><p>华为<br>一面双指针，二面贪心</p>
+<li>
+<p>华为<br>
+一面双指针，二面贪心</p>
 </li>
-<li><p>忘了</p>
+<li>
+<p>忘了</p>
 </li>
 </ol>
 
@@ -243,17 +248,17 @@ NoResponse's Blog = NoResponse's Blog</title>
     <div class="item left">
       
 
-  <a href="/2025/11/20/note/20251130/" itemprop="url" rel="prev" data-background-image="&#x2F;images&#x2F;bg26.jpg" title="杂项">
+  <a href="/2025/11/20/note/20251201/" itemprop="url" rel="prev" data-background-image="&#x2F;images&#x2F;bg9.jpg" title="测试相关">
   <span class="type">Previous Post</span>
   <span class="category"><i class="ic i-flag"></i> 七七八八</span>
-  <h3>杂项</h3>
+  <h3>测试相关</h3>
   </a>
 
     </div>
     <div class="item right">
       
 
-  <a href="/2025/12/07/computer-science/computer-network/note/" itemprop="url" rel="next" data-background-image="&#x2F;images&#x2F;bg15.jpg" title="计网八股">
+  <a href="/2025/12/07/computer-science/computer-network/note/" itemprop="url" rel="next" data-background-image="&#x2F;images&#x2F;bg33.jpg" title="计网八股">
   <span class="type">Next Post</span>
   <span class="category"><i class="ic i-flag"></i> 计算机网络</span>
   <h3>计网八股</h3>
@@ -278,7 +283,7 @@ NoResponse's Blog = NoResponse's Blog</title>
       </div>
       <div class="related panel pjax" data-title="Related">
         <ul>
-          <li><a href="/2025/08/02/note/20250802/" rel="bookmark" title="20250802阅读论文">20250802阅读论文</a></li><li><a href="/2025/10/15/note/20251015/" rel="bookmark" title="20251015力扣刷题笔记">20251015力扣刷题笔记</a></li><li><a href="/2025/11/20/note/20251130/" rel="bookmark" title="杂项">杂项</a></li><li><a href="/2025/11/20/note/20251201/" rel="bookmark" title="测试相关">测试相关</a></li><li class="active"><a href="/2025/11/23/note/20251123/" rel="bookmark" title="20251123面经回忆">20251123面经回忆</a></li><li><a href="/2025/12/11/note/20251211/" rel="bookmark" title="杂项">杂项</a></li>
+          <li><a href="/2025/08/02/note/20250802/" rel="bookmark" title="20250802阅读论文">20250802阅读论文</a></li><li><a href="/2025/10/15/note/20251015/" rel="bookmark" title="20251015力扣刷题笔记">20251015力扣刷题笔记</a></li><li><a href="/2025/11/20/note/20251201/" rel="bookmark" title="测试相关">测试相关</a></li><li><a href="/2025/11/20/note/20251130/" rel="bookmark" title="杂项">杂项</a></li><li class="active"><a href="/2025/11/23/note/20251123/" rel="bookmark" title="20251123面经回忆">20251123面经回忆</a></li><li><a href="/2025/12/11/note/20251211/" rel="bookmark" title="杂项">杂项</a></li>
         </ul>
       </div>
       <div class="overview panel" data-title="Overview">
@@ -372,7 +377,7 @@ NoResponse's Blog = NoResponse's Blog</title>
 
   <ul id="quick">
     <li class="prev pjax">
-        <a href="/2025/11/20/note/20251130/" rel="prev" title="Previous Post"><i class="ic i-chevron-left"></i></a>
+        <a href="/2025/11/20/note/20251201/" rel="prev" title="Previous Post"><i class="ic i-chevron-left"></i></a>
     </li>
     <li class="up"><i class="ic i-arrow-up"></i></li>
     <li class="down"><i class="ic i-arrow-down"></i></li>
@@ -401,6 +406,18 @@ NoResponse's Blog = NoResponse's Blog</title>
 <div class="breadcrumb">
 <a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
 <i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
+</div>
+
+    <span><a href="/2025/03/21/computer-science/compile-principles/ch1/" title="Introduction">Introduction</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
 <a href="/categories/computer-science/computer-organization/" title="In 计算机组成">计算机组成</a>
 </div>
 
@@ -416,65 +433,7 @@ NoResponse's Blog = NoResponse's Blog</title>
 <a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
 </div>
 
-    <span><a href="/2025/06/18/computer-science/compile-principles/ch11/" title="Register Allocation">Register Allocation</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/computer-organization/" title="In 计算机组成">计算机组成</a>
-</div>
-
-    <span><a href="/2025/08/15/computer-science/computer-organization/ch7/" title="Ch7">Ch7</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
-</div>
-
-    <span><a href="/2025/03/22/computer-science/compile-principles/ch2/" title="词法分析">词法分析</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/AI/" title="In 人工智能">人工智能</a>
-</div>
-
-    <span><a href="/2025/06/16/AI/week14-15/" title="Week14-15">Week14-15</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/computer-organization/" title="In 计算机组成">计算机组成</a>
-</div>
-
-    <span><a href="/2025/05/14/computer-science/computer-organization/ch2/" title="Ch2">Ch2</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
-</div>
-
-    <span><a href="/2025/06/15/computer-science/compile-principles/ch6/" title="活动记录">活动记录</a></span>
+    <span><a href="/2025/06/17/computer-science/compile-principles/ch9/" title="指令选择">指令选择</a></span>
   </li>
 
       
@@ -484,7 +443,55 @@ NoResponse's Blog = NoResponse's Blog</title>
 <a href="/categories/note/" title="In 七七八八">七七八八</a>
 </div>
 
-    <span><a href="/2025/11/23/note/20251123/" title="20251123面经回忆">20251123面经回忆</a></span>
+    <span><a href="/2025/10/15/note/20251015/" title="20251015力扣刷题笔记">20251015力扣刷题笔记</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/computer-organization/" title="In 计算机组成">计算机组成</a>
+</div>
+
+    <span><a href="/2025/07/01/computer-science/computer-organization/%E9%94%99%E9%A2%98%E9%9B%86%E5%90%88/" title="错题集合">错题集合</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
+</div>
+
+    <span><a href="/2025/03/23/computer-science/compile-principles/ch3/" title="语法分析">语法分析</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/computer-organization/" title="In 计算机组成">计算机组成</a>
+</div>
+
+    <span><a href="/2025/07/01/computer-science/computer-organization/ch3/" title="Ch3">Ch3</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
+</div>
+
+    <span><a href="/2025/06/17/computer-science/compile-principles/ch8/" title="Basic Blocks &amp; Traces">Basic Blocks & Traces</a></span>
   </li>
 
       
@@ -496,19 +503,17 @@ NoResponse's Blog = NoResponse's Blog</title>
 <a href="/categories/computer-science/DS/" title="In 数据结构">数据结构</a>
 </div>
 
-    <span><a href="/2025/10/13/computer-science/DS/ch7/" title="ch7">ch7</a></span>
+    <span><a href="/2023/10/31/computer-science/DS/fds/" title="fds课程笔记">fds课程笔记</a></span>
   </li>
 
       
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
+<a href="/categories/oop/" title="In C++">C++</a>
 </div>
 
-    <span><a href="/2025/03/30/computer-science/compile-principles/ch5/" title="语义分析">语义分析</a></span>
+    <span><a href="/2025/10/26/oop/note/" title="C++相关">C++相关</a></span>
   </li>
 
   </ul>
@@ -533,13 +538,13 @@ NoResponse's Blog = NoResponse's Blog</title>
     <span class="post-meta-item-icon">
       <i class="ic i-chart-area"></i>
     </span>
-    <span title="Symbols count total">185k words</span>
+    <span title="Symbols count total">188k words</span>
 
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="ic i-coffee"></i>
     </span>
-    <span title="Reading time total">2:48</span>
+    <span title="Reading time total">2:51</span>
   </div>
   <div class="powered-by">
     Powered by <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>

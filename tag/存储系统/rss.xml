@@ -7,46 +7,46 @@
         <language>en</language>
         <pubDate>Tue, 01 Jul 2025 00:00:00 +0800</pubDate>
         <lastBuildDate>Tue, 01 Jul 2025 00:00:00 +0800</lastBuildDate>
-        <category>人工智能</category>
         <category>软件工程</category>
+        <category>人工智能</category>
         <category>自监督学习</category>
         <category>容器</category>
-        <category>杂项</category>
         <category>面经</category>
         <category>ctest</category>
         <category>gtest</category>
         <category>test coverage</category>
-        <category>C++</category>
+        <category>杂项</category>
         <category>Amortized Analysis</category>
         <category>数据结构</category>
+        <category>C++</category>
         <category>栈、队列和数组</category>
         <category>线性表</category>
         <category>串</category>
         <category>树与二叉树</category>
-        <category>查找</category>
         <category>图论</category>
-        <category>排序</category>
-        <category>计算机网络</category>
+        <category>查找</category>
         <category>操作系统</category>
-        <category>fds</category>
         <category>编译原理</category>
-        <category>Liveness Analysis</category>
+        <category>排序</category>
+        <category>fds</category>
         <category>Register Allocation</category>
-        <category>语法分析</category>
+        <category>Liveness Analysis</category>
         <category>词法分析</category>
-        <category>抽象语法</category>
-        <category>活动记录</category>
+        <category>语法分析</category>
         <category>语义分析</category>
+        <category>活动记录</category>
         <category>中间代码</category>
         <category>Basic Blocks and Traces</category>
         <category>指令选择</category>
-        <category>数据的表示与运算</category>
+        <category>抽象语法</category>
         <category>计算机组成</category>
+        <category>存储系统</category>
+        <category>数据的表示与运算</category>
         <category>指令系统</category>
         <category>CPU</category>
-        <category>存储系统</category>
         <category>总线</category>
         <category>I/O</category>
+        <category>计算机网络</category>
         <category>错题</category>
         <item>
             <guid isPermalink="true">http://example.com/2025/07/01/computer-science/computer-organization/ch3/</guid>
@@ -54,7 +54,10 @@
             <link>http://example.com/2025/07/01/computer-science/computer-organization/ch3/</link>
             <category>存储系统</category>
             <pubDate>Tue, 01 Jul 2025 00:00:00 +0800</pubDate>
-            <description><![CDATA[ &lt;h1 id=&#34;Ch3-存储系统&#34;&gt;&lt;a href=&#34;#Ch3-存储系统&#34; class=&#34;headerlink&#34; title=&#34;Ch3 存储系统&#34;&gt;&lt;/a&gt;Ch3 存储系统&lt;/h1&gt;&lt;h2 id=&#34;存储器概述&#34;&gt;&lt;a href=&#34;#存储器概述&#34; class=&#34;headerlink&#34; title=&#34;存储器概述&#34;&gt;&lt;/a&gt;存储器概述&lt;/h2&gt;&lt;h3 id=&#34;存储器的分类&#34;&gt;&lt;a href=&#34;#存储器的分类&#34; class=&#34;headerlink&#34; title=&#34;存储器的分类&#34;&gt;&lt;/a&gt;存储器的分类&lt;/h3&gt;&lt;ol&gt;
+            <description><![CDATA[ &lt;h1 id=&#34;ch3-存储系统&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#ch3-存储系统&#34;&gt;#&lt;/a&gt; Ch3 存储系统&lt;/h1&gt;
+&lt;h2 id=&#34;存储器概述&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#存储器概述&#34;&gt;#&lt;/a&gt; 存储器概述&lt;/h2&gt;
+&lt;h3 id=&#34;存储器的分类&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#存储器的分类&#34;&gt;#&lt;/a&gt; 存储器的分类&lt;/h3&gt;
+&lt;ol&gt;
 &lt;li&gt;按层次分&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
@@ -68,229 +71,460 @@
 &lt;ul&gt;
 &lt;li&gt;磁表面存储器（磁盘、磁带）&lt;/li&gt;
 &lt;li&gt;磁芯存储器&lt;/li&gt;
-&lt;li&gt;半导体存储器（MOS型、双极型）&lt;/li&gt;
+&lt;li&gt;半导体存储器（MOS 型、双极型）&lt;/li&gt;
 &lt;li&gt;光存储器（光盘）&lt;/li&gt;
 &lt;/ul&gt;
 &lt;ol start=&#34;3&#34;&gt;
 &lt;li&gt;按存储方式分&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
-&lt;li&gt;RAM （随机存储器）:随机读取存储单元，存取时间与存储单元的物理位置无关。读写方便，主要用作主存和cache，分静态RAM和动态RAM。&lt;/li&gt;
-&lt;li&gt;ROM （只读存储器）：只能读不能写，非易失性，随机读取。广义的ROM也可以通过电擦除进行写入(EEPROM)&lt;/li&gt;
+&lt;li&gt;RAM （随机存储器）: 随机读取存储单元，存取时间与存储单元的物理位置无关。读写方便，主要用作主存和 cache，分静态 RAM 和动态 RAM。&lt;/li&gt;
+&lt;li&gt;ROM （只读存储器）：只能读不能写，非易失性，随机读取。广义的 ROM 也可以通过电擦除进行写入 (EEPROM)&lt;/li&gt;
 &lt;li&gt;SAM （顺序存储器）：按顺序存储，存取时间与存储单元的物理位置有关&lt;/li&gt;
-&lt;li&gt;DAM （直接存储器）：先选取信息所在区域，然后顺序存取。结合了RAM和SAM的特性（磁盘）&lt;/li&gt;
-&lt;li&gt;Associated memory: 不根据地址而是根据存储内容来进行存取的存储器，可以实现快速地查找快表。既可以按照&amp;#x3D;&amp;#x3D;地址&amp;#x3D;&amp;#x3D;寻址也可以按照&amp;#x3D;&amp;#x3D;内容&amp;#x3D;&amp;#x3D;寻址（通常是某些字段）&lt;/li&gt;
-&lt;li&gt;串行访问存储器：SAM和DAM都是，所以读写时间和物理位置有关&lt;/li&gt;
+&lt;li&gt;DAM （直接存储器）：先选取信息所在区域，然后顺序存取。结合了 RAM 和 SAM 的特性（磁盘）&lt;/li&gt;
+&lt;li&gt;Associated memory: 不根据地址而是根据存储内容来进行存取的存储器，可以实现快速地查找快表。既可以按照&lt;mark&gt;地址&lt;/mark&gt;寻址也可以按照&lt;mark&gt;内容&lt;/mark&gt;寻址（通常是某些字段）&lt;/li&gt;
+&lt;li&gt;串行访问存储器：SAM 和 DAM 都是，所以读写时间和物理位置有关&lt;/li&gt;
 &lt;/ul&gt;
 &lt;ol start=&#34;4&#34;&gt;
 &lt;li&gt;按信息的可保存性分类&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
-&lt;li&gt;易失性存储器：断电后丢失数据，如RAM&lt;/li&gt;
-&lt;li&gt;非易失性存储器：断电后数据还在，如ROM，磁盘光盘&lt;/li&gt;
+&lt;li&gt;易失性存储器：断电后丢失数据，如 RAM&lt;/li&gt;
+&lt;li&gt;非易失性存储器：断电后数据还在，如 ROM，磁盘光盘&lt;/li&gt;
 &lt;li&gt;破坏性读出：读出数据后数据被破坏&lt;/li&gt;
 &lt;li&gt;非破坏性读出：读出数据后数据不改变&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;存储器的性能指标&#34;&gt;&lt;a href=&#34;#存储器的性能指标&#34; class=&#34;headerlink&#34; title=&#34;存储器的性能指标&#34;&gt;&lt;/a&gt;存储器的性能指标&lt;/h3&gt;&lt;p&gt;三个主要性能指标：存储容量、单位成本、存储速度&lt;/p&gt;
+&lt;h3 id=&#34;存储器的性能指标&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#存储器的性能指标&#34;&gt;#&lt;/a&gt; 存储器的性能指标&lt;/h3&gt;
+&lt;p&gt;三个主要性能指标：存储容量、单位成本、存储速度&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;容量 &amp;#x3D; 存储字数 * 字长&lt;/li&gt;
-&lt;li&gt;单位成本 &amp;#x3D; 总成本&amp;#x2F;总容量&lt;/li&gt;
-&lt;li&gt;存储速度：&lt;br&gt;存取时间$T_a$: 启动一次存储器操作到完成该操作所经历的时间，分为读出时间和写入事件&lt;br&gt;存取周期$T_m$: 进行连续读&amp;#x2F;写操作所允许的最短时间间隔&lt;br&gt;主存带宽$B_m$: b&amp;#x2F;s, B&amp;#x2F;s, word&amp;#x2F;s&lt;blockquote&gt;
+&lt;li&gt;容量 = 存储字数 * 字长&lt;/li&gt;
+&lt;li&gt;单位成本 = 总成本 / 总容量&lt;/li&gt;
+&lt;li&gt;存储速度：&lt;br&gt;
+存取时间&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;msub&gt;&lt;mi&gt;T&lt;/mi&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;/msub&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;T_a&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.83333em;vertical-align:-0.15em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.13889em;&#34;&gt;T&lt;/span&gt;&lt;span class=&#34;msupsub&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.151392em;&#34;&gt;&lt;span style=&#34;top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.7em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mathnormal mtight&#34;&gt;a&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.15em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;: 启动一次存储器操作到完成该操作所经历的时间，分为读出时间和写入事件&lt;br&gt;
+存取周期&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;msub&gt;&lt;mi&gt;T&lt;/mi&gt;&lt;mi&gt;m&lt;/mi&gt;&lt;/msub&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;T_m&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.83333em;vertical-align:-0.15em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.13889em;&#34;&gt;T&lt;/span&gt;&lt;span class=&#34;msupsub&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.151392em;&#34;&gt;&lt;span style=&#34;top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.7em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mathnormal mtight&#34;&gt;m&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.15em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;: 进行连续读 / 写操作所允许的最短时间间隔&lt;br&gt;
+主存带宽&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;msub&gt;&lt;mi&gt;B&lt;/mi&gt;&lt;mi&gt;m&lt;/mi&gt;&lt;/msub&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;B_m&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.83333em;vertical-align:-0.15em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.05017em;&#34;&gt;B&lt;/span&gt;&lt;span class=&#34;msupsub&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.151392em;&#34;&gt;&lt;span style=&#34;top:-2.5500000000000003em;margin-left:-0.05017em;margin-right:0.05em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.7em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mathnormal mtight&#34;&gt;m&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.15em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;: b/s, B/s, word/s&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
 &lt;p&gt;存取时间仅为完成一次操作的时间，而存取周期不仅包含操作时间，还包括操作后线路的恢复时间&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3 id=&#34;多级层次的存储系统&#34;&gt;&lt;a href=&#34;#多级层次的存储系统&#34; class=&#34;headerlink&#34; title=&#34;多级层次的存储系统&#34;&gt;&lt;/a&gt;多级层次的存储系统&lt;/h3&gt;&lt;p&gt;&lt;img data-src=&#34;/f1.jpg&#34;&gt;&lt;br&gt;从上到下价格越来越低，速度越来越慢，容量越来越大，CPU访问频度越来越低&lt;br&gt;&lt;img data-src=&#34;/f2.jpg&#34;&gt;&lt;br&gt;存储时间与存储周期的关系&lt;/p&gt;
+&lt;h3 id=&#34;多级层次的存储系统&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#多级层次的存储系统&#34;&gt;#&lt;/a&gt; 多级层次的存储系统&lt;/h3&gt;
+&lt;p&gt;&lt;img data-src=&#34;f1.jpg&#34; alt&gt;&lt;br&gt;
+从上到下价格越来越低，速度越来越慢，容量越来越大，CPU 访问频度越来越低&lt;br&gt;
+&lt;img data-src=&#34;f2.jpg&#34; alt&gt;&lt;br&gt;
+存储时间与存储周期的关系&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;透明（transparent）指的是某种机制或技术的存在对使用者来说是不可见或无感知的&lt;br&gt;主存-Cache之间的数据调用由硬件自动完成，对所有程序员均是透明的&lt;br&gt;主存-辅存的数据调用由硬件和操作系统共同完成，对应用程序员是透明的&lt;/li&gt;
+&lt;li&gt;透明（transparent）指的是某种机制或技术的存在对使用者来说是不可见或无感知的&lt;br&gt;
+主存 - Cache 之间的数据调用由硬件自动完成，对所有程序员均是透明的&lt;br&gt;
+主存 - 辅存的数据调用由硬件和操作系统共同完成，对应用程序员是透明的&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;主存储器&#34;&gt;&lt;a href=&#34;#主存储器&#34; class=&#34;headerlink&#34; title=&#34;主存储器&#34;&gt;&lt;/a&gt;主存储器&lt;/h2&gt;&lt;p&gt;存储元件：MOS管&lt;/p&gt;
-&lt;h3 id=&#34;SRAM-DRAM&#34;&gt;&lt;a href=&#34;#SRAM-DRAM&#34; class=&#34;headerlink&#34; title=&#34;SRAM &amp;amp; DRAM&#34;&gt;&lt;/a&gt;SRAM &amp;amp; DRAM&lt;/h3&gt;&lt;p&gt;RAM: SRAM静态随机存储器和DRAM动态随机存储器&lt;br&gt;&amp;#x3D;&amp;#x3D;主存主要是DRAM，Cache主要是SRAM&amp;#x3D;&amp;#x3D;，都易失&lt;/p&gt;
-&lt;p&gt;DRAM芯片：使用栅极电容存储信息，只要一个晶体管，读写&amp;#x3D;&amp;#x3D;更慢&amp;#x3D;&amp;#x3D;，是&amp;#x3D;&amp;#x3D;破坏性读出&amp;#x3D;&amp;#x3D;，需要重写，&amp;#x3D;&amp;#x3D;成本低，集成度高，功耗低&amp;#x3D;&amp;#x3D;&lt;/p&gt;
-&lt;p&gt;SRAM芯片：使用双稳态触发器存储信息（六晶体管MOS，RS, JK, D）。读写&amp;#x3D;&amp;#x3D;更快&amp;#x3D;&amp;#x3D;，是非破坏性读出，&amp;#x3D;&amp;#x3D;成本高，集成度低，功耗大&amp;#x3D;&amp;#x3D;&lt;br&gt;&lt;img data-src=&#34;/f4.jpg&#34;&gt;&lt;br&gt;栅极电容需要一直刷新给电容充电，触发器不需要刷新，只要不断电状态不会改变&lt;/p&gt;
-&lt;h4 id=&#34;DRAM的刷新&#34;&gt;&lt;a href=&#34;#DRAM的刷新&#34; class=&#34;headerlink&#34; title=&#34;DRAM的刷新&#34;&gt;&lt;/a&gt;DRAM的刷新&lt;/h4&gt;&lt;ol&gt;
-&lt;li&gt;多久需要刷新一次？ 刷新周期：一般为2ms&lt;/li&gt;
-&lt;li&gt;每次刷新多少存储单元？以行为单位，每次刷新一行存储单元&lt;br&gt;——为什么要用行列地址？减少选通线的数量&lt;/li&gt;
-&lt;li&gt;在什么时刻刷新？&lt;br&gt;有硬件支持，读出一行的信息后重新写入，占用1个读&amp;#x2F;写周期&lt;br&gt;假设DRAM内部结构排列成128×128的形式，读&amp;#x2F;写周期0.5us&lt;br&gt;2ms共 2ms&amp;#x2F;0.5us &amp;#x3D; 4000 个周期&lt;br&gt;三种刷新方式：&lt;br&gt;&lt;img data-src=&#34;/f5.jpg&#34;&gt;&lt;br&gt;刷新以行为单位，再生（重写）只需要恢复被读出来的存储单元&lt;br&gt;刷新由存储器独立完成，不需要CPU控制&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h5 id=&#34;DRAM的地址引脚复用技术&#34;&gt;&lt;a href=&#34;#DRAM的地址引脚复用技术&#34; class=&#34;headerlink&#34; title=&#34;DRAM的地址引脚复用技术&#34;&gt;&lt;/a&gt;DRAM的地址引脚复用技术&lt;/h5&gt;&lt;p&gt;&lt;img data-src=&#34;/f6.jpg&#34;&gt;&lt;br&gt;行列地址分成两次送，节省了一半的地址线&lt;br&gt;行列数优化原则：尽量使行、列数相同，且行数较少（因为按行刷新）&lt;br&gt;目前常用SDRAM（同步DRAM），数据交换同步于CPU的时钟信号，使得CPU不需要等待&lt;/p&gt;
-&lt;h3 id=&#34;ROM&#34;&gt;&lt;a href=&#34;#ROM&#34; class=&#34;headerlink&#34; title=&#34;ROM&#34;&gt;&lt;/a&gt;ROM&lt;/h3&gt;&lt;p&gt;结构简单、非易失性&lt;br&gt;类型：&lt;/p&gt;
+&lt;h2 id=&#34;主存储器&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#主存储器&#34;&gt;#&lt;/a&gt; 主存储器&lt;/h2&gt;
+&lt;p&gt;存储元件：MOS 管&lt;/p&gt;
+&lt;h3 id=&#34;sram-dram&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#sram-dram&#34;&gt;#&lt;/a&gt; SRAM &amp;amp; DRAM&lt;/h3&gt;
+&lt;p&gt;RAM: SRAM 静态随机存储器和 DRAM 动态随机存储器&lt;br&gt;
+&lt;mark&gt;主存主要是 DRAM，Cache 主要是 SRAM&lt;/mark&gt;，都易失&lt;/p&gt;
+&lt;p&gt;DRAM 芯片：使用栅极电容存储信息，只要一个晶体管，读写&lt;mark&gt;更慢&lt;/mark&gt;，是&lt;mark&gt;破坏性读出&lt;/mark&gt;，需要重写，&lt;mark&gt;成本低，集成度高，功耗低&lt;/mark&gt;&lt;/p&gt;
+&lt;p&gt;SRAM 芯片：使用双稳态触发器存储信息（六晶体管 MOS，RS, JK, D）。读写&lt;mark&gt;更快&lt;/mark&gt;，是非破坏性读出，&lt;mark&gt;成本高，集成度低，功耗大&lt;/mark&gt;&lt;br&gt;
+&lt;img data-src=&#34;f4.jpg&#34; alt&gt;&lt;br&gt;
+栅极电容需要一直刷新给电容充电，触发器不需要刷新，只要不断电状态不会改变&lt;/p&gt;
+&lt;h4 id=&#34;dram的刷新&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#dram的刷新&#34;&gt;#&lt;/a&gt; DRAM 的刷新&lt;/h4&gt;
 &lt;ol&gt;
-&lt;li&gt;MROM 掩模式ROM&lt;br&gt;在芯片生产过程中写入，无法改变，可靠性高，急程度高，价格便宜，灵活性差&lt;/li&gt;
-&lt;li&gt;PROM 一次可编程ROM&lt;br&gt;可以用专门的设备写入一次，一旦写入无法改变&lt;/li&gt;
-&lt;li&gt;EPROM 可擦除可编程ROM&lt;br&gt;可以写入并多次改写，但是编程次数有限且时间长&lt;/li&gt;
-&lt;li&gt;Flash&lt;br&gt;兼有RAM和ROM的优点，可以不加电长期保存信息，又能在线快速擦除和重写，价格便宜，急程度高，电可擦除重写且速度快&lt;br&gt;SSD 固态硬盘基于Flash，由控制单元和Flash组成，长期保存、快速擦除和重写，对比传统硬盘读写速度快。低功耗。但是价格高&lt;/li&gt;
+&lt;li&gt;多久需要刷新一次？ 刷新周期：一般为 2ms&lt;/li&gt;
+&lt;li&gt;每次刷新多少存储单元？以行为单位，每次刷新一行存储单元&lt;br&gt;
+ —— 为什么要用行列地址？减少选通线的数量&lt;/li&gt;
+&lt;li&gt;在什么时刻刷新？&lt;br&gt;
+有硬件支持，读出一行的信息后重新写入，占用 1 个读 / 写周期&lt;br&gt;
+假设 DRAM 内部结构排列成 128×128 的形式，读 / 写周期 0.5us&lt;br&gt;
+2ms 共 2ms/0.5us = 4000 个周期&lt;br&gt;
+三种刷新方式：&lt;br&gt;
+&lt;img data-src=&#34;f5.jpg&#34; alt&gt;&lt;br&gt;
+刷新以行为单位，再生（重写）只需要恢复被读出来的存储单元&lt;br&gt;
+刷新由存储器独立完成，不需要 CPU 控制&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h3 id=&#34;主存储器的基本组成&#34;&gt;&lt;a href=&#34;#主存储器的基本组成&#34; class=&#34;headerlink&#34; title=&#34;主存储器的基本组成&#34;&gt;&lt;/a&gt;主存储器的基本组成&lt;/h3&gt;&lt;p&gt;核心部件：一个个存储0或1的存储单元构成的存储矩阵&lt;br&gt;访问主存时，CPU把地址送到MAR，MAR通过地址总线把地址送到主存中的地址寄存器，地址译码器进行译码，选中相应的内存单元，然后通过控制电路决定读&amp;#x2F;写操作：&lt;/p&gt;
+&lt;h5 id=&#34;dram的地址引脚复用技术&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#dram的地址引脚复用技术&#34;&gt;#&lt;/a&gt; DRAM 的地址引脚复用技术&lt;/h5&gt;
+&lt;p&gt;&lt;img data-src=&#34;f6.jpg&#34; alt&gt;&lt;br&gt;
+行列地址分成两次送，节省了一半的地址线&lt;br&gt;
+行列数优化原则：尽量使行、列数相同，且行数较少（因为按行刷新）&lt;br&gt;
+目前常用 SDRAM（同步 DRAM），数据交换同步于 CPU 的时钟信号，使得 CPU 不需要等待&lt;/p&gt;
+&lt;h3 id=&#34;rom&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#rom&#34;&gt;#&lt;/a&gt; ROM&lt;/h3&gt;
+&lt;p&gt;结构简单、非易失性&lt;br&gt;
+类型：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;MROM 掩模式 ROM&lt;br&gt;
+ 在芯片生产过程中写入，无法改变，可靠性高，急程度高，价格便宜，灵活性差&lt;/li&gt;
+&lt;li&gt;PROM 一次可编程 ROM&lt;br&gt;
+ 可以用专门的设备写入一次，一旦写入无法改变&lt;/li&gt;
+&lt;li&gt;EPROM 可擦除可编程 ROM&lt;br&gt;
+ 可以写入并多次改写，但是编程次数有限且时间长&lt;/li&gt;
+&lt;li&gt;Flash&lt;br&gt;
+ 兼有 RAM 和 ROM 的优点，可以不加电长期保存信息，又能在线快速擦除和重写，价格便宜，急程度高，电可擦除重写且速度快&lt;br&gt;
+ SSD 固态硬盘基于 Flash，由控制单元和 Flash 组成，长期保存、快速擦除和重写，对比传统硬盘读写速度快。低功耗。但是价格高&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;主存储器的基本组成&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#主存储器的基本组成&#34;&gt;#&lt;/a&gt; 主存储器的基本组成&lt;/h3&gt;
+&lt;p&gt;核心部件：一个个存储 0 或 1 的存储单元构成的存储矩阵&lt;br&gt;
+访问主存时，CPU 把地址送到 MAR，MAR 通过地址总线把地址送到主存中的地址寄存器，地址译码器进行译码，选中相应的内存单元，然后通过控制电路决定读 / 写操作：&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;读操作：将选中的内存单元的内容通过数据总线送到MDR中&lt;/li&gt;
-&lt;li&gt;写操作：将MDR中的内容通过数据总线送到选中的内存单元中&lt;br&gt;MDR的位数和数据总线位数相同，通常等于存储字长；MAR的位数和地址总线位数相同&lt;/li&gt;
+&lt;li&gt;读操作：将选中的内存单元的内容通过数据总线送到 MDR 中&lt;/li&gt;
+&lt;li&gt;写操作：将 MDR 中的内容通过数据总线送到选中的内存单元中&lt;br&gt;
+ MDR 的位数和数据总线位数相同，通常等于存储字长；MAR 的位数和地址总线位数相同&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;多模块存储器&#34;&gt;&lt;a href=&#34;#多模块存储器&#34; class=&#34;headerlink&#34; title=&#34;多模块存储器&#34;&gt;&lt;/a&gt;多模块存储器&lt;/h3&gt;&lt;p&gt;DRAM芯片的恢复时间比较长，有可能是存取时间的几倍（SRAM的恢复时间较短）。CPU的读写速度比主存快很多，主存恢复时间太长&lt;br&gt; —— 利用多个完全相同的存储模块并行工作来提高吞吐率：单体多字存储器，多体低位交叉存储器&lt;/p&gt;
+&lt;h3 id=&#34;多模块存储器&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#多模块存储器&#34;&gt;#&lt;/a&gt; 多模块存储器&lt;/h3&gt;
+&lt;p&gt;DRAM 芯片的恢复时间比较长，有可能是存取时间的几倍（SRAM 的恢复时间较短）。CPU 的读写速度比主存快很多，主存恢复时间太长&lt;br&gt;
+ —— 利用多个完全相同的存储模块并行工作来提高吞吐率：单体多字存储器，多体低位交叉存储器&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;双端口RAM（408不考，了解即可）&lt;br&gt;&lt;img data-src=&#34;/f7.jpg&#34;&gt;&lt;/li&gt;
+&lt;li&gt;双端口 RAM（408 不考，了解即可）&lt;br&gt;
+&lt;img data-src=&#34;f7.jpg&#34; alt&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;ol&gt;
-&lt;li&gt;&lt;p&gt;单体多字存储器&lt;br&gt;一般一个存储单元只存储一个word，但是单体多字存储器一个存储单元存储多个word，然后读的时候一次性读取这多个字。好处是快，缺点是只有指令和数据连续存放时才能提高存取速度，否则造成不必要的读取。&lt;/p&gt;
+&lt;li&gt;
+&lt;p&gt;单体多字存储器&lt;br&gt;
+一般一个存储单元只存储一个 word，但是单体多字存储器一个存储单元存储多个 word，然后读的时候一次性读取这多个字。好处是快，缺点是只有指令和数据连续存放时才能提高存取速度，否则造成不必要的读取。&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&amp;#x3D;&amp;#x3D;多体并行存储器（重点）&amp;#x3D;&amp;#x3D;&lt;br&gt;分为高位交叉编址和低位交叉编址两种&lt;br&gt;&lt;img data-src=&#34;/f8.jpg&#34;&gt;&lt;br&gt;高位交叉编址每一块存储体的高位是一样的，实际上还是顺序存储。因此访问连续内存实际上访问的还是同一块存储体，并不能通过并行加快访问速度&lt;br&gt;低位交叉编址的每一块存储体低位相同，因此可以在恢复时间并行存取下一块内存的数据&lt;br&gt;存取周期为&lt;code&gt;T&lt;/code&gt;, 存取时间为&lt;code&gt;r&lt;/code&gt;, T &amp;#x3D; r + 恢复时间&lt;br&gt;对于n个存储器并行访问的存储器：&lt;br&gt;采用高位交叉编址的时间为&lt;code&gt;n*T&lt;/code&gt;&lt;br&gt;低位交叉编址为&lt;code&gt;T + (n-1)*r&lt;/code&gt;&lt;/p&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;mark&gt;多体并行存储器（重点）&lt;/mark&gt;&lt;br&gt;
+分为高位交叉编址和低位交叉编址两种&lt;br&gt;
+&lt;img data-src=&#34;f8.jpg&#34; alt&gt;&lt;br&gt;
+高位交叉编址每一块存储体的高位是一样的，实际上还是顺序存储。因此访问连续内存实际上访问的还是同一块存储体，并不能通过并行加快访问速度&lt;br&gt;
+低位交叉编址的每一块存储体低位相同，因此可以在恢复时间并行存取下一块内存的数据&lt;br&gt;
+存取周期为 &lt;code&gt;T&lt;/code&gt; , 存取时间为 &lt;code&gt;r&lt;/code&gt; , T = r + 恢复时间&lt;br&gt;
+对于 n 个存储器并行访问的存储器：&lt;br&gt;
+采用高位交叉编址的时间为 &lt;code&gt;n*T&lt;/code&gt; &lt;br&gt;
+ 低位交叉编址为 &lt;code&gt;T + (n-1)*r&lt;/code&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img data-src=&#34;/f9.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;f9.png&#34; alt&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;轮流启动：每个bank的存储位数等于数据总线的位数，此时采用轮流启动&lt;ul&gt;
-&lt;li&gt;对于低位交叉编址，要保证&lt;code&gt;m&amp;gt;=T/r&lt;/code&gt;，以保证流水线不间断&lt;/li&gt;
-&lt;li&gt;理想情况下，m个bank的交叉存储器每隔&lt;code&gt;T/m&lt;/code&gt;个周期可以读&amp;#x2F;写一个数据，若相邻m次访问的当存地址出现在同一个模块内，则会发生访存冲突，此时需要延迟发生冲突的访问请求。&lt;/li&gt;
+&lt;li&gt;轮流启动：每个 bank 的存储位数等于数据总线的位数，此时采用轮流启动
+&lt;ul&gt;
+&lt;li&gt;对于低位交叉编址，要保证 &lt;code&gt;m&amp;gt;=T/r&lt;/code&gt; ，以保证流水线不间断&lt;/li&gt;
+&lt;li&gt;理想情况下，m 个 bank 的交叉存储器每隔 &lt;code&gt;T/m&lt;/code&gt;  个周期可以读 / 写一个数据，若相邻 m 次访问的当存地址出现在同一个模块内，则会发生访存冲突，此时需要延迟发生冲突的访问请求。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;同时启动：如果m个bank的总位数加起来刚好等于数据总线的位数，则m个同时存&amp;#x2F;取&lt;/li&gt;
+&lt;li&gt;同时启动：如果 m 个 bank 的总位数加起来刚好等于数据总线的位数，则 m 个同时存 / 取&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;主存储器与CPU的连接&#34;&gt;&lt;a href=&#34;#主存储器与CPU的连接&#34; class=&#34;headerlink&#34; title=&#34;主存储器与CPU的连接&#34;&gt;&lt;/a&gt;主存储器与CPU的连接&lt;/h2&gt;&lt;h3 id=&#34;连接原理&#34;&gt;&lt;a href=&#34;#连接原理&#34; class=&#34;headerlink&#34; title=&#34;连接原理&#34;&gt;&lt;/a&gt;连接原理&lt;/h3&gt;&lt;p&gt;通过总线连接（控制、地址、数据）&lt;br&gt;传输速率 &amp;#x3D; 总线宽度&amp;#x2F;传输时间&lt;br&gt;地址总线的位数决定了可寻址的最大内存空间&lt;br&gt;控制总线指出总线周期的类型和本次输入输出完成的时刻&lt;br&gt;将多个芯片集成在内存条上，由多个内存条和主板上的ROM芯片组成计算机所需的主存空间，通过总线与CPU连接&lt;/p&gt;
-&lt;h3 id=&#34;主存容量的扩展&#34;&gt;&lt;a href=&#34;#主存容量的扩展&#34; class=&#34;headerlink&#34; title=&#34;主存容量的扩展&#34;&gt;&lt;/a&gt;主存容量的扩展&lt;/h3&gt;&lt;p&gt;数据总线宽度&amp;gt;存储字长 —— 位扩展&lt;br&gt;地址总线宽度&amp;gt;存储字数量所需的宽度&lt;br&gt;&lt;img data-src=&#34;/f10.jpg&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;主存储器与cpu的连接&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#主存储器与cpu的连接&#34;&gt;#&lt;/a&gt; 主存储器与 CPU 的连接&lt;/h2&gt;
+&lt;h3 id=&#34;连接原理&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#连接原理&#34;&gt;#&lt;/a&gt; 连接原理&lt;/h3&gt;
+&lt;p&gt;通过总线连接（控制、地址、数据）&lt;br&gt;
+传输速率 = 总线宽度 / 传输时间&lt;br&gt;
+地址总线的位数决定了可寻址的最大内存空间&lt;br&gt;
+控制总线指出总线周期的类型和本次输入输出完成的时刻&lt;br&gt;
+将多个芯片集成在内存条上，由多个内存条和主板上的 ROM 芯片组成计算机所需的主存空间，通过总线与 CPU 连接&lt;/p&gt;
+&lt;h3 id=&#34;主存容量的扩展&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#主存容量的扩展&#34;&gt;#&lt;/a&gt; 主存容量的扩展&lt;/h3&gt;
+&lt;p&gt;数据总线宽度 &amp;gt; 存储字长 —— 位扩展&lt;br&gt;
+地址总线宽度 &amp;gt; 存储字数量所需的宽度&lt;br&gt;
+&lt;img data-src=&#34;f10.jpg&#34; alt&gt;&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;&lt;p&gt;位扩展法：增加存储字长&lt;br&gt;由于数据总线宽度大于存储字长，存在浪费情况，必须进行位扩展使数据位数与数据总线位数相等&lt;br&gt;如图：&lt;br&gt;&lt;img data-src=&#34;/f11.jpg&#34;&gt;&lt;/p&gt;
+&lt;li&gt;
+&lt;p&gt;位扩展法：增加存储字长&lt;br&gt;
+由于数据总线宽度大于存储字长，存在浪费情况，必须进行位扩展使数据位数与数据总线位数相等&lt;br&gt;
+如图：&lt;br&gt;
+&lt;img data-src=&#34;f11.jpg&#34; alt&gt;&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p&gt;字扩展法&lt;br&gt;地址总线存在浪费情况，对存储字的数量进行扩展&lt;br&gt;用多出来的地址线提供CS片选信号，决定输出的是哪个芯片的数据&lt;/p&gt;
+&lt;li&gt;
+&lt;p&gt;字扩展法&lt;br&gt;
+地址总线存在浪费情况，对存储字的数量进行扩展&lt;br&gt;
+用多出来的地址线提供 CS 片选信号，决定输出的是哪个芯片的数据&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
-&lt;li&gt;线选法：n条多余的地址线，对应n个选片信号，地址空间不连续造成地址空间浪费（只能有一个1有效），电路简单&lt;br&gt;&lt;img data-src=&#34;/f13.jpg&#34;&gt;&lt;/li&gt;
-&lt;li&gt;译码器选法：n条多余的线对应$2^n$个选片信号，地址空间可以连续&lt;br&gt;&lt;img data-src=&#34;/f12.jpg&#34;&gt;&lt;/li&gt;
+&lt;li&gt;线选法：n 条多余的地址线，对应 n 个选片信号，地址空间不连续造成地址空间浪费（只能有一个 1 有效），电路简单&lt;br&gt;
+&lt;img data-src=&#34;f13.jpg&#34; alt&gt;&lt;/li&gt;
+&lt;li&gt;译码器选法：n 条多余的线对应&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;msup&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;/msup&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;2^n&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.664392em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;msupsub&#34;&gt;&lt;span class=&#34;vlist-t&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.664392em;&#34;&gt;&lt;span style=&#34;top:-3.063em;margin-right:0.05em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.7em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mathnormal mtight&#34;&gt;n&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; 个选片信号，地址空间可以连续&lt;br&gt;
+&lt;img data-src=&#34;f12.jpg&#34; alt&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;ol start=&#34;3&#34;&gt;
-&lt;li&gt;字、位同时扩展&lt;br&gt;既增加存储字的数量，又增加存储字长&lt;br&gt;&lt;img data-src=&#34;/f14.jpg&#34;&gt;&lt;/li&gt;
+&lt;li&gt;字、位同时扩展&lt;br&gt;
+既增加存储字的数量，又增加存储字长&lt;br&gt;
+&lt;img data-src=&#34;f14.jpg&#34; alt&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h3 id=&#34;存储芯片的地址分配和片选&#34;&gt;&lt;a href=&#34;#存储芯片的地址分配和片选&#34; class=&#34;headerlink&#34; title=&#34;存储芯片的地址分配和片选&#34;&gt;&lt;/a&gt;存储芯片的地址分配和片选&lt;/h3&gt;&lt;p&gt;见上方线选法译码器选法&lt;/p&gt;
-&lt;h3 id=&#34;存储器与CPU的连接&#34;&gt;&lt;a href=&#34;#存储器与CPU的连接&#34; class=&#34;headerlink&#34; title=&#34;存储器与CPU的连接&#34;&gt;&lt;/a&gt;存储器与CPU的连接&lt;/h3&gt;&lt;p&gt;……&lt;br&gt;片选信号还与CPU的方寸控制信号$\overline{MREQ}$有关（低电平有效），若CPU访问IO则此信号为高电平&lt;br&gt;MAR位数要看主存地址空间大小，而不能看实际上用了多少位&lt;/p&gt;
-&lt;h2 id=&#34;外部存储器&#34;&gt;&lt;a href=&#34;#外部存储器&#34; class=&#34;headerlink&#34; title=&#34;外部存储器&#34;&gt;&lt;/a&gt;外部存储器&lt;/h2&gt;&lt;p&gt;磁盘存储器是以磁盘为存储介质的存储器，优点：容量大，价格低；记录介质可重复使用；可以长期保存；非破坏性读出。缺点：存取速度慢；机械结构复杂；对工作环境要求高&lt;/p&gt;
-&lt;h3 id=&#34;磁盘存储器&#34;&gt;&lt;a href=&#34;#磁盘存储器&#34; class=&#34;headerlink&#34; title=&#34;磁盘存储器&#34;&gt;&lt;/a&gt;磁盘存储器&lt;/h3&gt;&lt;ol&gt;
+&lt;h3 id=&#34;存储芯片的地址分配和片选&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#存储芯片的地址分配和片选&#34;&gt;#&lt;/a&gt; 存储芯片的地址分配和片选&lt;/h3&gt;
+&lt;p&gt;见上方线选法译码器选法&lt;/p&gt;
+&lt;h3 id=&#34;存储器与cpu的连接&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#存储器与cpu的连接&#34;&gt;#&lt;/a&gt; 存储器与 CPU 的连接&lt;/h3&gt;
+&lt;p&gt;…&lt;br&gt;
+ 片选信号还与 CPU 的方寸控制信号&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mover accent=&#34;true&#34;&gt;&lt;mrow&gt;&lt;mi&gt;M&lt;/mi&gt;&lt;mi&gt;R&lt;/mi&gt;&lt;mi&gt;E&lt;/mi&gt;&lt;mi&gt;Q&lt;/mi&gt;&lt;/mrow&gt;&lt;mo stretchy=&#34;true&#34;&gt;‾&lt;/mo&gt;&lt;/mover&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;\overline{MREQ}&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:1.0777700000000001em;vertical-align:-0.19444em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord overline&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.8833300000000001em;&#34;&gt;&lt;span style=&#34;top:-3em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:3em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.10903em;&#34;&gt;M&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.00773em;&#34;&gt;R&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.05764em;&#34;&gt;E&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;Q&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;top:-3.80333em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:3em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;overline-line&#34; style=&#34;border-bottom-width:0.04em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.19444em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; 有关（低电平有效），若 CPU 访问 IO 则此信号为高电平&lt;br&gt;
+ MAR 位数要看主存地址空间大小，而不能看实际上用了多少位&lt;/p&gt;
+&lt;h2 id=&#34;外部存储器&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#外部存储器&#34;&gt;#&lt;/a&gt; 外部存储器&lt;/h2&gt;
+&lt;p&gt;磁盘存储器是以磁盘为存储介质的存储器，优点：容量大，价格低；记录介质可重复使用；可以长期保存；非破坏性读出。缺点：存取速度慢；机械结构复杂；对工作环境要求高&lt;/p&gt;
+&lt;h3 id=&#34;磁盘存储器&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#磁盘存储器&#34;&gt;#&lt;/a&gt; 磁盘存储器&lt;/h3&gt;
+&lt;ol&gt;
 &lt;li&gt;磁盘存储器&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
-&lt;li&gt;组成：磁盘驱动器，磁盘控制器，盘片&lt;br&gt;&lt;img data-src=&#34;/f15.jpg&#34;&gt;&lt;/li&gt;
-&lt;li&gt;存储区域：&amp;#x3D;&amp;#x3D;扇区（也称块）是磁盘读写的最小单位&amp;#x3D;&amp;#x3D;，按块存取&lt;ul&gt;
-&lt;li&gt;磁头数(Heads)：一个记录面对应一个磁头&lt;/li&gt;
-&lt;li&gt;柱面数(Cylinders)：表示每面盘片上的磁道数，不同记录面的相同位置的磁道构成一个柱面&lt;/li&gt;
-&lt;li&gt;扇区数(Sectors)：每条磁道上有多少扇区&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;组成：磁盘驱动器，磁盘控制器，盘片&lt;br&gt;
+&lt;img data-src=&#34;f15.jpg&#34; alt&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;存储区域：&lt;mark&gt;扇区（也称块）是磁盘读写的最小单位&lt;/mark&gt;，按块存取&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;磁头数 (Heads)：一个记录面对应一个磁头&lt;/li&gt;
+&lt;li&gt;柱面数 (Cylinders)：表示每面盘片上的磁道数，不同记录面的相同位置的磁道构成一个柱面&lt;/li&gt;
+&lt;li&gt;扇区数 (Sectors)：每条磁道上有多少扇区&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;Disk Cache&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Disk Cache&lt;/p&gt;
+&lt;ul&gt;
 &lt;li&gt;在内存上的一片区域，用来缓冲被送到磁盘上的数据。优点：写磁盘时按簇进行，可以避免频繁地用小块数据写；中间结果数据写回之前可以被快速再次使用&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;磁记录原理&lt;ul&gt;
-&lt;li&gt;原理：当磁头和磁性记录介质有相对运动时，通过电磁转换完成读&amp;#x2F;写操作。&lt;/li&gt;
-&lt;li&gt;编码方法：按某种方案（规律），把一连串的二进制信息变换成存储介质磁层中一个磁化翻转状态的序列，并使读&amp;#x2F;写控制电路容易、可靠地实现转换。&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;磁记录原理&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;原理：当磁头和磁性记录介质有相对运动时，通过电磁转换完成读 / 写操作。&lt;/li&gt;
+&lt;li&gt;编码方法：按某种方案（规律），把一连串的二进制信息变换成存储介质磁层中一个磁化翻转状态的序列，并使读 / 写控制电路容易、可靠地实现转换。&lt;/li&gt;
 &lt;li&gt;磁记录方式：通常采用调频制（FM）和改进型调频制（MFM）的记录方式。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;性能指标&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;磁盘的容量：一个磁盘所能存储的字节总数称为磁盘容量。磁盘容量有非格式化容量和格式化容量之分。&lt;br&gt;非格式化容量是指磁记录表面可以利用的磁化单元总数，非格式化容量 &amp;#x3D; 记录面数 * 柱面数 * 每条磁道的磁化单元数&lt;br&gt;格式化容量是指按照某种特定的记录格式所能存储信息的总量，格式化容量 &amp;#x3D; 记录面数 * 柱面数 * 每道扇区数 * 每个扇区的容量&lt;br&gt;&amp;#x3D;&amp;#x3D;格式化容量 &amp;lt; 非格式化容量&amp;#x3D;&amp;#x3D;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;记录密度:记录密度是指盘片单位面积上记录的二进制的信息量，通常以&lt;code&gt;道密度&lt;/code&gt;、&lt;code&gt;位密度&lt;/code&gt;和&lt;code&gt;面密度&lt;/code&gt;表示。道密度是&amp;#x3D;&amp;#x3D;沿磁盘半径方向单位长度上的磁道数&amp;#x3D;&amp;#x3D;；位密度是&amp;#x3D;&amp;#x3D;磁道单位长度上能记录的二进制代码位数&amp;#x3D;&amp;#x3D;；面密度是位密度和道密度的乘积。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&amp;#x3D;&amp;#x3D;磁盘所有磁道记录的信息量一定是相等的，并不是圆越大信息越多，故每个磁道的位密度都不同，越靠近圆心位密度越大&amp;#x3D;&amp;#x3D;&lt;/p&gt;
+&lt;li&gt;
+&lt;p&gt;性能指标&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;平均存取时间：&lt;br&gt;&amp;#x3D;&amp;#x3D;平均存取时间 &amp;#x3D; 寻道时间（磁头移动到目的磁道）+ 旋转延迟时间（磁头定位到所在扇区）+ 传输时间（传输数据所花费的时间）&amp;#x3D;&amp;#x3D;&lt;br&gt;&amp;#x3D;&amp;#x3D;寻道时间通常取从最外道到最内道时间的一半，旋转延迟时间通常取旋转半周的时间&amp;#x3D;&amp;#x3D;&lt;/p&gt;
+&lt;li&gt;
+&lt;p&gt;磁盘的容量：一个磁盘所能存储的字节总数称为磁盘容量。磁盘容量有非格式化容量和格式化容量之分。&lt;br&gt;
+非格式化容量是指磁记录表面可以利用的磁化单元总数，非格式化容量 = 记录面数 * 柱面数 * 每条磁道的磁化单元数&lt;br&gt;
+格式化容量是指按照某种特定的记录格式所能存储信息的总量，格式化容量 = 记录面数 * 柱面数 * 每道扇区数 * 每个扇区的容量&lt;br&gt;
+&lt;mark&gt;格式化容量 &amp;lt; 非格式化容量&lt;/mark&gt;&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p&gt;数据传输率：磁盘存储器在单位时间内向主机传送数据的字节数，称为数据传输率&lt;br&gt;假设磁盘转速为r（转&amp;#x2F;秒），每条磁道容量为N个字节，则数据传输率为$D_r&amp;#x3D;rN$&lt;/p&gt;
+&lt;li&gt;
+&lt;p&gt;记录密度：记录密度是指盘片单位面积上记录的二进制的信息量，通常以 &lt;code&gt;道密度&lt;/code&gt; 、 &lt;code&gt;位密度&lt;/code&gt; 和 &lt;code&gt;面密度&lt;/code&gt; 表示。道密度是&lt;mark&gt;沿磁盘半径方向单位长度上的磁道数&lt;/mark&gt;；位密度是&lt;mark&gt;磁道单位长度上能记录的二进制代码位数&lt;/mark&gt;；面密度是位密度和道密度的乘积。&lt;br&gt;
+&lt;mark&gt;磁盘所有磁道记录的信息量一定是相等的，并不是圆越大信息越多，故每个磁道的位密度都不同，越靠近圆心位密度越大&lt;/mark&gt;&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p&gt;磁盘地址&lt;br&gt;&lt;img data-src=&#34;/f16.jpg&#34;&gt;&lt;/p&gt;
+&lt;li&gt;
+&lt;p&gt;平均存取时间：&lt;br&gt;
+&lt;mark&gt;平均存取时间 = 寻道时间（磁头移动到目的磁道）+ 旋转延迟时间（磁头定位到所在扇区）+ 传输时间（传输数据所花费的时间）&lt;/mark&gt;&lt;br&gt;
+&lt;mark&gt;寻道时间通常取从最外道到最内道时间的一半，旋转延迟时间通常取旋转半周的时间&lt;/mark&gt;&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p&gt;磁盘的工作原理&lt;br&gt;硬盘的主要操作是寻址、读盘、写盘。每个操作都对应一个控制字，硬盘工作时，第一步是取控制字，第二步是执行控制字。&lt;br&gt;硬盘属于机械式部件，其读写操作是串行的，不可能在同一时刻既读又写，也不可能在同一时刻读两组数据或写两组数据。&lt;/p&gt;
+&lt;li&gt;
+&lt;p&gt;数据传输率：磁盘存储器在单位时间内向主机传送数据的字节数，称为数据传输率&lt;br&gt;
+假设磁盘转速为 r（转 / 秒），每条磁道容量为 N 个字节，则数据传输率为&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;msub&gt;&lt;mi&gt;D&lt;/mi&gt;&lt;mi&gt;r&lt;/mi&gt;&lt;/msub&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mi&gt;r&lt;/mi&gt;&lt;mi&gt;N&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;D_r=rN&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.83333em;vertical-align:-0.15em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.02778em;&#34;&gt;D&lt;/span&gt;&lt;span class=&#34;msupsub&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.151392em;&#34;&gt;&lt;span style=&#34;top:-2.5500000000000003em;margin-left:-0.02778em;margin-right:0.05em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.7em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mathnormal mtight&#34; style=&#34;margin-right:0.02778em;&#34;&gt;r&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.15em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mrel&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.68333em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.02778em;&#34;&gt;r&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.10903em;&#34;&gt;N&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;磁盘地址&lt;br&gt;
+&lt;img data-src=&#34;f16.jpg&#34; alt&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;磁盘的工作原理&lt;br&gt;
+硬盘的主要操作是寻址、读盘、写盘。每个操作都对应一个控制字，硬盘工作时，第一步是取控制字，第二步是执行控制字。&lt;br&gt;
+硬盘属于机械式部件，其读写操作是串行的，不可能在同一时刻既读又写，也不可能在同一时刻读两组数据或写两组数据。&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;ol start=&#34;2&#34;&gt;
-&lt;li&gt;RAID&lt;br&gt;将多个独立的物理磁盘组成一个独立的逻辑磁盘，数据分割交叉存储，并行访问。&lt;/li&gt;
+&lt;li&gt;RAID&lt;br&gt;
+ 将多个独立的物理磁盘组成一个独立的逻辑磁盘，数据分割交叉存储，并行访问。&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
 &lt;li&gt;RAID0：无冗余和无校验的磁盘阵列。&lt;/li&gt;
 &lt;li&gt;RAID1：镜像磁盘阵列。每份数据存两遍，成本太高&lt;/li&gt;
-&lt;li&gt;RAID2：采用纠错的海明码的磁盘阵列。&lt;br&gt;逻辑上连续的几个bit物理上分散存储在各个盘中4bit信息位+3bit海明校验位——可纠正1bit错误&lt;br&gt;每个码字有 &lt;code&gt;m&lt;/code&gt; 个信息位和 &lt;code&gt;r&lt;/code&gt; 个冗余位，$ (m+r+1)≤2^r$&lt;br&gt;参考xyx学长的计网笔记：&lt;br&gt;&lt;img data-src=&#34;/f17.jpg&#34;&gt;&lt;/li&gt;
+&lt;li&gt;RAID2：采用纠错的海明码的磁盘阵列。&lt;br&gt;
+逻辑上连续的几个 bit 物理上分散存储在各个盘中 4bit 信息位 + 3bit 海明校验位 —— 可纠正 1bit 错误&lt;br&gt;
+每个码字有  &lt;code&gt;m&lt;/code&gt;  个信息位和  &lt;code&gt;r&lt;/code&gt;  个冗余位，$ (m+r+1)≤2^r$&lt;br&gt;
+ 参考 xyx 学长的计网笔记：&lt;br&gt;
+&lt;img data-src=&#34;f17.jpg&#34; alt&gt;&lt;/li&gt;
 &lt;li&gt;RAID3：位交叉奇偶校验的磁盘阵列。前三个盘的奇偶校验位写在第四个盘上&lt;/li&gt;
 &lt;li&gt;RAID4：块交叉奇偶校验的磁盘阵列。&lt;/li&gt;
-&lt;li&gt;RAID5：无独立校验的奇偶校验磁盘阵列。在所有磁盘之间分条，并且每个数据块的奇偶校验块 (P) 写入到同一条带上&lt;br&gt;RAID1-RAID5数据不会损坏&lt;/li&gt;
+&lt;li&gt;RAID5：无独立校验的奇偶校验磁盘阵列。在所有磁盘之间分条，并且每个数据块的奇偶校验块 § 写入到同一条带上&lt;br&gt;
+ RAID1-RAID5 数据不会损坏&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;固态硬盘-SSD&#34;&gt;&lt;a href=&#34;#固态硬盘-SSD&#34; class=&#34;headerlink&#34; title=&#34;固态硬盘(SSD)&#34;&gt;&lt;/a&gt;固态硬盘(SSD)&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;特性&lt;br&gt;属于Flash memory, EEPROM&lt;br&gt;组成：闪存翻译层，存储介质&lt;br&gt;&lt;img data-src=&#34;/f18.jpg&#34;&gt;&lt;br&gt;&amp;#x3D;&amp;#x3D;数据以页为单位读写，以块为单位擦除&amp;#x3D;&amp;#x3D;只有整个块被擦除之后才能写这一页，若视图修改包含已有数据的页$P_i$，则这个快中所有含有有用数据的页必须被复制到新的空白的块中，才能对$P_i$进行写操作&lt;br&gt;SSD的优点：&amp;#x3D;&amp;#x3D;随机写很慢，随机读比机械磁盘块&amp;#x3D;&amp;#x3D;，没噪声，能耗低，抗震性好，安全性高&lt;/li&gt;
-&lt;li&gt;Wear Leveling 磨损均衡&lt;br&gt;重复擦写块就会磨损坏，一般是几百次到几千次&lt;br&gt;(1) 动态磨损均衡：&amp;#x3D;&amp;#x3D;写入时&amp;#x3D;&amp;#x3D;优先选择擦除次数少的新闪存块，只在写入时触发，仅考虑可用空间（对于冷数据不包括在空间池中，减少了可以用的block数量）&lt;br&gt;(2) 静态磨损均衡：就算没有写入，SSD也会监测并自动进行数据分配，让老的闪存快以读为主，让新的块腾出空间，以写为主：将数据从写入&amp;#x2F;擦除次数较低的block移动到其他block中，这样可以将低擦写次数的block释放出来，添加到可用可用空间池中，以便后续使用。仅覆盖单个闪存芯片单元&lt;/li&gt;
+&lt;h3 id=&#34;固态硬盘ssd&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#固态硬盘ssd&#34;&gt;#&lt;/a&gt; 固态硬盘 (SSD)&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;特性&lt;br&gt;
+属于 Flash memory, EEPROM&lt;br&gt;
+ 组成：闪存翻译层，存储介质&lt;br&gt;
+&lt;img data-src=&#34;f18.jpg&#34; alt&gt;&lt;br&gt;
+&lt;mark&gt;数据以页为单位读写，以块为单位擦除&lt;/mark&gt;只有整个块被擦除之后才能写这一页，若视图修改包含已有数据的页&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;msub&gt;&lt;mi&gt;P&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;/msub&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;P_i&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.83333em;vertical-align:-0.15em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.13889em;&#34;&gt;P&lt;/span&gt;&lt;span class=&#34;msupsub&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.31166399999999994em;&#34;&gt;&lt;span style=&#34;top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.7em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mathnormal mtight&#34;&gt;i&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.15em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;，则这个快中所有含有有用数据的页必须被复制到新的空白的块中，才能对&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;msub&gt;&lt;mi&gt;P&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;/msub&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;P_i&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.83333em;vertical-align:-0.15em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.13889em;&#34;&gt;P&lt;/span&gt;&lt;span class=&#34;msupsub&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.31166399999999994em;&#34;&gt;&lt;span style=&#34;top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.7em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mathnormal mtight&#34;&gt;i&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.15em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; 进行写操作&lt;br&gt;
+ SSD 的优点：&lt;mark&gt;随机写很慢，随机读比机械磁盘块&lt;/mark&gt;，没噪声，能耗低，抗震性好，安全性高&lt;/li&gt;
+&lt;li&gt;Wear Leveling 磨损均衡&lt;br&gt;
+重复擦写块就会磨损坏，一般是几百次到几千次&lt;br&gt;
+ (1) 动态磨损均衡：&lt;mark&gt;写入时&lt;/mark&gt;优先选择擦除次数少的新闪存块，只在写入时触发，仅考虑可用空间（对于冷数据不包括在空间池中，减少了可以用的 block 数量）&lt;br&gt;
+(2) 静态磨损均衡：就算没有写入，SSD 也会监测并自动进行数据分配，让老的闪存快以读为主，让新的块腾出空间，以写为主：将数据从写入 / 擦除次数较低的 block 移动到其他 block 中，这样可以将低擦写次数的 block 释放出来，添加到可用可用空间池中，以便后续使用。仅覆盖单个闪存芯片单元&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h2 id=&#34;Cache&#34;&gt;&lt;a href=&#34;#Cache&#34; class=&#34;headerlink&#34; title=&#34;Cache&#34;&gt;&lt;/a&gt;Cache&lt;/h2&gt;&lt;p&gt;解决CPU和主存速度不一致问题，由SRAM组成，通常集成在CPU中&lt;/p&gt;
-&lt;h3 id=&#34;程序访问的局部性原理&#34;&gt;&lt;a href=&#34;#程序访问的局部性原理&#34; class=&#34;headerlink&#34; title=&#34;程序访问的局部性原理&#34;&gt;&lt;/a&gt;程序访问的局部性原理&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;时间局部性：比如循环、数组（每次循环访问一次数组能体现时间局部性）&lt;/li&gt;
-&lt;li&gt;空间局部性：最近的未来用到的信息很可能和正在使用的信息在存储空间上是临近的（顺序访问数组能体现空间局部性）&lt;br&gt;Cache利用局部性原理，将最近或频繁访问的数据复制到更快但容量较小的存储中，以便提高访问速度和系统性能。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;:::primary&lt;br&gt;&lt;strong&gt;hit&amp;#x2F;miss计算&lt;/strong&gt;&lt;br&gt;设$t_c$为访问一次Cache所需时间，$t_m$为访问一次内存所需时间，则Cache和主存同时被访问总时间为$t &amp;#x3D; Ht_c + (1 - H)t_m$&lt;br&gt;若先访问Cache再访问主存则时间为：$t &amp;#x3D; t_c + (1 - H)t_m$&lt;br&gt;:::&lt;/p&gt;
-&lt;h3 id=&#34;Cache工作原理&#34;&gt;&lt;a href=&#34;#Cache工作原理&#34; class=&#34;headerlink&#34; title=&#34;Cache工作原理&#34;&gt;&lt;/a&gt;Cache工作原理&lt;/h3&gt;&lt;p&gt;主存和Cache之间以&amp;#x3D;&amp;#x3D;块(Block)&amp;#x3D;&amp;#x3D;为单位进行数据交换&lt;/p&gt;
-&lt;h3 id=&#34;映射方式&#34;&gt;&lt;a href=&#34;#映射方式&#34; class=&#34;headerlink&#34; title=&#34;映射方式&#34;&gt;&lt;/a&gt;映射方式&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;直接映射 Directed mapped&lt;br&gt;&lt;img data-src=&#34;/f20.jpg&#34;&gt;&lt;br&gt;&lt;img data-src=&#34;/f27.jpg&#34;&gt;&lt;br&gt;cache 行号 &amp;#x3D; 主存块号 mod cache行数&lt;br&gt;物理地址结构：&lt;br&gt;| tag | index（行号） | byte offset |&lt;br&gt;&lt;img data-src=&#34;/f19.jpg&#34;&gt;&lt;br&gt;$$ index的位数 &amp;#x3D; log_2(cache的block数) $$&lt;br&gt;$$ byte\ offset的位数 &amp;#x3D; log_2(cache的block的字节数) $$&lt;br&gt;$$ tag的位数 &amp;#x3D; 32 - index的位数 - byte\ offset的位数 $$&lt;br&gt;在32位系统中，一个word是4B；64位系统中，一个word是8B&lt;br&gt;Cache的一行构成：&lt;br&gt;| valid bit | dirty bit | tag | data |&lt;br&gt;+++primary example&lt;br&gt;&lt;img data-src=&#34;/f21.jpg&#34;&gt;&lt;br&gt;&lt;img data-src=&#34;/f22.jpg&#34;&gt;&lt;br&gt;&lt;img data-src=&#34;/f23.jpg&#34;&gt;&lt;br&gt;&lt;img data-src=&#34;/f24.jpg&#34;&gt;&lt;br&gt;&lt;img data-src=&#34;/f25.jpg&#34;&gt;&lt;br&gt;&lt;img data-src=&#34;/f26.jpg&#34;&gt;&lt;br&gt;+++&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;全相连 Full Associative&lt;br&gt;block can go anywhere in cache&lt;br&gt;主存地址：&lt;br&gt;| tag | byte offset |&lt;br&gt;好处是能降低冲突率，每次需要和所有block比较是否hit开销大，不适合大容量Cache&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;组相连 Set Associative&lt;br&gt;&lt;img data-src=&#34;/f28.jpg&#34;&gt;&lt;br&gt;物理地址构成：&lt;br&gt;| tag | set index | 块内偏移 |&lt;br&gt;set index的位数表示有多少组，&lt;br&gt;$$ setNum &amp;#x3D;  \frac{Cache大小}{blockSize * 路数} $$&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;+++primary&lt;br&gt;一个四路相联cache，CPU字长为4字节，内存和cache都是以字节编址，cache和内存交换单位为块，每个块大小为512字节，cache能够容纳1024个块。如果物理内存为32位地址:&lt;br&gt;set数 &amp;#x3D; 1024&amp;#x2F;4 &amp;#x3D; 256&lt;br&gt;index位数 &amp;#x3D; log2(256) &amp;#x3D; 8&lt;br&gt;blockOffset位数 &amp;#x3D; log2(512) &amp;#x3D; 9&lt;br&gt;tag位数 &amp;#x3D; 32 - 8 - 9 &amp;#x3D; 17&lt;/p&gt;
+&lt;h2 id=&#34;cache&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#cache&#34;&gt;#&lt;/a&gt; Cache&lt;/h2&gt;
+&lt;p&gt;解决 CPU 和主存速度不一致问题，由 SRAM 组成，通常集成在 CPU 中&lt;/p&gt;
+&lt;h3 id=&#34;程序访问的局部性原理&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#程序访问的局部性原理&#34;&gt;#&lt;/a&gt; 程序访问的局部性原理&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;物理地址构成：| tag 17位 | set index 8位 | block offset 9 位 |&lt;/li&gt;
-&lt;li&gt;计算内存地址FAB12389（16进制）在cache中可能的位置块号:&lt;br&gt;1111 1010 1011 0001 0010 0011 1000 1001&lt;br&gt;set index是10010001也就是145，所以可能的block号是145*4 &amp;#x3D; 580, 581, 582, 583&lt;br&gt;+++&lt;br&gt;&lt;img data-src=&#34;/f29.jpg&#34;&gt;&lt;br&gt;&amp;#x3D;&amp;#x3D;n路组相连需要n个比较器，位数&amp;#x3D;tag位数&amp;#x3D;&amp;#x3D;&lt;/li&gt;
+&lt;li&gt;时间局部性：比如循环、数组（每次循环访问一次数组能体现时间局部性）&lt;/li&gt;
+&lt;li&gt;空间局部性：最近的未来用到的信息很可能和正在使用的信息在存储空间上是临近的（顺序访问数组能体现空间局部性）&lt;br&gt;
+Cache 利用局部性原理，将最近或频繁访问的数据复制到更快但容量较小的存储中，以便提高访问速度和系统性能。&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;替换算法&#34;&gt;&lt;a href=&#34;#替换算法&#34; class=&#34;headerlink&#34; title=&#34;替换算法&#34;&gt;&lt;/a&gt;替换算法&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;Random Replacement&lt;br&gt;随机找一块替换，实现简单，命中率低&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;FIFO&lt;br&gt;选择最早进入的Cache行的进行替换&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;LRU&lt;br&gt;选择近期用得最少的Cache行进行替换，对每个Cache行维护一个计数器表示访问的次数，每次替换掉数值最小的。&lt;br&gt;2-way Cache要用1 bit来记录，4-way Cache要用2 bit来记录&lt;br&gt;+++primary&lt;br&gt;4-way Cache，有五个块映射到Cache同一组，访问顺序是{1, 2, 3, 4, 1, 2, 5, 1, 2, 3, 4, 5}&lt;br&gt;&lt;img data-src=&#34;/f30.jpg&#34;&gt;&lt;br&gt;+++&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3 id=&#34;Cache一致性问题&#34;&gt;&lt;a href=&#34;#Cache一致性问题&#34; class=&#34;headerlink&#34; title=&#34;Cache一致性问题&#34;&gt;&lt;/a&gt;Cache一致性问题&lt;/h3&gt;&lt;p&gt;当write hit时：&lt;/p&gt;
+&lt;div class=&#34;note primary&#34;&gt;
+&lt;p&gt;&lt;strong&gt;hit/miss 计算&lt;/strong&gt;&lt;br&gt;
+设&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;msub&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mi&gt;c&lt;/mi&gt;&lt;/msub&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;t_c&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.76508em;vertical-align:-0.15em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;t&lt;/span&gt;&lt;span class=&#34;msupsub&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.151392em;&#34;&gt;&lt;span style=&#34;top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.7em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mathnormal mtight&#34;&gt;c&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.15em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; 为访问一次 Cache 所需时间，&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;msub&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mi&gt;m&lt;/mi&gt;&lt;/msub&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;t_m&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.76508em;vertical-align:-0.15em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;t&lt;/span&gt;&lt;span class=&#34;msupsub&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.151392em;&#34;&gt;&lt;span style=&#34;top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.7em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mathnormal mtight&#34;&gt;m&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.15em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; 为访问一次内存所需时间，则 Cache 和主存同时被访问总时间为&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mi&gt;H&lt;/mi&gt;&lt;msub&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mi&gt;c&lt;/mi&gt;&lt;/msub&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mo stretchy=&#34;false&#34;&gt;(&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mo&gt;−&lt;/mo&gt;&lt;mi&gt;H&lt;/mi&gt;&lt;mo stretchy=&#34;false&#34;&gt;)&lt;/mo&gt;&lt;msub&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mi&gt;m&lt;/mi&gt;&lt;/msub&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;t = Ht_c + (1 - H)t_m&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.61508em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;t&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mrel&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.83333em;vertical-align:-0.15em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.08125em;&#34;&gt;H&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;t&lt;/span&gt;&lt;span class=&#34;msupsub&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.151392em;&#34;&gt;&lt;span style=&#34;top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.7em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mathnormal mtight&#34;&gt;c&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.15em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mbin&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:1em;vertical-align:-0.25em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mopen&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mbin&#34;&gt;−&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:1em;vertical-align:-0.25em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.08125em;&#34;&gt;H&lt;/span&gt;&lt;span class=&#34;mclose&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;t&lt;/span&gt;&lt;span class=&#34;msupsub&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.151392em;&#34;&gt;&lt;span style=&#34;top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.7em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mathnormal mtight&#34;&gt;m&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.15em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;
+ 若先访问 Cache 再访问主存则时间为：&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;msub&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mi&gt;c&lt;/mi&gt;&lt;/msub&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mo stretchy=&#34;false&#34;&gt;(&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mo&gt;−&lt;/mo&gt;&lt;mi&gt;H&lt;/mi&gt;&lt;mo stretchy=&#34;false&#34;&gt;)&lt;/mo&gt;&lt;msub&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mi&gt;m&lt;/mi&gt;&lt;/msub&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;t = t_c + (1 - H)t_m&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.61508em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;t&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mrel&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.76508em;vertical-align:-0.15em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;t&lt;/span&gt;&lt;span class=&#34;msupsub&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.151392em;&#34;&gt;&lt;span style=&#34;top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.7em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mathnormal mtight&#34;&gt;c&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.15em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mbin&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:1em;vertical-align:-0.25em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mopen&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mbin&#34;&gt;−&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:1em;vertical-align:-0.25em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.08125em;&#34;&gt;H&lt;/span&gt;&lt;span class=&#34;mclose&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;t&lt;/span&gt;&lt;span class=&#34;msupsub&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.151392em;&#34;&gt;&lt;span style=&#34;top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.7em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mathnormal mtight&#34;&gt;m&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.15em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;h3 id=&#34;cache工作原理&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#cache工作原理&#34;&gt;#&lt;/a&gt; Cache 工作原理&lt;/h3&gt;
+&lt;p&gt;主存和 Cache 之间以 == 块 (Block)== 为单位进行数据交换&lt;/p&gt;
+&lt;h3 id=&#34;映射方式&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#映射方式&#34;&gt;#&lt;/a&gt; 映射方式&lt;/h3&gt;
 &lt;ol&gt;
-&lt;li&gt;Write through 直写&amp;#x2F;全写法&lt;br&gt;Cache hit的时候，CPU不仅写入Cache，而且写入主存&lt;br&gt;为了减少写入主存的时间小号，增加一个write buffer，CPU同时写入Cache和write buffer，write buffer采用FIFO，当write buffer满时，将write buffer中的数据写入主存&lt;/li&gt;
-&lt;li&gt;Write back 写回法&lt;br&gt;write hit时，只把数据写入Cache，只有此块被replace的时候才写入主存。减少了方寸次数，所以给cache行设置一个dirty bit，CPU写数据时将dirty bit置为1表示此块被修改过，repalce时需要写入主存&lt;/li&gt;
+&lt;li&gt;直接映射 Directed mapped&lt;br&gt;
+&lt;img data-src=&#34;f20.jpg&#34; alt&gt;&lt;br&gt;
+&lt;img data-src=&#34;f27.jpg&#34; alt&gt;&lt;br&gt;
+cache 行号 = 主存块号 mod cache 行数&lt;br&gt;
+物理地址结构：&lt;br&gt;
+| tag | index（行号） | byte offset |&lt;br&gt;
+&lt;img data-src=&#34;f19.jpg&#34; alt&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;write miss时：&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;katex-display&#34;&gt;&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34; display=&#34;block&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mi&gt;d&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mtext&gt;的位数&lt;/mtext&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mi&gt;l&lt;/mi&gt;&lt;mi&gt;o&lt;/mi&gt;&lt;msub&gt;&lt;mi&gt;g&lt;/mi&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msub&gt;&lt;mo stretchy=&#34;false&#34;&gt;(&lt;/mo&gt;&lt;mi&gt;c&lt;/mi&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mi&gt;c&lt;/mi&gt;&lt;mi&gt;h&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mtext&gt;的&lt;/mtext&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;mi&gt;l&lt;/mi&gt;&lt;mi&gt;o&lt;/mi&gt;&lt;mi&gt;c&lt;/mi&gt;&lt;mi&gt;k&lt;/mi&gt;&lt;mtext&gt;数&lt;/mtext&gt;&lt;mo stretchy=&#34;false&#34;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;index的位数 = log_2(cache的block数) 
+&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.69444em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;d&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;x&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;的&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;位&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;数&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mrel&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:1em;vertical-align:-0.25em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.01968em;&#34;&gt;l&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;o&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.03588em;&#34;&gt;g&lt;/span&gt;&lt;span class=&#34;msupsub&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.30110799999999993em;&#34;&gt;&lt;span style=&#34;top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.7em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mtight&#34;&gt;2&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.15em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;mopen&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;c&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;c&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;h&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;的&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.01968em;&#34;&gt;l&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;o&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;c&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.03148em;&#34;&gt;k&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;数&lt;/span&gt;&lt;span class=&#34;mclose&#34;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;katex-display&#34;&gt;&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34; display=&#34;block&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mtext&gt; &lt;/mtext&gt;&lt;mi&gt;o&lt;/mi&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mi&gt;s&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mtext&gt;的位数&lt;/mtext&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mi&gt;l&lt;/mi&gt;&lt;mi&gt;o&lt;/mi&gt;&lt;msub&gt;&lt;mi&gt;g&lt;/mi&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msub&gt;&lt;mo stretchy=&#34;false&#34;&gt;(&lt;/mo&gt;&lt;mi&gt;c&lt;/mi&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mi&gt;c&lt;/mi&gt;&lt;mi&gt;h&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mtext&gt;的&lt;/mtext&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;mi&gt;l&lt;/mi&gt;&lt;mi&gt;o&lt;/mi&gt;&lt;mi&gt;c&lt;/mi&gt;&lt;mi&gt;k&lt;/mi&gt;&lt;mtext&gt;的字节数&lt;/mtext&gt;&lt;mo stretchy=&#34;false&#34;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;byte\ offset的位数 = log_2(cache的block的字节数) 
+&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.8888799999999999em;vertical-align:-0.19444em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.03588em;&#34;&gt;y&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;t&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;mspace&#34;&gt; &lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;o&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.10764em;&#34;&gt;f&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.10764em;&#34;&gt;f&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;s&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;t&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;的&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;位&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;数&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mrel&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:1em;vertical-align:-0.25em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.01968em;&#34;&gt;l&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;o&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.03588em;&#34;&gt;g&lt;/span&gt;&lt;span class=&#34;msupsub&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.30110799999999993em;&#34;&gt;&lt;span style=&#34;top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.7em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mtight&#34;&gt;2&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.15em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;mopen&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;c&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;c&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;h&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;的&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.01968em;&#34;&gt;l&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;o&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;c&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.03148em;&#34;&gt;k&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;的&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;字&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;节&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;数&lt;/span&gt;&lt;span class=&#34;mclose&#34;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;katex-display&#34;&gt;&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34; display=&#34;block&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mi&gt;g&lt;/mi&gt;&lt;mtext&gt;的位数&lt;/mtext&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mn&gt;32&lt;/mn&gt;&lt;mo&gt;−&lt;/mo&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mi&gt;d&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mtext&gt;的位数&lt;/mtext&gt;&lt;mo&gt;−&lt;/mo&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mtext&gt; &lt;/mtext&gt;&lt;mi&gt;o&lt;/mi&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mi&gt;s&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mtext&gt;的位数&lt;/mtext&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;tag的位数 = 32 - index的位数 - byte\ offset的位数 
+&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.8777699999999999em;vertical-align:-0.19444em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;t&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.03588em;&#34;&gt;g&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;的&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;位&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;数&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mrel&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.72777em;vertical-align:-0.08333em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mbin&#34;&gt;−&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.77777em;vertical-align:-0.08333em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;d&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;x&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;的&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;位&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;数&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mbin&#34;&gt;−&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.8888799999999999em;vertical-align:-0.19444em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.03588em;&#34;&gt;y&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;t&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;mspace&#34;&gt; &lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;o&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.10764em;&#34;&gt;f&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.10764em;&#34;&gt;f&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;s&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;t&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;的&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;位&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;数&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;在 32 位系统中，一个 word 是 4B；64 位系统中，一个 word 是 8B&lt;br&gt;
+Cache 的一行构成：&lt;br&gt;
+| valid bit | dirty bit | tag | data |&lt;/p&gt;
+&lt;details class=&#34;primary&#34;&gt;&lt;summary&gt;example&lt;/summary&gt;&lt;div&gt;
+&lt;p&gt;&lt;img data-src=&#34;f21.jpg&#34; alt&gt;&lt;br&gt;
+&lt;img data-src=&#34;f22.jpg&#34; alt&gt;&lt;br&gt;
+&lt;img data-src=&#34;f23.jpg&#34; alt&gt;&lt;br&gt;
+&lt;img data-src=&#34;f24.jpg&#34; alt&gt;&lt;br&gt;
+&lt;img data-src=&#34;f25.jpg&#34; alt&gt;&lt;br&gt;
+&lt;img data-src=&#34;f26.jpg&#34; alt&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;/details&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;全相连 Full Associative&lt;br&gt;
+block can go anywhere in cache&lt;br&gt;
+ 主存地址：&lt;br&gt;
+| tag | byte offset |&lt;br&gt;
+ 好处是能降低冲突率，每次需要和所有 block 比较是否 hit 开销大，不适合大容量 Cache&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;组相连 Set Associative&lt;br&gt;
+&lt;img data-src=&#34;f28.jpg&#34; alt&gt;&lt;br&gt;
+ 物理地址构成：&lt;br&gt;
+| tag | set index | 块内偏移 |&lt;br&gt;
+set index 的位数表示有多少组，&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;span class=&#34;katex-display&#34;&gt;&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34; display=&#34;block&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;s&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mi&gt;N&lt;/mi&gt;&lt;mi&gt;u&lt;/mi&gt;&lt;mi&gt;m&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mfrac&gt;&lt;mrow&gt;&lt;mi&gt;C&lt;/mi&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mi&gt;c&lt;/mi&gt;&lt;mi&gt;h&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mtext&gt;大小&lt;/mtext&gt;&lt;/mrow&gt;&lt;mrow&gt;&lt;mi&gt;b&lt;/mi&gt;&lt;mi&gt;l&lt;/mi&gt;&lt;mi&gt;o&lt;/mi&gt;&lt;mi&gt;c&lt;/mi&gt;&lt;mi&gt;k&lt;/mi&gt;&lt;mi&gt;S&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mi&gt;z&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mo&gt;∗&lt;/mo&gt;&lt;mtext&gt;路数&lt;/mtext&gt;&lt;/mrow&gt;&lt;/mfrac&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;setNum =  \frac{Cache大小}{blockSize * 路数} 
+&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.68333em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;s&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;t&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.10903em;&#34;&gt;N&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;u&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;m&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mrel&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:2.05744em;vertical-align:-0.686em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mopen nulldelimiter&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mfrac&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:1.37144em;&#34;&gt;&lt;span style=&#34;top:-2.314em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:3em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.01968em;&#34;&gt;l&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;o&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;c&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.03148em;&#34;&gt;k&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.05764em;&#34;&gt;S&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.04398em;&#34;&gt;z&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mbin&#34;&gt;∗&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;路&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;数&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;top:-3.23em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:3em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;frac-line&#34; style=&#34;border-bottom-width:0.04em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;top:-3.677em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:3em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.07153em;&#34;&gt;C&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;c&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;h&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;大&lt;/span&gt;&lt;span class=&#34;mord cjk_fallback&#34;&gt;小&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.686em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;mclose nulldelimiter&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;details class=&#34;primary&#34;&gt;&lt;summary&gt;&lt;/summary&gt;&lt;div&gt;
+&lt;p&gt;一个四路相联 cache，CPU 字长为 4 字节，内存和 cache 都是以字节编址，cache 和内存交换单位为块，每个块大小为 512 字节，cache 能够容纳 1024 个块。如果物理内存为 32 位地址:&lt;br&gt;
+set 数 = 1024/4 = 256&lt;br&gt;
+index 位数 = log2 (256) = 8&lt;br&gt;
+blockOffset 位数 = log2 (512) = 9&lt;br&gt;
+tag 位数 = 32 - 8 - 9 = 17&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;物理地址构成：| tag 17 位 | set index 8 位 | block offset 9 位 |&lt;/li&gt;
+&lt;li&gt;计算内存地址 FAB12389（16 进制）在 cache 中可能的位置块号:&lt;br&gt;
+1111 1010 1011 0001 0010 0011 1000 1001&lt;br&gt;
+set index 是 10010001 也就是 145，所以可能的 block 号是 145*4 = 580, 581, 582, 583&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;&lt;/details&gt;
+&lt;p&gt;&lt;img data-src=&#34;f29.jpg&#34; alt&gt;&lt;br&gt;
+&lt;mark&gt;n 路组相连需要 n 个比较器，位数 = tag 位数&lt;/mark&gt;&lt;/p&gt;
+&lt;h3 id=&#34;替换算法&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#替换算法&#34;&gt;#&lt;/a&gt; 替换算法&lt;/h3&gt;
 &lt;ol&gt;
-&lt;li&gt;Write Allocate 写分配法&lt;br&gt;如果发生write miss，会从内存中加载对应的数据块到 cache 中，然后进行写操作。和 write-back搭配使用，把后续对该块的修改都缓存在 cache 中&lt;/li&gt;
-&lt;li&gt;Not-Write-Allocate 非写分配法&lt;br&gt;只更新主存不把主存写入Cache，适用于 write-through，因为即使写入 cache，也会马上写回内存，没必要占用 cache 空间。&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Random Replacement&lt;br&gt;
+ 随机找一块替换，实现简单，命中率低&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;FIFO&lt;br&gt;
+ 选择最早进入的 Cache 行的进行替换&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;LRU&lt;br&gt;
+ 选择近期用得最少的 Cache 行进行替换，对每个 Cache 行维护一个计数器表示访问的次数，每次替换掉数值最小的。&lt;br&gt;
+2-way Cache 要用 1 bit 来记录，4-way Cache 要用 2 bit 来记录&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&amp;#x3D;&amp;#x3D;write through通常和not-write-allocate一起用，write back 通常和write allocate一起用&amp;#x3D;&amp;#x3D;&lt;/p&gt;
-&lt;h4 id=&#34;使用分离的指令Cache和数据Cache&#34;&gt;&lt;a href=&#34;#使用分离的指令Cache和数据Cache&#34; class=&#34;headerlink&#34; title=&#34;使用分离的指令Cache和数据Cache&#34;&gt;&lt;/a&gt;使用分离的指令Cache和数据Cache&lt;/h4&gt;&lt;p&gt;+++primary&lt;br&gt;&lt;img data-src=&#34;/f31.jpg&#34;&gt;&lt;br&gt;&lt;img data-src=&#34;/f32.jpg&#34;&gt;&lt;br&gt;+++&lt;/p&gt;
-&lt;h2 id=&#34;虚拟存储器&#34;&gt;&lt;a href=&#34;#虚拟存储器&#34; class=&#34;headerlink&#34; title=&#34;虚拟存储器&#34;&gt;&lt;/a&gt;虚拟存储器&lt;/h2&gt;&lt;h3 id=&#34;基本概念&#34;&gt;&lt;a href=&#34;#基本概念&#34; class=&#34;headerlink&#34; title=&#34;基本概念&#34;&gt;&lt;/a&gt;基本概念&lt;/h3&gt;&lt;p&gt;主存和辅存共同构成了虚拟存储器，对于应用程序员而言，虚拟存储器是透明的。（对OS开系统程序员不透明，他们必须管理TLB）&lt;br&gt;虚拟存储器具有主存的速度和辅存的容量&lt;/p&gt;
+&lt;details class=&#34;primary&#34;&gt;&lt;summary&gt;&lt;/summary&gt;&lt;div&gt;
+&lt;p&gt;4-way Cache，有五个块映射到 Cache 同一组，访问顺序是 {1, 2, 3, 4, 1, 2, 5, 1, 2, 3, 4, 5}&lt;br&gt;
+&lt;img data-src=&#34;f30.jpg&#34; alt&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;/details&gt;
+&lt;h3 id=&#34;cache一致性问题&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#cache一致性问题&#34;&gt;#&lt;/a&gt; Cache 一致性问题&lt;/h3&gt;
+&lt;p&gt;当 write hit 时：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Write through 直写 / 全写法&lt;br&gt;
+ Cache hit 的时候，CPU 不仅写入 Cache，而且写入主存&lt;br&gt;
+为了减少写入主存的时间小号，增加一个 write buffer，CPU 同时写入 Cache 和 write buffer，write buffer 采用 FIFO，当 write buffer 满时，将 write buffer 中的数据写入主存&lt;/li&gt;
+&lt;li&gt;Write back 写回法&lt;br&gt;
+ write hit 时，只把数据写入 Cache，只有此块被 replace 的时候才写入主存。减少了方寸次数，所以给 cache 行设置一个 dirty bit，CPU 写数据时将 dirty bit 置为 1 表示此块被修改过，repalce 时需要写入主存&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;write miss 时：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Write Allocate 写分配法&lt;br&gt;
+如果发生 write miss，会从内存中加载对应的数据块到 cache 中，然后进行写操作。和 write-back 搭配使用，把后续对该块的修改都缓存在 cache 中&lt;/li&gt;
+&lt;li&gt;Not-Write-Allocate 非写分配法&lt;br&gt;
+只更新主存不把主存写入 Cache，适用于 write-through，因为即使写入 cache，也会马上写回内存，没必要占用 cache 空间。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;mark&gt;write through 通常和 not-write-allocate 一起用，write back 通常和 write allocate 一起用&lt;/mark&gt;&lt;/p&gt;
+&lt;h4 id=&#34;使用分离的指令cache和数据cache&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#使用分离的指令cache和数据cache&#34;&gt;#&lt;/a&gt; 使用分离的指令 Cache 和数据 Cache&lt;/h4&gt;
+&lt;details class=&#34;primary&#34;&gt;&lt;summary&gt;&lt;/summary&gt;&lt;div&gt;
+&lt;p&gt;&lt;img data-src=&#34;f31.jpg&#34; alt&gt;&lt;br&gt;
+&lt;img data-src=&#34;f32.jpg&#34; alt&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;/details&gt;
+&lt;h2 id=&#34;虚拟存储器&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#虚拟存储器&#34;&gt;#&lt;/a&gt; 虚拟存储器&lt;/h2&gt;
+&lt;h3 id=&#34;基本概念&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#基本概念&#34;&gt;#&lt;/a&gt; 基本概念&lt;/h3&gt;
+&lt;p&gt;主存和辅存共同构成了虚拟存储器，对于应用程序员而言，虚拟存储器是透明的。（对 OS 开系统程序员不透明，他们必须管理 TLB）&lt;br&gt;
+虚拟存储器具有主存的速度和辅存的容量&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;允许多个程序之间高效、安全地共享内存&lt;/li&gt;
 &lt;li&gt;允许单个程序使用超过内存容量的内存&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;+++primary&lt;br&gt;实地址&amp;#x3D;主存页号+页内字地址&lt;br&gt;虚地址&amp;#x3D;虚存页号+页内字地址&lt;br&gt;辅存地址&amp;#x3D;磁盘号+盘面号+磁道号+扇区号&lt;br&gt;+++&lt;/p&gt;
-&lt;p&gt;虚拟存储器缺页访问辅存的代价很大，当程序访问某个virtual page时，如果该页当前不在主存中，就会发生page fault，操作系统需要从辅存加载该页到主存，访问很慢所以访问代价大。因此采用&lt;code&gt;full associative&lt;/code&gt;允许virtual page可以加载到主存的任何一个空闲物理页框中，提高命中率。&lt;br&gt;写操作中处理一致性问题时采用 &lt;code&gt;write back&lt;/code&gt;。主存中的页面状态维护一个dirty标志位。当操作系统需要将该页替换出主存时，会检查该页的脏页标志：如果dirty，说明主存页面数据修改过，必须写回辅存；如果dirty为0，说明主存数据和辅存一致，直接丢弃主存页面，无需写回&lt;/p&gt;
-&lt;h3 id=&#34;页式虚拟存储器&#34;&gt;&lt;a href=&#34;#页式虚拟存储器&#34; class=&#34;headerlink&#34; title=&#34;页式虚拟存储器&#34;&gt;&lt;/a&gt;页式虚拟存储器&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;基本单位：页&lt;br&gt;主存和虚拟地址空间被划分为相同大小的页，主存中的成为物理页（实页、页框、frame），虚拟地址空间中的页称为虚拟页（虚页）&lt;br&gt;页表(page table)记录了程序的虚页调入贮存时被安排在主存中的位置&lt;br&gt;一般的page大小从4KiB ~ 64KiB不等&lt;/li&gt;
+&lt;details class=&#34;primary&#34;&gt;&lt;summary&gt;&lt;/summary&gt;&lt;div&gt;
+&lt;p&gt;实地址 = 主存页号 + 页内字地址&lt;br&gt;
+虚地址 = 虚存页号 + 页内字地址&lt;br&gt;
+辅存地址 = 磁盘号 + 盘面号 + 磁道号 + 扇区号&lt;/p&gt;
+&lt;/div&gt;&lt;/details&gt;
+&lt;p&gt;虚拟存储器缺页访问辅存的代价很大，当程序访问某个 virtual page 时，如果该页当前不在主存中，就会发生 page fault，操作系统需要从辅存加载该页到主存，访问很慢所以访问代价大。因此采用 &lt;code&gt;full associative&lt;/code&gt;  允许 virtual page 可以加载到主存的任何一个空闲物理页框中，提高命中率。&lt;br&gt;
+写操作中处理一致性问题时采用  &lt;code&gt;write back&lt;/code&gt; 。主存中的页面状态维护一个 dirty 标志位。当操作系统需要将该页替换出主存时，会检查该页的脏页标志：如果 dirty，说明主存页面数据修改过，必须写回辅存；如果 dirty 为 0，说明主存数据和辅存一致，直接丢弃主存页面，无需写回&lt;/p&gt;
+&lt;h3 id=&#34;页式虚拟存储器&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#页式虚拟存储器&#34;&gt;#&lt;/a&gt; 页式虚拟存储器&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;基本单位：页&lt;br&gt;
+主存和虚拟地址空间被划分为相同大小的页，主存中的成为物理页（实页、页框、frame），虚拟地址空间中的页称为虚拟页（虚页）&lt;br&gt;
+页表 (page table) 记录了程序的虚页调入贮存时被安排在主存中的位置&lt;br&gt;
+一般的 page 大小从 4KiB ~ 64KiB 不等&lt;/li&gt;
 &lt;/ul&gt;
 &lt;ol&gt;
-&lt;li&gt;页表(page table)&lt;br&gt;页表放在主存中。&lt;br&gt;&lt;img data-src=&#34;/f33.jpg&#34;&gt;&lt;br&gt;有效位（Valid Bit）：用于指示一个页面是否已经被加载到主存中。如果有效位被设置为1，这意味着对应的页面已经在物理内存中，可以立即被访问。如果有效位为0，则表示该页面当前不在内存中，可能需要从磁盘或其他存储设备中调入。当一个程序尝试访问一个页面时，操作系统会检查页表中的有效位，如果发现页面不在内存中，就会触发一个page fault，然后将页面从磁盘加载到内存中。&lt;br&gt;引用位（Reference Bit）：引用位主要用于页面置换算法中，它记录了页面最近是否被访问过。每当一个页面被访问时，操作系统会将该页面的引用位置为1。随着时间的推移，如果一个页面长时间没有被访问，它的引用位可能会被清零。当操作系统需要选择一个页面进行置换时，它可能会优先选择那些引用位为0的页面。&lt;/li&gt;
+&lt;li&gt;页表 (page table)&lt;br&gt;
+ 页表放在主存中。&lt;br&gt;
+&lt;img data-src=&#34;f33.jpg&#34; alt&gt;&lt;br&gt;
+有效位（Valid Bit）：用于指示一个页面是否已经被加载到主存中。如果有效位被设置为 1，这意味着对应的页面已经在物理内存中，可以立即被访问。如果有效位为 0，则表示该页面当前不在内存中，可能需要从磁盘或其他存储设备中调入。当一个程序尝试访问一个页面时，操作系统会检查页表中的有效位，如果发现页面不在内存中，就会触发一个 page fault，然后将页面从磁盘加载到内存中。&lt;br&gt;
+引用位（Reference Bit）：引用位主要用于页面置换算法中，它记录了页面最近是否被访问过。每当一个页面被访问时，操作系统会将该页面的引用位置为 1。随着时间的推移，如果一个页面长时间没有被访问，它的引用位可能会被清零。当操作系统需要选择一个页面进行置换时，它可能会优先选择那些引用位为 0 的页面。&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;转换过程：当一个程序尝试访问内存时，它会生成一个虚拟地址。虚拟地址包含两部分信息：页号（Page Number）和页内偏移（Offset）。用VPN作为索引查询page table，检查valid bit是否为1，从页表条目中获取PPN，PPN和page offset组合成物理地址。&lt;/p&gt;
+&lt;p&gt;转换过程：当一个程序尝试访问内存时，它会生成一个虚拟地址。虚拟地址包含两部分信息：页号（Page Number）和页内偏移（Offset）。用 VPN 作为索引查询 page table，检查 valid bit 是否为 1，从页表条目中获取 PPN，PPN 和 page offset 组合成物理地址。&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;页式虚拟存储器的优点：页面长度固定，页表简单，调入方便&lt;br&gt;缺点：产生内碎片&lt;/p&gt;
+&lt;p&gt;页式虚拟存储器的优点：页面长度固定，页表简单，调入方便&lt;br&gt;
+缺点：产生内碎片&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;ol start=&#34;2&#34;&gt;
-&lt;li&gt;&lt;p&gt;地址转换&lt;br&gt;&lt;img data-src=&#34;/f34.png&#34;&gt;&lt;br&gt;每个进程都有一个页表基址寄存器，存放该进程的页表首地址。然后通过VPN作为索引在页表中查找对应的页表项。物理地址&amp;#x3D;物理页号 + 页内地址。&lt;/p&gt;
+&lt;li&gt;
+&lt;p&gt;地址转换&lt;br&gt;
+&lt;img data-src=&#34;f34.png&#34; alt&gt;&lt;br&gt;
+每个进程都有一个页表基址寄存器，存放该进程的页表首地址。然后通过 VPN 作为索引在页表中查找对应的页表项。物理地址 = 物理页号 + 页内地址。&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p&gt;TLB（快表）&lt;br&gt;为了减少访问主存的此书，TLB相当于page table的cache。&lt;br&gt;TLB用&lt;code&gt;SRAM&lt;/code&gt;实现，不在主存中，工作原理类似于Cache，通常采用full associative或者set associative。&lt;br&gt;&lt;img data-src=&#34;/f35.jpg&#34;&gt;&lt;br&gt;通过VPN查找TLB和Cache的查找一样，如果是全相连则直接比较tag，如果是组相连则通过低位查找set，然后用高位和tag比较。&lt;/p&gt;
+&lt;li&gt;
+&lt;p&gt;TLB（快表）&lt;br&gt;
+为了减少访问主存的此书，TLB 相当于 page table 的 cache。&lt;br&gt;
+TLB 用 &lt;code&gt;SRAM&lt;/code&gt;  实现，不在主存中，工作原理类似于 Cache，通常采用 full associative 或者 set associative。&lt;br&gt;
+&lt;img data-src=&#34;f35.jpg&#34; alt&gt;&lt;br&gt;
+通过 VPN 查找 TLB 和 Cache 的查找一样，如果是全相连则直接比较 tag，如果是组相连则通过低位查找 set，然后用高位和 tag 比较。&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p&gt;具有TLB和Cache的多级存储系统&lt;br&gt;&lt;img data-src=&#34;/f36.jpg&#34;&gt;&lt;br&gt;查找时，TLB和page table可以同步进行，如果在TLB中找到了，page table的查找就作废。&lt;/p&gt;
+&lt;li&gt;
+&lt;p&gt;具有 TLB 和 Cache 的多级存储系统&lt;br&gt;
+&lt;img data-src=&#34;f36.jpg&#34; alt&gt;&lt;br&gt;
+查找时，TLB 和 page table 可以同步进行，如果在 TLB 中找到了，page table 的查找就作废。&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img data-src=&#34;/f37.jpg&#34;&gt;&lt;/p&gt;
-&lt;h3 id=&#34;段式虚拟存储器&#34;&gt;&lt;a href=&#34;#段式虚拟存储器&#34; class=&#34;headerlink&#34; title=&#34;段式虚拟存储器&#34;&gt;&lt;/a&gt;段式虚拟存储器&lt;/h3&gt;&lt;p&gt;&lt;img data-src=&#34;/f38.jpg&#34;&gt;&lt;br&gt;按程序的逻辑结构划分，段的长度因程序而异。虚拟地址分为段号和段内地址。虚地址和实地址的转换依靠段表。&lt;br&gt;段表每行记录某个段的&amp;#x3D;&amp;#x3D;段号、有效位、段长度、段起始地址&amp;#x3D;&amp;#x3D;。&lt;br&gt;段表本身也是段，一般驻留在主存中&lt;br&gt;&amp;#x3D;&amp;#x3D;分页对程序员是透明的，分段对程序员是不透明的&amp;#x3D;&amp;#x3D;&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;f37.jpg&#34; alt&gt;&lt;/p&gt;
+&lt;h3 id=&#34;段式虚拟存储器&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#段式虚拟存储器&#34;&gt;#&lt;/a&gt; 段式虚拟存储器&lt;/h3&gt;
+&lt;p&gt;&lt;img data-src=&#34;f38.jpg&#34; alt&gt;&lt;br&gt;
+按程序的逻辑结构划分，段的长度因程序而异。虚拟地址分为段号和段内地址。虚地址和实地址的转换依靠段表。&lt;br&gt;
+段表每行记录某个段的&lt;mark&gt;段号、有效位、段长度、段起始地址&lt;/mark&gt;。&lt;br&gt;
+段表本身也是段，一般驻留在主存中&lt;br&gt;
+&lt;mark&gt;分页对程序员是透明的，分段对程序员是不透明的&lt;/mark&gt;&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;段式虚拟存储器的优点：具有逻辑独立性，易于编译、管理、修改和保护，便于多道程序的共享&lt;br&gt;缺点：产生外碎片&lt;/p&gt;
+&lt;p&gt;段式虚拟存储器的优点：具有逻辑独立性，易于编译、管理、修改和保护，便于多道程序的共享&lt;br&gt;
+缺点：产生外碎片&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h3 id=&#34;段页式虚拟存储器&#34;&gt;&lt;a href=&#34;#段页式虚拟存储器&#34; class=&#34;headerlink&#34; title=&#34;段页式虚拟存储器&#34;&gt;&lt;/a&gt;段页式虚拟存储器&lt;/h3&gt;&lt;p&gt;把程序按逻辑结构分段，再在每段划分固定大小的页。因此段的长度必须是页长度的整数倍，段的起点必须是某一页的起点。&lt;br&gt;虚地址分为&amp;#x3D;&amp;#x3D;段号，段内页号，页内地址&amp;#x3D;&amp;#x3D;&lt;/p&gt;
+&lt;h3 id=&#34;段页式虚拟存储器&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#段页式虚拟存储器&#34;&gt;#&lt;/a&gt; 段页式虚拟存储器&lt;/h3&gt;
+&lt;p&gt;把程序按逻辑结构分段，再在每段划分固定大小的页。因此段的长度必须是页长度的整数倍，段的起点必须是某一页的起点。&lt;br&gt;
+虚地址分为&lt;mark&gt;段号，段内页号，页内地址&lt;/mark&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;访问流程：从段表基址寄存器（STBR） 中读取段表的起始地址，用段号（s）作为索引，在段表中查找第 s 个表项，从该表项中取出该段对应的页表起始地址（即页表基址），与段内页号合成得到页表地址（页表项地址 &amp;#x3D; PTBR + p × 页表项大小），读取第 p 个页表项得到物理页号（PPN），和页内地址合成得到物理地址&lt;/li&gt;
+&lt;li&gt;访问流程：从段表基址寄存器（STBR） 中读取段表的起始地址，用段号（s）作为索引，在段表中查找第 s 个表项，从该表项中取出该段对应的页表起始地址（即页表基址），与段内页号合成得到页表地址（页表项地址 = PTBR + p × 页表项大小），读取第 p 个页表项得到物理页号（PPN），和页内地址合成得到物理地址&lt;/li&gt;
 &lt;/ul&gt;
  ]]></description>
         </item>

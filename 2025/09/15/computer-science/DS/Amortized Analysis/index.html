@@ -116,7 +116,7 @@ NoResponse's Blog = NoResponse's Blog</title>
 
       </div>
       <div id="imgs" class="pjax">
-          <img src="/images/bg28.jpg">
+          <img src="/images/bg25.jpg">
       </div>
     </header>
     <div id="waves">
@@ -165,34 +165,60 @@ NoResponse's Blog = NoResponse's Blog</title>
     
 
     <ol>
-<li><p>Aggregate analysis<br>a sequence of $n$ operations takes worst-case time $T(n)$ int total. In the worst-case, the average cost, or amortized cost, per operation is $T(n)&#x2F;n$.</p>
+<li>Aggregate analysis<br>
+a sequence of <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">n</span></span></span></span> operations takes worst-case time <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>T</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">T(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">T</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mclose">)</span></span></span></span> int total. In the worst-case, the average cost, or amortized cost, per operation is <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>T</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo><mi mathvariant="normal">/</mi><mi>n</mi></mrow><annotation encoding="application/x-tex">T(n)/n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">T</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mclose">)</span><span class="mord">/</span><span class="mord mathnormal">n</span></span></span></span>.</li>
+</ol>
 <blockquote>
 <p>example: stack with MultiPop(int k, Stack S)</p>
 </blockquote>
-</li>
-<li><p>Accounting method<br>When an operation’s amortized cost is $\hat{c_i}$ exceeds its actural cost $c_i$, we assign the dirrerence to specific objects in the data structure as credit. Credit can pay for the later operations whose amortized cost is less than their actual cost.<br>实际成本优于均摊成本，把差额分配给数据结构中的特定对象，表示为credit, credit可以帮助支付后续操作的费用，这些操作的摊还成本小于实际成本<br>For all sequences of $n$ operations, we must assure:<br>$$<br>\sum_{i&#x3D;1}^n \hat{c_i} \geq \sum_{i&#x3D;1}^n c_i<br>$$</p>
-</li>
+<ol start="2">
+<li>Accounting method<br>
+When an operation’s amortized cost is <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover accent="true"><msub><mi>c</mi><mi>i</mi></msub><mo>^</mo></mover></mrow><annotation encoding="application/x-tex">\hat{c_i}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.84444em;vertical-align:-0.15em;"></span><span class="mord accent"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.69444em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathnormal">c</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.25em;"><span class="mord">^</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span> exceeds its actural cost <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>c</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">c_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal">c</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>, we assign the dirrerence to specific objects in the data structure as credit. Credit can pay for the later operations whose amortized cost is less than their actual cost.<br>
+ 实际成本优于均摊成本，把差额分配给数据结构中的特定对象，表示为 credit, credit 可以帮助支付后续操作的费用，这些操作的摊还成本小于实际成本<br>
+ For all sequences of <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">n</span></span></span></span> operations, we must assure:</li>
 </ol>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><munderover><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></munderover><mover accent="true"><msub><mi>c</mi><mi>i</mi></msub><mo>^</mo></mover><mo>≥</mo><munderover><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></munderover><msub><mi>c</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">\sum_{i=1}^n \hat{c_i} \geq \sum_{i=1}^n c_i
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:2.929066em;vertical-align:-1.277669em;"></span><span class="mop op-limits"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.6513970000000002em;"><span style="top:-1.872331em;margin-left:0em;"><span class="pstrut" style="height:3.05em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">i</span><span class="mrel mtight">=</span><span class="mord mtight">1</span></span></span></span><span style="top:-3.050005em;"><span class="pstrut" style="height:3.05em;"></span><span><span class="mop op-symbol large-op">∑</span></span></span><span style="top:-4.3000050000000005em;margin-left:0em;"><span class="pstrut" style="height:3.05em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.277669em;"><span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord accent"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.69444em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathnormal">c</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.25em;"><span class="mord">^</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≥</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.929066em;vertical-align:-1.277669em;"></span><span class="mop op-limits"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.6513970000000002em;"><span style="top:-1.872331em;margin-left:0em;"><span class="pstrut" style="height:3.05em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">i</span><span class="mrel mtight">=</span><span class="mord mtight">1</span></span></span></span><span style="top:-3.050005em;"><span class="pstrut" style="height:3.05em;"></span><span><span class="mop op-symbol large-op">∑</span></span></span><span style="top:-4.3000050000000005em;margin-left:0em;"><span class="pstrut" style="height:3.05em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.277669em;"><span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathnormal">c</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span></p>
 <ul>
-<li><p>当某次操作的 <strong>摊还代价 &gt; 实际代价</strong>（(\hat{c}_i &gt; c_i)），<br>多出来的部分 (\hat{c}_i - c_i) 被存为 <strong>credit（信用）</strong>，附着在数据结构的某些对象上。</p>
+<li>
+<p>当某次操作的 <strong>摊还代价 &gt; 实际代价</strong>（(\hat {c}_i &gt; c_i)），<br>
+多出来的部分 (\hat {c}_i - c_i) 被存为 <strong>credit（信用）</strong>，附着在数据结构的某些对象上。</p>
 </li>
-<li><p>当后续某次操作 <strong>实际代价 &gt; 摊还代价</strong>（(c_j &gt; \hat{c}_j)），<br>就用之前存下的 credit 来“支付”超出的部分。</p>
+<li>
+<p>当后续某次操作 <strong>实际代价 &gt; 摊还代价</strong>（(c_j&gt; \hat {c}_j)），<br>
+就用之前存下的 credit 来 “支付” 超出的部分。</p>
 </li>
 </ul>
-<p>但有一个<strong>硬性约束</strong>：  </p>
+<p>但有一个<strong>硬性约束</strong>：</p>
 <blockquote>
-<p><strong>任何时候都不能透支 credit！</strong><br>也就是说，在任何前缀操作 (1..k) 中，累计的 credit 必须 ≥ 0。</p>
+<p><strong>任何时候都不能透支 credit！</strong><br>
+也就是说，在任何前缀操作 (1…k) 中，累计的 credit 必须 ≥ 0。</p>
 </blockquote>
-<p>这等价于要求：<br>$$<br>\forall k,\quad \sum_{i&#x3D;1}^k \hat{c}<em>i \geq \sum</em>{i&#x3D;1}^k c_i<br>$$<br>特别地，对整个序列（(k &#x3D; n)）就有：<br>$$<br>\sum_{i&#x3D;1}^n \hat{c}<em>i \geq \sum</em>{i&#x3D;1}^n c_i<br>$$<br><img data-src="/1202-1.png"><br>不同操作的摊还代价可能会不同，</p>
+<p>这等价于要求：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi mathvariant="normal">∀</mi><mi>k</mi><mo separator="true">,</mo><mspace width="1em"><munderover><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>k</mi></munderover><msub><mover accent="true"><mi>c</mi><mo>^</mo></mover><mi>i</mi></msub><mo>≥</mo><munderover><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>k</mi></munderover><msub><mi>c</mi><mi>i</mi></msub></mspace></mrow><annotation encoding="application/x-tex">\forall k,\quad \sum_{i=1}^k \hat{c}_i \geq \sum_{i=1}^k c_i
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:3.1137820000000005em;vertical-align:-1.277669em;"></span><span class="mord">∀</span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span><span class="mpunct">,</span><span class="mspace" style="margin-right:1em;"></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop op-limits"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.8361130000000003em;"><span style="top:-1.872331em;margin-left:0em;"><span class="pstrut" style="height:3.05em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">i</span><span class="mrel mtight">=</span><span class="mord mtight">1</span></span></span></span><span style="top:-3.050005em;"><span class="pstrut" style="height:3.05em;"></span><span><span class="mop op-symbol large-op">∑</span></span></span><span style="top:-4.3000050000000005em;margin-left:0em;"><span class="pstrut" style="height:3.05em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.03148em;">k</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.277669em;"><span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.69444em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal">c</span></span></span><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.19444em;"><span class="mord">^</span></span></span></span></span></span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≥</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:3.1137820000000005em;vertical-align:-1.277669em;"></span><span class="mop op-limits"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.8361130000000003em;"><span style="top:-1.872331em;margin-left:0em;"><span class="pstrut" style="height:3.05em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">i</span><span class="mrel mtight">=</span><span class="mord mtight">1</span></span></span></span><span style="top:-3.050005em;"><span class="pstrut" style="height:3.05em;"></span><span><span class="mop op-symbol large-op">∑</span></span></span><span style="top:-4.3000050000000005em;margin-left:0em;"><span class="pstrut" style="height:3.05em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.03148em;">k</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.277669em;"><span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathnormal">c</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span></p>
+<p>特别地，对整个序列（(k = n)）就有：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><munderover><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></munderover><msub><mover accent="true"><mi>c</mi><mo>^</mo></mover><mi>i</mi></msub><mo>≥</mo><munderover><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></munderover><msub><mi>c</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">\sum_{i=1}^n \hat{c}_i \geq \sum_{i=1}^n c_i
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:2.929066em;vertical-align:-1.277669em;"></span><span class="mop op-limits"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.6513970000000002em;"><span style="top:-1.872331em;margin-left:0em;"><span class="pstrut" style="height:3.05em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">i</span><span class="mrel mtight">=</span><span class="mord mtight">1</span></span></span></span><span style="top:-3.050005em;"><span class="pstrut" style="height:3.05em;"></span><span><span class="mop op-symbol large-op">∑</span></span></span><span style="top:-4.3000050000000005em;margin-left:0em;"><span class="pstrut" style="height:3.05em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.277669em;"><span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.69444em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal">c</span></span></span><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.19444em;"><span class="mord">^</span></span></span></span></span></span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≥</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.929066em;vertical-align:-1.277669em;"></span><span class="mop op-limits"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.6513970000000002em;"><span style="top:-1.872331em;margin-left:0em;"><span class="pstrut" style="height:3.05em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">i</span><span class="mrel mtight">=</span><span class="mord mtight">1</span></span></span></span><span style="top:-3.050005em;"><span class="pstrut" style="height:3.05em;"></span><span><span class="mop op-symbol large-op">∑</span></span></span><span style="top:-4.3000050000000005em;margin-left:0em;"><span class="pstrut" style="height:3.05em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.277669em;"><span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathnormal">c</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span></p>
+<p><img data-src="1202-1.png" alt><br>
+不同操作的摊还代价可能会不同，</p>
 <ol start="3">
-<li>Potential method<br><img data-src="/12-5-1.png"></li>
+<li>Potential method<br>
+<img data-src="12-5-1.png" alt></li>
 </ol>
-<p>+++info<br>;;;id3 例子<br>2-5 Consider the following buffer management problem. Initially the buffer size (the number of blocks) is one. Each block can accommodate exactly one item. As soon as a new item arrives, check if there is an available block. If yes, put the item into the block, induced a cost of one. Otherwise, the buffer size is doubled, and then the item is able to put into. Moreover, the old items have to be moved into the new buffer so it costs <em>k</em>+1 to make this insertion, where <em>k</em> is the number of old items. Clearly, if there are <em>N</em> items, the worst-case cost for one insertion can be Ω(<em>N</em>). To show that the average cost is <em>O</em>(1), let us turn to the amortized analysis. To simplify the problem, assume that the buffer is full after all the <em>N</em> items are placed. Which of the following potential functions works?</p>
+<details class="info"><summary></summary><div>
+<div class="tab" data-id="id3" data-title="例子">
+<p>2-5 Consider the following buffer management problem. Initially the buffer size (the number of blocks) is one. Each block can accommodate exactly one item. As soon as a new item arrives, check if there is an available block. If yes, put the item into the block, induced a cost of one. Otherwise, the buffer size is doubled, and then the item is able to put into. Moreover, the old items have to be moved into the new buffer so it costs <em>k</em>+1 to make this insertion, where <em>k</em> is the number of old items. Clearly, if there are <em>N</em> items, the worst-case cost for one insertion can be Ω(<em>N</em>). To show that the average cost is <em>O</em>(1), let us turn to the amortized analysis. To simplify the problem, assume that the buffer is full after all the <em>N</em> items are placed. Which of the following potential functions works?</p>
 <p>A. The number of items currently in the buffer</p>
 <p>B. The opposite number of items currently in the buffer</p>
 <p>C. The number of available blocks currently in the buffer</p>
-<p>D. The opposite number of available blocks in the buffer<br>;;;</p>
-<p>;;;<br>D.&#x3D;&#x3D;势能函数需要保证摊还成本都为常数，一个一个试只能选D&#x3D;&#x3D;<br><img data-src="/hw.png"><br>;;;<br>+++</p>
+<p>D. The opposite number of available blocks in the buffer</p>
+</div>
+<p>;;;<br>
+D.<mark> 势能函数需要保证摊还成本都为常数，一个一个试只能选 D</mark><br>
+<img data-src="hw.png" alt><br>
+;;;</p>
+</div></details>
 
       <div class="tags">
           <a href="/tags/Amortized-Analysis/" rel="tag"><i class="ic i-tag"></i> Amortized Analysis</a>
@@ -262,7 +288,7 @@ NoResponse's Blog = NoResponse's Blog</title>
     <div class="item left">
       
 
-  <a href="/2025/09/15/computer-science/DS/ch1/" itemprop="url" rel="prev" data-background-image="&#x2F;images&#x2F;bg14.jpg" title="ch1">
+  <a href="/2025/09/15/computer-science/DS/ch1/" itemprop="url" rel="prev" data-background-image="&#x2F;images&#x2F;bg27.jpg" title="ch1">
   <span class="type">Previous Post</span>
   <span class="category"><i class="ic i-flag"></i> 数据结构</span>
   <h3>ch1</h3>
@@ -272,7 +298,7 @@ NoResponse's Blog = NoResponse's Blog</title>
     <div class="item right">
       
 
-  <a href="/2025/09/18/computer-science/OS/ch1/" itemprop="url" rel="next" data-background-image="&#x2F;images&#x2F;bg1.jpg" title="ch1">
+  <a href="/2025/09/18/computer-science/OS/ch1/" itemprop="url" rel="next" data-background-image="&#x2F;images&#x2F;bg35.jpg" title="ch1">
   <span class="type">Next Post</span>
   <span class="category"><i class="ic i-flag"></i> 操作系统</span>
   <h3>ch1</h3>
@@ -418,10 +444,12 @@ NoResponse's Blog = NoResponse's Blog</title>
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/oop/" title="In C++">C++</a>
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
 </div>
 
-    <span><a href="/2025/10/26/oop/note/" title="C++相关">C++相关</a></span>
+    <span><a href="/2025/06/17/computer-science/compile-principles/ch9/" title="指令选择">指令选择</a></span>
   </li>
 
       
@@ -431,17 +459,7 @@ NoResponse's Blog = NoResponse's Blog</title>
 <a href="/categories/AI/" title="In 人工智能">人工智能</a>
 </div>
 
-    <span><a href="/2025/06/16/AI/week12-13/" title="Week12-13">Week12-13</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/AI/" title="In 人工智能">人工智能</a>
-</div>
-
-    <span><a href="/2025/05/20/AI/week1/" title="Week1">Week1</a></span>
+    <span><a href="/2025/12/09/AI/agent/" title="agent相关">agent相关</a></span>
   </li>
 
       
@@ -450,10 +468,10 @@ NoResponse's Blog = NoResponse's Blog</title>
 <div class="breadcrumb">
 <a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/OS/" title="In 操作系统">操作系统</a>
+<a href="/categories/computer-science/DS/" title="In 数据结构">数据结构</a>
 </div>
 
-    <span><a href="/2025/10/09/computer-science/OS/ch2/" title="ch2">ch2</a></span>
+    <span><a href="/2025/09/15/computer-science/DS/Amortized%20Analysis/" title="Amortized Analysis">Amortized Analysis</a></span>
   </li>
 
       
@@ -472,46 +490,12 @@ NoResponse's Blog = NoResponse's Blog</title>
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/AI/" title="In 人工智能">人工智能</a>
-</div>
-
-    <span><a href="/2025/06/16/AI/week10-11/" title="Week10-11">Week10-11</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
 <a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/computer-organization/" title="In 计算机组成">计算机组成</a>
+<a href="/categories/computer-science/computer-network/" title="In 计算机网络">计算机网络</a>
 </div>
 
-    <span><a href="/2025/05/13/computer-science/computer-organization/ch1/" title="Ch1">Ch1</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/computer-organization/" title="In 计算机组成">计算机组成</a>
-</div>
-
-    <span><a href="/2025/08/10/computer-science/computer-organization/ch5/" title="Ch5">Ch5</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
-</div>
-
-    <span><a href="/2025/06/18/computer-science/compile-principles/ch11/" title="Register Allocation">Register Allocation</a></span>
+    <span><a href="/2025/05/13/computer-science/computer-network/ch1/" title="Ch1">Ch1</a></span>
   </li>
 
       
@@ -523,7 +507,51 @@ NoResponse's Blog = NoResponse's Blog</title>
 <a href="/categories/computer-science/DS/" title="In 数据结构">数据结构</a>
 </div>
 
-    <span><a href="/2025/09/15/computer-science/DS/Amortized%20Analysis/" title="Amortized Analysis">Amortized Analysis</a></span>
+    <span><a href="/2025/10/13/computer-science/DS/ch7/" title="ch7">ch7</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/note/" title="In 七七八八">七七八八</a>
+</div>
+
+    <span><a href="/2025/11/20/note/20251130/" title="杂项">杂项</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/AI/" title="In 人工智能">人工智能</a>
+</div>
+
+    <span><a href="/2025/06/12/AI/week6-7/" title="Week6-7">Week6-7</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
+</div>
+
+    <span><a href="/2025/06/18/computer-science/compile-principles/ch10/" title="Liveness Analysis">Liveness Analysis</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
+</div>
+
+    <span><a href="/2025/03/30/computer-science/compile-principles/ch5/" title="语义分析">语义分析</a></span>
   </li>
 
   </ul>
@@ -548,13 +576,13 @@ NoResponse's Blog = NoResponse's Blog</title>
     <span class="post-meta-item-icon">
       <i class="ic i-chart-area"></i>
     </span>
-    <span title="Symbols count total">185k words</span>
+    <span title="Symbols count total">188k words</span>
 
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="ic i-coffee"></i>
     </span>
-    <span title="Reading time total">2:48</span>
+    <span title="Reading time total">2:51</span>
   </div>
   <div class="powered-by">
     Powered by <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>

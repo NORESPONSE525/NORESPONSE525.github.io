@@ -4,68 +4,75 @@
     <title>NoResponse&#39;s Blog • Posts by &#34;ctest&#34; tag</title>
     <link href="http://example.com" />
     <updated>2025-11-19T16:00:00.000Z</updated>
-    <category term="人工智能" />
     <category term="软件工程" />
+    <category term="人工智能" />
     <category term="自监督学习" />
     <category term="容器" />
-    <category term="杂项" />
     <category term="面经" />
     <category term="ctest" />
     <category term="gtest" />
     <category term="test coverage" />
-    <category term="C++" />
+    <category term="杂项" />
     <category term="Amortized Analysis" />
     <category term="数据结构" />
+    <category term="C++" />
     <category term="栈、队列和数组" />
     <category term="线性表" />
     <category term="串" />
     <category term="树与二叉树" />
-    <category term="查找" />
     <category term="图论" />
-    <category term="排序" />
-    <category term="计算机网络" />
+    <category term="查找" />
     <category term="操作系统" />
-    <category term="fds" />
     <category term="编译原理" />
-    <category term="Liveness Analysis" />
+    <category term="排序" />
+    <category term="fds" />
     <category term="Register Allocation" />
-    <category term="语法分析" />
+    <category term="Liveness Analysis" />
     <category term="词法分析" />
-    <category term="抽象语法" />
-    <category term="活动记录" />
+    <category term="语法分析" />
     <category term="语义分析" />
+    <category term="活动记录" />
     <category term="中间代码" />
     <category term="Basic Blocks and Traces" />
     <category term="指令选择" />
-    <category term="数据的表示与运算" />
+    <category term="抽象语法" />
     <category term="计算机组成" />
+    <category term="存储系统" />
+    <category term="数据的表示与运算" />
     <category term="指令系统" />
     <category term="CPU" />
-    <category term="存储系统" />
     <category term="总线" />
     <category term="I/O" />
+    <category term="计算机网络" />
     <category term="错题" />
     <entry>
         <id>http://example.com/2025/11/20/note/20251201/</id>
         <title>测试相关</title>
         <link rel="alternate" href="http://example.com/2025/11/20/note/20251201/"/>
-        <content type="html">&lt;h1 id=&#34;gtest&#34;&gt;&lt;a href=&#34;#gtest&#34; class=&#34;headerlink&#34; title=&#34;gtest&#34;&gt;&lt;/a&gt;gtest&lt;/h1&gt;&lt;p&gt;Google开源的c++单元测试框架&lt;br&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9nb29nbGUuZ2l0aHViLmlvL2dvb2dsZXRlc3Qv&#34;&gt;https://google.github.io/googletest/&lt;/span&gt;&lt;/p&gt;
-&lt;h1 id=&#34;查看代码覆盖率&#34;&gt;&lt;a href=&#34;#查看代码覆盖率&#34; class=&#34;headerlink&#34; title=&#34;查看代码覆盖率&#34;&gt;&lt;/a&gt;查看代码覆盖率&lt;/h1&gt;&lt;ul&gt;
-&lt;li&gt;GCC + gcov(cmake一般带了) + lcov&lt;/li&gt;
+        <content type="html">&lt;h1 id=&#34;gtest&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#gtest&#34;&gt;#&lt;/a&gt; gtest&lt;/h1&gt;
+&lt;p&gt;Google 开源的 c++ 单元测试框架&lt;br&gt;
+&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9nb29nbGUuZ2l0aHViLmlvL2dvb2dsZXRlc3Qv&#34;&gt; https://google.github.io/googletest/&lt;/span&gt;&lt;/p&gt;
+&lt;h1 id=&#34;查看代码覆盖率&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#查看代码覆盖率&#34;&gt;#&lt;/a&gt; 查看代码覆盖率&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;GCC + gcov (cmake 一般带了) + lcov&lt;/li&gt;
 &lt;/ul&gt;
 &lt;ol&gt;
-&lt;li&gt;修改CMakeLists.txt&lt;/li&gt;
+&lt;li&gt;修改 CMakeLists.txt&lt;/li&gt;
 &lt;/ol&gt;
 &lt;figure class=&#34;highlight cmake&#34;&gt;&lt;figcaption&gt;&lt;span&gt;lcov&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;# 启用调试信息和覆盖率支持（仅在需要时开启）&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;option&lt;/span&gt;(ENABLE_COVERAGE &lt;span class=&#34;string&#34;&gt;&amp;quot;Enable coverage build&amp;quot;&lt;/span&gt; &lt;span class=&#34;keyword&#34;&gt;OFF&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;if&lt;/span&gt;(ENABLE_COVERAGE)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;keyword&#34;&gt;if&lt;/span&gt;(CMAKE_CXX_COMPILER_ID &lt;span class=&#34;keyword&#34;&gt;MATCHES&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;&amp;quot;GNU|Clang&amp;quot;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &lt;span class=&#34;keyword&#34;&gt;target_compile_options&lt;/span&gt;(your_library_or_source_files PRIVATE&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            -O0          &lt;span class=&#34;comment&#34;&gt;# 禁用优化（否则行号可能不准）&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            -g           &lt;span class=&#34;comment&#34;&gt;# 调试信息&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            --coverage   &lt;span class=&#34;comment&#34;&gt;# 等价于 -fprofile-arcs -ftest-coverage&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        )&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &lt;span class=&#34;keyword&#34;&gt;target_link_options&lt;/span&gt;(your_library_or_source_files PRIVATE --coverage)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;keyword&#34;&gt;endif&lt;/span&gt;()&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;endif&lt;/span&gt;()&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;ol start=&#34;2&#34;&gt;
-&lt;li&gt;构建并运行测试&lt;br&gt;…&lt;br&gt;cmake .. -DENABLE_COVERAGE&amp;#x3D;ON&lt;br&gt;…&lt;/li&gt;
+&lt;li&gt;构建并运行测试&lt;br&gt;
+…&lt;br&gt;
+cmake … -DENABLE_COVERAGE=ON&lt;br&gt;
+…&lt;/li&gt;
 &lt;li&gt;生成可视化覆盖率报告（HTML）&lt;/li&gt;
 &lt;/ol&gt;
 &lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption&gt;&lt;span&gt;lcov&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;# 初始化覆盖率数据&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;lcov --capture --initial --directory . --output-file coverage_base.info&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;# 收集实际运行后的覆盖率&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;lcov --capture --directory . --output-file coverage_test.info&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;# 合并（可选，但推荐）&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;lcov --add-tracefile coverage_base.info --add-tracefile coverage_test.info --output-file coverage_total.info&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;# （可选）过滤掉第三方代码（如 googletest）&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;lcov --remove coverage_total.info &lt;span class=&#34;string&#34;&gt;&amp;#x27;/usr/*&amp;#x27;&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;&amp;#x27;*/thirdpart/*&amp;#x27;&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;&amp;#x27;*/googletest*&amp;#x27;&lt;/span&gt; --output-file coverage_final.info&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;# 生成 HTML 报告&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;genhtml coverage_final.info --output-directory coverage_report&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;或者直接&lt;/p&gt;
 &lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption&gt;&lt;span&gt;lcov&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;make coverage&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;然后再build目录下的coverage_html目录下查看index.html，可以点开具体文件查看哪些行没有覆盖到&lt;/p&gt;
-&lt;h1 id=&#34;如何提高单元测试的覆盖率&#34;&gt;&lt;a href=&#34;#如何提高单元测试的覆盖率&#34; class=&#34;headerlink&#34; title=&#34;如何提高单元测试的覆盖率&#34;&gt;&lt;/a&gt;如何提高单元测试的覆盖率&lt;/h1&gt;&lt;p&gt;分析当前覆盖率报告，找出未执行的代码路径，然后编写新的测试用例来触发这些路径。&lt;/p&gt;
+&lt;p&gt;然后再 build 目录下的 coverage_html 目录下查看 index.html，可以点开具体文件查看哪些行没有覆盖到&lt;/p&gt;
+&lt;h1 id=&#34;如何提高单元测试的覆盖率&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#如何提高单元测试的覆盖率&#34;&gt;#&lt;/a&gt; 如何提高单元测试的覆盖率&lt;/h1&gt;
+&lt;p&gt;分析当前覆盖率报告，找出未执行的代码路径，然后编写新的测试用例来触发这些路径。&lt;/p&gt;
 </content>
         <category term="ctest" />
         <category term="gtest" />

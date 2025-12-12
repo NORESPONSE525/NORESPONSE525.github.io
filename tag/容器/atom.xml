@@ -4,52 +4,53 @@
     <title>NoResponse&#39;s Blog • Posts by &#34;容器&#34; tag</title>
     <link href="http://example.com" />
     <updated>2025-10-14T16:00:00.000Z</updated>
-    <category term="人工智能" />
     <category term="软件工程" />
+    <category term="人工智能" />
     <category term="自监督学习" />
     <category term="容器" />
-    <category term="杂项" />
     <category term="面经" />
     <category term="ctest" />
     <category term="gtest" />
     <category term="test coverage" />
-    <category term="C++" />
+    <category term="杂项" />
     <category term="Amortized Analysis" />
     <category term="数据结构" />
+    <category term="C++" />
     <category term="栈、队列和数组" />
     <category term="线性表" />
     <category term="串" />
     <category term="树与二叉树" />
-    <category term="查找" />
     <category term="图论" />
-    <category term="排序" />
-    <category term="计算机网络" />
+    <category term="查找" />
     <category term="操作系统" />
-    <category term="fds" />
     <category term="编译原理" />
-    <category term="Liveness Analysis" />
+    <category term="排序" />
+    <category term="fds" />
     <category term="Register Allocation" />
-    <category term="语法分析" />
+    <category term="Liveness Analysis" />
     <category term="词法分析" />
-    <category term="抽象语法" />
-    <category term="活动记录" />
+    <category term="语法分析" />
     <category term="语义分析" />
+    <category term="活动记录" />
     <category term="中间代码" />
     <category term="Basic Blocks and Traces" />
     <category term="指令选择" />
-    <category term="数据的表示与运算" />
+    <category term="抽象语法" />
     <category term="计算机组成" />
+    <category term="存储系统" />
+    <category term="数据的表示与运算" />
     <category term="指令系统" />
     <category term="CPU" />
-    <category term="存储系统" />
     <category term="总线" />
     <category term="I/O" />
+    <category term="计算机网络" />
     <category term="错题" />
     <entry>
         <id>http://example.com/2025/10/15/note/20251015/</id>
         <title>20251015力扣刷题笔记</title>
         <link rel="alternate" href="http://example.com/2025/10/15/note/20251015/"/>
-        <content type="html">&lt;h2 id=&#34;一、C-常用容器总览&#34;&gt;&lt;a href=&#34;#一、C-常用容器总览&#34; class=&#34;headerlink&#34; title=&#34;一、C++ 常用容器总览&#34;&gt;&lt;/a&gt;一、C++ 常用容器总览&lt;/h2&gt;&lt;table&gt;
+        <content type="html">&lt;h2 id=&#34;一-c-常用容器总览&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#一-c-常用容器总览&#34;&gt;#&lt;/a&gt; 一、C++ 常用容器总览&lt;/h2&gt;
+&lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;容器&lt;/th&gt;
@@ -60,7 +61,8 @@
 &lt;th&gt;主要用途&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
-&lt;tbody&gt;&lt;tr&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
 &lt;td&gt;&lt;code&gt;vector&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;序列容器&lt;/td&gt;
 &lt;td&gt;动态数组&lt;/td&gt;
@@ -82,7 +84,7 @@
 &lt;td&gt;双向链表&lt;/td&gt;
 &lt;td&gt;否&lt;/td&gt;
 &lt;td&gt;否&lt;/td&gt;
-&lt;td&gt;频繁中间插入&amp;#x2F;删除&lt;/td&gt;
+&lt;td&gt;频繁中间插入 / 删除&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;forward_list&lt;/code&gt;&lt;/td&gt;
@@ -103,7 +105,7 @@
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;stack&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;容器适配器&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;deque&lt;/code&gt;（默认）&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;deque&lt;/code&gt; （默认）&lt;/td&gt;
 &lt;td&gt;否&lt;/td&gt;
 &lt;td&gt;否&lt;/td&gt;
 &lt;td&gt;栈（LIFO）&lt;/td&gt;
@@ -111,7 +113,7 @@
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;queue&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;容器适配器&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;deque&lt;/code&gt;（默认）&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;deque&lt;/code&gt; （默认）&lt;/td&gt;
 &lt;td&gt;否&lt;/td&gt;
 &lt;td&gt;否&lt;/td&gt;
 &lt;td&gt;队列（FIFO）&lt;/td&gt;
@@ -119,7 +121,7 @@
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;priority_queue&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;容器适配器&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;vector&lt;/code&gt;（默认）&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;vector&lt;/code&gt; （默认）&lt;/td&gt;
 &lt;td&gt;是（堆序）&lt;/td&gt;
 &lt;td&gt;否&lt;/td&gt;
 &lt;td&gt;优先队列&lt;/td&gt;
@@ -188,8 +190,11 @@
 &lt;td&gt;否&lt;/td&gt;
 &lt;td&gt;无序可重复键值对&lt;/td&gt;
 &lt;/tr&gt;
-&lt;/tbody&gt;&lt;/table&gt;
-&lt;h2 id=&#34;二、各容器操作复杂度对比&#34;&gt;&lt;a href=&#34;#二、各容器操作复杂度对比&#34; class=&#34;headerlink&#34; title=&#34;二、各容器操作复杂度对比&#34;&gt;&lt;/a&gt;二、各容器操作复杂度对比&lt;/h2&gt;&lt;h3 id=&#34;1-vector&#34;&gt;&lt;a href=&#34;#1-vector&#34; class=&#34;headerlink&#34; title=&#34;1. vector&amp;lt;T&amp;gt;&#34;&gt;&lt;/a&gt;1. &lt;code&gt;vector&amp;lt;T&amp;gt;&lt;/code&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;二-各容器操作复杂度对比&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#二-各容器操作复杂度对比&#34;&gt;#&lt;/a&gt; 二、各容器操作复杂度对比&lt;/h2&gt;
+&lt;h3 id=&#34;1-vectort&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#1-vectort&#34;&gt;#&lt;/a&gt; 1.  &lt;code&gt;vector&amp;lt;T&amp;gt;&lt;/code&gt;&lt;/h3&gt;
+&lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;底层&lt;/strong&gt;：动态数组（连续内存）&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;特点&lt;/strong&gt;：支持随机访问，尾部操作快，中间插入慢。&lt;/li&gt;
 &lt;/ul&gt;
@@ -201,9 +206,10 @@
 &lt;th&gt;说明&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
-&lt;tbody&gt;&lt;tr&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
 &lt;td&gt;&lt;code&gt;push_back()&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;平均 O(1)，最坏 O(n)&lt;/td&gt;
+&lt;td&gt;平均 O (1)，最坏 O (n)&lt;/td&gt;
 &lt;td&gt;扩容时复制&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -222,7 +228,7 @@
 &lt;td&gt;删除后需移动&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;&lt;code&gt;operator[]&lt;/code&gt; &amp;#x2F; &lt;code&gt;at()&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;operator[]&lt;/code&gt;  /  &lt;code&gt;at()&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;O(1)&lt;/td&gt;
 &lt;td&gt;随机访问&lt;/td&gt;
 &lt;/tr&gt;
@@ -232,16 +238,19 @@
 &lt;td&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;&lt;code&gt;begin()&lt;/code&gt; &amp;#x2F; &lt;code&gt;end()&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;begin()&lt;/code&gt;  /  &lt;code&gt;end()&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;O(1)&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;/tr&gt;
-&lt;/tbody&gt;&lt;/table&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
 &lt;blockquote&gt;
-&lt;p&gt;适合：频繁随机访问、尾部增删&lt;br&gt;不适合：频繁中间插入&amp;#x2F;删除&lt;/p&gt;
+&lt;p&gt;适合：频繁随机访问、尾部增删&lt;br&gt;
+不适合：频繁中间插入 / 删除&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;hr&gt;
-&lt;h3 id=&#34;2-deque（双端队列）&#34;&gt;&lt;a href=&#34;#2-deque（双端队列）&#34; class=&#34;headerlink&#34; title=&#34;2. deque&amp;lt;T&amp;gt;（双端队列）&#34;&gt;&lt;/a&gt;2. &lt;code&gt;deque&amp;lt;T&amp;gt;&lt;/code&gt;（双端队列）&lt;/h3&gt;&lt;ul&gt;
+&lt;h3 id=&#34;2-dequet双端队列&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#2-dequet双端队列&#34;&gt;#&lt;/a&gt; 2.  &lt;code&gt;deque&amp;lt;T&amp;gt;&lt;/code&gt; （双端队列）&lt;/h3&gt;
+&lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;底层&lt;/strong&gt;：分段连续数组（多个小数组）&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;特点&lt;/strong&gt;：首尾操作都快，支持随机访问。&lt;/li&gt;
 &lt;/ul&gt;
@@ -253,23 +262,24 @@
 &lt;th&gt;说明&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
-&lt;tbody&gt;&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;push_front()&lt;/code&gt; &amp;#x2F; &lt;code&gt;push_back()&lt;/code&gt;&lt;/td&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;push_front()&lt;/code&gt;  /  &lt;code&gt;push_back()&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;O(1)&lt;/td&gt;
 &lt;td&gt;首尾插入都快&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;&lt;code&gt;pop_front()&lt;/code&gt; &amp;#x2F; &lt;code&gt;pop_back()&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;pop_front()&lt;/code&gt;  /  &lt;code&gt;pop_back()&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;O(1)&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;&lt;code&gt;insert()&lt;/code&gt; &amp;#x2F; &lt;code&gt;erase()&lt;/code&gt;（中间）&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;insert()&lt;/code&gt;  /  &lt;code&gt;erase()&lt;/code&gt; （中间）&lt;/td&gt;
 &lt;td&gt;O(n)&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;&lt;code&gt;operator[]&lt;/code&gt; &amp;#x2F; &lt;code&gt;at()&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;operator[]&lt;/code&gt;  /  &lt;code&gt;at()&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;O(1)&lt;/td&gt;
 &lt;td&gt;支持随机访问&lt;/td&gt;
 &lt;/tr&gt;
@@ -278,14 +288,17 @@
 &lt;td&gt;O(1)&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;/tr&gt;
-&lt;/tbody&gt;&lt;/table&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
 &lt;blockquote&gt;
-&lt;p&gt;适合：需要首尾高效插入的场景（如滑动窗口）&lt;br&gt;注意：迭代器失效规则比 &lt;code&gt;vector&lt;/code&gt; 复杂&lt;/p&gt;
+&lt;p&gt;适合：需要首尾高效插入的场景（如滑动窗口）&lt;br&gt;
+注意：迭代器失效规则比  &lt;code&gt;vector&lt;/code&gt;  复杂&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;hr&gt;
-&lt;h3 id=&#34;3-list（双向链表）&#34;&gt;&lt;a href=&#34;#3-list（双向链表）&#34; class=&#34;headerlink&#34; title=&#34;3. list&amp;lt;T&amp;gt;（双向链表）&#34;&gt;&lt;/a&gt;3. &lt;code&gt;list&amp;lt;T&amp;gt;&lt;/code&gt;（双向链表）&lt;/h3&gt;&lt;ul&gt;
+&lt;h3 id=&#34;3-listt双向链表&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#3-listt双向链表&#34;&gt;#&lt;/a&gt; 3.  &lt;code&gt;list&amp;lt;T&amp;gt;&lt;/code&gt; （双向链表）&lt;/h3&gt;
+&lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;底层&lt;/strong&gt;：双向链表&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;特点&lt;/strong&gt;：任意位置插入&amp;#x2F;删除 O(1)，但不支持随机访问。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;特点&lt;/strong&gt;：任意位置插入 / 删除 O (1)，但不支持随机访问。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;table&gt;
 &lt;thead&gt;
@@ -295,8 +308,9 @@
 &lt;th&gt;说明&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
-&lt;tbody&gt;&lt;tr&gt;
-&lt;td&gt;&lt;code&gt;push_front()&lt;/code&gt; &amp;#x2F; &lt;code&gt;push_back()&lt;/code&gt;&lt;/td&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;push_front()&lt;/code&gt;  /  &lt;code&gt;push_back()&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;O(1)&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;/tr&gt;
@@ -322,17 +336,20 @@
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;size()&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;C++11 起 O(1)，之前 O(n)&lt;/td&gt;
+&lt;td&gt;C++11 起 O (1)，之前 O (n)&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;/tr&gt;
-&lt;/tbody&gt;&lt;/table&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
 &lt;blockquote&gt;
-&lt;p&gt;适合：频繁中间插入&amp;#x2F;删除&lt;br&gt;不适合：随机访问、缓存不友好&lt;/p&gt;
+&lt;p&gt;适合：频繁中间插入 / 删除&lt;br&gt;
+不适合：随机访问、缓存不友好&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;hr&gt;
-&lt;h3 id=&#34;4-forward-list（单向链表）&#34;&gt;&lt;a href=&#34;#4-forward-list（单向链表）&#34; class=&#34;headerlink&#34; title=&#34;4. forward_list&amp;lt;T&amp;gt;（单向链表）&#34;&gt;&lt;/a&gt;4. &lt;code&gt;forward_list&amp;lt;T&amp;gt;&lt;/code&gt;（单向链表）&lt;/h3&gt;&lt;ul&gt;
+&lt;h3 id=&#34;4-forward_listt单向链表&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#4-forward_listt单向链表&#34;&gt;#&lt;/a&gt; 4.  &lt;code&gt;forward_list&amp;lt;T&amp;gt;&lt;/code&gt; （单向链表）&lt;/h3&gt;
+&lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;底层&lt;/strong&gt;：单向链表&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;特点&lt;/strong&gt;：比 &lt;code&gt;list&lt;/code&gt; 更省内存，但只能单向遍历。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;特点&lt;/strong&gt;：比  &lt;code&gt;list&lt;/code&gt;  更省内存，但只能单向遍历。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;table&gt;
 &lt;thead&gt;
@@ -342,7 +359,8 @@
 &lt;th&gt;说明&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
-&lt;tbody&gt;&lt;tr&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
 &lt;td&gt;&lt;code&gt;push_front()&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;O(1)&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
@@ -358,16 +376,18 @@
 &lt;td&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;不支持 &lt;code&gt;push_back()&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;不支持  &lt;code&gt;push_back()&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;—&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;/tr&gt;
-&lt;/tbody&gt;&lt;/table&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
 &lt;blockquote&gt;
 &lt;p&gt;适合：内存敏感、只需前向遍历的场景&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;hr&gt;
-&lt;h3 id=&#34;5-array&#34;&gt;&lt;a href=&#34;#5-array&#34; class=&#34;headerlink&#34; title=&#34;5. array&amp;lt;T, N&amp;gt;&#34;&gt;&lt;/a&gt;5. &lt;code&gt;array&amp;lt;T, N&amp;gt;&lt;/code&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;h3 id=&#34;5-arrayt-n&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#5-arrayt-n&#34;&gt;#&lt;/a&gt; 5.  &lt;code&gt;array&amp;lt;T, N&amp;gt;&lt;/code&gt;&lt;/h3&gt;
+&lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;底层&lt;/strong&gt;：静态数组（栈上内存）&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;特点&lt;/strong&gt;：大小固定，性能极高。&lt;/li&gt;
 &lt;/ul&gt;
@@ -379,7 +399,8 @@
 &lt;th&gt;说明&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
-&lt;tbody&gt;&lt;tr&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
 &lt;td&gt;&lt;code&gt;operator[]&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;O(1)&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
@@ -399,14 +420,16 @@
 &lt;td&gt;O(1)&lt;/td&gt;
 &lt;td&gt;固定大小&lt;/td&gt;
 &lt;/tr&gt;
-&lt;/tbody&gt;&lt;/table&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
 &lt;blockquote&gt;
 &lt;p&gt;适合：小数据、固定大小、高性能场景&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;hr&gt;
-&lt;h3 id=&#34;6-set-map&#34;&gt;&lt;a href=&#34;#6-set-map&#34; class=&#34;headerlink&#34; title=&#34;6. set&amp;lt;T&amp;gt; &amp;#x2F; map&amp;lt;K,V&amp;gt;&#34;&gt;&lt;/a&gt;6. &lt;code&gt;set&amp;lt;T&amp;gt;&lt;/code&gt; &amp;#x2F; &lt;code&gt;map&amp;lt;K,V&amp;gt;&lt;/code&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;h3 id=&#34;6-sett-mapkv&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#6-sett-mapkv&#34;&gt;#&lt;/a&gt; 6.  &lt;code&gt;set&amp;lt;T&amp;gt;&lt;/code&gt;  /  &lt;code&gt;map&amp;lt;K,V&amp;gt;&lt;/code&gt;&lt;/h3&gt;
+&lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;底层&lt;/strong&gt;：&lt;strong&gt;红黑树&lt;/strong&gt;（自平衡二叉搜索树）&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;特点&lt;/strong&gt;：自动排序、自动去重（&lt;code&gt;set&lt;/code&gt; 和 &lt;code&gt;map&lt;/code&gt; 键唯一）&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;特点&lt;/strong&gt;：自动排序、自动去重（ &lt;code&gt;set&lt;/code&gt;  和  &lt;code&gt;map&lt;/code&gt;  键唯一）&lt;/li&gt;
 &lt;/ul&gt;
 &lt;table&gt;
 &lt;thead&gt;
@@ -416,7 +439,8 @@
 &lt;th&gt;说明&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
-&lt;tbody&gt;&lt;tr&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
 &lt;td&gt;&lt;code&gt;insert()&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;O(log n)&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
@@ -441,14 +465,16 @@
 &lt;td&gt;O(n)&lt;/td&gt;
 &lt;td&gt;有序输出&lt;/td&gt;
 &lt;/tr&gt;
-&lt;/tbody&gt;&lt;/table&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
 &lt;blockquote&gt;
 &lt;p&gt;适合：需要有序、去重、查找的场景&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;hr&gt;
-&lt;h3 id=&#34;7-unordered-set-unordered-map&#34;&gt;&lt;a href=&#34;#7-unordered-set-unordered-map&#34; class=&#34;headerlink&#34; title=&#34;7. unordered_set&amp;lt;T&amp;gt; &amp;#x2F; unordered_map&amp;lt;K,V&amp;gt;&#34;&gt;&lt;/a&gt;7. &lt;code&gt;unordered_set&amp;lt;T&amp;gt;&lt;/code&gt; &amp;#x2F; &lt;code&gt;unordered_map&amp;lt;K,V&amp;gt;&lt;/code&gt;&lt;/h3&gt;&lt;ul&gt;
+&lt;h3 id=&#34;7-unordered_sett-unordered_mapkv&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#7-unordered_sett-unordered_mapkv&#34;&gt;#&lt;/a&gt; 7.  &lt;code&gt;unordered_set&amp;lt;T&amp;gt;&lt;/code&gt;  /  &lt;code&gt;unordered_map&amp;lt;K,V&amp;gt;&lt;/code&gt;&lt;/h3&gt;
+&lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;底层&lt;/strong&gt;：&lt;strong&gt;哈希表&lt;/strong&gt;（开链法或开放寻址）&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;特点&lt;/strong&gt;：平均极快，但无序，最坏 O(n)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;特点&lt;/strong&gt;：平均极快，但无序，最坏 O (n)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;table&gt;
 &lt;thead&gt;
@@ -458,19 +484,20 @@
 &lt;th&gt;说明&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
-&lt;tbody&gt;&lt;tr&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
 &lt;td&gt;&lt;code&gt;insert()&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;平均 O(1)，最坏 O(n)&lt;/td&gt;
+&lt;td&gt;平均 O (1)，最坏 O (n)&lt;/td&gt;
 &lt;td&gt;哈希冲突时退化&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;find()&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;平均 O(1)，最坏 O(n)&lt;/td&gt;
+&lt;td&gt;平均 O (1)，最坏 O (n)&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;erase()&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;平均 O(1)，最坏 O(n)&lt;/td&gt;
+&lt;td&gt;平均 O (1)，最坏 O (n)&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -481,13 +508,16 @@
 &lt;tr&gt;
 &lt;td&gt;负载因子&lt;/td&gt;
 &lt;td&gt;影响性能&lt;/td&gt;
-&lt;td&gt;可调 &lt;code&gt;max_load_factor()&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;可调  &lt;code&gt;max_load_factor()&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
-&lt;/tbody&gt;&lt;/table&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
 &lt;blockquote&gt;
-&lt;p&gt;适合：大数据、高频查找、不在乎顺序&lt;br&gt;不适合：需要有序输出&lt;/p&gt;
+&lt;p&gt;适合：大数据、高频查找、不在乎顺序&lt;br&gt;
+不适合：需要有序输出&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h3 id=&#34;8-容器适配器（stack-queue-priority-queue）&#34;&gt;&lt;a href=&#34;#8-容器适配器（stack-queue-priority-queue）&#34; class=&#34;headerlink&#34; title=&#34;8. 容器适配器（stack, queue, priority_queue）&#34;&gt;&lt;/a&gt;8. 容器适配器（&lt;code&gt;stack&lt;/code&gt;, &lt;code&gt;queue&lt;/code&gt;, &lt;code&gt;priority_queue&lt;/code&gt;）&lt;/h3&gt;&lt;table&gt;
+&lt;h3 id=&#34;8-容器适配器stack-queue-priority_queue&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#8-容器适配器stack-queue-priority_queue&#34;&gt;#&lt;/a&gt; 8. 容器适配器（ &lt;code&gt;stack&lt;/code&gt; ,  &lt;code&gt;queue&lt;/code&gt; ,  &lt;code&gt;priority_queue&lt;/code&gt; ）&lt;/h3&gt;
+&lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;容器&lt;/th&gt;
@@ -496,36 +526,40 @@
 &lt;th&gt;操作复杂度&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
-&lt;tbody&gt;&lt;tr&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
 &lt;td&gt;&lt;code&gt;stack&amp;lt;T&amp;gt;&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;deque&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;后进先出（LIFO）&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;push&lt;/code&gt;&amp;#x2F;&lt;code&gt;pop&lt;/code&gt;&amp;#x2F;&lt;code&gt;top&lt;/code&gt;: O(1)&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;push&lt;/code&gt; / &lt;code&gt;pop&lt;/code&gt; / &lt;code&gt;top&lt;/code&gt; : O(1)&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;queue&amp;lt;T&amp;gt;&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;deque&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;先进先出（FIFO）&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;push&lt;/code&gt;&amp;#x2F;&lt;code&gt;pop&lt;/code&gt;&amp;#x2F;&lt;code&gt;front&lt;/code&gt;: O(1)&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;push&lt;/code&gt; / &lt;code&gt;pop&lt;/code&gt; / &lt;code&gt;front&lt;/code&gt; : O(1)&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;code&gt;priority_queue&amp;lt;T&amp;gt;&lt;/code&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;vector&lt;/code&gt; + 堆&lt;/td&gt;
-&lt;td&gt;最大&amp;#x2F;最小元素在顶&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;push&lt;/code&gt;: O(log n), &lt;code&gt;top&lt;/code&gt;: O(1), &lt;code&gt;pop&lt;/code&gt;: O(log n)&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;vector&lt;/code&gt;  + 堆&lt;/td&gt;
+&lt;td&gt;最大 / 最小元素在顶&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;push&lt;/code&gt; : O(log n),  &lt;code&gt;top&lt;/code&gt; : O(1),  &lt;code&gt;pop&lt;/code&gt; : O(log n)&lt;/td&gt;
 &lt;/tr&gt;
-&lt;/tbody&gt;&lt;/table&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
 &lt;blockquote&gt;
 &lt;p&gt;它们&lt;strong&gt;不是真正容器&lt;/strong&gt;，而是基于其他容器的封装，接口受限。&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h2 id=&#34;选择&#34;&gt;&lt;a href=&#34;#选择&#34; class=&#34;headerlink&#34; title=&#34;选择&#34;&gt;&lt;/a&gt;选择&lt;/h2&gt;&lt;table&gt;
+&lt;h2 id=&#34;选择&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#选择&#34;&gt;#&lt;/a&gt; 选择&lt;/h2&gt;
+&lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;需求&lt;/th&gt;
 &lt;th&gt;推荐容器&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
-&lt;tbody&gt;&lt;tr&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
 &lt;td&gt;动态数组，随机访问&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;vector&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
@@ -534,7 +568,7 @@
 &lt;td&gt;&lt;code&gt;deque&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;频繁中间插入&amp;#x2F;删除&lt;/td&gt;
+&lt;td&gt;频繁中间插入 / 删除&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;list&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -543,11 +577,11 @@
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;快速查找、去重（不在乎顺序）&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;unordered_set&lt;/code&gt; &amp;#x2F; &lt;code&gt;unordered_map&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;unordered_set&lt;/code&gt;  /  &lt;code&gt;unordered_map&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;需要有序输出、去重&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;set&lt;/code&gt; &amp;#x2F; &lt;code&gt;map&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;set&lt;/code&gt;  /  &lt;code&gt;map&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;栈操作&lt;/td&gt;
@@ -558,45 +592,48 @@
 &lt;td&gt;&lt;code&gt;queue&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;找最大&amp;#x2F;最小元素（堆）&lt;/td&gt;
+&lt;td&gt;找最大 / 最小元素（堆）&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;priority_queue&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
-&lt;/tbody&gt;&lt;/table&gt;
-&lt;h2 id=&#34;总结&#34;&gt;&lt;a href=&#34;#总结&#34; class=&#34;headerlink&#34; title=&#34;总结&#34;&gt;&lt;/a&gt;总结&lt;/h2&gt;&lt;table&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;总结&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#总结&#34;&gt;#&lt;/a&gt; 总结&lt;/h2&gt;
+&lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;口诀&lt;/th&gt;
 &lt;th&gt;对应容器&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
-&lt;tbody&gt;&lt;tr&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
 &lt;td&gt;&lt;strong&gt;“要快用 unordered”&lt;/strong&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;unordered_set/map&lt;/code&gt;（平均 O(1)）&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;unordered_set/map&lt;/code&gt; （平均 O (1)）&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;&lt;strong&gt;“要序用 set&amp;#x2F;map”&lt;/strong&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;set/map&lt;/code&gt;（O(log n)，有序）&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;“要序用 set/map”&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;set/map&lt;/code&gt; （O (log n)，有序）&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;strong&gt;“通用选 vector”&lt;/strong&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;vector&lt;/code&gt;（最常用）&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;vector&lt;/code&gt; （最常用）&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;strong&gt;“首尾快用 deque”&lt;/strong&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;deque&lt;/code&gt;（双端高效）&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;deque&lt;/code&gt; （双端高效）&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;strong&gt;“中间删用 list”&lt;/strong&gt;&lt;/td&gt;
-&lt;td&gt;&lt;code&gt;list&lt;/code&gt;（任意位置 O(1) 删除）&lt;/td&gt;
+&lt;td&gt;&lt;code&gt;list&lt;/code&gt; （任意位置 O (1) 删除）&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;strong&gt;“最大最小用堆”&lt;/strong&gt;&lt;/td&gt;
 &lt;td&gt;&lt;code&gt;priority_queue&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
-&lt;/tbody&gt;&lt;/table&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
 &lt;p&gt;LRU：&lt;/p&gt;
 &lt;figure class=&#34;highlight c++&#34;&gt;&lt;figcaption&gt;&lt;span&gt;lru&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;32&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;33&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;34&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;35&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;36&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;37&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;38&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;39&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;40&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;41&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;42&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;43&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;44&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;45&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;46&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;47&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;48&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;49&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;50&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;51&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;52&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;53&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;54&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;55&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;56&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;57&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;58&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;59&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;60&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;61&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;62&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;63&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;64&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;65&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;66&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;67&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;68&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;69&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;70&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;71&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;72&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;73&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;74&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;75&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;76&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;77&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;78&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;79&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;80&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;81&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;82&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;83&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;// 哈希表+双向链表&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;struct&lt;/span&gt; &lt;span class=&#34;title class_&#34;&gt;DNode&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;struct&lt;/span&gt; &lt;span class=&#34;title class_&#34;&gt;DNode&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; key, value;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    DNode* pre;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    DNode* next;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;built_in&#34;&gt;DNode&lt;/span&gt;(): &lt;span class=&#34;built_in&#34;&gt;key&lt;/span&gt;(&lt;span class=&#34;number&#34;&gt;-1&lt;/span&gt;), &lt;span class=&#34;built_in&#34;&gt;value&lt;/span&gt;(&lt;span class=&#34;number&#34;&gt;-1&lt;/span&gt;), &lt;span class=&#34;built_in&#34;&gt;pre&lt;/span&gt;(&lt;span class=&#34;literal&#34;&gt;nullptr&lt;/span&gt;), &lt;span class=&#34;built_in&#34;&gt;next&lt;/span&gt;(&lt;span class=&#34;literal&#34;&gt;nullptr&lt;/span&gt;)&amp;#123;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;built_in&#34;&gt;DNode&lt;/span&gt;(&lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; key, &lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; val): &lt;span class=&#34;built_in&#34;&gt;key&lt;/span&gt;(key), &lt;span class=&#34;built_in&#34;&gt;value&lt;/span&gt;(val), &lt;span class=&#34;built_in&#34;&gt;pre&lt;/span&gt;(&lt;span class=&#34;literal&#34;&gt;nullptr&lt;/span&gt;), &lt;span class=&#34;built_in&#34;&gt;next&lt;/span&gt;(&lt;span class=&#34;literal&#34;&gt;nullptr&lt;/span&gt;) &amp;#123;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;title class_&#34;&gt;LRUCache&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;public&lt;/span&gt;:&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;built_in&#34;&gt;LRUCache&lt;/span&gt;(&lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; capacity) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &lt;span class=&#34;keyword&#34;&gt;this&lt;/span&gt;-&amp;gt;capacity = capacity;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        head = &lt;span class=&#34;keyword&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;built_in&#34;&gt;DNode&lt;/span&gt;();&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        tail = &lt;span class=&#34;keyword&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;built_in&#34;&gt;DNode&lt;/span&gt;();&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        head-&amp;gt;next = tail;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        tail-&amp;gt;pre = head;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &lt;span class=&#34;keyword&#34;&gt;this&lt;/span&gt;-&amp;gt;size = &lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;function&#34;&gt;&lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;title&#34;&gt;get&lt;/span&gt;&lt;span class=&#34;params&#34;&gt;(&lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; key)&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &lt;span class=&#34;keyword&#34;&gt;if&lt;/span&gt;(mp.&lt;span class=&#34;built_in&#34;&gt;find&lt;/span&gt;(key) != mp.&lt;span class=&#34;built_in&#34;&gt;end&lt;/span&gt;())&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            DNode* pre = mp[key]-&amp;gt;pre;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            pre-&amp;gt;next = mp[key]-&amp;gt;next;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            mp[key]-&amp;gt;next-&amp;gt;pre = pre;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            DNode* next = head-&amp;gt;next;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            head-&amp;gt;next = mp[key];&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            mp[key]-&amp;gt;pre = head;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            mp[key]-&amp;gt;next = next;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            next-&amp;gt;pre = mp[key];&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            &lt;span class=&#34;keyword&#34;&gt;return&lt;/span&gt; mp[key]-&amp;gt;value;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &amp;#125;&lt;span class=&#34;keyword&#34;&gt;else&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            &lt;span class=&#34;keyword&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;number&#34;&gt;-1&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;function&#34;&gt;&lt;span class=&#34;type&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;title&#34;&gt;put&lt;/span&gt;&lt;span class=&#34;params&#34;&gt;(&lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; key, &lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; value)&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &lt;span class=&#34;keyword&#34;&gt;if&lt;/span&gt;(mp.&lt;span class=&#34;built_in&#34;&gt;find&lt;/span&gt;(key) != mp.&lt;span class=&#34;built_in&#34;&gt;end&lt;/span&gt;())&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            mp[key]-&amp;gt;value = value;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            DNode* pre = mp[key]-&amp;gt;pre;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            pre-&amp;gt;next = mp[key]-&amp;gt;next;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            mp[key]-&amp;gt;next-&amp;gt;pre = pre;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            DNode* next = head-&amp;gt;next;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            head-&amp;gt;next = mp[key];&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            mp[key]-&amp;gt;pre = head;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            mp[key]-&amp;gt;next = next;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            next-&amp;gt;pre = mp[key];&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &amp;#125;&lt;span class=&#34;keyword&#34;&gt;else&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            &lt;span class=&#34;keyword&#34;&gt;if&lt;/span&gt;(&lt;span class=&#34;keyword&#34;&gt;this&lt;/span&gt;-&amp;gt;size &amp;lt; &lt;span class=&#34;keyword&#34;&gt;this&lt;/span&gt;-&amp;gt;capacity)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;                DNode* p = head-&amp;gt;next;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;                DNode* newNode = &lt;span class=&#34;keyword&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;built_in&#34;&gt;DNode&lt;/span&gt;(key, value);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;                head-&amp;gt;next = newNode;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;                newNode-&amp;gt;pre = head;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;                newNode-&amp;gt;next = p;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;                p-&amp;gt;pre = newNode;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;                mp[key] = newNode;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;                &lt;span class=&#34;keyword&#34;&gt;this&lt;/span&gt;-&amp;gt;size++;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            &amp;#125;&lt;span class=&#34;keyword&#34;&gt;else&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;                DNode* remove = tail-&amp;gt;pre;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;                mp.&lt;span class=&#34;built_in&#34;&gt;erase&lt;/span&gt;(remove-&amp;gt;key);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;                remove-&amp;gt;pre-&amp;gt;next = tail;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;                tail-&amp;gt;pre = remove-&amp;gt;pre;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;                &lt;span class=&#34;keyword&#34;&gt;delete&lt;/span&gt; remove;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;                DNode* newNode = &lt;span class=&#34;keyword&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;built_in&#34;&gt;DNode&lt;/span&gt;(key, value);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;                DNode* nxt = head-&amp;gt;next;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;                head-&amp;gt;next = newNode;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;                newNode-&amp;gt;pre = head;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;                newNode-&amp;gt;next = nxt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;                nxt-&amp;gt;pre = newNode;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;                mp[key] = newNode;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &lt;span class=&#34;keyword&#34;&gt;return&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;private&lt;/span&gt;:&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; capacity;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; size;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    unordered_map&amp;lt;&lt;span class=&#34;type&#34;&gt;int&lt;/span&gt;, DNode*&amp;gt; mp;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    DNode* head;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    DNode* tail;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
 &lt;p&gt;反转链表&lt;/p&gt;
 &lt;figure class=&#34;highlight c++&#34;&gt;&lt;figcaption&gt;&lt;span&gt;reverse&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;21&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;struct&lt;/span&gt; &lt;span class=&#34;title class_&#34;&gt;ListNode&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; val;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    ListNode *next;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;built_in&#34;&gt;ListNode&lt;/span&gt;() : &lt;span class=&#34;built_in&#34;&gt;val&lt;/span&gt;(&lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;), &lt;span class=&#34;built_in&#34;&gt;next&lt;/span&gt;(&lt;span class=&#34;literal&#34;&gt;nullptr&lt;/span&gt;) &amp;#123;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;built_in&#34;&gt;ListNode&lt;/span&gt;(&lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; x) : &lt;span class=&#34;built_in&#34;&gt;val&lt;/span&gt;(x), &lt;span class=&#34;built_in&#34;&gt;next&lt;/span&gt;(&lt;span class=&#34;literal&#34;&gt;nullptr&lt;/span&gt;) &amp;#123;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;built_in&#34;&gt;ListNode&lt;/span&gt;(&lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; x, ListNode *next) : &lt;span class=&#34;built_in&#34;&gt;val&lt;/span&gt;(x), &lt;span class=&#34;built_in&#34;&gt;next&lt;/span&gt;(next) &amp;#123;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;function&#34;&gt;ListNode* &lt;span class=&#34;title&#34;&gt;reverseList&lt;/span&gt;&lt;span class=&#34;params&#34;&gt;(ListNode* head)&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    ListNode* prev = &lt;span class=&#34;literal&#34;&gt;nullptr&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    ListNode* curr = head;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;keyword&#34;&gt;while&lt;/span&gt; (curr != &lt;span class=&#34;literal&#34;&gt;nullptr&lt;/span&gt;) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        ListNode* next = curr-&amp;gt;next; &lt;span class=&#34;comment&#34;&gt;// 保存下一个节点&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        curr-&amp;gt;next = prev;           &lt;span class=&#34;comment&#34;&gt;// 反转当前节点&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        prev = curr;                 &lt;span class=&#34;comment&#34;&gt;// prev 前进&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        curr = next;                 &lt;span class=&#34;comment&#34;&gt;// curr 前进&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;keyword&#34;&gt;return&lt;/span&gt; prev; &lt;span class=&#34;comment&#34;&gt;// 新的头节点&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</content>
         <category term="容器" />

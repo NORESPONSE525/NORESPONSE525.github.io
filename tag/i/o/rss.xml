@@ -7,46 +7,46 @@
         <language>en</language>
         <pubDate>Fri, 15 Aug 2025 00:00:00 +0800</pubDate>
         <lastBuildDate>Fri, 15 Aug 2025 00:00:00 +0800</lastBuildDate>
-        <category>人工智能</category>
         <category>软件工程</category>
+        <category>人工智能</category>
         <category>自监督学习</category>
         <category>容器</category>
-        <category>杂项</category>
         <category>面经</category>
         <category>ctest</category>
         <category>gtest</category>
         <category>test coverage</category>
-        <category>C++</category>
+        <category>杂项</category>
         <category>Amortized Analysis</category>
         <category>数据结构</category>
+        <category>C++</category>
         <category>栈、队列和数组</category>
         <category>线性表</category>
         <category>串</category>
         <category>树与二叉树</category>
-        <category>查找</category>
         <category>图论</category>
-        <category>排序</category>
-        <category>计算机网络</category>
+        <category>查找</category>
         <category>操作系统</category>
-        <category>fds</category>
         <category>编译原理</category>
-        <category>Liveness Analysis</category>
+        <category>排序</category>
+        <category>fds</category>
         <category>Register Allocation</category>
-        <category>语法分析</category>
+        <category>Liveness Analysis</category>
         <category>词法分析</category>
-        <category>抽象语法</category>
-        <category>活动记录</category>
+        <category>语法分析</category>
         <category>语义分析</category>
+        <category>活动记录</category>
         <category>中间代码</category>
         <category>Basic Blocks and Traces</category>
         <category>指令选择</category>
-        <category>数据的表示与运算</category>
+        <category>抽象语法</category>
         <category>计算机组成</category>
+        <category>存储系统</category>
+        <category>数据的表示与运算</category>
         <category>指令系统</category>
         <category>CPU</category>
-        <category>存储系统</category>
         <category>总线</category>
         <category>I/O</category>
+        <category>计算机网络</category>
         <category>错题</category>
         <item>
             <guid isPermalink="true">http://example.com/2025/08/15/computer-science/computer-organization/ch7/</guid>
@@ -54,44 +54,90 @@
             <link>http://example.com/2025/08/15/computer-science/computer-organization/ch7/</link>
             <category>I/O</category>
             <pubDate>Fri, 15 Aug 2025 00:00:00 +0800</pubDate>
-            <description><![CDATA[ &lt;h1 id=&#34;Ch7-输入-输出系统&#34;&gt;&lt;a href=&#34;#Ch7-输入-输出系统&#34; class=&#34;headerlink&#34; title=&#34;Ch7 输入&amp;#x2F;输出系统&#34;&gt;&lt;/a&gt;Ch7 输入&amp;#x2F;输出系统&lt;/h1&gt;&lt;h2 id=&#34;I-O接口&#34;&gt;&lt;a href=&#34;#I-O接口&#34; class=&#34;headerlink&#34; title=&#34;I&amp;#x2F;O接口&#34;&gt;&lt;/a&gt;I&amp;#x2F;O接口&lt;/h2&gt;&lt;p&gt;inerrface，主机与外设之间的交接界面&lt;/p&gt;
-&lt;h3 id=&#34;功能&#34;&gt;&lt;a href=&#34;#功能&#34; class=&#34;headerlink&#34; title=&#34;功能&#34;&gt;&lt;/a&gt;功能&lt;/h3&gt;&lt;ol&gt;
+            <description><![CDATA[ &lt;h1 id=&#34;ch7-输入输出系统&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#ch7-输入输出系统&#34;&gt;#&lt;/a&gt; Ch7 输入 / 输出系统&lt;/h1&gt;
+&lt;h2 id=&#34;io接口&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#io接口&#34;&gt;#&lt;/a&gt; I/O 接口&lt;/h2&gt;
+&lt;p&gt;inerrface，主机与外设之间的交接界面&lt;/p&gt;
+&lt;h3 id=&#34;功能&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#功能&#34;&gt;#&lt;/a&gt; 功能&lt;/h3&gt;
+&lt;ol&gt;
 &lt;li&gt;进行地址译码和设备选择&lt;/li&gt;
-&lt;li&gt;实现主机和外设的通信联络控制&lt;br&gt;解决时序、工作速度不同的问题&lt;/li&gt;
+&lt;li&gt;实现主机和外设的通信联络控制&lt;br&gt;
+解决时序、工作速度不同的问题&lt;/li&gt;
 &lt;li&gt;实现数据缓冲&lt;/li&gt;
-&lt;li&gt;信号格式的转换&lt;br&gt;电平转换、并&amp;#x2F;串或串&amp;#x2F;并转换、模&amp;#x2F;数或数&amp;#x2F;模转换&lt;/li&gt;
-&lt;li&gt;传送控制命令和状态信息&lt;br&gt;CPU通过接口中的命令寄存器发出启动命令给外设，外设就绪是传回Ready状态信息通过接口中的状态寄存器反馈给CPU&lt;/li&gt;
+&lt;li&gt;信号格式的转换&lt;br&gt;
+电平转换、并 / 串或串 / 并转换、模 / 数或数 / 模转换&lt;/li&gt;
+&lt;li&gt;传送控制命令和状态信息&lt;br&gt;
+ CPU 通过接口中的命令寄存器发出启动命令给外设，外设就绪是传回 Ready 状态信息通过接口中的状态寄存器反馈给 CPU&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h3 id=&#34;基本结构&#34;&gt;&lt;a href=&#34;#基本结构&#34; class=&#34;headerlink&#34; title=&#34;基本结构&#34;&gt;&lt;/a&gt;基本结构&lt;/h3&gt;&lt;p&gt;&lt;img data-src=&#34;/f1.jpg&#34;&gt;&lt;br&gt;主机侧通过I&amp;#x2F;O总线与内存、CPU相连。数据缓冲器用来暂存与CPU或内存之间传送的数据信息。状态寄存器用来记录接口和设备的状态信息，控制寄存器用来保存CPU对外设的控制信息&lt;br&gt;状态寄存器和控制寄存器在传送方向是相反的，访问时间上是错开的，所以可以合二为一&lt;br&gt;数据线传送读&amp;#x2F;写数据、状态信息、控制信息、中断类型号&lt;br&gt;地址线传送访问I&amp;#x2F;O接口中的寄存器的地址&lt;br&gt;控制线传送读写控制信号、中断请求、响应信号、仲裁信号、握手信号&lt;br&gt;I&amp;#x2F;O控制逻辑需要对控制寄存器的命令字进行译码，还有收集外设状态到状态寄存器&lt;br&gt;&lt;img data-src=&#34;/f2.jpg&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;基本结构&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#基本结构&#34;&gt;#&lt;/a&gt; 基本结构&lt;/h3&gt;
+&lt;p&gt;&lt;img data-src=&#34;f1.jpg&#34; alt&gt;&lt;br&gt;
+主机侧通过 I/O 总线与内存、CPU 相连。数据缓冲器用来暂存与 CPU 或内存之间传送的数据信息。状态寄存器用来记录接口和设备的状态信息，控制寄存器用来保存 CPU 对外设的控制信息&lt;br&gt;
+状态寄存器和控制寄存器在传送方向是相反的，访问时间上是错开的，所以可以合二为一&lt;br&gt;
+数据线传送读 / 写数据、状态信息、控制信息、中断类型号&lt;br&gt;
+地址线传送访问 I/O 接口中的寄存器的地址&lt;br&gt;
+控制线传送读写控制信号、中断请求、响应信号、仲裁信号、握手信号&lt;br&gt;
+ I/O 控制逻辑需要对控制寄存器的命令字进行译码，还有收集外设状态到状态寄存器&lt;br&gt;
+&lt;img data-src=&#34;f2.jpg&#34; alt&gt;&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;对上面两个寄存器的访问操作通过I&amp;#x2F;O指令来完成，只能在操作系统内核的底层I&amp;#x2F;O软件中使用，是一种特权指令&lt;br&gt;&lt;img data-src=&#34;/f3.jpg&#34;&gt;&lt;/p&gt;
+&lt;p&gt;对上面两个寄存器的访问操作通过 I/O 指令来完成，只能在操作系统内核的底层 I/O 软件中使用，是一种特权指令&lt;br&gt;
+&lt;img data-src=&#34;f3.jpg&#34; alt&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h3 id=&#34;接口类型&#34;&gt;&lt;a href=&#34;#接口类型&#34; class=&#34;headerlink&#34; title=&#34;接口类型&#34;&gt;&lt;/a&gt;接口类型&lt;/h3&gt;&lt;ol&gt;
+&lt;h3 id=&#34;接口类型&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#接口类型&#34;&gt;#&lt;/a&gt; 接口类型&lt;/h3&gt;
+&lt;ol&gt;
 &lt;li&gt;按（外设和接口一侧的）数据传送方式：并行接口、串行接口&lt;/li&gt;
-&lt;li&gt;按主机访问I&amp;#x2F;O设备的控制方式：程序查询接口、中断接口、DMA接口&lt;/li&gt;
+&lt;li&gt;按主机访问 I/O 设备的控制方式：程序查询接口、中断接口、DMA 接口&lt;/li&gt;
 &lt;li&gt;按功能选择的灵活性：可编程接口、不可编程接口&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h3 id=&#34;I-O端口及其编址&#34;&gt;&lt;a href=&#34;#I-O端口及其编址&#34; class=&#34;headerlink&#34; title=&#34;I&amp;#x2F;O端口及其编址&#34;&gt;&lt;/a&gt;I&amp;#x2F;O端口及其编址&lt;/h3&gt;&lt;p&gt;I&amp;#x2F;O端口是指I&amp;#x2F;O接口电路中&lt;strong&gt;可被CPU直接访问的寄存器&lt;/strong&gt;，主要有&amp;#x3D;&amp;#x3D;数据端口、状态端口和控制端口&amp;#x3D;&amp;#x3D;。&lt;br&gt;CPU能对数据端口中的数据进行读&amp;#x2F;写操作，但对状态端口中外设的状态只能读，对控制端口只能写&lt;br&gt;每个端口对应一个端口地址，编址方式有与存储器独立编址和统一编址两种&lt;/p&gt;
+&lt;h3 id=&#34;io端口及其编址&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#io端口及其编址&#34;&gt;#&lt;/a&gt; I/O 端口及其编址&lt;/h3&gt;
+&lt;p&gt;I/O 端口是指 I/O 接口电路中&lt;strong&gt;可被 CPU 直接访问的寄存器&lt;/strong&gt;，主要有&lt;mark&gt;数据端口、状态端口和控制端口&lt;/mark&gt;。&lt;br&gt;
+CPU 能对数据端口中的数据进行读 / 写操作，但对状态端口中外设的状态只能读，对控制端口只能写&lt;br&gt;
+每个端口对应一个端口地址，编址方式有与存储器独立编址和统一编址两种&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;独立编址&lt;br&gt;也称I&amp;#x2F;O映射方式，I&amp;#x2F;O端口的地址空间与主存地址空间是两个独立的地址空间&lt;br&gt;需要设置专门的I&amp;#x2F;O指令来表明访问的是I&amp;#x2F;O地址空间，I&amp;#x2F;O指令的地址码给出I&amp;#x2F;O端口号&lt;blockquote&gt;
-&lt;p&gt;x86 架构中的 IN 和 OUT 指令&lt;br&gt;IN AL, 0x64    从 I&amp;#x2F;O 端口 0x64 读取一个字节的数据，存入寄存器 AL&lt;br&gt;优点：I&amp;#x2F;O端口数比主存单元数少得多，秩序少量地址线，使得I&amp;#x2F;O端口译码简单，寻址速度更快。使用专门的I&amp;#x2F;O指令，是程序更加清晰&lt;br&gt;缺点：I&amp;#x2F;O指令少，只提供简单的传输操作，灵活性差。CPU需要提供存储器读&amp;#x2F;写、I&amp;#x2F;O设备读写两组控制信号，增大了控制的复杂性&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;li&gt;统一编址&lt;br&gt;也称存储器映射方式(Memory-Mapped I&amp;#x2F;O)，无需设置专门的I&amp;#x2F;O指令，用统一的访存指令就可以访问I&amp;#x2F;O端口&lt;blockquote&gt;
-&lt;p&gt;riscv就是用Memory-Mapped I&amp;#x2F;O&lt;br&gt;优点：不需要专门的I&amp;#x2F;O指令，CPU访问I&amp;#x2F;O更灵活方便，端口有较大的编址空间。I&amp;#x2F;O访问的保护机制可由虚拟存储管理系统来实现，无需专门设置（内核态才能访问）&lt;br&gt;缺点：端口地址占用了部分主存地址空间。译码电路复杂&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/li&gt;
+&lt;li&gt;独立编址&lt;br&gt;
+也称 I/O 映射方式，I/O 端口的地址空间与主存地址空间是两个独立的地址空间&lt;br&gt;
+需要设置专门的 I/O 指令来表明访问的是 I/O 地址空间，I/O 指令的地址码给出 I/O 端口号&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h2 id=&#34;I-O方式&#34;&gt;&lt;a href=&#34;#I-O方式&#34; class=&#34;headerlink&#34; title=&#34;I&amp;#x2F;O方式&#34;&gt;&lt;/a&gt;I&amp;#x2F;O方式&lt;/h2&gt;&lt;p&gt;程序查询、程序中断、DMA&lt;br&gt;&lt;img data-src=&#34;/f5.jpg&#34;&gt;&lt;/p&gt;
-&lt;h3 id=&#34;程序查询方式-Polling&#34;&gt;&lt;a href=&#34;#程序查询方式-Polling&#34; class=&#34;headerlink&#34; title=&#34;程序查询方式(Polling)&#34;&gt;&lt;/a&gt;程序查询方式(Polling)&lt;/h3&gt;&lt;p&gt;轮询法，程序执行到某个 I&amp;#x2F;O 操作指令时，由操作系统或设备驱动程序发起&lt;br&gt;&lt;img data-src=&#34;/f4.jpg&#34;&gt;&lt;br&gt;程序查询方式分为两类：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;独占查询&lt;br&gt;一旦设备启动，CPU就一直持续查询接口状态，CPU话费100%时间用于I&amp;#x2F;O操作，外设和CPU完全串行（忙等待）&lt;/li&gt;
-&lt;li&gt;定时查询&lt;br&gt;CPU周期性地查询接口状态，每次总是等到条件满足才进行一个数据的传送，传送完成后返回到用户程序。&lt;br&gt;比如设备每 10ms 产生一个数据，可以设置 5ms 查询一次，这样既能及时读取数据，又不至于过度查询。&amp;#x3D;&amp;#x3D;定时查询的时间间隔与设备的数据传输速率有关。&amp;#x3D;&amp;#x3D;&lt;/li&gt;
+&lt;blockquote&gt;
+&lt;p&gt;x86 架构中的 IN 和 OUT 指令&lt;br&gt;
+ IN AL, 0x64    从 I/O 端口 0x64 读取一个字节的数据，存入寄存器 AL&lt;br&gt;
+ 优点：I/O 端口数比主存单元数少得多，秩序少量地址线，使得 I/O 端口译码简单，寻址速度更快。使用专门的 I/O 指令，是程序更加清晰&lt;br&gt;
+缺点：I/O 指令少，只提供简单的传输操作，灵活性差。CPU 需要提供存储器读 / 写、I/O 设备读写两组控制信号，增大了控制的复杂性&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;统一编址&lt;br&gt;
+也称存储器映射方式 (Memory-Mapped I/O)，无需设置专门的 I/O 指令，用统一的访存指令就可以访问 I/O 端口&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h3 id=&#34;程序中断方式&#34;&gt;&lt;a href=&#34;#程序中断方式&#34; class=&#34;headerlink&#34; title=&#34;程序中断方式&#34;&gt;&lt;/a&gt;程序中断方式&lt;/h3&gt;&lt;p&gt;&lt;img data-src=&#34;/f6.jpg&#34;&gt;&lt;br&gt;工作流程：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;riscv 就是用 Memory-Mapped I/O&lt;br&gt;
+ 优点：不需要专门的 I/O 指令，CPU 访问 I/O 更灵活方便，端口有较大的编址空间。I/O 访问的保护机制可由虚拟存储管理系统来实现，无需专门设置（内核态才能访问）&lt;br&gt;
+缺点：端口地址占用了部分主存地址空间。译码电路复杂&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;io方式&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#io方式&#34;&gt;#&lt;/a&gt; I/O 方式&lt;/h2&gt;
+&lt;p&gt;程序查询、程序中断、DMA&lt;br&gt;
+&lt;img data-src=&#34;f5.jpg&#34; alt&gt;&lt;/p&gt;
+&lt;h3 id=&#34;程序查询方式polling&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#程序查询方式polling&#34;&gt;#&lt;/a&gt; 程序查询方式 (Polling)&lt;/h3&gt;
+&lt;p&gt;轮询法，程序执行到某个 I/O 操作指令时，由操作系统或设备驱动程序发起&lt;br&gt;
+&lt;img data-src=&#34;f4.jpg&#34; alt&gt;&lt;br&gt;
+程序查询方式分为两类：&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;中断请求&lt;br&gt;中断源向CPU发送中断请求信号。中断系统对每个中断源设置中断请求标记触发器&lt;br&gt;可屏蔽中断：通过&lt;code&gt;INTR&lt;/code&gt;线发出的，优先级低，关中断下不被响应&lt;br&gt;不可屏蔽中断：通过&lt;code&gt;NMI&lt;/code&gt;线发出的，优先级最高&lt;/li&gt;
-&lt;li&gt;中断响应&lt;br&gt;响应中断的条件。&lt;br&gt;中断判优：多个中断源同时提出请求时通过中断判优逻辑响应一个中断源。&lt;br&gt;一般来说：不可屏蔽中断&amp;gt;可屏蔽中断；在I&amp;#x2F;O传送类终端中，高速设备&amp;gt;低速设备，输入设备&amp;gt;输出设备，实时设备&amp;gt;普通设备&lt;br&gt;CPU响应中断的条件：&lt;/li&gt;
+&lt;li&gt;独占查询&lt;br&gt;
+一旦设备启动，CPU 就一直持续查询接口状态，CPU 话费 100% 时间用于 I/O 操作，外设和 CPU 完全串行（忙等待）&lt;/li&gt;
+&lt;li&gt;定时查询&lt;br&gt;
+ CPU 周期性地查询接口状态，每次总是等到条件满足才进行一个数据的传送，传送完成后返回到用户程序。&lt;br&gt;
+比如设备每 10ms 产生一个数据，可以设置 5ms 查询一次，这样既能及时读取数据，又不至于过度查询。&lt;mark&gt;定时查询的时间间隔与设备的数据传输速率有关。&lt;/mark&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;程序中断方式&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#程序中断方式&#34;&gt;#&lt;/a&gt; 程序中断方式&lt;/h3&gt;
+&lt;p&gt;&lt;img data-src=&#34;f6.jpg&#34; alt&gt;&lt;br&gt;
+工作流程：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;中断请求&lt;br&gt;
+中断源向 CPU 发送中断请求信号。中断系统对每个中断源设置中断请求标记触发器&lt;br&gt;
+可屏蔽中断：通过 &lt;code&gt;INTR&lt;/code&gt;  线发出的，优先级低，关中断下不被响应&lt;br&gt;
+不可屏蔽中断：通过 &lt;code&gt;NMI&lt;/code&gt;  线发出的，优先级最高&lt;/li&gt;
+&lt;li&gt;中断响应&lt;br&gt;
+响应中断的条件。&lt;br&gt;
+中断判优：多个中断源同时提出请求时通过中断判优逻辑响应一个中断源。&lt;br&gt;
+一般来说：不可屏蔽中断 &amp;gt; 可屏蔽中断；在 I/O 传送类终端中，高速设备 &amp;gt; 低速设备，输入设备 &amp;gt; 输出设备，实时设备 &amp;gt; 普通设备&lt;br&gt;
+ CPU 响应中断的条件：&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
 &lt;li&gt;中断源有中断请求&lt;/li&gt;
@@ -102,14 +148,15 @@
 &lt;li&gt;中断处理&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
-&lt;li&gt;中断隐指令：&lt;ul&gt;
+&lt;li&gt;中断隐指令：
+&lt;ul&gt;
 &lt;li&gt;关中断（防止在中断处理程序执行期间被其他（同级或低优先级）中断再次打断）&lt;/li&gt;
-&lt;li&gt;保护现场（把PC, PSW等压入内核栈）&lt;/li&gt;
+&lt;li&gt;保护现场（把 PC, PSW 等压入内核栈）&lt;/li&gt;
 &lt;li&gt;引出中断服务程序：硬件向量法和软件查询法&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;中断向量：硬件提供向量号，中断控制器将该中断对应的向量号放到数据总线上，CPU读取该向量号，CPU使用该向量号作为索引，查找中断向量表（IVT）获取ISR的入口地址&lt;/p&gt;
+&lt;p&gt;中断向量：硬件提供向量号，中断控制器将该中断对应的向量号放到数据总线上，CPU 读取该向量号，CPU 使用该向量号作为索引，查找中断向量表（IVT）获取 ISR 的入口地址&lt;/p&gt;
 &lt;p&gt;处理流程：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;关中断&lt;/li&gt;
@@ -117,44 +164,63 @@
 &lt;li&gt;中断服务程序寻址&lt;/li&gt;
 &lt;li&gt;保存现场和屏蔽字&lt;/li&gt;
 &lt;li&gt;开中断（允许更高级中断请求得到响应）&lt;/li&gt;
-&lt;li&gt;执行ISR&lt;/li&gt;
+&lt;li&gt;执行 ISR&lt;/li&gt;
 &lt;li&gt;关中断&lt;/li&gt;
 &lt;li&gt;恢复现场和屏蔽字&lt;/li&gt;
-&lt;li&gt;开中断，中断返回&lt;br&gt;1-3由硬件自动完成，4-9由ISR完成&lt;blockquote&gt;
-&lt;p&gt;为什么要先关再开？&lt;br&gt;确保这个保护现场的操作不会被其他中断打断&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/li&gt;
+&lt;li&gt;开中断，中断返回&lt;br&gt;
+ 1-3 由硬件自动完成，4-9 由 ISR 完成&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h4 id=&#34;多重中断和中断屏蔽技术&#34;&gt;&lt;a href=&#34;#多重中断和中断屏蔽技术&#34; class=&#34;headerlink&#34; title=&#34;多重中断和中断屏蔽技术&#34;&gt;&lt;/a&gt;多重中断和中断屏蔽技术&lt;/h4&gt;&lt;p&gt;通过中断屏蔽字寄存器来实现，每个中断源都有一个屏蔽触发器，&amp;#x3D;&amp;#x3D;1表示屏蔽该中断源的请求&amp;#x3D;&amp;#x3D;，0表示可以正常申请&lt;br&gt;&amp;#x3D;&amp;#x3D;屏蔽字中‘1’越多，优先级越高。每个屏蔽字中至少有一个&lt;code&gt;1&lt;/code&gt;(至少要能屏蔽自身的中断)&amp;#x3D;&amp;#x3D;&lt;br&gt;方法：要能屏蔽自身所以主对角线全为1，同时优先级比自身低的中断要屏蔽屏蔽字全填1，其他的填0&lt;/p&gt;
-&lt;h3 id=&#34;DMA方式&#34;&gt;&lt;a href=&#34;#DMA方式&#34; class=&#34;headerlink&#34; title=&#34;DMA方式&#34;&gt;&lt;/a&gt;DMA方式&lt;/h3&gt;&lt;p&gt;DMA方式是一种完全由硬件进行组信息传送的控制方式&lt;br&gt;&lt;img data-src=&#34;/f7.jpg&#34;&gt;&lt;br&gt;&lt;img data-src=&#34;/f8.jpg&#34;&gt;&lt;br&gt;&lt;img data-src=&#34;/f9.jpg&#34;&gt;&lt;/p&gt;
-&lt;p&gt;当I&amp;#x2F;O设备和CPU同时访问主存时，可能发生冲突，DMA与CPU通常采用以下3种方式使用驻村：&lt;br&gt;&lt;img data-src=&#34;/f10.jpg&#34;&gt;&lt;br&gt;周期挪用：&lt;br&gt;一次传一组数据&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;为什么要先关再开？&lt;br&gt;
+确保这个保护现场的操作不会被其他中断打断&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h4 id=&#34;多重中断和中断屏蔽技术&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#多重中断和中断屏蔽技术&#34;&gt;#&lt;/a&gt; 多重中断和中断屏蔽技术&lt;/h4&gt;
+&lt;p&gt;通过中断屏蔽字寄存器来实现，每个中断源都有一个屏蔽触发器，&lt;mark&gt;1 表示屏蔽该中断源的请求&lt;/mark&gt;，0 表示可以正常申请&lt;br&gt;
+&lt;mark&gt;屏蔽字中‘1’越多，优先级越高。每个屏蔽字中至少有一个 &lt;code&gt;1&lt;/code&gt;  (至少要能屏蔽自身的中断)&lt;/mark&gt;&lt;br&gt;
+ 方法：要能屏蔽自身所以主对角线全为 1，同时优先级比自身低的中断要屏蔽屏蔽字全填 1，其他的填 0&lt;/p&gt;
+&lt;h3 id=&#34;dma方式&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#dma方式&#34;&gt;#&lt;/a&gt; DMA 方式&lt;/h3&gt;
+&lt;p&gt;DMA 方式是一种完全由硬件进行组信息传送的控制方式&lt;br&gt;
+&lt;img data-src=&#34;f7.jpg&#34; alt&gt;&lt;br&gt;
+&lt;img data-src=&#34;f8.jpg&#34; alt&gt;&lt;br&gt;
+&lt;img data-src=&#34;f9.jpg&#34; alt&gt;&lt;/p&gt;
+&lt;p&gt;当 I/O 设备和 CPU 同时访问主存时，可能发生冲突，DMA 与 CPU 通常采用以下 3 种方式使用驻村：&lt;br&gt;
+&lt;img data-src=&#34;f10.jpg&#34; alt&gt;&lt;br&gt;
+周期挪用：&lt;br&gt;
+一次传一组数据&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;CPU不访存时：如果CPU当前并不需要访问主存，那么DMA控制器可以直接使用总线进行数据传输，此时不会对CPU的工作造成任何影响。&lt;/li&gt;
-&lt;li&gt;CPU正在访存时：如果CPU正在进行主存访问，DMA控制器会等待CPU的当前访问周期结束，然后立即“借用”接下来的一个或几个总线周期来进行自己的数据传输。这种情况下，CPU的访问会被短暂延迟，但通常这种延迟非常短，以至于CPU几乎感觉不到，因此可以认为CPU的正常工作没有受到显著影响。&lt;/li&gt;
-&lt;li&gt;CPU与DMA同时请求访存时：在这种情况下，I&amp;#x2F;O设备的访存请求通常具有更高的优先级，这意味着即使CPU也在请求访问主存，DMA控制器也会被优先考虑，从而保证I&amp;#x2F;O设备的数据传输不受阻。&lt;/li&gt;
+&lt;li&gt;CPU 不访存时：如果 CPU 当前并不需要访问主存，那么 DMA 控制器可以直接使用总线进行数据传输，此时不会对 CPU 的工作造成任何影响。&lt;/li&gt;
+&lt;li&gt;CPU 正在访存时：如果 CPU 正在进行主存访问，DMA 控制器会等待 CPU 的当前访问周期结束，然后立即 “借用” 接下来的一个或几个总线周期来进行自己的数据传输。这种情况下，CPU 的访问会被短暂延迟，但通常这种延迟非常短，以至于 CPU 几乎感觉不到，因此可以认为 CPU 的正常工作没有受到显著影响。&lt;/li&gt;
+&lt;li&gt;CPU 与 DMA 同时请求访存时：在这种情况下，I/O 设备的访存请求通常具有更高的优先级，这意味着即使 CPU 也在请求访问主存，DMA 控制器也会被优先考虑，从而保证 I/O 设备的数据传输不受阻。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;ol&gt;
-&lt;li&gt;停止CPU访存&lt;br&gt;优点：控制简单，适用于数据传输速率很高的I&amp;#x2F;O设备实现成组数据的传送&lt;br&gt;缺点：DMA访问主存时，CPU基本上不工作&lt;/li&gt;
-&lt;li&gt;周期挪用&lt;br&gt;优点：既实现了I&amp;#x2F;O传送，又较好地发挥了主存与CPU的效率&lt;br&gt;缺点：每挪用一个主存周期，DMA接口都要申请、建立和归还总线周期&lt;/li&gt;
-&lt;li&gt;交替访存&lt;br&gt;优点：不需要总线控制权的申请、建立和归还过程，传送效率高&lt;br&gt;缺点：相应的硬件逻辑变得更复杂&lt;/li&gt;
+&lt;li&gt;停止 CPU 访存&lt;br&gt;
+优点：控制简单，适用于数据传输速率很高的 I/O 设备实现成组数据的传送&lt;br&gt;
+缺点：DMA 访问主存时，CPU 基本上不工作&lt;/li&gt;
+&lt;li&gt;周期挪用&lt;br&gt;
+优点：既实现了 I/O 传送，又较好地发挥了主存与 CPU 的效率&lt;br&gt;
+缺点：每挪用一个主存周期，DMA 接口都要申请、建立和归还总线周期&lt;/li&gt;
+&lt;li&gt;交替访存&lt;br&gt;
+优点：不需要总线控制权的申请、建立和归还过程，传送效率高&lt;br&gt;
+缺点：相应的硬件逻辑变得更复杂&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h4 id=&#34;DMA的传送过程&#34;&gt;&lt;a href=&#34;#DMA的传送过程&#34; class=&#34;headerlink&#34; title=&#34;DMA的传送过程&#34;&gt;&lt;/a&gt;DMA的传送过程&lt;/h4&gt;&lt;p&gt;&lt;img data-src=&#34;/f9.jpg&#34;&gt;&lt;/p&gt;
+&lt;h4 id=&#34;dma的传送过程&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#dma的传送过程&#34;&gt;#&lt;/a&gt; DMA 的传送过程&lt;/h4&gt;
+&lt;p&gt;&lt;img data-src=&#34;f9.jpg&#34; alt&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;预处理：由CPU初始化DMA控制其中的寄存器、设置传送方式、测试并启动设备&lt;/li&gt;
-&lt;li&gt;数据传送：DMA以数据块为基本传送单位。数据传送完全由DMA控制&lt;/li&gt;
-&lt;li&gt;后处理：DMA控制器向CPU发送中断请求，CPU处理中断做DMA结束处理（包括校验）&lt;/li&gt;
+&lt;li&gt;预处理：由 CPU 初始化 DMA 控制其中的寄存器、设置传送方式、测试并启动设备&lt;/li&gt;
+&lt;li&gt;数据传送：DMA 以数据块为基本传送单位。数据传送完全由 DMA 控制&lt;/li&gt;
+&lt;li&gt;后处理：DMA 控制器向 CPU 发送中断请求，CPU 处理中断做 DMA 结束处理（包括校验）&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;DMA方式和中断方式的区别：&lt;/p&gt;
+&lt;p&gt;DMA 方式和中断方式的区别：&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;中断需要save context，DMA不需要，除了预处理和后处理其他时候不占用CPU（我觉得DMA方式的预处理和后处理的中断也是需要save context的，只是因为DMA方式中断次数极少，整个数据块只中断一次，所以不需要保存那么多次，所以比较快）&lt;/li&gt;
-&lt;li&gt;对中断请求的相应只能发生在每条指令执行结束时，但对DMA请求的相应可以发生在任意一个机器周期结束时(IF, ID, EX…  DMA请求的是总线控制权，不是CPU的执行权。它不关心 CPU正在执行哪条指令，只关心总线是否空闲。只要当前总线周期结束，DMA就可以插空使用)&lt;/li&gt;
-&lt;li&gt;中断传送过程需要CPU的干预，DMA传送不需要，数据传输速率高&lt;/li&gt;
+&lt;li&gt;中断需要 save context，DMA 不需要，除了预处理和后处理其他时候不占用 CPU（我觉得 DMA 方式的预处理和后处理的中断也是需要 save context 的，只是因为 DMA 方式中断次数极少，整个数据块只中断一次，所以不需要保存那么多次，所以比较快）&lt;/li&gt;
+&lt;li&gt;对中断请求的相应只能发生在每条指令执行结束时，但对 DMA 请求的相应可以发生在任意一个机器周期结束时 (IF, ID, EX…  DMA 请求的是总线控制权，不是 CPU 的执行权。它不关心 CPU 正在执行哪条指令，只关心总线是否空闲。只要当前总线周期结束，DMA 就可以插空使用)&lt;/li&gt;
+&lt;li&gt;中断传送过程需要 CPU 的干预，DMA 传送不需要，数据传输速率高&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;优先级：&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;DMA请求的优先级高于中断请求&lt;/li&gt;
-&lt;li&gt;中断方式具有处理异常事件的能力，DMA方式局限于大批数据的传送&lt;/li&gt;
-&lt;li&gt;中断方式靠程序传送，DMA方式靠硬件传送&lt;/li&gt;
+&lt;li&gt;DMA 请求的优先级高于中断请求&lt;/li&gt;
+&lt;li&gt;中断方式具有处理异常事件的能力，DMA 方式局限于大批数据的传送&lt;/li&gt;
+&lt;li&gt;中断方式靠程序传送，DMA 方式靠硬件传送&lt;/li&gt;
 &lt;/ul&gt;
  ]]></description>
         </item>

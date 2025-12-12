@@ -76,7 +76,7 @@ NoResponse's Blog = NoResponse's Blog</title>
       <i class="ic i-pen"></i>
     </span>
     <span class="text">Symbols count in article</span>
-    <span>4.7k</span>
+    <span>4.6k</span>
     <span class="text">words</span>
   </span>
   <span class="item" title="Reading time">
@@ -116,7 +116,7 @@ NoResponse's Blog = NoResponse's Blog</title>
 
       </div>
       <div id="imgs" class="pjax">
-          <img src="/images/bg22.png">
+          <img src="/images/bg14.jpg">
       </div>
     </header>
     <div id="waves">
@@ -161,7 +161,8 @@ NoResponse's Blog = NoResponse's Blog</title>
   <div class="body md" itemprop="articleBody">
     
 
-    <h2 id="一、C-常用容器总览"><a href="#一、C-常用容器总览" class="headerlink" title="一、C++ 常用容器总览"></a>一、C++ 常用容器总览</h2><table>
+    <h2 id="一-c-常用容器总览"><a class="markdownIt-Anchor" href="#一-c-常用容器总览">#</a> 一、C++ 常用容器总览</h2>
+<table>
 <thead>
 <tr>
 <th>容器</th>
@@ -172,7 +173,8 @@ NoResponse's Blog = NoResponse's Blog</title>
 <th>主要用途</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td><code>vector</code></td>
 <td>序列容器</td>
 <td>动态数组</td>
@@ -194,7 +196,7 @@ NoResponse's Blog = NoResponse's Blog</title>
 <td>双向链表</td>
 <td>否</td>
 <td>否</td>
-<td>频繁中间插入&#x2F;删除</td>
+<td>频繁中间插入 / 删除</td>
 </tr>
 <tr>
 <td><code>forward_list</code></td>
@@ -215,7 +217,7 @@ NoResponse's Blog = NoResponse's Blog</title>
 <tr>
 <td><code>stack</code></td>
 <td>容器适配器</td>
-<td><code>deque</code>（默认）</td>
+<td><code>deque</code> （默认）</td>
 <td>否</td>
 <td>否</td>
 <td>栈（LIFO）</td>
@@ -223,7 +225,7 @@ NoResponse's Blog = NoResponse's Blog</title>
 <tr>
 <td><code>queue</code></td>
 <td>容器适配器</td>
-<td><code>deque</code>（默认）</td>
+<td><code>deque</code> （默认）</td>
 <td>否</td>
 <td>否</td>
 <td>队列（FIFO）</td>
@@ -231,7 +233,7 @@ NoResponse's Blog = NoResponse's Blog</title>
 <tr>
 <td><code>priority_queue</code></td>
 <td>容器适配器</td>
-<td><code>vector</code>（默认）</td>
+<td><code>vector</code> （默认）</td>
 <td>是（堆序）</td>
 <td>否</td>
 <td>优先队列</td>
@@ -300,8 +302,11 @@ NoResponse's Blog = NoResponse's Blog</title>
 <td>否</td>
 <td>无序可重复键值对</td>
 </tr>
-</tbody></table>
-<h2 id="二、各容器操作复杂度对比"><a href="#二、各容器操作复杂度对比" class="headerlink" title="二、各容器操作复杂度对比"></a>二、各容器操作复杂度对比</h2><h3 id="1-vector"><a href="#1-vector" class="headerlink" title="1. vector&lt;T&gt;"></a>1. <code>vector&lt;T&gt;</code></h3><ul>
+</tbody>
+</table>
+<h2 id="二-各容器操作复杂度对比"><a class="markdownIt-Anchor" href="#二-各容器操作复杂度对比">#</a> 二、各容器操作复杂度对比</h2>
+<h3 id="1-vectort"><a class="markdownIt-Anchor" href="#1-vectort">#</a> 1.  <code>vector&lt;T&gt;</code></h3>
+<ul>
 <li><strong>底层</strong>：动态数组（连续内存）</li>
 <li><strong>特点</strong>：支持随机访问，尾部操作快，中间插入慢。</li>
 </ul>
@@ -313,9 +318,10 @@ NoResponse's Blog = NoResponse's Blog</title>
 <th>说明</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td><code>push_back()</code></td>
-<td>平均 O(1)，最坏 O(n)</td>
+<td>平均 O (1)，最坏 O (n)</td>
 <td>扩容时复制</td>
 </tr>
 <tr>
@@ -334,7 +340,7 @@ NoResponse's Blog = NoResponse's Blog</title>
 <td>删除后需移动</td>
 </tr>
 <tr>
-<td><code>operator[]</code> &#x2F; <code>at()</code></td>
+<td><code>operator[]</code>  /  <code>at()</code></td>
 <td>O(1)</td>
 <td>随机访问</td>
 </tr>
@@ -344,16 +350,19 @@ NoResponse's Blog = NoResponse's Blog</title>
 <td></td>
 </tr>
 <tr>
-<td><code>begin()</code> &#x2F; <code>end()</code></td>
+<td><code>begin()</code>  /  <code>end()</code></td>
 <td>O(1)</td>
 <td></td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <blockquote>
-<p>适合：频繁随机访问、尾部增删<br>不适合：频繁中间插入&#x2F;删除</p>
+<p>适合：频繁随机访问、尾部增删<br>
+不适合：频繁中间插入 / 删除</p>
 </blockquote>
 <hr>
-<h3 id="2-deque（双端队列）"><a href="#2-deque（双端队列）" class="headerlink" title="2. deque&lt;T&gt;（双端队列）"></a>2. <code>deque&lt;T&gt;</code>（双端队列）</h3><ul>
+<h3 id="2-dequet双端队列"><a class="markdownIt-Anchor" href="#2-dequet双端队列">#</a> 2.  <code>deque&lt;T&gt;</code> （双端队列）</h3>
+<ul>
 <li><strong>底层</strong>：分段连续数组（多个小数组）</li>
 <li><strong>特点</strong>：首尾操作都快，支持随机访问。</li>
 </ul>
@@ -365,23 +374,24 @@ NoResponse's Blog = NoResponse's Blog</title>
 <th>说明</th>
 </tr>
 </thead>
-<tbody><tr>
-<td><code>push_front()</code> &#x2F; <code>push_back()</code></td>
+<tbody>
+<tr>
+<td><code>push_front()</code>  /  <code>push_back()</code></td>
 <td>O(1)</td>
 <td>首尾插入都快</td>
 </tr>
 <tr>
-<td><code>pop_front()</code> &#x2F; <code>pop_back()</code></td>
+<td><code>pop_front()</code>  /  <code>pop_back()</code></td>
 <td>O(1)</td>
 <td></td>
 </tr>
 <tr>
-<td><code>insert()</code> &#x2F; <code>erase()</code>（中间）</td>
+<td><code>insert()</code>  /  <code>erase()</code> （中间）</td>
 <td>O(n)</td>
 <td></td>
 </tr>
 <tr>
-<td><code>operator[]</code> &#x2F; <code>at()</code></td>
+<td><code>operator[]</code>  /  <code>at()</code></td>
 <td>O(1)</td>
 <td>支持随机访问</td>
 </tr>
@@ -390,14 +400,17 @@ NoResponse's Blog = NoResponse's Blog</title>
 <td>O(1)</td>
 <td></td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <blockquote>
-<p>适合：需要首尾高效插入的场景（如滑动窗口）<br>注意：迭代器失效规则比 <code>vector</code> 复杂</p>
+<p>适合：需要首尾高效插入的场景（如滑动窗口）<br>
+注意：迭代器失效规则比  <code>vector</code>  复杂</p>
 </blockquote>
 <hr>
-<h3 id="3-list（双向链表）"><a href="#3-list（双向链表）" class="headerlink" title="3. list&lt;T&gt;（双向链表）"></a>3. <code>list&lt;T&gt;</code>（双向链表）</h3><ul>
+<h3 id="3-listt双向链表"><a class="markdownIt-Anchor" href="#3-listt双向链表">#</a> 3.  <code>list&lt;T&gt;</code> （双向链表）</h3>
+<ul>
 <li><strong>底层</strong>：双向链表</li>
-<li><strong>特点</strong>：任意位置插入&#x2F;删除 O(1)，但不支持随机访问。</li>
+<li><strong>特点</strong>：任意位置插入 / 删除 O (1)，但不支持随机访问。</li>
 </ul>
 <table>
 <thead>
@@ -407,8 +420,9 @@ NoResponse's Blog = NoResponse's Blog</title>
 <th>说明</th>
 </tr>
 </thead>
-<tbody><tr>
-<td><code>push_front()</code> &#x2F; <code>push_back()</code></td>
+<tbody>
+<tr>
+<td><code>push_front()</code>  /  <code>push_back()</code></td>
 <td>O(1)</td>
 <td></td>
 </tr>
@@ -434,17 +448,20 @@ NoResponse's Blog = NoResponse's Blog</title>
 </tr>
 <tr>
 <td><code>size()</code></td>
-<td>C++11 起 O(1)，之前 O(n)</td>
+<td>C++11 起 O (1)，之前 O (n)</td>
 <td></td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <blockquote>
-<p>适合：频繁中间插入&#x2F;删除<br>不适合：随机访问、缓存不友好</p>
+<p>适合：频繁中间插入 / 删除<br>
+不适合：随机访问、缓存不友好</p>
 </blockquote>
 <hr>
-<h3 id="4-forward-list（单向链表）"><a href="#4-forward-list（单向链表）" class="headerlink" title="4. forward_list&lt;T&gt;（单向链表）"></a>4. <code>forward_list&lt;T&gt;</code>（单向链表）</h3><ul>
+<h3 id="4-forward_listt单向链表"><a class="markdownIt-Anchor" href="#4-forward_listt单向链表">#</a> 4.  <code>forward_list&lt;T&gt;</code> （单向链表）</h3>
+<ul>
 <li><strong>底层</strong>：单向链表</li>
-<li><strong>特点</strong>：比 <code>list</code> 更省内存，但只能单向遍历。</li>
+<li><strong>特点</strong>：比  <code>list</code>  更省内存，但只能单向遍历。</li>
 </ul>
 <table>
 <thead>
@@ -454,7 +471,8 @@ NoResponse's Blog = NoResponse's Blog</title>
 <th>说明</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td><code>push_front()</code></td>
 <td>O(1)</td>
 <td></td>
@@ -470,16 +488,18 @@ NoResponse's Blog = NoResponse's Blog</title>
 <td></td>
 </tr>
 <tr>
-<td>不支持 <code>push_back()</code></td>
+<td>不支持  <code>push_back()</code></td>
 <td>—</td>
 <td></td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <blockquote>
 <p>适合：内存敏感、只需前向遍历的场景</p>
 </blockquote>
 <hr>
-<h3 id="5-array"><a href="#5-array" class="headerlink" title="5. array&lt;T, N&gt;"></a>5. <code>array&lt;T, N&gt;</code></h3><ul>
+<h3 id="5-arrayt-n"><a class="markdownIt-Anchor" href="#5-arrayt-n">#</a> 5.  <code>array&lt;T, N&gt;</code></h3>
+<ul>
 <li><strong>底层</strong>：静态数组（栈上内存）</li>
 <li><strong>特点</strong>：大小固定，性能极高。</li>
 </ul>
@@ -491,7 +511,8 @@ NoResponse's Blog = NoResponse's Blog</title>
 <th>说明</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td><code>operator[]</code></td>
 <td>O(1)</td>
 <td></td>
@@ -511,14 +532,16 @@ NoResponse's Blog = NoResponse's Blog</title>
 <td>O(1)</td>
 <td>固定大小</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <blockquote>
 <p>适合：小数据、固定大小、高性能场景</p>
 </blockquote>
 <hr>
-<h3 id="6-set-map"><a href="#6-set-map" class="headerlink" title="6. set&lt;T&gt; &#x2F; map&lt;K,V&gt;"></a>6. <code>set&lt;T&gt;</code> &#x2F; <code>map&lt;K,V&gt;</code></h3><ul>
+<h3 id="6-sett-mapkv"><a class="markdownIt-Anchor" href="#6-sett-mapkv">#</a> 6.  <code>set&lt;T&gt;</code>  /  <code>map&lt;K,V&gt;</code></h3>
+<ul>
 <li><strong>底层</strong>：<strong>红黑树</strong>（自平衡二叉搜索树）</li>
-<li><strong>特点</strong>：自动排序、自动去重（<code>set</code> 和 <code>map</code> 键唯一）</li>
+<li><strong>特点</strong>：自动排序、自动去重（ <code>set</code>  和  <code>map</code>  键唯一）</li>
 </ul>
 <table>
 <thead>
@@ -528,7 +551,8 @@ NoResponse's Blog = NoResponse's Blog</title>
 <th>说明</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td><code>insert()</code></td>
 <td>O(log n)</td>
 <td></td>
@@ -553,14 +577,16 @@ NoResponse's Blog = NoResponse's Blog</title>
 <td>O(n)</td>
 <td>有序输出</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <blockquote>
 <p>适合：需要有序、去重、查找的场景</p>
 </blockquote>
 <hr>
-<h3 id="7-unordered-set-unordered-map"><a href="#7-unordered-set-unordered-map" class="headerlink" title="7. unordered_set&lt;T&gt; &#x2F; unordered_map&lt;K,V&gt;"></a>7. <code>unordered_set&lt;T&gt;</code> &#x2F; <code>unordered_map&lt;K,V&gt;</code></h3><ul>
+<h3 id="7-unordered_sett-unordered_mapkv"><a class="markdownIt-Anchor" href="#7-unordered_sett-unordered_mapkv">#</a> 7.  <code>unordered_set&lt;T&gt;</code>  /  <code>unordered_map&lt;K,V&gt;</code></h3>
+<ul>
 <li><strong>底层</strong>：<strong>哈希表</strong>（开链法或开放寻址）</li>
-<li><strong>特点</strong>：平均极快，但无序，最坏 O(n)</li>
+<li><strong>特点</strong>：平均极快，但无序，最坏 O (n)</li>
 </ul>
 <table>
 <thead>
@@ -570,19 +596,20 @@ NoResponse's Blog = NoResponse's Blog</title>
 <th>说明</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td><code>insert()</code></td>
-<td>平均 O(1)，最坏 O(n)</td>
+<td>平均 O (1)，最坏 O (n)</td>
 <td>哈希冲突时退化</td>
 </tr>
 <tr>
 <td><code>find()</code></td>
-<td>平均 O(1)，最坏 O(n)</td>
+<td>平均 O (1)，最坏 O (n)</td>
 <td></td>
 </tr>
 <tr>
 <td><code>erase()</code></td>
-<td>平均 O(1)，最坏 O(n)</td>
+<td>平均 O (1)，最坏 O (n)</td>
 <td></td>
 </tr>
 <tr>
@@ -593,13 +620,16 @@ NoResponse's Blog = NoResponse's Blog</title>
 <tr>
 <td>负载因子</td>
 <td>影响性能</td>
-<td>可调 <code>max_load_factor()</code></td>
+<td>可调  <code>max_load_factor()</code></td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <blockquote>
-<p>适合：大数据、高频查找、不在乎顺序<br>不适合：需要有序输出</p>
+<p>适合：大数据、高频查找、不在乎顺序<br>
+不适合：需要有序输出</p>
 </blockquote>
-<h3 id="8-容器适配器（stack-queue-priority-queue）"><a href="#8-容器适配器（stack-queue-priority-queue）" class="headerlink" title="8. 容器适配器（stack, queue, priority_queue）"></a>8. 容器适配器（<code>stack</code>, <code>queue</code>, <code>priority_queue</code>）</h3><table>
+<h3 id="8-容器适配器stack-queue-priority_queue"><a class="markdownIt-Anchor" href="#8-容器适配器stack-queue-priority_queue">#</a> 8. 容器适配器（ <code>stack</code> ,  <code>queue</code> ,  <code>priority_queue</code> ）</h3>
+<table>
 <thead>
 <tr>
 <th>容器</th>
@@ -608,36 +638,40 @@ NoResponse's Blog = NoResponse's Blog</title>
 <th>操作复杂度</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td><code>stack&lt;T&gt;</code></td>
 <td><code>deque</code></td>
 <td>后进先出（LIFO）</td>
-<td><code>push</code>&#x2F;<code>pop</code>&#x2F;<code>top</code>: O(1)</td>
+<td><code>push</code> / <code>pop</code> / <code>top</code> : O(1)</td>
 </tr>
 <tr>
 <td><code>queue&lt;T&gt;</code></td>
 <td><code>deque</code></td>
 <td>先进先出（FIFO）</td>
-<td><code>push</code>&#x2F;<code>pop</code>&#x2F;<code>front</code>: O(1)</td>
+<td><code>push</code> / <code>pop</code> / <code>front</code> : O(1)</td>
 </tr>
 <tr>
 <td><code>priority_queue&lt;T&gt;</code></td>
-<td><code>vector</code> + 堆</td>
-<td>最大&#x2F;最小元素在顶</td>
-<td><code>push</code>: O(log n), <code>top</code>: O(1), <code>pop</code>: O(log n)</td>
+<td><code>vector</code>  + 堆</td>
+<td>最大 / 最小元素在顶</td>
+<td><code>push</code> : O(log n),  <code>top</code> : O(1),  <code>pop</code> : O(log n)</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <blockquote>
 <p>它们<strong>不是真正容器</strong>，而是基于其他容器的封装，接口受限。</p>
 </blockquote>
-<h2 id="选择"><a href="#选择" class="headerlink" title="选择"></a>选择</h2><table>
+<h2 id="选择"><a class="markdownIt-Anchor" href="#选择">#</a> 选择</h2>
+<table>
 <thead>
 <tr>
 <th>需求</th>
 <th>推荐容器</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>动态数组，随机访问</td>
 <td><code>vector</code></td>
 </tr>
@@ -646,7 +680,7 @@ NoResponse's Blog = NoResponse's Blog</title>
 <td><code>deque</code></td>
 </tr>
 <tr>
-<td>频繁中间插入&#x2F;删除</td>
+<td>频繁中间插入 / 删除</td>
 <td><code>list</code></td>
 </tr>
 <tr>
@@ -655,11 +689,11 @@ NoResponse's Blog = NoResponse's Blog</title>
 </tr>
 <tr>
 <td>快速查找、去重（不在乎顺序）</td>
-<td><code>unordered_set</code> &#x2F; <code>unordered_map</code></td>
+<td><code>unordered_set</code>  /  <code>unordered_map</code></td>
 </tr>
 <tr>
 <td>需要有序输出、去重</td>
-<td><code>set</code> &#x2F; <code>map</code></td>
+<td><code>set</code>  /  <code>map</code></td>
 </tr>
 <tr>
 <td>栈操作</td>
@@ -670,45 +704,48 @@ NoResponse's Blog = NoResponse's Blog</title>
 <td><code>queue</code></td>
 </tr>
 <tr>
-<td>找最大&#x2F;最小元素（堆）</td>
+<td>找最大 / 最小元素（堆）</td>
 <td><code>priority_queue</code></td>
 </tr>
-</tbody></table>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><table>
+</tbody>
+</table>
+<h2 id="总结"><a class="markdownIt-Anchor" href="#总结">#</a> 总结</h2>
+<table>
 <thead>
 <tr>
 <th>口诀</th>
 <th>对应容器</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td><strong>“要快用 unordered”</strong></td>
-<td><code>unordered_set/map</code>（平均 O(1)）</td>
+<td><code>unordered_set/map</code> （平均 O (1)）</td>
 </tr>
 <tr>
-<td><strong>“要序用 set&#x2F;map”</strong></td>
-<td><code>set/map</code>（O(log n)，有序）</td>
+<td><strong>“要序用 set/map”</strong></td>
+<td><code>set/map</code> （O (log n)，有序）</td>
 </tr>
 <tr>
 <td><strong>“通用选 vector”</strong></td>
-<td><code>vector</code>（最常用）</td>
+<td><code>vector</code> （最常用）</td>
 </tr>
 <tr>
 <td><strong>“首尾快用 deque”</strong></td>
-<td><code>deque</code>（双端高效）</td>
+<td><code>deque</code> （双端高效）</td>
 </tr>
 <tr>
 <td><strong>“中间删用 list”</strong></td>
-<td><code>list</code>（任意位置 O(1) 删除）</td>
+<td><code>list</code> （任意位置 O (1) 删除）</td>
 </tr>
 <tr>
 <td><strong>“最大最小用堆”</strong></td>
 <td><code>priority_queue</code></td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <p>LRU：</p>
 <figure class="highlight c++"><figcaption><span>lru</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 哈希表+双向链表</span></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">DNode</span>;</span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">DNode</span> &#123;</span><br><span class="line">    <span class="type">int</span> key, value;</span><br><span class="line">    DNode* pre;</span><br><span class="line">    DNode* next;</span><br><span class="line">    <span class="built_in">DNode</span>(): <span class="built_in">key</span>(<span class="number">-1</span>), <span class="built_in">value</span>(<span class="number">-1</span>), <span class="built_in">pre</span>(<span class="literal">nullptr</span>), <span class="built_in">next</span>(<span class="literal">nullptr</span>)&#123;&#125;</span><br><span class="line">    <span class="built_in">DNode</span>(<span class="type">int</span> key, <span class="type">int</span> val): <span class="built_in">key</span>(key), <span class="built_in">value</span>(val), <span class="built_in">pre</span>(<span class="literal">nullptr</span>), <span class="built_in">next</span>(<span class="literal">nullptr</span>) &#123;&#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">LRUCache</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">LRUCache</span>(<span class="type">int</span> capacity) &#123;</span><br><span class="line">        <span class="keyword">this</span>-&gt;capacity = capacity;</span><br><span class="line">        head = <span class="keyword">new</span> <span class="built_in">DNode</span>();</span><br><span class="line">        tail = <span class="keyword">new</span> <span class="built_in">DNode</span>();</span><br><span class="line">        head-&gt;next = tail;</span><br><span class="line">        tail-&gt;pre = head;</span><br><span class="line">        <span class="keyword">this</span>-&gt;size = <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">get</span><span class="params">(<span class="type">int</span> key)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(mp.<span class="built_in">find</span>(key) != mp.<span class="built_in">end</span>())&#123;</span><br><span class="line">            DNode* pre = mp[key]-&gt;pre;</span><br><span class="line">            pre-&gt;next = mp[key]-&gt;next;</span><br><span class="line">            mp[key]-&gt;next-&gt;pre = pre;</span><br><span class="line">            DNode* next = head-&gt;next;</span><br><span class="line">            head-&gt;next = mp[key];</span><br><span class="line">            mp[key]-&gt;pre = head;</span><br><span class="line">            mp[key]-&gt;next = next;</span><br><span class="line">            next-&gt;pre = mp[key];</span><br><span class="line">            <span class="keyword">return</span> mp[key]-&gt;value;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">put</span><span class="params">(<span class="type">int</span> key, <span class="type">int</span> value)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(mp.<span class="built_in">find</span>(key) != mp.<span class="built_in">end</span>())&#123;</span><br><span class="line">            mp[key]-&gt;value = value;</span><br><span class="line">            DNode* pre = mp[key]-&gt;pre;</span><br><span class="line">            pre-&gt;next = mp[key]-&gt;next;</span><br><span class="line">            mp[key]-&gt;next-&gt;pre = pre;</span><br><span class="line">            DNode* next = head-&gt;next;</span><br><span class="line">            head-&gt;next = mp[key];</span><br><span class="line">            mp[key]-&gt;pre = head;</span><br><span class="line">            mp[key]-&gt;next = next;</span><br><span class="line">            next-&gt;pre = mp[key];</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">if</span>(<span class="keyword">this</span>-&gt;size &lt; <span class="keyword">this</span>-&gt;capacity)&#123;</span><br><span class="line">                DNode* p = head-&gt;next;</span><br><span class="line">                DNode* newNode = <span class="keyword">new</span> <span class="built_in">DNode</span>(key, value);</span><br><span class="line">                head-&gt;next = newNode;</span><br><span class="line">                newNode-&gt;pre = head;</span><br><span class="line">                newNode-&gt;next = p;</span><br><span class="line">                p-&gt;pre = newNode;</span><br><span class="line">                mp[key] = newNode;</span><br><span class="line">                <span class="keyword">this</span>-&gt;size++;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                DNode* remove = tail-&gt;pre;</span><br><span class="line">                mp.<span class="built_in">erase</span>(remove-&gt;key);</span><br><span class="line">                remove-&gt;pre-&gt;next = tail;</span><br><span class="line">                tail-&gt;pre = remove-&gt;pre;</span><br><span class="line">                <span class="keyword">delete</span> remove;</span><br><span class="line">                DNode* newNode = <span class="keyword">new</span> <span class="built_in">DNode</span>(key, value);</span><br><span class="line">                DNode* nxt = head-&gt;next;</span><br><span class="line">                head-&gt;next = newNode;</span><br><span class="line">                newNode-&gt;pre = head;</span><br><span class="line">                newNode-&gt;next = nxt;</span><br><span class="line">                nxt-&gt;pre = newNode;</span><br><span class="line">                mp[key] = newNode;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="type">int</span> capacity;</span><br><span class="line">    <span class="type">int</span> size;</span><br><span class="line">    unordered_map&lt;<span class="type">int</span>, DNode*&gt; mp;</span><br><span class="line">    DNode* head;</span><br><span class="line">    DNode* tail;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
 <p>反转链表</p>
 <figure class="highlight c++"><figcaption><span>reverse</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">ListNode</span> &#123;</span><br><span class="line">    <span class="type">int</span> val;</span><br><span class="line">    ListNode *next;</span><br><span class="line">    <span class="built_in">ListNode</span>() : <span class="built_in">val</span>(<span class="number">0</span>), <span class="built_in">next</span>(<span class="literal">nullptr</span>) &#123;&#125;</span><br><span class="line">    <span class="built_in">ListNode</span>(<span class="type">int</span> x) : <span class="built_in">val</span>(x), <span class="built_in">next</span>(<span class="literal">nullptr</span>) &#123;&#125;</span><br><span class="line">    <span class="built_in">ListNode</span>(<span class="type">int</span> x, ListNode *next) : <span class="built_in">val</span>(x), <span class="built_in">next</span>(next) &#123;&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function">ListNode* <span class="title">reverseList</span><span class="params">(ListNode* head)</span> </span>&#123;</span><br><span class="line">    ListNode* prev = <span class="literal">nullptr</span>;</span><br><span class="line">    ListNode* curr = head;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">while</span> (curr != <span class="literal">nullptr</span>) &#123;</span><br><span class="line">        ListNode* next = curr-&gt;next; <span class="comment">// 保存下一个节点</span></span><br><span class="line">        curr-&gt;next = prev;           <span class="comment">// 反转当前节点</span></span><br><span class="line">        prev = curr;                 <span class="comment">// prev 前进</span></span><br><span class="line">        curr = next;                 <span class="comment">// curr 前进</span></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> prev; <span class="comment">// 新的头节点</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       <div class="tags">
@@ -779,7 +816,7 @@ NoResponse's Blog = NoResponse's Blog</title>
     <div class="item left">
       
 
-  <a href="/2025/10/13/computer-science/DS/ch7/" itemprop="url" rel="prev" data-background-image="&#x2F;images&#x2F;bg9.jpg" title="ch7">
+  <a href="/2025/10/13/computer-science/DS/ch7/" itemprop="url" rel="prev" data-background-image="&#x2F;images&#x2F;bg26.jpg" title="ch7">
   <span class="type">Previous Post</span>
   <span class="category"><i class="ic i-flag"></i> 数据结构</span>
   <h3>ch7</h3>
@@ -789,7 +826,7 @@ NoResponse's Blog = NoResponse's Blog</title>
     <div class="item right">
       
 
-  <a href="/2025/10/26/oop/note/" itemprop="url" rel="next" data-background-image="&#x2F;images&#x2F;bg29.jpg" title="C++相关">
+  <a href="/2025/10/26/oop/note/" itemprop="url" rel="next" data-background-image="&#x2F;images&#x2F;bg15.jpg" title="C++相关">
   <span class="type">Next Post</span>
   <span class="category"><i class="ic i-flag"></i> C++</span>
   <h3>C++相关</h3>
@@ -811,11 +848,11 @@ NoResponse's Blog = NoResponse's Blog</title>
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="Contents">
-          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81C-%E5%B8%B8%E7%94%A8%E5%AE%B9%E5%99%A8%E6%80%BB%E8%A7%88"><span class="toc-number">1.</span> <span class="toc-text">一、C++ 常用容器总览</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%90%84%E5%AE%B9%E5%99%A8%E6%93%8D%E4%BD%9C%E5%A4%8D%E6%9D%82%E5%BA%A6%E5%AF%B9%E6%AF%94"><span class="toc-number">2.</span> <span class="toc-text">二、各容器操作复杂度对比</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-vector"><span class="toc-number">2.1.</span> <span class="toc-text">1. vector&lt;T&gt;</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-deque%EF%BC%88%E5%8F%8C%E7%AB%AF%E9%98%9F%E5%88%97%EF%BC%89"><span class="toc-number">2.2.</span> <span class="toc-text">2. deque&lt;T&gt;（双端队列）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-list%EF%BC%88%E5%8F%8C%E5%90%91%E9%93%BE%E8%A1%A8%EF%BC%89"><span class="toc-number">2.3.</span> <span class="toc-text">3. list&lt;T&gt;（双向链表）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-forward-list%EF%BC%88%E5%8D%95%E5%90%91%E9%93%BE%E8%A1%A8%EF%BC%89"><span class="toc-number">2.4.</span> <span class="toc-text">4. forward_list&lt;T&gt;（单向链表）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-array"><span class="toc-number">2.5.</span> <span class="toc-text">5. array&lt;T, N&gt;</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-set-map"><span class="toc-number">2.6.</span> <span class="toc-text">6. set&lt;T&gt; &#x2F; map&lt;K,V&gt;</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-unordered-set-unordered-map"><span class="toc-number">2.7.</span> <span class="toc-text">7. unordered_set&lt;T&gt; &#x2F; unordered_map&lt;K,V&gt;</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-%E5%AE%B9%E5%99%A8%E9%80%82%E9%85%8D%E5%99%A8%EF%BC%88stack-queue-priority-queue%EF%BC%89"><span class="toc-number">2.8.</span> <span class="toc-text">8. 容器适配器（stack, queue, priority_queue）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%89%E6%8B%A9"><span class="toc-number">3.</span> <span class="toc-text">选择</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">4.</span> <span class="toc-text">总结</span></a></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80-c-%E5%B8%B8%E7%94%A8%E5%AE%B9%E5%99%A8%E6%80%BB%E8%A7%88"><span class="toc-number">1.</span> <span class="toc-text"> 一、C++ 常用容器总览</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C-%E5%90%84%E5%AE%B9%E5%99%A8%E6%93%8D%E4%BD%9C%E5%A4%8D%E6%9D%82%E5%BA%A6%E5%AF%B9%E6%AF%94"><span class="toc-number">2.</span> <span class="toc-text"> 二、各容器操作复杂度对比</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-vectort"><span class="toc-number">2.1.</span> <span class="toc-text"> 1.  vector&lt;T&gt;</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-dequet%E5%8F%8C%E7%AB%AF%E9%98%9F%E5%88%97"><span class="toc-number">2.2.</span> <span class="toc-text"> 2.  deque&lt;T&gt; （双端队列）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-listt%E5%8F%8C%E5%90%91%E9%93%BE%E8%A1%A8"><span class="toc-number">2.3.</span> <span class="toc-text"> 3.  list&lt;T&gt; （双向链表）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-forward_listt%E5%8D%95%E5%90%91%E9%93%BE%E8%A1%A8"><span class="toc-number">2.4.</span> <span class="toc-text"> 4.  forward_list&lt;T&gt; （单向链表）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-arrayt-n"><span class="toc-number">2.5.</span> <span class="toc-text"> 5.  array&lt;T, N&gt;</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-sett-mapkv"><span class="toc-number">2.6.</span> <span class="toc-text"> 6.  set&lt;T&gt;  &#x2F;  map&lt;K,V&gt;</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-unordered_sett-unordered_mapkv"><span class="toc-number">2.7.</span> <span class="toc-text"> 7.  unordered_set&lt;T&gt;  &#x2F;  unordered_map&lt;K,V&gt;</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-%E5%AE%B9%E5%99%A8%E9%80%82%E9%85%8D%E5%99%A8stack-queue-priority_queue"><span class="toc-number">2.8.</span> <span class="toc-text"> 8. 容器适配器（ stack ,  queue ,  priority_queue ）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%89%E6%8B%A9"><span class="toc-number">3.</span> <span class="toc-text"> 选择</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">4.</span> <span class="toc-text"> 总结</span></a></li></ol>
       </div>
       <div class="related panel pjax" data-title="Related">
         <ul>
-          <li><a href="/2025/08/02/note/20250802/" rel="bookmark" title="20250802阅读论文">20250802阅读论文</a></li><li class="active"><a href="/2025/10/15/note/20251015/" rel="bookmark" title="20251015力扣刷题笔记">20251015力扣刷题笔记</a></li><li><a href="/2025/11/20/note/20251130/" rel="bookmark" title="杂项">杂项</a></li><li><a href="/2025/11/20/note/20251201/" rel="bookmark" title="测试相关">测试相关</a></li><li><a href="/2025/11/23/note/20251123/" rel="bookmark" title="20251123面经回忆">20251123面经回忆</a></li><li><a href="/2025/12/11/note/20251211/" rel="bookmark" title="杂项">杂项</a></li>
+          <li><a href="/2025/08/02/note/20250802/" rel="bookmark" title="20250802阅读论文">20250802阅读论文</a></li><li class="active"><a href="/2025/10/15/note/20251015/" rel="bookmark" title="20251015力扣刷题笔记">20251015力扣刷题笔记</a></li><li><a href="/2025/11/20/note/20251201/" rel="bookmark" title="测试相关">测试相关</a></li><li><a href="/2025/11/20/note/20251130/" rel="bookmark" title="杂项">杂项</a></li><li><a href="/2025/11/23/note/20251123/" rel="bookmark" title="20251123面经回忆">20251123面经回忆</a></li><li><a href="/2025/12/11/note/20251211/" rel="bookmark" title="杂项">杂项</a></li>
         </ul>
       </div>
       <div class="overview panel" data-title="Overview">
@@ -938,42 +975,10 @@ NoResponse's Blog = NoResponse's Blog</title>
 <div class="breadcrumb">
 <a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/computer-organization/" title="In 计算机组成">计算机组成</a>
+<a href="/categories/computer-science/DS/" title="In 数据结构">数据结构</a>
 </div>
 
-    <span><a href="/2025/05/14/computer-science/computer-organization/ch2/" title="Ch2">Ch2</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/AI/" title="In 人工智能">人工智能</a>
-</div>
-
-    <span><a href="/2025/06/16/AI/week12-13/" title="Week12-13">Week12-13</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/AI/" title="In 人工智能">人工智能</a>
-</div>
-
-    <span><a href="/2025/06/15/AI/week8-9/" title="Week8-9">Week8-9</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/OS/" title="In 操作系统">操作系统</a>
-</div>
-
-    <span><a href="/2025/09/18/computer-science/OS/ch1/" title="ch1">ch1</a></span>
+    <span><a href="/2025/10/05/computer-science/DS/ch4/" title="ch4">ch4</a></span>
   </li>
 
       
@@ -985,7 +990,63 @@ NoResponse's Blog = NoResponse's Blog</title>
 <a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
 </div>
 
-    <span><a href="/2025/03/30/computer-science/compile-principles/ch5/" title="语义分析">语义分析</a></span>
+    <span><a href="/2025/06/16/computer-science/compile-principles/ch7/" title="IR">IR</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/DS/" title="In 数据结构">数据结构</a>
+</div>
+
+    <span><a href="/2025/10/10/computer-science/DS/ch5/" title="ch5">ch5</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
+</div>
+
+    <span><a href="/2025/06/15/computer-science/compile-principles/ch6/" title="活动记录">活动记录</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/DS/" title="In 数据结构">数据结构</a>
+</div>
+
+    <span><a href="/2025/10/11/computer-science/DS/ch6/" title="ch6">ch6</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/note/" title="In 七七八八">七七八八</a>
+</div>
+
+    <span><a href="/2025/12/11/note/20251211/" title="杂项">杂项</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/AI/" title="In 人工智能">人工智能</a>
+</div>
+
+    <span><a href="/2025/06/12/AI/week6-7/" title="Week6-7">Week6-7</a></span>
   </li>
 
       
@@ -1004,42 +1065,22 @@ NoResponse's Blog = NoResponse's Blog</title>
   <li class="item">
     
 <div class="breadcrumb">
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/DS/" title="In 数据结构">数据结构</a>
+</div>
+
+    <span><a href="/2025/10/13/computer-science/DS/ch8/" title="ch8">ch8</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
 <a href="/categories/AI/" title="In 人工智能">人工智能</a>
 </div>
 
-    <span><a href="/2025/06/11/AI/week4-5/" title="Week4-5">Week4-5</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/note/" title="In 七七八八">七七八八</a>
-</div>
-
-    <span><a href="/2025/08/02/note/20250802/" title="20250802阅读论文">20250802阅读论文</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/computer-organization/" title="In 计算机组成">计算机组成</a>
-</div>
-
-    <span><a href="/2025/07/01/computer-science/computer-organization/ch3/" title="Ch3">Ch3</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/note/" title="In 七七八八">七七八八</a>
-</div>
-
-    <span><a href="/2025/10/15/note/20251015/" title="20251015力扣刷题笔记">20251015力扣刷题笔记</a></span>
+    <span><a href="/2025/06/16/AI/week14-15/" title="Week14-15">Week14-15</a></span>
   </li>
 
   </ul>
@@ -1064,13 +1105,13 @@ NoResponse's Blog = NoResponse's Blog</title>
     <span class="post-meta-item-icon">
       <i class="ic i-chart-area"></i>
     </span>
-    <span title="Symbols count total">185k words</span>
+    <span title="Symbols count total">188k words</span>
 
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="ic i-coffee"></i>
     </span>
-    <span title="Reading time total">2:48</span>
+    <span title="Reading time total">2:51</span>
   </div>
   <div class="powered-by">
     Powered by <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
