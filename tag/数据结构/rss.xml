@@ -7,66 +7,60 @@
         <language>en</language>
         <pubDate>Mon, 15 Sep 2025 00:00:00 +0800</pubDate>
         <lastBuildDate>Mon, 15 Sep 2025 00:00:00 +0800</lastBuildDate>
-        <category>软件工程</category>
         <category>人工智能</category>
-        <category>容器</category>
-        <category>面经</category>
+        <category>软件工程</category>
         <category>自监督学习</category>
+        <category>容器</category>
         <category>杂项</category>
+        <category>面经</category>
         <category>ctest</category>
         <category>gtest</category>
         <category>test coverage</category>
         <category>C++</category>
-        <category>线性表</category>
         <category>Amortized Analysis</category>
         <category>数据结构</category>
         <category>栈、队列和数组</category>
+        <category>线性表</category>
         <category>串</category>
         <category>树与二叉树</category>
-        <category>排序</category>
         <category>查找</category>
         <category>图论</category>
+        <category>排序</category>
+        <category>计算机网络</category>
         <category>操作系统</category>
-        <category>计算机组成</category>
-        <category>数据的表示与运算</category>
         <category>fds</category>
+        <category>编译原理</category>
+        <category>Liveness Analysis</category>
+        <category>Register Allocation</category>
+        <category>语法分析</category>
+        <category>词法分析</category>
+        <category>抽象语法</category>
+        <category>活动记录</category>
+        <category>语义分析</category>
+        <category>中间代码</category>
+        <category>Basic Blocks and Traces</category>
+        <category>指令选择</category>
+        <category>数据的表示与运算</category>
+        <category>计算机组成</category>
+        <category>指令系统</category>
         <category>CPU</category>
         <category>存储系统</category>
-        <category>指令系统</category>
         <category>总线</category>
         <category>I/O</category>
         <category>错题</category>
-        <category>Liveness Analysis</category>
-        <category>Register Allocation</category>
-        <category>编译原理</category>
-        <category>词法分析</category>
-        <category>活动记录</category>
-        <category>抽象语法</category>
-        <category>语法分析</category>
-        <category>指令选择</category>
-        <category>语义分析</category>
-        <category>Basic Blocks and Traces</category>
-        <category>计算机网络</category>
-        <category>中间代码</category>
         <item>
             <guid isPermalink="true">http://example.com/2025/09/15/computer-science/DS/ch1/</guid>
             <title>ch1</title>
             <link>http://example.com/2025/09/15/computer-science/DS/ch1/</link>
             <category>数据结构</category>
             <pubDate>Mon, 15 Sep 2025 00:00:00 +0800</pubDate>
-            <description><![CDATA[ &lt;h1 id=&#34;ch1-绪论&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#ch1-绪论&#34;&gt;#&lt;/a&gt; Ch1 绪论&lt;/h1&gt;
-&lt;p&gt;数据&lt;br&gt;
-数据元素是数据的基本单位&lt;br&gt;
-数据对象&lt;br&gt;
-数据类型：原子类型、结构类型、抽象数据类型&lt;br&gt;
-数据结构：三要素包括逻辑结构、存储结构和数据的运算&lt;/p&gt;
+            <description><![CDATA[ &lt;h1 id=&#34;Ch1-绪论&#34;&gt;&lt;a href=&#34;#Ch1-绪论&#34; class=&#34;headerlink&#34; title=&#34;Ch1 绪论&#34;&gt;&lt;/a&gt;Ch1 绪论&lt;/h1&gt;&lt;p&gt;数据&lt;br&gt;数据元素是数据的基本单位&lt;br&gt;数据对象&lt;br&gt;数据类型：原子类型、结构类型、抽象数据类型&lt;br&gt;数据结构：三要素包括逻辑结构、存储结构和数据的运算&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;逻辑结构：集合、线性结构、树形结构、图状或网状&lt;/li&gt;
 &lt;li&gt;存储结构：顺序存储、链式存储、索引存储、散列存储&lt;/li&gt;
 &lt;li&gt;数据的运算：定义针对逻辑结构，实现针对存储结构&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;算法的特性：又穷行、确定性、可行性、输入、输出&lt;br&gt;
-好的算法还应该考虑：正确性、可读性、健壮性、高效率和低存储量需求&lt;/p&gt;
+&lt;p&gt;算法的特性：又穷行、确定性、可行性、输入、输出&lt;br&gt;好的算法还应该考虑：正确性、可读性、健壮性、高效率和低存储量需求&lt;/p&gt;
 &lt;p&gt;复杂度：时间复杂度、空间复杂度&lt;/p&gt;
  ]]></description>
         </item>

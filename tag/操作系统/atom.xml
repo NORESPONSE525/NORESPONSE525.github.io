@@ -4,47 +4,47 @@
     <title>NoResponse&#39;s Blog • Posts by &#34;操作系统&#34; tag</title>
     <link href="http://example.com" />
     <updated>2025-10-08T16:00:00.000Z</updated>
-    <category term="软件工程" />
     <category term="人工智能" />
-    <category term="容器" />
-    <category term="面经" />
+    <category term="软件工程" />
     <category term="自监督学习" />
+    <category term="容器" />
     <category term="杂项" />
+    <category term="面经" />
     <category term="ctest" />
     <category term="gtest" />
     <category term="test coverage" />
     <category term="C++" />
-    <category term="线性表" />
     <category term="Amortized Analysis" />
     <category term="数据结构" />
     <category term="栈、队列和数组" />
+    <category term="线性表" />
     <category term="串" />
     <category term="树与二叉树" />
-    <category term="排序" />
     <category term="查找" />
     <category term="图论" />
+    <category term="排序" />
+    <category term="计算机网络" />
     <category term="操作系统" />
-    <category term="计算机组成" />
-    <category term="数据的表示与运算" />
     <category term="fds" />
+    <category term="编译原理" />
+    <category term="Liveness Analysis" />
+    <category term="Register Allocation" />
+    <category term="语法分析" />
+    <category term="词法分析" />
+    <category term="抽象语法" />
+    <category term="活动记录" />
+    <category term="语义分析" />
+    <category term="中间代码" />
+    <category term="Basic Blocks and Traces" />
+    <category term="指令选择" />
+    <category term="数据的表示与运算" />
+    <category term="计算机组成" />
+    <category term="指令系统" />
     <category term="CPU" />
     <category term="存储系统" />
-    <category term="指令系统" />
     <category term="总线" />
     <category term="I/O" />
     <category term="错题" />
-    <category term="Liveness Analysis" />
-    <category term="Register Allocation" />
-    <category term="编译原理" />
-    <category term="词法分析" />
-    <category term="活动记录" />
-    <category term="抽象语法" />
-    <category term="语法分析" />
-    <category term="指令选择" />
-    <category term="语义分析" />
-    <category term="Basic Blocks and Traces" />
-    <category term="计算机网络" />
-    <category term="中间代码" />
     <entry>
         <id>http://example.com/2025/10/09/computer-science/OS/ch2/</id>
         <title>ch2</title>
@@ -57,38 +57,28 @@
         <id>http://example.com/2025/09/18/computer-science/OS/ch1/</id>
         <title>ch1</title>
         <link rel="alternate" href="http://example.com/2025/09/18/computer-science/OS/ch1/"/>
-        <content type="html">&lt;h1 id=&#34;ch1&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#ch1&#34;&gt;#&lt;/a&gt; Ch1&lt;/h1&gt;
-&lt;p&gt;计算机系统自下而上可以大致分为硬件、操作系统、应用程序、用户&lt;br&gt;
- OS 管理各种硬件，为应用程序提供基础，充当计算机硬件与用户之间的中介，是计算机系统中最基本的系统软件&lt;/p&gt;
-&lt;h2 id=&#34;基本概念&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#基本概念&#34;&gt;#&lt;/a&gt; 基本概念&lt;/h2&gt;
-&lt;h3 id=&#34;操作系统的功能&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#操作系统的功能&#34;&gt;#&lt;/a&gt; 操作系统的功能&lt;/h3&gt;
-&lt;ol&gt;
-&lt;li&gt;管理计算机系统资源&lt;br&gt;
-处理机管理（进程 / 线程管理）、存储器管理、设备管理、文件管理，向用户提供接口&lt;/li&gt;
+        <content type="html">&lt;h1 id=&#34;Ch1&#34;&gt;&lt;a href=&#34;#Ch1&#34; class=&#34;headerlink&#34; title=&#34;Ch1&#34;&gt;&lt;/a&gt;Ch1&lt;/h1&gt;&lt;p&gt;计算机系统自下而上可以大致分为硬件、操作系统、应用程序、用户&lt;br&gt;OS管理各种硬件，为应用程序提供基础，充当计算机硬件与用户之间的中介，是计算机系统中最基本的系统软件&lt;/p&gt;
+&lt;h2 id=&#34;基本概念&#34;&gt;&lt;a href=&#34;#基本概念&#34; class=&#34;headerlink&#34; title=&#34;基本概念&#34;&gt;&lt;/a&gt;基本概念&lt;/h2&gt;&lt;h3 id=&#34;操作系统的功能&#34;&gt;&lt;a href=&#34;#操作系统的功能&#34; class=&#34;headerlink&#34; title=&#34;操作系统的功能&#34;&gt;&lt;/a&gt;操作系统的功能&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;管理计算机系统资源&lt;br&gt;处理机管理（进程&amp;#x2F;线程管理）、存储器管理、设备管理、文件管理，向用户提供接口&lt;/li&gt;
 &lt;li&gt;作为用户与硬件系统之间的接口&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
-&lt;li&gt;命令接口（联机控制方式和脱机控制方式）
-&lt;ul&gt;
+&lt;li&gt;命令接口（联机控制方式和脱机控制方式）&lt;ul&gt;
 &lt;li&gt;联机命令接口也称为交互式命令接口，由一组键盘操作命令组成&lt;/li&gt;
 &lt;li&gt;脱机命令接口也称批处理命令接口，由一组作业控制命令组成&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;程序接口
-&lt;ul&gt;
+&lt;li&gt;程序接口&lt;ul&gt;
 &lt;li&gt;由一组系统调用组成&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;ol start=&#34;3&#34;&gt;
-&lt;li&gt;实现了对计算机资源的补充&lt;br&gt;
-虚拟机&lt;/li&gt;
+&lt;li&gt;实现了对计算机资源的补充&lt;br&gt;虚拟机&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h3 id=&#34;操作系统的特征&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#操作系统的特征&#34;&gt;#&lt;/a&gt; 操作系统的特征&lt;/h3&gt;
-&lt;p&gt;最基本的两个：并发与共享&lt;/p&gt;
+&lt;h3 id=&#34;操作系统的特征&#34;&gt;&lt;a href=&#34;#操作系统的特征&#34; class=&#34;headerlink&#34; title=&#34;操作系统的特征&#34;&gt;&lt;/a&gt;操作系统的特征&lt;/h3&gt;&lt;p&gt;最基本的两个：并发与共享&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;并发&lt;br&gt;
-多道程序交替运行（和并行不一样）&lt;/li&gt;
+&lt;li&gt;并发&lt;br&gt;多道程序交替运行（和并行不一样）&lt;/li&gt;
 &lt;li&gt;共享&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
@@ -99,65 +89,42 @@
 &lt;li&gt;虚拟&lt;/li&gt;
 &lt;li&gt;异步&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h2 id=&#34;发展历程&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#发展历程&#34;&gt;#&lt;/a&gt; 发展历程&lt;/h2&gt;
-&lt;h3 id=&#34;手工操作阶段无操作系统&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#手工操作阶段无操作系统&#34;&gt;#&lt;/a&gt; 手工操作阶段（无操作系统）&lt;/h3&gt;
-&lt;h3 id=&#34;批处理阶段&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#批处理阶段&#34;&gt;#&lt;/a&gt; 批处理阶段&lt;/h3&gt;
-&lt;ol&gt;
-&lt;li&gt;单道批处理&lt;br&gt;
-单道程序&lt;/li&gt;
+&lt;h2 id=&#34;发展历程&#34;&gt;&lt;a href=&#34;#发展历程&#34; class=&#34;headerlink&#34; title=&#34;发展历程&#34;&gt;&lt;/a&gt;发展历程&lt;/h2&gt;&lt;h3 id=&#34;手工操作阶段（无操作系统）&#34;&gt;&lt;a href=&#34;#手工操作阶段（无操作系统）&#34; class=&#34;headerlink&#34; title=&#34;手工操作阶段（无操作系统）&#34;&gt;&lt;/a&gt;手工操作阶段（无操作系统）&lt;/h3&gt;&lt;h3 id=&#34;批处理阶段&#34;&gt;&lt;a href=&#34;#批处理阶段&#34; class=&#34;headerlink&#34; title=&#34;批处理阶段&#34;&gt;&lt;/a&gt;批处理阶段&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;单道批处理&lt;br&gt;单道程序&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;mark&gt;自动性&lt;/mark&gt;：一批作业自动地逐个运行&lt;/li&gt;
-&lt;li&gt;&lt;mark&gt;顺序性&lt;/mark&gt;：顺序进入内存、顺序运行&lt;/li&gt;
-&lt;li&gt;&lt;mark&gt;单道性&lt;/mark&gt;：内存中仅有一道程序运行，一道程序运行完才换入下一道&lt;/li&gt;
+&lt;li&gt;&amp;#x3D;&amp;#x3D;自动性&amp;#x3D;&amp;#x3D;：一批作业自动地逐个运行&lt;/li&gt;
+&lt;li&gt;&amp;#x3D;&amp;#x3D;顺序性&amp;#x3D;&amp;#x3D;：顺序进入内存、顺序运行&lt;/li&gt;
+&lt;li&gt;&amp;#x3D;&amp;#x3D;单道性&amp;#x3D;&amp;#x3D;：内存中仅有一道程序运行，一道程序运行完才换入下一道&lt;/li&gt;
 &lt;/ul&gt;
 &lt;ol start=&#34;2&#34;&gt;
-&lt;li&gt;多道批处理&lt;br&gt;
-多道，宏观上并行，微观上串行&lt;/li&gt;
+&lt;li&gt;多道批处理&lt;br&gt;多道，宏观上并行，微观上串行&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
 &lt;li&gt;多道：内存中同时存放多道相互独立的程序&lt;/li&gt;
 &lt;li&gt;宏观上并行&lt;/li&gt;
-&lt;li&gt;微观上串行：轮流占有 CPU，交替执行&lt;br&gt;
-缺点：用户响应时间长，不提供人机交互能力，用户既不能了解自己的程序的运行情况，又不能控制计算机&lt;/li&gt;
+&lt;li&gt;微观上串行：轮流占有CPU，交替执行&lt;br&gt;缺点：用户响应时间长，不提供人机交互能力，用户既不能了解自己的程序的运行情况，又不能控制计算机&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;分时操作系统&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#分时操作系统&#34;&gt;#&lt;/a&gt; 分时操作系统&lt;/h3&gt;
-&lt;p&gt;分时技术指将运行时间分成时间片，轮流分配处理器&lt;br&gt;
-分时操作系统指多个用户通过终端同时共享一台主机，将 CPU 时间划分为很短的时间片，并以轮转的方式将这些时间片分配给各个用户或任务，从而实现多用户共享计算机资源&lt;br&gt;
-特征：&lt;/p&gt;
+&lt;h3 id=&#34;分时操作系统&#34;&gt;&lt;a href=&#34;#分时操作系统&#34; class=&#34;headerlink&#34; title=&#34;分时操作系统&#34;&gt;&lt;/a&gt;分时操作系统&lt;/h3&gt;&lt;p&gt;分时技术指将运行时间分成时间片，轮流分配处理器&lt;br&gt;分时操作系统指多个用户通过终端同时共享一台主机，将CPU时间划分为很短的时间片，并以轮转的方式将这些时间片分配给各个用户或任务，从而实现多用户共享计算机资源&lt;br&gt;特征：&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;mark&gt;同时性&lt;/mark&gt;：也称多路性，多个用户可以同时使用&lt;/li&gt;
-&lt;li&gt;&lt;mark&gt;交互性&lt;/mark&gt;：用户可以与计算机进行交互（区别于批处理系统）&lt;/li&gt;
-&lt;li&gt;&lt;mark&gt;独立性&lt;/mark&gt;：用户可以独立运行，互不干扰&lt;/li&gt;
-&lt;li&gt;&lt;mark&gt;及时性&lt;/mark&gt;：用户请求可以在很短时间内获得响应&lt;br&gt;
-缺点：&lt;/li&gt;
+&lt;li&gt;&amp;#x3D;&amp;#x3D;同时性&amp;#x3D;&amp;#x3D;：也称多路性，多个用户可以同时使用&lt;/li&gt;
+&lt;li&gt;&amp;#x3D;&amp;#x3D;交互性&amp;#x3D;&amp;#x3D;：用户可以与计算机进行交互（区别于批处理系统）&lt;/li&gt;
+&lt;li&gt;&amp;#x3D;&amp;#x3D;独立性&amp;#x3D;&amp;#x3D;：用户可以独立运行，互不干扰&lt;/li&gt;
+&lt;li&gt;&amp;#x3D;&amp;#x3D;及时性&amp;#x3D;&amp;#x3D;：用户请求可以在很短时间内获得响应&lt;br&gt;缺点：&lt;/li&gt;
 &lt;li&gt;上下文切换带来系统开销。&lt;/li&gt;
 &lt;li&gt;若用户过多，响应时间可能变长。&lt;/li&gt;
 &lt;li&gt;系统复杂度高，需要良好的内存管理和调度算法&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;实时操作系统&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#实时操作系统&#34;&gt;#&lt;/a&gt; 实时操作系统&lt;/h3&gt;
-&lt;p&gt;分为硬实时系统（必须在绝对截止时间前完成，否则会导致灾难性后果）和软实时系统（希望在时限内完成，偶尔超时可容忍，影响用户体验但不致命）&lt;br&gt;
-主要特点： &lt;mark&gt;及时性和可靠性&lt;/mark&gt;&lt;/p&gt;
-&lt;h3 id=&#34;网络操作系统和分布式计算机系统&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#网络操作系统和分布式计算机系统&#34;&gt;#&lt;/a&gt; 网络操作系统和分布式计算机系统&lt;/h3&gt;
-&lt;p&gt;网络操作系统是指在独立计算机上运行的操作系统，它通过网络连接其他计算机，实现资源共享（如文件、打印机等），但每台计算机仍保持独立控制（常见的客户端 / 服务器模式）&lt;br&gt;
-分布式系统是由多台独立计算机通过网络互联，协同工作，对外表现为一个单一、统一的系统。用户感觉不到多台机器的存在。系统中任意两台计算机通过通信方式交换信息；每台计算机都具有同等的地位，没有主机从机；每台计算机上的资源为所有用户共享；系统中的任意台计算机可以构成一个子系统，还能重构；人和网工作都可以分布在机台计算机上。主要特点：&lt;mark&gt;分布性和并行性&lt;/mark&gt;&lt;/p&gt;
-&lt;h3 id=&#34;个人计算机操作系统&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#个人计算机操作系统&#34;&gt;#&lt;/a&gt; 个人计算机操作系统&lt;/h3&gt;
-&lt;h2 id=&#34;操作系统的运行环境&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#操作系统的运行环境&#34;&gt;#&lt;/a&gt; 操作系统的运行环境&lt;/h2&gt;
-&lt;h3 id=&#34;处理器运行模式&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#处理器运行模式&#34;&gt;#&lt;/a&gt; 处理器运行模式&lt;/h3&gt;
-&lt;p&gt;在计算机系统中，CPU 执行两种程序：内核程序和用户自编程序&lt;/p&gt;
-&lt;p&gt;特权指令：不允许用户直接使用的指令，不如 I/O 指令、关中断指令、内存清零指令、修改 PSW 等&lt;br&gt;
-非特权指令：允许用户直接使用的指令&lt;/p&gt;
-&lt;p&gt;在具体实现上，将 CPU 的运行模式划分为用户态和内核态&lt;br&gt;
-大多数操作系统的内核包括：&lt;/p&gt;
+&lt;h3 id=&#34;实时操作系统&#34;&gt;&lt;a href=&#34;#实时操作系统&#34; class=&#34;headerlink&#34; title=&#34;实时操作系统&#34;&gt;&lt;/a&gt;实时操作系统&lt;/h3&gt;&lt;p&gt;分为硬实时系统（必须在绝对截止时间前完成，否则会导致灾难性后果）和软实时系统（希望在时限内完成，偶尔超时可容忍，影响用户体验但不致命）&lt;br&gt;主要特点： &amp;#x3D;&amp;#x3D;及时性和可靠性&amp;#x3D;&amp;#x3D;&lt;/p&gt;
+&lt;h3 id=&#34;网络操作系统和分布式计算机系统&#34;&gt;&lt;a href=&#34;#网络操作系统和分布式计算机系统&#34; class=&#34;headerlink&#34; title=&#34;网络操作系统和分布式计算机系统&#34;&gt;&lt;/a&gt;网络操作系统和分布式计算机系统&lt;/h3&gt;&lt;p&gt;网络操作系统是指在独立计算机上运行的操作系统，它通过网络连接其他计算机，实现资源共享（如文件、打印机等），但每台计算机仍保持独立控制（常见的客户端&amp;#x2F;服务器模式）&lt;br&gt;分布式系统是由多台独立计算机通过网络互联，协同工作，对外表现为一个单一、统一的系统。用户感觉不到多台机器的存在。系统中任意两台计算机通过通信方式交换信息；每台计算机都具有同等的地位，没有主机从机；每台计算机上的资源为所有用户共享；系统中的任意台计算机可以构成一个子系统，还能重构；人和网工作都可以分布在机台计算机上。主要特点：&amp;#x3D;&amp;#x3D;分布性和并行性&amp;#x3D;&amp;#x3D;&lt;/p&gt;
+&lt;h3 id=&#34;个人计算机操作系统&#34;&gt;&lt;a href=&#34;#个人计算机操作系统&#34; class=&#34;headerlink&#34; title=&#34;个人计算机操作系统&#34;&gt;&lt;/a&gt;个人计算机操作系统&lt;/h3&gt;&lt;h2 id=&#34;操作系统的运行环境&#34;&gt;&lt;a href=&#34;#操作系统的运行环境&#34; class=&#34;headerlink&#34; title=&#34;操作系统的运行环境&#34;&gt;&lt;/a&gt;操作系统的运行环境&lt;/h2&gt;&lt;h3 id=&#34;处理器运行模式&#34;&gt;&lt;a href=&#34;#处理器运行模式&#34; class=&#34;headerlink&#34; title=&#34;处理器运行模式&#34;&gt;&lt;/a&gt;处理器运行模式&lt;/h3&gt;&lt;p&gt;在计算机系统中，CPU执行两种程序：内核程序和用户自编程序&lt;/p&gt;
+&lt;p&gt;特权指令：不允许用户直接使用的指令，不如I&amp;#x2F;O指令、关中断指令、内存清零指令、修改PSW等&lt;br&gt;非特权指令：允许用户直接使用的指令&lt;/p&gt;
+&lt;p&gt;在具体实现上，将CPU的运行模式划分为用户态和内核态&lt;br&gt;大多数操作系统的内核包括：&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;时钟管理&lt;/li&gt;
 &lt;li&gt;中断机制&lt;/li&gt;
-&lt;li&gt;原语&lt;br&gt;
-操作系统内核中执行的一个不可分割的、原子性的基本操作。它是一段用机器指令编写的程序，在执行过程中不能被中断，必须一次性执行完毕，具有原子性、不可中断性、运行在内核态&lt;br&gt;
-定义原语的直接方法是关中断&lt;br&gt;
-常见的有 P 操作（wait 操作）和 V 操作（signal 操作）、创建进程原语、撤销进程原语、消息发送原语、消息接收原语、资源申请和释放原语&lt;/li&gt;
-&lt;li&gt;系统控制的数据结构及处理&lt;br&gt;
-比如&lt;/li&gt;
+&lt;li&gt;原语&lt;br&gt;操作系统内核中执行的一个不可分割的、原子性的基本操作。它是一段用机器指令编写的程序，在执行过程中不能被中断，必须一次性执行完毕，具有原子性、不可中断性、运行在内核态&lt;br&gt;定义原语的直接方法是关中断&lt;br&gt;常见的有P操作（wait操作）和V操作（signal操作）、创建进程原语、撤销进程原语、消息发送原语、消息接收原语、资源申请和释放原语&lt;/li&gt;
+&lt;li&gt;系统控制的数据结构及处理&lt;br&gt;比如&lt;/li&gt;
 &lt;/ol&gt;
 </content>
         <category term="操作系统" />

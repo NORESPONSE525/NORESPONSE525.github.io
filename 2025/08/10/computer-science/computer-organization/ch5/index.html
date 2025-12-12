@@ -76,7 +76,7 @@ NoResponse's Blog = NoResponse's Blog</title>
       <i class="ic i-pen"></i>
     </span>
     <span class="text">Symbols count in article</span>
-    <span>4.5k</span>
+    <span>4.6k</span>
     <span class="text">words</span>
   </span>
   <span class="item" title="Reading time">
@@ -116,7 +116,7 @@ NoResponse's Blog = NoResponse's Blog</title>
 
       </div>
       <div id="imgs" class="pjax">
-          <img src="/images/bg32.jpg">
+          <img src="/images/bg14.jpg">
       </div>
     </header>
     <div id="waves">
@@ -164,10 +164,7 @@ NoResponse's Blog = NoResponse's Blog</title>
   <div class="body md" itemprop="articleBody">
     
 
-    <h1 id="ch5-中央处理器"><a class="markdownIt-Anchor" href="#ch5-中央处理器">#</a> Ch5 中央处理器</h1>
-<h2 id="cpu的功能和基本结构"><a class="markdownIt-Anchor" href="#cpu的功能和基本结构">#</a> CPU 的功能和基本结构</h2>
-<h3 id="功能"><a class="markdownIt-Anchor" href="#功能">#</a> 功能</h3>
-<p>CPU 由运算器和控制器组成，具体功能包括：</p>
+    <h1 id="Ch5-中央处理器"><a href="#Ch5-中央处理器" class="headerlink" title="Ch5 中央处理器"></a>Ch5 中央处理器</h1><h2 id="CPU的功能和基本结构"><a href="#CPU的功能和基本结构" class="headerlink" title="CPU的功能和基本结构"></a>CPU的功能和基本结构</h2><h3 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h3><p>CPU由运算器和控制器组成，具体功能包括：</p>
 <ul>
 <li>指令控制</li>
 <li>操作控制</li>
@@ -175,309 +172,181 @@ NoResponse's Blog = NoResponse's Blog</title>
 <li>数据加工</li>
 <li>中断处理</li>
 </ul>
-<h3 id="基本结构"><a class="markdownIt-Anchor" href="#基本结构">#</a> 基本结构</h3>
-<ol>
-<li>运算器：ALU, 暂存器，ACC, GPRs, PSW, 移位寄存器， 计数器…</li>
+<h3 id="基本结构"><a href="#基本结构" class="headerlink" title="基本结构"></a>基本结构</h3><ol>
+<li>运算器：ALU, 暂存器, ACC, GPRs, PSW, 移位寄存器， 计数器…</li>
 <li>控制器：PC, IR, ID, 时序电路，未操作信号发生器…</li>
 </ol>
-<h3 id="cpu的寄存器"><a class="markdownIt-Anchor" href="#cpu的寄存器">#</a> CPU 的寄存器</h3>
-<p>按汇编程序是否可访问分为用户可见寄存器 (GPRs, PSW, PC) 和用户不可见寄存器 (存储器地址寄存器，存储器数据寄存器，IR, 暂存寄存器，累加寄存器，移位寄存器)<br>
- 各寄存器的作用：</p>
+<h3 id="CPU的寄存器"><a href="#CPU的寄存器" class="headerlink" title="CPU的寄存器"></a>CPU的寄存器</h3><p>按汇编程序是否可访问分为用户可见寄存器(GPRs, PSW, PC)和用户不可见寄存器(存储器地址寄存器，存储器数据寄存器，IR, 暂存寄存器，累加寄存器，移位寄存器)<br>各寄存器的作用：</p>
 <ul>
-<li>在运算器中：
-<ul>
+<li>在运算器中：<ul>
 <li>GPRs</li>
-<li>ACC: 通用寄存器，用于暂时存放 ALU 运算的结果</li>
+<li>ACC: 通用寄存器，用于暂时存放ALU运算的结果</li>
 <li>SR（移位寄存器）：存放操作数且可以移位</li>
 <li>暂存寄存器：暂存从数据总线或通用寄存器送来的操作数，对应用程序员透明</li>
 <li>PSW：保留各种状态信息</li>
 </ul>
 </li>
-<li>在控制器中：
-<ul>
+<li>在控制器中：<ul>
 <li>PC: 存放当前指令的地址</li>
 <li>IR: 存放当前指令</li>
 </ul>
 </li>
 </ul>
-<h2 id="指令执行过程"><a class="markdownIt-Anchor" href="#指令执行过程">#</a> 指令执行过程</h2>
-<h3 id="指令周期"><a class="markdownIt-Anchor" href="#指令周期">#</a> 指令周期</h3>
-<p>= 取值周期 + 执行周期<br>
-间址周期在取址和执行之间<br>
-如果 CPU 在每条指令结束前都要发中断查询信号 （轮询法），后面要加上中断周期</p>
-<h3 id="指令周期的数据流"><a class="markdownIt-Anchor" href="#指令周期的数据流">#</a> 指令周期的数据流</h3>
-<ol>
+<h2 id="指令执行过程"><a href="#指令执行过程" class="headerlink" title="指令执行过程"></a>指令执行过程</h2><h3 id="指令周期"><a href="#指令周期" class="headerlink" title="指令周期"></a>指令周期</h3><p>&#x3D; 取值周期 + 执行周期<br>间址周期在取址和执行之间<br>如果CPU在每条指令结束前都要发中断查询信号 （轮询法），后面要加上中断周期</p>
+<h3 id="指令周期的数据流"><a href="#指令周期的数据流" class="headerlink" title="指令周期的数据流"></a>指令周期的数据流</h3><ol>
 <li>取址周期</li>
 </ol>
 <ul>
-<li>PC-&gt;MAR-&gt; 地址总线 -&gt; 存储器</li>
-<li>CU 发出读命令 -&gt; 控制总线 -&gt; 主存</li>
-<li>主存 -&gt; 数据总线 -&gt;IR</li>
-<li>CU 发出控制信号 -&gt;PC=PC+1</li>
+<li>PC-&gt;MAR-&gt;地址总线-&gt;存储器</li>
+<li>CU发出读命令-&gt;控制总线-&gt;主存</li>
+<li>主存-&gt;数据总线-&gt;IR</li>
+<li>CU发出控制信号-&gt;PC&#x3D;PC+1</li>
 </ul>
 <ol start="2">
-<li>间址周期<br>
-取指结束后，控制单元 CU 会检查 IR 中是否有间接地址（操作数有效地址的地址）。若有，CPU 执行如下操作：</li>
+<li>间址周期<br>取指结束后，控制单元CU会检查IR中是否有间接地址（操作数有效地址的地址）。若有，CPU执行如下操作：</li>
 </ol>
 <ul>
-<li>IR (或 MDR) 的间址 -&gt;MAR-&gt; 地址总线 -&gt; 主存</li>
-<li>CU 发出读命令 -&gt; 控制总线 -&gt; 主存</li>
-<li>主存 -&gt; 数据总线 -&gt;MDR（取出有效地址存入 MDR）</li>
+<li>IR(或MDR)的间址-&gt;MAR-&gt;地址总线-&gt;主存</li>
+<li>CU发出读命令-&gt;控制总线-&gt;主存</li>
+<li>主存-&gt;数据总线-&gt;MDR（取出有效地址存入MDR）</li>
 </ul>
 <ol start="3">
-<li>
-<p>执行周期</p>
+<li><p>执行周期</p>
 </li>
-<li>
-<p>中断周期<br>
-假设程序断点存入堆栈中，push 操作先修改 SP 再存入（x86 采用满递减栈）</p>
+<li><p>中断周期<br>假设程序断点存入堆栈中，push操作先修改SP再存入（x86采用满递减栈）</p>
 </li>
 </ol>
 <ul>
-<li>CU 控制将 SP 减 1，SP-&gt;MAR-&gt; 地址总线 -&gt;zhucun1</li>
-<li>CU 发出写命令 -&gt; 控制总线 -&gt; 主存</li>
-<li>PC-&gt;MDR-&gt; 数据总线 -&gt; 主存（把中断时的 PC 存入栈中）</li>
-<li>CU 将中断服务程序入口地址存入 PC</li>
+<li>CU控制将SP减1，SP-&gt;MAR-&gt;地址总线-&gt;zhucun1</li>
+<li>CU发出写命令-&gt;控制总线-&gt;主存</li>
+<li>PC-&gt;MDR-&gt;数据总线-&gt;主存（把中断时的PC存入栈中）</li>
+<li>CU将中断服务程序入口地址存入PC</li>
 </ul>
-<h3 id="指令执行方案"><a class="markdownIt-Anchor" href="#指令执行方案">#</a> 指令执行方案</h3>
-<ol>
-<li>单周期处理器<br>
- CPI = 1，指令执行周期取决于执行时间最长的指令的执行时间</li>
-<li>多周期处理器<br>
- CPI &gt; 1,</li>
-<li>流水线处理器<br>
-理想状态下 CPI = 1，流水线并行</li>
+<h3 id="指令执行方案"><a href="#指令执行方案" class="headerlink" title="指令执行方案"></a>指令执行方案</h3><ol>
+<li>单周期处理器<br>CPI &#x3D; 1，指令执行周期取决于执行时间最长的指令的执行时间</li>
+<li>多周期处理器<br>CPI &gt; 1,</li>
+<li>流水线处理器<br>理想状态下CPI &#x3D; 1，流水线并行</li>
 </ol>
-<h2 id="数据通路"><a class="markdownIt-Anchor" href="#数据通路">#</a> 数据通路</h2>
-<h3 id="功能-2"><a class="markdownIt-Anchor" href="#功能-2">#</a> 功能</h3>
-<p>。</p>
-<h3 id="组成"><a class="markdownIt-Anchor" href="#组成">#</a> 组成</h3>
-<ol>
-<li>组合逻辑<br>
-译码器，MUX，三态门…</li>
-<li>时序逻辑<br>
-包含存储信号的记忆单元</li>
+<h2 id="数据通路"><a href="#数据通路" class="headerlink" title="数据通路"></a>数据通路</h2><h3 id="功能-1"><a href="#功能-1" class="headerlink" title="功能"></a>功能</h3><p>。</p>
+<h3 id="组成"><a href="#组成" class="headerlink" title="组成"></a>组成</h3><ol>
+<li>组合逻辑<br>译码器，MUX，三态门…</li>
+<li>时序逻辑<br>包含存储信号的记忆单元</li>
 </ol>
-<h3 id="基本结构-2"><a class="markdownIt-Anchor" href="#基本结构-2">#</a> 基本结构</h3>
-<p>2 种：</p>
+<h3 id="基本结构-1"><a href="#基本结构-1" class="headerlink" title="基本结构"></a>基本结构</h3><p>2种：</p>
 <ul>
-<li>CPU 内部总线（单总线、多总线）</li>
+<li>CPU内部总线（单总线、多总线）</li>
 <li>专用数据通路</li>
 </ul>
 <ol>
-<li>CPU 内部单总线方式<br>
- ALU 和寄存器连接到一条总线上，性能低<br>
-单总线的 ALU 要配合暂存器使用，比如从内存取出来的数据要放在暂存器中，再从暂存器中取数据给 ALU<br>
-<img data-src="f1.jpg" alt><br>
- 了解每条指令的 datapath</li>
-<li>CPU 内部多总线方式<br>
-允许同时在多个总线上传送不同的数据，提高效率</li>
-<li>专用数据通路方式<br>
-看图说话，没什么好说的</li>
+<li>CPU内部单总线方式<br>ALU和寄存器连接到一条总线上，性能低<br>单总线的ALU要配合暂存器使用，比如从内存取出来的数据要放在暂存器中，再从暂存器中取数据给ALU<br><img data-src="/f1.jpg"><br>了解每条指令的datapath</li>
+<li>CPU内部多总线方式<br>允许同时在多个总线上传送不同的数据，提高效率</li>
+<li>专用数据通路方式<br>看图说话，没什么好说的</li>
 </ol>
-<h3 id="数据通路的操作举例"><a class="markdownIt-Anchor" href="#数据通路的操作举例">#</a> 数据通路的操作举例</h3>
-<p>会画图就会</p>
-<h2 id="控制器的功能和工作原理"><a class="markdownIt-Anchor" href="#控制器的功能和工作原理">#</a> 控制器的功能和工作原理</h2>
-<h3 id="结构和功能"><a class="markdownIt-Anchor" href="#结构和功能">#</a> 结构和功能</h3>
-<ol>
+<h3 id="数据通路的操作举例"><a href="#数据通路的操作举例" class="headerlink" title="数据通路的操作举例"></a>数据通路的操作举例</h3><p>会画图就会</p>
+<h2 id="控制器的功能和工作原理"><a href="#控制器的功能和工作原理" class="headerlink" title="控制器的功能和工作原理"></a>控制器的功能和工作原理</h2><h3 id="结构和功能"><a href="#结构和功能" class="headerlink" title="结构和功能"></a>结构和功能</h3><ol>
 <li>取指令，指出下一条指令的位置</li>
 <li>译码或测试，产生控制信号</li>
-<li>控制 CPU，主存，I/O 的数据流动方向<br>
-分为硬布线控制器和微程序控制器</li>
+<li>控制CPU，主存，I&#x2F;O的数据流动方向<br>分为硬布线控制器和微程序控制器</li>
 </ol>
-<h3 id="硬布线控制器"><a class="markdownIt-Anchor" href="#硬布线控制器">#</a> 硬布线控制器</h3>
-<p>组合逻辑控制器<br>
- CU 的输入信号来自 (1) 指令译码器 (2) 时钟脉冲 (3) 执行单元的反馈信息<br>
-比如这种：<br>
-<img data-src="f2.jpg" alt></p>
-<h3 id="微程序控制器"><a class="markdownIt-Anchor" href="#微程序控制器">#</a> 微程序控制器</h3>
-<p>采用存储逻辑实现，将未操作信号代码化，使没调机器指令转化成一段微程序并存入专门的控制存储器中<br>
-晚点回来学</p>
-<h2 id="异常和中断机制"><a class="markdownIt-Anchor" href="#异常和中断机制">#</a> 异常和中断机制</h2>
-<h3 id="概念"><a class="markdownIt-Anchor" href="#概念">#</a> 概念</h3>
-<p>内部产生的意外事件叫异常，是同步的；外部产生的事件叫中断，是异步的</p>
-<h3 id="分类"><a class="markdownIt-Anchor" href="#分类">#</a> 分类</h3>
+<h3 id="硬布线控制器"><a href="#硬布线控制器" class="headerlink" title="硬布线控制器"></a>硬布线控制器</h3><p>组合逻辑控制器<br>CU的输入信号来自(1)指令译码器(2)时钟脉冲(3)执行单元的反馈信息<br>比如这种：<br><img data-src="/f2.jpg"></p>
+<h3 id="微程序控制器"><a href="#微程序控制器" class="headerlink" title="微程序控制器"></a>微程序控制器</h3><p>采用存储逻辑实现，将未操作信号代码化，使没调机器指令转化成一段微程序并存入专门的控制存储器中<br>晚点回来学</p>
+<h2 id="异常和中断机制"><a href="#异常和中断机制" class="headerlink" title="异常和中断机制"></a>异常和中断机制</h2><h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><p>内部产生的意外事件叫异常，是同步的；外部产生的事件叫中断，是异步的</p>
+<h3 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h3><ul>
+<li><p>异常：CPU内部执行指令引起的异常事件，比如整除0，溢出，单步跟踪，非法指令，栈溢出，地址越界，缺页等</p>
 <ul>
-<li>
-<p>异常：CPU 内部执行指令引起的异常事件，比如整除 0，溢出，单步跟踪，非法指令，栈溢出，地址越界，缺页等</p>
-<ul>
-<li>
-<ol>
-<li>Fault 故障<br>
-引起故障的指令启动后、执行结束前检测到的异常事件（所以处理完之后要重新执行该指令或者无法恢复的终止进程）</li>
+<li><ol>
+<li>Fault故障<br>引起故障的指令启动后、执行结束前检测到的异常事件（所以处理完之后要重新执行该指令或者无法恢复的终止进程）</li>
 </ol>
 </li>
-<li>
-<ol start="2">
-<li>Trap 自陷<br>
-人为设定的特殊中断机制，最常见的是 sys call，还有断点、单步，还有一些条件自陷指令（MIPS 的 teq, teqi, tne, tnei）等<br>
-<mark>以上两种都属于软件中断</mark></li>
+<li><ol start="2">
+<li>Trap自陷<br>人为设定的特殊中断机制，最常见的是sys call，还有断点、单步，还有一些条件自陷指令（MIPS的teq, teqi, tne, tnei）等<br>&#x3D;&#x3D;以上两种都属于软件中断&#x3D;&#x3D;</li>
 </ol>
 </li>
-<li>
-<ol start="3">
-<li>Abort 终止<br>
-执行过程中发生了硬件故障，比如控制器出错、存储器校验错、总线错误等<br>
-<mark> Abort 和外中断属于硬件中断</mark></li>
+<li><ol start="3">
+<li>Abort终止<br>执行过程中发生了硬件故障，比如控制器出错、存储器校验错、总线错误等<br>&#x3D;&#x3D;Abort和外中断属于硬件中断&#x3D;&#x3D;</li>
 </ol>
 </li>
 </ul>
 </li>
-<li>
-<p>中断：CPU 外部比如 I/O 引起的中断，分为可屏蔽中断和不可屏蔽中断</p>
+<li><p>中断：CPU外部比如I&#x2F;O引起的中断，分为可屏蔽中断和不可屏蔽中断</p>
 <ul>
-<li>可屏蔽中断：可屏蔽中断请求线 INTR 向 CPU 发出中断请求，CPU 可以设置相应的 bit 屏蔽</li>
-<li>不可屏蔽中断：通过专门的不可屏蔽中断请求线 NMI 向 CPU 发出的中断请求，通常是非常紧急的硬件故障<br>
-<mark>所有的异常和终端都是由硬件检测发现的</mark><br>
-根据识别中断服务程序地址的方式，可以分为向量中断和非向量中断；<br>
-根据中断处理过程是否允许被打断分为单重中断和多重中断</li>
+<li>可屏蔽中断：可屏蔽中断请求线INTR向CPU发出中断请求，CPU可以设置相应的bit屏蔽</li>
+<li>不可屏蔽中断：通过专门的不可屏蔽中断请求线NMI向CPU发出的中断请求，通常是非常紧急的硬件故障<br>&#x3D;&#x3D;所有的异常和终端都是由硬件检测发现的&#x3D;&#x3D;<br>根据识别中断服务程序地址的方式，可以分为向量中断和非向量中断；<br>根据中断处理过程是否允许被打断分为单重中断和多重中断</li>
 </ul>
 </li>
 </ul>
-<h3 id="异常和中断的响应过程"><a class="markdownIt-Anchor" href="#异常和中断的响应过程">#</a> 异常和中断的响应过程</h3>
-<ol>
-<li>关中断<br>
-保存断点和程序状态期间，把 IF 置 0 不允许响应中断</li>
-<li>保存断点和程序状态<br>
-将返回地址和被中断时的 PSW 送到栈或特定寄存器中（通常是栈，才能支持嵌套中断），处理完之后恢复</li>
-<li>识别异常和中断并转到相应的处理程序<br>
-异常大多采用软件识别，中断可以采用软件识别或硬件识别<br>
-软件识别：CPU 设置异常状态寄存器，操作系统使用查询程序按优先级顺序查询异常状态寄存器以检测类型并处理<br>
-硬件识别：向量中断。每个异常或中断被指定一个中断类型号，发生之后查询中断向量表，找到处理程序的入口地址（中断向量），并跳转到处理程序</li>
+<h3 id="异常和中断的响应过程"><a href="#异常和中断的响应过程" class="headerlink" title="异常和中断的响应过程"></a>异常和中断的响应过程</h3><ol>
+<li>关中断<br>保存断点和程序状态期间，把IF置0不允许响应中断</li>
+<li>保存断点和程序状态<br>将返回地址和被中断时的PSW送到栈或特定寄存器中（通常是栈，才能支持嵌套中断），处理完之后恢复</li>
+<li>识别异常和中断并转到相应的处理程序<br>异常大多采用软件识别，中断可以采用软件识别或硬件识别<br>软件识别：CPU设置异常状态寄存器，操作系统使用查询程序按优先级顺序查询异常状态寄存器以检测类型并处理<br>硬件识别：向量中断。每个异常或中断被指定一个中断类型号，发生之后查询中断向量表，找到处理程序的入口地址（中断向量），并跳转到处理程序</li>
 </ol>
-<h2 id="指令流水线"><a class="markdownIt-Anchor" href="#指令流水线">#</a> 指令流水线</h2>
-<ul>
+<h2 id="指令流水线"><a href="#指令流水线" class="headerlink" title="指令流水线"></a>指令流水线</h2><ul>
 <li>Performance via parallelism</li>
 <li>Performance via pipelining</li>
-<li>Performance via prediction<br>
- 时间并行：流水线<br>
-空间并行：超标量</li>
+<li>Performance via prediction<br>时间并行：流水线<br>空间并行：超标量</li>
 </ul>
-<h3 id="基本实现"><a class="markdownIt-Anchor" href="#基本实现">#</a> 基本实现</h3>
-<p>单周期 CPU 以执行最慢的指令周期作为时钟周期。不能缩短单挑指令的执行时间，但可以提高整个程序的执行速度<br>
-每个流水段后面都要加一个流水段寄存器锁存数据，保证本段的执行结果能在下个周期给下一流水段使用。</p>
-<h3 id="hazard"><a class="markdownIt-Anchor" href="#hazard">#</a> Hazard</h3>
-<ul>
+<h3 id="基本实现"><a href="#基本实现" class="headerlink" title="基本实现"></a>基本实现</h3><p>单周期CPU以执行最慢的指令周期作为时钟周期。不能缩短单挑指令的执行时间，但可以提高整个程序的执行速度<br>每个流水段后面都要加一个流水段寄存器锁存数据，保证本段的执行结果能在下个周期给下一流水段使用。</p>
+<h3 id="Hazard"><a href="#Hazard" class="headerlink" title="Hazard"></a>Hazard</h3><ul>
 <li>结构冒险、数据冒险、控制冒险</li>
 </ul>
 <ol>
-<li>structural hazard<br>
- 在流水线执行期间，两条及以上指令同一时间对同一个硬件资源发起使用的请求（Memory conflicts, Register File conflicts, Other units conflicts）<br>
-解决方法：(1) stall (2) 增加更多的硬件支持单元（比如 Double Bump，前半周期写后半周期读）</li>
-<li>data hazard<br>
-RAW, WAR, WAW<br>
- 统考不考乱序执行所以只需要考虑 RAW 写后读<br>
-解决方法：(1) stall (2) NOP (3) forwarding</li>
+<li>structural hazard<br>在流水线执行期间，两条及以上指令同一时间对同一个硬件资源发起使用的请求（Memory conflicts, Register File conflicts, Other units conflicts）<br>解决方法：(1)stall (2)增加更多的硬件支持单元（比如Double Bump，前半周期写后半周期读）</li>
+<li>data hazard<br>RAW, WAR, WAW<br>统考不考乱序执行所以只需要考虑RAW写后读<br>解决方法：(1)stall (2)NOP (3)forwarding</li>
 </ol>
 <ul>
-<li>stall<br>
- 硬件解决方法，流水线阻塞，使数据相关的后续指令延迟执行，也称为插入气泡（bubble）</li>
-<li>NOP<br>
- 软件解决方法，编译时插入空操作（NOP）比如 <code>addi x0,x0,0</code> ，使数据相关的后续指令延迟执行</li>
-<li>forwarding<br>
- 旁路转发，将数据通路生成的中间数据直接往前传递到 ALU 的输入端，参与下一条指令的运算<br>
-必须同时满足两个条件：</li>
+<li>stall<br>硬件解决方法，流水线阻塞，使数据相关的后续指令延迟执行，也称为插入气泡（bubble）</li>
+<li>NOP<br>软件解决方法，编译时插入空操作（NOP）比如<code>addi x0,x0,0</code>，使数据相关的后续指令延迟执行</li>
+<li>forwarding<br>旁路转发，将数据通路生成的中间数据直接往前传递到ALU的输入端，参与下一条指令的运算<br>必须同时满足两个条件：</li>
 <li>指令确实会写入寄存器（通过检查 RegWrite 信号）。</li>
-<li>目标寄存器编号不是 x0（零寄存器不会变）<br>
-才需要 forwarding</li>
-</ul>
-<blockquote>
-<p>ALU-&gt;ALU<br>
- 数据可以从  <code>EX/MEM</code>  或  <code>MEM/WB</code>  阶段转发到当前在 EX 阶段的 ALU 输入<br>
- MEM-&gt;ALU<br>
-load 指令的数据只有在 <code>MEM/WB</code>  阶段才能被转发到当前在 EX 阶段的 ALU 输入，所以如果 load 下一条指令要用到 load 指令的数据，则需要先 stall 一周期再 forwarding</p>
+<li>目标寄存器编号不是 x0（零寄存器不会变）<br>才需要forwarding<blockquote>
+<p>ALU-&gt;ALU<br>数据可以从 <code>EX/MEM</code> 或 <code>MEM/WB</code> 阶段转发到当前在 EX 阶段的 ALU 输入<br>MEM-&gt;ALU<br>load指令的数据只有在<code>MEM/WB</code>阶段才能被转发到当前在 EX 阶段的 ALU 输入，所以如果load下一条指令要用到load指令的数据，则需要先stall一周期再forwarding</p>
 </blockquote>
-<ol start="3">
-<li>control hazard<br>
- 解决方法：</li>
-</ol>
-<ul>
-<li>插入 3 条 <code>NOP</code>  直到分支指令的 <code>WB</code>  阶段才进行下一条指令的 <code>IF</code></li>
-<li>分支预测<br>
-<img data-src="f5.jpg" alt></li>
+</li>
 </ul>
-<h3 id="流水线的性能指标"><a class="markdownIt-Anchor" href="#流水线的性能指标">#</a> 流水线的性能指标</h3>
-<ol>
-<li>吞吐率<br>
-单位时间内流水线所完成的任务数量</li>
-</ol>
-<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>T</mi><mi>P</mi><mo>=</mo><mfrac><mi>n</mi><msub><mi>T</mi><mi>k</mi></msub></mfrac></mrow><annotation encoding="application/x-tex">TP = \frac{n}{T_k}
-</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">T</span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.9435600000000002em;vertical-align:-0.8360000000000001em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.10756em;"><span style="top:-2.3139999999999996em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">T</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.03148em;">k</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathnormal">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.8360000000000001em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span></p>
-<p k+n-1>k 是流水线的段数，n 是任务数，Tk 是处理 n 个任务所用的总时间。理想状态下一条 k 段流水线能在 <code>k+n-1</code>  个时钟周期完成 <code>n</code>  个任务，吞吐率为<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mi>n</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo>+</mo><mi>n</mi><mo>−</mo><mn>1</mn><mo stretchy="false">)</mo><mi mathvariant="normal">Δ</mi><mi>t</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">\frac{n}{(k + n - 1) \Delta t}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.215392em;vertical-align:-0.52em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.695392em;"><span style="top:-2.655em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mopen mtight">(</span><span class="mord mathnormal mtight" style="margin-right:0.03148em;">k</span><span class="mbin mtight">+</span><span class="mord mathnormal mtight">n</span><span class="mbin mtight">−</span><span class="mord mtight">1</span><span class="mclose mtight">)</span><span class="mord mtight">Δ</span><span class="mord mathnormal mtight">t</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">n</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.52em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span><br>
- 2. 流水线的加速比<br>
-完成同一批任务，不适用流水线和使用流水线所用的时间之比<br>
-理想状态下流水线加速比为\frac{k n}</p>
-<h3 id="高级流水线技术"><a class="markdownIt-Anchor" href="#高级流水线技术">#</a> 高级流水线技术</h3>
-<ol>
-<li>超标量流水线<br>
-动态多发射技术，支持乱序执行</li>
+<ol start="3">
+<li>control hazard<br>解决方法：</li>
 </ol>
 <ul>
-<li>Scoreboard<br>
-<img data-src="f3.jpg" alt></li>
-<li>Tomasulo<br>
-<img data-src="f4.jpg" alt></li>
+<li>插入3条<code>NOP</code>直到分支指令的<code>WB</code>阶段才进行下一条指令的<code>IF</code></li>
+<li>分支预测<br><img data-src="/f5.jpg"></li>
+</ul>
+<h3 id="流水线的性能指标"><a href="#流水线的性能指标" class="headerlink" title="流水线的性能指标"></a>流水线的性能指标</h3><ol>
+<li>吞吐率<br>单位时间内流水线所完成的任务数量<br>$$<br>TP &#x3D; \frac{n}{T_k}<br>$$<br>k是流水线的段数，n是任务数，Tk是处理n个任务所用的总时间。理想状态下一条k段流水线能在<code>k+n-1</code>个时钟周期完成<code>n</code>个任务，吞吐率为$\frac{n}{(k + n - 1) \Delta t}$</li>
+<li>流水线的加速比<br>完成同一批任务，不适用流水线和使用流水线所用的时间之比<br>理想状态下流水线加速比为$\frac{k n}{k+n-1}$</li>
+</ol>
+<h3 id="高级流水线技术"><a href="#高级流水线技术" class="headerlink" title="高级流水线技术"></a>高级流水线技术</h3><ol>
+<li>超标量流水线<br>动态多发射技术，支持乱序执行</li>
+</ol>
+<ul>
+<li>Scoreboard<br><img data-src="/f3.jpg"></li>
+<li>Tomasulo<br><img data-src="/f4.jpg"></li>
 </ul>
 <ol start="2">
-<li>超长指令字技术<br>
-静态多发射技术，将多条能并行操作的指令组合成一个超长指令字，需要多个处理不见</li>
-<li>超流水线技术<br>
-流水线功能段划分的越多，时钟周期越短，指令吞吐率越高。<br>
-超流水线技术通过提高流水线主频来提高性能，但是流水段越多中间寄存器的开销就越大</li>
-</ol>
-<blockquote>
-<p>超流水线或者理想状态下流水线技术 CPI=1；多发射流水线的 CPI 可以小于 1</p>
+<li>超长指令字技术<br>静态多发射技术，将多条能并行操作的指令组合成一个超长指令字，需要多个处理不见</li>
+<li>超流水线技术<br>流水线功能段划分的越多，时钟周期越短，指令吞吐率越高。<br>超流水线技术通过提高流水线主频来提高性能，但是流水段越多中间寄存器的开销就越大<blockquote>
+<p>超流水线或者理想状态下流水线技术CPI&#x3D;1；多发射流水线的CPI可以小于1</p>
 </blockquote>
-<h2 id="多处理器"><a class="markdownIt-Anchor" href="#多处理器">#</a> 多处理器</h2>
-<h3 id="sisd-simd-mimd"><a class="markdownIt-Anchor" href="#sisd-simd-mimd">#</a> SISD SIMD MIMD</h3>
-<ol>
-<li>SISD: single instruction single data<br>
- 传统串行处理器</li>
-<li>SIMD: single instruction multiple data<br>
- 数据级并行技术 (DLP)，一条指令可以同时对多个数据元素执行相同的操作，用到向量寄存器<br>
-在处理 for 循环数组时最有效（比如两个数组相加）；在使用 case/seitch 时效率最低</li>
-<li>MISD: multiple instruction single data<br>
- 实际上不存在</li>
-<li>MIMD: multiple instruction multiple data<br>
-TLP<br>
- 分为多计算机系统和多处理器系统。<br>
-多计算机系统由多个独立的计算机节点组成，每个节点通常包含自己的存储器、CPU，具有独立的主存地址空间，通过消息传递进行数据传送，也称 <code>消息传递MIMD</code> <br>
- 多处理器系统是共享存储多处理器 <code>SMP</code>  系统的简称，共享单一地址空间，也称共享存储 MIMD<br>
- 向量处理器是 SIMD 的变体，实现了直接操作一维数组指令集</li>
+</li>
 </ol>
-<h3 id="硬件多线程"><a class="markdownIt-Anchor" href="#硬件多线程">#</a> 硬件多线程</h3>
-<ol>
-<li>细粒度多线程 Fine-grained multithreading<br>
- 多个线程交叉执行指令，线程之间的指令不相关，可以乱序并行执行，需要频繁进行上下文切换，不需要重载流水线。牺牲单个线程执行的性能，来换取整个进程吞吐量的提升</li>
-<li>粗粒度多线程 Coarse-grained multithreading<br>
- 连续几个时钟周期都执行同一线程的指令序列，尽在当前线程出现较大开销的阻塞才切换（比如 L2 miss, L2 miss）相比细粒度多线程，上下文切换的频率较低，切换时需要重载流水线</li>
-<li>同时多线程 SMT<br>
-ILP+TLP，指令级并行的同时实现线程级并行，在同一个时钟周期发射多个不同线程中的多条指令执行<br>
- Intal 的 Hyper-threading 就是 SMT<br>
-<img data-src="f6.jpg" alt></li>
+<h2 id="多处理器"><a href="#多处理器" class="headerlink" title="多处理器"></a>多处理器</h2><h3 id="SISD-SIMD-MIMD"><a href="#SISD-SIMD-MIMD" class="headerlink" title="SISD SIMD MIMD"></a>SISD SIMD MIMD</h3><ol>
+<li>SISD: single instruction single data<br>传统串行处理器</li>
+<li>SIMD: single instruction multiple data<br>数据级并行技术(DLP)，一条指令可以同时对多个数据元素执行相同的操作，用到向量寄存器<br>在处理for循环数组时最有效（比如两个数组相加）；在使用case&#x2F;seitch时效率最低</li>
+<li>MISD: multiple instruction single data<br>实际上不存在</li>
+<li>MIMD: multiple instruction multiple data<br>TLP<br>分为多计算机系统和多处理器系统。<br>多计算机系统由多个独立的计算机节点组成，每个节点通常包含自己的存储器、CPU，具有独立的主存地址空间，通过消息传递进行数据传送，也称<code>消息传递MIMD</code><br>多处理器系统是共享存储多处理器<code>SMP</code>系统的简称，共享单一地址空间，也称共享存储MIMD<br>向量处理器是SIMD的变体，实现了直接操作一维数组指令集</li>
 </ol>
-<h3 id="多核处理器"><a class="markdownIt-Anchor" href="#多核处理器">#</a> 多核处理器</h3>
-<p>一个 CPU 有多个 core，也称片上多处理器<br>
-每个核既可以有自己的 Cache，又可以共享同一个 Cache，所有核共享主存储器<br>
-多核处理器必须采用多线程（或多进程）才能发挥性能</p>
-<h3 id="共享内存多处理器-smp"><a class="markdownIt-Anchor" href="#共享内存多处理器-smp">#</a> 共享内存多处理器 SMP</h3>
-<p>处理器通过存储器中的共享变量互相通信，所有存储器都能通过存取指令访问存储器的任何位置，有两种：<br>
-<img data-src="f7.jpg" alt></p>
+<h3 id="硬件多线程"><a href="#硬件多线程" class="headerlink" title="硬件多线程"></a>硬件多线程</h3><ol>
+<li>细粒度多线程 Fine-grained multithreading<br>多个线程交叉执行指令，线程之间的指令不相关，可以乱序并行执行，需要频繁进行上下文切换，不需要重载流水线。牺牲单个线程执行的性能，来换取整个进程吞吐量的提升</li>
+<li>粗粒度多线程 Coarse-grained multithreading<br>连续几个时钟周期都执行同一线程的指令序列，尽在当前线程出现较大开销的阻塞才切换（比如L2 miss, L2 miss）相比细粒度多线程，上下文切换的频率较低，切换时需要重载流水线</li>
+<li>同时多线程 SMT<br>ILP+TLP，指令级并行的同时实现线程级并行，在同一个时钟周期发射多个不同线程中的多条指令执行<br>Intal的Hyper-threading就是SMT<br><img data-src="/f6.jpg"></li>
+</ol>
+<h3 id="多核处理器"><a href="#多核处理器" class="headerlink" title="多核处理器"></a>多核处理器</h3><p>一个CPU有多个core，也称片上多处理器<br>每个核既可以有自己的Cache，又可以共享同一个Cache，所有核共享主存储器<br>多核处理器必须采用多线程（或多进程）才能发挥性能</p>
+<h3 id="共享内存多处理器-SMP"><a href="#共享内存多处理器-SMP" class="headerlink" title="共享内存多处理器 SMP"></a>共享内存多处理器 SMP</h3><p>处理器通过存储器中的共享变量互相通信，所有存储器都能通过存取指令访问存储器的任何位置，有两种：<br><img data-src="/f7.jpg"></p>
 <ul>
-<li>UMA 统一存储访问多处理器<br>
- UMA 中所有处理器对所有内存模块的访问延迟是相同的，由于访问延迟一致，数据放在哪个内存模块上对性能影响不大。随着系统规模扩大，所有处理器都通过同一个前端总线访问内存，导致互连网络成为瓶颈，延迟增加，带宽受限<br>
-<img data-src="f8.jpg" alt></li>
-<li>NUMA 非统一存储访问多处理器<br>
-内存有本地内存和远程内存，访问本地内存快。CPU 可以通过 QPI 总线访问远程内存<br>
-<img data-src="f9.jpg" alt></li>
-<li>需要解决 Cache coherence 问题：Snooping (MSI, MESI, MOESI…), Directory<br>
- 基本思想都是对共享变量加锁，保证互斥访问
-<ul>
-<li>Snooping:<br>
-<img data-src="f10.jpg" alt><br>
-<img data-src="f11.jpg" alt></li>
-<li>Directory:<br>
-<img data-src="f12.jpg" alt></li>
+<li>UMA 统一存储访问多处理器<br>UMA中所有处理器对所有内存模块的访问延迟是相同的，由于访问延迟一致，数据放在哪个内存模块上对性能影响不大。随着系统规模扩大，所有处理器都通过同一个前端总线访问内存，导致互连网络成为瓶颈，延迟增加，带宽受限<br><img data-src="/f8.jpg"></li>
+<li>NUMA 非统一存储访问多处理器<br>内存有本地内存和远程内存，访问本地内存快。CPU可以通过QPI总线访问远程内存<br><img data-src="/f9.jpg"></li>
+<li>需要解决 Cache coherence 问题：Snooping(MSI, MESI, MOESI…), Directory<br>基本思想都是对共享变量加锁，保证互斥访问<ul>
+<li>Snooping:<br><img data-src="/f10.jpg"><br><img data-src="/f11.jpg"></li>
+<li>Directory:<br><img data-src="/f12.jpg"></li>
 </ul>
 </li>
 </ul>
@@ -550,7 +419,7 @@ ILP+TLP，指令级并行的同时实现线程级并行，在同一个时钟周�
     <div class="item left">
       
 
-  <a href="/2025/08/10/computer-science/computer-organization/ch6/" itemprop="url" rel="prev" data-background-image="&#x2F;images&#x2F;bg13.jpg" title="Ch6">
+  <a href="/2025/08/10/computer-science/computer-organization/ch6/" itemprop="url" rel="prev" data-background-image="&#x2F;images&#x2F;bg3.png" title="Ch6">
   <span class="type">Previous Post</span>
   <span class="category"><i class="ic i-flag"></i> 计算机组成</span>
   <h3>Ch6</h3>
@@ -560,7 +429,7 @@ ILP+TLP，指令级并行的同时实现线程级并行，在同一个时钟周�
     <div class="item right">
       
 
-  <a href="/2025/08/15/computer-science/computer-organization/ch7/" itemprop="url" rel="next" data-background-image="&#x2F;images&#x2F;bg15.jpg" title="Ch7">
+  <a href="/2025/08/15/computer-science/computer-organization/ch7/" itemprop="url" rel="next" data-background-image="&#x2F;images&#x2F;bg14.jpg" title="Ch7">
   <span class="type">Next Post</span>
   <span class="category"><i class="ic i-flag"></i> 计算机组成</span>
   <h3>Ch7</h3>
@@ -582,7 +451,7 @@ ILP+TLP，指令级并行的同时实现线程级并行，在同一个时钟周�
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="Contents">
-          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#ch5-%E4%B8%AD%E5%A4%AE%E5%A4%84%E7%90%86%E5%99%A8"><span class="toc-number">1.</span> <span class="toc-text"> Ch5 中央处理器</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#cpu%E7%9A%84%E5%8A%9F%E8%83%BD%E5%92%8C%E5%9F%BA%E6%9C%AC%E7%BB%93%E6%9E%84"><span class="toc-number">1.1.</span> <span class="toc-text"> CPU 的功能和基本结构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%9F%E8%83%BD"><span class="toc-number">1.1.1.</span> <span class="toc-text"> 功能</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E7%BB%93%E6%9E%84"><span class="toc-number">1.1.2.</span> <span class="toc-text"> 基本结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#cpu%E7%9A%84%E5%AF%84%E5%AD%98%E5%99%A8"><span class="toc-number">1.1.3.</span> <span class="toc-text"> CPU 的寄存器</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8C%87%E4%BB%A4%E6%89%A7%E8%A1%8C%E8%BF%87%E7%A8%8B"><span class="toc-number">1.2.</span> <span class="toc-text"> 指令执行过程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8C%87%E4%BB%A4%E5%91%A8%E6%9C%9F"><span class="toc-number">1.2.1.</span> <span class="toc-text"> 指令周期</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8C%87%E4%BB%A4%E5%91%A8%E6%9C%9F%E7%9A%84%E6%95%B0%E6%8D%AE%E6%B5%81"><span class="toc-number">1.2.2.</span> <span class="toc-text"> 指令周期的数据流</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8C%87%E4%BB%A4%E6%89%A7%E8%A1%8C%E6%96%B9%E6%A1%88"><span class="toc-number">1.2.3.</span> <span class="toc-text"> 指令执行方案</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E9%80%9A%E8%B7%AF"><span class="toc-number">1.3.</span> <span class="toc-text"> 数据通路</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%9F%E8%83%BD-2"><span class="toc-number">1.3.1.</span> <span class="toc-text"> 功能</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%84%E6%88%90"><span class="toc-number">1.3.2.</span> <span class="toc-text"> 组成</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E7%BB%93%E6%9E%84-2"><span class="toc-number">1.3.3.</span> <span class="toc-text"> 基本结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E9%80%9A%E8%B7%AF%E7%9A%84%E6%93%8D%E4%BD%9C%E4%B8%BE%E4%BE%8B"><span class="toc-number">1.3.4.</span> <span class="toc-text"> 数据通路的操作举例</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8E%A7%E5%88%B6%E5%99%A8%E7%9A%84%E5%8A%9F%E8%83%BD%E5%92%8C%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86"><span class="toc-number">1.4.</span> <span class="toc-text"> 控制器的功能和工作原理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%93%E6%9E%84%E5%92%8C%E5%8A%9F%E8%83%BD"><span class="toc-number">1.4.1.</span> <span class="toc-text"> 结构和功能</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A1%AC%E5%B8%83%E7%BA%BF%E6%8E%A7%E5%88%B6%E5%99%A8"><span class="toc-number">1.4.2.</span> <span class="toc-text"> 硬布线控制器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BE%AE%E7%A8%8B%E5%BA%8F%E6%8E%A7%E5%88%B6%E5%99%A8"><span class="toc-number">1.4.3.</span> <span class="toc-text"> 微程序控制器</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%82%E5%B8%B8%E5%92%8C%E4%B8%AD%E6%96%AD%E6%9C%BA%E5%88%B6"><span class="toc-number">1.5.</span> <span class="toc-text"> 异常和中断机制</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A6%82%E5%BF%B5"><span class="toc-number">1.5.1.</span> <span class="toc-text"> 概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E7%B1%BB"><span class="toc-number">1.5.2.</span> <span class="toc-text"> 分类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%82%E5%B8%B8%E5%92%8C%E4%B8%AD%E6%96%AD%E7%9A%84%E5%93%8D%E5%BA%94%E8%BF%87%E7%A8%8B"><span class="toc-number">1.5.3.</span> <span class="toc-text"> 异常和中断的响应过程</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8C%87%E4%BB%A4%E6%B5%81%E6%B0%B4%E7%BA%BF"><span class="toc-number">1.6.</span> <span class="toc-text"> 指令流水线</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E5%AE%9E%E7%8E%B0"><span class="toc-number">1.6.1.</span> <span class="toc-text"> 基本实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#hazard"><span class="toc-number">1.6.2.</span> <span class="toc-text"> Hazard</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%81%E6%B0%B4%E7%BA%BF%E7%9A%84%E6%80%A7%E8%83%BD%E6%8C%87%E6%A0%87"><span class="toc-number">1.6.3.</span> <span class="toc-text"> 流水线的性能指标</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%AB%98%E7%BA%A7%E6%B5%81%E6%B0%B4%E7%BA%BF%E6%8A%80%E6%9C%AF"><span class="toc-number">1.6.4.</span> <span class="toc-text"> 高级流水线技术</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%9A%E5%A4%84%E7%90%86%E5%99%A8"><span class="toc-number">1.7.</span> <span class="toc-text"> 多处理器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#sisd-simd-mimd"><span class="toc-number">1.7.1.</span> <span class="toc-text"> SISD SIMD MIMD</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A1%AC%E4%BB%B6%E5%A4%9A%E7%BA%BF%E7%A8%8B"><span class="toc-number">1.7.2.</span> <span class="toc-text"> 硬件多线程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%9A%E6%A0%B8%E5%A4%84%E7%90%86%E5%99%A8"><span class="toc-number">1.7.3.</span> <span class="toc-text"> 多核处理器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B1%E4%BA%AB%E5%86%85%E5%AD%98%E5%A4%9A%E5%A4%84%E7%90%86%E5%99%A8-smp"><span class="toc-number">1.7.4.</span> <span class="toc-text"> 共享内存多处理器 SMP</span></a></li></ol></li></ol></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Ch5-%E4%B8%AD%E5%A4%AE%E5%A4%84%E7%90%86%E5%99%A8"><span class="toc-number">1.</span> <span class="toc-text">Ch5 中央处理器</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#CPU%E7%9A%84%E5%8A%9F%E8%83%BD%E5%92%8C%E5%9F%BA%E6%9C%AC%E7%BB%93%E6%9E%84"><span class="toc-number">1.1.</span> <span class="toc-text">CPU的功能和基本结构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%9F%E8%83%BD"><span class="toc-number">1.1.1.</span> <span class="toc-text">功能</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E7%BB%93%E6%9E%84"><span class="toc-number">1.1.2.</span> <span class="toc-text">基本结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CPU%E7%9A%84%E5%AF%84%E5%AD%98%E5%99%A8"><span class="toc-number">1.1.3.</span> <span class="toc-text">CPU的寄存器</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8C%87%E4%BB%A4%E6%89%A7%E8%A1%8C%E8%BF%87%E7%A8%8B"><span class="toc-number">1.2.</span> <span class="toc-text">指令执行过程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8C%87%E4%BB%A4%E5%91%A8%E6%9C%9F"><span class="toc-number">1.2.1.</span> <span class="toc-text">指令周期</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8C%87%E4%BB%A4%E5%91%A8%E6%9C%9F%E7%9A%84%E6%95%B0%E6%8D%AE%E6%B5%81"><span class="toc-number">1.2.2.</span> <span class="toc-text">指令周期的数据流</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8C%87%E4%BB%A4%E6%89%A7%E8%A1%8C%E6%96%B9%E6%A1%88"><span class="toc-number">1.2.3.</span> <span class="toc-text">指令执行方案</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E9%80%9A%E8%B7%AF"><span class="toc-number">1.3.</span> <span class="toc-text">数据通路</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%9F%E8%83%BD-1"><span class="toc-number">1.3.1.</span> <span class="toc-text">功能</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%84%E6%88%90"><span class="toc-number">1.3.2.</span> <span class="toc-text">组成</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E7%BB%93%E6%9E%84-1"><span class="toc-number">1.3.3.</span> <span class="toc-text">基本结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E9%80%9A%E8%B7%AF%E7%9A%84%E6%93%8D%E4%BD%9C%E4%B8%BE%E4%BE%8B"><span class="toc-number">1.3.4.</span> <span class="toc-text">数据通路的操作举例</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8E%A7%E5%88%B6%E5%99%A8%E7%9A%84%E5%8A%9F%E8%83%BD%E5%92%8C%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86"><span class="toc-number">1.4.</span> <span class="toc-text">控制器的功能和工作原理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%93%E6%9E%84%E5%92%8C%E5%8A%9F%E8%83%BD"><span class="toc-number">1.4.1.</span> <span class="toc-text">结构和功能</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A1%AC%E5%B8%83%E7%BA%BF%E6%8E%A7%E5%88%B6%E5%99%A8"><span class="toc-number">1.4.2.</span> <span class="toc-text">硬布线控制器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BE%AE%E7%A8%8B%E5%BA%8F%E6%8E%A7%E5%88%B6%E5%99%A8"><span class="toc-number">1.4.3.</span> <span class="toc-text">微程序控制器</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%82%E5%B8%B8%E5%92%8C%E4%B8%AD%E6%96%AD%E6%9C%BA%E5%88%B6"><span class="toc-number">1.5.</span> <span class="toc-text">异常和中断机制</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A6%82%E5%BF%B5"><span class="toc-number">1.5.1.</span> <span class="toc-text">概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E7%B1%BB"><span class="toc-number">1.5.2.</span> <span class="toc-text">分类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%82%E5%B8%B8%E5%92%8C%E4%B8%AD%E6%96%AD%E7%9A%84%E5%93%8D%E5%BA%94%E8%BF%87%E7%A8%8B"><span class="toc-number">1.5.3.</span> <span class="toc-text">异常和中断的响应过程</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8C%87%E4%BB%A4%E6%B5%81%E6%B0%B4%E7%BA%BF"><span class="toc-number">1.6.</span> <span class="toc-text">指令流水线</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E5%AE%9E%E7%8E%B0"><span class="toc-number">1.6.1.</span> <span class="toc-text">基本实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Hazard"><span class="toc-number">1.6.2.</span> <span class="toc-text">Hazard</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%81%E6%B0%B4%E7%BA%BF%E7%9A%84%E6%80%A7%E8%83%BD%E6%8C%87%E6%A0%87"><span class="toc-number">1.6.3.</span> <span class="toc-text">流水线的性能指标</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%AB%98%E7%BA%A7%E6%B5%81%E6%B0%B4%E7%BA%BF%E6%8A%80%E6%9C%AF"><span class="toc-number">1.6.4.</span> <span class="toc-text">高级流水线技术</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%9A%E5%A4%84%E7%90%86%E5%99%A8"><span class="toc-number">1.7.</span> <span class="toc-text">多处理器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#SISD-SIMD-MIMD"><span class="toc-number">1.7.1.</span> <span class="toc-text">SISD SIMD MIMD</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A1%AC%E4%BB%B6%E5%A4%9A%E7%BA%BF%E7%A8%8B"><span class="toc-number">1.7.2.</span> <span class="toc-text">硬件多线程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%9A%E6%A0%B8%E5%A4%84%E7%90%86%E5%99%A8"><span class="toc-number">1.7.3.</span> <span class="toc-text">多核处理器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B1%E4%BA%AB%E5%86%85%E5%AD%98%E5%A4%9A%E5%A4%84%E7%90%86%E5%99%A8-SMP"><span class="toc-number">1.7.4.</span> <span class="toc-text">共享内存多处理器 SMP</span></a></li></ol></li></ol></li></ol>
       </div>
       <div class="related panel pjax" data-title="Related">
         <ul>
@@ -707,12 +576,34 @@ ILP+TLP，指令级并行的同时实现线程级并行，在同一个时钟周�
   <li class="item">
     
 <div class="breadcrumb">
+<a href="/categories/note/" title="In 七七八八">七七八八</a>
+</div>
+
+    <span><a href="/2025/12/11/note/20251211/" title="杂项">杂项</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/OS/" title="In 操作系统">操作系统</a>
+</div>
+
+    <span><a href="/2025/09/18/computer-science/OS/ch1/" title="ch1">ch1</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
 <a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
 <i class="ic i-angle-right"></i>
 <a href="/categories/computer-science/computer-organization/" title="In 计算机组成">计算机组成</a>
 </div>
 
-    <span><a href="/2025/08/10/computer-science/computer-organization/ch5/" title="Ch5">Ch5</a></span>
+    <span><a href="/2025/07/01/computer-science/computer-organization/%E9%94%99%E9%A2%98%E9%9B%86%E5%90%88/" title="错题集合">错题集合</a></span>
   </li>
 
       
@@ -722,7 +613,7 @@ ILP+TLP，指令级并行的同时实现线程级并行，在同一个时钟周�
 <a href="/categories/AI/" title="In 人工智能">人工智能</a>
 </div>
 
-    <span><a href="/2025/06/16/AI/week10-11/" title="Week10-11">Week10-11</a></span>
+    <span><a href="/2025/06/11/AI/week4-5/" title="Week4-5">Week4-5</a></span>
   </li>
 
       
@@ -734,39 +625,7 @@ ILP+TLP，指令级并行的同时实现线程级并行，在同一个时钟周�
 <a href="/categories/computer-science/DS/" title="In 数据结构">数据结构</a>
 </div>
 
-    <span><a href="/2025/09/15/computer-science/DS/Amortized%20Analysis/" title="Amortized Analysis">Amortized Analysis</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/AI/" title="In 人工智能">人工智能</a>
-</div>
-
-    <span><a href="/2025/06/12/AI/week6-7/" title="Week6-7">Week6-7</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/DS/" title="In 数据结构">数据结构</a>
-</div>
-
-    <span><a href="/2025/09/15/computer-science/DS/ch1/" title="ch1">ch1</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/note/" title="In 七七八八">七七八八</a>
-</div>
-
-    <span><a href="/2025/08/02/note/20250802/" title="20250802阅读论文">20250802阅读论文</a></span>
+    <span><a href="/2025/09/15/computer-science/DS/ch2/" title="ch2">ch2</a></span>
   </li>
 
       
@@ -778,27 +637,17 @@ ILP+TLP，指令级并行的同时实现线程级并行，在同一个时钟周�
 <a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
 </div>
 
-    <span><a href="/2025/06/17/computer-science/compile-principles/ch9/" title="指令选择">指令选择</a></span>
+    <span><a href="/2025/06/15/computer-science/compile-principles/ch6/" title="活动记录">活动记录</a></span>
   </li>
 
       
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/AI/" title="In 人工智能">人工智能</a>
+<a href="/categories/note/" title="In 七七八八">七七八八</a>
 </div>
 
-    <span><a href="/2025/05/20/AI/week2-3/" title="Week2-3">Week2-3</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/SE/" title="In 软件工程">软件工程</a>
-</div>
-
-    <span><a href="/2025/06/19/SE/diagram/" title="画图题">画图题</a></span>
+    <span><a href="/2025/10/15/note/20251015/" title="20251015力扣刷题笔记">20251015力扣刷题笔记</a></span>
   </li>
 
       
@@ -810,7 +659,31 @@ ILP+TLP，指令级并行的同时实现线程级并行，在同一个时钟周�
 <a href="/categories/computer-science/computer-organization/" title="In 计算机组成">计算机组成</a>
 </div>
 
-    <span><a href="/2025/08/10/computer-science/computer-organization/ch6/" title="Ch6">Ch6</a></span>
+    <span><a href="/2025/05/13/computer-science/computer-organization/ch1/" title="Ch1">Ch1</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
+</div>
+
+    <span><a href="/2025/03/21/computer-science/compile-principles/ch1/" title="Introduction">Introduction</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/computer-organization/" title="In 计算机组成">计算机组成</a>
+</div>
+
+    <span><a href="/2025/08/15/computer-science/computer-organization/ch7/" title="Ch7">Ch7</a></span>
   </li>
 
   </ul>
@@ -835,13 +708,13 @@ ILP+TLP，指令级并行的同时实现线程级并行，在同一个时钟周�
     <span class="post-meta-item-icon">
       <i class="ic i-chart-area"></i>
     </span>
-    <span title="Symbols count total">188k words</span>
+    <span title="Symbols count total">185k words</span>
 
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="ic i-coffee"></i>
     </span>
-    <span title="Reading time total">2:51</span>
+    <span title="Reading time total">2:48</span>
   </div>
   <div class="powered-by">
     Powered by <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>

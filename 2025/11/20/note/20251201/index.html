@@ -116,7 +116,7 @@ NoResponse's Blog = NoResponse's Blog</title>
 
       </div>
       <div id="imgs" class="pjax">
-          <img src="/images/bg13.jpg">
+          <img src="/images/bg2.png">
       </div>
     </header>
     <div id="waves">
@@ -161,30 +161,23 @@ NoResponse's Blog = NoResponse's Blog</title>
   <div class="body md" itemprop="articleBody">
     
 
-    <h1 id="gtest"><a class="markdownIt-Anchor" href="#gtest">#</a> gtest</h1>
-<p>Google 开源的 c++ 单元测试框架<br>
-<span class="exturl" data-url="aHR0cHM6Ly9nb29nbGUuZ2l0aHViLmlvL2dvb2dsZXRlc3Qv"> https://google.github.io/googletest/</span></p>
-<h1 id="查看代码覆盖率"><a class="markdownIt-Anchor" href="#查看代码覆盖率">#</a> 查看代码覆盖率</h1>
-<ul>
-<li>GCC + gcov (cmake 一般带了) + lcov</li>
+    <h1 id="gtest"><a href="#gtest" class="headerlink" title="gtest"></a>gtest</h1><p>Google开源的c++单元测试框架<br><span class="exturl" data-url="aHR0cHM6Ly9nb29nbGUuZ2l0aHViLmlvL2dvb2dsZXRlc3Qv">https://google.github.io/googletest/</span></p>
+<h1 id="查看代码覆盖率"><a href="#查看代码覆盖率" class="headerlink" title="查看代码覆盖率"></a>查看代码覆盖率</h1><ul>
+<li>GCC + gcov(cmake一般带了) + lcov</li>
 </ul>
 <ol>
-<li>修改 CMakeLists.txt</li>
+<li>修改CMakeLists.txt</li>
 </ol>
 <figure class="highlight cmake"><figcaption><span>lcov</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 启用调试信息和覆盖率支持（仅在需要时开启）</span></span><br><span class="line"><span class="keyword">option</span>(ENABLE_COVERAGE <span class="string">&quot;Enable coverage build&quot;</span> <span class="keyword">OFF</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(ENABLE_COVERAGE)</span><br><span class="line">    <span class="keyword">if</span>(CMAKE_CXX_COMPILER_ID <span class="keyword">MATCHES</span> <span class="string">&quot;GNU|Clang&quot;</span>)</span><br><span class="line">        <span class="keyword">target_compile_options</span>(your_library_or_source_files PRIVATE</span><br><span class="line">            -O0          <span class="comment"># 禁用优化（否则行号可能不准）</span></span><br><span class="line">            -g           <span class="comment"># 调试信息</span></span><br><span class="line">            --coverage   <span class="comment"># 等价于 -fprofile-arcs -ftest-coverage</span></span><br><span class="line">        )</span><br><span class="line">        <span class="keyword">target_link_options</span>(your_library_or_source_files PRIVATE --coverage)</span><br><span class="line">    <span class="keyword">endif</span>()</span><br><span class="line"><span class="keyword">endif</span>()</span><br></pre></td></tr></table></figure>
 <ol start="2">
-<li>构建并运行测试<br>
-…<br>
-cmake … -DENABLE_COVERAGE=ON<br>
-…</li>
+<li>构建并运行测试<br>…<br>cmake .. -DENABLE_COVERAGE&#x3D;ON<br>…</li>
 <li>生成可视化覆盖率报告（HTML）</li>
 </ol>
 <figure class="highlight bash"><figcaption><span>lcov</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 初始化覆盖率数据</span></span><br><span class="line">lcov --capture --initial --directory . --output-file coverage_base.info</span><br><span class="line"></span><br><span class="line"><span class="comment"># 收集实际运行后的覆盖率</span></span><br><span class="line">lcov --capture --directory . --output-file coverage_test.info</span><br><span class="line"></span><br><span class="line"><span class="comment"># 合并（可选，但推荐）</span></span><br><span class="line">lcov --add-tracefile coverage_base.info --add-tracefile coverage_test.info --output-file coverage_total.info</span><br><span class="line"></span><br><span class="line"><span class="comment"># （可选）过滤掉第三方代码（如 googletest）</span></span><br><span class="line">lcov --remove coverage_total.info <span class="string">&#x27;/usr/*&#x27;</span> <span class="string">&#x27;*/thirdpart/*&#x27;</span> <span class="string">&#x27;*/googletest*&#x27;</span> --output-file coverage_final.info</span><br><span class="line"></span><br><span class="line"><span class="comment"># 生成 HTML 报告</span></span><br><span class="line">genhtml coverage_final.info --output-directory coverage_report</span><br></pre></td></tr></table></figure>
 <p>或者直接</p>
 <figure class="highlight bash"><figcaption><span>lcov</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make coverage</span><br></pre></td></tr></table></figure>
-<p>然后再 build 目录下的 coverage_html 目录下查看 index.html，可以点开具体文件查看哪些行没有覆盖到</p>
-<h1 id="如何提高单元测试的覆盖率"><a class="markdownIt-Anchor" href="#如何提高单元测试的覆盖率">#</a> 如何提高单元测试的覆盖率</h1>
-<p>分析当前覆盖率报告，找出未执行的代码路径，然后编写新的测试用例来触发这些路径。</p>
+<p>然后再build目录下的coverage_html目录下查看index.html，可以点开具体文件查看哪些行没有覆盖到</p>
+<h1 id="如何提高单元测试的覆盖率"><a href="#如何提高单元测试的覆盖率" class="headerlink" title="如何提高单元测试的覆盖率"></a>如何提高单元测试的覆盖率</h1><p>分析当前覆盖率报告，找出未执行的代码路径，然后编写新的测试用例来触发这些路径。</p>
 
       <div class="tags">
           <a href="/tags/ctest/" rel="tag"><i class="ic i-tag"></i> ctest</a>
@@ -256,20 +249,20 @@ cmake … -DENABLE_COVERAGE=ON<br>
     <div class="item left">
       
 
-  <a href="/2025/11/20/note/20251130/" itemprop="url" rel="prev" data-background-image="&#x2F;images&#x2F;bg1.jpg" title="杂项">
+  <a href="/2025/10/26/oop/note/" itemprop="url" rel="prev" data-background-image="&#x2F;images&#x2F;bg5.jpg" title="C++相关">
   <span class="type">Previous Post</span>
-  <span class="category"><i class="ic i-flag"></i> 七七八八</span>
-  <h3>杂项</h3>
+  <span class="category"><i class="ic i-flag"></i> C++</span>
+  <h3>C++相关</h3>
   </a>
 
     </div>
     <div class="item right">
       
 
-  <a href="/2025/11/23/note/20251123/" itemprop="url" rel="next" data-background-image="&#x2F;images&#x2F;bg17.jpg" title="20251123面经回忆">
+  <a href="/2025/11/20/note/20251130/" itemprop="url" rel="next" data-background-image="&#x2F;images&#x2F;bg33.jpg" title="杂项">
   <span class="type">Next Post</span>
   <span class="category"><i class="ic i-flag"></i> 七七八八</span>
-  <h3>20251123面经回忆</h3>
+  <h3>杂项</h3>
   </a>
 
     </div>
@@ -288,11 +281,11 @@ cmake … -DENABLE_COVERAGE=ON<br>
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="Contents">
-          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#gtest"><span class="toc-number">1.</span> <span class="toc-text"> gtest</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E4%BB%A3%E7%A0%81%E8%A6%86%E7%9B%96%E7%8E%87"><span class="toc-number">2.</span> <span class="toc-text"> 查看代码覆盖率</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E6%8F%90%E9%AB%98%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95%E7%9A%84%E8%A6%86%E7%9B%96%E7%8E%87"><span class="toc-number">3.</span> <span class="toc-text"> 如何提高单元测试的覆盖率</span></a></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#gtest"><span class="toc-number">1.</span> <span class="toc-text">gtest</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E4%BB%A3%E7%A0%81%E8%A6%86%E7%9B%96%E7%8E%87"><span class="toc-number">2.</span> <span class="toc-text">查看代码覆盖率</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E6%8F%90%E9%AB%98%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95%E7%9A%84%E8%A6%86%E7%9B%96%E7%8E%87"><span class="toc-number">3.</span> <span class="toc-text">如何提高单元测试的覆盖率</span></a></li></ol>
       </div>
       <div class="related panel pjax" data-title="Related">
         <ul>
-          <li><a href="/2025/08/02/note/20250802/" rel="bookmark" title="20250802阅读论文">20250802阅读论文</a></li><li><a href="/2025/10/15/note/20251015/" rel="bookmark" title="20251015力扣刷题笔记">20251015力扣刷题笔记</a></li><li class="active"><a href="/2025/11/20/note/20251201/" rel="bookmark" title="测试相关">测试相关</a></li><li><a href="/2025/11/20/note/20251130/" rel="bookmark" title="杂项">杂项</a></li><li><a href="/2025/11/23/note/20251123/" rel="bookmark" title="20251123面经回忆">20251123面经回忆</a></li><li><a href="/2025/12/11/note/20251211/" rel="bookmark" title="杂项">杂项</a></li>
+          <li><a href="/2025/08/02/note/20250802/" rel="bookmark" title="20250802阅读论文">20250802阅读论文</a></li><li><a href="/2025/10/15/note/20251015/" rel="bookmark" title="20251015力扣刷题笔记">20251015力扣刷题笔记</a></li><li><a href="/2025/11/20/note/20251130/" rel="bookmark" title="杂项">杂项</a></li><li class="active"><a href="/2025/11/20/note/20251201/" rel="bookmark" title="测试相关">测试相关</a></li><li><a href="/2025/11/23/note/20251123/" rel="bookmark" title="20251123面经回忆">20251123面经回忆</a></li><li><a href="/2025/12/11/note/20251211/" rel="bookmark" title="杂项">杂项</a></li>
         </ul>
       </div>
       <div class="overview panel" data-title="Overview">
@@ -386,12 +379,12 @@ cmake … -DENABLE_COVERAGE=ON<br>
 
   <ul id="quick">
     <li class="prev pjax">
-        <a href="/2025/11/20/note/20251130/" rel="prev" title="Previous Post"><i class="ic i-chevron-left"></i></a>
+        <a href="/2025/10/26/oop/note/" rel="prev" title="Previous Post"><i class="ic i-chevron-left"></i></a>
     </li>
     <li class="up"><i class="ic i-arrow-up"></i></li>
     <li class="down"><i class="ic i-arrow-down"></i></li>
     <li class="next pjax">
-        <a href="/2025/11/23/note/20251123/" rel="next" title="Next Post"><i class="ic i-chevron-right"></i></a>
+        <a href="/2025/11/20/note/20251130/" rel="next" title="Next Post"><i class="ic i-chevron-right"></i></a>
     </li>
     <li class="percent"></li>
   </ul>
@@ -415,32 +408,10 @@ cmake … -DENABLE_COVERAGE=ON<br>
 <div class="breadcrumb">
 <a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/computer-organization/" title="In 计算机组成">计算机组成</a>
+<a href="/categories/computer-science/DS/" title="In 数据结构">数据结构</a>
 </div>
 
-    <span><a href="/2025/05/13/computer-science/computer-organization/ch1/" title="Ch1">Ch1</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/SE/" title="In 软件工程">软件工程</a>
-</div>
-
-    <span><a href="/2025/06/19/SE/note/" title="SE note">SE note</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/computer-organization/" title="In 计算机组成">计算机组成</a>
-</div>
-
-    <span><a href="/2025/07/01/computer-science/computer-organization/ch3/" title="Ch3">Ch3</a></span>
+    <span><a href="/2025/10/10/computer-science/DS/ch5/" title="ch5">ch5</a></span>
   </li>
 
       
@@ -452,7 +423,43 @@ cmake … -DENABLE_COVERAGE=ON<br>
 <a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
 </div>
 
-    <span><a href="/2025/06/18/computer-science/compile-principles/ch11/" title="Register Allocation">Register Allocation</a></span>
+    <span><a href="/2025/06/17/computer-science/compile-principles/ch9/" title="指令选择">指令选择</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
+</div>
+
+    <span><a href="/2025/06/18/computer-science/compile-principles/ch10/" title="Liveness Analysis">Liveness Analysis</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/computer-network/" title="In 计算机网络">计算机网络</a>
+</div>
+
+    <span><a href="/2025/05/13/computer-science/computer-network/ch1/" title="Ch1">Ch1</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/computer-organization/" title="In 计算机组成">计算机组成</a>
+</div>
+
+    <span><a href="/2025/05/13/computer-science/computer-organization/ch1/" title="Ch1">Ch1</a></span>
   </li>
 
       
@@ -464,7 +471,7 @@ cmake … -DENABLE_COVERAGE=ON<br>
 <a href="/categories/computer-science/DS/" title="In 数据结构">数据结构</a>
 </div>
 
-    <span><a href="/2025/10/11/computer-science/DS/ch6/" title="ch6">ch6</a></span>
+    <span><a href="/2025/09/15/computer-science/DS/ch1/" title="ch1">ch1</a></span>
   </li>
 
       
@@ -473,20 +480,22 @@ cmake … -DENABLE_COVERAGE=ON<br>
 <div class="breadcrumb">
 <a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/computer-organization/" title="In 计算机组成">计算机组成</a>
+<a href="/categories/computer-science/DS/" title="In 数据结构">数据结构</a>
 </div>
 
-    <span><a href="/2025/05/14/computer-science/computer-organization/ch2/" title="Ch2">Ch2</a></span>
+    <span><a href="/2025/10/05/computer-science/DS/ch4/" title="ch4">ch4</a></span>
   </li>
 
       
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/note/" title="In 七七八八">七七八八</a>
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/computer-network/" title="In 计算机网络">计算机网络</a>
 </div>
 
-    <span><a href="/2025/11/23/note/20251123/" title="20251123面经回忆">20251123面经回忆</a></span>
+    <span><a href="/2025/12/07/computer-science/computer-network/note/" title="计网八股">计网八股</a></span>
   </li>
 
       
@@ -496,31 +505,17 @@ cmake … -DENABLE_COVERAGE=ON<br>
 <a href="/categories/AI/" title="In 人工智能">人工智能</a>
 </div>
 
-    <span><a href="/2025/06/16/AI/week14-15/" title="Week14-15">Week14-15</a></span>
+    <span><a href="/2025/06/11/AI/week4-5/" title="Week4-5">Week4-5</a></span>
   </li>
 
       
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
+<a href="/categories/AI/" title="In 人工智能">人工智能</a>
 </div>
 
-    <span><a href="/2025/03/29/computer-science/compile-principles/ch4/" title="抽象语法">抽象语法</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/OS/" title="In 操作系统">操作系统</a>
-</div>
-
-    <span><a href="/2025/10/09/computer-science/OS/ch2/" title="ch2">ch2</a></span>
+    <span><a href="/2025/06/16/AI/week12-13/" title="Week12-13">Week12-13</a></span>
   </li>
 
   </ul>
@@ -545,13 +540,13 @@ cmake … -DENABLE_COVERAGE=ON<br>
     <span class="post-meta-item-icon">
       <i class="ic i-chart-area"></i>
     </span>
-    <span title="Symbols count total">188k words</span>
+    <span title="Symbols count total">185k words</span>
 
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="ic i-coffee"></i>
     </span>
-    <span title="Reading time total">2:51</span>
+    <span title="Reading time total">2:48</span>
   </div>
   <div class="powered-by">
     Powered by <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>

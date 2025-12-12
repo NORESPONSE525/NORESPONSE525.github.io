@@ -76,7 +76,7 @@ NoResponse's Blog = NoResponse's Blog</title>
       <i class="ic i-pen"></i>
     </span>
     <span class="text">Symbols count in article</span>
-    <span>2.4k</span>
+    <span>2.5k</span>
     <span class="text">words</span>
   </span>
   <span class="item" title="Reading time">
@@ -116,7 +116,7 @@ NoResponse's Blog = NoResponse's Blog</title>
 
       </div>
       <div id="imgs" class="pjax">
-          <img src="/images/bg32.jpg">
+          <img src="/images/bg26.jpg">
       </div>
     </header>
     <div id="waves">
@@ -164,26 +164,20 @@ NoResponse's Blog = NoResponse's Blog</title>
   <div class="body md" itemprop="articleBody">
     
 
-    <h1 id="ch6-总线"><a class="markdownIt-Anchor" href="#ch6-总线">#</a> Ch6 总线</h1>
-<h2 id="概述"><a class="markdownIt-Anchor" href="#概述">#</a> 概述</h2>
-<h3 id="概念"><a class="markdownIt-Anchor" href="#概念">#</a> 概念</h3>
-<p>总线是一组能为多个部件分时和共享的公共信息传送线路。<mark>分时</mark>和<mark>共享</mark>是总线的两个特点</p>
+    <h1 id="Ch6-总线"><a href="#Ch6-总线" class="headerlink" title="Ch6 总线"></a>Ch6 总线</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><p>总线是一组能为多个部件分时和共享的公共信息传送线路。&#x3D;&#x3D;分时&#x3D;&#x3D;和&#x3D;&#x3D;共享&#x3D;&#x3D;是总线的两个特点</p>
 <ul>
 <li>分时：同一时刻只允许有一个部件向总线发送信息</li>
-<li>共享：总线上可以挂接多个部件<br>
-总线设备：按对总线有无控制权分</li>
+<li>共享：总线上可以挂接多个部件<br>总线设备：按对总线有无控制权分</li>
 <li>主设备：发出总线请求且获得总线控制权的设备</li>
-<li>从设备：被主设备访问的设备，只能响应从这设备发来的各种总线命令<br>
-特性：机械特性（尺寸、形状）、电气特性（传输方向、有效的电平范围）、功能特性（没跟传输线的功能）、时间特性（信号和时序的关系）</li>
+<li>从设备：被主设备访问的设备，只能响应从这设备发来的各种总线命令<br>特性：机械特性（尺寸、形状）、电气特性（传输方向、有效的电平范围）、功能特性（没跟传输线的功能）、时间特性（信号和时序的关系）</li>
 </ul>
-<h3 id="分类"><a class="markdownIt-Anchor" href="#分类">#</a> 分类</h3>
-<ol>
+<h3 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h3><ol>
 <li>按功能</li>
 </ol>
 <ul>
-<li>片内总线（CPU 内部的，连接各寄存器以及寄存器和 ALU）</li>
-<li>系统总线（连接 CPU、主存、I/O）。按传输内容又分为数据总线（数据、指令、终端类型号，双向传输）、地址总线（主存单元或 IO 端口地址，单向传输）、控制总线（clk, rst, 总线请求 / 允许，中断请求 / 回答，r/w…）</li>
-<li>I/O 总线（将低速的 IO 和告诉总线分离，常见的有 USB/PCI）</li>
+<li>片内总线（CPU内部的，连接各寄存器以及寄存器和ALU）</li>
+<li>系统总线（连接CPU、主存、I&#x2F;O）。按传输内容又分为数据总线（数据、指令、终端类型号，双向传输）、地址总线（主存单元或IO端口地址，单向传输）、控制总线（clk, rst, 总线请求&#x2F;允许, 中断请求&#x2F;回答, r&#x2F;w…）</li>
+<li>I&#x2F;O总线（将低速的IO和告诉总线分离，常见的有USB&#x2F;PCI）</li>
 <li>通信总线（外部总线，计算机系统之间或计算机系统与其他系统）</li>
 </ul>
 <ol start="2">
@@ -197,93 +191,52 @@ NoResponse's Blog = NoResponse's Blog</title>
 <li>按数据传输方式</li>
 </ol>
 <ul>
-<li>串行总线（一条双向或两条单向，数据按 bit 串行顺序传输，适合长距离通信）</li>
-<li>并行总线（有多条双向，容易出现干扰 / 延迟，适合近距离通信）</li>
+<li>串行总线（一条双向或两条单向，数据按bit串行顺序传输，适合长距离通信）</li>
+<li>并行总线（有多条双向，容易出现干扰&#x2F;延迟，适合近距离通信）</li>
 </ul>
-<h3 id="系统总线的结构"><a class="markdownIt-Anchor" href="#系统总线的结构">#</a> 系统总线的结构</h3>
-<ol>
-<li>单总线结构<br>
- CPU，主存，IO，都挂在一组（地址、数据、控制）总线上，允许 IO 之间、IO 与主存直接交换信息<br>
-结构简单、成本低、易于接入新的设备<br>
-贷款低、负载中、不支持并发传送<br>
-<img data-src="f13.jpg" alt></li>
-<li>双总线结构<br>
-一条主存总线，一条 I/O 总线<br>
-主存总线支持突发传送，突发传送（Burst Transfer）是一种数据传输方式，它允许在一次地址发送后，连续传输多个数据块，而不需要为每个数据块单独发送地址和控制信号<br>
-将低速的 I/O 设备分离开来，实现了存储器总线和 I/O 总线的分离<br>
-需要增加通道等硬件设备<br>
-<img data-src="f14.jpg" alt></li>
-<li>三总线结构<br>
-主存总线、I/O 总线、直接内存访问 (DMA) 总线<br>
- DMA 允许外部设备（如硬盘、网卡、显卡）直接与主存进行数据交换，无需 CPU 的直接参与和干预，把 CPU 从繁琐、低效的数据搬运工作中解放出来，让它可以去做更复杂的计算任务<br>
-优点是提高了 I/O 设备的性能，使其更快地响应命令，提高系统吞吐量；缺点是任意时刻只能使用一种总线，系统工作效率较低（意思是一个设备不能同时使用多个总线，比如主存总线和 DMA 总线不能同时对主存进行存取）<br>
-<img data-src="f15.jpg" alt></li>
+<h3 id="系统总线的结构"><a href="#系统总线的结构" class="headerlink" title="系统总线的结构"></a>系统总线的结构</h3><ol>
+<li>单总线结构<br>CPU，主存，IO，都挂在一组（地址、数据、控制）总线上，允许IO之间、IO与主存直接交换信息<br>结构简单、成本低、易于接入新的设备<br>贷款低、负载中、不支持并发传送<br><img data-src="/f13.jpg"></li>
+<li>双总线结构<br>一条主存总线，一条I&#x2F;O总线<br>主存总线支持突发传送，突发传送（Burst Transfer）是一种数据传输方式，它允许在一次地址发送后，连续传输多个数据块，而不需要为每个数据块单独发送地址和控制信号<br>将低速的I&#x2F;O设备分离开来，实现了存储器总线和I&#x2F;O总线的分离<br>需要增加通道等硬件设备<br><img data-src="/f14.jpg"></li>
+<li>三总线结构<br>主存总线、I&#x2F;O总线、直接内存访问(DMA)总线<br>DMA 允许外部设备（如硬盘、网卡、显卡）直接与主存进行数据交换，无需CPU的直接参与和干预,把CPU从繁琐、低效的数据搬运工作中解放出来，让它可以去做更复杂的计算任务<br>优点是提高了I&#x2F;O设备的性能，使其更快地响应命令，提高系统吞吐量；缺点是任意时刻只能使用一种总线，系统工作效率较低（意思是一个设备不能同时使用多个总线，比如主存总线和DMA总线不能同时对主存进行存取）<br><img data-src="/f15.jpg"></li>
 </ol>
-<h3 id="常见的总线标准"><a class="markdownIt-Anchor" href="#常见的总线标准">#</a> 常见的总线标准</h3>
-<p>略</p>
-<h3 id="总线的性能指标"><a class="markdownIt-Anchor" href="#总线的性能指标">#</a> 总线的性能指标</h3>
-<ul>
+<h3 id="常见的总线标准"><a href="#常见的总线标准" class="headerlink" title="常见的总线标准"></a>常见的总线标准</h3><p>略</p>
+<h3 id="总线的性能指标"><a href="#总线的性能指标" class="headerlink" title="总线的性能指标"></a>总线的性能指标</h3><ul>
 <li>总线时钟周期</li>
 <li>总线时钟频率</li>
 <li>总线传输周期：申请、寻址、传输、结束</li>
-<li>总线工作频率：1 / 总线（传输）周期</li>
+<li>总线工作频率：1&#x2F;总线（传输）周期</li>
 <li>总线宽度：通常指数据总线的根数</li>
-<li>总线带宽：最大数据传输速率，B/s，带宽 = 总线工作频率 *（总线宽度 / 8）</li>
-<li>总线复用：一种信号现在不同的时间传输不同的信息，比如地址 / 数据线复用（地址通过数据线传送）</li>
-<li>信号线数：地址总线、数据总线、控制总线数量的总和<br>
-最主要的性能指标：<mark>总线宽度、总线工作频率、总线带宽</mark><br>
-带宽 = 总线工作频率 * 总线宽度 bits/s</li>
+<li>总线带宽：最大数据传输速率，B&#x2F;s，带宽 &#x3D; 总线工作频率*（总线宽度&#x2F;8）</li>
+<li>总线复用：一种信号现在不同的时间传输不同的信息，比如地址&#x2F;数据线复用（地址通过数据线传送）</li>
+<li>信号线数：地址总线、数据总线、控制总线数量的总和<br>最主要的性能指标：&#x3D;&#x3D;总线宽度、总线工作频率、总线带宽&#x3D;&#x3D;<br>带宽 &#x3D; 总线工作频率*总线宽度 bits&#x2F;s</li>
 </ul>
-<h2 id="总线事务和定时"><a class="markdownIt-Anchor" href="#总线事务和定时">#</a> 总线事务和定时</h2>
-<h3 id="总线事务"><a class="markdownIt-Anchor" href="#总线事务">#</a> 总线事务</h3>
-<p>从请求总线到完成总线使用的操作序列称为<strong>总线事务</strong>，典型的总线事务包括请求操作、仲裁操作、地址传输、数据传输和总线释放</p>
+<h2 id="总线事务和定时"><a href="#总线事务和定时" class="headerlink" title="总线事务和定时"></a>总线事务和定时</h2><h3 id="总线事务"><a href="#总线事务" class="headerlink" title="总线事务"></a>总线事务</h3><p>从请求总线到完成总线使用的操作序列称为<strong>总线事务</strong>，典型的总线事务包括请求操作、仲裁操作、地址传输、数据传输和总线释放</p>
 <ol>
-<li>请求阶段：主设备（CPU 或 DMA）发出总线传输请求，获得总线控制权</li>
+<li>请求阶段：主设备（CPU或DMA）发出总线传输请求，获得总线控制权</li>
 <li>仲裁阶段：总选仲裁机构决定将下一个传输周期的总线使用权授予某个申请者</li>
 <li>寻址阶段：传输地址和命令，启动从模块</li>
 <li>传输阶段：主模块和从模块进行数据交换，单向或双向</li>
 <li>释放阶段：主模块有关信息从系统总线上撤除，让出总线使用权、</li>
 </ol>
-<p>数据传送方式：突发方式和非突发方式<br>
-突发传送：寻址阶段发送的是连续数据单元的首地址，传输阶段传送多个连续单元的数据，每个时钟周期可以传送一个字长的信息（如果总线宽度等于一个字长），一组数据全部传送完毕后再释放总线<br>
-非突发传送：每个传送周期内都先传送地址，再传送数据，每次只能传输一个字长的数据</p>
-<h3 id="总线定时"><a class="markdownIt-Anchor" href="#总线定时">#</a> 总线定时</h3>
-<p>同步、异步、半同步、分离式</p>
+<p>数据传送方式：突发方式和非突发方式<br>突发传送：寻址阶段发送的是连续数据单元的首地址，传输阶段传送多个连续单元的数据，每个时钟周期可以传送一个字长的信息（如果总线宽度等于一个字长），一组数据全部传送完毕后再释放总线<br>非突发传送：每个传送周期内都先传送地址，再传送数据，每次只能传输一个字长的数据</p>
+<h3 id="总线定时"><a href="#总线定时" class="headerlink" title="总线定时"></a>总线定时</h3><p>同步、异步、半同步、分离式</p>
 <ol>
-<li>同步定时方式<br>
-适用于总线较短且部件存取时间比较接近的系统。每个部件或设备发送或接收信息都在固定的总线传送周期中，一个总线的传送周期结束，下一个总线传送周期开始<br>
-优点：传送速度快，具有较高的传输速率；总线控制逻辑简单。<br>
-缺点：主从设备属于强制性同步；不能及时进行数据通信的有效性检验，可靠性较差</li>
-<li>异步定时方式<br>
-依靠传送双方相互制约的 “握手” 信号来实现定时控制。主设备发出请求，从设备接收到请求后发出回答。<br>
-优点：总线周期长度可变，能保证两个工作速度相差很大的部件或设备之间可靠地进行信息交换，自动适应时间的配合。<br>
-缺点：比同步控制方式稍复杂一些，速度比同步定时方式慢</li>
+<li>同步定时方式<br>适用于总线较短且部件存取时间比较接近的系统。每个部件或设备发送或接收信息都在固定的总线传送周期中，一个总线的传送周期结束，下一个总线传送周期开始<br>优点：传送速度快，具有较高的传输速率；总线控制逻辑简单。<br>缺点：主从设备属于强制性同步；不能及时进行数据通信的有效性检验，可靠性较差</li>
+<li>异步定时方式<br>依靠传送双方相互制约的“握手”信号来实现定时控制。主设备发出请求，从设备接收到请求后发出回答。<br>优点：总线周期长度可变，能保证两个工作速度相差很大的部件或设备之间可靠地进行信息交换，自动适应时间的配合。<br>缺点：比同步控制方式稍复杂一些，速度比同步定时方式慢</li>
 </ol>
 <ul>
-<li>根据 “请求” 和 “回答” 的撤销是否互锁分为
-<ul>
+<li>根据“请求”和“回答”的撤销是否互锁分为<ul>
 <li>不互锁方式：发出请求不必等回答，一段时间后自动撤销请求信号。收到请求信号后发出回答信号，一段时间后自动撤销回答信号。（速度最快 可靠性最差）</li>
 <li>半互锁方式：发出请求后等待收到回答信号才撤销请求信号。收到请求信号后发出回答信号，一段时间后自动撤销回答信号。</li>
 <li>全互锁方式：发出请求后等待收到回答信号才撤销请求信号，收到请求信号后发出回答，必须获知请求信号撤销之后才撤销回答信号（最可靠 速度最慢）</li>
 </ul>
 </li>
 </ul>
-<p>异步串行通信的方式一步串行通信的第一位是开始位，表示字符传送的开始。铜芯线上没有数据传送时处于逻辑 &quot;1&quot; 状态，发出逻辑 &quot;0&quot; 为开始位在从最低位开始传输信号。发送完字符之后可以发送几奇偶校验（若有），之后发送停止位。</p>
+<p>异步串行通信的方式一步串行通信的第一位是开始位，表示字符传送的开始。铜芯线上没有数据传送时处于逻辑”1”状态，发出逻辑”0”为开始位在从最低位开始传输信号。发送完字符之后可以发送几奇偶校验（若有），之后发送停止位。</p>
 <ol start="3">
-<li>
-<p>半同步定时方式<br>
-<img data-src="f1.jpg" alt><br>
-保留时钟信号的同时增设 Wait 响应信号线，Wait=1 的时候才取数据<br>
-优点：控制方式比异步简单<br>
-缺点：时钟频率不能太高</p>
+<li><p>半同步定时方式<br><img data-src="/f1.jpg"><br>保留时钟信号的同时增设Wait响应信号线，Wait&#x3D;1的时候才取数据<br>优点：控制方式比异步简单<br>缺点：时钟频率不能太高</p>
 </li>
-<li>
-<p>分离式定时方式<br>
-将总线事务分解为请求和应答两个子过程。第一个子过程中，主设备发送命令、地址到总线上，发完立即释放总线（第一个字过程很短）。第二个另外以个设备接受命令并发送数据到总线。两个子过程都只有单向信息流，每个设备都变为主设备。<br>
-<img data-src="f2.jpg" alt><br>
-<img data-src="f3.jpg" alt><br>
-在空闲阶段释放总线使总线可接受其他设备的请求<br>
-控制复杂，开销大</p>
+<li><p>分离式定时方式<br>将总线事务分解为请求和应答两个子过程。第一个子过程中，主设备发送命令、地址到总线上，发完立即释放总线（第一个字过程很短）。第二个另外以个设备接受命令并发送数据到总线。两个子过程都只有单向信息流，每个设备都变为主设备。<br><img data-src="/f2.jpg"><br><img data-src="/f3.jpg"><br>在空闲阶段释放总线使总线可接受其他设备的请求<br>控制复杂，开销大</p>
 </li>
 </ol>
 
@@ -355,7 +308,7 @@ NoResponse's Blog = NoResponse's Blog</title>
     <div class="item left">
       
 
-  <a href="/2025/08/02/note/20250802/" itemprop="url" rel="prev" data-background-image="&#x2F;images&#x2F;bg9.jpg" title="20250802阅读论文">
+  <a href="/2025/08/02/note/20250802/" itemprop="url" rel="prev" data-background-image="&#x2F;images&#x2F;bg6.jpg" title="20250802阅读论文">
   <span class="type">Previous Post</span>
   <span class="category"><i class="ic i-flag"></i> 七七八八</span>
   <h3>20250802阅读论文</h3>
@@ -365,7 +318,7 @@ NoResponse's Blog = NoResponse's Blog</title>
     <div class="item right">
       
 
-  <a href="/2025/08/10/computer-science/computer-organization/ch5/" itemprop="url" rel="next" data-background-image="&#x2F;images&#x2F;bg25.jpg" title="Ch5">
+  <a href="/2025/08/10/computer-science/computer-organization/ch5/" itemprop="url" rel="next" data-background-image="&#x2F;images&#x2F;bg2.png" title="Ch5">
   <span class="type">Next Post</span>
   <span class="category"><i class="ic i-flag"></i> 计算机组成</span>
   <h3>Ch5</h3>
@@ -387,7 +340,7 @@ NoResponse's Blog = NoResponse's Blog</title>
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="Contents">
-          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#ch6-%E6%80%BB%E7%BA%BF"><span class="toc-number">1.</span> <span class="toc-text"> Ch6 总线</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A6%82%E8%BF%B0"><span class="toc-number">1.1.</span> <span class="toc-text"> 概述</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A6%82%E5%BF%B5"><span class="toc-number">1.1.1.</span> <span class="toc-text"> 概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E7%B1%BB"><span class="toc-number">1.1.2.</span> <span class="toc-text"> 分类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B3%BB%E7%BB%9F%E6%80%BB%E7%BA%BF%E7%9A%84%E7%BB%93%E6%9E%84"><span class="toc-number">1.1.3.</span> <span class="toc-text"> 系统总线的结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E7%9A%84%E6%80%BB%E7%BA%BF%E6%A0%87%E5%87%86"><span class="toc-number">1.1.4.</span> <span class="toc-text"> 常见的总线标准</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BA%BF%E7%9A%84%E6%80%A7%E8%83%BD%E6%8C%87%E6%A0%87"><span class="toc-number">1.1.5.</span> <span class="toc-text"> 总线的性能指标</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BA%BF%E4%BA%8B%E5%8A%A1%E5%92%8C%E5%AE%9A%E6%97%B6"><span class="toc-number">1.2.</span> <span class="toc-text"> 总线事务和定时</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BA%BF%E4%BA%8B%E5%8A%A1"><span class="toc-number">1.2.1.</span> <span class="toc-text"> 总线事务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BA%BF%E5%AE%9A%E6%97%B6"><span class="toc-number">1.2.2.</span> <span class="toc-text"> 总线定时</span></a></li></ol></li></ol></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Ch6-%E6%80%BB%E7%BA%BF"><span class="toc-number">1.</span> <span class="toc-text">Ch6 总线</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A6%82%E8%BF%B0"><span class="toc-number">1.1.</span> <span class="toc-text">概述</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A6%82%E5%BF%B5"><span class="toc-number">1.1.1.</span> <span class="toc-text">概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E7%B1%BB"><span class="toc-number">1.1.2.</span> <span class="toc-text">分类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B3%BB%E7%BB%9F%E6%80%BB%E7%BA%BF%E7%9A%84%E7%BB%93%E6%9E%84"><span class="toc-number">1.1.3.</span> <span class="toc-text">系统总线的结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E7%9A%84%E6%80%BB%E7%BA%BF%E6%A0%87%E5%87%86"><span class="toc-number">1.1.4.</span> <span class="toc-text">常见的总线标准</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BA%BF%E7%9A%84%E6%80%A7%E8%83%BD%E6%8C%87%E6%A0%87"><span class="toc-number">1.1.5.</span> <span class="toc-text">总线的性能指标</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BA%BF%E4%BA%8B%E5%8A%A1%E5%92%8C%E5%AE%9A%E6%97%B6"><span class="toc-number">1.2.</span> <span class="toc-text">总线事务和定时</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BA%BF%E4%BA%8B%E5%8A%A1"><span class="toc-number">1.2.1.</span> <span class="toc-text">总线事务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BA%BF%E5%AE%9A%E6%97%B6"><span class="toc-number">1.2.2.</span> <span class="toc-text">总线定时</span></a></li></ol></li></ol></li></ol>
       </div>
       <div class="related panel pjax" data-title="Related">
         <ul>
@@ -512,12 +465,10 @@ NoResponse's Blog = NoResponse's Blog</title>
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/computer-network/" title="In 计算机网络">计算机网络</a>
+<a href="/categories/AI/" title="In 人工智能">人工智能</a>
 </div>
 
-    <span><a href="/2025/05/13/computer-science/computer-network/ch1/" title="Ch1">Ch1</a></span>
+    <span><a href="/2025/06/16/AI/week14-15/" title="Week14-15">Week14-15</a></span>
   </li>
 
       
@@ -526,10 +477,10 @@ NoResponse's Blog = NoResponse's Blog</title>
 <div class="breadcrumb">
 <a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/DS/" title="In 数据结构">数据结构</a>
+<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
 </div>
 
-    <span><a href="/2023/10/31/computer-science/DS/fds/" title="fds课程笔记">fds课程笔记</a></span>
+    <span><a href="/2025/03/30/computer-science/compile-principles/ch5/" title="语义分析">语义分析</a></span>
   </li>
 
       
@@ -548,32 +499,46 @@ NoResponse's Blog = NoResponse's Blog</title>
   <li class="item">
     
 <div class="breadcrumb">
+<a href="/categories/note/" title="In 七七八八">七七八八</a>
+</div>
+
+    <span><a href="/2025/08/02/note/20250802/" title="20250802阅读论文">20250802阅读论文</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/DS/" title="In 数据结构">数据结构</a>
+</div>
+
+    <span><a href="/2025/10/05/computer-science/DS/ch4/" title="ch4">ch4</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
 <a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
 <i class="ic i-angle-right"></i>
 <a href="/categories/computer-science/computer-organization/" title="In 计算机组成">计算机组成</a>
 </div>
 
-    <span><a href="/2025/08/10/computer-science/computer-organization/ch5/" title="Ch5">Ch5</a></span>
+    <span><a href="/2025/05/14/computer-science/computer-organization/ch2/" title="Ch2">Ch2</a></span>
   </li>
 
       
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/AI/" title="In 人工智能">人工智能</a>
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
 </div>
 
-    <span><a href="/2025/06/11/AI/week4-5/" title="Week4-5">Week4-5</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/SE/" title="In 软件工程">软件工程</a>
-</div>
-
-    <span><a href="/2025/06/19/SE/diagram/" title="画图题">画图题</a></span>
+    <span><a href="/2025/03/21/computer-science/compile-principles/ch1/" title="Introduction">Introduction</a></span>
   </li>
 
       
@@ -585,7 +550,7 @@ NoResponse's Blog = NoResponse's Blog</title>
 <a href="/categories/computer-science/computer-network/" title="In 计算机网络">计算机网络</a>
 </div>
 
-    <span><a href="/2025/12/07/computer-science/computer-network/note/" title="计网八股">计网八股</a></span>
+    <span><a href="/2025/05/13/computer-science/computer-network/ch1/" title="Ch1">Ch1</a></span>
   </li>
 
       
@@ -602,22 +567,12 @@ NoResponse's Blog = NoResponse's Blog</title>
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/AI/" title="In 人工智能">人工智能</a>
-</div>
-
-    <span><a href="/2025/12/09/AI/agent/" title="agent相关">agent相关</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
 <a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/computer-organization/" title="In 计算机组成">计算机组成</a>
+<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
 </div>
 
-    <span><a href="/2025/08/10/computer-science/computer-organization/ch6/" title="Ch6">Ch6</a></span>
+    <span><a href="/2025/03/29/computer-science/compile-principles/ch4/" title="抽象语法">抽象语法</a></span>
   </li>
 
   </ul>
@@ -642,13 +597,13 @@ NoResponse's Blog = NoResponse's Blog</title>
     <span class="post-meta-item-icon">
       <i class="ic i-chart-area"></i>
     </span>
-    <span title="Symbols count total">188k words</span>
+    <span title="Symbols count total">185k words</span>
 
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="ic i-coffee"></i>
     </span>
-    <span title="Reading time total">2:51</span>
+    <span title="Reading time total">2:48</span>
   </div>
   <div class="powered-by">
     Powered by <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>

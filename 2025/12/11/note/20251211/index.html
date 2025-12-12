@@ -76,7 +76,7 @@ NoResponse's Blog = NoResponse's Blog</title>
       <i class="ic i-pen"></i>
     </span>
     <span class="text">Symbols count in article</span>
-    <span>5.9k</span>
+    <span>6k</span>
     <span class="text">words</span>
   </span>
   <span class="item" title="Reading time">
@@ -116,7 +116,7 @@ NoResponse's Blog = NoResponse's Blog</title>
 
       </div>
       <div id="imgs" class="pjax">
-          <img src="/images/bg29.jpg">
+          <img src="/images/bg31.jpg">
       </div>
     </header>
     <div id="waves">
@@ -161,60 +161,54 @@ NoResponse's Blog = NoResponse's Blog</title>
   <div class="body md" itemprop="articleBody">
     
 
-    <h1 id="默认构造-拷贝构造-移动构造以及赋值运算符重载"><a class="markdownIt-Anchor" href="#默认构造-拷贝构造-移动构造以及赋值运算符重载">#</a> 默认构造、拷贝构造、移动构造以及赋值运算符重载</h1>
-<figure class="highlight c++"><figcaption><span>构造函数</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">MyClass</span> &#123;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="type">int</span>* data;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">MyClass</span>(): <span class="built_in">data</span>(<span class="literal">nullptr</span>) &#123;&#125;</span><br><span class="line">    ~<span class="built_in">MyClass</span>() &#123; <span class="keyword">delete</span> data; &#125;</span><br><span class="line">    <span class="built_in">MyClass</span>(<span class="type">const</span> MyClass&amp; other): <span class="built_in">data</span>(<span class="literal">nullptr</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> (other.data != <span class="literal">nullptr</span>) &#123;</span><br><span class="line">            data = <span class="keyword">new</span> <span class="built_in">int</span>(*other.data);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">MyClass</span>(MyClass&amp;&amp; other) <span class="keyword">noexcept</span>: <span class="built_in">data</span>(<span class="literal">nullptr</span>) &#123;</span><br><span class="line">        data = other.data;</span><br><span class="line">        other.data = <span class="literal">nullptr</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 拷贝赋值运算符</span></span><br><span class="line">    MyClass&amp; <span class="keyword">operator</span>=(<span class="type">const</span> MyClass&amp; other) &#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">this</span> == &amp;other) &#123;      <span class="comment">// 自赋值检查</span></span><br><span class="line">            <span class="keyword">return</span> *<span class="keyword">this</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">delete</span> data;              <span class="comment">// 释放当前资源</span></span><br><span class="line">        data = <span class="literal">nullptr</span>;</span><br><span class="line">        <span class="keyword">if</span> (other.data != <span class="literal">nullptr</span>) &#123;</span><br><span class="line">            data = <span class="keyword">new</span> <span class="built_in">int</span>(*other.data); <span class="comment">// 深拷贝</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> *<span class="keyword">this</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 移动赋值运算符</span></span><br><span class="line">    MyClass&amp; <span class="keyword">operator</span>=(MyClass&amp;&amp; other) <span class="keyword">noexcept</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">this</span> == &amp;other) &#123;</span><br><span class="line">            <span class="keyword">return</span> *<span class="keyword">this</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">delete</span> data;               <span class="comment">// 释放当前资源</span></span><br><span class="line">        data = other.data;         <span class="comment">// 接管</span></span><br><span class="line">        other.data = <span class="literal">nullptr</span>;      <span class="comment">// 置空</span></span><br><span class="line">        <span class="keyword">return</span> *<span class="keyword">this</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p>下面用动态数组示例补全拷贝 / 移动语义（遵循 Rule of Five）：</p>
+    <h1 id="默认构造、拷贝构造、移动构造以及赋值运算符重载"><a href="#默认构造、拷贝构造、移动构造以及赋值运算符重载" class="headerlink" title="默认构造、拷贝构造、移动构造以及赋值运算符重载"></a>默认构造、拷贝构造、移动构造以及赋值运算符重载</h1><figure class="highlight c++"><figcaption><span>构造函数</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">MyClass</span> &#123;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="type">int</span>* data;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">MyClass</span>(): <span class="built_in">data</span>(<span class="literal">nullptr</span>) &#123;&#125;</span><br><span class="line">    ~<span class="built_in">MyClass</span>() &#123; <span class="keyword">delete</span> data; &#125;</span><br><span class="line">    <span class="built_in">MyClass</span>(<span class="type">const</span> MyClass&amp; other): <span class="built_in">data</span>(<span class="literal">nullptr</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> (other.data != <span class="literal">nullptr</span>) &#123;</span><br><span class="line">            data = <span class="keyword">new</span> <span class="built_in">int</span>(*other.data);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">MyClass</span>(MyClass&amp;&amp; other) <span class="keyword">noexcept</span>: <span class="built_in">data</span>(<span class="literal">nullptr</span>) &#123;</span><br><span class="line">        data = other.data;</span><br><span class="line">        other.data = <span class="literal">nullptr</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 拷贝赋值运算符</span></span><br><span class="line">    MyClass&amp; <span class="keyword">operator</span>=(<span class="type">const</span> MyClass&amp; other) &#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">this</span> == &amp;other) &#123;      <span class="comment">// 自赋值检查</span></span><br><span class="line">            <span class="keyword">return</span> *<span class="keyword">this</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">delete</span> data;              <span class="comment">// 释放当前资源</span></span><br><span class="line">        data = <span class="literal">nullptr</span>;</span><br><span class="line">        <span class="keyword">if</span> (other.data != <span class="literal">nullptr</span>) &#123;</span><br><span class="line">            data = <span class="keyword">new</span> <span class="built_in">int</span>(*other.data); <span class="comment">// 深拷贝</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> *<span class="keyword">this</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 移动赋值运算符</span></span><br><span class="line">    MyClass&amp; <span class="keyword">operator</span>=(MyClass&amp;&amp; other) <span class="keyword">noexcept</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">this</span> == &amp;other) &#123;</span><br><span class="line">            <span class="keyword">return</span> *<span class="keyword">this</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">delete</span> data;               <span class="comment">// 释放当前资源</span></span><br><span class="line">        data = other.data;         <span class="comment">// 接管</span></span><br><span class="line">        other.data = <span class="literal">nullptr</span>;      <span class="comment">// 置空</span></span><br><span class="line">        <span class="keyword">return</span> *<span class="keyword">this</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>下面用动态数组示例补全拷贝&#x2F;移动语义（遵循 Rule of Five）：</p>
 <figure class="highlight c++"><figcaption><span>数组</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">MyArray</span> &#123;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="type">int</span>* data;</span><br><span class="line">    <span class="type">int</span> size;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">MyArray</span>(): <span class="built_in">data</span>(<span class="literal">nullptr</span>), <span class="built_in">size</span>(<span class="number">0</span>) &#123;&#125;</span><br><span class="line">    ~<span class="built_in">MyArray</span>()&#123; <span class="keyword">delete</span>[] data; &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">MyArray</span>(<span class="type">int</span> sz): <span class="built_in">data</span>(sz ? <span class="keyword">new</span> <span class="type">int</span>[sz] : <span class="literal">nullptr</span>), <span class="built_in">size</span>(sz) &#123;&#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 拷贝构造：深拷贝</span></span><br><span class="line">    <span class="built_in">MyArray</span>(<span class="type">const</span> MyArray&amp; other): <span class="built_in">data</span>(<span class="literal">nullptr</span>), <span class="built_in">size</span>(other.size) &#123;</span><br><span class="line">        <span class="keyword">if</span> (other.data &amp;&amp; other.size &gt; <span class="number">0</span>) &#123;</span><br><span class="line">            data = <span class="keyword">new</span> <span class="type">int</span>[other.size];</span><br><span class="line">            <span class="built_in">copy</span>(other.data, other.data + other.size, data);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 移动构造：接管资源</span></span><br><span class="line">    <span class="built_in">MyArray</span>(MyArray&amp;&amp; other) <span class="keyword">noexcept</span>: <span class="built_in">data</span>(other.data), <span class="built_in">size</span>(other.size) &#123;</span><br><span class="line">        other.data = <span class="literal">nullptr</span>;</span><br><span class="line">        other.size = <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 拷贝赋值：先复制再交换（异常安全）</span></span><br><span class="line">    MyArray&amp; <span class="keyword">operator</span>=(<span class="type">const</span> MyArray&amp; other) &#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">this</span> == &amp;other) <span class="keyword">return</span> *<span class="keyword">this</span>;</span><br><span class="line">        <span class="type">int</span>* newData = <span class="literal">nullptr</span>;</span><br><span class="line">        <span class="keyword">if</span> (other.size &gt; <span class="number">0</span>) &#123;</span><br><span class="line">            newData = <span class="keyword">new</span> <span class="type">int</span>[other.size];</span><br><span class="line">            <span class="built_in">copy</span>(other.data, other.data + other.size, newData);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">delete</span>[] data;</span><br><span class="line">        data = newData;</span><br><span class="line">        size = other.size;</span><br><span class="line">        <span class="keyword">return</span> *<span class="keyword">this</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 移动赋值：释放当前资源并接管</span></span><br><span class="line">    MyArray&amp; <span class="keyword">operator</span>=(MyArray&amp;&amp; other) <span class="keyword">noexcept</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">this</span> == &amp;other) <span class="keyword">return</span> *<span class="keyword">this</span>;</span><br><span class="line">        <span class="keyword">delete</span>[] data;</span><br><span class="line">        data = other.data;</span><br><span class="line">        size = other.size;</span><br><span class="line">        other.data = <span class="literal">nullptr</span>;</span><br><span class="line">        other.size = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">return</span> *<span class="keyword">this</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">getSize</span><span class="params">()</span> <span class="type">const</span> </span>&#123; <span class="keyword">return</span> size; &#125;</span><br><span class="line">    <span class="function"><span class="type">int</span>* <span class="title">getData</span><span class="params">()</span> <span class="type">const</span> </span>&#123; <span class="keyword">return</span> data; &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
 <p>要点：</p>
 <ul>
 <li>对于拥有动态资源的类型，建议同时实现析构、拷贝构造、移动构造、拷贝赋值、移动赋值（Rule of Five）。</li>
 <li>拷贝要做深拷贝，移动要尽可能接管资源并置空原对象以避免双重释放。</li>
 <li>拷贝赋值实现中可以先分配新资源，再释放旧资源以提高异常安全性。</li>
 </ul>
-<h1 id="智能指针怎么用"><a class="markdownIt-Anchor" href="#智能指针怎么用">#</a> 智能指针怎么用</h1>
-<p><span class="exturl" data-url="aHR0cHM6Ly96aHVhbmxhbi56aGlodS5jb20vcC8xOTIxNTc5ODE0Mjg1OTc1Njcw">https://zhuanlan.zhihu.com/p/1921579814285975670</span></p>
+<h1 id="智能指针怎么用"><a href="#智能指针怎么用" class="headerlink" title="智能指针怎么用"></a>智能指针怎么用</h1><p><span class="exturl" data-url="aHR0cHM6Ly96aHVhbmxhbi56aGlodS5jb20vcC8xOTIxNTc5ODE0Mjg1OTc1Njcw">https://zhuanlan.zhihu.com/p/1921579814285975670</span></p>
 <figure class="highlight c++"><figcaption><span>智能指针</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 使用std::make_shared</span></span><br><span class="line"><span class="keyword">auto</span> ptr1 = std::<span class="built_in">make_shared</span>&lt;<span class="type">int</span>&gt;(<span class="number">10</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用std::shared_ptr(new T(args...))</span></span><br><span class="line"><span class="function">std::shared_ptr&lt;<span class="type">int</span>&gt; <span class="title">ptr2</span><span class="params">(<span class="keyword">new</span> <span class="type">int</span>(<span class="number">10</span>))</span></span>;</span><br></pre></td></tr></table></figure>
+
 <figure class="highlight c++"><figcaption><span>智能指针</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">std::shared_ptr&lt;<span class="type">int</span>&gt; shared_ptr1 = std::<span class="built_in">make_shared</span>&lt;<span class="type">int</span>&gt;(<span class="number">10</span>); </span><br><span class="line">std::weak_ptr&lt;<span class="type">int</span>&gt; weak_ptr1 = shared_ptr1; </span><br><span class="line"><span class="keyword">auto</span> shared_ptr2 = weak_ptr<span class="number">1.l</span>ock(); </span><br><span class="line"><span class="keyword">if</span> (shared_ptr2) &#123;</span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;Object is still alive: &quot;</span> &lt;&lt; *shared_ptr2 &lt;&lt; std::endl; </span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;Object has been destroyed&quot;</span> &lt;&lt; std::endl; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>多个 shared_ptr 对象可以共享同一个动态分配的对象，并通过一个<mark>共享的控制块</mark>（control block）来维护引用计数，当最后一个 shared_ptr 被销毁或重置时，自动释放所管理的对象。</p>
-<h3 id="1-控制块control-block"><a class="markdownIt-Anchor" href="#1-控制块control-block">#</a> 1. 控制块（Control Block）</h3>
-<p>每个被  <code>shared_ptr</code>  管理的对象都会关联一个 <strong>控制块（control block）</strong>，这个控制块通常包含以下信息：</p>
+
+<p>多个 shared_ptr 对象可以共享同一个动态分配的对象，并通过一个&#x3D;&#x3D;共享的控制块&#x3D;&#x3D;（control block）来维护引用计数，当最后一个 shared_ptr 被销毁或重置时，自动释放所管理的对象。</p>
+<h3 id="1-控制块（Control-Block）"><a href="#1-控制块（Control-Block）" class="headerlink" title="1. 控制块（Control Block）"></a>1. 控制块（Control Block）</h3><p>每个被 <code>shared_ptr</code> 管理的对象都会关联一个 <strong>控制块（control block）</strong>，这个控制块通常包含以下信息：</p>
 <ul>
-<li><strong>强引用计数（strong reference count）</strong>：即有多少个  <code>shared_ptr</code>  正在共享该对象。</li>
-<li><strong>弱引用计数（weak reference count）</strong>：即有多少个  <code>weak_ptr</code>  指向该控制块（用于支持  <code>weak_ptr</code> ）。</li>
-<li><strong>被管理对象的指针</strong>（有时直接内嵌对象，如通过  <code>make_shared</code> ）。</li>
-<li><strong>删除器（deleter）</strong>：可自定义的函数对象，用于释放资源（默认是  <code>delete</code> ）。</li>
+<li><strong>强引用计数（strong reference count）</strong>：即有多少个 <code>shared_ptr</code> 正在共享该对象。</li>
+<li><strong>弱引用计数（weak reference count）</strong>：即有多少个 <code>weak_ptr</code> 指向该控制块（用于支持 <code>weak_ptr</code>）。</li>
+<li><strong>被管理对象的指针</strong>（有时直接内嵌对象，如通过 <code>make_shared</code>）。</li>
+<li><strong>删除器（deleter）</strong>：可自定义的函数对象，用于释放资源（默认是 <code>delete</code>）。</li>
 <li><strong>分配器（allocator）</strong>：如果使用了自定义内存分配策略。</li>
 </ul>
 <blockquote>
-<p>注意：控制块本身是堆上分配的（除非使用  <code>make_shared</code> ，此时对象和控制块可能分配在同一块内存中以提高效率）。</p>
+<p>注意：控制块本身是堆上分配的（除非使用 <code>make_shared</code>，此时对象和控制块可能分配在同一块内存中以提高效率）。</p>
 </blockquote>
-<h3 id="2-引用计数的增减"><a class="markdownIt-Anchor" href="#2-引用计数的增减">#</a> 2. 引用计数的增减</h3>
-<ul>
-<li><strong>构造 / 拷贝 / 赋值</strong>：
-<ul>
-<li>当一个新的  <code>shared_ptr</code>  通过拷贝构造、移动构造或赋值操作指向同一对象时，<strong>强引用计数加 1</strong>。</li>
+<h3 id="2-引用计数的增减"><a href="#2-引用计数的增减" class="headerlink" title="2. 引用计数的增减"></a>2. 引用计数的增减</h3><ul>
+<li><strong>构造&#x2F;拷贝&#x2F;赋值</strong>：<ul>
+<li>当一个新的 <code>shared_ptr</code> 通过拷贝构造、移动构造或赋值操作指向同一对象时，<strong>强引用计数加 1</strong>。</li>
 </ul>
 </li>
-<li><strong>析构 / 重置（reset）</strong>：
-<ul>
-<li>当一个  <code>shared_ptr</code>  被销毁或调用  <code>reset()</code>  时，<strong>强引用计数减 1</strong>。</li>
-<li>如果强引用计数变为 0，则：
-<ul>
+<li><strong>析构&#x2F;重置（reset）</strong>：<ul>
+<li>当一个 <code>shared_ptr</code> 被销毁或调用 <code>reset()</code> 时，<strong>强引用计数减 1</strong>。</li>
+<li>如果强引用计数变为 0，则：<ul>
 <li>调用删除器（deleter）释放被管理的对象；</li>
-<li><strong>但控制块不会立即释放</strong>，因为可能还有  <code>weak_ptr</code>  存在（需等待弱引用计数也为 0 才释放控制块）。</li>
+<li><strong>但控制块不会立即释放</strong>，因为可能还有 <code>weak_ptr</code> 存在（需等待弱引用计数也为 0 才释放控制块）。</li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
-<h3 id="3-线程安全性"><a class="markdownIt-Anchor" href="#3-线程安全性">#</a> 3. 线程安全性</h3>
-<ul>
-<li><strong>引用计数的操作是原子的</strong>（通常使用  <code>std::atomic</code>  实现），因此多个线程同时拷贝或销毁  <code>shared_ptr</code>  是线程安全的。</li>
+<h3 id="3-线程安全性"><a href="#3-线程安全性" class="headerlink" title="3. 线程安全性"></a>3. 线程安全性</h3><ul>
+<li><strong>引用计数的操作是原子的</strong>（通常使用 <code>std::atomic</code> 实现），因此多个线程同时拷贝或销毁 <code>shared_ptr</code> 是线程安全的。</li>
 <li>但注意：<strong>对被管理对象本身的访问不是线程安全的</strong>，需要用户自己加锁。</li>
 </ul>
-<h1 id="shared_ptr什么时候1什么时候-1"><a class="markdownIt-Anchor" href="#shared_ptr什么时候1什么时候-1">#</a> shared_ptr 什么时候 + 1 什么时候 - 1</h1>
-<h2 id="1"><a class="markdownIt-Anchor" href="#1">#</a> +1</h2>
-<ol>
+<h1 id="shared-ptr什么时候-1什么时候-1"><a href="#shared-ptr什么时候-1什么时候-1" class="headerlink" title="shared_ptr什么时候+1什么时候-1"></a>shared_ptr什么时候+1什么时候-1</h1><h2 id="1"><a href="#1" class="headerlink" title="+1"></a>+1</h2><ol>
 <li>拷贝构造</li>
 </ol>
 <figure class="highlight c++"><figcaption><span>智能指针</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">std::shared_ptr&lt;<span class="type">int</span>&gt; p1 = std::<span class="built_in">make_shared</span>&lt;<span class="type">int</span>&gt;(<span class="number">42</span>);</span><br><span class="line"><span class="function">std::shared_ptr&lt;<span class="type">int</span>&gt; <span class="title">p2</span><span class="params">(p1)</span></span>;  <span class="comment">// +1 → 强引用计数变为 2</span></span><br></pre></td></tr></table></figure>
@@ -231,19 +225,19 @@ NoResponse's Blog = NoResponse's Blog</title>
 </ol>
 <figure class="highlight c++"><figcaption><span>智能指针</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">std::shared_ptr&lt;<span class="type">int</span>&gt; <span class="title">getPtr</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> p1;  <span class="comment">// 返回时可能触发拷贝或移动（见下文）</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">auto</span> p4 = <span class="built_in">getPtr</span>();  <span class="comment">// 若发生拷贝 → +1；若被优化为移动 → 不变</span></span><br></pre></td></tr></table></figure>
 <blockquote>
-<p>现代编译器通常会进行 返回值优化（RVO） 或使用 移动语义，避免不必要的 +1/-1</p>
-</blockquote>
+<p>现代编译器通常会进行 返回值优化（RVO） 或使用 移动语义，避免不必要的 +1&#x2F;-1</p>
 <ol start="5">
 <li>放入容器（如 vector、list）</li>
 </ol>
+</blockquote>
 <figure class="highlight c++"><figcaption><span>智能指针</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">std::vector&lt;std::shared_ptr&lt;<span class="type">int</span>&gt;&gt; vec;</span><br><span class="line">vec.<span class="built_in">push_back</span>(p1);  <span class="comment">// 拷贝进容器 → +1</span></span><br></pre></td></tr></table></figure>
-<h2 id="-1"><a class="markdownIt-Anchor" href="#-1">#</a> -1</h2>
-<ol>
+
+<h2 id="1-1"><a href="#1-1" class="headerlink" title="-1"></a>-1</h2><ol>
 <li>析构</li>
 </ol>
 <figure class="highlight c++"><figcaption><span>智能指针</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    std::shared_ptr&lt;<span class="type">int</span>&gt; p = p1;  <span class="comment">// +1</span></span><br><span class="line">&#125; <span class="comment">// p 析构 → -1</span></span><br></pre></td></tr></table></figure>
 <ol start="2">
-<li>调用 reset</li>
+<li>调用reset</li>
 </ol>
 <figure class="highlight c++"><figcaption><span>智能指针</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">p<span class="number">1.</span><span class="built_in">reset</span>();        <span class="comment">// 放弃当前对象 → -1</span></span><br><span class="line">p<span class="number">1.</span><span class="built_in">reset</span>(<span class="literal">nullptr</span>); <span class="comment">// 同上</span></span><br></pre></td></tr></table></figure>
 <ol start="3">
@@ -251,56 +245,50 @@ NoResponse's Blog = NoResponse's Blog</title>
 </ol>
 <figure class="highlight c++"><figcaption><span>智能指针</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">std::shared_ptr&lt;<span class="type">int</span>&gt; p2 = std::<span class="built_in">make_shared</span>&lt;<span class="type">int</span>&gt;(<span class="number">100</span>);</span><br><span class="line">p1 = p2;  </span><br><span class="line"><span class="comment">// 先对 p1 原来的对象 -1，</span></span><br><span class="line"><span class="comment">// 再对 p2 的对象 +1（因为 p1 现在共享 p2 的对象）</span></span><br></pre></td></tr></table></figure>
 <ol start="4">
-<li>被赋予 nullptr 或空</li>
+<li>被赋予nullptr或空</li>
 </ol>
 <figure class="highlight c++"><figcaption><span>智能指针</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">p1 = <span class="literal">nullptr</span>;  <span class="comment">// 相当于 reset() → -1</span></span><br></pre></td></tr></table></figure>
 <ol start="5">
-<li>从容器中移除或 clear</li>
+<li>从容器中移除或clear</li>
 </ol>
 <figure class="highlight c++"><figcaption><span>智能指针</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vec.<span class="built_in">clear</span>();  <span class="comment">// 容器中每个 shared_ptr 析构 → 各自管理的对象引用计数 -1</span></span><br></pre></td></tr></table></figure>
-<h1 id="vector底层"><a class="markdownIt-Anchor" href="#vector底层">#</a> vector 底层</h1>
-<p>连续内存存储 + 动态扩容</p>
-<h2 id="一-基本结构"><a class="markdownIt-Anchor" href="#一-基本结构">#</a> 一、基本结构</h2>
-<p><code>std::vector&lt;T&gt;</code>  内部通常维护三个关键指针（或等效的成员）：</p>
+
+<h1 id="vector底层"><a href="#vector底层" class="headerlink" title="vector底层"></a>vector底层</h1><p>连续内存存储 + 动态扩容</p>
+<h2 id="一、基本结构"><a href="#一、基本结构" class="headerlink" title="一、基本结构"></a>一、基本结构</h2><p><code>std::vector&lt;T&gt;</code> 内部通常维护三个关键指针（或等效的成员）：</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> Allocator = std::allocator&lt;T&gt;&gt;</span><br><span class="line"><span class="keyword">class</span> vector &#123;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    T* begin_;     <span class="comment">// 指向首元素</span></span><br><span class="line">    T* end_;       <span class="comment">// 指向最后一个元素的下一个位置（即 size 的边界）</span></span><br><span class="line">    T* capacity_;  <span class="comment">// 指向已分配内存的末尾（即 capacity 的边界）</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
 <ul>
-<li><strong> <code>size()</code> </strong> =  <code>end_ - begin_</code></li>
-<li><strong> <code>capacity()</code> </strong> =  <code>capacity_ - begin_</code></li>
-<li>所有元素在  <code>[begin_, end_)</code>  范围内，内存连续。</li>
+<li><strong><code>size()</code></strong> &#x3D; <code>end_ - begin_</code></li>
+<li><strong><code>capacity()</code></strong> &#x3D; <code>capacity_ - begin_</code></li>
+<li>所有元素在 <code>[begin_, end_)</code> 范围内，内存连续。</li>
 </ul>
 <blockquote>
-<p>实际标准库实现（如 libstdc++、libc++）可能用一个指针 + 两个整数（size/capacity），但逻辑等价。</p>
+<p>实际标准库实现（如 libstdc++、libc++）可能用一个指针 + 两个整数（size&#x2F;capacity），但逻辑等价。</p>
 </blockquote>
-<h2 id="二-内存分配与释放"><a class="markdownIt-Anchor" href="#二-内存分配与释放">#</a> 二、内存分配与释放</h2>
-<ul>
-<li>使用 <strong>分配器（Allocator）</strong> 管理内存，默认是  <code>std::allocator&lt;T&gt;</code> 。</li>
-<li>初始时  <code>capacity() == 0</code> ，不分配内存（除非显式  <code>reserve</code>  或插入元素）。</li>
+<h2 id="二、内存分配与释放"><a href="#二、内存分配与释放" class="headerlink" title="二、内存分配与释放"></a>二、内存分配与释放</h2><ul>
+<li>使用 <strong>分配器（Allocator）</strong> 管理内存，默认是 <code>std::allocator&lt;T&gt;</code>。</li>
+<li>初始时 <code>capacity() == 0</code>，不分配内存（除非显式 <code>reserve</code> 或插入元素）。</li>
 <li>当需要更多空间时，<strong>重新分配一块更大的连续内存</strong>，将旧元素<strong>移动或拷贝</strong>过去，再释放旧内存。</li>
 </ul>
-<h2 id="三-动态扩容机制关键"><a class="markdownIt-Anchor" href="#三-动态扩容机制关键">#</a> 三、动态扩容机制（关键！）</h2>
-<h3 id="1-何时扩容"><a class="markdownIt-Anchor" href="#1-何时扩容">#</a> 1. <strong>何时扩容？</strong></h3>
-<p>当  <code>size() == capacity()</code>  且尝试插入新元素（如  <code>push_back</code> 、 <code>insert</code> ）时，触发扩容。</p>
-<h3 id="2-扩容策略"><a class="markdownIt-Anchor" href="#2-扩容策略">#</a> 2. <strong>扩容策略</strong></h3>
-<ul>
+<h2 id="三、动态扩容机制（关键！）"><a href="#三、动态扩容机制（关键！）" class="headerlink" title="三、动态扩容机制（关键！）"></a>三、动态扩容机制（关键！）</h2><h3 id="1-何时扩容？"><a href="#1-何时扩容？" class="headerlink" title="1. 何时扩容？"></a>1. <strong>何时扩容？</strong></h3><p>当 <code>size() == capacity()</code> 且尝试插入新元素（如 <code>push_back</code>、<code>insert</code>）时，触发扩容。</p>
+<h3 id="2-扩容策略"><a href="#2-扩容策略" class="headerlink" title="2. 扩容策略"></a>2. <strong>扩容策略</strong></h3><ul>
 <li><strong>不是每次只加 1 个元素</strong>（那样效率极低）。</li>
-<li>通常采用 <strong>倍增策略（geometric growth）</strong>：
-<ul>
+<li>通常采用 <strong>倍增策略（geometric growth）</strong>：<ul>
 <li>GCC (libstdc++)：<strong>容量 × 2</strong></li>
 <li>MSVC：<strong>容量 × 1.5</strong></li>
-<li>目的：保证 <strong>摊还时间复杂度 O (1)</strong> 的  <code>push_back</code></li>
+<li>目的：保证 <strong>摊还时间复杂度 O(1)</strong> 的 <code>push_back</code></li>
 </ul>
 </li>
 </ul>
 <blockquote>
 <p>例如：初始容量 1 → 2 → 4 → 8 → 16 …</p>
 </blockquote>
-<h3 id="3-扩容过程"><a class="markdownIt-Anchor" href="#3-扩容过程">#</a> 3. <strong>扩容过程</strong></h3>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">push_back</span><span class="params">(<span class="type">const</span> T&amp; value)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">size</span>() == <span class="built_in">capacity</span>()) &#123;</span><br><span class="line">        <span class="type">size_t</span> new_cap = (<span class="built_in">capacity</span>() == <span class="number">0</span>) ? <span class="number">1</span> : <span class="built_in">capacity</span>() * <span class="number">2</span>;</span><br><span class="line">        T* new_mem = allocator.<span class="built_in">allocate</span>(new_cap);           <span class="comment">// 分配新内存</span></span><br><span class="line">        <span class="built_in">uninitialized_move</span>(begin_, end_, new_mem);          <span class="comment">// 移动旧元素</span></span><br><span class="line">        allocator.<span class="built_in">deallocate</span>(begin_, <span class="built_in">capacity</span>());           <span class="comment">// 释放旧内存</span></span><br><span class="line">        begin_ = new_mem;</span><br><span class="line">        end_ = new_mem + <span class="built_in">size</span>();</span><br><span class="line">        capacity_ = new_mem + new_cap;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">construct</span>(end_, value);  <span class="comment">// 在 end_ 处构造新元素</span></span><br><span class="line">    ++end_;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="3-扩容过程"><a href="#3-扩容过程" class="headerlink" title="3. 扩容过程"></a>3. <strong>扩容过程</strong></h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">push_back</span><span class="params">(<span class="type">const</span> T&amp; value)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">size</span>() == <span class="built_in">capacity</span>()) &#123;</span><br><span class="line">        <span class="type">size_t</span> new_cap = (<span class="built_in">capacity</span>() == <span class="number">0</span>) ? <span class="number">1</span> : <span class="built_in">capacity</span>() * <span class="number">2</span>;</span><br><span class="line">        T* new_mem = allocator.<span class="built_in">allocate</span>(new_cap);           <span class="comment">// 分配新内存</span></span><br><span class="line">        <span class="built_in">uninitialized_move</span>(begin_, end_, new_mem);          <span class="comment">// 移动旧元素</span></span><br><span class="line">        allocator.<span class="built_in">deallocate</span>(begin_, <span class="built_in">capacity</span>());           <span class="comment">// 释放旧内存</span></span><br><span class="line">        begin_ = new_mem;</span><br><span class="line">        end_ = new_mem + <span class="built_in">size</span>();</span><br><span class="line">        capacity_ = new_mem + new_cap;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">construct</span>(end_, value);  <span class="comment">// 在 end_ 处构造新元素</span></span><br><span class="line">    ++end_;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p>注意：C++11 起优先使用 <strong>移动语义</strong>（move）而非拷贝，提升性能。</p>
 </blockquote>
-<h2 id="四-关键操作的时间复杂度"><a class="markdownIt-Anchor" href="#四-关键操作的时间复杂度">#</a> 四、关键操作的时间复杂度</h2>
-<table>
+<h2 id="四、关键操作的时间复杂度"><a href="#四、关键操作的时间复杂度" class="headerlink" title="四、关键操作的时间复杂度"></a>四、关键操作的时间复杂度</h2><table>
 <thead>
 <tr>
 <th>操作</th>
@@ -308,16 +296,15 @@ NoResponse's Blog = NoResponse's Blog</title>
 <th>说明</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td><code>operator[]</code> ,  <code>at()</code></td>
+<tbody><tr>
+<td><code>operator[]</code>, <code>at()</code></td>
 <td>O(1)</td>
 <td>随机访问</td>
 </tr>
 <tr>
 <td><code>push_back()</code></td>
-<td><strong>O (1) 摊还</strong></td>
-<td>偶尔 O (n) 扩容</td>
+<td><strong>O(1) 摊还</strong></td>
+<td>偶尔 O(n) 扩容</td>
 </tr>
 <tr>
 <td><code>pop_back()</code></td>
@@ -344,12 +331,10 @@ NoResponse's Blog = NoResponse's Blog</title>
 <td>O(n)</td>
 <td>请求释放多余内存（非强制，依赖实现）</td>
 </tr>
-</tbody>
-</table>
-<h2 id="五-内存管理特性"><a class="markdownIt-Anchor" href="#五-内存管理特性">#</a> 五、内存管理特性</h2>
-<ul>
-<li><strong>内存连续</strong>：支持与 C 数组互操作（如  <code>&amp;vec[0]</code>  或  <code>vec.data()</code> ）。</li>
-<li><strong>不自动缩容</strong>： <code>pop_back</code>  或  <code>erase</code>  后  <code>capacity()</code>  不变，避免频繁 realloc。</li>
+</tbody></table>
+<h2 id="五、内存管理特性"><a href="#五、内存管理特性" class="headerlink" title="五、内存管理特性"></a>五、内存管理特性</h2><ul>
+<li><strong>内存连续</strong>：支持与 C 数组互操作（如 <code>&amp;vec[0]</code> 或 <code>vec.data()</code>）。</li>
+<li><strong>不自动缩容</strong>：<code>pop_back</code> 或 <code>erase</code> 后 <code>capacity()</code> 不变，避免频繁 realloc。</li>
 <li><strong>异常安全</strong>：现代实现通常提供 <strong>强异常安全保证</strong>（如 copy-and-swap 技术）。</li>
 </ul>
 
@@ -421,7 +406,7 @@ NoResponse's Blog = NoResponse's Blog</title>
     <div class="item left">
       
 
-  <a href="/2025/12/09/AI/agent/" itemprop="url" rel="prev" data-background-image="&#x2F;images&#x2F;bg30.jpg" title="agent相关">
+  <a href="/2025/12/09/AI/agent/" itemprop="url" rel="prev" data-background-image="&#x2F;images&#x2F;bg26.jpg" title="agent相关">
   <span class="type">Previous Post</span>
   <span class="category"><i class="ic i-flag"></i> 人工智能</span>
   <h3>agent相关</h3>
@@ -445,11 +430,11 @@ NoResponse's Blog = NoResponse's Blog</title>
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="Contents">
-          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%BB%98%E8%AE%A4%E6%9E%84%E9%80%A0-%E6%8B%B7%E8%B4%9D%E6%9E%84%E9%80%A0-%E7%A7%BB%E5%8A%A8%E6%9E%84%E9%80%A0%E4%BB%A5%E5%8F%8A%E8%B5%8B%E5%80%BC%E8%BF%90%E7%AE%97%E7%AC%A6%E9%87%8D%E8%BD%BD"><span class="toc-number">1.</span> <span class="toc-text"> 默认构造、拷贝构造、移动构造以及赋值运算符重载</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%99%BA%E8%83%BD%E6%8C%87%E9%92%88%E6%80%8E%E4%B9%88%E7%94%A8"><span class="toc-number">2.</span> <span class="toc-text"> 智能指针怎么用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E6%8E%A7%E5%88%B6%E5%9D%97control-block"><span class="toc-number">2.0.1.</span> <span class="toc-text"> 1. 控制块（Control Block）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%BC%95%E7%94%A8%E8%AE%A1%E6%95%B0%E7%9A%84%E5%A2%9E%E5%87%8F"><span class="toc-number">2.0.2.</span> <span class="toc-text"> 2. 引用计数的增减</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8%E6%80%A7"><span class="toc-number">2.0.3.</span> <span class="toc-text"> 3. 线程安全性</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#shared_ptr%E4%BB%80%E4%B9%88%E6%97%B6%E5%80%991%E4%BB%80%E4%B9%88%E6%97%B6%E5%80%99-1"><span class="toc-number">3.</span> <span class="toc-text"> shared_ptr 什么时候 + 1 什么时候 - 1</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1"><span class="toc-number">3.1.</span> <span class="toc-text"> +1</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#-1"><span class="toc-number">3.2.</span> <span class="toc-text"> -1</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#vector%E5%BA%95%E5%B1%82"><span class="toc-number">4.</span> <span class="toc-text"> vector 底层</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80-%E5%9F%BA%E6%9C%AC%E7%BB%93%E6%9E%84"><span class="toc-number">4.1.</span> <span class="toc-text"> 一、基本结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C-%E5%86%85%E5%AD%98%E5%88%86%E9%85%8D%E4%B8%8E%E9%87%8A%E6%94%BE"><span class="toc-number">4.2.</span> <span class="toc-text"> 二、内存分配与释放</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89-%E5%8A%A8%E6%80%81%E6%89%A9%E5%AE%B9%E6%9C%BA%E5%88%B6%E5%85%B3%E9%94%AE"><span class="toc-number">4.3.</span> <span class="toc-text"> 三、动态扩容机制（关键！）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E4%BD%95%E6%97%B6%E6%89%A9%E5%AE%B9"><span class="toc-number">4.3.1.</span> <span class="toc-text"> 1. 何时扩容？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E6%89%A9%E5%AE%B9%E7%AD%96%E7%95%A5"><span class="toc-number">4.3.2.</span> <span class="toc-text"> 2. 扩容策略</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E6%89%A9%E5%AE%B9%E8%BF%87%E7%A8%8B"><span class="toc-number">4.3.3.</span> <span class="toc-text"> 3. 扩容过程</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B-%E5%85%B3%E9%94%AE%E6%93%8D%E4%BD%9C%E7%9A%84%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6"><span class="toc-number">4.4.</span> <span class="toc-text"> 四、关键操作的时间复杂度</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%94-%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E7%89%B9%E6%80%A7"><span class="toc-number">4.5.</span> <span class="toc-text"> 五、内存管理特性</span></a></li></ol></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%BB%98%E8%AE%A4%E6%9E%84%E9%80%A0%E3%80%81%E6%8B%B7%E8%B4%9D%E6%9E%84%E9%80%A0%E3%80%81%E7%A7%BB%E5%8A%A8%E6%9E%84%E9%80%A0%E4%BB%A5%E5%8F%8A%E8%B5%8B%E5%80%BC%E8%BF%90%E7%AE%97%E7%AC%A6%E9%87%8D%E8%BD%BD"><span class="toc-number">1.</span> <span class="toc-text">默认构造、拷贝构造、移动构造以及赋值运算符重载</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%99%BA%E8%83%BD%E6%8C%87%E9%92%88%E6%80%8E%E4%B9%88%E7%94%A8"><span class="toc-number">2.</span> <span class="toc-text">智能指针怎么用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E6%8E%A7%E5%88%B6%E5%9D%97%EF%BC%88Control-Block%EF%BC%89"><span class="toc-number">2.0.1.</span> <span class="toc-text">1. 控制块（Control Block）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%BC%95%E7%94%A8%E8%AE%A1%E6%95%B0%E7%9A%84%E5%A2%9E%E5%87%8F"><span class="toc-number">2.0.2.</span> <span class="toc-text">2. 引用计数的增减</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8%E6%80%A7"><span class="toc-number">2.0.3.</span> <span class="toc-text">3. 线程安全性</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#shared-ptr%E4%BB%80%E4%B9%88%E6%97%B6%E5%80%99-1%E4%BB%80%E4%B9%88%E6%97%B6%E5%80%99-1"><span class="toc-number">3.</span> <span class="toc-text">shared_ptr什么时候+1什么时候-1</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1"><span class="toc-number">3.1.</span> <span class="toc-text">+1</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1"><span class="toc-number">3.2.</span> <span class="toc-text">-1</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#vector%E5%BA%95%E5%B1%82"><span class="toc-number">4.</span> <span class="toc-text">vector底层</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%9F%BA%E6%9C%AC%E7%BB%93%E6%9E%84"><span class="toc-number">4.1.</span> <span class="toc-text">一、基本结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%86%85%E5%AD%98%E5%88%86%E9%85%8D%E4%B8%8E%E9%87%8A%E6%94%BE"><span class="toc-number">4.2.</span> <span class="toc-text">二、内存分配与释放</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E5%8A%A8%E6%80%81%E6%89%A9%E5%AE%B9%E6%9C%BA%E5%88%B6%EF%BC%88%E5%85%B3%E9%94%AE%EF%BC%81%EF%BC%89"><span class="toc-number">4.3.</span> <span class="toc-text">三、动态扩容机制（关键！）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E4%BD%95%E6%97%B6%E6%89%A9%E5%AE%B9%EF%BC%9F"><span class="toc-number">4.3.1.</span> <span class="toc-text">1. 何时扩容？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E6%89%A9%E5%AE%B9%E7%AD%96%E7%95%A5"><span class="toc-number">4.3.2.</span> <span class="toc-text">2. 扩容策略</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E6%89%A9%E5%AE%B9%E8%BF%87%E7%A8%8B"><span class="toc-number">4.3.3.</span> <span class="toc-text">3. 扩容过程</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E5%85%B3%E9%94%AE%E6%93%8D%E4%BD%9C%E7%9A%84%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6"><span class="toc-number">4.4.</span> <span class="toc-text">四、关键操作的时间复杂度</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E7%89%B9%E6%80%A7"><span class="toc-number">4.5.</span> <span class="toc-text">五、内存管理特性</span></a></li></ol></li></ol>
       </div>
       <div class="related panel pjax" data-title="Related">
         <ul>
-          <li><a href="/2025/08/02/note/20250802/" rel="bookmark" title="20250802阅读论文">20250802阅读论文</a></li><li><a href="/2025/10/15/note/20251015/" rel="bookmark" title="20251015力扣刷题笔记">20251015力扣刷题笔记</a></li><li><a href="/2025/11/20/note/20251201/" rel="bookmark" title="测试相关">测试相关</a></li><li><a href="/2025/11/20/note/20251130/" rel="bookmark" title="杂项">杂项</a></li><li><a href="/2025/11/23/note/20251123/" rel="bookmark" title="20251123面经回忆">20251123面经回忆</a></li><li class="active"><a href="/2025/12/11/note/20251211/" rel="bookmark" title="杂项">杂项</a></li>
+          <li><a href="/2025/08/02/note/20250802/" rel="bookmark" title="20250802阅读论文">20250802阅读论文</a></li><li><a href="/2025/10/15/note/20251015/" rel="bookmark" title="20251015力扣刷题笔记">20251015力扣刷题笔记</a></li><li><a href="/2025/11/20/note/20251130/" rel="bookmark" title="杂项">杂项</a></li><li><a href="/2025/11/20/note/20251201/" rel="bookmark" title="测试相关">测试相关</a></li><li><a href="/2025/11/23/note/20251123/" rel="bookmark" title="20251123面经回忆">20251123面经回忆</a></li><li class="active"><a href="/2025/12/11/note/20251211/" rel="bookmark" title="杂项">杂项</a></li>
         </ul>
       </div>
       <div class="overview panel" data-title="Overview">
@@ -568,10 +553,80 @@ NoResponse's Blog = NoResponse's Blog</title>
   <li class="item">
     
 <div class="breadcrumb">
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/computer-organization/" title="In 计算机组成">计算机组成</a>
+</div>
+
+    <span><a href="/2025/07/01/computer-science/computer-organization/ch3/" title="Ch3">Ch3</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/computer-organization/" title="In 计算机组成">计算机组成</a>
+</div>
+
+    <span><a href="/2025/05/13/computer-science/computer-organization/ch1/" title="Ch1">Ch1</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/note/" title="In 七七八八">七七八八</a>
+</div>
+
+    <span><a href="/2025/11/23/note/20251123/" title="20251123面经回忆">20251123面经回忆</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/computer-organization/" title="In 计算机组成">计算机组成</a>
+</div>
+
+    <span><a href="/2025/08/01/computer-science/computer-organization/ch4/" title="Ch4">Ch4</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
+</div>
+
+    <span><a href="/2025/06/15/computer-science/compile-principles/ch6/" title="活动记录">活动记录</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
+</div>
+
+    <span><a href="/2025/06/18/computer-science/compile-principles/ch11/" title="Register Allocation">Register Allocation</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
 <a href="/categories/AI/" title="In 人工智能">人工智能</a>
 </div>
 
-    <span><a href="/2025/06/11/AI/week4-5/" title="Week4-5">Week4-5</a></span>
+    <span><a href="/2025/06/16/AI/week10-11/" title="Week10-11">Week10-11</a></span>
   </li>
 
       
@@ -590,68 +645,10 @@ NoResponse's Blog = NoResponse's Blog</title>
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/SE/" title="In 软件工程">软件工程</a>
+<a href="/categories/AI/" title="In 人工智能">人工智能</a>
 </div>
 
-    <span><a href="/2025/06/19/SE/diagram/" title="画图题">画图题</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/computer-organization/" title="In 计算机组成">计算机组成</a>
-</div>
-
-    <span><a href="/2025/07/01/computer-science/computer-organization/%E9%94%99%E9%A2%98%E9%9B%86%E5%90%88/" title="错题集合">错题集合</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/DS/" title="In 数据结构">数据结构</a>
-</div>
-
-    <span><a href="/2025/09/15/computer-science/DS/Amortized%20Analysis/" title="Amortized Analysis">Amortized Analysis</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/DS/" title="In 数据结构">数据结构</a>
-</div>
-
-    <span><a href="/2025/10/13/computer-science/DS/ch8/" title="ch8">ch8</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/DS/" title="In 数据结构">数据结构</a>
-</div>
-
-    <span><a href="/2025/10/13/computer-science/DS/ch7/" title="ch7">ch7</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/note/" title="In 七七八八">七七八八</a>
-</div>
-
-    <span><a href="/2025/11/23/note/20251123/" title="20251123面经回忆">20251123面经回忆</a></span>
+    <span><a href="/2025/05/20/AI/week2-3/" title="Week2-3">Week2-3</a></span>
   </li>
 
       
@@ -661,19 +658,7 @@ NoResponse's Blog = NoResponse's Blog</title>
 <a href="/categories/AI/" title="In 人工智能">人工智能</a>
 </div>
 
-    <span><a href="/2025/05/20/AI/week1/" title="Week1">Week1</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
-</div>
-
-    <span><a href="/2025/03/23/computer-science/compile-principles/ch3/" title="语法分析">语法分析</a></span>
+    <span><a href="/2025/12/09/AI/agent/" title="agent相关">agent相关</a></span>
   </li>
 
   </ul>
@@ -698,13 +683,13 @@ NoResponse's Blog = NoResponse's Blog</title>
     <span class="post-meta-item-icon">
       <i class="ic i-chart-area"></i>
     </span>
-    <span title="Symbols count total">188k words</span>
+    <span title="Symbols count total">185k words</span>
 
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="ic i-coffee"></i>
     </span>
-    <span title="Reading time total">2:51</span>
+    <span title="Reading time total">2:48</span>
   </div>
   <div class="powered-by">
     Powered by <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>

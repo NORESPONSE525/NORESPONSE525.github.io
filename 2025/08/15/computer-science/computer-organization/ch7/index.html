@@ -76,7 +76,7 @@ NoResponse's Blog = NoResponse's Blog</title>
       <i class="ic i-pen"></i>
     </span>
     <span class="text">Symbols count in article</span>
-    <span>3.2k</span>
+    <span>3.5k</span>
     <span class="text">words</span>
   </span>
   <span class="item" title="Reading time">
@@ -116,7 +116,7 @@ NoResponse's Blog = NoResponse's Blog</title>
 
       </div>
       <div id="imgs" class="pjax">
-          <img src="/images/bg3.png">
+          <img src="/images/bg22.png">
       </div>
     </header>
     <div id="waves">
@@ -164,90 +164,44 @@ NoResponse's Blog = NoResponse's Blog</title>
   <div class="body md" itemprop="articleBody">
     
 
-    <h1 id="ch7-输入输出系统"><a class="markdownIt-Anchor" href="#ch7-输入输出系统">#</a> Ch7 输入 / 输出系统</h1>
-<h2 id="io接口"><a class="markdownIt-Anchor" href="#io接口">#</a> I/O 接口</h2>
-<p>inerrface，主机与外设之间的交接界面</p>
-<h3 id="功能"><a class="markdownIt-Anchor" href="#功能">#</a> 功能</h3>
-<ol>
+    <h1 id="Ch7-输入-输出系统"><a href="#Ch7-输入-输出系统" class="headerlink" title="Ch7 输入&#x2F;输出系统"></a>Ch7 输入&#x2F;输出系统</h1><h2 id="I-O接口"><a href="#I-O接口" class="headerlink" title="I&#x2F;O接口"></a>I&#x2F;O接口</h2><p>inerrface，主机与外设之间的交接界面</p>
+<h3 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h3><ol>
 <li>进行地址译码和设备选择</li>
-<li>实现主机和外设的通信联络控制<br>
-解决时序、工作速度不同的问题</li>
+<li>实现主机和外设的通信联络控制<br>解决时序、工作速度不同的问题</li>
 <li>实现数据缓冲</li>
-<li>信号格式的转换<br>
-电平转换、并 / 串或串 / 并转换、模 / 数或数 / 模转换</li>
-<li>传送控制命令和状态信息<br>
- CPU 通过接口中的命令寄存器发出启动命令给外设，外设就绪是传回 Ready 状态信息通过接口中的状态寄存器反馈给 CPU</li>
+<li>信号格式的转换<br>电平转换、并&#x2F;串或串&#x2F;并转换、模&#x2F;数或数&#x2F;模转换</li>
+<li>传送控制命令和状态信息<br>CPU通过接口中的命令寄存器发出启动命令给外设，外设就绪是传回Ready状态信息通过接口中的状态寄存器反馈给CPU</li>
 </ol>
-<h3 id="基本结构"><a class="markdownIt-Anchor" href="#基本结构">#</a> 基本结构</h3>
-<p><img data-src="f1.jpg" alt><br>
-主机侧通过 I/O 总线与内存、CPU 相连。数据缓冲器用来暂存与 CPU 或内存之间传送的数据信息。状态寄存器用来记录接口和设备的状态信息，控制寄存器用来保存 CPU 对外设的控制信息<br>
-状态寄存器和控制寄存器在传送方向是相反的，访问时间上是错开的，所以可以合二为一<br>
-数据线传送读 / 写数据、状态信息、控制信息、中断类型号<br>
-地址线传送访问 I/O 接口中的寄存器的地址<br>
-控制线传送读写控制信号、中断请求、响应信号、仲裁信号、握手信号<br>
- I/O 控制逻辑需要对控制寄存器的命令字进行译码，还有收集外设状态到状态寄存器<br>
-<img data-src="f2.jpg" alt></p>
+<h3 id="基本结构"><a href="#基本结构" class="headerlink" title="基本结构"></a>基本结构</h3><p><img data-src="/f1.jpg"><br>主机侧通过I&#x2F;O总线与内存、CPU相连。数据缓冲器用来暂存与CPU或内存之间传送的数据信息。状态寄存器用来记录接口和设备的状态信息，控制寄存器用来保存CPU对外设的控制信息<br>状态寄存器和控制寄存器在传送方向是相反的，访问时间上是错开的，所以可以合二为一<br>数据线传送读&#x2F;写数据、状态信息、控制信息、中断类型号<br>地址线传送访问I&#x2F;O接口中的寄存器的地址<br>控制线传送读写控制信号、中断请求、响应信号、仲裁信号、握手信号<br>I&#x2F;O控制逻辑需要对控制寄存器的命令字进行译码，还有收集外设状态到状态寄存器<br><img data-src="/f2.jpg"></p>
 <blockquote>
-<p>对上面两个寄存器的访问操作通过 I/O 指令来完成，只能在操作系统内核的底层 I/O 软件中使用，是一种特权指令<br>
-<img data-src="f3.jpg" alt></p>
+<p>对上面两个寄存器的访问操作通过I&#x2F;O指令来完成，只能在操作系统内核的底层I&#x2F;O软件中使用，是一种特权指令<br><img data-src="/f3.jpg"></p>
 </blockquote>
-<h3 id="接口类型"><a class="markdownIt-Anchor" href="#接口类型">#</a> 接口类型</h3>
-<ol>
+<h3 id="接口类型"><a href="#接口类型" class="headerlink" title="接口类型"></a>接口类型</h3><ol>
 <li>按（外设和接口一侧的）数据传送方式：并行接口、串行接口</li>
-<li>按主机访问 I/O 设备的控制方式：程序查询接口、中断接口、DMA 接口</li>
+<li>按主机访问I&#x2F;O设备的控制方式：程序查询接口、中断接口、DMA接口</li>
 <li>按功能选择的灵活性：可编程接口、不可编程接口</li>
 </ol>
-<h3 id="io端口及其编址"><a class="markdownIt-Anchor" href="#io端口及其编址">#</a> I/O 端口及其编址</h3>
-<p>I/O 端口是指 I/O 接口电路中<strong>可被 CPU 直接访问的寄存器</strong>，主要有<mark>数据端口、状态端口和控制端口</mark>。<br>
-CPU 能对数据端口中的数据进行读 / 写操作，但对状态端口中外设的状态只能读，对控制端口只能写<br>
-每个端口对应一个端口地址，编址方式有与存储器独立编址和统一编址两种</p>
+<h3 id="I-O端口及其编址"><a href="#I-O端口及其编址" class="headerlink" title="I&#x2F;O端口及其编址"></a>I&#x2F;O端口及其编址</h3><p>I&#x2F;O端口是指I&#x2F;O接口电路中<strong>可被CPU直接访问的寄存器</strong>，主要有&#x3D;&#x3D;数据端口、状态端口和控制端口&#x3D;&#x3D;。<br>CPU能对数据端口中的数据进行读&#x2F;写操作，但对状态端口中外设的状态只能读，对控制端口只能写<br>每个端口对应一个端口地址，编址方式有与存储器独立编址和统一编址两种</p>
 <ol>
-<li>独立编址<br>
-也称 I/O 映射方式，I/O 端口的地址空间与主存地址空间是两个独立的地址空间<br>
-需要设置专门的 I/O 指令来表明访问的是 I/O 地址空间，I/O 指令的地址码给出 I/O 端口号</li>
-</ol>
-<blockquote>
-<p>x86 架构中的 IN 和 OUT 指令<br>
- IN AL, 0x64    从 I/O 端口 0x64 读取一个字节的数据，存入寄存器 AL<br>
- 优点：I/O 端口数比主存单元数少得多，秩序少量地址线，使得 I/O 端口译码简单，寻址速度更快。使用专门的 I/O 指令，是程序更加清晰<br>
-缺点：I/O 指令少，只提供简单的传输操作，灵活性差。CPU 需要提供存储器读 / 写、I/O 设备读写两组控制信号，增大了控制的复杂性</p>
+<li>独立编址<br>也称I&#x2F;O映射方式，I&#x2F;O端口的地址空间与主存地址空间是两个独立的地址空间<br>需要设置专门的I&#x2F;O指令来表明访问的是I&#x2F;O地址空间，I&#x2F;O指令的地址码给出I&#x2F;O端口号<blockquote>
+<p>x86 架构中的 IN 和 OUT 指令<br>IN AL, 0x64    从 I&#x2F;O 端口 0x64 读取一个字节的数据，存入寄存器 AL<br>优点：I&#x2F;O端口数比主存单元数少得多，秩序少量地址线，使得I&#x2F;O端口译码简单，寻址速度更快。使用专门的I&#x2F;O指令，是程序更加清晰<br>缺点：I&#x2F;O指令少，只提供简单的传输操作，灵活性差。CPU需要提供存储器读&#x2F;写、I&#x2F;O设备读写两组控制信号，增大了控制的复杂性</p>
 </blockquote>
-<ol start="2">
-<li>统一编址<br>
-也称存储器映射方式 (Memory-Mapped I/O)，无需设置专门的 I/O 指令，用统一的访存指令就可以访问 I/O 端口</li>
-</ol>
-<blockquote>
-<p>riscv 就是用 Memory-Mapped I/O<br>
- 优点：不需要专门的 I/O 指令，CPU 访问 I/O 更灵活方便，端口有较大的编址空间。I/O 访问的保护机制可由虚拟存储管理系统来实现，无需专门设置（内核态才能访问）<br>
-缺点：端口地址占用了部分主存地址空间。译码电路复杂</p>
+</li>
+<li>统一编址<br>也称存储器映射方式(Memory-Mapped I&#x2F;O)，无需设置专门的I&#x2F;O指令，用统一的访存指令就可以访问I&#x2F;O端口<blockquote>
+<p>riscv就是用Memory-Mapped I&#x2F;O<br>优点：不需要专门的I&#x2F;O指令，CPU访问I&#x2F;O更灵活方便，端口有较大的编址空间。I&#x2F;O访问的保护机制可由虚拟存储管理系统来实现，无需专门设置（内核态才能访问）<br>缺点：端口地址占用了部分主存地址空间。译码电路复杂</p>
 </blockquote>
-<h2 id="io方式"><a class="markdownIt-Anchor" href="#io方式">#</a> I/O 方式</h2>
-<p>程序查询、程序中断、DMA<br>
-<img data-src="f5.jpg" alt></p>
-<h3 id="程序查询方式polling"><a class="markdownIt-Anchor" href="#程序查询方式polling">#</a> 程序查询方式 (Polling)</h3>
-<p>轮询法，程序执行到某个 I/O 操作指令时，由操作系统或设备驱动程序发起<br>
-<img data-src="f4.jpg" alt><br>
-程序查询方式分为两类：</p>
-<ol>
-<li>独占查询<br>
-一旦设备启动，CPU 就一直持续查询接口状态，CPU 话费 100% 时间用于 I/O 操作，外设和 CPU 完全串行（忙等待）</li>
-<li>定时查询<br>
- CPU 周期性地查询接口状态，每次总是等到条件满足才进行一个数据的传送，传送完成后返回到用户程序。<br>
-比如设备每 10ms 产生一个数据，可以设置 5ms 查询一次，这样既能及时读取数据，又不至于过度查询。<mark>定时查询的时间间隔与设备的数据传输速率有关。</mark></li>
+</li>
 </ol>
-<h3 id="程序中断方式"><a class="markdownIt-Anchor" href="#程序中断方式">#</a> 程序中断方式</h3>
-<p><img data-src="f6.jpg" alt><br>
-工作流程：</p>
+<h2 id="I-O方式"><a href="#I-O方式" class="headerlink" title="I&#x2F;O方式"></a>I&#x2F;O方式</h2><p>程序查询、程序中断、DMA<br><img data-src="/f5.jpg"></p>
+<h3 id="程序查询方式-Polling"><a href="#程序查询方式-Polling" class="headerlink" title="程序查询方式(Polling)"></a>程序查询方式(Polling)</h3><p>轮询法，程序执行到某个 I&#x2F;O 操作指令时，由操作系统或设备驱动程序发起<br><img data-src="/f4.jpg"><br>程序查询方式分为两类：</p>
 <ol>
-<li>中断请求<br>
-中断源向 CPU 发送中断请求信号。中断系统对每个中断源设置中断请求标记触发器<br>
-可屏蔽中断：通过 <code>INTR</code>  线发出的，优先级低，关中断下不被响应<br>
-不可屏蔽中断：通过 <code>NMI</code>  线发出的，优先级最高</li>
-<li>中断响应<br>
-响应中断的条件。<br>
-中断判优：多个中断源同时提出请求时通过中断判优逻辑响应一个中断源。<br>
-一般来说：不可屏蔽中断 &gt; 可屏蔽中断；在 I/O 传送类终端中，高速设备 &gt; 低速设备，输入设备 &gt; 输出设备，实时设备 &gt; 普通设备<br>
- CPU 响应中断的条件：</li>
+<li>独占查询<br>一旦设备启动，CPU就一直持续查询接口状态，CPU话费100%时间用于I&#x2F;O操作，外设和CPU完全串行（忙等待）</li>
+<li>定时查询<br>CPU周期性地查询接口状态，每次总是等到条件满足才进行一个数据的传送，传送完成后返回到用户程序。<br>比如设备每 10ms 产生一个数据，可以设置 5ms 查询一次，这样既能及时读取数据，又不至于过度查询。&#x3D;&#x3D;定时查询的时间间隔与设备的数据传输速率有关。&#x3D;&#x3D;</li>
+</ol>
+<h3 id="程序中断方式"><a href="#程序中断方式" class="headerlink" title="程序中断方式"></a>程序中断方式</h3><p><img data-src="/f6.jpg"><br>工作流程：</p>
+<ol>
+<li>中断请求<br>中断源向CPU发送中断请求信号。中断系统对每个中断源设置中断请求标记触发器<br>可屏蔽中断：通过<code>INTR</code>线发出的，优先级低，关中断下不被响应<br>不可屏蔽中断：通过<code>NMI</code>线发出的，优先级最高</li>
+<li>中断响应<br>响应中断的条件。<br>中断判优：多个中断源同时提出请求时通过中断判优逻辑响应一个中断源。<br>一般来说：不可屏蔽中断&gt;可屏蔽中断；在I&#x2F;O传送类终端中，高速设备&gt;低速设备，输入设备&gt;输出设备，实时设备&gt;普通设备<br>CPU响应中断的条件：</li>
 </ol>
 <ul>
 <li>中断源有中断请求</li>
@@ -258,15 +212,14 @@ CPU 能对数据端口中的数据进行读 / 写操作，但对状态端口中�
 <li>中断处理</li>
 </ol>
 <ul>
-<li>中断隐指令：
-<ul>
+<li>中断隐指令：<ul>
 <li>关中断（防止在中断处理程序执行期间被其他（同级或低优先级）中断再次打断）</li>
-<li>保护现场（把 PC, PSW 等压入内核栈）</li>
+<li>保护现场（把PC, PSW等压入内核栈）</li>
 <li>引出中断服务程序：硬件向量法和软件查询法</li>
 </ul>
 </li>
 </ul>
-<p>中断向量：硬件提供向量号，中断控制器将该中断对应的向量号放到数据总线上，CPU 读取该向量号，CPU 使用该向量号作为索引，查找中断向量表（IVT）获取 ISR 的入口地址</p>
+<p>中断向量：硬件提供向量号，中断控制器将该中断对应的向量号放到数据总线上，CPU读取该向量号，CPU使用该向量号作为索引，查找中断向量表（IVT）获取ISR的入口地址</p>
 <p>处理流程：</p>
 <ul>
 <li>关中断</li>
@@ -274,63 +227,44 @@ CPU 能对数据端口中的数据进行读 / 写操作，但对状态端口中�
 <li>中断服务程序寻址</li>
 <li>保存现场和屏蔽字</li>
 <li>开中断（允许更高级中断请求得到响应）</li>
-<li>执行 ISR</li>
+<li>执行ISR</li>
 <li>关中断</li>
 <li>恢复现场和屏蔽字</li>
-<li>开中断，中断返回<br>
- 1-3 由硬件自动完成，4-9 由 ISR 完成</li>
-</ul>
-<blockquote>
-<p>为什么要先关再开？<br>
-确保这个保护现场的操作不会被其他中断打断</p>
+<li>开中断，中断返回<br>1-3由硬件自动完成，4-9由ISR完成<blockquote>
+<p>为什么要先关再开？<br>确保这个保护现场的操作不会被其他中断打断</p>
 </blockquote>
-<h4 id="多重中断和中断屏蔽技术"><a class="markdownIt-Anchor" href="#多重中断和中断屏蔽技术">#</a> 多重中断和中断屏蔽技术</h4>
-<p>通过中断屏蔽字寄存器来实现，每个中断源都有一个屏蔽触发器，<mark>1 表示屏蔽该中断源的请求</mark>，0 表示可以正常申请<br>
-<mark>屏蔽字中‘1’越多，优先级越高。每个屏蔽字中至少有一个 <code>1</code>  (至少要能屏蔽自身的中断)</mark><br>
- 方法：要能屏蔽自身所以主对角线全为 1，同时优先级比自身低的中断要屏蔽屏蔽字全填 1，其他的填 0</p>
-<h3 id="dma方式"><a class="markdownIt-Anchor" href="#dma方式">#</a> DMA 方式</h3>
-<p>DMA 方式是一种完全由硬件进行组信息传送的控制方式<br>
-<img data-src="f7.jpg" alt><br>
-<img data-src="f8.jpg" alt><br>
-<img data-src="f9.jpg" alt></p>
-<p>当 I/O 设备和 CPU 同时访问主存时，可能发生冲突，DMA 与 CPU 通常采用以下 3 种方式使用驻村：<br>
-<img data-src="f10.jpg" alt><br>
-周期挪用：<br>
-一次传一组数据</p>
+</li>
+</ul>
+<h4 id="多重中断和中断屏蔽技术"><a href="#多重中断和中断屏蔽技术" class="headerlink" title="多重中断和中断屏蔽技术"></a>多重中断和中断屏蔽技术</h4><p>通过中断屏蔽字寄存器来实现，每个中断源都有一个屏蔽触发器，&#x3D;&#x3D;1表示屏蔽该中断源的请求&#x3D;&#x3D;，0表示可以正常申请<br>&#x3D;&#x3D;屏蔽字中‘1’越多，优先级越高。每个屏蔽字中至少有一个<code>1</code>(至少要能屏蔽自身的中断)&#x3D;&#x3D;<br>方法：要能屏蔽自身所以主对角线全为1，同时优先级比自身低的中断要屏蔽屏蔽字全填1，其他的填0</p>
+<h3 id="DMA方式"><a href="#DMA方式" class="headerlink" title="DMA方式"></a>DMA方式</h3><p>DMA方式是一种完全由硬件进行组信息传送的控制方式<br><img data-src="/f7.jpg"><br><img data-src="/f8.jpg"><br><img data-src="/f9.jpg"></p>
+<p>当I&#x2F;O设备和CPU同时访问主存时，可能发生冲突，DMA与CPU通常采用以下3种方式使用驻村：<br><img data-src="/f10.jpg"><br>周期挪用：<br>一次传一组数据</p>
 <ul>
-<li>CPU 不访存时：如果 CPU 当前并不需要访问主存，那么 DMA 控制器可以直接使用总线进行数据传输，此时不会对 CPU 的工作造成任何影响。</li>
-<li>CPU 正在访存时：如果 CPU 正在进行主存访问，DMA 控制器会等待 CPU 的当前访问周期结束，然后立即 “借用” 接下来的一个或几个总线周期来进行自己的数据传输。这种情况下，CPU 的访问会被短暂延迟，但通常这种延迟非常短，以至于 CPU 几乎感觉不到，因此可以认为 CPU 的正常工作没有受到显著影响。</li>
-<li>CPU 与 DMA 同时请求访存时：在这种情况下，I/O 设备的访存请求通常具有更高的优先级，这意味着即使 CPU 也在请求访问主存，DMA 控制器也会被优先考虑，从而保证 I/O 设备的数据传输不受阻。</li>
+<li>CPU不访存时：如果CPU当前并不需要访问主存，那么DMA控制器可以直接使用总线进行数据传输，此时不会对CPU的工作造成任何影响。</li>
+<li>CPU正在访存时：如果CPU正在进行主存访问，DMA控制器会等待CPU的当前访问周期结束，然后立即“借用”接下来的一个或几个总线周期来进行自己的数据传输。这种情况下，CPU的访问会被短暂延迟，但通常这种延迟非常短，以至于CPU几乎感觉不到，因此可以认为CPU的正常工作没有受到显著影响。</li>
+<li>CPU与DMA同时请求访存时：在这种情况下，I&#x2F;O设备的访存请求通常具有更高的优先级，这意味着即使CPU也在请求访问主存，DMA控制器也会被优先考虑，从而保证I&#x2F;O设备的数据传输不受阻。</li>
 </ul>
 <ol>
-<li>停止 CPU 访存<br>
-优点：控制简单，适用于数据传输速率很高的 I/O 设备实现成组数据的传送<br>
-缺点：DMA 访问主存时，CPU 基本上不工作</li>
-<li>周期挪用<br>
-优点：既实现了 I/O 传送，又较好地发挥了主存与 CPU 的效率<br>
-缺点：每挪用一个主存周期，DMA 接口都要申请、建立和归还总线周期</li>
-<li>交替访存<br>
-优点：不需要总线控制权的申请、建立和归还过程，传送效率高<br>
-缺点：相应的硬件逻辑变得更复杂</li>
+<li>停止CPU访存<br>优点：控制简单，适用于数据传输速率很高的I&#x2F;O设备实现成组数据的传送<br>缺点：DMA访问主存时，CPU基本上不工作</li>
+<li>周期挪用<br>优点：既实现了I&#x2F;O传送，又较好地发挥了主存与CPU的效率<br>缺点：每挪用一个主存周期，DMA接口都要申请、建立和归还总线周期</li>
+<li>交替访存<br>优点：不需要总线控制权的申请、建立和归还过程，传送效率高<br>缺点：相应的硬件逻辑变得更复杂</li>
 </ol>
-<h4 id="dma的传送过程"><a class="markdownIt-Anchor" href="#dma的传送过程">#</a> DMA 的传送过程</h4>
-<p><img data-src="f9.jpg" alt></p>
+<h4 id="DMA的传送过程"><a href="#DMA的传送过程" class="headerlink" title="DMA的传送过程"></a>DMA的传送过程</h4><p><img data-src="/f9.jpg"></p>
 <ul>
-<li>预处理：由 CPU 初始化 DMA 控制其中的寄存器、设置传送方式、测试并启动设备</li>
-<li>数据传送：DMA 以数据块为基本传送单位。数据传送完全由 DMA 控制</li>
-<li>后处理：DMA 控制器向 CPU 发送中断请求，CPU 处理中断做 DMA 结束处理（包括校验）</li>
+<li>预处理：由CPU初始化DMA控制其中的寄存器、设置传送方式、测试并启动设备</li>
+<li>数据传送：DMA以数据块为基本传送单位。数据传送完全由DMA控制</li>
+<li>后处理：DMA控制器向CPU发送中断请求，CPU处理中断做DMA结束处理（包括校验）</li>
 </ul>
-<p>DMA 方式和中断方式的区别：</p>
+<p>DMA方式和中断方式的区别：</p>
 <ul>
-<li>中断需要 save context，DMA 不需要，除了预处理和后处理其他时候不占用 CPU（我觉得 DMA 方式的预处理和后处理的中断也是需要 save context 的，只是因为 DMA 方式中断次数极少，整个数据块只中断一次，所以不需要保存那么多次，所以比较快）</li>
-<li>对中断请求的相应只能发生在每条指令执行结束时，但对 DMA 请求的相应可以发生在任意一个机器周期结束时 (IF, ID, EX…  DMA 请求的是总线控制权，不是 CPU 的执行权。它不关心 CPU 正在执行哪条指令，只关心总线是否空闲。只要当前总线周期结束，DMA 就可以插空使用)</li>
-<li>中断传送过程需要 CPU 的干预，DMA 传送不需要，数据传输速率高</li>
+<li>中断需要save context，DMA不需要，除了预处理和后处理其他时候不占用CPU（我觉得DMA方式的预处理和后处理的中断也是需要save context的，只是因为DMA方式中断次数极少，整个数据块只中断一次，所以不需要保存那么多次，所以比较快）</li>
+<li>对中断请求的相应只能发生在每条指令执行结束时，但对DMA请求的相应可以发生在任意一个机器周期结束时(IF, ID, EX…  DMA请求的是总线控制权，不是CPU的执行权。它不关心 CPU正在执行哪条指令，只关心总线是否空闲。只要当前总线周期结束，DMA就可以插空使用)</li>
+<li>中断传送过程需要CPU的干预，DMA传送不需要，数据传输速率高</li>
 </ul>
 <p>优先级：</p>
 <ul>
-<li>DMA 请求的优先级高于中断请求</li>
-<li>中断方式具有处理异常事件的能力，DMA 方式局限于大批数据的传送</li>
-<li>中断方式靠程序传送，DMA 方式靠硬件传送</li>
+<li>DMA请求的优先级高于中断请求</li>
+<li>中断方式具有处理异常事件的能力，DMA方式局限于大批数据的传送</li>
+<li>中断方式靠程序传送，DMA方式靠硬件传送</li>
 </ul>
 
       <div class="tags">
@@ -401,7 +335,7 @@ CPU 能对数据端口中的数据进行读 / 写操作，但对状态端口中�
     <div class="item left">
       
 
-  <a href="/2025/08/10/computer-science/computer-organization/ch5/" itemprop="url" rel="prev" data-background-image="&#x2F;images&#x2F;bg12.jpg" title="Ch5">
+  <a href="/2025/08/10/computer-science/computer-organization/ch5/" itemprop="url" rel="prev" data-background-image="&#x2F;images&#x2F;bg34.jpg" title="Ch5">
   <span class="type">Previous Post</span>
   <span class="category"><i class="ic i-flag"></i> 计算机组成</span>
   <h3>Ch5</h3>
@@ -411,10 +345,10 @@ CPU 能对数据端口中的数据进行读 / 写操作，但对状态端口中�
     <div class="item right">
       
 
-  <a href="/2025/09/15/computer-science/DS/ch1/" itemprop="url" rel="next" data-background-image="&#x2F;images&#x2F;bg20.jpg" title="ch1">
+  <a href="/2025/09/15/computer-science/DS/ch2/" itemprop="url" rel="next" data-background-image="&#x2F;images&#x2F;bg28.jpg" title="ch2">
   <span class="type">Next Post</span>
   <span class="category"><i class="ic i-flag"></i> 数据结构</span>
-  <h3>ch1</h3>
+  <h3>ch2</h3>
   </a>
 
     </div>
@@ -433,7 +367,7 @@ CPU 能对数据端口中的数据进行读 / 写操作，但对状态端口中�
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="Contents">
-          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#ch7-%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E7%B3%BB%E7%BB%9F"><span class="toc-number">1.</span> <span class="toc-text"> Ch7 输入 &#x2F; 输出系统</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#io%E6%8E%A5%E5%8F%A3"><span class="toc-number">1.1.</span> <span class="toc-text"> I&#x2F;O 接口</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%9F%E8%83%BD"><span class="toc-number">1.1.1.</span> <span class="toc-text"> 功能</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E7%BB%93%E6%9E%84"><span class="toc-number">1.1.2.</span> <span class="toc-text"> 基本结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8E%A5%E5%8F%A3%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.1.3.</span> <span class="toc-text"> 接口类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#io%E7%AB%AF%E5%8F%A3%E5%8F%8A%E5%85%B6%E7%BC%96%E5%9D%80"><span class="toc-number">1.1.4.</span> <span class="toc-text"> I&#x2F;O 端口及其编址</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#io%E6%96%B9%E5%BC%8F"><span class="toc-number">1.2.</span> <span class="toc-text"> I&#x2F;O 方式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A8%8B%E5%BA%8F%E6%9F%A5%E8%AF%A2%E6%96%B9%E5%BC%8Fpolling"><span class="toc-number">1.2.1.</span> <span class="toc-text"> 程序查询方式 (Polling)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A8%8B%E5%BA%8F%E4%B8%AD%E6%96%AD%E6%96%B9%E5%BC%8F"><span class="toc-number">1.2.2.</span> <span class="toc-text"> 程序中断方式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A4%9A%E9%87%8D%E4%B8%AD%E6%96%AD%E5%92%8C%E4%B8%AD%E6%96%AD%E5%B1%8F%E8%94%BD%E6%8A%80%E6%9C%AF"><span class="toc-number">1.2.2.1.</span> <span class="toc-text"> 多重中断和中断屏蔽技术</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#dma%E6%96%B9%E5%BC%8F"><span class="toc-number">1.2.3.</span> <span class="toc-text"> DMA 方式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#dma%E7%9A%84%E4%BC%A0%E9%80%81%E8%BF%87%E7%A8%8B"><span class="toc-number">1.2.3.1.</span> <span class="toc-text"> DMA 的传送过程</span></a></li></ol></li></ol></li></ol></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Ch7-%E8%BE%93%E5%85%A5-%E8%BE%93%E5%87%BA%E7%B3%BB%E7%BB%9F"><span class="toc-number">1.</span> <span class="toc-text">Ch7 输入&#x2F;输出系统</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#I-O%E6%8E%A5%E5%8F%A3"><span class="toc-number">1.1.</span> <span class="toc-text">I&#x2F;O接口</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%9F%E8%83%BD"><span class="toc-number">1.1.1.</span> <span class="toc-text">功能</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E7%BB%93%E6%9E%84"><span class="toc-number">1.1.2.</span> <span class="toc-text">基本结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8E%A5%E5%8F%A3%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.1.3.</span> <span class="toc-text">接口类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#I-O%E7%AB%AF%E5%8F%A3%E5%8F%8A%E5%85%B6%E7%BC%96%E5%9D%80"><span class="toc-number">1.1.4.</span> <span class="toc-text">I&#x2F;O端口及其编址</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#I-O%E6%96%B9%E5%BC%8F"><span class="toc-number">1.2.</span> <span class="toc-text">I&#x2F;O方式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A8%8B%E5%BA%8F%E6%9F%A5%E8%AF%A2%E6%96%B9%E5%BC%8F-Polling"><span class="toc-number">1.2.1.</span> <span class="toc-text">程序查询方式(Polling)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A8%8B%E5%BA%8F%E4%B8%AD%E6%96%AD%E6%96%B9%E5%BC%8F"><span class="toc-number">1.2.2.</span> <span class="toc-text">程序中断方式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A4%9A%E9%87%8D%E4%B8%AD%E6%96%AD%E5%92%8C%E4%B8%AD%E6%96%AD%E5%B1%8F%E8%94%BD%E6%8A%80%E6%9C%AF"><span class="toc-number">1.2.2.1.</span> <span class="toc-text">多重中断和中断屏蔽技术</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DMA%E6%96%B9%E5%BC%8F"><span class="toc-number">1.2.3.</span> <span class="toc-text">DMA方式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#DMA%E7%9A%84%E4%BC%A0%E9%80%81%E8%BF%87%E7%A8%8B"><span class="toc-number">1.2.3.1.</span> <span class="toc-text">DMA的传送过程</span></a></li></ol></li></ol></li></ol></li></ol>
       </div>
       <div class="related panel pjax" data-title="Related">
         <ul>
@@ -536,7 +470,7 @@ CPU 能对数据端口中的数据进行读 / 写操作，但对状态端口中�
     <li class="up"><i class="ic i-arrow-up"></i></li>
     <li class="down"><i class="ic i-arrow-down"></i></li>
     <li class="next pjax">
-        <a href="/2025/09/15/computer-science/DS/ch1/" rel="next" title="Next Post"><i class="ic i-chevron-right"></i></a>
+        <a href="/2025/09/15/computer-science/DS/ch2/" rel="next" title="Next Post"><i class="ic i-chevron-right"></i></a>
     </li>
     <li class="percent"></li>
   </ul>
@@ -558,22 +492,12 @@ CPU 能对数据端口中的数据进行读 / 写操作，但对状态端口中�
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/oop/" title="In C++">C++</a>
-</div>
-
-    <span><a href="/2025/10/26/oop/note/" title="C++相关">C++相关</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
 <a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/computer-organization/" title="In 计算机组成">计算机组成</a>
+<a href="/categories/computer-science/DS/" title="In 数据结构">数据结构</a>
 </div>
 
-    <span><a href="/2025/05/13/computer-science/computer-organization/ch1/" title="Ch1">Ch1</a></span>
+    <span><a href="/2025/10/10/computer-science/DS/ch5/" title="ch5">ch5</a></span>
   </li>
 
       
@@ -583,63 +507,7 @@ CPU 能对数据端口中的数据进行读 / 写操作，但对状态端口中�
 <a href="/categories/AI/" title="In 人工智能">人工智能</a>
 </div>
 
-    <span><a href="/2025/06/12/AI/week6-7/" title="Week6-7">Week6-7</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
-</div>
-
-    <span><a href="/2025/06/17/computer-science/compile-principles/ch8/" title="Basic Blocks &amp; Traces">Basic Blocks & Traces</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/computer-organization/" title="In 计算机组成">计算机组成</a>
-</div>
-
-    <span><a href="/2025/07/01/computer-science/computer-organization/ch3/" title="Ch3">Ch3</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/SE/" title="In 软件工程">软件工程</a>
-</div>
-
-    <span><a href="/2025/06/19/SE/diagram/" title="画图题">画图题</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/computer-organization/" title="In 计算机组成">计算机组成</a>
-</div>
-
-    <span><a href="/2025/08/10/computer-science/computer-organization/ch6/" title="Ch6">Ch6</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/note/" title="In 七七八八">七七八八</a>
-</div>
-
-    <span><a href="/2025/12/11/note/20251211/" title="杂项">杂项</a></span>
+    <span><a href="/2025/12/09/AI/agent/" title="agent相关">agent相关</a></span>
   </li>
 
       
@@ -651,7 +519,19 @@ CPU 能对数据端口中的数据进行读 / 写操作，但对状态端口中�
 <a href="/categories/computer-science/DS/" title="In 数据结构">数据结构</a>
 </div>
 
-    <span><a href="/2025/10/11/computer-science/DS/ch6/" title="ch6">ch6</a></span>
+    <span><a href="/2025/09/15/computer-science/DS/Amortized%20Analysis/" title="Amortized Analysis">Amortized Analysis</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/DS/" title="In 数据结构">数据结构</a>
+</div>
+
+    <span><a href="/2025/09/15/computer-science/DS/ch2/" title="ch2">ch2</a></span>
   </li>
 
       
@@ -663,7 +543,59 @@ CPU 能对数据端口中的数据进行读 / 写操作，但对状态端口中�
 <a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
 </div>
 
-    <span><a href="/2025/03/22/computer-science/compile-principles/ch2/" title="词法分析">词法分析</a></span>
+    <span><a href="/2025/03/29/computer-science/compile-principles/ch4/" title="抽象语法">抽象语法</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/oop/" title="In C++">C++</a>
+</div>
+
+    <span><a href="/2025/10/26/oop/note/" title="C++相关">C++相关</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/AI/" title="In 人工智能">人工智能</a>
+</div>
+
+    <span><a href="/2025/06/16/AI/week14-15/" title="Week14-15">Week14-15</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/AI/" title="In 人工智能">人工智能</a>
+</div>
+
+    <span><a href="/2025/06/11/AI/week4-5/" title="Week4-5">Week4-5</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/AI/" title="In 人工智能">人工智能</a>
+</div>
+
+    <span><a href="/2025/05/20/AI/week2-3/" title="Week2-3">Week2-3</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
+</div>
+
+    <span><a href="/2025/06/18/computer-science/compile-principles/ch10/" title="Liveness Analysis">Liveness Analysis</a></span>
   </li>
 
   </ul>
@@ -688,13 +620,13 @@ CPU 能对数据端口中的数据进行读 / 写操作，但对状态端口中�
     <span class="post-meta-item-icon">
       <i class="ic i-chart-area"></i>
     </span>
-    <span title="Symbols count total">188k words</span>
+    <span title="Symbols count total">185k words</span>
 
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="ic i-coffee"></i>
     </span>
-    <span title="Reading time total">2:51</span>
+    <span title="Reading time total">2:48</span>
   </div>
   <div class="powered-by">
     Powered by <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>

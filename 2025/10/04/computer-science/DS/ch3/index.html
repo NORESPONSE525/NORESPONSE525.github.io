@@ -76,7 +76,7 @@ NoResponse's Blog = NoResponse's Blog</title>
       <i class="ic i-pen"></i>
     </span>
     <span class="text">Symbols count in article</span>
-    <span>2.8k</span>
+    <span>2.9k</span>
     <span class="text">words</span>
   </span>
   <span class="item" title="Reading time">
@@ -116,7 +116,7 @@ NoResponse's Blog = NoResponse's Blog</title>
 
       </div>
       <div id="imgs" class="pjax">
-          <img src="/images/bg13.jpg">
+          <img src="/images/bg15.jpg">
       </div>
     </header>
     <div id="waves">
@@ -164,97 +164,70 @@ NoResponse's Blog = NoResponse's Blog</title>
   <div class="body md" itemprop="articleBody">
     
 
-    <h1 id="ch3"><a class="markdownIt-Anchor" href="#ch3">#</a> Ch3</h1>
-<h2 id="栈"><a class="markdownIt-Anchor" href="#栈">#</a> 栈</h2>
-<p>LIFO</p>
-<h3 id="顺序栈的实现"><a class="markdownIt-Anchor" href="#顺序栈的实现">#</a> 顺序栈的实现</h3>
-<figure class="highlight c++"><figcaption><span>定义</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> MaxSize 50</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span>&#123;</span><br><span class="line">    ElemType data[MaxSize];</span><br><span class="line">    <span class="type">int</span> top;</span><br><span class="line">&#125;SqStack;</span><br></pre></td></tr></table></figure>
+    <h1 id="Ch3"><a href="#Ch3" class="headerlink" title="Ch3"></a>Ch3</h1><h2 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h2><p>LIFO</p>
+<h3 id="顺序栈的实现"><a href="#顺序栈的实现" class="headerlink" title="顺序栈的实现"></a>顺序栈的实现</h3><figure class="highlight c++"><figcaption><span>定义</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> MaxSize 50</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span>&#123;</span><br><span class="line">    ElemType data[MaxSize];</span><br><span class="line">    <span class="type">int</span> top;</span><br><span class="line">&#125;SqStack;</span><br></pre></td></tr></table></figure>
+
 <figure class="highlight c++"><figcaption><span>初始化</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">InitStack</span><span class="params">(SqStack &amp;S)</span></span>&#123;</span><br><span class="line">    S.top = <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <figure class="highlight c++"><figcaption><span>判断空</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">bool</span> <span class="title">StackEmpty</span><span class="params">(SqStack S)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(S.top == <span class="number">-1</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <figure class="highlight c++"><figcaption><span>push</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">bool</span> <span class="title">Push</span><span class="params">(SqStack &amp;S,ElemType x)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(S.top == MaxSize - <span class="number">1</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    S.data[++S.top] = x;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <figure class="highlight c++"><figcaption><span>pop</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">bool</span> <span class="title">Pop</span><span class="params">(SqStack &amp;S,ElemType &amp;x)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(S.top == <span class="number">-1</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    x = S.data[S.top--];</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <figure class="highlight c++"><figcaption><span>gettop</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">bool</span> <span class="title">GetTop</span><span class="params">(SqStack S,ElemType &amp;x)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(S.top == <span class="number">-1</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    x = S.data[S.top];</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="共享栈"><a class="markdownIt-Anchor" href="#共享栈">#</a> 共享栈</h3>
-<p>同时从两边向中间压栈</p>
-<h3 id="链栈"><a class="markdownIt-Anchor" href="#链栈">#</a> 链栈</h3>
-<figure class="highlight c++"><figcaption><span>定义</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span> <span class="title class_">Linknode</span>&#123;</span><br><span class="line">    ElemType data;</span><br><span class="line">    <span class="keyword">struct</span> <span class="title class_">Linknode</span> *next;</span><br><span class="line">&#125;LiStack;</span><br></pre></td></tr></table></figure>
-<h2 id="队列"><a class="markdownIt-Anchor" href="#队列">#</a> 队列</h2>
-<p>FIFO</p>
-<h3 id="顺序存储"><a class="markdownIt-Anchor" href="#顺序存储">#</a> 顺序存储</h3>
-<figure class="highlight c++"><figcaption><span>队列的实现</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> MaxSize 50</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span>&#123;</span><br><span class="line">    ElemType data[MaxSize];</span><br><span class="line">    <span class="type">int</span> front,rear;</span><br><span class="line">&#125;SqQueue;</span><br></pre></td></tr></table></figure>
-<p>初始状态：front = rear = 0</p>
+<h3 id="共享栈"><a href="#共享栈" class="headerlink" title="共享栈"></a>共享栈</h3><p>同时从两边向中间压栈</p>
+<h3 id="链栈"><a href="#链栈" class="headerlink" title="链栈"></a>链栈</h3><figure class="highlight c++"><figcaption><span>定义</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span> <span class="title class_">Linknode</span>&#123;</span><br><span class="line">    ElemType data;</span><br><span class="line">    <span class="keyword">struct</span> <span class="title class_">Linknode</span> *next;</span><br><span class="line">&#125;LiStack;</span><br></pre></td></tr></table></figure>
+<h2 id="队列"><a href="#队列" class="headerlink" title="队列"></a>队列</h2><p>FIFO</p>
+<h3 id="顺序存储"><a href="#顺序存储" class="headerlink" title="顺序存储"></a>顺序存储</h3><figure class="highlight c++"><figcaption><span>队列的实现</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> MaxSize 50</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span>&#123;</span><br><span class="line">    ElemType data[MaxSize];</span><br><span class="line">    <span class="type">int</span> front,rear;</span><br><span class="line">&#125;SqQueue;</span><br></pre></td></tr></table></figure>
+<p>初始状态：front &#x3D; rear &#x3D; 0</p>
 <figure class="highlight c++"><figcaption><span>队列判空</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">bool</span> <span class="title">QueueEmpty</span><span class="params">(SqQueue Q)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(Q.front == Q.rear)</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="循环队列"><a class="markdownIt-Anchor" href="#循环队列">#</a> 循环队列</h4>
-<figure class="highlight c++"><figcaption><span>初始化</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">InitQueue</span><span class="params">(SqQueue &amp;Q)</span></span>&#123;</span><br><span class="line">    Q.front = Q.rear = <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="循环队列"><a href="#循环队列" class="headerlink" title="循环队列"></a>循环队列</h4><figure class="highlight c++"><figcaption><span>初始化</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">InitQueue</span><span class="params">(SqQueue &amp;Q)</span></span>&#123;</span><br><span class="line">    Q.front = Q.rear = <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <figure class="highlight c++"><figcaption><span>队列判空</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">bool</span> <span class="title">QueueEmpty</span><span class="params">(SqQueue Q)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(Q.front == Q.rear)</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <figure class="highlight c++"><figcaption><span>队列判满</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">bool</span> <span class="title">QueueFull</span><span class="params">(SqQueue Q)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>((Q.rear + <span class="number">1</span>) % MaxSize == Q.front)</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <figure class="highlight c++"><figcaption><span>入队</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">bool</span> <span class="title">EnQueue</span><span class="params">(SqQueue &amp;Q,ElemType x)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="built_in">QueueFull</span>(Q))</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    Q.data[Q.rear] = x;</span><br><span class="line">    Q.rear = (Q.rear + <span class="number">1</span>) % MaxSize;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <figure class="highlight c++"><figcaption><span>出队</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">bool</span> <span class="title">DeQueue</span><span class="params">(SqQueue &amp;Q,ElemType &amp;x)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="built_in">QueueEmpty</span>(Q))</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    x = Q.data[Q.front];</span><br><span class="line">    Q.front = (Q.front + <span class="number">1</span>) % MaxSize;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <figure class="highlight c++"><figcaption><span>求元素个数</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">QueueLength</span><span class="params">(SqQueue Q)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> (Q.rear - Q.front + MaxSize) % MaxSize;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="链式存储"><a class="markdownIt-Anchor" href="#链式存储">#</a> 链式存储</h3>
-<figure class="highlight c++"><figcaption><span>链队列的实现</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span> <span class="title class_">Linknode</span>&#123;</span><br><span class="line">    ElemType data;</span><br><span class="line">    <span class="keyword">struct</span> <span class="title class_">Linknode</span> *next;</span><br><span class="line">&#125;LinkNode;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span>&#123;</span><br><span class="line">    LinkNode *front,*rear;</span><br><span class="line">&#125;LinkQueue;</span><br></pre></td></tr></table></figure>
+
+<h3 id="链式存储"><a href="#链式存储" class="headerlink" title="链式存储"></a>链式存储</h3><figure class="highlight c++"><figcaption><span>链队列的实现</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span> <span class="title class_">Linknode</span>&#123;</span><br><span class="line">    ElemType data;</span><br><span class="line">    <span class="keyword">struct</span> <span class="title class_">Linknode</span> *next;</span><br><span class="line">&#125;LinkNode;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span>&#123;</span><br><span class="line">    LinkNode *front,*rear;</span><br><span class="line">&#125;LinkQueue;</span><br></pre></td></tr></table></figure>
 <p>一般设计成带头结点的链队列</p>
 <figure class="highlight c"><figcaption><span>初始化</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">InitQueue</span><span class="params">(LinkQueue &amp;Q)</span>&#123;</span><br><span class="line">    Q.front = Q.rear = (LinkNode*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(LinkNode));</span><br><span class="line">    Q.front-&gt;next = <span class="literal">NULL</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <figure class="highlight c"><figcaption><span>队列判空</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">bool</span> <span class="title function_">QueueEmpty</span><span class="params">(LinkQueue Q)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(Q.front == Q.rear)</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <figure class="highlight c"><figcaption><span>入队</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">bool</span> <span class="title function_">EnQueue</span><span class="params">(LinkQueue &amp;Q,ElemType x)</span>&#123;</span><br><span class="line">    LinkNode *s = (LinkNode*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(LinkNode));</span><br><span class="line">    s-&gt;data = x;</span><br><span class="line">    s-&gt;next = <span class="literal">NULL</span>;</span><br><span class="line">    Q.rear-&gt;next = s;</span><br><span class="line">    Q.rear = s;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <figure class="highlight c"><figcaption><span>出队</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">bool</span> <span class="title function_">DeQueue</span><span class="params">(LinkQueue &amp;Q,ElemType &amp;x)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(Q.front == Q.rear)</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    LinkNode *p = Q.front-&gt;next;</span><br><span class="line">    x = p-&gt;data;</span><br><span class="line">    Q.front-&gt;next = p-&gt;next;</span><br><span class="line">    <span class="keyword">if</span>(Q.rear == p)</span><br><span class="line">        Q.rear = Q.front;</span><br><span class="line">    <span class="built_in">free</span>(p);</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="双端队列"><a class="markdownIt-Anchor" href="#双端队列">#</a> 双端队列</h3>
-<ul>
-<li>输出受限的双端队列<br>
-允许在一端进行 push/pop 操作，另一端只能 push</li>
-<li>输入受限的双端队列<br>
-允许在一端进行 push/pop 操作，另一端只能 pop</li>
+
+<h3 id="双端队列"><a href="#双端队列" class="headerlink" title="双端队列"></a>双端队列</h3><ul>
+<li>输出受限的双端队列<br>允许在一端进行push&#x2F;pop操作，另一端只能push</li>
+<li>输入受限的双端队列<br>允许在一端进行push&#x2F;pop操作，另一端只能pop</li>
 </ul>
-<h2 id="栈和队列的应用"><a class="markdownIt-Anchor" href="#栈和队列的应用">#</a> 栈和队列的应用</h2>
-<h3 id="栈-2"><a class="markdownIt-Anchor" href="#栈-2">#</a> 栈</h3>
-<h4 id="表达式"><a class="markdownIt-Anchor" href="#表达式">#</a> 表达式</h4>
-<ul>
-<li>括号匹配<br>
-左括号压栈，右括号出栈，判断是否匹配</li>
-<li>算术表达式<br>
-中缀表达式：左根右<br>
-前缀表达式：根左右<br>
-后缀表达式：左右根</li>
-</ul>
-<blockquote>
+<h2 id="栈和队列的应用"><a href="#栈和队列的应用" class="headerlink" title="栈和队列的应用"></a>栈和队列的应用</h2><h3 id="栈-1"><a href="#栈-1" class="headerlink" title="栈"></a>栈</h3><h4 id="表达式"><a href="#表达式" class="headerlink" title="表达式"></a>表达式</h4><ul>
+<li>括号匹配<br>左括号压栈，右括号出栈，判断是否匹配</li>
+<li>算术表达式<br>中缀表达式：左根右<br>前缀表达式：根左右<br>后缀表达式：左右根<blockquote>
 <p>中缀转后缀</p>
 <ol>
 <li>加括号</li>
 <li>把运算符移到当前层的括号后面</li>
-<li>去掉括号<br>
-<strong>用栈实现中缀转后缀：</strong></li>
+<li>去掉括号<br><strong>用栈实现中缀转后缀：</strong></li>
 </ol>
 </blockquote>
+</li>
+</ul>
 <ol>
 <li>遇到操作数直接加入后缀表达式</li>
 <li>遇到括号，左括号入栈，右括号依次出栈加入后缀表达式直到遇到左括号位置，并删除左括号</li>
-<li>遇到运算符，判断优先级，如果栈为空或者栈顶为 “（” 或者栈顶运算符优先级低于当前运算符，则入栈，否则依次出栈加入后缀表达式，直到栈为空或者栈顶运算符优先级低于当前运算符（优先级相同的也要出栈），最后将当前运算符入栈<br>
-<mark>所以栈里面只存运算符和括号</mark></li>
+<li>遇到运算符，判断优先级，如果栈为空或者栈顶为“（”或者栈顶运算符优先级低于当前运算符，则入栈，否则依次出栈加入后缀表达式，直到栈为空或者栈顶运算符优先级低于当前运算符（优先级相同的也要出栈），最后将当前运算符入栈<br>&#x3D;&#x3D;所以栈里面只存运算符和括号&#x3D;&#x3D;</li>
 </ol>
 <blockquote>
-<p>后缀表达式求值<br>
-从左到右扫描表达式，遇到操作数压栈，遇到操作符就弹出两个操作数，计算结果压入栈中</p>
+<p>后缀表达式求值<br>从左到右扫描表达式，遇到操作数压栈，遇到操作符就弹出两个操作数，计算结果压入栈中</p>
 </blockquote>
-<h4 id="递归"><a class="markdownIt-Anchor" href="#递归">#</a> 递归</h4>
-<h3 id="队列-2"><a class="markdownIt-Anchor" href="#队列-2">#</a> 队列</h3>
-<h4 id="层次遍历"><a class="markdownIt-Anchor" href="#层次遍历">#</a> 层次遍历</h4>
-<p>根左右入队，依次 pop</p>
-<h4 id="队列的应用"><a class="markdownIt-Anchor" href="#队列的应用">#</a> 队列的应用</h4>
-<ul>
+<h4 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h4><h3 id="队列-1"><a href="#队列-1" class="headerlink" title="队列"></a>队列</h3><h4 id="层次遍历"><a href="#层次遍历" class="headerlink" title="层次遍历"></a>层次遍历</h4><p>根左右入队，依次pop</p>
+<h4 id="队列的应用"><a href="#队列的应用" class="headerlink" title="队列的应用"></a>队列的应用</h4><ul>
 <li>缓冲区</li>
 <li>操作系统的请求队列</li>
 </ul>
-<h2 id="数组"><a class="markdownIt-Anchor" href="#数组">#</a> 数组</h2>
-<p>特殊矩阵的压缩存储</p>
+<h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><p>特殊矩阵的压缩存储</p>
 <ul>
-<li>对称矩阵<br>
-只存下三角的元素，存在一维数组里</li>
-<li>三角矩阵<br>
-省略 0，摊平存在一维数组</li>
-<li>三对角<br>
-同理省略 0，存在一维数组里</li>
-<li>稀疏矩阵<br>
-行标，列标，值都成三元组，存储在线性表（数组或者十字链表），保存的同时要保存系数矩阵的行数、列数和非零元素的个数</li>
+<li>对称矩阵<br>只存下三角的元素，存在一维数组里</li>
+<li>三角矩阵<br>省略0，摊平存在一维数组</li>
+<li>三对角<br>同理省略0，存在一维数组里</li>
+<li>稀疏矩阵<br>行标，列标，值都成三元组，存储在线性表（数组或者十字链表），保存的同时要保存系数矩阵的行数、列数和非零元素的个数</li>
 </ul>
 
       <div class="tags">
@@ -325,7 +298,7 @@ NoResponse's Blog = NoResponse's Blog</title>
     <div class="item left">
       
 
-  <a href="/2025/09/18/computer-science/OS/ch1/" itemprop="url" rel="prev" data-background-image="&#x2F;images&#x2F;bg35.jpg" title="ch1">
+  <a href="/2025/09/18/computer-science/OS/ch1/" itemprop="url" rel="prev" data-background-image="&#x2F;images&#x2F;bg9.jpg" title="ch1">
   <span class="type">Previous Post</span>
   <span class="category"><i class="ic i-flag"></i> 操作系统</span>
   <h3>ch1</h3>
@@ -335,7 +308,7 @@ NoResponse's Blog = NoResponse's Blog</title>
     <div class="item right">
       
 
-  <a href="/2025/10/05/computer-science/DS/ch4/" itemprop="url" rel="next" data-background-image="&#x2F;images&#x2F;bg24.jpg" title="ch4">
+  <a href="/2025/10/05/computer-science/DS/ch4/" itemprop="url" rel="next" data-background-image="&#x2F;images&#x2F;bg29.jpg" title="ch4">
   <span class="type">Next Post</span>
   <span class="category"><i class="ic i-flag"></i> 数据结构</span>
   <h3>ch4</h3>
@@ -357,11 +330,11 @@ NoResponse's Blog = NoResponse's Blog</title>
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="Contents">
-          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#ch3"><span class="toc-number">1.</span> <span class="toc-text"> Ch3</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%88"><span class="toc-number">1.1.</span> <span class="toc-text"> 栈</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A1%BA%E5%BA%8F%E6%A0%88%E7%9A%84%E5%AE%9E%E7%8E%B0"><span class="toc-number">1.1.1.</span> <span class="toc-text"> 顺序栈的实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B1%E4%BA%AB%E6%A0%88"><span class="toc-number">1.1.2.</span> <span class="toc-text"> 共享栈</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%93%BE%E6%A0%88"><span class="toc-number">1.1.3.</span> <span class="toc-text"> 链栈</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%98%9F%E5%88%97"><span class="toc-number">1.2.</span> <span class="toc-text"> 队列</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A1%BA%E5%BA%8F%E5%AD%98%E5%82%A8"><span class="toc-number">1.2.1.</span> <span class="toc-text"> 顺序存储</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BE%AA%E7%8E%AF%E9%98%9F%E5%88%97"><span class="toc-number">1.2.1.1.</span> <span class="toc-text"> 循环队列</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%93%BE%E5%BC%8F%E5%AD%98%E5%82%A8"><span class="toc-number">1.2.2.</span> <span class="toc-text"> 链式存储</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%8C%E7%AB%AF%E9%98%9F%E5%88%97"><span class="toc-number">1.2.3.</span> <span class="toc-text"> 双端队列</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97%E7%9A%84%E5%BA%94%E7%94%A8"><span class="toc-number">1.3.</span> <span class="toc-text"> 栈和队列的应用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%88-2"><span class="toc-number">1.3.1.</span> <span class="toc-text"> 栈</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="toc-number">1.3.1.1.</span> <span class="toc-text"> 表达式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%80%92%E5%BD%92"><span class="toc-number">1.3.1.2.</span> <span class="toc-text"> 递归</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%98%9F%E5%88%97-2"><span class="toc-number">1.3.2.</span> <span class="toc-text"> 队列</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B1%82%E6%AC%A1%E9%81%8D%E5%8E%86"><span class="toc-number">1.3.2.1.</span> <span class="toc-text"> 层次遍历</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%98%9F%E5%88%97%E7%9A%84%E5%BA%94%E7%94%A8"><span class="toc-number">1.3.2.2.</span> <span class="toc-text"> 队列的应用</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E7%BB%84"><span class="toc-number">1.4.</span> <span class="toc-text"> 数组</span></a></li></ol></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Ch3"><span class="toc-number">1.</span> <span class="toc-text">Ch3</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%88"><span class="toc-number">1.1.</span> <span class="toc-text">栈</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A1%BA%E5%BA%8F%E6%A0%88%E7%9A%84%E5%AE%9E%E7%8E%B0"><span class="toc-number">1.1.1.</span> <span class="toc-text">顺序栈的实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B1%E4%BA%AB%E6%A0%88"><span class="toc-number">1.1.2.</span> <span class="toc-text">共享栈</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%93%BE%E6%A0%88"><span class="toc-number">1.1.3.</span> <span class="toc-text">链栈</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%98%9F%E5%88%97"><span class="toc-number">1.2.</span> <span class="toc-text">队列</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A1%BA%E5%BA%8F%E5%AD%98%E5%82%A8"><span class="toc-number">1.2.1.</span> <span class="toc-text">顺序存储</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BE%AA%E7%8E%AF%E9%98%9F%E5%88%97"><span class="toc-number">1.2.1.1.</span> <span class="toc-text">循环队列</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%93%BE%E5%BC%8F%E5%AD%98%E5%82%A8"><span class="toc-number">1.2.2.</span> <span class="toc-text">链式存储</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%8C%E7%AB%AF%E9%98%9F%E5%88%97"><span class="toc-number">1.2.3.</span> <span class="toc-text">双端队列</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97%E7%9A%84%E5%BA%94%E7%94%A8"><span class="toc-number">1.3.</span> <span class="toc-text">栈和队列的应用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%88-1"><span class="toc-number">1.3.1.</span> <span class="toc-text">栈</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="toc-number">1.3.1.1.</span> <span class="toc-text">表达式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%80%92%E5%BD%92"><span class="toc-number">1.3.1.2.</span> <span class="toc-text">递归</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%98%9F%E5%88%97-1"><span class="toc-number">1.3.2.</span> <span class="toc-text">队列</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B1%82%E6%AC%A1%E9%81%8D%E5%8E%86"><span class="toc-number">1.3.2.1.</span> <span class="toc-text">层次遍历</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%98%9F%E5%88%97%E7%9A%84%E5%BA%94%E7%94%A8"><span class="toc-number">1.3.2.2.</span> <span class="toc-text">队列的应用</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E7%BB%84"><span class="toc-number">1.4.</span> <span class="toc-text">数组</span></a></li></ol></li></ol>
       </div>
       <div class="related panel pjax" data-title="Related">
         <ul>
-          <li><a href="/2023/10/31/computer-science/DS/fds/" rel="bookmark" title="fds课程笔记">fds课程笔记</a></li><li><a href="/2025/09/15/computer-science/DS/ch2/" rel="bookmark" title="ch2">ch2</a></li><li><a href="/2025/09/15/computer-science/DS/Amortized%20Analysis/" rel="bookmark" title="Amortized Analysis">Amortized Analysis</a></li><li><a href="/2025/09/15/computer-science/DS/ch1/" rel="bookmark" title="ch1">ch1</a></li><li class="active"><a href="/2025/10/04/computer-science/DS/ch3/" rel="bookmark" title="ch3">ch3</a></li><li><a href="/2025/10/05/computer-science/DS/ch4/" rel="bookmark" title="ch4">ch4</a></li><li><a href="/2025/10/10/computer-science/DS/ch5/" rel="bookmark" title="ch5">ch5</a></li><li><a href="/2025/10/11/computer-science/DS/ch6/" rel="bookmark" title="ch6">ch6</a></li><li><a href="/2025/10/13/computer-science/DS/ch8/" rel="bookmark" title="ch8">ch8</a></li><li><a href="/2025/10/13/computer-science/DS/ch7/" rel="bookmark" title="ch7">ch7</a></li>
+          <li><a href="/2023/10/31/computer-science/DS/fds/" rel="bookmark" title="fds课程笔记">fds课程笔记</a></li><li><a href="/2025/09/15/computer-science/DS/Amortized%20Analysis/" rel="bookmark" title="Amortized Analysis">Amortized Analysis</a></li><li><a href="/2025/09/15/computer-science/DS/ch1/" rel="bookmark" title="ch1">ch1</a></li><li><a href="/2025/09/15/computer-science/DS/ch2/" rel="bookmark" title="ch2">ch2</a></li><li class="active"><a href="/2025/10/04/computer-science/DS/ch3/" rel="bookmark" title="ch3">ch3</a></li><li><a href="/2025/10/05/computer-science/DS/ch4/" rel="bookmark" title="ch4">ch4</a></li><li><a href="/2025/10/10/computer-science/DS/ch5/" rel="bookmark" title="ch5">ch5</a></li><li><a href="/2025/10/11/computer-science/DS/ch6/" rel="bookmark" title="ch6">ch6</a></li><li><a href="/2025/10/13/computer-science/DS/ch7/" rel="bookmark" title="ch7">ch7</a></li><li><a href="/2025/10/13/computer-science/DS/ch8/" rel="bookmark" title="ch8">ch8</a></li>
         </ul>
       </div>
       <div class="overview panel" data-title="Overview">
@@ -482,20 +455,12 @@ NoResponse's Blog = NoResponse's Blog</title>
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/AI/" title="In 人工智能">人工智能</a>
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
 </div>
 
-    <span><a href="/2025/06/11/AI/week4-5/" title="Week4-5">Week4-5</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/note/" title="In 七七八八">七七八八</a>
-</div>
-
-    <span><a href="/2025/11/23/note/20251123/" title="20251123面经回忆">20251123面经回忆</a></span>
+    <span><a href="/2025/03/30/computer-science/compile-principles/ch5/" title="语义分析">语义分析</a></span>
   </li>
 
       
@@ -505,7 +470,7 @@ NoResponse's Blog = NoResponse's Blog</title>
 <a href="/categories/AI/" title="In 人工智能">人工智能</a>
 </div>
 
-    <span><a href="/2025/12/09/AI/agent/" title="agent相关">agent相关</a></span>
+    <span><a href="/2025/06/12/AI/week6-7/" title="Week6-7">Week6-7</a></span>
   </li>
 
       
@@ -517,7 +482,7 @@ NoResponse's Blog = NoResponse's Blog</title>
 <a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
 </div>
 
-    <span><a href="/2025/03/23/computer-science/compile-principles/ch3/" title="语法分析">语法分析</a></span>
+    <span><a href="/2025/03/21/computer-science/compile-principles/ch1/" title="Introduction">Introduction</a></span>
   </li>
 
       
@@ -526,10 +491,10 @@ NoResponse's Blog = NoResponse's Blog</title>
 <div class="breadcrumb">
 <a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/computer-organization/" title="In 计算机组成">计算机组成</a>
+<a href="/categories/computer-science/OS/" title="In 操作系统">操作系统</a>
 </div>
 
-    <span><a href="/2025/08/10/computer-science/computer-organization/ch5/" title="Ch5">Ch5</a></span>
+    <span><a href="/2025/10/09/computer-science/OS/ch2/" title="ch2">ch2</a></span>
   </li>
 
       
@@ -541,7 +506,29 @@ NoResponse's Blog = NoResponse's Blog</title>
 <a href="/categories/computer-science/DS/" title="In 数据结构">数据结构</a>
 </div>
 
-    <span><a href="/2025/09/15/computer-science/DS/ch1/" title="ch1">ch1</a></span>
+    <span><a href="/2025/10/05/computer-science/DS/ch4/" title="ch4">ch4</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/note/" title="In 七七八八">七七八八</a>
+</div>
+
+    <span><a href="/2025/12/11/note/20251211/" title="杂项">杂项</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/DS/" title="In 数据结构">数据结构</a>
+</div>
+
+    <span><a href="/2025/10/10/computer-science/DS/ch5/" title="ch5">ch5</a></span>
   </li>
 
       
@@ -553,7 +540,7 @@ NoResponse's Blog = NoResponse's Blog</title>
 <a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
 </div>
 
-    <span><a href="/2025/06/17/computer-science/compile-principles/ch8/" title="Basic Blocks &amp; Traces">Basic Blocks & Traces</a></span>
+    <span><a href="/2025/06/16/computer-science/compile-principles/ch7/" title="IR">IR</a></span>
   </li>
 
       
@@ -562,32 +549,20 @@ NoResponse's Blog = NoResponse's Blog</title>
 <div class="breadcrumb">
 <a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/computer-network/" title="In 计算机网络">计算机网络</a>
+<a href="/categories/computer-science/DS/" title="In 数据结构">数据结构</a>
 </div>
 
-    <span><a href="/2025/12/07/computer-science/computer-network/note/" title="计网八股">计网八股</a></span>
+    <span><a href="/2025/09/15/computer-science/DS/Amortized%20Analysis/" title="Amortized Analysis">Amortized Analysis</a></span>
   </li>
 
       
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/computer-organization/" title="In 计算机组成">计算机组成</a>
+<a href="/categories/note/" title="In 七七八八">七七八八</a>
 </div>
 
-    <span><a href="/2025/05/14/computer-science/computer-organization/ch2/" title="Ch2">Ch2</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/AI/" title="In 人工智能">人工智能</a>
-</div>
-
-    <span><a href="/2025/06/12/AI/week6-7/" title="Week6-7">Week6-7</a></span>
+    <span><a href="/2025/08/02/note/20250802/" title="20250802阅读论文">20250802阅读论文</a></span>
   </li>
 
   </ul>
@@ -612,13 +587,13 @@ NoResponse's Blog = NoResponse's Blog</title>
     <span class="post-meta-item-icon">
       <i class="ic i-chart-area"></i>
     </span>
-    <span title="Symbols count total">188k words</span>
+    <span title="Symbols count total">185k words</span>
 
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="ic i-coffee"></i>
     </span>
-    <span title="Reading time total">2:51</span>
+    <span title="Reading time total">2:48</span>
   </div>
   <div class="powered-by">
     Powered by <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>

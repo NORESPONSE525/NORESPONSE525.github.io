@@ -7,101 +7,79 @@
         <language>en</language>
         <pubDate>Sun, 05 Oct 2025 00:00:00 +0800</pubDate>
         <lastBuildDate>Sun, 05 Oct 2025 00:00:00 +0800</lastBuildDate>
-        <category>软件工程</category>
         <category>人工智能</category>
-        <category>容器</category>
-        <category>面经</category>
+        <category>软件工程</category>
         <category>自监督学习</category>
+        <category>容器</category>
         <category>杂项</category>
+        <category>面经</category>
         <category>ctest</category>
         <category>gtest</category>
         <category>test coverage</category>
         <category>C++</category>
-        <category>线性表</category>
         <category>Amortized Analysis</category>
         <category>数据结构</category>
         <category>栈、队列和数组</category>
+        <category>线性表</category>
         <category>串</category>
         <category>树与二叉树</category>
-        <category>排序</category>
         <category>查找</category>
         <category>图论</category>
+        <category>排序</category>
+        <category>计算机网络</category>
         <category>操作系统</category>
-        <category>计算机组成</category>
-        <category>数据的表示与运算</category>
         <category>fds</category>
+        <category>编译原理</category>
+        <category>Liveness Analysis</category>
+        <category>Register Allocation</category>
+        <category>语法分析</category>
+        <category>词法分析</category>
+        <category>抽象语法</category>
+        <category>活动记录</category>
+        <category>语义分析</category>
+        <category>中间代码</category>
+        <category>Basic Blocks and Traces</category>
+        <category>指令选择</category>
+        <category>数据的表示与运算</category>
+        <category>计算机组成</category>
+        <category>指令系统</category>
         <category>CPU</category>
         <category>存储系统</category>
-        <category>指令系统</category>
         <category>总线</category>
         <category>I/O</category>
         <category>错题</category>
-        <category>Liveness Analysis</category>
-        <category>Register Allocation</category>
-        <category>编译原理</category>
-        <category>词法分析</category>
-        <category>活动记录</category>
-        <category>抽象语法</category>
-        <category>语法分析</category>
-        <category>指令选择</category>
-        <category>语义分析</category>
-        <category>Basic Blocks and Traces</category>
-        <category>计算机网络</category>
-        <category>中间代码</category>
         <item>
             <guid isPermalink="true">http://example.com/2025/10/05/computer-science/DS/ch4/</guid>
             <title>ch4</title>
             <link>http://example.com/2025/10/05/computer-science/DS/ch4/</link>
             <category>串</category>
             <pubDate>Sun, 05 Oct 2025 00:00:00 +0800</pubDate>
-            <description><![CDATA[ &lt;h1 id=&#34;ch4&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#ch4&#34;&gt;#&lt;/a&gt; Ch4&lt;/h1&gt;
-&lt;h2 id=&#34;模式匹配&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#模式匹配&#34;&gt;#&lt;/a&gt; 模式匹配&lt;/h2&gt;
-&lt;p&gt;i: 主串当前待比较的字符位置&lt;br&gt;
- j: 模式串当前待比较的字符位置&lt;/p&gt;
+            <description><![CDATA[ &lt;h1 id=&#34;Ch4&#34;&gt;&lt;a href=&#34;#Ch4&#34; class=&#34;headerlink&#34; title=&#34;Ch4&#34;&gt;&lt;/a&gt;Ch4&lt;/h1&gt;&lt;h2 id=&#34;模式匹配&#34;&gt;&lt;a href=&#34;#模式匹配&#34; class=&#34;headerlink&#34; title=&#34;模式匹配&#34;&gt;&lt;/a&gt;模式匹配&lt;/h2&gt;&lt;p&gt;i: 主串当前待比较的字符位置&lt;br&gt;j: 模式串当前待比较的字符位置&lt;/p&gt;
 &lt;p&gt;字符串模式匹配，在主串中找到与模式串相同的子串&lt;/p&gt;
-&lt;h3 id=&#34;暴力算法&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#暴力算法&#34;&gt;#&lt;/a&gt; 暴力算法&lt;/h3&gt;
-&lt;p&gt;遍历主串，从每个和第一个字符相同的位置开始，继续比较后继字符&lt;br&gt;
-时间复杂度：&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;O&lt;/mi&gt;&lt;mo stretchy=&#34;false&#34;&gt;(&lt;/mo&gt;&lt;mi&gt;m&lt;/mi&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mo stretchy=&#34;false&#34;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;O(mn)&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:1em;vertical-align:-0.25em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.02778em;&#34;&gt;O&lt;/span&gt;&lt;span class=&#34;mopen&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;m&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;mclose&#34;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;（主串长度 n，模式串长度 m）&lt;/p&gt;
-&lt;h3 id=&#34;kmp算法&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#kmp算法&#34;&gt;#&lt;/a&gt; KMP 算法&lt;/h3&gt;
-&lt;p&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly93d3cuYmlsaWJpbGkuY29tL3ZpZGVvL0JWMVBENHkxbzduZC8/c3BtX2lkX2Zyb209MzMzLjEzODcuaG9tZXBhZ2UudmlkZW9fY2FyZC5jbGljayZhbXA7dmRfc291cmNlPTFhN2Q4ZjU5NmYzZGZlNDBmZWUzNGM4NThlZDQ3ZTcz&#34;&gt;https://www.bilibili.com/video/BV1PD4y1o7nd/?spm_id_from=333.1387.homepage.video_card.click&amp;amp;vd_source=1a7d8f596f3dfe40fee34c858ed47e73&lt;/span&gt;&lt;br&gt;
- 这个讲得好&lt;/p&gt;
-&lt;div class=&#34;note danger&#34;&gt;
-&lt;p&gt;KMP 算法中 i 永远不递减&lt;/p&gt;
-&lt;/div&gt;
-&lt;p&gt;前缀：除了最后一个字符外所有的头部子串&lt;br&gt;
-后缀：除了第一个字符外所有的尾部子串&lt;/p&gt;
+&lt;h3 id=&#34;暴力算法&#34;&gt;&lt;a href=&#34;#暴力算法&#34; class=&#34;headerlink&#34; title=&#34;暴力算法&#34;&gt;&lt;/a&gt;暴力算法&lt;/h3&gt;&lt;p&gt;遍历主串，从每个和第一个字符相同的位置开始，继续比较后继字符&lt;br&gt;时间复杂度：$O(mn)$（主串长度n，模式串长度m）&lt;/p&gt;
+&lt;h3 id=&#34;KMP算法&#34;&gt;&lt;a href=&#34;#KMP算法&#34; class=&#34;headerlink&#34; title=&#34;KMP算法&#34;&gt;&lt;/a&gt;KMP算法&lt;/h3&gt;&lt;p&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly93d3cuYmlsaWJpbGkuY29tL3ZpZGVvL0JWMVBENHkxbzduZC8/c3BtX2lkX2Zyb209MzMzLjEzODcuaG9tZXBhZ2UudmlkZW9fY2FyZC5jbGljayZ2ZF9zb3VyY2U9MWE3ZDhmNTk2ZjNkZmU0MGZlZTM0Yzg1OGVkNDdlNzM=&#34;&gt;https://www.bilibili.com/video/BV1PD4y1o7nd/?spm_id_from=333.1387.homepage.video_card.click&amp;amp;vd_source=1a7d8f596f3dfe40fee34c858ed47e73&lt;/span&gt;&lt;br&gt;这个讲得好&lt;br&gt;:::danger&lt;br&gt;KMP算法中i永远不递减&lt;br&gt;:::&lt;/p&gt;
+&lt;p&gt;前缀：除了最后一个字符外所有的头部子串&lt;br&gt;后缀：除了第一个字符外所有的尾部子串&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;PM 数组&lt;br&gt;
-方法：算出所有前缀的前缀和后缀的最长公共子串的长度，并保存在数组中（PM，部分匹配值）&lt;br&gt;
-从头开始，右滑位数 = 已匹配的字符数 - 对应的部分匹配值（最后一个匹配的字符的 PM）&lt;br&gt;
-&lt;mark&gt;时间复杂度：&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;O&lt;/mi&gt;&lt;mo stretchy=&#34;false&#34;&gt;(&lt;/mo&gt;&lt;mi&gt;m&lt;/mi&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mo stretchy=&#34;false&#34;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;O(m+n)&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:1em;vertical-align:-0.25em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.02778em;&#34;&gt;O&lt;/span&gt;&lt;span class=&#34;mopen&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;m&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mbin&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:1em;vertical-align:-0.25em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;mclose&#34;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/mark&gt;&lt;/li&gt;
-&lt;li&gt;next 数组&lt;br&gt;
- next 数组代表匹配的时候子串中可以跳过匹配的字符个数&lt;/li&gt;
+&lt;li&gt;PM数组&lt;br&gt;方法：算出所有前缀的前缀和后缀的最长公共子串的长度，并保存在数组中（PM，部分匹配值）&lt;br&gt;从头开始，右滑位数 &amp;#x3D; 已匹配的字符数 - 对应的部分匹配值（最后一个匹配的字符的PM）&lt;br&gt;&amp;#x3D;&amp;#x3D;时间复杂度：$O(m+n)$&amp;#x3D;&amp;#x3D;&lt;/li&gt;
+&lt;li&gt;next数组&lt;br&gt;next数组代表匹配的时候子串中可以跳过匹配的字符个数&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;span class=&#34;katex-display&#34;&gt;&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34; display=&#34;block&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mo stretchy=&#34;false&#34;&gt;[&lt;/mo&gt;&lt;mi&gt;j&lt;/mi&gt;&lt;mo stretchy=&#34;false&#34;&gt;]&lt;/mo&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mi&gt;P&lt;/mi&gt;&lt;mi&gt;M&lt;/mi&gt;&lt;mo stretchy=&#34;false&#34;&gt;[&lt;/mo&gt;&lt;mi&gt;j&lt;/mi&gt;&lt;mo&gt;−&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mo stretchy=&#34;false&#34;&gt;]&lt;/mo&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;next[j] = PM[j-1] + 1 
-&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:1em;vertical-align:-0.25em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;x&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;t&lt;/span&gt;&lt;span class=&#34;mopen&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.05724em;&#34;&gt;j&lt;/span&gt;&lt;span class=&#34;mclose&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mrel&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:1em;vertical-align:-0.25em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.13889em;&#34;&gt;P&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.10903em;&#34;&gt;M&lt;/span&gt;&lt;span class=&#34;mopen&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.05724em;&#34;&gt;j&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mbin&#34;&gt;−&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:1em;vertical-align:-0.25em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;mclose&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mbin&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.64444em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;1&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;将模式串的 PM 表右移一位并整体 + 1，左边空缺用 0 来填充，右边溢出舍去&lt;/p&gt;
-&lt;div class=&#34;note info&#34;&gt;
-&lt;p&gt;在上面方法中，串的编号是从 1 开始的&lt;/p&gt;
-&lt;/div&gt;
-&lt;p&gt;当模式串在位置 j 与主串不匹配时，模式串应该向右滑动的位数 = j - next [j-1]&lt;/p&gt;
+&lt;p&gt;$$ next[j] &amp;#x3D; PM[j-1] + 1 $$&lt;br&gt;将模式串的PM表右移一位并整体+1，左边空缺用0来填充，右边溢出舍去&lt;br&gt;:::info&lt;br&gt;在上面方法中，串的编号是从1开始的&lt;br&gt;:::&lt;br&gt;当模式串在位置 j 与主串不匹配时，模式串应该向右滑动的位数 &amp;#x3D; j - next[j-1]&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;next 数组的一般公式&lt;/li&gt;
+&lt;li&gt;next数组的一般公式&lt;/li&gt;
 &lt;/ul&gt;
 &lt;ol&gt;
-&lt;li&gt;第 1 个是 0，第 2 个是 1&lt;/li&gt;
-&lt;li&gt;当前位置前面的串的相等的最长的前缀和后缀的长度 + 1&lt;/li&gt;
-&lt;li&gt;前缀后缀都不相等，填 1&lt;/li&gt;
+&lt;li&gt;第1个是0，第2个是1&lt;/li&gt;
+&lt;li&gt;当前位置前面的串的相等的最长的前缀和后缀的长度+1&lt;/li&gt;
+&lt;li&gt;前缀后缀都不相等，填1&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;直接看代码&lt;/p&gt;
 &lt;figure class=&#34;highlight c++&#34;&gt;&lt;figcaption&gt;&lt;span&gt;KMP&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;function&#34;&gt;&lt;span class=&#34;type&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;title&#34;&gt;get_next&lt;/span&gt;&lt;span class=&#34;params&#34;&gt;(SString T, &lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; nexxt[])&lt;/span&gt;&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; i = &lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;, j = &lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;;   &lt;span class=&#34;comment&#34;&gt;//i指向当前要计算next[i]的位置，j表示上一个最长前后缀长度&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    next[&lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;] = &lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;keyword&#34;&gt;while&lt;/span&gt;(i &amp;lt; T.length)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &lt;span class=&#34;keyword&#34;&gt;if&lt;/span&gt;(j == &lt;span class=&#34;number&#34;&gt;0&lt;/span&gt; || T.ch[i] == T.ch[j])&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            ++i;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            ++j;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            next[i] = j;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &amp;#125;&lt;span class=&#34;keyword&#34;&gt;else&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            j = next[j];&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;next [0] 是不用的&lt;/p&gt;
-&lt;p&gt;KMP 匹配算法&lt;/p&gt;
+&lt;p&gt;next[0]是不用的&lt;/p&gt;
+&lt;p&gt;KMP匹配算法&lt;/p&gt;
 &lt;figure class=&#34;highlight c++&#34;&gt;&lt;figcaption&gt;&lt;span&gt;KMP&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;function&#34;&gt;&lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;title&#34;&gt;index_KMP&lt;/span&gt;&lt;span class=&#34;params&#34;&gt;(SString S, SString T, &lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; next[])&lt;/span&gt;&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; i = &lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;, j = &lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;keyword&#34;&gt;while&lt;/span&gt;(i &amp;lt;= S.length &amp;amp;&amp;amp; j &amp;lt;= T.length)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &lt;span class=&#34;keyword&#34;&gt;if&lt;/span&gt;(j == &lt;span class=&#34;number&#34;&gt;0&lt;/span&gt; || S.ch[i] == T.ch[j])&amp;#123;   &lt;span class=&#34;comment&#34;&gt;//表示模式串已经回退到不能再回退的位置,此时必须让主串指针i前进一步，模式串从第一个字符重新开始匹配&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            ++i;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            ++j;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &amp;#125;&lt;span class=&#34;keyword&#34;&gt;else&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            j = next[j];&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;keyword&#34;&gt;if&lt;/span&gt;(j &amp;gt; T.length) &lt;span class=&#34;keyword&#34;&gt;return&lt;/span&gt; i - T.length;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;keyword&#34;&gt;else&lt;/span&gt; &lt;span class=&#34;keyword&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
 &lt;ul&gt;
-&lt;li&gt;nextval 数组&lt;br&gt;
-如果&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;msub&gt;&lt;mi&gt;p&lt;/mi&gt;&lt;mi&gt;j&lt;/mi&gt;&lt;/msub&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;p_j&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.716668em;vertical-align:-0.286108em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;p&lt;/span&gt;&lt;span class=&#34;msupsub&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.311664em;&#34;&gt;&lt;span style=&#34;top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.7em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mathnormal mtight&#34; style=&#34;margin-right:0.05724em;&#34;&gt;j&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.286108em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; 和&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;msub&gt;&lt;mi&gt;p&lt;/mi&gt;&lt;mrow&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mo stretchy=&#34;false&#34;&gt;[&lt;/mo&gt;&lt;mi&gt;j&lt;/mi&gt;&lt;mo stretchy=&#34;false&#34;&gt;]&lt;/mo&gt;&lt;/mrow&gt;&lt;/msub&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;p_{next[j]}&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.7857599999999999em;vertical-align:-0.3551999999999999em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;p&lt;/span&gt;&lt;span class=&#34;msupsub&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.34480000000000005em;&#34;&gt;&lt;span style=&#34;top:-2.5198em;margin-left:0em;margin-right:0.05em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.7em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mtight&#34;&gt;&lt;span class=&#34;mord mathnormal mtight&#34;&gt;n&lt;/span&gt;&lt;span class=&#34;mord mathnormal mtight&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;mord mathnormal mtight&#34;&gt;x&lt;/span&gt;&lt;span class=&#34;mord mathnormal mtight&#34;&gt;t&lt;/span&gt;&lt;span class=&#34;mopen mtight&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mord mathnormal mtight&#34; style=&#34;margin-right:0.05724em;&#34;&gt;j&lt;/span&gt;&lt;span class=&#34;mclose mtight&#34;&gt;]&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.3551999999999999em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; 相等，让 next [j] 的值等于 next [next [j]]，一直递归下去&lt;br&gt;
-如果跳转后的位置字符和当前字符相同，那就直接跳到更前面的位置（即 nextval [j]），避免无效比较&lt;/li&gt;
+&lt;li&gt;nextval数组&lt;br&gt;如果$p_j$和$p_{next[j]}$相等，让next[j]的值等于next[next[j]]，一直递归下去&lt;br&gt;如果跳转后的位置字符和当前字符相同，那就直接跳到更前面的位置（即 nextval[j]），避免无效比较&lt;/li&gt;
 &lt;/ul&gt;
 &lt;figure class=&#34;highlight c++&#34;&gt;&lt;figcaption&gt;&lt;span&gt;nextval&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;function&#34;&gt;&lt;span class=&#34;type&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;title&#34;&gt;get_nextval&lt;/span&gt;&lt;span class=&#34;params&#34;&gt;(SString T, &lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; nextval[])&lt;/span&gt;&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; i = &lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;, j = &lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    nextval[&lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;] = &lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;keyword&#34;&gt;while&lt;/span&gt;(i &amp;lt; T.length)&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &lt;span class=&#34;keyword&#34;&gt;if&lt;/span&gt;(j == &lt;span class=&#34;number&#34;&gt;0&lt;/span&gt; || T.ch[i] == T.ch[j])&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            ++i;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            ++j;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            &lt;span class=&#34;keyword&#34;&gt;if&lt;/span&gt;(T.ch[i] != T.ch[j])&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;                nextval[i] = j;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            &lt;span class=&#34;keyword&#34;&gt;else&lt;/span&gt; nextval[i] = nextval[j];&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &amp;#125;&lt;span class=&#34;keyword&#34;&gt;else&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            j = nextval[j];&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
  ]]></description>

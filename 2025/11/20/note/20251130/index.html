@@ -116,7 +116,7 @@ NoResponse's Blog = NoResponse's Blog</title>
 
       </div>
       <div id="imgs" class="pjax">
-          <img src="/images/bg2.png">
+          <img src="/images/bg33.jpg">
       </div>
     </header>
     <div id="waves">
@@ -161,17 +161,13 @@ NoResponse's Blog = NoResponse's Blog</title>
   <div class="body md" itemprop="articleBody">
     
 
-    <h1 id="杂项"><a class="markdownIt-Anchor" href="#杂项">#</a> 杂项</h1>
-<ol>
-<li>explicit<br>
- 构造函数默认是隐式转换的，如果想要禁止隐式转换，可以使用 explicit 关键字修饰构造函数。<br>
-比如</li>
+    <h1 id="杂项"><a href="#杂项" class="headerlink" title="杂项"></a>杂项</h1><ol>
+<li>explicit<br>构造函数默认是隐式转换的，如果想要禁止隐式转换，可以使用explicit关键字修饰构造函数。<br>比如</li>
 </ol>
 <figure class="highlight c++"><figcaption><span>explicit</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">FileSize</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="comment">// 构造函数：接受字节数</span></span><br><span class="line">    <span class="built_in">FileSize</span>(<span class="type">long</span> <span class="type">long</span> bytes) : <span class="built_in">bytes_</span>(bytes) &#123;&#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="type">long</span> <span class="type">long</span> <span class="title">getBytes</span><span class="params">()</span> <span class="type">const</span> </span>&#123; <span class="keyword">return</span> bytes_; &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="type">long</span> <span class="type">long</span> bytes_;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">deleteFileLargerThan</span><span class="params">(<span class="type">const</span> FileSize&amp; maxSize)</span> </span>&#123;</span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;Deleting files larger than &quot;</span> &lt;&lt; maxSize.<span class="built_in">getBytes</span>() &lt;&lt; <span class="string">&quot; bytes.\n&quot;</span>;</span><br><span class="line">    <span class="comment">// 实际逻辑省略...</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">deleteFileLargerThan</span>(<span class="string">&quot;100MB&quot;</span>);  <span class="comment">// 打错了！本想传字符串配置，但函数不接受 string</span></span><br><span class="line">    <span class="comment">// &quot;100MB&quot;  →  const char*  →  bool(true)  →  long long(1)   →  FileSize(1)</span></span><br><span class="line">    <span class="comment">// 变成：Deleting files larger than 1 bytes. 严重错误</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <ol start="2">
-<li>回调函数<br>
-回调函数是一种函数指针，它允许在运行时指定一个函数，并在某个事件发生时调用该函数。<br>
-人话：一个被作为参数传递给另一个函数，并在 “合适的时候” 被调用的函数。</li>
+<li>回调函数<br>回调函数是一种函数指针，它允许在运行时指定一个函数，并在某个事件发生时调用该函数。<br>人话：一个被作为参数传递给另一个函数，并在“合适的时候”被调用的函数。</li>
 </ol>
 <figure class="highlight c++"><figcaption><span>callback</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;functional&gt;</span></span></span><br><span class="line"></span><br><span class="line">std::function&lt;R(Args...)&gt; cb;</span><br><span class="line"><span class="comment">// R: 返回类型</span></span><br><span class="line"><span class="comment">// Args...: 参数列表</span></span><br></pre></td></tr></table></figure>
 <blockquote>
@@ -182,7 +178,7 @@ NoResponse's Blog = NoResponse's Blog</title>
 </ul>
 <figure class="highlight c++"><figcaption><span>callback</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">greet</span><span class="params">()</span> </span>&#123; std::cout &lt;&lt; <span class="string">&quot;Hello!\n&quot;</span>; &#125;</span><br><span class="line"></span><br><span class="line">std::function&lt;<span class="type">void</span>()&gt; cb = greet;</span><br><span class="line"><span class="built_in">cb</span>(); <span class="comment">// 输出 Hello!</span></span><br></pre></td></tr></table></figure>
 <ul>
-<li>Lambda 表达式</li>
+<li>Lambda表达式</li>
 </ul>
 <figure class="highlight c++"><figcaption><span>callback</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> x = <span class="number">42</span>;</span><br><span class="line">std::function&lt;<span class="type">void</span>()&gt; cb = [x]() &#123;</span><br><span class="line">    std::cout &lt;&lt; <span class="string">&quot;Captured x = &quot;</span> &lt;&lt; x &lt;&lt; <span class="string">&quot;\n&quot;</span>;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="built_in">cb</span>(); <span class="comment">// 输出 Captured x = 42</span></span><br></pre></td></tr></table></figure>
 <ul>
@@ -190,19 +186,11 @@ NoResponse's Blog = NoResponse's Blog</title>
 <li>成员函数</li>
 </ul>
 <ol start="3">
-<li>
-<p><code>mutable std::mutex mtx_;</code> <br>
- <code>mutable</code>  关键字表示变量可以在常量函数中修改。<br>
-如果没有 mutable，mtx_ 是普通成员变量，在 const 函数中，所有成员都被视为 const，调用 mtx_.lock () 会报错</p>
+<li><p><code>mutable std::mutex mtx_;</code><br><code>mutable</code> 关键字表示变量可以在常量函数中修改。<br>如果没有 mutable，mtx_ 是普通成员变量，在 const 函数中，所有成员都被视为 const，调用 mtx_.lock() 会报错</p>
 </li>
-<li>
-<p>std::unique_lock<span class="exturl" data-url="c3RkOjptdXRleA==">std::mutex</span> lock(mtx_)<br>
- 进入时自动调用 mtx_.lock ()（当前线程获得锁），当 lock 变量离开作用域（比如函数返回、出 {}），会自动调用 mtx_.unlock ()</p>
+<li><p>std::unique_lock<span class="exturl" data-url="c3RkOjptdXRleA==">std::mutex</span> lock(mtx_)<br>进入时自动调用 mtx_.lock()（当前线程获得锁），当 lock 变量离开作用域（比如函数返回、出 {}），会自动调用 mtx_.unlock()</p>
 </li>
-<li>
-<p>lambda<br>
- 有点抽象，有空继续研究<br>
-<span class="exturl" data-url="aHR0cHM6Ly9jLmJpYW5jaGVuZy5uZXQvdmlldy9ibDF5dnd5Lmh0bWw="> https://c.biancheng.net/view/bl1yvwy.html</span></p>
+<li><p>lambda<br>有点抽象，有空继续研究<br><span class="exturl" data-url="aHR0cHM6Ly9jLmJpYW5jaGVuZy5uZXQvdmlldy9ibDF5dnd5Lmh0bWw=">https://c.biancheng.net/view/bl1yvwy.html</span></p>
 </li>
 </ol>
 <ul>
@@ -213,28 +201,25 @@ NoResponse's Blog = NoResponse's Blog</title>
 <li>STL 算法的自定义谓词（最常用！）</li>
 </ul>
 <figure class="highlight c++"><figcaption><span>lambda</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">std::vector&lt;Person&gt; people = &#123;...&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 按年龄降序</span></span><br><span class="line">std::<span class="built_in">sort</span>(people.<span class="built_in">begin</span>(), people.<span class="built_in">end</span>(),</span><br><span class="line">          [](<span class="type">const</span> Person&amp; a, <span class="type">const</span> Person&amp; b) &#123;</span><br><span class="line">              <span class="keyword">return</span> a.age &gt; b.age;</span><br><span class="line">          &#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 删除所有空字符串</span></span><br><span class="line">vec.<span class="built_in">erase</span>(</span><br><span class="line">    std::<span class="built_in">remove_if</span>(vec.<span class="built_in">begin</span>(), vec.<span class="built_in">end</span>(),</span><br><span class="line">                   [](<span class="type">const</span> std::string&amp; s) &#123; <span class="keyword">return</span> s.<span class="built_in">empty</span>(); &#125;),</span><br><span class="line">    vec.<span class="built_in">end</span>()</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 找第一个大于 10 的数</span></span><br><span class="line"><span class="keyword">auto</span> it = std::<span class="built_in">find_if</span>(v.<span class="built_in">begin</span>(), v.<span class="built_in">end</span>(), [](<span class="type">int</span> x) &#123; <span class="keyword">return</span> x &gt; <span class="number">10</span>; &#125;);</span><br></pre></td></tr></table></figure>
+
+
 <ol start="6">
-<li>condition_variable<br>
- 不希望 FSM 的 worker 线程这样:</li>
+<li>condition_variable<br>不希望 FSM 的 worker 线程这样:</li>
 </ol>
 <figure class="highlight c++"><figcaption><span>轮询</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> (queue 空)</span><br><span class="line">        一直查（忙等）</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>condition_variable 的作用：</p>
 <ul>
 <li>队列空 → 工作线程睡觉</li>
-<li>有事件 → 唤醒工作线程<br>
-写法：</li>
+<li>有事件 → 唤醒工作线程<br>写法：</li>
 </ul>
 <figure class="highlight c++"><figcaption><span>condition_variable</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cv.<span class="built_in">wait</span>(lock, []&#123; <span class="keyword">return</span> !queue.<span class="built_in">empty</span>(); &#125;);</span><br></pre></td></tr></table></figure>
+
 <ol start="7">
-<li>
-<p>atomic 库<br>
- <code>atomic&lt;bool&gt;</code>  原子变量，线程安全的 bool</p>
+<li><p>atomic库<br><code>atomic&lt;bool&gt;</code> 原子变量，线程安全的 bool</p>
 </li>
-<li>
-<p>匿名函数</p>
+<li><p>匿名函数</p>
 </li>
-<li>
-<p>workerThread + 队列 + 状态机</p>
+<li><p>workerThread + 队列 + 状态机</p>
 </li>
 </ol>
 
@@ -306,20 +291,20 @@ NoResponse's Blog = NoResponse's Blog</title>
     <div class="item left">
       
 
-  <a href="/2025/10/26/oop/note/" itemprop="url" rel="prev" data-background-image="&#x2F;images&#x2F;bg3.png" title="C++相关">
+  <a href="/2025/11/20/note/20251201/" itemprop="url" rel="prev" data-background-image="&#x2F;images&#x2F;bg5.jpg" title="测试相关">
   <span class="type">Previous Post</span>
-  <span class="category"><i class="ic i-flag"></i> C++</span>
-  <h3>C++相关</h3>
+  <span class="category"><i class="ic i-flag"></i> 七七八八</span>
+  <h3>测试相关</h3>
   </a>
 
     </div>
     <div class="item right">
       
 
-  <a href="/2025/11/20/note/20251201/" itemprop="url" rel="next" data-background-image="&#x2F;images&#x2F;bg19.jpg" title="测试相关">
+  <a href="/2025/11/23/note/20251123/" itemprop="url" rel="next" data-background-image="&#x2F;images&#x2F;bg1.jpg" title="20251123面经回忆">
   <span class="type">Next Post</span>
   <span class="category"><i class="ic i-flag"></i> 七七八八</span>
-  <h3>测试相关</h3>
+  <h3>20251123面经回忆</h3>
   </a>
 
     </div>
@@ -338,11 +323,11 @@ NoResponse's Blog = NoResponse's Blog</title>
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="Contents">
-          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9D%82%E9%A1%B9"><span class="toc-number">1.</span> <span class="toc-text"> 杂项</span></a></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9D%82%E9%A1%B9"><span class="toc-number">1.</span> <span class="toc-text">杂项</span></a></li></ol>
       </div>
       <div class="related panel pjax" data-title="Related">
         <ul>
-          <li><a href="/2025/08/02/note/20250802/" rel="bookmark" title="20250802阅读论文">20250802阅读论文</a></li><li><a href="/2025/10/15/note/20251015/" rel="bookmark" title="20251015力扣刷题笔记">20251015力扣刷题笔记</a></li><li><a href="/2025/11/20/note/20251201/" rel="bookmark" title="测试相关">测试相关</a></li><li class="active"><a href="/2025/11/20/note/20251130/" rel="bookmark" title="杂项">杂项</a></li><li><a href="/2025/11/23/note/20251123/" rel="bookmark" title="20251123面经回忆">20251123面经回忆</a></li><li><a href="/2025/12/11/note/20251211/" rel="bookmark" title="杂项">杂项</a></li>
+          <li><a href="/2025/08/02/note/20250802/" rel="bookmark" title="20250802阅读论文">20250802阅读论文</a></li><li><a href="/2025/10/15/note/20251015/" rel="bookmark" title="20251015力扣刷题笔记">20251015力扣刷题笔记</a></li><li class="active"><a href="/2025/11/20/note/20251130/" rel="bookmark" title="杂项">杂项</a></li><li><a href="/2025/11/20/note/20251201/" rel="bookmark" title="测试相关">测试相关</a></li><li><a href="/2025/11/23/note/20251123/" rel="bookmark" title="20251123面经回忆">20251123面经回忆</a></li><li><a href="/2025/12/11/note/20251211/" rel="bookmark" title="杂项">杂项</a></li>
         </ul>
       </div>
       <div class="overview panel" data-title="Overview">
@@ -436,12 +421,12 @@ NoResponse's Blog = NoResponse's Blog</title>
 
   <ul id="quick">
     <li class="prev pjax">
-        <a href="/2025/10/26/oop/note/" rel="prev" title="Previous Post"><i class="ic i-chevron-left"></i></a>
+        <a href="/2025/11/20/note/20251201/" rel="prev" title="Previous Post"><i class="ic i-chevron-left"></i></a>
     </li>
     <li class="up"><i class="ic i-arrow-up"></i></li>
     <li class="down"><i class="ic i-arrow-down"></i></li>
     <li class="next pjax">
-        <a href="/2025/11/20/note/20251201/" rel="next" title="Next Post"><i class="ic i-chevron-right"></i></a>
+        <a href="/2025/11/23/note/20251123/" rel="next" title="Next Post"><i class="ic i-chevron-right"></i></a>
     </li>
     <li class="percent"></li>
   </ul>
@@ -463,20 +448,12 @@ NoResponse's Blog = NoResponse's Blog</title>
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/note/" title="In 七七八八">七七八八</a>
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/computer-organization/" title="In 计算机组成">计算机组成</a>
 </div>
 
-    <span><a href="/2025/11/20/note/20251201/" title="测试相关">测试相关</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/AI/" title="In 人工智能">人工智能</a>
-</div>
-
-    <span><a href="/2025/06/11/AI/week4-5/" title="Week4-5">Week4-5</a></span>
+    <span><a href="/2025/08/15/computer-science/computer-organization/ch7/" title="Ch7">Ch7</a></span>
   </li>
 
       
@@ -488,7 +465,7 @@ NoResponse's Blog = NoResponse's Blog</title>
 <a href="/categories/computer-science/computer-organization/" title="In 计算机组成">计算机组成</a>
 </div>
 
-    <span><a href="/2025/08/01/computer-science/computer-organization/ch4/" title="Ch4">Ch4</a></span>
+    <span><a href="/2025/07/01/computer-science/computer-organization/ch3/" title="Ch3">Ch3</a></span>
   </li>
 
       
@@ -497,40 +474,10 @@ NoResponse's Blog = NoResponse's Blog</title>
 <div class="breadcrumb">
 <a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/computer-organization/" title="In 计算机组成">计算机组成</a>
+<a href="/categories/computer-science/DS/" title="In 数据结构">数据结构</a>
 </div>
 
-    <span><a href="/2025/08/10/computer-science/computer-organization/ch6/" title="Ch6">Ch6</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/AI/" title="In 人工智能">人工智能</a>
-</div>
-
-    <span><a href="/2025/05/20/AI/week2-3/" title="Week2-3">Week2-3</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/AI/" title="In 人工智能">人工智能</a>
-</div>
-
-    <span><a href="/2025/06/16/AI/week10-11/" title="Week10-11">Week10-11</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/note/" title="In 七七八八">七七八八</a>
-</div>
-
-    <span><a href="/2025/10/15/note/20251015/" title="20251015力扣刷题笔记">20251015力扣刷题笔记</a></span>
+    <span><a href="/2023/10/31/computer-science/DS/fds/" title="fds课程笔记">fds课程笔记</a></span>
   </li>
 
       
@@ -542,7 +489,7 @@ NoResponse's Blog = NoResponse's Blog</title>
 <a href="/categories/computer-science/computer-network/" title="In 计算机网络">计算机网络</a>
 </div>
 
-    <span><a href="/2025/05/13/computer-science/computer-network/ch1/" title="Ch1">Ch1</a></span>
+    <span><a href="/2025/12/07/computer-science/computer-network/note/" title="计网八股">计网八股</a></span>
   </li>
 
       
@@ -561,10 +508,54 @@ NoResponse's Blog = NoResponse's Blog</title>
 <div class="breadcrumb">
 <a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
 <i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/DS/" title="In 数据结构">数据结构</a>
+</div>
+
+    <span><a href="/2025/10/13/computer-science/DS/ch8/" title="ch8">ch8</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
+</div>
+
+    <span><a href="/2025/03/29/computer-science/compile-principles/ch4/" title="抽象语法">抽象语法</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
 <a href="/categories/computer-science/computer-organization/" title="In 计算机组成">计算机组成</a>
 </div>
 
     <span><a href="/2025/05/14/computer-science/computer-organization/ch2/" title="Ch2">Ch2</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/AI/" title="In 人工智能">人工智能</a>
+</div>
+
+    <span><a href="/2025/06/11/AI/week4-5/" title="Week4-5">Week4-5</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/note/" title="In 七七八八">七七八八</a>
+</div>
+
+    <span><a href="/2025/11/20/note/20251130/" title="杂项">杂项</a></span>
   </li>
 
   </ul>
@@ -589,13 +580,13 @@ NoResponse's Blog = NoResponse's Blog</title>
     <span class="post-meta-item-icon">
       <i class="ic i-chart-area"></i>
     </span>
-    <span title="Symbols count total">188k words</span>
+    <span title="Symbols count total">185k words</span>
 
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="ic i-coffee"></i>
     </span>
-    <span title="Reading time total">2:51</span>
+    <span title="Reading time total">2:48</span>
   </div>
   <div class="powered-by">
     Powered by <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
