@@ -89,7 +89,7 @@ NoResponse's Blog = NoResponse's Blog</title>
 
       </div>
       <div id="imgs" class="pjax">
-          <img src="/images/bg21.jpg">
+          <img src="/images/bg36.jpg">
       </div>
     </header>
     <div id="waves">
@@ -127,6 +127,180 @@ NoResponse's Blog = NoResponse's Blog</title>
     
 
     <h1 id="学习计划"><a class="markdownIt-Anchor" href="#学习计划">#</a> 📚 学习计划</h1>
+<h2 id="每日计划日历"><a class="markdownIt-Anchor" href="#每日计划日历">#</a> 📅 每日计划日历</h2>
+<div id="calendar-container" style="max-width: 900px; margin: 20px auto;">
+  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; padding: 15px; background: linear-gradient(135deg, #ff9a56 0%, #ff7eb3 100%); border-radius: 8px;">
+    <button id="prevBtn" onclick="previousMonth()" style="padding: 10px 16px; cursor: pointer; background-color: rgba(255,255,255,0.3); color: white; border: none; border-radius: 4px; font-weight: bold; transition: all 0.3s;">← 上月</button>
+    <h3 id="monthYear" style="margin: 0; color: white; font-size: 1.5em;"></h3>
+    <button id="nextBtn" onclick="nextMonth()" style="padding: 10px 16px; cursor: pointer; background-color: rgba(255,255,255,0.3); color: white; border: none; border-radius: 4px; font-weight: bold; transition: all 0.3s;">下月 →</button>
+  </div>
+  <table id="calendar" style="width: 100%; border-collapse: collapse; border: 2px solid #ff9a56; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+    <thead>
+      <tr style="background: linear-gradient(90deg, #ff9a56 0%, #ff7eb3 100%); color: white;">
+        <th style="padding: 14px; border: 1px solid #ff9a56; font-weight: bold;">日</th>
+        <th style="padding: 14px; border: 1px solid #ff9a56; font-weight: bold;">一</th>
+        <th style="padding: 14px; border: 1px solid #ff9a56; font-weight: bold;">二</th>
+        <th style="padding: 14px; border: 1px solid #ff9a56; font-weight: bold;">三</th>
+        <th style="padding: 14px; border: 1px solid #ff9a56; font-weight: bold;">四</th>
+        <th style="padding: 14px; border: 1px solid #ff9a56; font-weight: bold;">五</th>
+        <th style="padding: 14px; border: 1px solid #ff9a56; font-weight: bold;">六</th>
+      </tr>
+    </thead>
+    <tbody id="calendarBody"></tbody>
+  </table>
+</div>
+<div id="taskModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.6); z-index: 1000;">
+  <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: white; padding: 30px; border-radius: 12px; width: 400px; max-width: 90%; box-shadow: 0 10px 40px rgba(0,0,0,0.3); border: 2px solid #ff9a56;">
+    <h3 id="taskDate" style="color: #ff7eb3; margin-top: 0;"></h3>
+    <textarea id="taskInput" placeholder="输入今天的计划..." style="width: 100%; height: 120px; padding: 12px; border: 2px solid #ff9a56; border-radius: 6px; font-family: inherit; resize: vertical;"></textarea>
+    <div style="margin-top: 20px; display: flex; gap: 10px;">
+      <button onclick="saveTask()" style="flex: 1; padding: 12px; background: linear-gradient(135deg, #ff9a56 0%, #ff7eb3 100%); color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; transition: all 0.3s;">保存</button>
+      <button onclick="closeModal()" style="flex: 1; padding: 12px; background-color: #ccc; color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; transition: all 0.3s;">取消</button>
+    </div>
+  </div>
+</div>
+<style>
+#calendar td {
+  padding: 14px;
+  border: 1px solid #f0f0f0;
+  height: 90px;
+  vertical-align: top;
+  cursor: pointer;
+  position: relative;
+  background-color: white;
+  transition: all 0.3s;
+}
+
+#calendar td:hover {
+  background-color: #fff8f6;
+  box-shadow: inset 0 0 8px rgba(255, 154, 86, 0.2);
+  transform: translateY(-2px);
+}
+
+#calendar td.has-task {
+  background: linear-gradient(135deg, rgba(255, 200, 150, 0.2) 0%, rgba(255, 150, 200, 0.15) 100%);
+  border-left: 4px solid #ff9a56;
+}
+
+#calendar td.today {
+  background: linear-gradient(135deg, rgba(255, 200, 150, 0.4) 0%, rgba(255, 150, 200, 0.3) 100%);
+  font-weight: bold;
+  border: 2px solid #ff7eb3;
+}
+
+#calendar td.other-month {
+  color: #d0d0d0;
+  background-color: #fafafa;
+}
+
+.task-preview {
+  font-size: 12px;
+  color: #ff7eb3;
+  margin-top: 6px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: 500;
+}
+
+#prevBtn:hover, #nextBtn:hover {
+  background-color: rgba(255,255,255,0.5) !important;
+  transform: scale(1.05);
+}
+</style>
+<script>
+let currentDate = new Date();
+let tasks = JSON.parse(localStorage.getItem('planTasks')) || {};
+let selectedDate = null;
+
+function renderCalendar() {
+  const year = currentDate.getFullYear();
+  const month = currentDate.getMonth();
+  const firstDay = new Date(year, month, 1);
+  const lastDay = new Date(year, month + 1, 0);
+  const daysInMonth = lastDay.getDate();
+  const startingDayOfWeek = firstDay.getDay();
+  
+  document.getElementById('monthYear').textContent = `${year}年${month + 1}月`;
+  
+  const calendarBody = document.getElementById('calendarBody');
+  calendarBody.innerHTML = '';
+  
+  let date = 1;
+  for (let i = 0; i < 6; i++) {
+    const row = document.createElement('tr');
+    for (let j = 0; j < 7; j++) {
+      const cell = document.createElement('td');
+      if (i === 0 && j < startingDayOfWeek) {
+        cell.textContent = '';
+        cell.className = 'other-month';
+      } else if (date > daysInMonth) {
+        cell.textContent = '';
+        cell.className = 'other-month';
+      } else {
+        const dateStr = `${year}-${String(month + 1).padStart(2, '0')}-${String(date).padStart(2, '0')}`;
+        cell.textContent = date;
+        
+        // 高亮今天
+        const today = new Date();
+        if (year === today.getFullYear() && month === today.getMonth() && date === today.getDate()) {
+          cell.className = 'today';
+        }
+        
+        // 显示任务
+        if (tasks[dateStr]) {
+          cell.className = (cell.className || '') + ' has-task';
+          const preview = document.createElement('div');
+          preview.className = 'task-preview';
+          preview.textContent = tasks[dateStr].substring(0, 15) + (tasks[dateStr].length > 15 ? '...' : '');
+          cell.appendChild(preview);
+        }
+        
+        cell.onclick = () => openTask(dateStr, cell.textContent.split('\n')[0]);
+        date++;
+      }
+      row.appendChild(cell);
+    }
+    calendarBody.appendChild(row);
+  }
+}
+
+function openTask(dateStr, dayNum) {
+  selectedDate = dateStr;
+  document.getElementById('taskDate').textContent = `${dateStr} 的计划`;
+  document.getElementById('taskInput').value = tasks[dateStr] || '';
+  document.getElementById('taskModal').style.display = 'block';
+}
+
+function closeModal() {
+  document.getElementById('taskModal').style.display = 'none';
+  selectedDate = null;
+}
+
+function saveTask() {
+  const taskText = document.getElementById('taskInput').value.trim();
+  if (taskText) {
+    tasks[selectedDate] = taskText;
+  } else if (tasks[selectedDate]) {
+    delete tasks[selectedDate];
+  }
+  localStorage.setItem('planTasks', JSON.stringify(tasks));
+  renderCalendar();
+  closeModal();
+}
+
+function previousMonth() {
+  currentDate.setMonth(currentDate.getMonth() - 1);
+  renderCalendar();
+}
+
+function nextMonth() {
+  currentDate.setMonth(currentDate.getMonth() + 1);
+  renderCalendar();
+}
+
+document.addEventListener('DOMContentLoaded', renderCalendar);
+</script>
 <h2 id="近期目标"><a class="markdownIt-Anchor" href="#近期目标">#</a> 近期目标</h2>
 <ul>
 <li>java 后端技术栈
@@ -202,7 +376,7 @@ NoResponse's Blog = NoResponse's Blog</title>
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="Contents">
-          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AD%A6%E4%B9%A0%E8%AE%A1%E5%88%92"><span class="toc-number">1.</span> <span class="toc-text"> 📚 学习计划</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%91%E6%9C%9F%E7%9B%AE%E6%A0%87"><span class="toc-number">1.1.</span> <span class="toc-text"> 近期目标</span></a></li></ol></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AD%A6%E4%B9%A0%E8%AE%A1%E5%88%92"><span class="toc-number">1.</span> <span class="toc-text"> 📚 学习计划</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AF%8F%E6%97%A5%E8%AE%A1%E5%88%92%E6%97%A5%E5%8E%86"><span class="toc-number">1.1.</span> <span class="toc-text"> 📅 每日计划日历</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#monthYear"><span class="toc-number">1.1.1.</span> <span class="toc-text"></span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#taskDate"><span class="toc-number">1.1.2.</span> <span class="toc-text"></span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%91%E6%9C%9F%E7%9B%AE%E6%A0%87"><span class="toc-number">1.2.</span> <span class="toc-text"> 近期目标</span></a></li></ol></li></ol>
       </div>
       <div class="related panel pjax" data-title="Related">
       </div>
@@ -324,20 +498,22 @@ NoResponse's Blog = NoResponse's Blog</title>
 <div class="breadcrumb">
 <a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/OS/" title="In 操作系统">操作系统</a>
+<a href="/categories/computer-science/DS/" title="In 数据结构">数据结构</a>
 </div>
 
-    <span><a href="/2025/09/18/computer-science/OS/ch1/" title="ch1">ch1</a></span>
+    <span><a href="/2025/09/15/computer-science/DS/ch2/" title="ch2">ch2</a></span>
   </li>
 
       
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/oop/" title="In C++">C++</a>
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/DS/" title="In 数据结构">数据结构</a>
 </div>
 
-    <span><a href="/2025/10/26/oop/note/" title="C++相关">C++相关</a></span>
+    <span><a href="/2025/10/05/computer-science/DS/ch4/" title="ch4">ch4</a></span>
   </li>
 
       
@@ -356,16 +532,6 @@ NoResponse's Blog = NoResponse's Blog</title>
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/note/" title="In 七七八八">七七八八</a>
-</div>
-
-    <span><a href="/2025/10/15/note/20251015/" title="20251015力扣刷题笔记">20251015力扣刷题笔记</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
 <a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
 <i class="ic i-angle-right"></i>
 <a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
@@ -378,24 +544,10 @@ NoResponse's Blog = NoResponse's Blog</title>
   <li class="item">
     
 <div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/computer-network/" title="In 计算机网络">计算机网络</a>
+<a href="/categories/AI/" title="In 人工智能">人工智能</a>
 </div>
 
-    <span><a href="/2025/05/13/computer-science/computer-network/ch1/" title="Ch1">Ch1</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/DS/" title="In 数据结构">数据结构</a>
-</div>
-
-    <span><a href="/2025/10/04/computer-science/DS/ch3/" title="ch3">ch3</a></span>
+    <span><a href="/2025/06/15/AI/week8-9/" title="Week8-9">Week8-9</a></span>
   </li>
 
       
@@ -405,7 +557,7 @@ NoResponse's Blog = NoResponse's Blog</title>
 <a href="/categories/note/" title="In 七七八八">七七八八</a>
 </div>
 
-    <span><a href="/2025/08/02/note/20250802/" title="20250802阅读论文">20250802阅读论文</a></span>
+    <span><a href="/2025/11/20/note/20251201/" title="测试相关">测试相关</a></span>
   </li>
 
       
@@ -417,7 +569,29 @@ NoResponse's Blog = NoResponse's Blog</title>
 <a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
 </div>
 
-    <span><a href="/2025/06/18/computer-science/compile-principles/ch10/" title="Liveness Analysis">Liveness Analysis</a></span>
+    <span><a href="/2025/06/17/computer-science/compile-principles/ch9/" title="指令选择">指令选择</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/computer-organization/" title="In 计算机组成">计算机组成</a>
+</div>
+
+    <span><a href="/2025/05/13/computer-science/computer-organization/ch1/" title="Ch1">Ch1</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/AI/" title="In 人工智能">人工智能</a>
+</div>
+
+    <span><a href="/2025/06/16/AI/week14-15/" title="Week14-15">Week14-15</a></span>
   </li>
 
       
@@ -429,7 +603,7 @@ NoResponse's Blog = NoResponse's Blog</title>
 <a href="/categories/computer-science/DS/" title="In 数据结构">数据结构</a>
 </div>
 
-    <span><a href="/2025/10/05/computer-science/DS/ch4/" title="ch4">ch4</a></span>
+    <span><a href="/2025/10/10/computer-science/DS/ch5/" title="ch5">ch5</a></span>
   </li>
 
   </ul>
