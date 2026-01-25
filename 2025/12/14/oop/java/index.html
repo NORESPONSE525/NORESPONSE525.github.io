@@ -76,7 +76,7 @@ NoResponse's Blog = NoResponse's Blog</title>
       <i class="ic i-pen"></i>
     </span>
     <span class="text">Symbols count in article</span>
-    <span>6.7k</span>
+    <span>7.5k</span>
     <span class="text">words</span>
   </span>
   <span class="item" title="Reading time">
@@ -84,7 +84,7 @@ NoResponse's Blog = NoResponse's Blog</title>
       <i class="ic i-clock"></i>
     </span>
     <span class="text">Reading time</span>
-    <span>6 mins.</span>
+    <span>7 mins.</span>
   </span>
 </div>
 
@@ -116,7 +116,7 @@ NoResponse's Blog = NoResponse's Blog</title>
 
       </div>
       <div id="imgs" class="pjax">
-          <img src="/images/bg27.jpg">
+          <img src="/images/bg5.jpg">
       </div>
     </header>
     <div id="waves">
@@ -371,6 +371,83 @@ java 全限定类名<br>
 </blockquote>
 <h3 id="强制转"><a class="markdownIt-Anchor" href="#强制转">#</a> 强制转</h3>
 <figure class="highlight java"><figcaption><span>强制转换</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">(<span class="type">int</span>)<span class="number">23.7</span> == <span class="number">23</span>;        </span><br><span class="line">(<span class="type">int</span>)-<span class="number">45.89f</span> == -<span class="number">45</span></span><br></pre></td></tr></table></figure>
+<h1 id="java-变量类型"><a class="markdownIt-Anchor" href="#java-变量类型">#</a> Java 变量类型</h1>
+<ul>
+<li>局部变量：和 cpp 不一样的是不初始化会导致编译错误，在栈上，生命周期结束会被 JVM 自动回收。和 c/cpp 一样</li>
+<li>静态变量 / 类变量：类变量在类内用 static 修饰，所有这个类的对象共享这个变量</li>
+<li>实例变量：类不是 static 的成员变量（？）没有初始化会被赋予默认值（见上），需要考虑线程安全</li>
+<li>参数变量：形参，值传递和引用传递</li>
+</ul>
+<h1 id="java-修饰符"><a class="markdownIt-Anchor" href="#java-修饰符">#</a> Java 修饰符</h1>
+<ol>
+<li>访问修饰符<br>
+ default (即默认，什么也不写）: <mark>在同一包内可见，不同包内不可见</mark>，不使用任何修饰符。<br>
+private: 在同一类内可见。不能修饰类（不在其他类里面的类）<br>
+public: 对所有类可见。<br>
+protected: 对同一包内的类和所有子类可见。使用对象：变量、方法。 同样不能修饰不在其他类里面的类。</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>修饰符</th>
+<th>当前类</th>
+<th>同一包内</th>
+<th>子孙类（同一包）</th>
+<th>子孙类（不同包）</th>
+<th>其他类（不同包）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>public</td>
+<td>Y</td>
+<td>Y</td>
+<td>Y</td>
+<td>Y</td>
+<td>Y</td>
+</tr>
+<tr>
+<td>private</td>
+<td>Y</td>
+<td>N</td>
+<td>N</td>
+<td>N</td>
+<td>N</td>
+</tr>
+<tr>
+<td>protected</td>
+<td>Y</td>
+<td>Y</td>
+<td>Y</td>
+<td>需要说明</td>
+<td>N</td>
+</tr>
+<tr>
+<td>default</td>
+<td>Y</td>
+<td>Y</td>
+<td>Y</td>
+<td>N</td>
+<td>N</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>protected<br>
+<span class="exturl" data-url="aHR0cHM6Ly9jbG91ZC50ZW5jZW50LmNvbS9kZXZlbG9wZXIvYXJ0aWNsZS8xMzMzNTUw">https://cloud.tencent.com/developer/article/1333550</span></p>
+</blockquote>
+<ol start="2">
+<li>非访问修饰符</li>
+</ol>
+<ul>
+<li>static: 静态修饰符，静态成员变量和静态方法，静态块，静态内部类。静态方法和静态成员变量一样也是类所有的，不能使用类的非静态变量（实例），只能访问静态成员变量等</li>
+<li>final: final 修饰的类不能够被继承，修饰的方法不能被继承类 override，修饰的变量为常量，是不可修改的</li>
+<li>abstruct: 抽象类（不能被实例化，只能被继承）和抽象方法（没有具体的实现，只能被 override）类似于纯虚函数</li>
+<li>synchronized: 方法同一时间只能被一个线程访问</li>
+<li>translient: transient 修饰的变量不会被序列化（反序列化出来没有该变量）</li>
+<li>volatile: 同 c/cpp</li>
+</ul>
+<h1 id><a class="markdownIt-Anchor" href="#">#</a> </h1>
 
       <div class="tags">
           <a href="/tags/JAVA/" rel="tag"><i class="ic i-tag"></i> JAVA</a>
@@ -385,7 +462,7 @@ java 全限定类名<br>
       <i class="ic i-calendar-check"></i>
     </span>
     <span class="text">Edited on</span>
-    <time title="Modified: 2025-12-14 23:23:08" itemprop="dateModified" datetime="2025-12-14T23:23:08+08:00">2025-12-14</time>
+    <time title="Modified: 2026-01-09 18:11:26" itemprop="dateModified" datetime="2026-01-09T18:11:26+08:00">2026-01-09</time>
   </span>
 </div>
 
@@ -440,7 +517,7 @@ java 全限定类名<br>
     <div class="item left">
       
 
-  <a href="/2025/12/11/note/20251211/" itemprop="url" rel="prev" data-background-image="&#x2F;images&#x2F;bg34.jpg" title="杂项">
+  <a href="/2025/12/11/note/20251211/" itemprop="url" rel="prev" data-background-image="&#x2F;images&#x2F;bg8.jpg" title="杂项">
   <span class="type">Previous Post</span>
   <span class="category"><i class="ic i-flag"></i> 七七八八</span>
   <h3>杂项</h3>
@@ -448,6 +525,14 @@ java 全限定类名<br>
 
     </div>
     <div class="item right">
+      
+
+  <a href="/2025/12/17/computer-science/DB/MySQL/" itemprop="url" rel="next" data-background-image="&#x2F;images&#x2F;bg18.jpg" title="MySQL相关">
+  <span class="type">Next Post</span>
+  <span class="category"><i class="ic i-flag"></i> 数据库</span>
+  <h3>MySQL相关</h3>
+  </a>
+
     </div>
 </div>
 
@@ -464,7 +549,7 @@ java 全限定类名<br>
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="Contents">
-          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95"><span class="toc-number">1.</span> <span class="toc-text"> JAVA 基础语法</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#java-%E5%AF%B9%E8%B1%A1%E5%92%8C%E7%B1%BB"><span class="toc-number">2.</span> <span class="toc-text"> JAVA 对象和类</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%BA%90%E6%96%87%E4%BB%B6%E5%A3%B0%E6%98%8E%E8%A7%84%E5%88%99"><span class="toc-number">3.</span> <span class="toc-text"> 源文件声明规则</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#java-%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">4.</span> <span class="toc-text"> Java 基本数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%8D%E4%B8%80%E6%A0%B7%E7%9A%84bool-boolean"><span class="toc-number">4.1.</span> <span class="toc-text"> 不一样的：bool-&gt;boolean</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E9%87%8F"><span class="toc-number">4.2.</span> <span class="toc-text"> 常量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2"><span class="toc-number">4.3.</span> <span class="toc-text"> 类型转换</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%87%AA%E5%8A%A8%E8%BD%AC"><span class="toc-number">4.3.1.</span> <span class="toc-text"> 自动转</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%BA%E5%88%B6%E8%BD%AC"><span class="toc-number">4.3.2.</span> <span class="toc-text"> 强制转</span></a></li></ol></li></ol></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95"><span class="toc-number">1.</span> <span class="toc-text"> JAVA 基础语法</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#java-%E5%AF%B9%E8%B1%A1%E5%92%8C%E7%B1%BB"><span class="toc-number">2.</span> <span class="toc-text"> JAVA 对象和类</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%BA%90%E6%96%87%E4%BB%B6%E5%A3%B0%E6%98%8E%E8%A7%84%E5%88%99"><span class="toc-number">3.</span> <span class="toc-text"> 源文件声明规则</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#java-%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">4.</span> <span class="toc-text"> Java 基本数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%8D%E4%B8%80%E6%A0%B7%E7%9A%84bool-boolean"><span class="toc-number">4.1.</span> <span class="toc-text"> 不一样的：bool-&gt;boolean</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E9%87%8F"><span class="toc-number">4.2.</span> <span class="toc-text"> 常量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2"><span class="toc-number">4.3.</span> <span class="toc-text"> 类型转换</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%87%AA%E5%8A%A8%E8%BD%AC"><span class="toc-number">4.3.1.</span> <span class="toc-text"> 自动转</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%BA%E5%88%B6%E8%BD%AC"><span class="toc-number">4.3.2.</span> <span class="toc-text"> 强制转</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#java-%E5%8F%98%E9%87%8F%E7%B1%BB%E5%9E%8B"><span class="toc-number">5.</span> <span class="toc-text"> Java 变量类型</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#java-%E4%BF%AE%E9%A5%B0%E7%AC%A6"><span class="toc-number">6.</span> <span class="toc-text"> Java 修饰符</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">7.</span> <span class="toc-text"> </span></a></li></ol>
       </div>
       <div class="related panel pjax" data-title="Related">
         <ul>
@@ -482,19 +567,19 @@ java 全限定类名<br>
 <nav class="state">
     <div class="item posts">
       <a href="/archives/">
-        <span class="count">52</span>
+        <span class="count">57</span>
         <span class="name">posts</span>
       </a>
     </div>
     <div class="item categories">
       <a href="/categories/">
-        <span class="count">10</span>
+        <span class="count">12</span>
         <span class="name">categories</span>
       </a>
     </div>
     <div class="item tags">
       <a href="/tags/">
-        <span class="count">42</span>
+        <span class="count">46</span>
         <span class="name">tags</span>
       </a>
     </div>
@@ -562,10 +647,12 @@ java 全限定类名<br>
 
   <ul id="quick">
     <li class="prev pjax">
+        <a href="/2025/12/11/note/20251211/" rel="prev" title="Previous Post"><i class="ic i-chevron-left"></i></a>
     </li>
     <li class="up"><i class="ic i-arrow-up"></i></li>
     <li class="down"><i class="ic i-arrow-down"></i></li>
     <li class="next pjax">
+        <a href="/2025/12/17/computer-science/DB/MySQL/" rel="next" title="Next Post"><i class="ic i-chevron-right"></i></a>
     </li>
     <li class="percent"></li>
   </ul>
@@ -589,98 +676,10 @@ java 全限定类名<br>
 <div class="breadcrumb">
 <a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/OS/" title="In 操作系统">操作系统</a>
-</div>
-
-    <span><a href="/2025/09/18/computer-science/OS/ch1/" title="ch1">ch1</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
 <a href="/categories/computer-science/DS/" title="In 数据结构">数据结构</a>
 </div>
 
-    <span><a href="/2025/09/15/computer-science/DS/ch1/" title="ch1">ch1</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/note/" title="In 七七八八">七七八八</a>
-</div>
-
-    <span><a href="/2025/12/11/note/20251211/" title="杂项">杂项</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/computer-organization/" title="In 计算机组成">计算机组成</a>
-</div>
-
-    <span><a href="/2025/05/14/computer-science/computer-organization/ch2/" title="Ch2">Ch2</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/computer-network/" title="In 计算机网络">计算机网络</a>
-</div>
-
-    <span><a href="/2025/05/13/computer-science/computer-network/ch1/" title="Ch1">Ch1</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/oop/" title="In 面向对象">面向对象</a>
-</div>
-
-    <span><a href="/2025/12/14/oop/java/" title="JAVA基础">JAVA基础</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/AI/" title="In 人工智能">人工智能</a>
-</div>
-
-    <span><a href="/2025/06/16/AI/week12-13/" title="Week12-13">Week12-13</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/DS/" title="In 数据结构">数据结构</a>
-</div>
-
-    <span><a href="/2025/10/04/computer-science/DS/ch3/" title="ch3">ch3</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/AI/" title="In 人工智能">人工智能</a>
-</div>
-
-    <span><a href="/2025/05/20/AI/week1/" title="Week1">Week1</a></span>
+    <span><a href="/2025/10/13/computer-science/DS/ch8/" title="ch8">ch8</a></span>
   </li>
 
       
@@ -692,7 +691,99 @@ java 全限定类名<br>
 <a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
 </div>
 
-    <span><a href="/2025/06/17/computer-science/compile-principles/ch9/" title="指令选择">指令选择</a></span>
+    <span><a href="/2025/03/23/computer-science/compile-principles/ch3/" title="语法分析">语法分析</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
+</div>
+
+    <span><a href="/2025/03/21/computer-science/compile-principles/ch1/" title="Introduction">Introduction</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/AI/" title="In 人工智能">人工智能</a>
+</div>
+
+    <span><a href="/2026/01/09/AI/python/" title="python速记">python速记</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/compiler-principles/" title="In 编译原理">编译原理</a>
+</div>
+
+    <span><a href="/2025/06/16/computer-science/compile-principles/ch7/" title="IR">IR</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/DS/" title="In 数据结构">数据结构</a>
+</div>
+
+    <span><a href="/2025/09/15/computer-science/DS/ch2/" title="ch2">ch2</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/computer-organization/" title="In 计算机组成">计算机组成</a>
+</div>
+
+    <span><a href="/2025/07/01/computer-science/computer-organization/%E9%94%99%E9%A2%98%E9%9B%86%E5%90%88/" title="错题集合">错题集合</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/note/" title="In 七七八八">七七八八</a>
+</div>
+
+    <span><a href="/2025/08/02/note/20250802/" title="20250802阅读论文">20250802阅读论文</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/DB/" title="In 数据库">数据库</a>
+</div>
+
+    <span><a href="/2025/12/17/computer-science/DB/MySQL/" title="MySQL相关">MySQL相关</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="In 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/DS/" title="In 数据结构">数据结构</a>
+</div>
+
+    <span><a href="/2025/10/11/computer-science/DS/ch6/" title="ch6">ch6</a></span>
   </li>
 
   </ul>
@@ -707,7 +798,7 @@ java 全限定类名<br>
   <div class="copyright">
     
     &copy; 2024 – 
-    <span itemprop="copyrightYear">2025</span>
+    <span itemprop="copyrightYear">2026</span>
     <span class="with-love">
       <i class="ic i-sakura rotate"></i>
     </span>
@@ -717,13 +808,13 @@ java 全限定类名<br>
     <span class="post-meta-item-icon">
       <i class="ic i-chart-area"></i>
     </span>
-    <span title="Symbols count total">200k words</span>
+    <span title="Symbols count total">204k words</span>
 
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="ic i-coffee"></i>
     </span>
-    <span title="Reading time total">3:02</span>
+    <span title="Reading time total">3:06</span>
   </div>
   <div class="powered-by">
     Powered by <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>

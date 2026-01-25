@@ -8,47 +8,51 @@
         <pubDate>Sun, 14 Dec 2025 00:00:00 +0800</pubDate>
         <lastBuildDate>Sun, 14 Dec 2025 00:00:00 +0800</lastBuildDate>
         <category>人工智能</category>
+        <category>python</category>
         <category>软件工程</category>
+        <category>自监督学习</category>
         <category>容器</category>
         <category>面经</category>
-        <category>自监督学习</category>
         <category>ctest</category>
         <category>gtest</category>
         <category>test coverage</category>
         <category>杂项</category>
         <category>JAVA</category>
+        <category>Deep Learning</category>
+        <category>C++</category>
+        <category>Redis</category>
+        <category>DB</category>
+        <category>操作系统</category>
+        <category>栈、队列和数组</category>
         <category>Amortized Analysis</category>
         <category>数据结构</category>
-        <category>栈、队列和数组</category>
-        <category>C++</category>
-        <category>线性表</category>
-        <category>图论</category>
-        <category>查找</category>
-        <category>树与二叉树</category>
-        <category>排序</category>
         <category>串</category>
-        <category>操作系统</category>
+        <category>线性表</category>
+        <category>树与二叉树</category>
+        <category>查找</category>
+        <category>排序</category>
+        <category>图论</category>
+        <category>计算机网络</category>
         <category>编译原理</category>
+        <category>Liveness Analysis</category>
         <category>fds</category>
         <category>Register Allocation</category>
+        <category>词法分析</category>
         <category>语法分析</category>
         <category>抽象语法</category>
-        <category>词法分析</category>
-        <category>语义分析</category>
-        <category>Liveness Analysis</category>
         <category>活动记录</category>
+        <category>语义分析</category>
         <category>中间代码</category>
-        <category>指令选择</category>
         <category>Basic Blocks and Traces</category>
+        <category>指令选择</category>
         <category>计算机组成</category>
         <category>数据的表示与运算</category>
-        <category>指令系统</category>
         <category>存储系统</category>
-        <category>I/O</category>
+        <category>指令系统</category>
         <category>CPU</category>
         <category>总线</category>
+        <category>I/O</category>
         <category>错题</category>
-        <category>计算机网络</category>
         <item>
             <guid isPermalink="true">http://example.com/2025/12/14/oop/java/</guid>
             <title>JAVA基础</title>
@@ -265,6 +269,83 @@ java 全限定类名&lt;br&gt;
 &lt;/blockquote&gt;
 &lt;h3 id=&#34;强制转&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#强制转&#34;&gt;#&lt;/a&gt; 强制转&lt;/h3&gt;
 &lt;figure class=&#34;highlight java&#34;&gt;&lt;figcaption&gt;&lt;span&gt;强制转换&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;(&lt;span class=&#34;type&#34;&gt;int&lt;/span&gt;)&lt;span class=&#34;number&#34;&gt;23.7&lt;/span&gt; == &lt;span class=&#34;number&#34;&gt;23&lt;/span&gt;;        &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;(&lt;span class=&#34;type&#34;&gt;int&lt;/span&gt;)-&lt;span class=&#34;number&#34;&gt;45.89f&lt;/span&gt; == -&lt;span class=&#34;number&#34;&gt;45&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h1 id=&#34;java-变量类型&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#java-变量类型&#34;&gt;#&lt;/a&gt; Java 变量类型&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;局部变量：和 cpp 不一样的是不初始化会导致编译错误，在栈上，生命周期结束会被 JVM 自动回收。和 c/cpp 一样&lt;/li&gt;
+&lt;li&gt;静态变量 / 类变量：类变量在类内用 static 修饰，所有这个类的对象共享这个变量&lt;/li&gt;
+&lt;li&gt;实例变量：类不是 static 的成员变量（？）没有初始化会被赋予默认值（见上），需要考虑线程安全&lt;/li&gt;
+&lt;li&gt;参数变量：形参，值传递和引用传递&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;java-修饰符&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#java-修饰符&#34;&gt;#&lt;/a&gt; Java 修饰符&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;访问修饰符&lt;br&gt;
+ default (即默认，什么也不写）: &lt;mark&gt;在同一包内可见，不同包内不可见&lt;/mark&gt;，不使用任何修饰符。&lt;br&gt;
+private: 在同一类内可见。不能修饰类（不在其他类里面的类）&lt;br&gt;
+public: 对所有类可见。&lt;br&gt;
+protected: 对同一包内的类和所有子类可见。使用对象：变量、方法。 同样不能修饰不在其他类里面的类。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;修饰符&lt;/th&gt;
+&lt;th&gt;当前类&lt;/th&gt;
+&lt;th&gt;同一包内&lt;/th&gt;
+&lt;th&gt;子孙类（同一包）&lt;/th&gt;
+&lt;th&gt;子孙类（不同包）&lt;/th&gt;
+&lt;th&gt;其他类（不同包）&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;public&lt;/td&gt;
+&lt;td&gt;Y&lt;/td&gt;
+&lt;td&gt;Y&lt;/td&gt;
+&lt;td&gt;Y&lt;/td&gt;
+&lt;td&gt;Y&lt;/td&gt;
+&lt;td&gt;Y&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;private&lt;/td&gt;
+&lt;td&gt;Y&lt;/td&gt;
+&lt;td&gt;N&lt;/td&gt;
+&lt;td&gt;N&lt;/td&gt;
+&lt;td&gt;N&lt;/td&gt;
+&lt;td&gt;N&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;protected&lt;/td&gt;
+&lt;td&gt;Y&lt;/td&gt;
+&lt;td&gt;Y&lt;/td&gt;
+&lt;td&gt;Y&lt;/td&gt;
+&lt;td&gt;需要说明&lt;/td&gt;
+&lt;td&gt;N&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;default&lt;/td&gt;
+&lt;td&gt;Y&lt;/td&gt;
+&lt;td&gt;Y&lt;/td&gt;
+&lt;td&gt;Y&lt;/td&gt;
+&lt;td&gt;N&lt;/td&gt;
+&lt;td&gt;N&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;blockquote&gt;
+&lt;p&gt;protected&lt;br&gt;
+&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9jbG91ZC50ZW5jZW50LmNvbS9kZXZlbG9wZXIvYXJ0aWNsZS8xMzMzNTUw&#34;&gt;https://cloud.tencent.com/developer/article/1333550&lt;/span&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;非访问修饰符&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;static: 静态修饰符，静态成员变量和静态方法，静态块，静态内部类。静态方法和静态成员变量一样也是类所有的，不能使用类的非静态变量（实例），只能访问静态成员变量等&lt;/li&gt;
+&lt;li&gt;final: final 修饰的类不能够被继承，修饰的方法不能被继承类 override，修饰的变量为常量，是不可修改的&lt;/li&gt;
+&lt;li&gt;abstruct: 抽象类（不能被实例化，只能被继承）和抽象方法（没有具体的实现，只能被 override）类似于纯虚函数&lt;/li&gt;
+&lt;li&gt;synchronized: 方法同一时间只能被一个线程访问&lt;/li&gt;
+&lt;li&gt;translient: transient 修饰的变量不会被序列化（反序列化出来没有该变量）&lt;/li&gt;
+&lt;li&gt;volatile: 同 c/cpp&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#&#34;&gt;#&lt;/a&gt; &lt;/h1&gt;
  ]]></description>
         </item>
     </channel>
