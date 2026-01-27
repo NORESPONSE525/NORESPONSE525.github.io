@@ -4,35 +4,23 @@
     <title>NoResponse&#39;s Blog • Posts by &#34;数据结构&#34; tag</title>
     <link href="http://example.com" />
     <updated>2025-09-14T16:00:00.000Z</updated>
-    <category term="人工智能" />
     <category term="python" />
+    <category term="人工智能" />
+    <category term="Deep Learning" />
     <category term="软件工程" />
+    <category term="JAVA" />
     <category term="自监督学习" />
+    <category term="C++" />
     <category term="容器" />
+    <category term="杂项" />
     <category term="面经" />
     <category term="ctest" />
     <category term="gtest" />
     <category term="test coverage" />
-    <category term="杂项" />
-    <category term="JAVA" />
-    <category term="Deep Learning" />
-    <category term="C++" />
-    <category term="Redis" />
     <category term="DB" />
+    <category term="Redis" />
     <category term="操作系统" />
-    <category term="栈、队列和数组" />
-    <category term="Amortized Analysis" />
-    <category term="数据结构" />
-    <category term="串" />
-    <category term="线性表" />
-    <category term="树与二叉树" />
-    <category term="查找" />
-    <category term="排序" />
-    <category term="图论" />
-    <category term="计算机网络" />
     <category term="编译原理" />
-    <category term="Liveness Analysis" />
-    <category term="fds" />
     <category term="Register Allocation" />
     <category term="词法分析" />
     <category term="语法分析" />
@@ -42,14 +30,26 @@
     <category term="中间代码" />
     <category term="Basic Blocks and Traces" />
     <category term="指令选择" />
-    <category term="计算机组成" />
+    <category term="Liveness Analysis" />
+    <category term="Amortized Analysis" />
+    <category term="线性表" />
+    <category term="栈、队列和数组" />
+    <category term="串" />
+    <category term="图论" />
+    <category term="查找" />
+    <category term="树与二叉树" />
+    <category term="排序" />
+    <category term="数据结构" />
     <category term="数据的表示与运算" />
+    <category term="计算机组成" />
+    <category term="fds" />
+    <category term="CPU" />
     <category term="存储系统" />
     <category term="指令系统" />
-    <category term="CPU" />
-    <category term="总线" />
     <category term="I/O" />
     <category term="错题" />
+    <category term="总线" />
+    <category term="计算机网络" />
     <entry>
         <id>http://example.com/2025/09/15/computer-science/DS/ch1/</id>
         <title>ch1</title>

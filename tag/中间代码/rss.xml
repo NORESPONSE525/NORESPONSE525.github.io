@@ -7,35 +7,23 @@
         <language>en</language>
         <pubDate>Mon, 16 Jun 2025 00:00:00 +0800</pubDate>
         <lastBuildDate>Mon, 16 Jun 2025 00:00:00 +0800</lastBuildDate>
-        <category>人工智能</category>
         <category>python</category>
+        <category>人工智能</category>
+        <category>Deep Learning</category>
         <category>软件工程</category>
+        <category>JAVA</category>
         <category>自监督学习</category>
+        <category>C++</category>
         <category>容器</category>
+        <category>杂项</category>
         <category>面经</category>
         <category>ctest</category>
         <category>gtest</category>
         <category>test coverage</category>
-        <category>杂项</category>
-        <category>JAVA</category>
-        <category>Deep Learning</category>
-        <category>C++</category>
-        <category>Redis</category>
         <category>DB</category>
+        <category>Redis</category>
         <category>操作系统</category>
-        <category>栈、队列和数组</category>
-        <category>Amortized Analysis</category>
-        <category>数据结构</category>
-        <category>串</category>
-        <category>线性表</category>
-        <category>树与二叉树</category>
-        <category>查找</category>
-        <category>排序</category>
-        <category>图论</category>
-        <category>计算机网络</category>
         <category>编译原理</category>
-        <category>Liveness Analysis</category>
-        <category>fds</category>
         <category>Register Allocation</category>
         <category>词法分析</category>
         <category>语法分析</category>
@@ -45,14 +33,26 @@
         <category>中间代码</category>
         <category>Basic Blocks and Traces</category>
         <category>指令选择</category>
-        <category>计算机组成</category>
+        <category>Liveness Analysis</category>
+        <category>Amortized Analysis</category>
+        <category>线性表</category>
+        <category>栈、队列和数组</category>
+        <category>串</category>
+        <category>图论</category>
+        <category>查找</category>
+        <category>树与二叉树</category>
+        <category>排序</category>
+        <category>数据结构</category>
         <category>数据的表示与运算</category>
+        <category>计算机组成</category>
+        <category>fds</category>
+        <category>CPU</category>
         <category>存储系统</category>
         <category>指令系统</category>
-        <category>CPU</category>
-        <category>总线</category>
         <category>I/O</category>
         <category>错题</category>
+        <category>总线</category>
+        <category>计算机网络</category>
         <item>
             <guid isPermalink="true">http://example.com/2025/06/16/computer-science/compile-principles/ch7/</guid>
             <title>IR</title>
